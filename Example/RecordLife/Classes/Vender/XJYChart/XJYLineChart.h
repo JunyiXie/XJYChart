@@ -64,13 +64,6 @@ typedef NS_ENUM(NSUInteger, XJYLineChartType) {
 @property (nonatomic, strong) UIColor *chartBackgroundColor;
 
 
-// 数据
--(void)setData:(NSMutableArray*)LevelDataArray;
-// 获取绘制类型
-@property(assign,nonatomic) DrowLineType * LineType;
-//点数据的日期
--(void)drawData:(NSMutableArray *)drawDataArray;
-//画点的数据
--(void)drawDatacount:(NSMutableArray *)drawDataCountArry;
+
 
 @end
