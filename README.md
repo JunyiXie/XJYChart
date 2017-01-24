@@ -1,10 +1,7 @@
 # XJYChart
 
 
-
-
-
-
+一个轻量级并且实用的图表框架
 
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG)
 
@@ -14,6 +11,10 @@
 
 ## 使用方法
 （引入了 Masonry）
+
+1. 把 XJYChart 拖入工程  
+2. #import "XJYChart.h"
+
 ### Linechart
 ```objectivec
 
