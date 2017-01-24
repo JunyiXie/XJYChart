@@ -13,7 +13,7 @@
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image2.PNG)
 
 ## 使用方法
-
+（引入了 Masonry）
 ### Linechart
 ```objectivec
 
