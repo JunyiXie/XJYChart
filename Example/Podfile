@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'RecordLife' do
+
+pod 'AFNetworking', '~> 3.0'
+pod 'MJExtension'
+pod "JazzHands"
+pod ‘ReactiveCocoa’,’~> 2.5’
+pod ‘MBProgressHUD’
+pod ’SDWebImage’
+pod ‘Masonry’
+pod ‘TPKeyboardAvoiding’
+pod ‘FlatUIKit’
+pod ‘MJRefresh’
+pod ‘TWMessageBarManager’
+pod ‘SSKeychain’
+pod 'JSPatchPlatform'
+
+end

@@ -76,3 +76,6 @@ self.barChart = barChart;
 [self addSubview:self.barChart];
 
 ```
+
+### Example 
+这是本人正在开源的一个生活统计类app 直接运行就可以看到XJYChart

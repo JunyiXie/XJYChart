@@ -1,0 +1,827 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F3DC7481E2E36B600C26D86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7471E2E36B600C26D86 /* main.m */; };
+		9F3DC74B1E2E36B600C26D86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC74A1E2E36B600C26D86 /* AppDelegate.m */; };
+		9F3DC74E1E2E36B600C26D86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC74D1E2E36B600C26D86 /* ViewController.m */; };
+		9F3DC7511E2E36B600C26D86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3DC74F1E2E36B600C26D86 /* Main.storyboard */; };
+		9F3DC7531E2E36B600C26D86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3DC7521E2E36B600C26D86 /* Assets.xcassets */; };
+		9F3DC7561E2E36B600C26D86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3DC7541E2E36B600C26D86 /* LaunchScreen.storyboard */; };
+		9F3DC7611E2E36B600C26D86 /* RecordLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7601E2E36B600C26D86 /* RecordLifeTests.m */; };
+		9F3DC76C1E2E36B600C26D86 /* RecordLifeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC76B1E2E36B600C26D86 /* RecordLifeUITests.m */; };
+		9F3DC78A1E2E492B00C26D86 /* XJYIPTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC77F1E2E492B00C26D86 /* XJYIPTools.m */; };
+		9F3DC78F1E2E492B00C26D86 /* XJYPopOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7871E2E492B00C26D86 /* XJYPopOption.m */; };
+		9F3DC7921E2E566500C26D86 /* XJYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7911E2E566500C26D86 /* XJYViewController.m */; };
+		9F3DC7951E2E569100C26D86 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7941E2E569100C26D86 /* HomeViewController.m */; };
+		9F3DC7981E2E56B700C26D86 /* HomeViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7971E2E56B700C26D86 /* HomeViewControllerViewModel.m */; };
+		9F3DC79B1E2E59DF00C26D86 /* XJYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC79A1E2E59DF00C26D86 /* XJYTableViewCell.m */; };
+		9F3DC79E1E2E5A2C00C26D86 /* HomeOneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC79D1E2E5A2C00C26D86 /* HomeOneTableViewCell.m */; };
+		9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */; };
+		9F3DC7A51E2E653800C26D86 /* XJYLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A41E2E653800C26D86 /* XJYLineChart.m */; };
+		9F3DC7A91E2E7C8C00C26D86 /* XJYChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A81E2E7C8C00C26D86 /* XJYChartView.m */; };
+		9F699F951E30A48C0024F9FA /* XJYCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F699F941E30A48C0024F9FA /* XJYCircleChart.m */; };
+		9FA7742E1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7742D1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m */; };
+		9FACB9051E2F68EA00CD5D05 /* XJYLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FACB9041E2F68EA00CD5D05 /* XJYLineChartView.m */; };
+		9FB578FA1E347A4F00339633 /* XJYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB578F91E347A4F00339633 /* XJYPieChart.m */; };
+		9FB578FD1E3495D800339633 /* XJYPieItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB578FC1E3495D800339633 /* XJYPieItem.m */; };
+		9FB579031E349C9200339633 /* HomeTwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB579021E349C9200339633 /* HomeTwoTableViewCell.m */; };
+		9FBB86E11E32348200AB6CA3 /* XJYPointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB86E01E32348200AB6CA3 /* XJYPointView.m */; };
+		9FBEEDE01E35D3E000DABF83 /* XJYBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEEDDF1E35D3E000DABF83 /* XJYBarChart.m */; };
+		9FBEEDE31E35D72D00DABF83 /* HomeThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEEDE21E35D72D00DABF83 /* HomeThreeTableViewCell.m */; };
+		9FBEEDE61E35E15500DABF83 /* XJYBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEEDE51E35E15500DABF83 /* XJYBarItem.m */; };
+		9FBEEDE91E360D1E00DABF83 /* XJYColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEEDE81E360D1E00DABF83 /* XJYColor.m */; };
+		F970B3AC4344FA51EEEECE0F /* libPods-RecordLife.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1506324E69DEAE7EED7CE76 /* libPods-RecordLife.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F3DC75D1E2E36B600C26D86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F3DC73B1E2E36B600C26D86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F3DC7421E2E36B600C26D86;
+			remoteInfo = RecordLife;
+		};
+		9F3DC7681E2E36B600C26D86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F3DC73B1E2E36B600C26D86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F3DC7421E2E36B600C26D86;
+			remoteInfo = RecordLife;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		268B4BE433119986366F9157 /* Pods-RecordLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.release.xcconfig"; sourceTree = "<group>"; };
+		37737D6A36A792975C04CD82 /* Pods-RecordLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.debug.xcconfig"; sourceTree = "<group>"; };
+		9F3DC7431E2E36B600C26D86 /* RecordLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F3DC7471E2E36B600C26D86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9F3DC7491E2E36B600C26D86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9F3DC74A1E2E36B600C26D86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9F3DC74C1E2E36B600C26D86 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9F3DC74D1E2E36B600C26D86 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9F3DC7501E2E36B600C26D86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F3DC7521E2E36B600C26D86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F3DC7551E2E36B600C26D86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9F3DC7571E2E36B600C26D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F3DC75C1E2E36B600C26D86 /* RecordLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecordLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F3DC7601E2E36B600C26D86 /* RecordLifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordLifeTests.m; sourceTree = "<group>"; };
+		9F3DC7621E2E36B600C26D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F3DC7671E2E36B600C26D86 /* RecordLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecordLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F3DC76B1E2E36B600C26D86 /* RecordLifeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordLifeUITests.m; sourceTree = "<group>"; };
+		9F3DC76D1E2E36B600C26D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F3DC7791E2E428200C26D86 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9F3DC77E1E2E492B00C26D86 /* XJYIPTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYIPTools.h; sourceTree = "<group>"; };
+		9F3DC77F1E2E492B00C26D86 /* XJYIPTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYIPTools.m; sourceTree = "<group>"; };
+		9F3DC7861E2E492B00C26D86 /* XJYPopOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYPopOption.h; sourceTree = "<group>"; };
+		9F3DC7871E2E492B00C26D86 /* XJYPopOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYPopOption.m; sourceTree = "<group>"; };
+		9F3DC7901E2E566500C26D86 /* XJYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYViewController.h; sourceTree = "<group>"; };
+		9F3DC7911E2E566500C26D86 /* XJYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYViewController.m; sourceTree = "<group>"; };
+		9F3DC7931E2E569100C26D86 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		9F3DC7941E2E569100C26D86 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		9F3DC7961E2E56B700C26D86 /* HomeViewControllerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewControllerViewModel.h; sourceTree = "<group>"; };
+		9F3DC7971E2E56B700C26D86 /* HomeViewControllerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewControllerViewModel.m; sourceTree = "<group>"; };
+		9F3DC7991E2E59DF00C26D86 /* XJYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYTableViewCell.h; sourceTree = "<group>"; };
+		9F3DC79A1E2E59DF00C26D86 /* XJYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYTableViewCell.m; sourceTree = "<group>"; };
+		9F3DC79C1E2E5A2C00C26D86 /* HomeOneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeOneTableViewCell.h; sourceTree = "<group>"; };
+		9F3DC79D1E2E5A2C00C26D86 /* HomeOneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeOneTableViewCell.m; sourceTree = "<group>"; };
+		9F3DC79F1E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeOneTableViewCellViewModel.h; sourceTree = "<group>"; };
+		9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeOneTableViewCellViewModel.m; sourceTree = "<group>"; };
+		9F3DC7A31E2E653800C26D86 /* XJYLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYLineChart.h; sourceTree = "<group>"; };
+		9F3DC7A41E2E653800C26D86 /* XJYLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYLineChart.m; sourceTree = "<group>"; };
+		9F3DC7A61E2E6F5400C26D86 /* XJYChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XJYChart.h; sourceTree = "<group>"; };
+		9F3DC7A71E2E7C8C00C26D86 /* XJYChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChartView.h; sourceTree = "<group>"; };
+		9F3DC7A81E2E7C8C00C26D86 /* XJYChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYChartView.m; sourceTree = "<group>"; };
+		9F699F931E30A48C0024F9FA /* XJYCircleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYCircleChart.h; sourceTree = "<group>"; };
+		9F699F941E30A48C0024F9FA /* XJYCircleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYCircleChart.m; sourceTree = "<group>"; };
+		9F8279881E34EFFA00558124 /* XJYChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChartDelegate.h; sourceTree = "<group>"; };
+		9FA7742C1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYAuxiliaryCalculationHelper.h; sourceTree = "<group>"; };
+		9FA7742D1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYAuxiliaryCalculationHelper.m; sourceTree = "<group>"; };
+		9FACB9031E2F68EA00CD5D05 /* XJYLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYLineChartView.h; sourceTree = "<group>"; };
+		9FACB9041E2F68EA00CD5D05 /* XJYLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYLineChartView.m; sourceTree = "<group>"; };
+		9FB578F81E347A4F00339633 /* XJYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYPieChart.h; sourceTree = "<group>"; };
+		9FB578F91E347A4F00339633 /* XJYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYPieChart.m; sourceTree = "<group>"; };
+		9FB578FB1E3495D800339633 /* XJYPieItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYPieItem.h; sourceTree = "<group>"; };
+		9FB578FC1E3495D800339633 /* XJYPieItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYPieItem.m; sourceTree = "<group>"; };
+		9FB579011E349C9200339633 /* HomeTwoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTwoTableViewCell.h; sourceTree = "<group>"; };
+		9FB579021E349C9200339633 /* HomeTwoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTwoTableViewCell.m; sourceTree = "<group>"; };
+		9FBB86DF1E32348200AB6CA3 /* XJYPointView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYPointView.h; sourceTree = "<group>"; };
+		9FBB86E01E32348200AB6CA3 /* XJYPointView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYPointView.m; sourceTree = "<group>"; };
+		9FBEEDDE1E35D3E000DABF83 /* XJYBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYBarChart.h; sourceTree = "<group>"; };
+		9FBEEDDF1E35D3E000DABF83 /* XJYBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYBarChart.m; sourceTree = "<group>"; };
+		9FBEEDE11E35D72D00DABF83 /* HomeThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeThreeTableViewCell.h; sourceTree = "<group>"; };
+		9FBEEDE21E35D72D00DABF83 /* HomeThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeThreeTableViewCell.m; sourceTree = "<group>"; };
+		9FBEEDE41E35E15500DABF83 /* XJYBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYBarItem.h; sourceTree = "<group>"; };
+		9FBEEDE51E35E15500DABF83 /* XJYBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYBarItem.m; sourceTree = "<group>"; };
+		9FBEEDE71E360D1E00DABF83 /* XJYColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYColor.h; sourceTree = "<group>"; };
+		9FBEEDE81E360D1E00DABF83 /* XJYColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYColor.m; sourceTree = "<group>"; };
+		E1506324E69DEAE7EED7CE76 /* libPods-RecordLife.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RecordLife.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F3DC7401E2E36B600C26D86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F970B3AC4344FA51EEEECE0F /* libPods-RecordLife.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3DC7591E2E36B600C26D86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3DC7641E2E36B600C26D86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		418BB01D6FA134C9D0D67B75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1506324E69DEAE7EED7CE76 /* libPods-RecordLife.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9ECE5A8FCF197E983022D694 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37737D6A36A792975C04CD82 /* Pods-RecordLife.debug.xcconfig */,
+				268B4BE433119986366F9157 /* Pods-RecordLife.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F3DC73A1E2E36B600C26D86 = {
+			isa = PBXGroup;
+			children = (
+				9F3DC7791E2E428200C26D86 /* PrefixHeader.pch */,
+				9F3DC7451E2E36B600C26D86 /* RecordLife */,
+				9F3DC75F1E2E36B600C26D86 /* RecordLifeTests */,
+				9F3DC76A1E2E36B600C26D86 /* RecordLifeUITests */,
+				9F3DC7441E2E36B600C26D86 /* Products */,
+				9ECE5A8FCF197E983022D694 /* Pods */,
+				418BB01D6FA134C9D0D67B75 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9F3DC7441E2E36B600C26D86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F3DC7431E2E36B600C26D86 /* RecordLife.app */,
+				9F3DC75C1E2E36B600C26D86 /* RecordLifeTests.xctest */,
+				9F3DC7671E2E36B600C26D86 /* RecordLifeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F3DC7451E2E36B600C26D86 /* RecordLife */ = {
+			isa = PBXGroup;
+			children = (
+				9F3DC77A1E2E492B00C26D86 /* Classes */,
+				9F3DC7491E2E36B600C26D86 /* AppDelegate.h */,
+				9F3DC74A1E2E36B600C26D86 /* AppDelegate.m */,
+				9F3DC74C1E2E36B600C26D86 /* ViewController.h */,
+				9F3DC74D1E2E36B600C26D86 /* ViewController.m */,
+				9F3DC74F1E2E36B600C26D86 /* Main.storyboard */,
+				9F3DC7521E2E36B600C26D86 /* Assets.xcassets */,
+				9F3DC7541E2E36B600C26D86 /* LaunchScreen.storyboard */,
+				9F3DC7571E2E36B600C26D86 /* Info.plist */,
+				9F3DC7461E2E36B600C26D86 /* Supporting Files */,
+			);
+			path = RecordLife;
+			sourceTree = "<group>";
+		};
+		9F3DC7461E2E36B600C26D86 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F3DC7471E2E36B600C26D86 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F3DC75F1E2E36B600C26D86 /* RecordLifeTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F3DC7601E2E36B600C26D86 /* RecordLifeTests.m */,
+				9F3DC7621E2E36B600C26D86 /* Info.plist */,
+			);
+			path = RecordLifeTests;
+			sourceTree = "<group>";
+		};
+		9F3DC76A1E2E36B600C26D86 /* RecordLifeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9F3DC76B1E2E36B600C26D86 /* RecordLifeUITests.m */,
+				9F3DC76D1E2E36B600C26D86 /* Info.plist */,
+			);
+			path = RecordLifeUITests;
+			sourceTree = "<group>";
+		};
+		9F3DC77A1E2E492B00C26D86 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9F3DC77C1E2E492B00C26D86 /* Vender */,
+				9F3DC77B1E2E492B00C26D86 /* Model */,
+				9F3DC7881E2E492B00C26D86 /* View */,
+				9F3DC7891E2E492B00C26D86 /* ViewModel */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9F3DC77B1E2E492B00C26D86 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9F3DC77C1E2E492B00C26D86 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				9FACB8E81E2F4C1600CD5D05 /* XJYRespondCocoa */,
+				9F3DC7A21E2E652700C26D86 /* XJYChart */,
+				9F3DC77D1E2E492B00C26D86 /* XJYHttpTools */,
+				9F3DC7851E2E492B00C26D86 /* XJYPopView */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		9F3DC77D1E2E492B00C26D86 /* XJYHttpTools */ = {
+			isa = PBXGroup;
+			children = (
+				9F3DC77E1E2E492B00C26D86 /* XJYIPTools.h */,
+				9F3DC77F1E2E492B00C26D86 /* XJYIPTools.m */,
+			);
+			path = XJYHttpTools;
+			sourceTree = "<group>";
+		};
+		9F3DC7851E2E492B00C26D86 /* XJYPopView */ = {
+			isa = PBXGroup;
+			children = (
+				9F3DC7861E2E492B00C26D86 /* XJYPopOption.h */,
+				9F3DC7871E2E492B00C26D86 /* XJYPopOption.m */,
+			);
+			path = XJYPopView;
+			sourceTree = "<group>";
+		};
+		9F3DC7881E2E492B00C26D86 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F3DC7991E2E59DF00C26D86 /* XJYTableViewCell.h */,
+				9F3DC79A1E2E59DF00C26D86 /* XJYTableViewCell.m */,
+				9F3DC7901E2E566500C26D86 /* XJYViewController.h */,
+				9F3DC7911E2E566500C26D86 /* XJYViewController.m */,
+				9F3DC7931E2E569100C26D86 /* HomeViewController.h */,
+				9F3DC7941E2E569100C26D86 /* HomeViewController.m */,
+				9F3DC79C1E2E5A2C00C26D86 /* HomeOneTableViewCell.h */,
+				9F3DC79D1E2E5A2C00C26D86 /* HomeOneTableViewCell.m */,
+				9FB579011E349C9200339633 /* HomeTwoTableViewCell.h */,
+				9FB579021E349C9200339633 /* HomeTwoTableViewCell.m */,
+				9FBEEDE11E35D72D00DABF83 /* HomeThreeTableViewCell.h */,
+				9FBEEDE21E35D72D00DABF83 /* HomeThreeTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F3DC7891E2E492B00C26D86 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9F3DC7961E2E56B700C26D86 /* HomeViewControllerViewModel.h */,
+				9F3DC7971E2E56B700C26D86 /* HomeViewControllerViewModel.m */,
+				9F3DC79F1E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.h */,
+				9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9F3DC7A21E2E652700C26D86 /* XJYChart */ = {
+			isa = PBXGroup;
+			children = (
+				9F3DC7A61E2E6F5400C26D86 /* XJYChart.h */,
+				9F8279881E34EFFA00558124 /* XJYChartDelegate.h */,
+				9FA7742C1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.h */,
+				9FA7742D1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m */,
+				9F3DC7A71E2E7C8C00C26D86 /* XJYChartView.h */,
+				9F3DC7A81E2E7C8C00C26D86 /* XJYChartView.m */,
+				9FBB86DF1E32348200AB6CA3 /* XJYPointView.h */,
+				9FBB86E01E32348200AB6CA3 /* XJYPointView.m */,
+				9F3DC7A31E2E653800C26D86 /* XJYLineChart.h */,
+				9F3DC7A41E2E653800C26D86 /* XJYLineChart.m */,
+				9FACB9031E2F68EA00CD5D05 /* XJYLineChartView.h */,
+				9FACB9041E2F68EA00CD5D05 /* XJYLineChartView.m */,
+				9F699F931E30A48C0024F9FA /* XJYCircleChart.h */,
+				9F699F941E30A48C0024F9FA /* XJYCircleChart.m */,
+				9FB578F81E347A4F00339633 /* XJYPieChart.h */,
+				9FB578F91E347A4F00339633 /* XJYPieChart.m */,
+				9FB578FB1E3495D800339633 /* XJYPieItem.h */,
+				9FB578FC1E3495D800339633 /* XJYPieItem.m */,
+				9FBEEDDE1E35D3E000DABF83 /* XJYBarChart.h */,
+				9FBEEDDF1E35D3E000DABF83 /* XJYBarChart.m */,
+				9FBEEDE41E35E15500DABF83 /* XJYBarItem.h */,
+				9FBEEDE51E35E15500DABF83 /* XJYBarItem.m */,
+				9FBEEDE71E360D1E00DABF83 /* XJYColor.h */,
+				9FBEEDE81E360D1E00DABF83 /* XJYColor.m */,
+			);
+			path = XJYChart;
+			sourceTree = "<group>";
+		};
+		9FACB8E81E2F4C1600CD5D05 /* XJYRespondCocoa */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = XJYRespondCocoa;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F3DC7421E2E36B600C26D86 /* RecordLife */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F3DC7701E2E36B600C26D86 /* Build configuration list for PBXNativeTarget "RecordLife" */;
+			buildPhases = (
+				58D2AC4287959262E5CFBB4B /* [CP] Check Pods Manifest.lock */,
+				9F3DC73F1E2E36B600C26D86 /* Sources */,
+				9F3DC7401E2E36B600C26D86 /* Frameworks */,
+				9F3DC7411E2E36B600C26D86 /* Resources */,
+				90E37BAFEB899BA0DC97063D /* [CP] Embed Pods Frameworks */,
+				D3C93186D3D6B7A5C4DC0712 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecordLife;
+			productName = RecordLife;
+			productReference = 9F3DC7431E2E36B600C26D86 /* RecordLife.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9F3DC75B1E2E36B600C26D86 /* RecordLifeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F3DC7731E2E36B600C26D86 /* Build configuration list for PBXNativeTarget "RecordLifeTests" */;
+			buildPhases = (
+				9F3DC7581E2E36B600C26D86 /* Sources */,
+				9F3DC7591E2E36B600C26D86 /* Frameworks */,
+				9F3DC75A1E2E36B600C26D86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F3DC75E1E2E36B600C26D86 /* PBXTargetDependency */,
+			);
+			name = RecordLifeTests;
+			productName = RecordLifeTests;
+			productReference = 9F3DC75C1E2E36B600C26D86 /* RecordLifeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9F3DC7661E2E36B600C26D86 /* RecordLifeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F3DC7761E2E36B600C26D86 /* Build configuration list for PBXNativeTarget "RecordLifeUITests" */;
+			buildPhases = (
+				9F3DC7631E2E36B600C26D86 /* Sources */,
+				9F3DC7641E2E36B600C26D86 /* Frameworks */,
+				9F3DC7651E2E36B600C26D86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F3DC7691E2E36B600C26D86 /* PBXTargetDependency */,
+			);
+			name = RecordLifeUITests;
+			productName = RecordLifeUITests;
+			productReference = 9F3DC7671E2E36B600C26D86 /* RecordLifeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F3DC73B1E2E36B600C26D86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "谢俊逸";
+				TargetAttributes = {
+					9F3DC7421E2E36B600C26D86 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = XNWYRFUG25;
+						ProvisioningStyle = Automatic;
+					};
+					9F3DC75B1E2E36B600C26D86 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = XNWYRFUG25;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9F3DC7421E2E36B600C26D86;
+					};
+					9F3DC7661E2E36B600C26D86 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = XNWYRFUG25;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9F3DC7421E2E36B600C26D86;
+					};
+				};
+			};
+			buildConfigurationList = 9F3DC73E1E2E36B600C26D86 /* Build configuration list for PBXProject "RecordLife" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F3DC73A1E2E36B600C26D86;
+			productRefGroup = 9F3DC7441E2E36B600C26D86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F3DC7421E2E36B600C26D86 /* RecordLife */,
+				9F3DC75B1E2E36B600C26D86 /* RecordLifeTests */,
+				9F3DC7661E2E36B600C26D86 /* RecordLifeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F3DC7411E2E36B600C26D86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3DC7561E2E36B600C26D86 /* LaunchScreen.storyboard in Resources */,
+				9F3DC7531E2E36B600C26D86 /* Assets.xcassets in Resources */,
+				9F3DC7511E2E36B600C26D86 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3DC75A1E2E36B600C26D86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3DC7651E2E36B600C26D86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58D2AC4287959262E5CFBB4B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		90E37BAFEB899BA0DC97063D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3C93186D3D6B7A5C4DC0712 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F3DC73F1E2E36B600C26D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3DC7921E2E566500C26D86 /* XJYViewController.m in Sources */,
+				9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */,
+				9F3DC78A1E2E492B00C26D86 /* XJYIPTools.m in Sources */,
+				9FACB9051E2F68EA00CD5D05 /* XJYLineChartView.m in Sources */,
+				9F3DC79B1E2E59DF00C26D86 /* XJYTableViewCell.m in Sources */,
+				9F3DC7A91E2E7C8C00C26D86 /* XJYChartView.m in Sources */,
+				9F3DC74E1E2E36B600C26D86 /* ViewController.m in Sources */,
+				9FBEEDE91E360D1E00DABF83 /* XJYColor.m in Sources */,
+				9FBEEDE61E35E15500DABF83 /* XJYBarItem.m in Sources */,
+				9FB578FD1E3495D800339633 /* XJYPieItem.m in Sources */,
+				9F3DC74B1E2E36B600C26D86 /* AppDelegate.m in Sources */,
+				9F3DC79E1E2E5A2C00C26D86 /* HomeOneTableViewCell.m in Sources */,
+				9F3DC7981E2E56B700C26D86 /* HomeViewControllerViewModel.m in Sources */,
+				9F699F951E30A48C0024F9FA /* XJYCircleChart.m in Sources */,
+				9FBEEDE01E35D3E000DABF83 /* XJYBarChart.m in Sources */,
+				9F3DC78F1E2E492B00C26D86 /* XJYPopOption.m in Sources */,
+				9F3DC7951E2E569100C26D86 /* HomeViewController.m in Sources */,
+				9FBB86E11E32348200AB6CA3 /* XJYPointView.m in Sources */,
+				9FA7742E1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m in Sources */,
+				9FBEEDE31E35D72D00DABF83 /* HomeThreeTableViewCell.m in Sources */,
+				9FB578FA1E347A4F00339633 /* XJYPieChart.m in Sources */,
+				9F3DC7A51E2E653800C26D86 /* XJYLineChart.m in Sources */,
+				9F3DC7481E2E36B600C26D86 /* main.m in Sources */,
+				9FB579031E349C9200339633 /* HomeTwoTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3DC7581E2E36B600C26D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3DC7611E2E36B600C26D86 /* RecordLifeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3DC7631E2E36B600C26D86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F3DC76C1E2E36B600C26D86 /* RecordLifeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F3DC75E1E2E36B600C26D86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F3DC7421E2E36B600C26D86 /* RecordLife */;
+			targetProxy = 9F3DC75D1E2E36B600C26D86 /* PBXContainerItemProxy */;
+		};
+		9F3DC7691E2E36B600C26D86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F3DC7421E2E36B600C26D86 /* RecordLife */;
+			targetProxy = 9F3DC7681E2E36B600C26D86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9F3DC74F1E2E36B600C26D86 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F3DC7501E2E36B600C26D86 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9F3DC7541E2E36B600C26D86 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F3DC7551E2E36B600C26D86 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9F3DC76E1E2E36B600C26D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F3DC76F1E2E36B600C26D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F3DC7711E2E36B600C26D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37737D6A36A792975C04CD82 /* Pods-RecordLife.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XNWYRFUG25;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
+				INFOPLIST_FILE = RecordLife/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.XJY..RecordLife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9F3DC7721E2E36B600C26D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 268B4BE433119986366F9157 /* Pods-RecordLife.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XNWYRFUG25;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
+				INFOPLIST_FILE = RecordLife/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.XJY..RecordLife;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9F3DC7741E2E36B600C26D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XNWYRFUG25;
+				INFOPLIST_FILE = RecordLifeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.XJY..RecordLifeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecordLife.app/RecordLife";
+			};
+			name = Debug;
+		};
+		9F3DC7751E2E36B600C26D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = XNWYRFUG25;
+				INFOPLIST_FILE = RecordLifeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.XJY..RecordLifeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecordLife.app/RecordLife";
+			};
+			name = Release;
+		};
+		9F3DC7771E2E36B600C26D86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = XNWYRFUG25;
+				INFOPLIST_FILE = RecordLifeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.XJY..RecordLifeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RecordLife;
+			};
+			name = Debug;
+		};
+		9F3DC7781E2E36B600C26D86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = XNWYRFUG25;
+				INFOPLIST_FILE = RecordLifeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.XJY..RecordLifeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RecordLife;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F3DC73E1E2E36B600C26D86 /* Build configuration list for PBXProject "RecordLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F3DC76E1E2E36B600C26D86 /* Debug */,
+				9F3DC76F1E2E36B600C26D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F3DC7701E2E36B600C26D86 /* Build configuration list for PBXNativeTarget "RecordLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F3DC7711E2E36B600C26D86 /* Debug */,
+				9F3DC7721E2E36B600C26D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F3DC7731E2E36B600C26D86 /* Build configuration list for PBXNativeTarget "RecordLifeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F3DC7741E2E36B600C26D86 /* Debug */,
+				9F3DC7751E2E36B600C26D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F3DC7761E2E36B600C26D86 /* Build configuration list for PBXNativeTarget "RecordLifeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F3DC7771E2E36B600C26D86 /* Debug */,
+				9F3DC7781E2E36B600C26D86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F3DC73B1E2E36B600C26D86 /* Project object */;
+}
