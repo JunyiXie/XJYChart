@@ -14,4 +14,5 @@
 #import "XJYPieItem.h"
 #import "XJYBarItem.h"
 #import "XJYChartDelegate.h"
+#import "XJYColor.h"
 #endif /* XJYChart_h */
