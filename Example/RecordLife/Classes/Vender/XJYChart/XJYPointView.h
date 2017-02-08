@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Masonry.h"
 
 typedef NS_ENUM(NSUInteger, XJYPointShapeType) {
     XJYPointShapeTypeCircular,

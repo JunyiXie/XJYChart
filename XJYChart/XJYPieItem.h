@@ -15,6 +15,14 @@
 @property (nonatomic, strong) NSString *dataDescribe;
 
 
+/**
+ 设置数据item
+
+ @param dataNumber (NSNumber *)dataNumber
+ @param color (UIColor *)color
+ @param dataDescribe (NSString *)dataDescribe
+ @return instancetype
+ */
 - (instancetype)initWithDataNumber:(NSNumber *)dataNumber color:(UIColor *)color dataDescribe:(NSString *)dataDescribe;
 
 @end

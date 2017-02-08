@@ -137,7 +137,7 @@
     
     [fillRectArray enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CGRect fillRect = obj.CGRectValue;
-        CAShapeLayer *fillRectShapeLayer = [self rectShapeLayerWithBounds:fillRect fillColor:[UIColor colorWithRed:95/255.0 green:212/255.0 blue:140/255.0 alpha:1]];
+        CAShapeLayer *fillRectShapeLayer = [self rectShapeLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color];
 
         //
         [self.barChartView.layer addSublayer:fillRectShapeLayer];

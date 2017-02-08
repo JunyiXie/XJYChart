@@ -92,7 +92,7 @@
     }];
     
     //绘制基础饼
-    self.pieLayer = [self newCircleLayerWithRadius:((self.outerRadius-self.innerRadius)/2 + self.innerRadius) borderWidth:(self.outerRadius - self.innerRadius) fillColor:[UIColor greenSeaColor] borderColor:[UIColor greenColor] startPercentage:0 endPercentage:1];
+    self.pieLayer = [self newCircleLayerWithRadius:((self.outerRadius-self.innerRadius)/2 + self.innerRadius) borderWidth:(self.outerRadius - self.innerRadius) fillColor:[UIColor greenColor] borderColor:[UIColor greenColor] startPercentage:0 endPercentage:1];
     [self.contentView.layer addSublayer:_pieLayer];
     
     //计算开始点

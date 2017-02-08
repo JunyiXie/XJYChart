@@ -19,6 +19,8 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        
+        
         self.pieChartView = [[XJYPieChart alloc] init];
         NSMutableArray *pieItems = [[NSMutableArray alloc] init];
         NSArray *colorArray = @[XJYRed,XJYGreen,XJYBrown,XJYBlue];
@@ -31,8 +33,10 @@
         [pieItems addObject:item3];
         XJYPieItem *item4 = [[XJYPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:52] color:colorArray[3] dataDescribe:dataArray[3]];
         [pieItems addObject:item4];
-
+        
+        //设置dataItemArray 
         self.pieChartView.dataItemArray = pieItems;
+        
         [self.contentView addSubview:self.pieChartView];
     }
     

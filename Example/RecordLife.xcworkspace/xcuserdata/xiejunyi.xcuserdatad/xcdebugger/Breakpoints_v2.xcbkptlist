@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecordLife/Classes/View/HomeOneTableViewCell.m"
-            timestampString = "506764822.904931"
+            timestampString = "508267014.005697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "-updateConstraints"
             landmarkType = "7">
             <Locations>

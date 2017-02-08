@@ -21,19 +21,27 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         XJYBarChart *barChart = [[XJYBarChart alloc] init];
+        
+        //纵坐标最高值
         barChart.top = @60;
+        //纵坐标最低值
         barChart.bottom = @0;
+        
+        
         NSMutableArray *itemArray = [[NSMutableArray alloc] init];
         XJYBarItem *item1 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
         [itemArray addObject:item1];
         XJYBarItem *item2 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
         [itemArray addObject:item2];
-        XJYBarItem *item3 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor greenColor] dataDescribe:@"Win8"];
+        XJYBarItem *item3 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
         [itemArray addObject:item3];
         XJYBarItem *item4 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
         [itemArray addObject:item4];
         XJYBarItem *item5 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
         [itemArray addObject:item5];
+        
+        
+        //设置dataItemArray
         barChart.dataItemArray = itemArray;
         
         self.barChart = barChart;
