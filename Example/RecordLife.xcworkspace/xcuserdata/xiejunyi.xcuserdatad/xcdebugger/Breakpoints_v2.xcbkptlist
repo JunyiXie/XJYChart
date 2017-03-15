@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecordLife/Classes/Vender/XJYChart/XJYBarChart.m"
-            timestampString = "506863825.810198"
+            timestampString = "511274214.088671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "-setupsOrdinateAbscissalLabels"
             landmarkType = "7">
             <Locations>
@@ -180,61 +180,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecordLife/Classes/Vender/XJYChart/XJYBarChart.m"
-            timestampString = "506863825.810198"
+            timestampString = "511274214.088671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
             landmarkName = "-setupsOrdinateAbscissalLabels"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RecordLife/Classes/Vender/XJYChart/XJYBarChart.m"
-            timestampString = "506860582.812612"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "-strokeChart"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[XJYBarChart strokeChart]"
-                  moduleName = "RecordLife"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xiejunyi/Library/Mobile%20Documents/com~apple~CloudDocs/git%E6%89%98%E7%AE%A1%E6%96%87%E4%BB%B6%E5%A4%B9/RecordLife/RecordLife/Classes/Vender/XJYChart/XJYBarChart.m"
-                  timestampString = "506854280.595992"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "880">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__26-[XJYBarChart strokeChart]_block_invoke.87"
-                  moduleName = "RecordLife"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/xiejunyi/Library/Mobile%20Documents/com~apple~CloudDocs/git%E6%89%98%E7%AE%A1%E6%96%87%E4%BB%B6%E5%A4%B9/RecordLife/RecordLife/Classes/Vender/XJYChart/XJYBarChart.m"
-                  timestampString = "506854280.59809"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "108"
-                  endingLineNumber = "108"
-                  offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

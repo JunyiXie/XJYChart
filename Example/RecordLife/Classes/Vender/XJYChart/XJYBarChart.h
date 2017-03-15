@@ -15,6 +15,17 @@
 
 @interface XJYBarChart : UIView
 
+/**
+ 初始化方法
+
+ @param frame frame
+ @param dataItemArray items
+ @param topNumbser top
+ @param bottomNumber buttom
+ @return instancetype
+ */
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
+
 
 
 /**

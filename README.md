@@ -7,7 +7,10 @@
 
 
 
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image2.PNG)
+
+## Update 
+📊发生了变化 目前先固定颜色
+目前正在迭代升级 所以暂时删除XJYChart 如果想要试用，可以从Example中拉取
 
 ## 使用方法
 （引入了 Masonry）
@@ -56,26 +59,32 @@ self.pieChartView.dataItemArray = pieItems;
 
 ```objectivec
 
-XJYBarChart *barChart = [[XJYBarChart alloc] init];
-barChart.top = @60;
-barChart.bottom = @0;
 NSMutableArray *itemArray = [[NSMutableArray alloc] init];
 XJYBarItem *item1 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
 [itemArray addObject:item1];
 XJYBarItem *item2 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
 [itemArray addObject:item2];
-XJYBarItem *item3 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor greenColor] dataDescribe:@"Win8"];
+XJYBarItem *item3 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
 [itemArray addObject:item3];
 XJYBarItem *item4 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
 [itemArray addObject:item4];
 XJYBarItem *item5 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
 [itemArray addObject:item5];
-barChart.dataItemArray = itemArray;
 
-self.barChart = barChart;
-[self addSubview:self.barChart];
+XJYBarItem *item6 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+[itemArray addObject:item6];
+XJYBarItem *item7 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+[itemArray addObject:item7];
+XJYBarItem *item8 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+[itemArray addObject:item8];
+XJYBarItem *item9 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
+[itemArray addObject:item9];
+XJYBarItem *item10 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
+[itemArray addObject:item10];
+
+self.barChart = [[XJYBarChart alloc] initWithFrame:CGRectZero dataItemArray:itemArray topNumber:@60 bottomNumber:@0];
 
 ```
 
 ### Example 
-这是本人正在开源的一个生活统计类app 直接运行就可以看到XJYChart
+直接运行就可以看到XJYChart

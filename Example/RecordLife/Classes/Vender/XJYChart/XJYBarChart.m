@@ -9,6 +9,17 @@
 #import "XJYBarChart.h"
 #import "XJYAuxiliaryCalculationHelper.h"
 
+
+#define BarBackgroundFillColor [UIColor colorWithRed:232/255.0 green:232/255.0 blue:232/255.0 alpha:1]
+
+#define GradientFillColor1 [UIColor colorWithRed:117/255.0 green:184/255.0 blue:245/255.0 alpha:1].CGColor
+#define GradientFillColor2 [UIColor colorWithRed:24/255.0 green:141/255.0 blue:240/255.0 alpha:1].CGColor
+
+
+//每个条和间隔的宽度
+#define PartWidth 50.0
+
+
 @interface XJYBarChart ()<CAAnimationDelegate>
 
 @property (nonatomic, strong) NSMutableArray<UILabel *> *abscissaLabelArray;
@@ -29,6 +40,42 @@
 @end
 
 @implementation XJYBarChart
+
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber {
+    if (self = [super initWithFrame:frame]) {
+        
+        
+        self.backgroundColor = [UIColor whiteColor];
+        
+        self.dataItemArray = [[NSMutableArray alloc] init];
+        self.colorArray = [[NSMutableArray alloc] init];
+        self.dataNumberArray = [[NSMutableArray alloc] init];
+        self.dataDescribeArray = [[NSMutableArray alloc] init];
+        self.ordinateLabelArray = [[NSMutableArray alloc] init];
+        self.abscissaLabelArray = [[NSMutableArray alloc] init];
+        self.ordinateDataArray = [[NSMutableArray alloc] init];
+        
+        self.dataItemArray = dataItemArray;
+        self.top = topNumbser;
+        self.bottom = bottomNumber;
+        
+        
+        self.ordinateView = [[UIView alloc] init];
+        //        self.ordinateView.backgroundColor = [UIColor greenColor];
+        [self addSubview:self.ordinateView];
+        
+        self.abscissalView = [[UIView alloc] init];
+        //        self.abscissalView.backgroundColor = [UIColor yellowColor];
+        [self addSubview:self.abscissalView];
+        
+        self.barChartView = [[UIView alloc] init];
+        //        self.barChartView.backgroundColor = [UIColor blueColor];
+        [self addSubview:self.barChartView];
+        
+    }
+    
+    return self;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -114,7 +161,7 @@
     //根据rect 绘制背景条
     [rectArray enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CGRect rect = obj.CGRectValue;
-        CAShapeLayer *rectShapeLayer = [self rectShapeLayerWithBounds:rect fillColor:[UIColor lightGrayColor]];
+        CAShapeLayer *rectShapeLayer = [self rectShapeLayerWithBounds:rect fillColor:BarBackgroundFillColor];
         [self.barChartView.layer addSublayer:rectShapeLayer];
     }];
     
@@ -137,11 +184,12 @@
     
     [fillRectArray enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CGRect fillRect = obj.CGRectValue;
-        CAShapeLayer *fillRectShapeLayer = [self rectShapeLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color];
+//        CAShapeLayer *fillRectShapeLayer = [self rectShapeLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color];
 
+        CAGradientLayer *fillRectGradientLayer = [self rectGradientLayerWithBounds:fillRect];
         //
-        [self.barChartView.layer addSublayer:fillRectShapeLayer];
-        [fillShapeLayerArray addObject:fillRectShapeLayer];
+        [self.barChartView.layer addSublayer:fillRectGradientLayer];
+        [fillShapeLayerArray addObject:fillRectGradientLayer];
     }];
 
 #pragma mark Animation
@@ -308,13 +356,16 @@
  @return CGPoint
  */
 - (CGPoint)calculatePointWithNumber:(NSNumber *)number idx:(NSUInteger)idx numberArray:(NSMutableArray *)numberArray bounds:(CGRect)bounds {
-    CGFloat percentageH =[[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:number.doubleValue];
-    CGFloat percentageW = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:(idx) count:numberArray.count];
-    CGFloat pointY = percentageH * bounds.size.height;
-    CGFloat pointX = percentageW * bounds.size.width;
     
-    CGPoint point = CGPointMake(pointX, pointY);
-    return point;
+        CGFloat percentageH =[[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:number.doubleValue];
+        CGFloat percentageW = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:(idx) count:numberArray.count];
+        CGFloat pointY = percentageH * bounds.size.height;
+        CGFloat pointX = percentageW * bounds.size.width;
+        
+        CGPoint point = CGPointMake(pointX, pointY);
+        return point;
+
+
 }
 
 
@@ -331,5 +382,30 @@
     rectLayer.path        = path.CGPath;
 //    rectLayer.shouldRasterize = YES;
     return rectLayer;
+}
+
+- (CAGradientLayer *)rectGradientLayerWithBounds:(CGRect)rect {
+    //颜色渐变层
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = rect;
+    gradientLayer.colors = @[(__bridge id)GradientFillColor1,(__bridge id)GradientFillColor2];
+    
+    gradientLayer.startPoint = CGPointMake(0.5, 0);
+    gradientLayer.endPoint = CGPointMake(0.5, 1);
+    return gradientLayer;
+
+}
+
+
+- (CGSize)computeSrollViewCententSizeFromItemArray:(NSMutableArray<XJYBarItem *> *)itemArray {
+    
+    if (itemArray.count <= 10) {
+        return CGSizeMake(self.frame.size.width, self.frame.size.height);
+    } else {
+        CGFloat width = PartWidth * itemArray.count;
+        CGFloat height = self.frame.size.height;
+        return CGSizeMake(width, height);
+    }
+    
 }
 @end
