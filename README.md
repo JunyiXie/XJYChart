@@ -12,7 +12,39 @@
 📊发生了变化 目前先固定颜色
 目前正在迭代升级 所以暂时删除XJYChart 如果想要试用，可以从Example中拉取
 
-### 1.1 添加了可滑动的条形图
+### Update 1.1 添加了可滑动的条形图
+
+
+### SLide XXBarChart
+```objectivec
+NSMutableArray *itemArray = [[NSMutableArray alloc] init];
+XJYBarItem *item1 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+[itemArray addObject:item1];
+XJYBarItem *item2 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+[itemArray addObject:item2];
+XJYBarItem *item3 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+[itemArray addObject:item3];
+XJYBarItem *item4 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
+[itemArray addObject:item4];
+XJYBarItem *item5 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
+[itemArray addObject:item5];
+
+XJYBarItem *item6 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+[itemArray addObject:item6];
+XJYBarItem *item7 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+[itemArray addObject:item7];
+XJYBarItem *item8 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+[itemArray addObject:item8];
+XJYBarItem *item9 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
+[itemArray addObject:item9];
+XJYBarItem *item10 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
+[itemArray addObject:item10];
+
+XXBarChart *barChart = [[XXBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@0];
+
+[self.contentView addSubview:barChart];
+
+```
 
 ## 使用方法
 （引入了 Masonry）
