@@ -59,7 +59,8 @@
         self.top = topNumbser;
         self.bottom = bottomNumber;
         
-        
+//        [self setContentView];
+
         self.ordinateView = [[UIView alloc] init];
         //        self.ordinateView.backgroundColor = [UIColor greenColor];
         [self addSubview:self.ordinateView];
@@ -91,19 +92,18 @@
         
         self.ordinateDataArray = [[NSMutableArray alloc] init];
         
-        
-        self.ordinateView = [[UIView alloc] init];
-//        self.ordinateView.backgroundColor = [UIColor greenColor];
-        [self addSubview:self.ordinateView];
-        
-        self.abscissalView = [[UIView alloc] init];
-//        self.abscissalView.backgroundColor = [UIColor yellowColor];
-        [self addSubview:self.abscissalView];
-        
-        self.barChartView = [[UIView alloc] init];
-//        self.barChartView.backgroundColor = [UIColor blueColor];
-        [self addSubview:self.barChartView];
-        
+//        self.ordinateView = [[UIView alloc] init];
+////        self.ordinateView.backgroundColor = [UIColor greenColor];
+//        [self addSubview:self.ordinateView];
+//        
+//        self.abscissalView = [[UIView alloc] init];
+////        self.abscissalView.backgroundColor = [UIColor yellowColor];
+//        [self addSubview:self.abscissalView];
+//        
+//        self.barChartView = [[UIView alloc] init];
+////        self.barChartView.backgroundColor = [UIColor blueColor];
+//        [self addSubview:self.barChartView];
+//        
 
     }
     return self;
@@ -397,15 +397,8 @@
 }
 
 
-- (CGSize)computeSrollViewCententSizeFromItemArray:(NSMutableArray<XJYBarItem *> *)itemArray {
-    
-    if (itemArray.count <= 10) {
-        return CGSizeMake(self.frame.size.width, self.frame.size.height);
-    } else {
-        CGFloat width = PartWidth * itemArray.count;
-        CGFloat height = self.frame.size.height;
-        return CGSizeMake(width, height);
-    }
-    
-}
+#pragma mark Update 1.1 可滚动的bar
+
+
+
 @end

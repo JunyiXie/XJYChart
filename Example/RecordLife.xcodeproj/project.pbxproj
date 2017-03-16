@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F34C0F21E7A9AFC00B073F7 /* XXBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F34C0F11E7A9AFC00B073F7 /* XXBarChart.m */; };
+		9F34C0F51E7A9F1400B073F7 /* OrdinateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F34C0F41E7A9F1400B073F7 /* OrdinateView.m */; };
+		9F34C0F81E7AA8CE00B073F7 /* AbscissaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F34C0F71E7AA8CE00B073F7 /* AbscissaView.m */; };
+		9F34C0FB1E7AB70300B073F7 /* XBarContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F34C0FA1E7AB70300B073F7 /* XBarContainerView.m */; };
+		9F3B2A131E7974AF000FB7DB /* XBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B2A121E7974AF000FB7DB /* XBarChartView.m */; };
+		9F3B2A161E797580000FB7DB /* HomeFourTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B2A151E797580000FB7DB /* HomeFourTableViewCell.m */; };
 		9F3DC7481E2E36B600C26D86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7471E2E36B600C26D86 /* main.m */; };
 		9F3DC74B1E2E36B600C26D86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC74A1E2E36B600C26D86 /* AppDelegate.m */; };
 		9F3DC74E1E2E36B600C26D86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC74D1E2E36B600C26D86 /* ViewController.m */; };
@@ -59,6 +65,18 @@
 /* Begin PBXFileReference section */
 		268B4BE433119986366F9157 /* Pods-RecordLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.release.xcconfig"; sourceTree = "<group>"; };
 		37737D6A36A792975C04CD82 /* Pods-RecordLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.debug.xcconfig"; sourceTree = "<group>"; };
+		9F34C0F01E7A9AFC00B073F7 /* XXBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBarChart.h; sourceTree = "<group>"; };
+		9F34C0F11E7A9AFC00B073F7 /* XXBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBarChart.m; sourceTree = "<group>"; };
+		9F34C0F31E7A9F1400B073F7 /* OrdinateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdinateView.h; sourceTree = "<group>"; };
+		9F34C0F41E7A9F1400B073F7 /* OrdinateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdinateView.m; sourceTree = "<group>"; };
+		9F34C0F61E7AA8CE00B073F7 /* AbscissaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbscissaView.h; sourceTree = "<group>"; };
+		9F34C0F71E7AA8CE00B073F7 /* AbscissaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbscissaView.m; sourceTree = "<group>"; };
+		9F34C0F91E7AB70300B073F7 /* XBarContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarContainerView.h; sourceTree = "<group>"; };
+		9F34C0FA1E7AB70300B073F7 /* XBarContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarContainerView.m; sourceTree = "<group>"; };
+		9F3B2A111E7974AF000FB7DB /* XBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarChartView.h; sourceTree = "<group>"; };
+		9F3B2A121E7974AF000FB7DB /* XBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarChartView.m; sourceTree = "<group>"; };
+		9F3B2A141E797580000FB7DB /* HomeFourTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFourTableViewCell.h; sourceTree = "<group>"; };
+		9F3B2A151E797580000FB7DB /* HomeFourTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFourTableViewCell.m; sourceTree = "<group>"; };
 		9F3DC7431E2E36B600C26D86 /* RecordLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3DC7471E2E36B600C26D86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F3DC7491E2E36B600C26D86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -294,6 +312,8 @@
 				9FB579021E349C9200339633 /* HomeTwoTableViewCell.m */,
 				9FBEEDE11E35D72D00DABF83 /* HomeThreeTableViewCell.h */,
 				9FBEEDE21E35D72D00DABF83 /* HomeThreeTableViewCell.m */,
+				9F3B2A141E797580000FB7DB /* HomeFourTableViewCell.h */,
+				9F3B2A151E797580000FB7DB /* HomeFourTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,6 +356,16 @@
 				9FBEEDE51E35E15500DABF83 /* XJYBarItem.m */,
 				9FBEEDE71E360D1E00DABF83 /* XJYColor.h */,
 				9FBEEDE81E360D1E00DABF83 /* XJYColor.m */,
+				9F34C0F01E7A9AFC00B073F7 /* XXBarChart.h */,
+				9F34C0F11E7A9AFC00B073F7 /* XXBarChart.m */,
+				9F3B2A111E7974AF000FB7DB /* XBarChartView.h */,
+				9F3B2A121E7974AF000FB7DB /* XBarChartView.m */,
+				9F34C0F91E7AB70300B073F7 /* XBarContainerView.h */,
+				9F34C0FA1E7AB70300B073F7 /* XBarContainerView.m */,
+				9F34C0F31E7A9F1400B073F7 /* OrdinateView.h */,
+				9F34C0F41E7A9F1400B073F7 /* OrdinateView.m */,
+				9F34C0F61E7AA8CE00B073F7 /* AbscissaView.h */,
+				9F34C0F71E7AA8CE00B073F7 /* AbscissaView.m */,
 			);
 			path = XJYChart;
 			sourceTree = "<group>";
@@ -536,11 +566,15 @@
 			files = (
 				9F3DC7921E2E566500C26D86 /* XJYViewController.m in Sources */,
 				9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */,
+				9F34C0F21E7A9AFC00B073F7 /* XXBarChart.m in Sources */,
 				9F3DC78A1E2E492B00C26D86 /* XJYIPTools.m in Sources */,
 				9FACB9051E2F68EA00CD5D05 /* XJYLineChartView.m in Sources */,
+				9F34C0FB1E7AB70300B073F7 /* XBarContainerView.m in Sources */,
+				9F3B2A131E7974AF000FB7DB /* XBarChartView.m in Sources */,
 				9F3DC79B1E2E59DF00C26D86 /* XJYTableViewCell.m in Sources */,
 				9F3DC7A91E2E7C8C00C26D86 /* XJYChartView.m in Sources */,
 				9F3DC74E1E2E36B600C26D86 /* ViewController.m in Sources */,
+				9F3B2A161E797580000FB7DB /* HomeFourTableViewCell.m in Sources */,
 				9FBEEDE91E360D1E00DABF83 /* XJYColor.m in Sources */,
 				9FBEEDE61E35E15500DABF83 /* XJYBarItem.m in Sources */,
 				9FB578FD1E3495D800339633 /* XJYPieItem.m in Sources */,
@@ -548,11 +582,13 @@
 				9F3DC79E1E2E5A2C00C26D86 /* HomeOneTableViewCell.m in Sources */,
 				9F3DC7981E2E56B700C26D86 /* HomeViewControllerViewModel.m in Sources */,
 				9F699F951E30A48C0024F9FA /* XJYCircleChart.m in Sources */,
+				9F34C0F81E7AA8CE00B073F7 /* AbscissaView.m in Sources */,
 				9FBEEDE01E35D3E000DABF83 /* XJYBarChart.m in Sources */,
 				9F3DC78F1E2E492B00C26D86 /* XJYPopOption.m in Sources */,
 				9F3DC7951E2E569100C26D86 /* HomeViewController.m in Sources */,
 				9FBB86E11E32348200AB6CA3 /* XJYPointView.m in Sources */,
 				9FA7742E1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m in Sources */,
+				9F34C0F51E7A9F1400B073F7 /* OrdinateView.m in Sources */,
 				9FBEEDE31E35D72D00DABF83 /* HomeThreeTableViewCell.m in Sources */,
 				9FB578FA1E347A4F00339633 /* XJYPieChart.m in Sources */,
 				9F3DC7A51E2E653800C26D86 /* XJYLineChart.m in Sources */,

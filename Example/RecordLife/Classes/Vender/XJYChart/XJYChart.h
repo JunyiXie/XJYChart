@@ -15,4 +15,6 @@
 #import "XJYBarItem.h"
 #import "XJYChartDelegate.h"
 #import "XJYColor.h"
+#import "XBarChartView.h"
+#import "XXBarChart.h"
 #endif /* XJYChart_h */
