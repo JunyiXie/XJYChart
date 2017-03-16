@@ -3,7 +3,7 @@
 
 一个轻量级并且实用的图表框架
 
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG) ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image2.PNG)
 
 
 
@@ -11,6 +11,8 @@
 ## Update 
 📊发生了变化 目前先固定颜色
 目前正在迭代升级 所以暂时删除XJYChart 如果想要试用，可以从Example中拉取
+
+### 1.1 添加了可滑动的条形图
 
 ## 使用方法
 （引入了 Masonry）
