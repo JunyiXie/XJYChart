@@ -7,23 +7,62 @@
 //
 
 #import "AbscissaView.h"
+#import "XJYChart.h"
 
 @interface AbscissaView ()
 
 @property (nonatomic, strong) NSMutableArray<UILabel *> *labelArray;
 
+@property (nonatomic, strong) NSMutableArray *dataDescribeArray;
+
+@property (nonatomic, strong) NSMutableArray<XJYBarItem *> *dataItemArray;
+
+
 @end
 
 @implementation AbscissaView
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
+
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray {
+    if (self = [self initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
+        self.dataDescribeArray = [NSMutableArray new];
+        self.labelArray = [NSMutableArray new];
+        
+        self.dataItemArray = dataItemArray;
+        
+        [self dealData];
+        [self setupUI];
+        
     }
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+    }
+    return self;
+}
+
+- (void)dealData {
+    [self.dataItemArray enumerateObjectsUsingBlock:^(XJYBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.dataDescribeArray addObject:obj.dataDescribe];
+    }];
+}
+
 - (void)setupUI {
+    CGFloat labelWidth = self.frame.size.width / self.dataDescribeArray.count;
+    CGFloat intervalWidth = labelWidth/4;
+    for (int i = 0; i < self.dataDescribeArray.count; i++) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(labelWidth * i + intervalWidth, 0, labelWidth - 2*intervalWidth, self.frame.size.height)];
+        label.text = self.dataDescribeArray[i];
+//        label.backgroundColor = [[XJYColor shareXJYColor] randomColorInColorArray];
+//        label.adjustsFontSizeToFitWidth = YES;
+        label.font = [UIFont fontWithName:@"Helvetica Neue" size:8];
+        label.numberOfLines = 0;
+        label.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:label];
+    }
     
 }
 

@@ -13,14 +13,15 @@
 #import "XJYAuxiliaryCalculationHelper.h"
 #import "XBarContainerView.h"
 
-#define PartWidth 50.0
+
 #define AbscissaHeight 30
+
+#define PartWidth 50.0
 #define BarBackgroundFillColor [UIColor colorWithRed:232/255.0 green:232/255.0 blue:232/255.0 alpha:1]
 @interface XBarChartView()
 
 @property (nonatomic, strong) XBarContainerView *barContainerView;
 
-@property (nonatomic, strong) AbscissaView *abscissaView;
 
 @property (nonatomic, strong) NSMutableArray<UIColor *> *colorArray;
 
@@ -29,6 +30,8 @@
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *dataNumberArray;
 
 @property (nonatomic, assign) BOOL needScroll;
+
+@property (nonatomic, strong) AbscissaView *abscissaView;
 
 @end
 
@@ -46,8 +49,9 @@
         
         self.backgroundColor = [UIColor whiteColor];
         self.contentSize = [self computeSrollViewCententSizeFromItemArray:self.dataItemArray];
-        [self addSubview:self.abscissaView];
         [self addSubview:self.barContainerView];
+        [self addSubview:self.abscissaView];
+
     }
     return self;
 }
@@ -82,7 +86,7 @@
 #pragma mark Get
 - (AbscissaView *)abscissaView {
     if (!_abscissaView) {
-        _abscissaView = [[AbscissaView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - AbscissaHeight, self.contentSize.width, AbscissaHeight)];
+        _abscissaView = [[AbscissaView alloc] initWithFrame:CGRectMake(0, self.frame.size.height - AbscissaHeight, self.contentSize.width, AbscissaHeight) dataItemArray:self.dataItemArray];
         _abscissaView.backgroundColor = [UIColor whiteColor];
     }
     return _abscissaView;

@@ -8,7 +8,8 @@
 
 #import "XBarContainerView.h"
 #import "XJYAuxiliaryCalculationHelper.h"
-
+#import "AbscissaView.h"
+#import "XJYColor.h"
 
 #define GradientFillColor1 [UIColor colorWithRed:117/255.0 green:184/255.0 blue:245/255.0 alpha:1].CGColor
 #define GradientFillColor2 [UIColor colorWithRed:24/255.0 green:141/255.0 blue:240/255.0 alpha:1].CGColor
@@ -37,6 +38,8 @@
         self.dataItemArray = dataItemArray;
         self.top = topNumbser;
         self.bottom = bottomNumber;
+        
+
     }
     return self;
 
@@ -120,6 +123,12 @@
     }];
     
 }
+
+
+#pragma mark Get
+
+
+
 #pragma mark HelpMethods
 - (CAShapeLayer *)rectShapeLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor {
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:rect];

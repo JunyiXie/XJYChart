@@ -8,7 +8,7 @@
 
 #import "XJYBarChart.h"
 #import "XJYAuxiliaryCalculationHelper.h"
-
+#import "XJYColor.h"
 
 #define BarBackgroundFillColor [UIColor colorWithRed:232/255.0 green:232/255.0 blue:232/255.0 alpha:1]
 
@@ -185,11 +185,13 @@
     [fillRectArray enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CGRect fillRect = obj.CGRectValue;
 //        CAShapeLayer *fillRectShapeLayer = [self rectShapeLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color];
+        CAShapeLayer *fillRectShapeLayer = [self rectShapeLayerWithBounds:fillRect fillColor:[[XJYColor shareXJYColor] randomColorInColorArray]];
 
-        CAGradientLayer *fillRectGradientLayer = [self rectGradientLayerWithBounds:fillRect];
+
+//        CAGradientLayer *fillRectGradientLayer = [self rectGradientLayerWithBounds:fillRect];
         //
-        [self.barChartView.layer addSublayer:fillRectGradientLayer];
-        [fillShapeLayerArray addObject:fillRectGradientLayer];
+        [self.barChartView.layer addSublayer:fillRectShapeLayer];
+        [fillShapeLayerArray addObject:fillRectShapeLayer];
     }];
 
 #pragma mark Animation
@@ -262,7 +264,7 @@
         label.text = text;
 //        label.backgroundColor=[UIColor redColor];
         label.textColor = UIColorFromRGBHex(0x333333);
-        label.font = [UIFont systemFontOfSize:12];
+        label.adjustsFontSizeToFitWidth = YES;
         [_ordinateLabelArray addObject:label];
         [_ordinateView addSubview:label];
     }
@@ -281,7 +283,7 @@
         label.text = text;
 //        label.backgroundColor=[UIColor redColor];
         label.textColor = UIColorFromRGBHex(0x333333);
-        label.font = [UIFont systemFontOfSize:12];
+        label.adjustsFontSizeToFitWidth = YES;
         [_abscissaLabelArray addObject:label];
         [_abscissalView addSubview:label];
     }];

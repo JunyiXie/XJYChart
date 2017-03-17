@@ -11,6 +11,7 @@
 #import "OrdinateView.h"
 
 #define OrdinateWidth 30
+#define BarChartViewTopInterval 10
 
 
 @interface XXBarChart ()
@@ -48,7 +49,7 @@
 
 - (XBarChartView *)barChartView {
     if (!_barChartView) {
-        _barChartView = [[XBarChartView alloc] initWithFrame:CGRectMake(OrdinateWidth, 0, self.frame.size.width - OrdinateWidth, self.frame.size.height) dataItemArray:self.dataItemArray topNumber:@60 bottomNumber:@0];
+        _barChartView = [[XBarChartView alloc] initWithFrame:CGRectMake(OrdinateWidth, BarChartViewTopInterval, self.frame.size.width - OrdinateWidth, self.frame.size.height - BarChartViewTopInterval) dataItemArray:self.dataItemArray topNumber:@60 bottomNumber:@0];
     }
     return _barChartView;
 }

@@ -40,4 +40,6 @@
 
 @interface XJYColor : NSObject
 
++ (instancetype)shareXJYColor;
+- (UIColor *)randomColorInColorArray;
 @end

@@ -124,7 +124,7 @@
     } else if (section == 2){
         return @"条形图";
     } else {
-        return @"新条形图";
+        return @"可滑动条形图";
     }
 }
 

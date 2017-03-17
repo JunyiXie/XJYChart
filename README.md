@@ -1,7 +1,7 @@
 # XJYChart
 
 
-一个轻量级并且实用的图表框架
+## A High-performance, Elegant And Easy-to-integrate Charting Framework.
 
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG) ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image2.PNG)
 
@@ -9,10 +9,10 @@
 
 
 ## Update 
-📊发生了变化 目前先固定颜色
-目前正在迭代升级 所以暂时删除XJYChart 如果想要试用，可以从Example中拉取
+**📊The chart has changed.Currently fixed color.**
+**Is currently iterating to upgrade so temporarily delete XYChart If you want to try, you can pull from Example.**
 
-### Update 1.1 添加了可滑动的条形图
+### Update 1.1 Added a slippery bar graph
 
 
 ### SLide XXBarChart
@@ -46,10 +46,10 @@ XXBarChart *barChart = [[XXBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 2
 
 ```
 
-## 使用方法
+## Use
 （引入了 Masonry）
 
-1. 把 XJYChart 拖入工程  
+1. **Drag XJYChart into the project**
 2. #import "XJYChart.h"
 
 ### Linechart
@@ -121,4 +121,4 @@ self.barChart = [[XJYBarChart alloc] initWithFrame:CGRectZero dataItemArray:item
 ```
 
 ### Example 
-直接运行就可以看到XJYChart
+Directly Run To See XJYChart Example

@@ -10,4 +10,8 @@
 
 @interface AbscissaView : UIView
 
+
+
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray;
+
 @end

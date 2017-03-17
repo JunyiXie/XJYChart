@@ -49,10 +49,10 @@
         obj.frame = CGRectMake(0, idx * height, width, height);
         obj.font = [UIFont systemFontOfSize:12];
 
-        obj.text = [NSString stringWithFormat:@"%.0f",idx *(self.top-self.bottom)/4+ self.bottom];
+        obj.text = [NSString stringWithFormat:@"%.0f",(3 - idx) *(self.top - self.bottom) / 3 + self.bottom];
         
-        obj.textAlignment = NSTextAlignmentRight;
-        obj.backgroundColor = XJYYellow;
+        obj.textAlignment = NSTextAlignmentCenter;
+        obj.backgroundColor = [UIColor whiteColor];
         
         [self addSubview:obj];
     }];

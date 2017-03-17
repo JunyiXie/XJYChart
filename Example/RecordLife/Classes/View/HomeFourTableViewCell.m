@@ -48,6 +48,39 @@
         XJYBarItem *item10 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
         [itemArray addObject:item10];
         
+        XJYBarItem *item11 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+        [itemArray addObject:item11];
+        XJYBarItem *item12 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+        [itemArray addObject:item12];
+        XJYBarItem *item13 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+        [itemArray addObject:item13];
+        XJYBarItem *item14 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
+        [itemArray addObject:item14];
+        XJYBarItem *item15 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
+        [itemArray addObject:item15];
+        
+        XJYBarItem *item16 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+        [itemArray addObject:item16];
+        XJYBarItem *item17 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+        [itemArray addObject:item17];
+        XJYBarItem *item18 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+        [itemArray addObject:item18];
+        XJYBarItem *item19 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
+        [itemArray addObject:item19];
+        XJYBarItem *item20 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
+        [itemArray addObject:item20];
+        
+        XJYBarItem *item21 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+        [itemArray addObject:item21];
+        XJYBarItem *item22 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+        [itemArray addObject:item22];
+        XJYBarItem *item23 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+        [itemArray addObject:item23];
+        XJYBarItem *item24 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
+        [itemArray addObject:item24];
+        XJYBarItem *item25 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
+        [itemArray addObject:item25];
+        
         XXBarChart *barChart = [[XXBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@0];
         
         [self.contentView addSubview:barChart];

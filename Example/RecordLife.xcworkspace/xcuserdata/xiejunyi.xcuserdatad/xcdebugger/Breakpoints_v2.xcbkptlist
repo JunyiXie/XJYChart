@@ -132,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecordLife/Classes/Vender/XJYChart/XJYBarChart.m"
-            timestampString = "511274214.088671"
+            timestampString = "511420592.745334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "276"
-            endingLineNumber = "276"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
             landmarkName = "-setupsOrdinateAbscissalLabels"
             landmarkType = "7">
             <Locations>
@@ -180,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecordLife/Classes/Vender/XJYChart/XJYBarChart.m"
-            timestampString = "511274214.088671"
+            timestampString = "511420592.745334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "-setupsOrdinateAbscissalLabels"
             landmarkType = "7">
          </BreakpointContent>
@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecordLife/Classes/Vender/XJYChart/XJYBarChart.m"
-            timestampString = "511275838.531067"
+            timestampString = "511420592.745334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
+            startingLineNumber = "305"
+            endingLineNumber = "305"
             landmarkName = "-updateConstraints"
             landmarkType = "7">
          </BreakpointContent>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecordLife/Classes/Vender/XJYChart/XJYBarChart.m"
-            timestampString = "511275844.20276"
+            timestampString = "511420592.745334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
             landmarkName = "+requiresConstraintBasedLayout"
             landmarkType = "7">
          </BreakpointContent>
