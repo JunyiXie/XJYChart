@@ -12,6 +12,6 @@
 
 
 
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray;
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray *)dataItemArray;
 
 @end

@@ -13,9 +13,9 @@
 
 @property (nonatomic, strong) NSMutableArray<UILabel *> *labelArray;
 
-@property (nonatomic, strong) NSMutableArray *dataDescribeArray;
+@property (nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
 
-@property (nonatomic, strong) NSMutableArray<XJYBarItem *> *dataItemArray;
+@property (nonatomic, strong) NSMutableArray *dataItemArray;
 
 
 @end
@@ -23,7 +23,7 @@
 @implementation AbscissaView
 
 
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray {
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray *)dataItemArray {
     if (self = [self initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
         self.dataDescribeArray = [NSMutableArray new];
@@ -45,8 +45,16 @@
 }
 
 - (void)dealData {
-    [self.dataItemArray enumerateObjectsUsingBlock:^(XJYBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self.dataDescribeArray addObject:obj.dataDescribe];
+    
+    //对 数据进行分类处理
+    //把 LineChart 和 BarChart分开
+    [self.dataItemArray enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[XXLineChartItem class]]) {
+            [self.dataDescribeArray addObject:obj];
+
+        } else if([obj isKindOfClass:[XJYBarItem class]]) {
+            [self.dataDescribeArray addObject:((XJYBarItem *)obj).dataDescribe];
+        }
     }];
 }
 

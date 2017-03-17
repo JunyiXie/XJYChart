@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F20A6211E7BEDA200D4CA65 /* XXLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20A6201E7BEDA100D4CA65 /* XXLineChart.m */; };
+		9F20A6241E7BEF8E00D4CA65 /* XLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20A6231E7BEF8E00D4CA65 /* XLineChartView.m */; };
+		9F20A6271E7BF15800D4CA65 /* HomeFiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20A6261E7BF15800D4CA65 /* HomeFiveTableViewCell.m */; };
 		9F34C0F21E7A9AFC00B073F7 /* XXBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F34C0F11E7A9AFC00B073F7 /* XXBarChart.m */; };
 		9F34C0F51E7A9F1400B073F7 /* OrdinateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F34C0F41E7A9F1400B073F7 /* OrdinateView.m */; };
 		9F34C0F81E7AA8CE00B073F7 /* AbscissaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F34C0F71E7AA8CE00B073F7 /* AbscissaView.m */; };
@@ -31,6 +34,9 @@
 		9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */; };
 		9F3DC7A51E2E653800C26D86 /* XJYLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A41E2E653800C26D86 /* XJYLineChart.m */; };
 		9F3DC7A91E2E7C8C00C26D86 /* XJYChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A81E2E7C8C00C26D86 /* XJYChartView.m */; };
+		9F4F8AEF1E7BF5E3004BCDB8 /* XXLineChartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F8AEE1E7BF5E3004BCDB8 /* XXLineChartItem.m */; };
+		9F4F8AF21E7BF773004BCDB8 /* XLineContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F8AF11E7BF773004BCDB8 /* XLineContainerView.m */; };
+		9F4F8AF51E7C0F5E004BCDB8 /* RandomNumerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F8AF41E7C0F5E004BCDB8 /* RandomNumerHelper.m */; };
 		9F699F951E30A48C0024F9FA /* XJYCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F699F941E30A48C0024F9FA /* XJYCircleChart.m */; };
 		9FA7742E1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7742D1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m */; };
 		9FACB9051E2F68EA00CD5D05 /* XJYLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FACB9041E2F68EA00CD5D05 /* XJYLineChartView.m */; };
@@ -65,6 +71,12 @@
 /* Begin PBXFileReference section */
 		268B4BE433119986366F9157 /* Pods-RecordLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.release.xcconfig"; sourceTree = "<group>"; };
 		37737D6A36A792975C04CD82 /* Pods-RecordLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.debug.xcconfig"; sourceTree = "<group>"; };
+		9F20A61F1E7BEDA100D4CA65 /* XXLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXLineChart.h; sourceTree = "<group>"; };
+		9F20A6201E7BEDA100D4CA65 /* XXLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXLineChart.m; sourceTree = "<group>"; };
+		9F20A6221E7BEF8E00D4CA65 /* XLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChartView.h; sourceTree = "<group>"; };
+		9F20A6231E7BEF8E00D4CA65 /* XLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineChartView.m; sourceTree = "<group>"; };
+		9F20A6251E7BF15800D4CA65 /* HomeFiveTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFiveTableViewCell.h; sourceTree = "<group>"; };
+		9F20A6261E7BF15800D4CA65 /* HomeFiveTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFiveTableViewCell.m; sourceTree = "<group>"; };
 		9F34C0F01E7A9AFC00B073F7 /* XXBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXBarChart.h; sourceTree = "<group>"; };
 		9F34C0F11E7A9AFC00B073F7 /* XXBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXBarChart.m; sourceTree = "<group>"; };
 		9F34C0F31E7A9F1400B073F7 /* OrdinateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdinateView.h; sourceTree = "<group>"; };
@@ -115,6 +127,12 @@
 		9F3DC7A61E2E6F5400C26D86 /* XJYChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XJYChart.h; sourceTree = "<group>"; };
 		9F3DC7A71E2E7C8C00C26D86 /* XJYChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChartView.h; sourceTree = "<group>"; };
 		9F3DC7A81E2E7C8C00C26D86 /* XJYChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYChartView.m; sourceTree = "<group>"; };
+		9F4F8AED1E7BF5E3004BCDB8 /* XXLineChartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXLineChartItem.h; sourceTree = "<group>"; };
+		9F4F8AEE1E7BF5E3004BCDB8 /* XXLineChartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXLineChartItem.m; sourceTree = "<group>"; };
+		9F4F8AF01E7BF773004BCDB8 /* XLineContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineContainerView.h; sourceTree = "<group>"; };
+		9F4F8AF11E7BF773004BCDB8 /* XLineContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineContainerView.m; sourceTree = "<group>"; };
+		9F4F8AF31E7C0F5E004BCDB8 /* RandomNumerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomNumerHelper.h; sourceTree = "<group>"; };
+		9F4F8AF41E7C0F5E004BCDB8 /* RandomNumerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomNumerHelper.m; sourceTree = "<group>"; };
 		9F699F931E30A48C0024F9FA /* XJYCircleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYCircleChart.h; sourceTree = "<group>"; };
 		9F699F941E30A48C0024F9FA /* XJYCircleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYCircleChart.m; sourceTree = "<group>"; };
 		9F8279881E34EFFA00558124 /* XJYChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChartDelegate.h; sourceTree = "<group>"; };
@@ -314,6 +332,8 @@
 				9FBEEDE21E35D72D00DABF83 /* HomeThreeTableViewCell.m */,
 				9F3B2A141E797580000FB7DB /* HomeFourTableViewCell.h */,
 				9F3B2A151E797580000FB7DB /* HomeFourTableViewCell.m */,
+				9F20A6251E7BF15800D4CA65 /* HomeFiveTableViewCell.h */,
+				9F20A6261E7BF15800D4CA65 /* HomeFiveTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -366,6 +386,16 @@
 				9F34C0F41E7A9F1400B073F7 /* OrdinateView.m */,
 				9F34C0F61E7AA8CE00B073F7 /* AbscissaView.h */,
 				9F34C0F71E7AA8CE00B073F7 /* AbscissaView.m */,
+				9F20A61F1E7BEDA100D4CA65 /* XXLineChart.h */,
+				9F20A6201E7BEDA100D4CA65 /* XXLineChart.m */,
+				9F20A6221E7BEF8E00D4CA65 /* XLineChartView.h */,
+				9F20A6231E7BEF8E00D4CA65 /* XLineChartView.m */,
+				9F4F8AF01E7BF773004BCDB8 /* XLineContainerView.h */,
+				9F4F8AF11E7BF773004BCDB8 /* XLineContainerView.m */,
+				9F4F8AED1E7BF5E3004BCDB8 /* XXLineChartItem.h */,
+				9F4F8AEE1E7BF5E3004BCDB8 /* XXLineChartItem.m */,
+				9F4F8AF31E7C0F5E004BCDB8 /* RandomNumerHelper.h */,
+				9F4F8AF41E7C0F5E004BCDB8 /* RandomNumerHelper.m */,
 			);
 			path = XJYChart;
 			sourceTree = "<group>";
@@ -573,6 +603,8 @@
 				9F3B2A131E7974AF000FB7DB /* XBarChartView.m in Sources */,
 				9F3DC79B1E2E59DF00C26D86 /* XJYTableViewCell.m in Sources */,
 				9F3DC7A91E2E7C8C00C26D86 /* XJYChartView.m in Sources */,
+				9F20A6271E7BF15800D4CA65 /* HomeFiveTableViewCell.m in Sources */,
+				9F4F8AF51E7C0F5E004BCDB8 /* RandomNumerHelper.m in Sources */,
 				9F3DC74E1E2E36B600C26D86 /* ViewController.m in Sources */,
 				9F3B2A161E797580000FB7DB /* HomeFourTableViewCell.m in Sources */,
 				9FBEEDE91E360D1E00DABF83 /* XJYColor.m in Sources */,
@@ -581,7 +613,10 @@
 				9F3DC74B1E2E36B600C26D86 /* AppDelegate.m in Sources */,
 				9F3DC79E1E2E5A2C00C26D86 /* HomeOneTableViewCell.m in Sources */,
 				9F3DC7981E2E56B700C26D86 /* HomeViewControllerViewModel.m in Sources */,
+				9F4F8AF21E7BF773004BCDB8 /* XLineContainerView.m in Sources */,
+				9F20A6211E7BEDA200D4CA65 /* XXLineChart.m in Sources */,
 				9F699F951E30A48C0024F9FA /* XJYCircleChart.m in Sources */,
+				9F20A6241E7BEF8E00D4CA65 /* XLineChartView.m in Sources */,
 				9F34C0F81E7AA8CE00B073F7 /* AbscissaView.m in Sources */,
 				9FBEEDE01E35D3E000DABF83 /* XJYBarChart.m in Sources */,
 				9F3DC78F1E2E492B00C26D86 /* XJYPopOption.m in Sources */,
@@ -589,6 +624,7 @@
 				9FBB86E11E32348200AB6CA3 /* XJYPointView.m in Sources */,
 				9FA7742E1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m in Sources */,
 				9F34C0F51E7A9F1400B073F7 /* OrdinateView.m in Sources */,
+				9F4F8AEF1E7BF5E3004BCDB8 /* XXLineChartItem.m in Sources */,
 				9FBEEDE31E35D72D00DABF83 /* HomeThreeTableViewCell.m in Sources */,
 				9FB578FA1E347A4F00339633 /* XJYPieChart.m in Sources */,
 				9F3DC7A51E2E653800C26D86 /* XJYLineChart.m in Sources */,

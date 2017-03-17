@@ -17,4 +17,6 @@
 #import "XJYColor.h"
 #import "XBarChartView.h"
 #import "XXBarChart.h"
+#import "XXLineChart.h"
+#import "RandomNumerHelper.h"
 #endif /* XJYChart_h */
