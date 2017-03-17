@@ -12,8 +12,25 @@
 **📊The chart has changed.Currently fixed color.**
 **Is currently iterating to upgrade so temporarily delete XYChart If you want to try, you can pull from Example.**
 
-### Update 1.1 Added a slippery bar graph
+### Update 1.1 Added slippery  graph
 
+### SLide XXLineChart
+```objectivec
+        for (int j = 0; j<5; j++) {
+            NSMutableArray *numberArray = [NSMutableArray new];
+            for (int i = 0; i<100; i++) {
+                int num = [[RandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14] * [[RandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14];
+                NSNumber *number = [NSNumber numberWithInt:num];
+                [numberArray addObject:number];
+            }
+            [numbersArray addObject:numberArray];
+        }
+        for (int i = 0; i<5; i++) {
+            XXLineChartItem *item = [[XXLineChartItem alloc] initWithDataNumberArray:numbersArray[i] color:[UIColor redColor] dataDescribe:@"111"];
+            [itemArray addObject:item];
+        }
+        XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:@[@"312312",@"123123"] topNumber:@200 bottomNumber:@0];
+```
 
 ### SLide XXBarChart
 ```objectivec
