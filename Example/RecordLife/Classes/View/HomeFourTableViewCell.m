@@ -81,7 +81,7 @@
         XJYBarItem *item25 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
         [itemArray addObject:item25];
         
-        XXBarChart *barChart = [[XXBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@0];
+        XXBarChart *barChart = [[XXBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@80 bottomNumber:@0];
         
         [self.contentView addSubview:barChart];
         self.selectionStyle = UITableViewCellSelectionStyleNone;

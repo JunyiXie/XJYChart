@@ -11,10 +11,6 @@
 
 @interface XXLineChart : UIView
 
-@property (nonatomic, strong) NSNumber *top;
-@property (nonatomic, strong) NSNumber *bottom;
-@property (nonatomic, strong) NSMutableArray<XXLineChartItem *> *dataItemArray;
-@property (nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
 
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
 

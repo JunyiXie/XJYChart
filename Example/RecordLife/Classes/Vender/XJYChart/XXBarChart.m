@@ -49,14 +49,14 @@
 
 - (XBarChartView *)barChartView {
     if (!_barChartView) {
-        _barChartView = [[XBarChartView alloc] initWithFrame:CGRectMake(OrdinateWidth, BarChartViewTopInterval, self.frame.size.width - OrdinateWidth, self.frame.size.height - BarChartViewTopInterval) dataItemArray:self.dataItemArray topNumber:@60 bottomNumber:@0];
+        _barChartView = [[XBarChartView alloc] initWithFrame:CGRectMake(OrdinateWidth, BarChartViewTopInterval, self.frame.size.width - OrdinateWidth, self.frame.size.height - BarChartViewTopInterval) dataItemArray:self.dataItemArray topNumber:self.top bottomNumber:self.bottom];
     }
     return _barChartView;
 }
 
 - (OrdinateView *)ordinateView {
     if (!_ordinateView) {
-        _ordinateView = [[OrdinateView alloc] initWithFrame:CGRectMake(0, 0, OrdinateWidth, self.frame.size.height) topNumber:@100 bottomNumber:@0];
+        _ordinateView = [[OrdinateView alloc] initWithFrame:CGRectMake(0, 0, OrdinateWidth, self.frame.size.height) topNumber:self.top bottomNumber:self.bottom];
         _ordinateView.backgroundColor = [UIColor whiteColor];
     }
     return _ordinateView;

@@ -42,17 +42,39 @@
     CGContextSetStrokeColorWithColor(ContextRef, [UIColor lightGrayColor].CGColor);
     
     //水平辅助线
-    for (int i =0 ; i<12; i++) {
+    for (int i =0 ; i<11; i++) {
         if (i!=0||i!=11) {
             //            CGContextSetLineWidth(ContextRef, 1);
         }
         //线的宽度
         //        CGContextSetLineWidth(ContextRef, 1);
         
-        CGContextMoveToPoint(ContextRef, 0,(self.frame.size.height)/11 * i);
-        CGContextAddLineToPoint(ContextRef,self.frame.size.width,((self.frame.size.height)/11) * i);
+        CGContextMoveToPoint(ContextRef, 5,self.frame.size.height - (self.frame.size.height)/11 * i);
+        CGContextAddLineToPoint(ContextRef,self.frame.size.width,self.frame.size.height - ((self.frame.size.height)/11) * i);
         CGContextStrokePath(ContextRef);
     }
+    //纵坐标
+    CGContextMoveToPoint(ContextRef, 5, 0);
+    CGContextAddLineToPoint(ContextRef, 5, self.frame.size.height);
+    CGContextStrokePath(ContextRef);
+    
+    UIBezierPath *arrow = [[UIBezierPath alloc] init];
+    //设置线宽
+    arrow.lineWidth = 1;
+    [arrow moveToPoint:CGPointMake(0, 8)];
+    [arrow addLineToPoint:CGPointMake(5, 0)];
+    [arrow moveToPoint:CGPointMake(5, 0)];
+    [arrow addLineToPoint:CGPointMake(10, 8)];
+    //设置绘制线条颜色，这个地方需要注意！UIBezierPath本身类中不包含设置颜色的属性，它是通过UIColor来直接设置。
+    [[UIColor grayColor] setStroke];
+    /*
+     *线条形状
+     *kCGLineCapButt,   //不带端点
+     *kCGLineCapRound,  //端点带圆角
+     *kCGLineCapSquare  //端点是正方形
+     */
+    arrow.lineCapStyle = kCGLineCapRound;
+    [arrow stroke];
     
     
     [self.dataItemArray enumerateObjectsUsingBlock:^(XXLineChartItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -66,34 +88,6 @@
         [self.pointsArrays addObject:linePointArray];
     }];
     
-    
-//    [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        
-//        NSMutableArray *linePointArray = obj;
-//        //线的颜色
-//        UIColor *lineColor = [[XJYColor shareXJYColor] randomColorInColorArray];
-//
-//        [obj enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//            NSValue *pointValue = obj;
-//            CGPoint point = pointValue.CGPointValue;
-//            NSValue *priorPointValue = [[NSValue alloc] init];
-//            if (idx == 0) {
-//                //这地方的处理 识情况而定
-//                priorPointValue = [NSValue valueWithCGPoint:CGPointMake(self.bounds.origin.x, self.bounds.size.height)];
-//            } else {
-//                priorPointValue = linePointArray[idx - 1];
-//                
-//                CGPoint priorPoint = priorPointValue.CGPointValue;
-//                CGContextSetStrokeColorWithColor(ContextRef, lineColor.CGColor);
-//                CGContextSetLineWidth(ContextRef, 1.6f);
-//                CGContextSetLineDash(ContextRef, 0, 0, 0);
-//                CGContextMoveToPoint(ContextRef, priorPoint.x,self.bounds.size.height -  priorPoint.y);
-//                CGContextAddLineToPoint(ContextRef, point.x,self.bounds.size.height -  point.y);
-//                CGContextStrokePath(ContextRef);
-//            }
-//        }];
-//    }];
-//    
     [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         UIColor *pointColor = [[XJYColor shareXJYColor] randomColorInColorArray];

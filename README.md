@@ -12,7 +12,9 @@
 **📊The chart has changed.Currently fixed color.**
 **Is currently iterating to upgrade so temporarily delete XYChart If you want to try, you can pull from Example.**
 
-### Update 1.1 Added slippery  graph
+### Update 1.1 
+
+### Added slippery graph And Chart Animations
 
 ### SLide XXLineChart
 ```objectivec

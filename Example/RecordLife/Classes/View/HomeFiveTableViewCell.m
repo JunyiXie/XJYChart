@@ -31,7 +31,7 @@
             
             NSMutableArray *numberArray = [NSMutableArray new];
 
-            for (int i = 0; i<100; i++) {
+            for (int i = 0; i<5; i++) {
                 int num = [[RandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14] * [[RandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14];
                 NSNumber *number = [NSNumber numberWithInt:num];
                 [numberArray addObject:number];
@@ -46,7 +46,7 @@
             XXLineChartItem *item = [[XXLineChartItem alloc] initWithDataNumberArray:numbersArray[i] color:[UIColor redColor] dataDescribe:@"111"];
             [itemArray addObject:item];
         }
-        XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:@[@"312312",@"123123"] topNumber:@200 bottomNumber:@0];
+        XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0];
        
         [self.contentView addSubview:lineChart];
         self.selectionStyle = UITableViewCellSelectionStyleNone;

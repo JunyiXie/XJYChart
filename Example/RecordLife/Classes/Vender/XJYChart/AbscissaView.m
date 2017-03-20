@@ -49,7 +49,7 @@
     //对 数据进行分类处理
     //把 LineChart 和 BarChart分开
     [self.dataItemArray enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:[XXLineChartItem class]]) {
+        if ([obj isKindOfClass:[NSString class]]) {
             [self.dataDescribeArray addObject:obj];
 
         } else if([obj isKindOfClass:[XJYBarItem class]]) {
@@ -60,13 +60,13 @@
 
 - (void)setupUI {
     CGFloat labelWidth = self.frame.size.width / self.dataDescribeArray.count;
-    CGFloat intervalWidth = labelWidth/4;
+    CGFloat intervalWidth = labelWidth/6;
     for (int i = 0; i < self.dataDescribeArray.count; i++) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(labelWidth * i + intervalWidth, 0, labelWidth - 2*intervalWidth, self.frame.size.height)];
         label.text = self.dataDescribeArray[i];
 //        label.backgroundColor = [[XJYColor shareXJYColor] randomColorInColorArray];
-//        label.adjustsFontSizeToFitWidth = YES;
-        label.font = [UIFont fontWithName:@"Helvetica Neue" size:8];
+        label.adjustsFontSizeToFitWidth = YES;
+        label.font = [UIFont fontWithName:@"Helvetica Neue" size:10];
         label.numberOfLines = 0;
         label.textAlignment = NSTextAlignmentCenter;
         [self addSubview:label];

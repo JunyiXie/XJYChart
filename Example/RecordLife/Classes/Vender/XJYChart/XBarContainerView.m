@@ -16,6 +16,7 @@
 #define BarBackgroundFillColor [UIColor colorWithRed:232/255.0 green:232/255.0 blue:232/255.0 alpha:1]
 
 @interface XBarContainerView ()
+@property (nonatomic, strong) CABasicAnimation *pathAnimation;
 
 @property (nonatomic, strong) NSMutableArray<UIColor *> *colorArray;
 
@@ -109,17 +110,24 @@
         [fillRectArray addObject:[NSValue valueWithCGRect:fillRect]];
     }];
         
-    //根据fillrect 绘制填充的fillrect
+    //根据fillrect 绘制填充的fillrect 与 topLabel
     NSMutableArray *fillShapeLayerArray = [[NSMutableArray alloc] init];
         
     [fillRectArray enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CGRect fillRect = obj.CGRectValue;
-        //        CAShapeLayer *fillRectShapeLayer = [self rectShapeLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color];
-            
-        CAGradientLayer *fillRectGradientLayer = [self rectGradientLayerWithBounds:fillRect];
+        
+        CAShapeLayer *fillRectShapeLayer = [self rectAnimationLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color];
+        UILabel *topLabel = [self topLabelWithRect:CGRectMake(fillRect.origin.x, fillRect.origin.y - 30, fillRect.size.width, 15) fillColor:[UIColor clearColor] text:self.dataNumberArray[idx].stringValue];
+//        CAGradientLayer *fillRectGradientLayer = [self rectGradientLayerWithBounds:fillRect];
         //
-        [self.layer addSublayer:fillRectGradientLayer];
-        [fillShapeLayerArray addObject:fillRectGradientLayer];
+        
+        //动画完成之后 添加label
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.pathAnimation.duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self addSubview:topLabel];
+        });
+        [self.layer addSublayer:fillRectShapeLayer];
+
+        [fillShapeLayerArray addObject:fillRectShapeLayer];
     }];
     
 }
@@ -130,19 +138,48 @@
 
 
 #pragma mark HelpMethods
+
+- (CAShapeLayer *)rectAnimationLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor {
+    //动画的path
+    CGPoint startPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y + rect.size.height));
+    CGPoint endPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y));
+    UIBezierPath *animationPath = [[UIBezierPath alloc] init];
+    [animationPath moveToPoint:startPoint];
+    [animationPath addLineToPoint:endPoint];
+    CAShapeLayer *chartLine = [CAShapeLayer layer];
+    chartLine.lineCap = kCALineCapSquare;
+    chartLine.lineJoin = kCALineJoinRound;
+    chartLine.lineWidth = rect.size.width;
+    chartLine.path = animationPath.CGPath;
+    chartLine.strokeStart = 0.0;
+    chartLine.strokeEnd = 1.0;
+    chartLine.strokeColor = [UIColor orangeColor].CGColor;
+    [chartLine addAnimation:self.pathAnimation forKey:@"strokeEndAnimation"];
+    return chartLine;
+}
+
 - (CAShapeLayer *)rectShapeLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor {
+    
+    //正常的
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:rect];
     CAShapeLayer *rectLayer = [CAShapeLayer layer];
     rectLayer.path = path.CGPath;
     rectLayer.fillColor   = fillColor.CGColor;
-    //利用border 来 绘制 非常好
-    //    rectLayer.strokeColor = borderColor.CGColor;
-    //    rectLayer.strokeStart = startPercentage;
-    //    rectLayer.strokeEnd   = endPercentage;
-    //    rectLayer.lineWidth   = borderWidth;
     rectLayer.path        = path.CGPath;
-    //    rectLayer.shouldRasterize = YES;
     return rectLayer;
+}
+
+- (UILabel *)topLabelWithRect:(CGRect)rect fillColor:(UIColor *)color text:(NSString *)text {
+    
+    CGFloat number = text.floatValue;
+    NSString *labelText = [NSString stringWithFormat:@"%.1f", number];
+    UILabel *topLabel = [[UILabel alloc] initWithFrame:rect];
+    topLabel.backgroundColor = color;
+    [topLabel setTextAlignment:NSTextAlignmentCenter];
+    topLabel.text = labelText;
+    [topLabel setFont:[UIFont systemFontOfSize:10]];
+    [topLabel setTextColor:XJYGreen];
+    return topLabel;
 }
 
 - (CAGradientLayer *)rectGradientLayerWithBounds:(CGRect)rect {
@@ -156,5 +193,16 @@
     return gradientLayer;
     
 }
+
+- (CABasicAnimation *)pathAnimation {
+    _pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    _pathAnimation.duration = 1.5;
+    _pathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    _pathAnimation.fromValue = @0.0f;
+    _pathAnimation.toValue = @1.0f;
+    return _pathAnimation;
+}
+
+
 
 @end

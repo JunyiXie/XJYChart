@@ -15,6 +15,10 @@
 @interface XXLineChart ()
 
 
+@property (nonatomic, strong) NSNumber *top;
+@property (nonatomic, strong) NSNumber *bottom;
+@property (nonatomic, strong) NSMutableArray<XXLineChartItem *> *dataItemArray;
+@property (nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
 
 @property (nonatomic, strong) OrdinateView *ordinateView;
 @property (nonatomic, strong) XLineChartView *lineChartView;
@@ -23,7 +27,7 @@
 
 @implementation XXLineChart
 
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber {
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber {
     if (self = [super initWithFrame:frame]) {
         self.top = topNumbser;
         self.bottom = bottomNumber;
