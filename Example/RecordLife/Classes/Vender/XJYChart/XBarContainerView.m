@@ -10,6 +10,7 @@
 #import "XJYAuxiliaryCalculationHelper.h"
 #import "AbscissaView.h"
 #import "XJYColor.h"
+#import "CAShapeLayer+frameCategory.h"
 
 #define GradientFillColor1 [UIColor colorWithRed:117/255.0 green:184/255.0 blue:245/255.0 alpha:1].CGColor
 #define GradientFillColor2 [UIColor colorWithRed:24/255.0 green:141/255.0 blue:240/255.0 alpha:1].CGColor
@@ -24,6 +25,7 @@
 
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *dataNumberArray;
 
+@property (nonatomic, strong) NSMutableArray<CALayer *> *layerArray;
 
 @end
 
@@ -33,6 +35,7 @@
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
+        self.layerArray = [[NSMutableArray alloc] init];
         self.dataItemArray = [[NSMutableArray alloc] init];
         self.colorArray = [[NSMutableArray alloc] init];
         self.dataNumberArray = [[NSMutableArray alloc] init];
@@ -117,7 +120,9 @@
         CGRect fillRect = obj.CGRectValue;
         
         CAShapeLayer *fillRectShapeLayer = [self rectAnimationLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color];
-        UILabel *topLabel = [self topLabelWithRect:CGRectMake(fillRect.origin.x, fillRect.origin.y - 30, fillRect.size.width, 15) fillColor:[UIColor clearColor] text:self.dataNumberArray[idx].stringValue];
+
+        
+        UILabel *topLabel = [self topLabelWithRect:CGRectMake(fillRect.origin.x, fillRect.origin.y - 15, fillRect.size.width, 15) fillColor:[UIColor clearColor] text:self.dataNumberArray[idx].stringValue];
 //        CAGradientLayer *fillRectGradientLayer = [self rectGradientLayerWithBounds:fillRect];
         //
         
@@ -126,7 +131,9 @@
             [self addSubview:topLabel];
         });
         [self.layer addSublayer:fillRectShapeLayer];
-
+        //将绘制的Layer保存
+        [self.layerArray addObject:fillRectShapeLayer];
+        
         [fillShapeLayerArray addObject:fillRectShapeLayer];
     }];
     
@@ -143,18 +150,31 @@
     //动画的path
     CGPoint startPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y + rect.size.height));
     CGPoint endPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y));
-    UIBezierPath *animationPath = [[UIBezierPath alloc] init];
-    [animationPath moveToPoint:startPoint];
-    [animationPath addLineToPoint:endPoint];
+    
+    //真实的线
+//    UIBezierPath *animationPath = [[UIBezierPath alloc] init];
+//    [animationPath moveToPoint:startPoint];
+//    [animationPath addLineToPoint:endPoint];
     CAShapeLayer *chartLine = [CAShapeLayer layer];
     chartLine.lineCap = kCALineCapSquare;
     chartLine.lineJoin = kCALineJoinRound;
     chartLine.lineWidth = rect.size.width;
-    chartLine.path = animationPath.CGPath;
+    
+    //显示的线
+    CGPoint temStartPoint = CGPointMake(startPoint.x, startPoint.y + rect.size.width/2);
+    CGPoint temEndPoint = CGPointMake(endPoint.x, endPoint.y + rect.size.width/2);
+    UIBezierPath *temPath = [[UIBezierPath alloc] init];
+    [temPath moveToPoint:temStartPoint];
+    [temPath addLineToPoint:temEndPoint];
+    
+    chartLine.path = temPath.CGPath;
     chartLine.strokeStart = 0.0;
     chartLine.strokeEnd = 1.0;
-    chartLine.strokeColor = [UIColor orangeColor].CGColor;
+    chartLine.strokeColor = XJYBlue.CGColor;
     [chartLine addAnimation:self.pathAnimation forKey:@"strokeEndAnimation"];
+    //由于CAShapeLayer.frame = (0,0,0,0) 所以用这个判断点击
+    chartLine.frameValue = [NSValue valueWithCGRect:rect];
+    chartLine.selectStatusNumber = [NSNumber numberWithBool:NO];
     return chartLine;
 }
 
@@ -203,6 +223,20 @@
     return _pathAnimation;
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    CGPoint __block point = [[touches anyObject] locationInView:self];
+    [self.layerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        point = [obj convertPoint:point toLayer:self.layer];
+        CAShapeLayer *shapeLayer = (CAShapeLayer *)obj;
+        CGRect layerFrame = shapeLayer.frameValue.CGRectValue;
+        if (CGRectContainsPoint(layerFrame, point)) {
+            NSLog(@"点击了 %lu bar", (unsigned long)idx + 1);
+//            NSLog(@"%d", shapeLayer.selectStatusNumber.boolValue);
+            shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!shapeLayer.selectStatusNumber.boolValue];
+            
+        }
+    }];
+}
 
 
 @end
