@@ -99,7 +99,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeOneTableViewCell forIndexPath:indexPath];
+
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeFiveTableViewCell forIndexPath:indexPath];
         return cell;
 
     } else if (indexPath.section == 1) {
@@ -112,7 +114,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeFourTableViewCell forIndexPath:indexPath];
         return cell;
     } else if (indexPath.section == 4) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeFiveTableViewCell forIndexPath:indexPath];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeOneTableViewCell forIndexPath:indexPath];
         return cell;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeOneTableViewCell forIndexPath:indexPath];
@@ -122,7 +124,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return @"折线图";
+        return @"可滑动的折线图";
     } else if (section == 1) {
         return @"饼图";
     } else if (section == 2) {
@@ -130,7 +132,7 @@
     } else if (section == 3) {
         return @"可滑动条形图";
     } else {
-        return @"可滑动的折线图";
+        return @"折线图";
     }
 }
 

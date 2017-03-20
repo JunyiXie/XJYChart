@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F0DB35E1E7FBFDD0019B89A /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DB35D1E7FBFDD0019B89A /* Colours.m */; };
 		9F20A6211E7BEDA200D4CA65 /* XXLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20A6201E7BEDA100D4CA65 /* XXLineChart.m */; };
 		9F20A6241E7BEF8E00D4CA65 /* XLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20A6231E7BEF8E00D4CA65 /* XLineChartView.m */; };
 		9F20A6271E7BF15800D4CA65 /* HomeFiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20A6261E7BF15800D4CA65 /* HomeFiveTableViewCell.m */; };
@@ -71,6 +72,8 @@
 /* Begin PBXFileReference section */
 		268B4BE433119986366F9157 /* Pods-RecordLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.release.xcconfig"; sourceTree = "<group>"; };
 		37737D6A36A792975C04CD82 /* Pods-RecordLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.debug.xcconfig"; sourceTree = "<group>"; };
+		9F0DB35C1E7FBFDD0019B89A /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		9F0DB35D1E7FBFDD0019B89A /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		9F20A61F1E7BEDA100D4CA65 /* XXLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXLineChart.h; sourceTree = "<group>"; };
 		9F20A6201E7BEDA100D4CA65 /* XXLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXLineChart.m; sourceTree = "<group>"; };
 		9F20A6221E7BEF8E00D4CA65 /* XLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChartView.h; sourceTree = "<group>"; };
@@ -200,6 +203,15 @@
 				268B4BE433119986366F9157 /* Pods-RecordLife.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9F0DB35B1E7FBFDD0019B89A /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				9F0DB35C1E7FBFDD0019B89A /* Colours.h */,
+				9F0DB35D1E7FBFDD0019B89A /* Colours.m */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		9F3DC73A1E2E36B600C26D86 = {
@@ -352,6 +364,7 @@
 		9F3DC7A21E2E652700C26D86 /* XJYChart */ = {
 			isa = PBXGroup;
 			children = (
+				9F0DB35B1E7FBFDD0019B89A /* Colors */,
 				9F3DC7A61E2E6F5400C26D86 /* XJYChart.h */,
 				9F8279881E34EFFA00558124 /* XJYChartDelegate.h */,
 				9FA7742C1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.h */,
@@ -616,6 +629,7 @@
 				9F4F8AF21E7BF773004BCDB8 /* XLineContainerView.m in Sources */,
 				9F20A6211E7BEDA200D4CA65 /* XXLineChart.m in Sources */,
 				9F699F951E30A48C0024F9FA /* XJYCircleChart.m in Sources */,
+				9F0DB35E1E7FBFDD0019B89A /* Colours.m in Sources */,
 				9F20A6241E7BEF8E00D4CA65 /* XLineChartView.m in Sources */,
 				9F34C0F81E7AA8CE00B073F7 /* AbscissaView.m in Sources */,
 				9FBEEDE01E35D3E000DABF83 /* XJYBarChart.m in Sources */,

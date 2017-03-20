@@ -23,7 +23,7 @@
         
         self.pieChartView = [[XJYPieChart alloc] init];
         NSMutableArray *pieItems = [[NSMutableArray alloc] init];
-        NSArray *colorArray = @[XJYRed,XJYGreen,XJYBrown,XJYBlue];
+        NSArray *colorArray = @[[[XJYColor shareXJYColor] randomColorInColorArray],[[XJYColor shareXJYColor] randomColorInColorArray],[[XJYColor shareXJYColor] randomColorInColorArray],[[XJYColor shareXJYColor] randomColorInColorArray]];
         NSArray *dataArray = @[@"iPhone6",@"iPhone6 Plus",@"iPhone6s",@"其他"];
         XJYPieItem *item1 = [[XJYPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:20.9] color:colorArray[0] dataDescribe:dataArray[0]];
             [pieItems addObject:item1];
