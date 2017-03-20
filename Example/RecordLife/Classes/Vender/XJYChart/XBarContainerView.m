@@ -27,6 +27,7 @@
 
 @property (nonatomic, strong) NSMutableArray<CALayer *> *layerArray;
 
+@property (nonatomic, strong) CALayer *coverLayer;
 @end
 
 @implementation XBarContainerView
@@ -233,7 +234,10 @@
             NSLog(@"点击了 %lu bar", (unsigned long)idx + 1);
 //            NSLog(@"%d", shapeLayer.selectStatusNumber.boolValue);
             shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!shapeLayer.selectStatusNumber.boolValue];
-            
+            //清空上一次
+            [self.coverLayer removeFromSuperlayer];
+            self.coverLayer = [self rectGradientLayerWithBounds:layerFrame];
+            [shapeLayer addSublayer:self.coverLayer];
         }
     }];
 }
