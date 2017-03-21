@@ -14,12 +14,15 @@
 @implementation CAShapeLayer (frameCategory)
 
 //http://stackoverflow.com/questions/28447744/frame-origin-and-bounds-size-of-cashapelayer-are-set-to-0
-
 // frame
 static char kAssociatedObjectKey;
 
 //selected status
 static char kAssociatedObjectKey2;
+
+//backgroundFrame
+static char kAssociatedObjectKey3;
+
 
 - (void)setFrameValue:(id)frameValue {
     objc_setAssociatedObject(self, &kAssociatedObjectKey, frameValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -27,6 +30,14 @@ static char kAssociatedObjectKey2;
 
 - (id)frameValue {
     return objc_getAssociatedObject(self, &kAssociatedObjectKey);
+}
+
+- (void)setBackgroundFrameValue:(id)backgroundFrameValue {
+    objc_setAssociatedObject(self, &kAssociatedObjectKey3, backgroundFrameValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (id)backgroundFrameValue {
+    return objc_getAssociatedObject(self, &kAssociatedObjectKey3);
 }
 
 - (void)setSelectStatusNumber:(id)selectStatusNumber {

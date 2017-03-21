@@ -11,6 +11,7 @@
 @interface CAShapeLayer (frameCategory)
 
 @property (nonatomic, strong) NSValue *frameValue;
+@property (nonatomic, strong) NSValue *backgroundFrameValue;
 @property (nonatomic, strong) NSNumber *selectStatusNumber;
 
 @end

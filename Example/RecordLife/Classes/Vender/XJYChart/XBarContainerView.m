@@ -25,7 +25,10 @@
 
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *dataNumberArray;
 
+//值高度填充
 @property (nonatomic, strong) NSMutableArray<CALayer *> *layerArray;
+//背景填充
+@property (nonatomic, strong) NSMutableArray<CALayer *> *fillLayerArray;
 
 @property (nonatomic, strong) CALayer *coverLayer;
 @end
@@ -37,6 +40,7 @@
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
         self.layerArray = [[NSMutableArray alloc] init];
+        self.fillLayerArray = [[NSMutableArray alloc] init];
         self.dataItemArray = [[NSMutableArray alloc] init];
         self.colorArray = [[NSMutableArray alloc] init];
         self.dataNumberArray = [[NSMutableArray alloc] init];
@@ -97,6 +101,7 @@
     [rectArray enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CGRect rect = obj.CGRectValue;
         CAShapeLayer *rectShapeLayer = [self rectShapeLayerWithBounds:rect fillColor:BarBackgroundFillColor];
+        [self.fillLayerArray addObject:rectShapeLayer];
         [self.layer addSublayer:rectShapeLayer];
     }];
         
@@ -175,6 +180,7 @@
     [chartLine addAnimation:self.pathAnimation forKey:@"strokeEndAnimation"];
     //由于CAShapeLayer.frame = (0,0,0,0) 所以用这个判断点击
     chartLine.frameValue = [NSValue valueWithCGRect:rect];
+    
     chartLine.selectStatusNumber = [NSNumber numberWithBool:NO];
     return chartLine;
 }
@@ -187,6 +193,8 @@
     rectLayer.path = path.CGPath;
     rectLayer.fillColor   = fillColor.CGColor;
     rectLayer.path        = path.CGPath;
+    rectLayer.frameValue = [NSValue valueWithCGRect:rect];
+    
     return rectLayer;
 }
 
@@ -226,6 +234,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGPoint __block point = [[touches anyObject] locationInView:self];
+    
+    //点击有值柱子
     [self.layerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         point = [obj convertPoint:point toLayer:self.layer];
         CAShapeLayer *shapeLayer = (CAShapeLayer *)obj;
@@ -238,8 +248,26 @@
             [self.coverLayer removeFromSuperlayer];
             self.coverLayer = [self rectGradientLayerWithBounds:layerFrame];
             [shapeLayer addSublayer:self.coverLayer];
+            //找到就可以停止循环了
+            return ;
+        }
+        
+    }];
+    
+    //点击整个柱子
+    [self.fillLayerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CAShapeLayer *shapeLayer = (CAShapeLayer *)obj;
+        CGRect layerFrame = shapeLayer.frameValue.CGRectValue;
+        if (CGRectContainsPoint(layerFrame, point)) {
+            [self.coverLayer removeFromSuperlayer];
+            //得到对应 填充高度frame
+            CAShapeLayer *subShapeLayer = (CAShapeLayer *)self.layerArray[idx];
+            self.coverLayer = [self rectGradientLayerWithBounds:subShapeLayer.frameValue.CGRectValue];
+            [subShapeLayer addSublayer:self.coverLayer];
+            return ;
         }
     }];
+    
 }
 
 
