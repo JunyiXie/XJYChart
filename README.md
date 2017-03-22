@@ -1,6 +1,8 @@
 # XJYChart
 
+## 漂亮的图表框架。支持动画，点击，滑动，区域高亮。 
 
+## 一个高性能，优雅，使用简单的图表框架。
 ## A High-performance, Elegant And Easy-to-integrate Charting Framework.
 
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG) ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image2.PNG)
@@ -9,11 +11,13 @@
 
 
 ## Update 
-**📊The chart has changed.Currently fixed color.**
+**XJYChart 正在完善中，所以没有单独的拉出XJYChart文件。如果你想使用，可以从Example中拉取**
+**📊The chart has changed.**
 **Is currently iterating to upgrade so temporarily delete XYChart If you want to try, you can pull from Example.**
 
 ### Update 1.1 
 
+### 图表增加了滑动和动画效果
 ### Added slippery graph And Chart Animations
 
 ### SLide XXLineChart
@@ -140,4 +144,5 @@ self.barChart = [[XJYBarChart alloc] initWithFrame:CGRectZero dataItemArray:item
 ```
 
 ### Example 
+直接运行就可以看到示例
 Directly Run To See XJYChart Example
