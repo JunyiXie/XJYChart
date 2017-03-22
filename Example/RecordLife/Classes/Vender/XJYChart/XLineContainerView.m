@@ -14,7 +14,7 @@
 
 
 #define LineWidth 6.0
-#define PointDiameter 15.0
+#define PointDiameter 10.0
 
 @interface XLineContainerView()
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
