@@ -124,13 +124,13 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return @"可滑动的折线图";
+        return @"可滑动可点击的折线图";
     } else if (section == 1) {
         return @"饼图";
     } else if (section == 2) {
         return @"条形图";
     } else if (section == 3) {
-        return @"可滑动条形图";
+        return @"可滑动可点击的条形图";
     } else {
         return @"折线图";
     }

@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "XLineChartView.h"
+#import "XXEnumHeader.h"
+
 
 @interface XXLineChart : UIView
 
+
+/**
+ Random ：RandomColor
+ Custom :  need to set (at XXLineChartItem)
+ */
+@property (nonatomic, assign) XXColorModel colorModel;
 
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
 

@@ -19,4 +19,5 @@
 #import "XXBarChart.h"
 #import "XXLineChart.h"
 #import "RandomNumerHelper.h"
+#import "XXEnumHeader.h"
 #endif /* XJYChart_h */

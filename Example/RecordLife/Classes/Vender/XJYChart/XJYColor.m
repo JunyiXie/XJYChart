@@ -7,7 +7,6 @@
 //
 
 #import "XJYColor.h"
-#import "Colors/Colours.h"
 
 @interface XJYColor ()
 

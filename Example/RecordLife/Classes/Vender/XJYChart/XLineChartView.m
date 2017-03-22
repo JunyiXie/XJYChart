@@ -70,4 +70,9 @@
     return _lineContainerView;
 }
 
+
+- (void)setColorModel:(int)colorModel {
+    _colorModel = colorModel;
+    self.lineContainerView.colorModel = colorModel;
+}
 @end

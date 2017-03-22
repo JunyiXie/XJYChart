@@ -146,6 +146,7 @@
 		9F699F931E30A48C0024F9FA /* XJYCircleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYCircleChart.h; sourceTree = "<group>"; };
 		9F699F941E30A48C0024F9FA /* XJYCircleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYCircleChart.m; sourceTree = "<group>"; };
 		9F8279881E34EFFA00558124 /* XJYChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChartDelegate.h; sourceTree = "<group>"; };
+		9F853B8D1E82693F00087E3A /* XXEnumHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXEnumHeader.h; sourceTree = "<group>"; };
 		9FA7742C1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYAuxiliaryCalculationHelper.h; sourceTree = "<group>"; };
 		9FA7742D1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYAuxiliaryCalculationHelper.m; sourceTree = "<group>"; };
 		9FACB9031E2F68EA00CD5D05 /* XJYLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYLineChartView.h; sourceTree = "<group>"; };
@@ -420,6 +421,7 @@
 				9F4F8AEE1E7BF5E3004BCDB8 /* XXLineChartItem.m */,
 				9F4F8AF31E7C0F5E004BCDB8 /* RandomNumerHelper.h */,
 				9F4F8AF41E7C0F5E004BCDB8 /* RandomNumerHelper.m */,
+				9F853B8D1E82693F00087E3A /* XXEnumHeader.h */,
 			);
 			path = XJYChart;
 			sourceTree = "<group>";

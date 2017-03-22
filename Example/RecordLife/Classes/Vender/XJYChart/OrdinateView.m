@@ -44,9 +44,9 @@
 - (void)setupUI {
     [self.labelArray enumerateObjectsUsingBlock:^(UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CGFloat width = self.frame.size.width;
-        CGFloat height = self.frame.size.height / self.labelArray.count;
+        CGFloat height = self.frame.size.height / (self.labelArray.count * 2);
         
-        obj.frame = CGRectMake(0, idx * height, width, height);
+        obj.frame = CGRectMake(0, idx * height * 2, width, height);
         obj.font = [UIFont systemFontOfSize:12];
 
         obj.text = [NSString stringWithFormat:@"%.0f",(3 - idx) *(self.top - self.bottom) / 3 + self.bottom];

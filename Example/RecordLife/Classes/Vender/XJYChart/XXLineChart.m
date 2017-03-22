@@ -58,7 +58,11 @@
     return _lineChartView;
 }
 
-
+#pragma mark Set
+- (void)setColorModel:(XXColorModel)colorModel {
+    _colorModel = colorModel;
+    self.lineChartView.colorModel = colorModel;
+}
 
 
 @end

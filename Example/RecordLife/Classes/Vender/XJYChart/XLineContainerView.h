@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XXLineChartItem.h"
+#import "XXEnumHeader.h"
 @interface XLineContainerView : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber;
@@ -24,4 +25,6 @@
  纵坐标最低点
  */
 @property (nonatomic, strong) NSNumber *bottom;
+
+@property (nonatomic, assign) XXColorModel colorModel;
 @end

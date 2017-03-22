@@ -23,6 +23,9 @@ static char kAssociatedObjectKey2;
 //backgroundFrame
 static char kAssociatedObjectKey3;
 
+//segementPointsArrays
+static char kAssociatedObjectKey4;
+
 
 - (void)setFrameValue:(id)frameValue {
     objc_setAssociatedObject(self, &kAssociatedObjectKey, frameValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -30,6 +33,14 @@ static char kAssociatedObjectKey3;
 
 - (id)frameValue {
     return objc_getAssociatedObject(self, &kAssociatedObjectKey);
+}
+
+- (void)setSelectStatusNumber:(id)selectStatusNumber {
+    objc_setAssociatedObject(self, &kAssociatedObjectKey2, selectStatusNumber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (id)selectStatusNumber {
+    return objc_getAssociatedObject(self, &kAssociatedObjectKey2);
 }
 
 - (void)setBackgroundFrameValue:(id)backgroundFrameValue {
@@ -40,13 +51,17 @@ static char kAssociatedObjectKey3;
     return objc_getAssociatedObject(self, &kAssociatedObjectKey3);
 }
 
-- (void)setSelectStatusNumber:(id)selectStatusNumber {
-    objc_setAssociatedObject(self, &kAssociatedObjectKey2, selectStatusNumber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+
+- (void)setSegementPointsArrays:(id)segementPointsArrays {
+    objc_setAssociatedObject(self, &kAssociatedObjectKey4, segementPointsArrays, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (id)selectStatusNumber {
-    return objc_getAssociatedObject(self, &kAssociatedObjectKey2);
+- (id)segementPointsArrays {
+    return objc_getAssociatedObject(self, &kAssociatedObjectKey4);
 }
+
+
 
 
 

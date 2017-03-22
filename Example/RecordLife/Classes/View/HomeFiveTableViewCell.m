@@ -40,14 +40,16 @@
             [numbersArray addObject:numberArray];
         }
         
+        NSArray *colorArray = @[[UIColor robinEggColor], [UIColor fadedBlueColor], [UIColor salmonColor], [UIColor coolGrayColor], [UIColor successColor]];
+        NSArray *colorArray1 = @[@"", @"", @"", @"", @""];
         
         for (int i = 0; i<5; i++) {
             
-            XXLineChartItem *item = [[XXLineChartItem alloc] initWithDataNumberArray:numbersArray[i] color:[UIColor redColor] dataDescribe:@"111"];
+            XXLineChartItem *item = [[XXLineChartItem alloc] initWithDataNumberArray:numbersArray[i] color:colorArray[i] dataDescribe:@"111"];
             [itemArray addObject:item];
         }
         XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0];
-       
+        lineChart.colorModel = Custom;
         [self.contentView addSubview:lineChart];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }

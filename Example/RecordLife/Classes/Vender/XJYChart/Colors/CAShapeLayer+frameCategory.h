@@ -14,4 +14,7 @@
 @property (nonatomic, strong) NSValue *backgroundFrameValue;
 @property (nonatomic, strong) NSNumber *selectStatusNumber;
 
+
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<NSValue *> *> *segementPointsArrays;
+
 @end

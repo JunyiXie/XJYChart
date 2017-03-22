@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XXLineChartItem.h"
-
+#import "XXEnumHeader.h"
 @interface XLineChartView : UIScrollView
 /**
  初始化方法
@@ -37,5 +37,7 @@
  纵坐标最低点
  */
 @property (nonatomic, strong) NSNumber *bottom;
+
+@property (nonatomic, assign) XXColorModel colorModel;
 
 @end

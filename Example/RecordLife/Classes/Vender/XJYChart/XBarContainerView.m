@@ -242,10 +242,19 @@
         CGRect layerFrame = shapeLayer.frameValue.CGRectValue;
         if (CGRectContainsPoint(layerFrame, point)) {
             NSLog(@"点击了 %lu bar", (unsigned long)idx + 1);
-//            NSLog(@"%d", shapeLayer.selectStatusNumber.boolValue);
             shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!shapeLayer.selectStatusNumber.boolValue];
+            
+            if (shapeLayer.selectStatusNumber.boolValue == TRUE) {
+                [self.coverLayer removeFromSuperlayer];
+                BOOL boolValue = shapeLayer.selectStatusNumber.boolValue;
+                shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!boolValue];
+                return ;
+            }
+
             //清空上一次
             [self.coverLayer removeFromSuperlayer];
+            BOOL boolValue = shapeLayer.selectStatusNumber.boolValue;
+            shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!boolValue];
             self.coverLayer = [self rectGradientLayerWithBounds:layerFrame];
             [shapeLayer addSublayer:self.coverLayer];
             //找到就可以停止循环了
@@ -261,7 +270,17 @@
         if (CGRectContainsPoint(layerFrame, point)) {
             [self.coverLayer removeFromSuperlayer];
             //得到对应 填充高度frame
-            CAShapeLayer *subShapeLayer = (CAShapeLayer *)self.layerArray[idx];
+            CAShapeLayer *subShapeLayer = (CAShapeLayer *)self.layerArray[idx];            
+            //如果已经高亮了
+            if (subShapeLayer.selectStatusNumber.boolValue == YES) {
+                [self.coverLayer removeFromSuperlayer];
+                BOOL boolValue = subShapeLayer.selectStatusNumber.boolValue;
+                subShapeLayer.selectStatusNumber = [NSNumber numberWithBool: !boolValue];
+                return ;
+            }
+
+            BOOL boolValue = subShapeLayer.selectStatusNumber.boolValue;
+            subShapeLayer.selectStatusNumber = [NSNumber numberWithBool: !boolValue];
             self.coverLayer = [self rectGradientLayerWithBounds:subShapeLayer.frameValue.CGRectValue];
             [subShapeLayer addSublayer:self.coverLayer];
             return ;
