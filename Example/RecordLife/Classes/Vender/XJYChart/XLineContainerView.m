@@ -263,6 +263,7 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy)
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
+    
     //坐标系转换
     CGPoint __block point = [[touches anyObject] locationInView:self];
     [self.shapeLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
