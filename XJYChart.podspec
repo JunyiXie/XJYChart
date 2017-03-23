@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.summary      = "A High-performance, Elegant And Easy-to-integrate Charting Framework.."
 
   s.description  = <<-DESC
+  					A High-performance, Elegant And Easy-to-integrate Charting Framework
                    DESC
 
   s.homepage     = "https://github.com/JunyiXie/XJYChart"
@@ -105,8 +106,8 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "UIKit"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
+  # s.framework  = "UIKit"
+  s.frameworks = "CoreGraphics", "UIKit" ,"Foundation" , "QuartzCore"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"

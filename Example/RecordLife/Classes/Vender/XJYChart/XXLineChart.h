@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XLineChartView.h"
 #import "XXEnumHeader.h"
-
+#import "XXLineChartItem.h"
 
 @interface XXLineChart : UIView
 
