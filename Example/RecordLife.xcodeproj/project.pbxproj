@@ -94,12 +94,6 @@
 		9F0DB3971E7FFA0A0019B89A /* CAShapeLayer+frameCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CAShapeLayer+frameCategory.m"; path = "Colors/CAShapeLayer+frameCategory.m"; sourceTree = "<group>"; };
 		9F1BB9E61E8007600046C78F /* maskImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maskImage.png; sourceTree = "<group>"; };
 		9F1BB9E81E800A1B0046C78F /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
-		9F1F195D1E83A6D9006551F2 /* MyCarthageFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCarthageFramework.h; sourceTree = "<group>"; };
-		9F1F195E1E83A6D9006551F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F1F199F1E83AACD006551F2 /* XJYChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XJYChart.h; sourceTree = "<group>"; };
-		9F1F19A01E83AACD006551F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F1F19E11E83AFEE006551F2 /* XJYChartFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XJYChartFramework.h; sourceTree = "<group>"; };
-		9F1F19E21E83AFEE006551F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F20A61F1E7BEDA100D4CA65 /* XXLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXLineChart.h; sourceTree = "<group>"; };
 		9F20A6201E7BEDA100D4CA65 /* XXLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXLineChart.m; sourceTree = "<group>"; };
 		9F20A6221E7BEF8E00D4CA65 /* XLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChartView.h; sourceTree = "<group>"; };
@@ -241,33 +235,6 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
-		9F1F195C1E83A6D9006551F2 /* MyCarthageFramework */ = {
-			isa = PBXGroup;
-			children = (
-				9F1F195D1E83A6D9006551F2 /* MyCarthageFramework.h */,
-				9F1F195E1E83A6D9006551F2 /* Info.plist */,
-			);
-			path = MyCarthageFramework;
-			sourceTree = "<group>";
-		};
-		9F1F199E1E83AACD006551F2 /* XJYChart */ = {
-			isa = PBXGroup;
-			children = (
-				9F1F199F1E83AACD006551F2 /* XJYChart.h */,
-				9F1F19A01E83AACD006551F2 /* Info.plist */,
-			);
-			path = XJYChart;
-			sourceTree = "<group>";
-		};
-		9F1F19E01E83AFEE006551F2 /* XJYChartFramework */ = {
-			isa = PBXGroup;
-			children = (
-				9F1F19E11E83AFEE006551F2 /* XJYChartFramework.h */,
-				9F1F19E21E83AFEE006551F2 /* Info.plist */,
-			);
-			path = XJYChartFramework;
-			sourceTree = "<group>";
-		};
 		9F3DC73A1E2E36B600C26D86 = {
 			isa = PBXGroup;
 			children = (
@@ -275,9 +242,6 @@
 				9F3DC7451E2E36B600C26D86 /* RecordLife */,
 				9F3DC75F1E2E36B600C26D86 /* RecordLifeTests */,
 				9F3DC76A1E2E36B600C26D86 /* RecordLifeUITests */,
-				9F1F195C1E83A6D9006551F2 /* MyCarthageFramework */,
-				9F1F199E1E83AACD006551F2 /* XJYChart */,
-				9F1F19E01E83AFEE006551F2 /* XJYChartFramework */,
 				9F3DC7441E2E36B600C26D86 /* Products */,
 				9ECE5A8FCF197E983022D694 /* Pods */,
 				418BB01D6FA134C9D0D67B75 /* Frameworks */,

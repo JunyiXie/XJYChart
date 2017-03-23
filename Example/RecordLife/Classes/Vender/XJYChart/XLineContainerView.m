@@ -263,9 +263,47 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy)
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
+    //根据 点击的x坐标 只找在x 坐标区域内的 线段进行判断
     
     //坐标系转换
     CGPoint __block point = [[touches anyObject] locationInView:self];
+    
+    NSMutableArray<NSNumber *> *xArray = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < self.dataItemArray.count; i ++) {
+        [xArray addObject:@(i * self.frame.size.width/self.dataItemArray.count)];
+    }
+    
+    //找到小的区域
+    int areaIdx = 0;
+    
+    for (int i = 0; i < self.dataItemArray.count - 1; i ++) {
+        if (point.x > xArray[i].floatValue && point.x < xArray[i + 1].floatValue) {
+            areaIdx = i;
+        }
+    }
+    
+    [self.shapeLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSMutableArray<NSMutableArray<NSValue *> *> *segementPointsArrays = obj.segementPointsArrays;
+        NSMutableArray<NSValue *> *points = segementPointsArrays[areaIdx];
+        NSUInteger shapeLayerIndex = idx;
+        
+        if ([self containPoint:[NSValue valueWithCGPoint:point] Points:points]) {
+            if (self.coverLayer.selectStatusNumber.boolValue == YES) {
+                [self.coverLayer removeFromSuperlayer];
+                self.coverLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
+            } else {
+                [self.coverLayer removeFromSuperlayer];
+                self.coverLayer = [self shapeLayerWithPath:self.shapeLayerArray[shapeLayerIndex].path color:XJYLightBlue];
+                self.coverLayer.selectStatusNumber = [NSNumber numberWithBool:YES];
+                [self.layer addSublayer:self.coverLayer];
+            }
+        }
+
+    }];
+    
+/*
     [self.shapeLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSMutableArray<NSMutableArray<NSValue *> *> *segementPointsArrays = obj.segementPointsArrays;
         NSUInteger shapeLayerIndex = idx;
@@ -286,6 +324,7 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy)
         }];
     }];
     
+ */
 }
 
 @end
