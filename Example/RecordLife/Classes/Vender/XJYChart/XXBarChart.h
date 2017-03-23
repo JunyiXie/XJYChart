@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "XJYBarItem.h"
+#import "XJYBarItem.h"
 
 @interface XXBarChart : UIView
 /**
@@ -19,13 +19,13 @@
  @param bottomNumber buttom
  @return instancetype
  */
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
 
 
 /**
  dataItemArray
  */
-@property (nonatomic, strong) NSMutableArray *dataItemArray;
+@property (nonatomic, strong) NSMutableArray<XJYBarItem *> *dataItemArray;
 
 
 /**
