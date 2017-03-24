@@ -11,6 +11,7 @@
 #import "XJYAuxiliaryCalculationHelper.h"
 #import "XJYColor.h"
 #import "CAShapeLayer+frameCategory.h"
+#import "XXAnimationLabel.h"
 
 
 #define LineWidth 6.0
@@ -19,12 +20,13 @@
 @interface XLineContainerView()
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
 //二维数组
-@property (nonatomic, strong) NSMutableArray<NSMutableArray *> *pointsArrays;
+@property (nonatomic, strong) NSMutableArray<NSMutableArray<NSValue *> *> *pointsArrays;
 
 @property (nonatomic, strong) NSMutableArray<CAShapeLayer *> *shapeLayerArray;
 
 //点击高亮的layer
 @property (nonatomic, strong) CAShapeLayer *coverLayer;
+@property (nonatomic, strong) NSMutableArray<XXAnimationLabel *> *labelArray;
 @end
 
 @implementation XLineContainerView
@@ -39,6 +41,7 @@
         self.top  = topNumber;
         self.bottom = bottomNumber;
         self.pointsArrays = [NSMutableArray new];
+        self.labelArray = [NSMutableArray new];
     }
     return self;
 }
@@ -283,27 +286,58 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy)
         }
     }
     
+    //遍历每一条线时，只判断在 areaIdx 的 线段 是否包含 该点
+    
     [self.shapeLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         NSMutableArray<NSMutableArray<NSValue *> *> *segementPointsArrays = obj.segementPointsArrays;
+        //找到这一段上的点s
         NSMutableArray<NSValue *> *points = segementPointsArrays[areaIdx];
+        
         NSUInteger shapeLayerIndex = idx;
         
         if ([self containPoint:[NSValue valueWithCGPoint:point] Points:points]) {
+            
+            
             if (self.coverLayer.selectStatusNumber.boolValue == YES) {
+                //清空上一次的layer 和 label
+
                 [self.coverLayer removeFromSuperlayer];
+                [self.labelArray enumerateObjectsUsingBlock:^(XXAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [obj removeFromSuperview];
+                }];
+                [self.labelArray removeAllObjects];
                 self.coverLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
+                
             } else {
+                
+                //清空上一次的
+                [self.labelArray enumerateObjectsUsingBlock:^(XXAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [obj removeFromSuperview];
+                }];
+                [self.labelArray removeAllObjects];
                 [self.coverLayer removeFromSuperlayer];
+
                 self.coverLayer = [self shapeLayerWithPath:self.shapeLayerArray[shapeLayerIndex].path color:XJYLightBlue];
                 self.coverLayer.selectStatusNumber = [NSNumber numberWithBool:YES];
                 [self.layer addSublayer:self.coverLayer];
+                
+                [self.pointsArrays[shapeLayerIndex] enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    CGPoint point = obj.CGPointValue;
+                    CGPoint reversePoint = CGPointMake(point.x, self.frame.size.height - point.y );
+                    NSString *text = [NSString stringWithFormat:@"%.2f",self.dataItemArray[shapeLayerIndex].numberArray[idx].doubleValue];
+                    XXAnimationLabel *label = [self topLabelWithPoint:reversePoint fillColor:[UIColor clearColor] text:text];
+                    [self.labelArray addObject:label];
+                    [self addSubview:label];
+                }];
+                
             }
         }
 
     }];
     
-/*
+    
+/* 遍历每条线的每一段
     [self.shapeLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSMutableArray<NSMutableArray<NSValue *> *> *segementPointsArrays = obj.segementPointsArrays;
         NSUInteger shapeLayerIndex = idx;
@@ -326,5 +360,37 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy)
     
  */
 }
+
+- (XXAnimationLabel *)topLabelWithRect:(CGRect)rect fillColor:(UIColor *)color text:(NSString *)text {
+    
+    
+    
+    CGFloat number = text.floatValue;
+    NSString *labelText = [NSString stringWithFormat:@"%.1f", number];
+    XXAnimationLabel *topLabel = [[XXAnimationLabel alloc] initWithFrame:rect];
+    topLabel.backgroundColor = color;
+    [topLabel setTextAlignment:NSTextAlignmentCenter];
+    topLabel.text = labelText;
+    [topLabel setFont:[UIFont systemFontOfSize:12]];
+    [topLabel setTextColor:XJYRed];
+    return topLabel;
+}
+
+
+- (XXAnimationLabel *)topLabelWithPoint:(CGPoint)point fillColor:(UIColor *)color text:(NSString *)text {
+    
+    CGRect rect = CGRectMake(point.x - 30, point.y - 35, 60, 35);
+    CGFloat number = text.floatValue;
+    NSString *labelText = [NSString stringWithFormat:@"%.1f", number];
+    XXAnimationLabel *topLabel = [[XXAnimationLabel alloc] initWithFrame:rect];
+    topLabel.backgroundColor = color;
+    [topLabel setTextAlignment:NSTextAlignmentCenter];
+    topLabel.text = labelText;
+    [topLabel setFont:[UIFont systemFontOfSize:14]];
+    [topLabel setTextColor:XJYLightBlue];
+    return topLabel;
+    
+}
+
 
 @end

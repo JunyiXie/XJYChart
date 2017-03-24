@@ -11,10 +11,14 @@
 #import "AbscissaView.h"
 #import "XJYColor.h"
 #import "CAShapeLayer+frameCategory.h"
+#import "XXAnimationLabel.h"
+#import "CALayer+XXLayer.h"
 
 #define GradientFillColor1 [UIColor colorWithRed:117/255.0 green:184/255.0 blue:245/255.0 alpha:1].CGColor
 #define GradientFillColor2 [UIColor colorWithRed:24/255.0 green:141/255.0 blue:240/255.0 alpha:1].CGColor
 #define BarBackgroundFillColor [UIColor colorWithRed:232/255.0 green:232/255.0 blue:232/255.0 alpha:1]
+
+#define animationDuration 3
 
 @interface XBarContainerView ()
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
@@ -128,14 +132,18 @@
         CAShapeLayer *fillRectShapeLayer = [self rectAnimationLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color];
 
         
-        UILabel *topLabel = [self topLabelWithRect:CGRectMake(fillRect.origin.x, fillRect.origin.y - 15, fillRect.size.width, 15) fillColor:[UIColor clearColor] text:self.dataNumberArray[idx].stringValue];
+        XXAnimationLabel *topLabel = [self topLabelWithRect:CGRectMake(fillRect.origin.x, fillRect.origin.y - 15, fillRect.size.width, 15) fillColor:[UIColor clearColor] text:self.dataNumberArray[idx].stringValue];
 //        CAGradientLayer *fillRectGradientLayer = [self rectGradientLayerWithBounds:fillRect];
-        //
         
-        //动画完成之后 添加label
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.pathAnimation.duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self addSubview:topLabel];
-        });
+        
+        [self addSubview:topLabel];
+        CGPoint tempCenter = topLabel.center;
+        topLabel.center = CGPointMake(topLabel.center.x, topLabel.center.y + fillRect.size.height );
+        [topLabel countFromCurrentTo:topLabel.text.floatValue duration:animationDuration];
+        [UIView animateWithDuration:animationDuration animations:^{
+            topLabel.center = tempCenter;
+        }];
+
         [self.layer addSublayer:fillRectShapeLayer];
         //将绘制的Layer保存
         [self.layerArray addObject:fillRectShapeLayer];
@@ -198,16 +206,16 @@
     return rectLayer;
 }
 
-- (UILabel *)topLabelWithRect:(CGRect)rect fillColor:(UIColor *)color text:(NSString *)text {
+- (XXAnimationLabel *)topLabelWithRect:(CGRect)rect fillColor:(UIColor *)color text:(NSString *)text {
     
     CGFloat number = text.floatValue;
     NSString *labelText = [NSString stringWithFormat:@"%.1f", number];
-    UILabel *topLabel = [[UILabel alloc] initWithFrame:rect];
+    XXAnimationLabel *topLabel = [[XXAnimationLabel alloc] initWithFrame:rect];
     topLabel.backgroundColor = color;
     [topLabel setTextAlignment:NSTextAlignmentCenter];
     topLabel.text = labelText;
-    [topLabel setFont:[UIFont systemFontOfSize:10]];
-    [topLabel setTextColor:XJYGreen];
+    [topLabel setFont:[UIFont systemFontOfSize:12]];
+    [topLabel setTextColor:XJYRed];
     return topLabel;
 }
 
@@ -225,7 +233,7 @@
 
 - (CABasicAnimation *)pathAnimation {
     _pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    _pathAnimation.duration = 1.5;
+    _pathAnimation.duration = animationDuration;
     _pathAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     _pathAnimation.fromValue = @0.0f;
     _pathAnimation.toValue = @1.0f;
@@ -241,21 +249,29 @@
         CAShapeLayer *shapeLayer = (CAShapeLayer *)obj;
         CGRect layerFrame = shapeLayer.frameValue.CGRectValue;
         if (CGRectContainsPoint(layerFrame, point)) {
-            NSLog(@"点击了 %lu bar", (unsigned long)idx + 1);
-            shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!shapeLayer.selectStatusNumber.boolValue];
             
+            //上一次点击的layer,清空上一次的状态
+            CAShapeLayer *preShapeLayer =  (CAShapeLayer *)self.layerArray[self.coverLayer.selectIdxNumber.intValue];
+            preShapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
+            
+            NSLog(@"点击了 %lu bar  boolvalue", (unsigned long)idx + 1);
+            NSLog(@"%d",shapeLayer.selectStatusNumber.boolValue);
+//            shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!shapeLayer.selectStatusNumber.boolValue];
+//            
             if (shapeLayer.selectStatusNumber.boolValue == TRUE) {
+                shapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
                 [self.coverLayer removeFromSuperlayer];
-                BOOL boolValue = shapeLayer.selectStatusNumber.boolValue;
-                shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!boolValue];
                 return ;
             }
-
-            //清空上一次
+            
+            //移除原来的
             [self.coverLayer removeFromSuperlayer];
+            
             BOOL boolValue = shapeLayer.selectStatusNumber.boolValue;
             shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!boolValue];
             self.coverLayer = [self rectGradientLayerWithBounds:layerFrame];
+            self.coverLayer.selectIdxNumber = @(idx);
+            
             [shapeLayer addSublayer:self.coverLayer];
             //找到就可以停止循环了
             return ;
@@ -267,21 +283,27 @@
     [self.fillLayerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CAShapeLayer *shapeLayer = (CAShapeLayer *)obj;
         CGRect layerFrame = shapeLayer.frameValue.CGRectValue;
+        
         if (CGRectContainsPoint(layerFrame, point)) {
+        
+            //上一次点击的layer,清空上一次的状态
+            CAShapeLayer *preShapeLayer =  (CAShapeLayer *)self.layerArray[self.coverLayer.selectIdxNumber.intValue];
+            preShapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
             [self.coverLayer removeFromSuperlayer];
+            
             //得到对应 填充高度frame
             CAShapeLayer *subShapeLayer = (CAShapeLayer *)self.layerArray[idx];            
             //如果已经高亮了
             if (subShapeLayer.selectStatusNumber.boolValue == YES) {
+                subShapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
                 [self.coverLayer removeFromSuperlayer];
-                BOOL boolValue = subShapeLayer.selectStatusNumber.boolValue;
-                subShapeLayer.selectStatusNumber = [NSNumber numberWithBool: !boolValue];
                 return ;
             }
-
+            
             BOOL boolValue = subShapeLayer.selectStatusNumber.boolValue;
             subShapeLayer.selectStatusNumber = [NSNumber numberWithBool: !boolValue];
             self.coverLayer = [self rectGradientLayerWithBounds:subShapeLayer.frameValue.CGRectValue];
+            self.coverLayer.selectIdxNumber = @(idx);
             [subShapeLayer addSublayer:self.coverLayer];
             return ;
         }

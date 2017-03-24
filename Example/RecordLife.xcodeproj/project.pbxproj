@@ -42,6 +42,8 @@
 		9F4F8AF21E7BF773004BCDB8 /* XLineContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F8AF11E7BF773004BCDB8 /* XLineContainerView.m */; };
 		9F4F8AF51E7C0F5E004BCDB8 /* RandomNumerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F8AF41E7C0F5E004BCDB8 /* RandomNumerHelper.m */; };
 		9F699F951E30A48C0024F9FA /* XJYCircleChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F699F941E30A48C0024F9FA /* XJYCircleChart.m */; };
+		9F84A6CC1E8533450059B6FF /* XXAnimationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A6CB1E8533450059B6FF /* XXAnimationLabel.m */; };
+		9F84A7091E856B0B0059B6FF /* CALayer+XXLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F84A7081E856B0B0059B6FF /* CALayer+XXLayer.m */; };
 		9FA7742E1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA7742D1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m */; };
 		9FACB9051E2F68EA00CD5D05 /* XJYLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FACB9041E2F68EA00CD5D05 /* XJYLineChartView.m */; };
 		9FB578FA1E347A4F00339633 /* XJYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB578F91E347A4F00339633 /* XJYPieChart.m */; };
@@ -159,6 +161,10 @@
 		9F699F931E30A48C0024F9FA /* XJYCircleChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYCircleChart.h; sourceTree = "<group>"; };
 		9F699F941E30A48C0024F9FA /* XJYCircleChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYCircleChart.m; sourceTree = "<group>"; };
 		9F8279881E34EFFA00558124 /* XJYChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChartDelegate.h; sourceTree = "<group>"; };
+		9F84A6CA1E8533450059B6FF /* XXAnimationLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XXAnimationLabel.h; path = Colors/XXAnimationLabel.h; sourceTree = "<group>"; };
+		9F84A6CB1E8533450059B6FF /* XXAnimationLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XXAnimationLabel.m; path = Colors/XXAnimationLabel.m; sourceTree = "<group>"; };
+		9F84A7071E856B0B0059B6FF /* CALayer+XXLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+XXLayer.h"; sourceTree = "<group>"; };
+		9F84A7081E856B0B0059B6FF /* CALayer+XXLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+XXLayer.m"; sourceTree = "<group>"; };
 		9F853B8D1E82693F00087E3A /* XXEnumHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXEnumHeader.h; sourceTree = "<group>"; };
 		9FA7742C1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYAuxiliaryCalculationHelper.h; sourceTree = "<group>"; };
 		9FA7742D1E2F76A500471847 /* XJYAuxiliaryCalculationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYAuxiliaryCalculationHelper.m; sourceTree = "<group>"; };
@@ -434,7 +440,11 @@
 				9F4F8AEE1E7BF5E3004BCDB8 /* XXLineChartItem.m */,
 				9F4F8AF31E7C0F5E004BCDB8 /* RandomNumerHelper.h */,
 				9F4F8AF41E7C0F5E004BCDB8 /* RandomNumerHelper.m */,
+				9F84A6CA1E8533450059B6FF /* XXAnimationLabel.h */,
+				9F84A6CB1E8533450059B6FF /* XXAnimationLabel.m */,
 				9F853B8D1E82693F00087E3A /* XXEnumHeader.h */,
+				9F84A7071E856B0B0059B6FF /* CALayer+XXLayer.h */,
+				9F84A7081E856B0B0059B6FF /* CALayer+XXLayer.m */,
 			);
 			path = XJYChart;
 			sourceTree = "<group>";
@@ -660,6 +670,7 @@
 				9F699F951E30A48C0024F9FA /* XJYCircleChart.m in Sources */,
 				9F0DB35E1E7FBFDD0019B89A /* Colours.m in Sources */,
 				9F20A6241E7BEF8E00D4CA65 /* XLineChartView.m in Sources */,
+				9F84A6CC1E8533450059B6FF /* XXAnimationLabel.m in Sources */,
 				9F34C0F81E7AA8CE00B073F7 /* AbscissaView.m in Sources */,
 				9FBEEDE01E35D3E000DABF83 /* XJYBarChart.m in Sources */,
 				9F3DC78F1E2E492B00C26D86 /* XJYPopOption.m in Sources */,
@@ -672,6 +683,7 @@
 				9FB578FA1E347A4F00339633 /* XJYPieChart.m in Sources */,
 				9F3DC7A51E2E653800C26D86 /* XJYLineChart.m in Sources */,
 				9F0DB3981E7FFA0A0019B89A /* CAShapeLayer+frameCategory.m in Sources */,
+				9F84A7091E856B0B0059B6FF /* CALayer+XXLayer.m in Sources */,
 				9F3DC7481E2E36B600C26D86 /* main.m in Sources */,
 				9FB579031E349C9200339633 /* HomeTwoTableViewCell.m in Sources */,
 			);
