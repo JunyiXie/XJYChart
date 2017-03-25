@@ -214,7 +214,7 @@
     topLabel.backgroundColor = color;
     [topLabel setTextAlignment:NSTextAlignmentCenter];
     topLabel.text = labelText;
-    [topLabel setFont:[UIFont systemFontOfSize:12]];
+    [topLabel setFont:[UIFont systemFontOfSize:14]];
     [topLabel setTextColor:XJYRed];
     return topLabel;
 }

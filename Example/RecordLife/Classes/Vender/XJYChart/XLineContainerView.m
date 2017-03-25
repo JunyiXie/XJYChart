@@ -15,7 +15,7 @@
 
 
 #define LineWidth 6.0
-#define PointDiameter 10.0
+#define PointDiameter 13.0
 
 @interface XLineContainerView()
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
@@ -164,7 +164,7 @@
     chartLine.lineJoin = kCALineJoinRound;
     chartLine.lineWidth = LineWidth;
     
-    CGFloat touchLineWidth = 25;
+    CGFloat touchLineWidth = 40;
     
     
     for (int i = 0; i < pointsValueArray.count - 1; i++) {
@@ -318,17 +318,20 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy)
                 [self.labelArray removeAllObjects];
                 [self.coverLayer removeFromSuperlayer];
 
-                self.coverLayer = [self shapeLayerWithPath:self.shapeLayerArray[shapeLayerIndex].path color:XJYLightBlue];
+                self.coverLayer = [self shapeLayerWithPath:self.shapeLayerArray[shapeLayerIndex].path color:[UIColor tomatoColor]];
                 self.coverLayer.selectStatusNumber = [NSNumber numberWithBool:YES];
                 [self.layer addSublayer:self.coverLayer];
                 
                 [self.pointsArrays[shapeLayerIndex] enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     CGPoint point = obj.CGPointValue;
                     CGPoint reversePoint = CGPointMake(point.x, self.frame.size.height - point.y );
-                    NSString *text = [NSString stringWithFormat:@"%.2f",self.dataItemArray[shapeLayerIndex].numberArray[idx].doubleValue];
-                    XXAnimationLabel *label = [self topLabelWithPoint:reversePoint fillColor:[UIColor clearColor] text:text];
+
+                    XXAnimationLabel *label = [self topLabelWithPoint:reversePoint fillColor:[UIColor clearColor] text:@"0"];
+                    
+                    CGFloat textNum = self.dataItemArray[shapeLayerIndex].numberArray[idx].doubleValue;
                     [self.labelArray addObject:label];
                     [self addSubview:label];
+                    [label countFromCurrentTo:textNum duration:0.5];
                 }];
                 
             }
@@ -387,7 +390,7 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy)
     [topLabel setTextAlignment:NSTextAlignmentCenter];
     topLabel.text = labelText;
     [topLabel setFont:[UIFont systemFontOfSize:14]];
-    [topLabel setTextColor:XJYLightBlue];
+    [topLabel setTextColor:XJYRed];
     return topLabel;
     
 }

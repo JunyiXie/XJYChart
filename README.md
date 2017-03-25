@@ -9,6 +9,7 @@
  ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG)
+![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
 
 
 ## Update 
