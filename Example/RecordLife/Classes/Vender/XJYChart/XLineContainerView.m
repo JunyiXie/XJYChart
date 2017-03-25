@@ -389,8 +389,8 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy)
     topLabel.backgroundColor = color;
     [topLabel setTextAlignment:NSTextAlignmentCenter];
     topLabel.text = labelText;
-    [topLabel setFont:[UIFont systemFontOfSize:14]];
-    [topLabel setTextColor:XJYRed];
+    [topLabel setFont:[UIFont systemFontOfSize:16]];
+    [topLabel setTextColor:XJYBlack];
     return topLabel;
     
 }

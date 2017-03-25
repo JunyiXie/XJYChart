@@ -5,11 +5,13 @@
 ## 一个高性能，优雅，使用简单的图表框架。
 ## A High-performance, Elegant And Easy-to-integrate Charting Framework.
 
+![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
+
+
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG)
  ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG)
-![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
 
 
 ## Update 
