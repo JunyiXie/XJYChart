@@ -10,7 +10,7 @@
 
 #import "SGLabel.h"
 #import <CoreText/CoreText.h>
-const CGFloat kGlobalLineLeading = 5.0;
+const CGFloat kGlobalLineLeading = 2.0;
 const CGFloat kPerLineRatio = 1.4;
 NSString *kAtRegularExpression = @"@[^\\s@]+?\\s{1}";
 NSString *kNumberRegularExpression = @"\\d+[^\\d]{1}";
@@ -129,7 +129,7 @@ static NSString *NumberRegularName = @"continuousNumbers";
 
 - (UIFont *)font {
     if (!_font) {
-        _font = [UIFont systemFontOfSize:12];
+        _font = [UIFont systemFontOfSize:10];
     }
     return _font;
 }
@@ -215,7 +215,7 @@ static NSString *NumberRegularName = @"continuousNumbers";
         
         CGContextAddRect(con, self.bounds);
         
-        CGContextSetFillColorWithColor(con, [UIColor yellowColor].CGColor);
+        CGContextSetFillColorWithColor(con, [UIColor whiteColor].CGColor);
         
         CGContextFillPath(con);
         
