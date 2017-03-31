@@ -38,6 +38,7 @@
 		9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */; };
 		9F3DC7A51E2E653800C26D86 /* XJYLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A41E2E653800C26D86 /* XJYLineChart.m */; };
 		9F3DC7A91E2E7C8C00C26D86 /* XJYChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A81E2E7C8C00C26D86 /* XJYChartView.m */; };
+		9F4926991E8EAEA500EB5DE3 /* SGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4926981E8EAEA500EB5DE3 /* SGLabel.m */; };
 		9F4F8AEF1E7BF5E3004BCDB8 /* XXLineChartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F8AEE1E7BF5E3004BCDB8 /* XXLineChartItem.m */; };
 		9F4F8AF21E7BF773004BCDB8 /* XLineContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F8AF11E7BF773004BCDB8 /* XLineContainerView.m */; };
 		9F4F8AF51E7C0F5E004BCDB8 /* RandomNumerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4F8AF41E7C0F5E004BCDB8 /* RandomNumerHelper.m */; };
@@ -152,6 +153,8 @@
 		9F3DC7A61E2E6F5400C26D86 /* XJYChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XJYChart.h; sourceTree = "<group>"; };
 		9F3DC7A71E2E7C8C00C26D86 /* XJYChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChartView.h; sourceTree = "<group>"; };
 		9F3DC7A81E2E7C8C00C26D86 /* XJYChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYChartView.m; sourceTree = "<group>"; };
+		9F4926971E8EAEA500EB5DE3 /* SGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLabel.h; sourceTree = "<group>"; };
+		9F4926981E8EAEA500EB5DE3 /* SGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLabel.m; sourceTree = "<group>"; };
 		9F4F8AED1E7BF5E3004BCDB8 /* XXLineChartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXLineChartItem.h; sourceTree = "<group>"; };
 		9F4F8AEE1E7BF5E3004BCDB8 /* XXLineChartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXLineChartItem.m; sourceTree = "<group>"; };
 		9F4F8AF01E7BF773004BCDB8 /* XLineContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineContainerView.h; sourceTree = "<group>"; };
@@ -391,6 +394,7 @@
 		9F3DC7A21E2E652700C26D86 /* XJYChart */ = {
 			isa = PBXGroup;
 			children = (
+				9F4926961E8EAEA500EB5DE3 /* SGText */,
 				9F1BB9E81E800A1B0046C78F /* mask.png */,
 				9F1BB9E61E8007600046C78F /* maskImage.png */,
 				9F0DB3961E7FFA0A0019B89A /* CAShapeLayer+frameCategory.h */,
@@ -447,6 +451,15 @@
 				9F84A7081E856B0B0059B6FF /* CALayer+XXLayer.m */,
 			);
 			path = XJYChart;
+			sourceTree = "<group>";
+		};
+		9F4926961E8EAEA500EB5DE3 /* SGText */ = {
+			isa = PBXGroup;
+			children = (
+				9F4926971E8EAEA500EB5DE3 /* SGLabel.h */,
+				9F4926981E8EAEA500EB5DE3 /* SGLabel.m */,
+			);
+			path = SGText;
 			sourceTree = "<group>";
 		};
 		9FACB8E81E2F4C1600CD5D05 /* XJYRespondCocoa */ = {
@@ -650,6 +663,7 @@
 				9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */,
 				9F34C0F21E7A9AFC00B073F7 /* XXBarChart.m in Sources */,
 				9F3DC78A1E2E492B00C26D86 /* XJYIPTools.m in Sources */,
+				9F4926991E8EAEA500EB5DE3 /* SGLabel.m in Sources */,
 				9FACB9051E2F68EA00CD5D05 /* XJYLineChartView.m in Sources */,
 				9F34C0FB1E7AB70300B073F7 /* XBarContainerView.m in Sources */,
 				9F3B2A131E7974AF000FB7DB /* XBarChartView.m in Sources */,

@@ -42,6 +42,7 @@
 }
 
 - (void)setupUI {
+
     [self.labelArray enumerateObjectsUsingBlock:^(UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CGFloat width = self.frame.size.width;
         CGFloat height = self.frame.size.height / (self.labelArray.count * 2);

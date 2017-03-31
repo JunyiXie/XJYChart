@@ -17,7 +17,7 @@
 ## Update 
 
 ### Update 1.1 
-
+**CoreText绘制坐标 优化性能**
 ### 图表增加了滑动和动画效果
 ### Added slippery graph And Chart Animations
 
