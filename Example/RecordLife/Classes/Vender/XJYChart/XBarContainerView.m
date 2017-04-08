@@ -35,6 +35,7 @@
 @property (nonatomic, strong) NSMutableArray<CALayer *> *fillLayerArray;
 
 @property (nonatomic, strong) CALayer *coverLayer;
+
 @end
 
 @implementation XBarContainerView
@@ -71,6 +72,7 @@
     [self.colorArray removeAllObjects];
     [self.dataNumberArray removeAllObjects];
     [self.dataDescribeArray removeAllObjects];
+    
     [self.dataItemArray enumerateObjectsUsingBlock:^(XJYBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self.colorArray addObject:obj.color];
         [self.dataNumberArray addObject:obj.dataNumber];
@@ -79,7 +81,6 @@
     
     
     //绘制条
-    
     
     //每个条的宽度
     CGFloat width = (self.bounds.size.width / self.dataItemArray.count) / 3 * 2;

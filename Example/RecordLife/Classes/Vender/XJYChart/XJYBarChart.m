@@ -376,7 +376,6 @@
     CAShapeLayer *rectLayer = [CAShapeLayer layer];
     rectLayer.path = path.CGPath;
     rectLayer.fillColor   = fillColor.CGColor;
-    //利用border 来 绘制 非常好
 //    rectLayer.strokeColor = borderColor.CGColor;
 //    rectLayer.strokeStart = startPercentage;
 //    rectLayer.strokeEnd   = endPercentage;

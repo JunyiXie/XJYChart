@@ -155,11 +155,8 @@
 
 #pragma mark Layout Subviews
 //the default implementation uses any constraints you have set to determine the size and position of any subviews.
-// 改变子视图大小和位置的时候调用
 - (void)layoutSubviews {
     [super layoutSubviews];
-    //布局子视图之前 本身的frame 是已经得出的
-    // 视图的frame确定 是从父视图 到 子视图
     [self strokePie];
     
 }

@@ -14,14 +14,28 @@
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG)
 
 
-## Update 
+### XXLineChart
 
-### Update 1.1 
-**CoreText绘制坐标 优化性能**
-### 图表增加了滑动和动画效果
-### Added slippery graph And Chart Animations
+XXColorModel:颜色是 随机显示／指定
 
-### SLide XXLineChart
+```
+/**
+XXLineChart初始化方法
+*/
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
+```
+
+**XXLineChartItem**
+
+numberArray:一条线上的所有数值
+color:该线的颜色
+dataDescribe:数值在横坐标上的描述
+
+```
+- (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color dataDescribe:(NSString *)dataDescribe;
+```
+
+
 ```objectivec
         XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0];
 ```
@@ -71,6 +85,13 @@
 
 ```
 
+## Update 
+
+### Update 1.1 
+**CoreText绘制坐标 优化性能**
+### 图表增加了滑动和动画效果
+### Added slippery graph And Chart Animations
 ### Example 
+
 直接运行就可以看到示例
 Directly Run To See XJYChart Example

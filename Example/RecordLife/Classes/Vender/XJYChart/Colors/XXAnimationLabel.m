@@ -59,7 +59,6 @@
 }
 
 
-
 - (void)countFrom:(CGFloat)from to:(CGFloat)to duration:(CGFloat)duration {
     self.startingValue = from;
     self.destinationValue = to;
