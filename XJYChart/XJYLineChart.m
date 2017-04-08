@@ -6,9 +6,6 @@
 //  Copyright © 2017 谢俊逸. All rights reserved.
 //
 
-//你可能好奇为什么我不重用 用数组 来避免重复的代码
-//我的回答是 可修改性强，可定制性强。
-//没必要为了一点代码量 影响代码的灵活性.
 
 #import "XJYLineChart.h"
 #import "Masonry.h"

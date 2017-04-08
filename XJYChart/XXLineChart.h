@@ -20,6 +20,12 @@
  */
 @property (nonatomic, assign) XXColorModel colorModel;
 
+
+
+
+/**
+ XXLineChart初始化方法
+ */
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
 
 @end
