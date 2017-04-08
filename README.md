@@ -7,13 +7,6 @@
 
 ![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
 
-
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG)
- ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG)
-
-
 ### XXLineChart
 
 - XXColorModel:颜色是 随机显示／指定
@@ -98,3 +91,9 @@ self.barChart = [[XJYBarChart alloc] initWithFrame:CGRectZero dataItemArray:item
 
 直接运行就可以看到示例
 Directly Run To See XJYChart Example
+
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG)
+
