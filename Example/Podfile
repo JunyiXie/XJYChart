@@ -9,7 +9,6 @@ pod "JazzHands"
 pod ‘ReactiveCocoa’,’~> 2.5’
 pod ‘MBProgressHUD’
 pod ’SDWebImage’
-pod ‘Masonry’
 pod ‘TPKeyboardAvoiding’
 pod ‘FlatUIKit’
 pod ‘MJRefresh’
