@@ -8,7 +8,7 @@
 
 
 #import "XJYLineChart.h"
-#import "Masonry.h"
+#import <Masonry/Masonry.h>
 #import "XJYPointView.h"
 #define POINT_CIRCLE  6.0f
 
