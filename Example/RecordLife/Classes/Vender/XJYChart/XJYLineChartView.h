@@ -8,7 +8,7 @@
 
 #import "XJYChartView.h"
 #import "XJYLineChart.h"
-#import <Masonry/Masonry.h>
+#import "Masonry/Masonry.h"
 
 @interface XJYLineChartView : XJYChartView
 

@@ -39,11 +39,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Masonry.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-RecordLife.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,7 +77,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>255CAAB9A07109769E747741910ABFF8</key>
+		<key>3ADCBFD73287B51C336266F182234DA5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,17 +92,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4F1D822304EF38ACE69A0F70F3CBB97C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>586F2DFA9BDCC6675C2546793A69E5CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9DC8D9E02903E93BD0B2FEC9D846EA20</key>
+		<key>830CFCBC86CDF81AB990DBD4CA3F717F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,12 +112,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A3A175B2CC8ADD5292BF158F6AC860E8</key>
+		<key>ABB5813BDF3AF64B51C31678FCC39560</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E201F9C943CB436FE0B41896E86F8948</key>
+		<key>AC260680E8822304483C3A4230012D09</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C47B213E61CACC34EB14C31053C697A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,12 +132,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FCA822F6E9313A6E1116F203189DA6D5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FE0943F58F943C81D778F12E08501089</key>
+		<key>FCB359090A1DF96107CF03C3F1866C16</key>
 		<dict>
 			<key>primary</key>
 			<true/>

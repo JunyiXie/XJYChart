@@ -23,7 +23,6 @@ PODS:
     - JSPatchPlatform/Core (= 1.6.5)
   - JSPatchPlatform/Core (1.6.5):
     - JSPatch
-  - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
@@ -46,7 +45,6 @@ DEPENDENCIES:
   - FlatUIKit
   - JazzHands
   - JSPatchPlatform
-  - Masonry
   - MBProgressHUD
   - MJExtension
   - MJRefresh
@@ -62,7 +60,6 @@ SPEC CHECKSUMS:
   JazzHands: 355dc5c2b6fc38ee460d0ed7836c69539263f477
   JSPatch: 741205ebb2e2238c223a436e4c8cf75cf40a345f
   JSPatchPlatform: 45e5a0b2d0a229baec33cbcf7dd3fdb0630edbe8
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -72,6 +69,6 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
   TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
 
-PODFILE CHECKSUM: 8e82cbccd0ee2d768355b7fd81a239a0e10df849
+PODFILE CHECKSUM: ac5a67b2a16b4b56b8f6a036ada4c98705a79c1c
 
 COCOAPODS: 1.2.0
