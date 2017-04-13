@@ -6,7 +6,8 @@
 //  Copyright © 2017 谢俊逸. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
 @interface XXLineChartItem : NSObject
 
 

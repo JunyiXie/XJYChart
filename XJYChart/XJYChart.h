@@ -8,7 +8,6 @@
 
 #ifndef XJYChart_h
 #define XJYChart_h
-
 #import "XJYLineChartView.h"
 #import "XJYPieChart.h"
 #import "XJYBarChart.h"
@@ -21,6 +20,4 @@
 #import "XXLineChart.h"
 #import "RandomNumerHelper.h"
 #import "XXEnumHeader.h"
-#import "XXLineChartItem.h"
-
 #endif /* XJYChart_h */

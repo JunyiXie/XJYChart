@@ -13,9 +13,8 @@ Pod::Spec.new do |s|
   s.version      = "0.0.1"
   s.summary      = "A High-performance, Elegant And Easy-to-integrate Charting Framework.."
 
-  s.description  = <<-DESC
-  					A High-performance, Elegant And Easy-to-integrate Charting Framework
-                   DESC
+  s.description  = "A High-performance, Elegant And Easy-to-integrate Charting Framework"
+                   
 
   s.homepage     = "https://github.com/JunyiXie/XJYChart"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
