@@ -26,22 +26,22 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         NSMutableArray *itemArray = [[NSMutableArray alloc] init];
-        XJYBarItem *item1 = [[XJYBarItem alloc] initWithDataNumber:@(-50.93) color:[UIColor greenColor] dataDescribe:@"test"];
+        XJYBarItem *item1 = [[XJYBarItem alloc] initWithDataNumber:@(-80.93) color:[UIColor greenColor] dataDescribe:@"test"];
         [itemArray addObject:item1];
-        XJYBarItem *item2 = [[XJYBarItem alloc] initWithDataNumber:@(-77.04) color:[UIColor greenColor] dataDescribe:@"test"];
+        XJYBarItem *item2 = [[XJYBarItem alloc] initWithDataNumber:@(-107.04) color:[UIColor greenColor] dataDescribe:@"test"];
         [itemArray addObject:item2];
-        XJYBarItem *item3 = [[XJYBarItem alloc] initWithDataNumber:@(-114.99) color:[UIColor redColor] dataDescribe:@"test"];
+        XJYBarItem *item3 = [[XJYBarItem alloc] initWithDataNumber:@(77.99) color:[UIColor redColor] dataDescribe:@"test"];
         [itemArray addObject:item3];
-        XJYBarItem *item4 = [[XJYBarItem alloc] initWithDataNumber:@(-128.48) color:[UIColor greenColor] dataDescribe:@"test"];
+        XJYBarItem *item4 = [[XJYBarItem alloc] initWithDataNumber:@(57.48) color:[UIColor greenColor] dataDescribe:@"test"];
         [itemArray addObject:item4];
-        XJYBarItem *item5 = [[XJYBarItem alloc] initWithDataNumber:@(-132.91) color:[UIColor greenColor] dataDescribe:@"test"];
+        XJYBarItem *item5 = [[XJYBarItem alloc] initWithDataNumber:@(-89.91) color:[UIColor greenColor] dataDescribe:@"test"];
         [itemArray addObject:item5];
         
-        XJYBarItem *item6 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"test"];
+        XJYBarItem *item6 = [[XJYBarItem alloc] initWithDataNumber:@(66.93) color:[UIColor greenColor] dataDescribe:@"test"];
         [itemArray addObject:item6];
         XJYBarItem *item7 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"test"];
         [itemArray addObject:item7];
-        XJYBarItem *item8 = [[XJYBarItem alloc] initWithDataNumber:@(-4.99) color:[UIColor redColor] dataDescribe:@"test"];
+        XJYBarItem *item8 = [[XJYBarItem alloc] initWithDataNumber:@(-77.99) color:[UIColor redColor] dataDescribe:@"test"];
         [itemArray addObject:item8];
         XJYBarItem *item9 = [[XJYBarItem alloc] initWithDataNumber:@(-28.48) color:[UIColor greenColor] dataDescribe:@"test"];
         [itemArray addObject:item9];

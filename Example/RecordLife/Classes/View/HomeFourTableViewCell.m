@@ -26,22 +26,22 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
 
         NSMutableArray *itemArray = [[NSMutableArray alloc] init];
-        XJYBarItem *item1 = [[XJYBarItem alloc] initWithDataNumber:@(110.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+        XJYBarItem *item1 = [[XJYBarItem alloc] initWithDataNumber:@(50.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
         [itemArray addObject:item1];
-        XJYBarItem *item2 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+        XJYBarItem *item2 = [[XJYBarItem alloc] initWithDataNumber:@(90.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
         [itemArray addObject:item2];
-        XJYBarItem *item3 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+        XJYBarItem *item3 = [[XJYBarItem alloc] initWithDataNumber:@(80.99) color:[UIColor redColor] dataDescribe:@"Win8"];
         [itemArray addObject:item3];
-        XJYBarItem *item4 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
+        XJYBarItem *item4 = [[XJYBarItem alloc] initWithDataNumber:@(110.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
         [itemArray addObject:item4];
-        XJYBarItem *item5 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
+        XJYBarItem *item5 = [[XJYBarItem alloc] initWithDataNumber:@(92.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
         [itemArray addObject:item5];
         
-        XJYBarItem *item6 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+        XJYBarItem *item6 = [[XJYBarItem alloc] initWithDataNumber:@(74.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
         [itemArray addObject:item6];
-        XJYBarItem *item7 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+        XJYBarItem *item7 = [[XJYBarItem alloc] initWithDataNumber:@(50.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
         [itemArray addObject:item7];
-        XJYBarItem *item8 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+        XJYBarItem *item8 = [[XJYBarItem alloc] initWithDataNumber:@(44.99) color:[UIColor redColor] dataDescribe:@"Win8"];
         [itemArray addObject:item8];
         XJYBarItem *item9 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
         [itemArray addObject:item9];
