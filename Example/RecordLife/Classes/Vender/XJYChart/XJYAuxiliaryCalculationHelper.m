@@ -19,10 +19,20 @@
     });
     return helper;
 }
-
+// 全正高度比值
 - (CGFloat)calculateTheProportionOfHeightByTop:(CGFloat)top bottom:(CGFloat)bottom height:(CGFloat)height {
     NSCAssert((top >= height) && (height >= bottom), @"The data must meet the following conditions “bottom < height < top “");
     return fabs((height - bottom)/(top - bottom));
+}
+
+/// 计算 目前高度   /  （正高度／负高度）的比值
+- (CGFloat)calculateThePositiveNegativeProportionOfHeightByTop:(CGFloat)top bottom:(CGFloat)bottom height:(CGFloat)height {
+    NSCAssert((top >= height) && (height >= bottom), @"The data must meet the following conditions “bottom < height < top “");
+    if (height >= 0) {
+        return fabs(height / top);
+    } else {
+        return fabs(height / bottom);
+    }
 }
 
 - (CGFloat)calculateTheProportionOfWidthByIdx:(CGFloat)idx count:(NSUInteger)count {

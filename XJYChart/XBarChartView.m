@@ -12,6 +12,7 @@
 #import "XJYBarItem.h"
 #import "XJYAuxiliaryCalculationHelper.h"
 #import "XBarContainerView.h"
+#import "XPositiveNegativeBarContainerView.h"
 
 
 #define AbscissaHeight 30
@@ -50,6 +51,7 @@
         self.backgroundColor = [UIColor whiteColor];
         self.contentSize = [self computeSrollViewCententSizeFromItemArray:self.dataItemArray];
         [self addSubview:self.barContainerView];
+        
         [self addSubview:self.abscissaView];
 
     }
@@ -98,6 +100,8 @@
     }
     return _barContainerView;
 }
+
+
 
 
 @end

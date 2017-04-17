@@ -7,6 +7,17 @@
 
 ![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
 
+### Update :
+**Add The positive and negative Bar Chart**
+
+**增加了正负条形图**
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG)
+
+**How to Use**
+```objectivec
+XXPositiveNegativeBarChart *barChart = [[XXPositiveNegativeBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@(-170)];
+```
+
 ### XXLineChart
 
 - XXColorModel:颜色是 随机显示／指定
@@ -16,7 +27,7 @@
 - topNumber:纵坐标最大值
 - bottomNumber:纵坐标最小值
 
-```
+```objectivec
 /**
 XXLineChart初始化方法
 */
@@ -29,7 +40,7 @@ XXLineChart初始化方法
 - color:该线的颜色
 - dataDescribe:数值在横坐标上的描述
 
-```
+```objectivec
 - (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color dataDescribe:(NSString *)dataDescribe;
 ```
 
@@ -91,4 +102,5 @@ Directly Run To See XJYChart Example
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG)
 

@@ -45,7 +45,6 @@
 		9F0F82BC1E9F7EAA009763FF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82AF1E9F7EAA009763FF /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		9F0F82BD1E9F7EAA009763FF /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82B11E9F7EAA009763FF /* View+MASAdditions.m */; };
 		9F0F82BE1E9F7EAA009763FF /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82B41E9F7EAA009763FF /* ViewController+MASAdditions.m */; };
-		9F20A6271E7BF15800D4CA65 /* HomeFiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20A6261E7BF15800D4CA65 /* HomeFiveTableViewCell.m */; };
 		9F3B2A161E797580000FB7DB /* HomeFourTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B2A151E797580000FB7DB /* HomeFourTableViewCell.m */; };
 		9F3DC7481E2E36B600C26D86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7471E2E36B600C26D86 /* main.m */; };
 		9F3DC74B1E2E36B600C26D86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC74A1E2E36B600C26D86 /* AppDelegate.m */; };
@@ -65,6 +64,11 @@
 		9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */; };
 		9FB579031E349C9200339633 /* HomeTwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB579021E349C9200339633 /* HomeTwoTableViewCell.m */; };
 		9FBEEDE31E35D72D00DABF83 /* HomeThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEEDE21E35D72D00DABF83 /* HomeThreeTableViewCell.m */; };
+		9FCCC1661EA4BC3E00D54EF7 /* XPositiveNegativeBarContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCC1651EA4BC3E00D54EF7 /* XPositiveNegativeBarContainerView.m */; };
+		9FCCC19A1EA4E91E00D54EF7 /* XXPositiveNegativeBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCC1991EA4E91E00D54EF7 /* XXPositiveNegativeBarChart.m */; };
+		9FCCC19D1EA4E99000D54EF7 /* XXPositiveNegativeBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCC19C1EA4E99000D54EF7 /* XXPositiveNegativeBarChartView.m */; };
+		9FCCC1A31EA4F11500D54EF7 /* HomeFiveTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCC1A21EA4F11500D54EF7 /* HomeFiveTableViewCell.m */; };
+		9FCCC1A61EA4F14800D54EF7 /* HomeSixTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCCC1A51EA4F14800D54EF7 /* HomeSixTableViewCell.m */; };
 		F970B3AC4344FA51EEEECE0F /* libPods-RecordLife.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1506324E69DEAE7EED7CE76 /* libPods-RecordLife.a */; };
 /* End PBXBuildFile section */
 
@@ -183,8 +187,6 @@
 		9F0F82B21E9F7EAA009763FF /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		9F0F82B31E9F7EAA009763FF /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		9F0F82B41E9F7EAA009763FF /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		9F20A6251E7BF15800D4CA65 /* HomeFiveTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFiveTableViewCell.h; sourceTree = "<group>"; };
-		9F20A6261E7BF15800D4CA65 /* HomeFiveTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFiveTableViewCell.m; sourceTree = "<group>"; };
 		9F3B2A141E797580000FB7DB /* HomeFourTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFourTableViewCell.h; sourceTree = "<group>"; };
 		9F3B2A151E797580000FB7DB /* HomeFourTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFourTableViewCell.m; sourceTree = "<group>"; };
 		9F3DC7431E2E36B600C26D86 /* RecordLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +226,16 @@
 		9FB579021E349C9200339633 /* HomeTwoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTwoTableViewCell.m; sourceTree = "<group>"; };
 		9FBEEDE11E35D72D00DABF83 /* HomeThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeThreeTableViewCell.h; sourceTree = "<group>"; };
 		9FBEEDE21E35D72D00DABF83 /* HomeThreeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeThreeTableViewCell.m; sourceTree = "<group>"; };
+		9FCCC1641EA4BC3E00D54EF7 /* XPositiveNegativeBarContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPositiveNegativeBarContainerView.h; sourceTree = "<group>"; };
+		9FCCC1651EA4BC3E00D54EF7 /* XPositiveNegativeBarContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPositiveNegativeBarContainerView.m; sourceTree = "<group>"; };
+		9FCCC1981EA4E91E00D54EF7 /* XXPositiveNegativeBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXPositiveNegativeBarChart.h; sourceTree = "<group>"; };
+		9FCCC1991EA4E91E00D54EF7 /* XXPositiveNegativeBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXPositiveNegativeBarChart.m; sourceTree = "<group>"; };
+		9FCCC19B1EA4E99000D54EF7 /* XXPositiveNegativeBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXPositiveNegativeBarChartView.h; sourceTree = "<group>"; };
+		9FCCC19C1EA4E99000D54EF7 /* XXPositiveNegativeBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXPositiveNegativeBarChartView.m; sourceTree = "<group>"; };
+		9FCCC1A11EA4F11500D54EF7 /* HomeFiveTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFiveTableViewCell.h; sourceTree = "<group>"; };
+		9FCCC1A21EA4F11500D54EF7 /* HomeFiveTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFiveTableViewCell.m; sourceTree = "<group>"; };
+		9FCCC1A41EA4F14800D54EF7 /* HomeSixTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeSixTableViewCell.h; sourceTree = "<group>"; };
+		9FCCC1A51EA4F14800D54EF7 /* HomeSixTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeSixTableViewCell.m; sourceTree = "<group>"; };
 		E1506324E69DEAE7EED7CE76 /* libPods-RecordLife.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RecordLife.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -286,10 +298,6 @@
 				9F0F822A1E9F7999009763FF /* RandomNumerHelper.h */,
 				9F0F822B1E9F7999009763FF /* RandomNumerHelper.m */,
 				9F0F822C1E9F7999009763FF /* SGText */,
-				9F0F822F1E9F7999009763FF /* XBarChartView.h */,
-				9F0F82301E9F7999009763FF /* XBarChartView.m */,
-				9F0F82311E9F7999009763FF /* XBarContainerView.h */,
-				9F0F82321E9F7999009763FF /* XBarContainerView.m */,
 				9F0F82331E9F7999009763FF /* XJYAuxiliaryCalculationHelper.h */,
 				9F0F82341E9F7999009763FF /* XJYAuxiliaryCalculationHelper.m */,
 				9F0F82351E9F7999009763FF /* XJYBarChart.h */,
@@ -320,11 +328,21 @@
 				9F0F824E1E9F7999009763FF /* XLineContainerView.m */,
 				9F0F824F1E9F7999009763FF /* XXBarChart.h */,
 				9F0F82501E9F7999009763FF /* XXBarChart.m */,
+				9F0F822F1E9F7999009763FF /* XBarChartView.h */,
+				9F0F82301E9F7999009763FF /* XBarChartView.m */,
+				9F0F82311E9F7999009763FF /* XBarContainerView.h */,
+				9F0F82321E9F7999009763FF /* XBarContainerView.m */,
 				9F0F82511E9F7999009763FF /* XXEnumHeader.h */,
 				9F0F82521E9F7999009763FF /* XXLineChart.h */,
 				9F0F82531E9F7999009763FF /* XXLineChart.m */,
 				9F0F82541E9F7999009763FF /* XXLineChartItem.h */,
 				9F0F82551E9F7999009763FF /* XXLineChartItem.m */,
+				9FCCC1981EA4E91E00D54EF7 /* XXPositiveNegativeBarChart.h */,
+				9FCCC1991EA4E91E00D54EF7 /* XXPositiveNegativeBarChart.m */,
+				9FCCC19B1EA4E99000D54EF7 /* XXPositiveNegativeBarChartView.h */,
+				9FCCC19C1EA4E99000D54EF7 /* XXPositiveNegativeBarChartView.m */,
+				9FCCC1641EA4BC3E00D54EF7 /* XPositiveNegativeBarContainerView.h */,
+				9FCCC1651EA4BC3E00D54EF7 /* XPositiveNegativeBarContainerView.m */,
 			);
 			path = XJYChart;
 			sourceTree = "<group>";
@@ -513,8 +531,10 @@
 				9FBEEDE21E35D72D00DABF83 /* HomeThreeTableViewCell.m */,
 				9F3B2A141E797580000FB7DB /* HomeFourTableViewCell.h */,
 				9F3B2A151E797580000FB7DB /* HomeFourTableViewCell.m */,
-				9F20A6251E7BF15800D4CA65 /* HomeFiveTableViewCell.h */,
-				9F20A6261E7BF15800D4CA65 /* HomeFiveTableViewCell.m */,
+				9FCCC1A11EA4F11500D54EF7 /* HomeFiveTableViewCell.h */,
+				9FCCC1A21EA4F11500D54EF7 /* HomeFiveTableViewCell.m */,
+				9FCCC1A41EA4F14800D54EF7 /* HomeSixTableViewCell.h */,
+				9FCCC1A51EA4F14800D54EF7 /* HomeSixTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -731,6 +751,7 @@
 				9F0F825D1E9F7999009763FF /* OrdinateView.m in Sources */,
 				9F0F82BC1E9F7EAA009763FF /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				9F0F82671E9F7999009763FF /* XJYColor.m in Sources */,
+				9FCCC19A1EA4E91E00D54EF7 /* XXPositiveNegativeBarChart.m in Sources */,
 				9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */,
 				9F0F82631E9F7999009763FF /* XJYBarChart.m in Sources */,
 				9F0F82B91E9F7EAA009763FF /* MASViewAttribute.m in Sources */,
@@ -742,15 +763,17 @@
 				9F0F82651E9F7999009763FF /* XJYChartView.m in Sources */,
 				9F0F82B71E9F7EAA009763FF /* MASConstraintMaker.m in Sources */,
 				9F3DC79B1E2E59DF00C26D86 /* XJYTableViewCell.m in Sources */,
+				9FCCC1661EA4BC3E00D54EF7 /* XPositiveNegativeBarContainerView.m in Sources */,
 				9F0F82B61E9F7EAA009763FF /* MASConstraint.m in Sources */,
 				9F0F82B51E9F7EAA009763FF /* MASCompositeConstraint.m in Sources */,
 				9F0F82BA1E9F7EAA009763FF /* MASViewConstraint.m in Sources */,
+				9FCCC1A31EA4F11500D54EF7 /* HomeFiveTableViewCell.m in Sources */,
 				9F0F82711E9F7999009763FF /* XXLineChartItem.m in Sources */,
 				9F0F82611E9F7999009763FF /* XBarContainerView.m in Sources */,
-				9F20A6271E7BF15800D4CA65 /* HomeFiveTableViewCell.m in Sources */,
 				9F0F825E1E9F7999009763FF /* RandomNumerHelper.m in Sources */,
 				9F0F825A1E9F7999009763FF /* XXAnimationLabel.m in Sources */,
 				9F3DC74E1E2E36B600C26D86 /* ViewController.m in Sources */,
+				9FCCC19D1EA4E99000D54EF7 /* XXPositiveNegativeBarChartView.m in Sources */,
 				9F0F826E1E9F7999009763FF /* XLineContainerView.m in Sources */,
 				9F3B2A161E797580000FB7DB /* HomeFourTableViewCell.m in Sources */,
 				9F0F826A1E9F7999009763FF /* XJYPieChart.m in Sources */,
@@ -773,6 +796,7 @@
 				9F0F82691E9F7999009763FF /* XJYLineChartView.m in Sources */,
 				9F0F82701E9F7999009763FF /* XXLineChart.m in Sources */,
 				9F0F82561E9F7999009763FF /* AbscissaView.m in Sources */,
+				9FCCC1A61EA4F14800D54EF7 /* HomeSixTableViewCell.m in Sources */,
 				9F3DC7481E2E36B600C26D86 /* main.m in Sources */,
 				9F0F82BB1E9F7EAA009763FF /* NSArray+MASAdditions.m in Sources */,
 				9FB579031E349C9200339633 /* HomeTwoTableViewCell.m in Sources */,

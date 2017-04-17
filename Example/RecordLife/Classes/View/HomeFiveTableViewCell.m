@@ -17,7 +17,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -30,7 +30,7 @@
         for (int j = 0; j<5; j++) {
             
             NSMutableArray *numberArray = [NSMutableArray new];
-
+            
             for (int i = 0; i<5; i++) {
                 int num = [[RandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14] * [[RandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14];
                 NSNumber *number = [NSNumber numberWithInt:num];

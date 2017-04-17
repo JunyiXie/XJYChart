@@ -12,6 +12,7 @@
 #import "HomeThreeTableViewCell.h"
 #import "HomeFourTableViewCell.h"
 #import "HomeFiveTableViewCell.h"
+#import "HomeSixTableViewCell.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -65,6 +66,7 @@
         [_tableView registerClass:[HomeThreeTableViewCell class] forCellReuseIdentifier:kHomeThreeTableViewCell];
         [_tableView registerClass:[HomeFourTableViewCell class] forCellReuseIdentifier:kHomeFourTableViewCell];
         [_tableView registerClass:[HomeFiveTableViewCell class] forCellReuseIdentifier:kHomeFiveTableViewCell];
+        [_tableView registerClass:[HomeSixTableViewCell class] forCellReuseIdentifier:kHomeSixTableViewCell];
         _tableView.dataSource = self;
         _tableView.delegate = self;
     }
@@ -89,7 +91,7 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -116,6 +118,8 @@
     } else if (indexPath.section == 4) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeOneTableViewCell forIndexPath:indexPath];
         return cell;
+    } else if (indexPath.section == 5) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeSixTableViewCell forIndexPath:indexPath];
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeOneTableViewCell forIndexPath:indexPath];
     return cell;
@@ -131,8 +135,10 @@
         return @"条形图";
     } else if (section == 3) {
         return @"可滑动可点击的条形图";
-    } else {
+    } else if (section == 4){
         return @"折线图";
+    } else {
+        return @"正负条形图";
     }
 }
 

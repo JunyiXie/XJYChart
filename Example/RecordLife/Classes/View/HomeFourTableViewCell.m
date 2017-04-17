@@ -26,7 +26,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
 
         NSMutableArray *itemArray = [[NSMutableArray alloc] init];
-        XJYBarItem *item1 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+        XJYBarItem *item1 = [[XJYBarItem alloc] initWithDataNumber:@(110.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
         [itemArray addObject:item1];
         XJYBarItem *item2 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
         [itemArray addObject:item2];
@@ -47,7 +47,7 @@
         [itemArray addObject:item9];
         XJYBarItem *item10 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
         [itemArray addObject:item10];
-        
+//
         XJYBarItem *item11 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
         [itemArray addObject:item11];
         XJYBarItem *item12 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
@@ -69,7 +69,7 @@
         [itemArray addObject:item19];
         XJYBarItem *item20 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
         [itemArray addObject:item20];
-        
+
         XJYBarItem *item21 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
         [itemArray addObject:item21];
         XJYBarItem *item22 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
@@ -80,8 +80,8 @@
         [itemArray addObject:item24];
         XJYBarItem *item25 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
         [itemArray addObject:item25];
-        
-        XXBarChart *barChart = [[XXBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@80 bottomNumber:@0];
+
+        XXBarChart *barChart = [[XXBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@150 bottomNumber:@(0)];
         
         [self.contentView addSubview:barChart];
         self.selectionStyle = UITableViewCellSelectionStyleNone;

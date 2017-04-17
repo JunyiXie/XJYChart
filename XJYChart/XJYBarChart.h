@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XJYBarItem.h"
-#import <Masonry/Masonry.h>
+#import "Masonry/Masonry.h"
 
 //颜色
 

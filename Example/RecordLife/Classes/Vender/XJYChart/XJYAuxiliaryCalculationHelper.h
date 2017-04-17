@@ -17,7 +17,7 @@
 
 
 /**
- 计算高度占比
+ 计算正高度占比
 
  @param top topHeight
  @param bottom bottomHeight
@@ -26,6 +26,8 @@
  */
 - (CGFloat)calculateTheProportionOfHeightByTop:(CGFloat)top bottom:(CGFloat)bottom height:(CGFloat)height;
 
+/// 计算 目前高度   /  （正高度／负高度）的比值 return 正值
+- (CGFloat)calculateThePositiveNegativeProportionOfHeightByTop:(CGFloat)top bottom:(CGFloat)bottom height:(CGFloat)height;
 /**
  计算宽度占比
 
