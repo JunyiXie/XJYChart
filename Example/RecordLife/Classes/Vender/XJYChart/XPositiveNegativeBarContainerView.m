@@ -15,11 +15,11 @@
 #import "XXAnimationLabel.h"
 #import "CALayer+XXLayer.h"
 
-
-typedef NS_ENUM(NSInteger, XXValuence) {
-    Positive,
-    Negative,
-};
+//
+//typedef NS_ENUM(NSInteger, XXValuence) {
+//    Positive,
+//    Negative,
+//};
 
 
 #define GradientFillColor1 [UIColor colorWithRed:117/255.0 green:184/255.0 blue:245/255.0 alpha:1].CGColor
@@ -168,9 +168,9 @@ typedef NS_ENUM(NSInteger, XXValuence) {
         CAShapeLayer *fillRectShapeLayer;
         
         if (self.dataNumberArray[idx].doubleValue >= 0) {
-            fillRectShapeLayer = [self rectAnimationLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color Valuence:Positive];
+            fillRectShapeLayer = [self rectAnimationLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color Valuence:0];
         } else {
-            fillRectShapeLayer = [self rectAnimationLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color Valuence:Negative];
+            fillRectShapeLayer = [self rectAnimationLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color Valuence:1];
         }
         
         
@@ -246,14 +246,14 @@ typedef NS_ENUM(NSInteger, XXValuence) {
     return chartLine;
 }
 
-- (CAShapeLayer *)rectAnimationLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor Valuence:(XXValuence)valyence {
+- (CAShapeLayer *)rectAnimationLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor Valuence:(BOOL)valyence {
 
     CGPoint startPoint;
     CGPoint endPoint;
     CGPoint temStartPoint;
     CGPoint temEndPoint;
     BOOL canAnimation = YES;
-    if (valyence == Positive) {
+    if (valyence == 0) {
         //矩形中一条线path
         startPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y + rect.size.height));
         endPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y));
