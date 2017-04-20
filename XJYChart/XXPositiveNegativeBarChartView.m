@@ -13,6 +13,7 @@
 #import "XJYAuxiliaryCalculationHelper.h"
 #import "XBarContainerView.h"
 #import "XPositiveNegativeBarContainerView.h"
+#import "XXEnumHeader.h"
 
 #define AbscissaHeight 30
 
