@@ -39,27 +39,14 @@
         //设置dataItemArray 
         self.pieChartView.dataItemArray = pieItems;
         
+        self.pieChartView.frame = CGRectMake(5, 5, 365, 190);
+        
         [self.contentView addSubview:self.pieChartView];
     }
     
     return self;
 }
-+ (BOOL)requiresConstraintBasedLayout {
-    return YES;
-}
 
-- (void)updateConstraints {
-
-    [_pieChartView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).offset(10);
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
-        make.left.equalTo(self.contentView.mas_left).offset(10);
-        make.right.equalTo(self.contentView.mas_right).offset(-10);
-    }];
-    
-    [super updateConstraints];
-    //必须要保证在布局成功后，bounds确定后，再来计算点
-}
 
 - (UIColor *)randomColor {
     CGFloat red = arc4random() / (CGFloat)INT_MAX;

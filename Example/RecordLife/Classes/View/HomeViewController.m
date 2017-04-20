@@ -91,7 +91,7 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 6;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -102,7 +102,6 @@
     
     if (indexPath.section == 0) {
 
-        
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeFiveTableViewCell forIndexPath:indexPath];
         return cell;
 
@@ -110,16 +109,15 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeTwoTableViewCell forIndexPath:indexPath];
         return cell;
     } else if (indexPath.section == 2) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeThreeTableViewCell forIndexPath:indexPath];
-        return cell;
-    } else if (indexPath.section == 3) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeFourTableViewCell forIndexPath:indexPath];
         return cell;
-    } else if (indexPath.section == 4) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeOneTableViewCell forIndexPath:indexPath];
-        return cell;
-    } else if (indexPath.section == 5) {
+    } else if (indexPath.section == 3) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeSixTableViewCell forIndexPath:indexPath];
+        return cell;
+    } else if (indexPath.section == 4) {
+
+    } else if (indexPath.section == 5) {
+
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeOneTableViewCell forIndexPath:indexPath];
     return cell;
@@ -132,13 +130,11 @@
     } else if (section == 1) {
         return @"饼图";
     } else if (section == 2) {
-        return @"条形图";
-    } else if (section == 3) {
         return @"可滑动可点击的条形图";
-    } else if (section == 4){
-        return @"折线图";
-    } else {
+    } else if (section == 3) {
         return @"正负条形图";
+    } else {
+        return @"";
     }
 }
 

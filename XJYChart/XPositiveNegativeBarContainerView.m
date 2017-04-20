@@ -184,9 +184,9 @@
         }
         
         [topLabel countFromCurrentTo:topLabel.text.floatValue duration:animationDuration];
-        [UIView animateWithDuration:animationDuration animations:^{
+//        [UIView animateWithDuration:animationDuration animations:^{
             topLabel.center = tempCenter;
-        }];
+//        }];
         
         [self.layer addSublayer:fillRectShapeLayer];
         //将绘制的Layer保存

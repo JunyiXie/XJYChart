@@ -270,7 +270,6 @@ static NSString *NumberRegularName = @"continuousNumbers";
     CGPoint ctPoint = CGPointMake(currentPoint.x, self.bounds.size.
                                   height - currentPoint.y);
     
-    NSLog(@"frameH%f  boundsH %f ",self.frame.size.height, self.bounds.size.height);
     
     CFArrayRef lines = CTFrameGetLines(self.ctFrame);
     CGPoint* lineOrigins = malloc(sizeof(CGPoint)*CFArrayGetCount(lines));
@@ -278,7 +277,6 @@ static NSString *NumberRegularName = @"continuousNumbers";
     CGFloat lineHeight = self.font.pointSize * kPerLineRatio;
     //高度来除行高,currentPoint.y 可以当作行高
     int lineIndex = currentPoint.y/lineHeight;
-    NSLog(@"lineIndex : %d",lineIndex);
     if (lineIndex < CFArrayGetCount(lines))
     {
         
@@ -287,7 +285,6 @@ static NSString *NumberRegularName = @"continuousNumbers";
         //进行命中测试。
         //此功能可用于确定鼠标点击或其他事件的字符串索引。 此字符串索引对应于应插入下一个字符的字符。
         CFIndex strIndex = CTLineGetStringIndexForPosition(clickLine, ctPoint);
-        NSLog(@"strIndex = %ld",strIndex);
         [self.SpecialRangesTableArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             SpecialRangesTable *table = (SpecialRangesTable *)obj;
             NSMutableArray *rangeArray = table.rangeArray;
@@ -295,7 +292,6 @@ static NSString *NumberRegularName = @"continuousNumbers";
                 NSNumber *start = ((NSArray *)obj)[0];
                 NSNumber *length = ((NSArray *)obj)[1];
                 if (strIndex >= start.intValue && strIndex <= start.intValue + length.intValue) {
-                    NSLog(@"RangeKey:%lu,location:%lu,length:%lu",(unsigned long)table.type, (unsigned long)start.intValue, (unsigned long)length.intValue);
                     // 调用 委托方法
                     [self.sgLabelDelegate touchUpInsideSpecialRangeType:table.type];
                 }
@@ -336,7 +332,6 @@ static NSString *NumberRegularName = @"continuousNumbers";
     
     CGFloat totalHeight = 0;
     
-    NSLog(@"计算高度开始");
     for (CFIndex i = 0; i < lineCount; i++)
     {
         
@@ -344,7 +339,6 @@ static NSString *NumberRegularName = @"continuousNumbers";
         
         CTLineGetTypographicBounds(lineRef, &ascent, &descent, &leading);
         
-        NSLog(@"ascent = %f,descent = %f, leading = %f",ascent,descent,leading);
         
         totalHeight += ascent + descent;
         
@@ -355,9 +349,7 @@ static NSString *NumberRegularName = @"continuousNumbers";
     totalHeight += (lineCount ) * leading;
     
     
-    NSLog(@"totalHeight = %f",totalHeight);
     
-    NSLog(@"高度计算完毕");
     
     return totalHeight;
 }
@@ -412,6 +404,5 @@ static NSString *NumberRegularName = @"continuousNumbers";
 - (void)dealloc {
     
     CFRelease(self.ctFrame);
-    NSLog(@"");
 }
 @end

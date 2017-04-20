@@ -15,6 +15,7 @@ pod ‘MJRefresh’
 pod ‘TWMessageBarManager’
 pod ‘SSKeychain’
 pod 'JSPatchPlatform'
+pod ‘Masonry’
 
 pod 'Reveal-SDK', :configurations => ['Debug']
 

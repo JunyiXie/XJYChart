@@ -9,6 +9,8 @@
 #import "XJYPieChart.h"
 #import "XJYAuxiliaryCalculationHelper.h"
 
+
+
 @interface XJYPieChart ()<CAAnimationDelegate>
 
 @property (nonatomic, strong) NSNumber *radius;
@@ -62,6 +64,7 @@
         
         
         self.contentView = [[UIView alloc] init];
+        
         self.contentView.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.contentView];
         self.backgroundColor = [UIColor whiteColor];
@@ -169,12 +172,17 @@
 
 - (void)updateConstraints {
     [super updateConstraints];
-    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_top);
-        make.bottom.equalTo(self.mas_bottom);
-        make.left.equalTo(self.mas_left);
-        make.right.equalTo(self.mas_right);
-    }];
+
+    [self.contentView setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+    NSLayoutConstraint *topCons = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    NSLayoutConstraint *leftCons = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
+    NSLayoutConstraint *rightCons = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
+    NSLayoutConstraint *bottomCons = [NSLayoutConstraint constraintWithItem:self.contentView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
+    NSArray *consA = @[topCons, leftCons, rightCons, bottomCons];
+    [self addConstraints:consA];
+    
+    
 }
 
 #pragma mark Touch handle
@@ -281,13 +289,11 @@
                                                      clockwise:YES];
     
     circle.fillColor   = fillColor.CGColor;
-    //利用border 来 绘制 非常好
     circle.strokeColor = borderColor.CGColor;
     circle.strokeStart = startPercentage;
     circle.strokeEnd   = endPercentage;
     circle.lineWidth   = borderWidth;
     circle.path        = path.CGPath;
-//    circle.shouldRasterize = YES;
     
     return circle;
 }

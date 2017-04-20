@@ -8,9 +8,7 @@
 
 #ifndef XJYChart_h
 #define XJYChart_h
-#import "XJYLineChartView.h"
 #import "XJYPieChart.h"
-#import "XJYBarChart.h"
 #import "XJYPieItem.h"
 #import "XJYBarItem.h"
 #import "XJYChartDelegate.h"
