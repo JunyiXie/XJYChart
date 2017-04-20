@@ -1,24 +1,42 @@
 # XJYChart
 
-### 漂亮的图表框架。支持动画，点击，滑动，区域高亮。 
+#### 漂亮的图表框架。支持动画，点击，滑动，区域高亮。 
 
-### 一个高性能，优雅，使用简单的图表框架。
-### A High-performance, Elegant And Easy-to-integrate Charting Framework.
+#### 一个高性能，优雅，使用简单。
+#### A High-performance, Elegant And Easy-to-integrate Charting Framework.
 
 ![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
 
-### Update :
+
+
+#### Update 0.0.2
+
+**Clear abandoned API**
+
+#### Update :
 **Add The positive and negative Bar Chart**
 
 **增加了正负条形图**
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG)
 
+
+
+
+#### Installation With Cocoapods
+```
+pod 'XJYChart'
+```
+
 **How to Use**
+
+
+#### XXPositiveNegativeBarChart
+
 ```objectivec
 XXPositiveNegativeBarChart *barChart = [[XXPositiveNegativeBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@(-170)];
 ```
 
-### XXLineChart
+#### XXLineChart
 
 - XXColorModel:颜色是 随机显示／指定
 - frame:图表的frame
@@ -51,12 +69,8 @@ XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375
 
 
 ## Use
-（引入了 Masonry）
 
-1. **Drag XJYChart into the project**
-2. #import "XJYChart.h"
-
-### PieChart
+#### PieChart
 
 ```objectivec
 
@@ -79,12 +93,6 @@ XJYPieItem *item4 = [[XJYPieItem alloc] initWithDataNumber:[NSNumber numberWithD
 self.pieChartView.dataItemArray = pieItems;
         
 
-```
-
-### BarChart
-
-```objectivec
-self.barChart = [[XJYBarChart alloc] initWithFrame:CGRectZero dataItemArray:itemArray topNumber:@60 bottomNumber:@0];
 ```
 
 ## Update 
