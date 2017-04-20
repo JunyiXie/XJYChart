@@ -14,7 +14,13 @@
 #import "CAShapeLayer+frameCategory.h"
 #import "XXAnimationLabel.h"
 #import "CALayer+XXLayer.h"
-#import "XXEnumHeader.h"
+
+
+typedef NS_ENUM(NSInteger, XXValuence) {
+    Positive,
+    Negative,
+};
+
 
 #define GradientFillColor1 [UIColor colorWithRed:117/255.0 green:184/255.0 blue:245/255.0 alpha:1].CGColor
 #define GradientFillColor2 [UIColor colorWithRed:24/255.0 green:141/255.0 blue:240/255.0 alpha:1].CGColor

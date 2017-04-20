@@ -13,9 +13,5 @@ typedef NS_ENUM(NSUInteger, XXColorModel) {
     Custom,
 };
 
-typedef NS_ENUM(NSInteger, XXValuence) {
-    Positive,
-    Negative,
-};
 
 #endif /* XXEnumHeader_h */
