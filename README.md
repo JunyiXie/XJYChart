@@ -27,8 +27,7 @@ Add The positive and negative Bar Chart**
 pod 'XJYChart'
 ```
 
-How to Use
-
+> How to Use
 
 ###### XXPositiveNegativeBarChart
 
@@ -52,7 +51,7 @@ XXLineChart初始化方法
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
 ```
 
-**XXLineChartItem**
+XXLineChartItem
 
 - numberArray:一条线上的所有数值
 - color:该线的颜色
