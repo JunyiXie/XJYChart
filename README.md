@@ -1,4 +1,4 @@
-# XJYChart
+###### XJYChart
 
 漂亮的图表框架。支持动画，点击，滑动，区域高亮。 
 一个高性能，优雅，使用简单。
@@ -22,21 +22,21 @@ Add The positive and negative Bar Chart**
 
 
 
-#### Installation With Cocoapods
+###### Installation With Cocoapods
 ```
 pod 'XJYChart'
 ```
 
-**How to Use**
+How to Use
 
 
-#### XXPositiveNegativeBarChart
+###### XXPositiveNegativeBarChart
 
 ```objectivec
 XXPositiveNegativeBarChart *barChart = [[XXPositiveNegativeBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@(-170)];
 ```
 
-#### XXLineChart
+###### XXLineChart
 
 - XXColorModel:颜色是 随机显示／指定
 - frame:图表的frame
@@ -68,9 +68,8 @@ XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375
 ```
 
 
-## Use
 
-#### PieChart
+###### PieChart
 
 ```objectivec
 
@@ -95,7 +94,7 @@ self.pieChartView.dataItemArray = pieItems;
 
 ```
 
-#### ChartColor 
+###### ChartColor 
 Provide many colors In XJYColor.h
 XJYSkyBlue
 XJYGrey
@@ -103,13 +102,13 @@ XJYLightBlue
 ...
 
 
-## Update 
+###### Update 
 
-### Update 1.1 
-**CoreText绘制坐标 优化性能**
-### 图表增加了滑动和动画效果
-### Added slippery graph And Chart Animations
-### Example 
+###### Update 1.1 
+CoreText绘制坐标 优化性能
+图表增加了滑动和动画效果
+Added slippery graph And Chart Animations
+Example 
 
 直接运行就可以看到示例
 Directly Run To See XJYChart Example
