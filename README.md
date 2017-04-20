@@ -1,22 +1,22 @@
 # XJYChart
 
-#### 漂亮的图表框架。支持动画，点击，滑动，区域高亮。 
+漂亮的图表框架。支持动画，点击，滑动，区域高亮。 
+一个高性能，优雅，使用简单。
 
-#### 一个高性能，优雅，使用简单。
-#### A High-performance, Elegant And Easy-to-integrate Charting Framework.
+ A High-performance, Elegant And Easy-to-integrate Charting Framework.
 
 ![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
 
 
 
-#### Update 0.0.2
+ Update 0.0.2
 
-**Clear abandoned API**
+Clear abandoned API
 
-#### Update :
-**Add The positive and negative Bar Chart**
+ Update :
+Add The positive and negative Bar Chart**
 
-**增加了正负条形图**
+增加了正负条形图
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG)
 
 
@@ -94,6 +94,14 @@ self.pieChartView.dataItemArray = pieItems;
         
 
 ```
+
+#### ChartColor 
+Provide many colors In XJYColor.h
+XJYSkyBlue
+XJYGrey
+XJYLightBlue
+...
+
 
 ## Update 
 

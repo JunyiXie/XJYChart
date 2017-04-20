@@ -284,11 +284,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecordLife/Classes/Vender/XJYChart/XPositiveNegativeBarContainerView.m"
-            timestampString = "514123433.128903"
+            timestampString = "514381159.397125"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "-strokeChart"
             landmarkType = "7">
          </BreakpointContent>
@@ -300,11 +300,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RecordLife/Classes/Vender/XJYChart/XPositiveNegativeBarContainerView.m"
-            timestampString = "514123433.128903"
+            timestampString = "514381159.397125"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-strokeChart"
             landmarkType = "7">
          </BreakpointContent>
