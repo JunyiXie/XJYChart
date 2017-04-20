@@ -24,6 +24,12 @@
 #define animationDuration 3
 
 
+typedef enum : NSUInteger {
+    Positive,
+    Negative,
+} Valuence;
+
+
 @interface XPositiveNegativeBarContainerView ()
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
 
@@ -163,9 +169,9 @@
         CAShapeLayer *fillRectShapeLayer;
         
         if (self.dataNumberArray[idx].doubleValue >= 0) {
-            fillRectShapeLayer = [self rectAnimationLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color Valuence:0];
+            fillRectShapeLayer = [self rectAnimationLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color Valuence:Positive];
         } else {
-            fillRectShapeLayer = [self rectAnimationLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color Valuence:1];
+            fillRectShapeLayer = [self rectAnimationLayerWithBounds:fillRect fillColor:self.dataItemArray[idx].color Valuence:Negative];
         }
         
         
@@ -241,14 +247,14 @@
     return chartLine;
 }
 
-- (CAShapeLayer *)rectAnimationLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor Valuence:(BOOL)valyence {
+- (CAShapeLayer *)rectAnimationLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor Valuence:(Valuence)valyence {
 
     CGPoint startPoint;
     CGPoint endPoint;
     CGPoint temStartPoint;
     CGPoint temEndPoint;
     BOOL canAnimation = YES;
-    if (valyence == 0) {
+    if (valyence == Positive) {
         //矩形中一条线path
         startPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y + rect.size.height));
         endPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y));
