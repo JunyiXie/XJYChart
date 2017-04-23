@@ -35,9 +35,7 @@ XXPositiveNegativeBarChart *barChart = [[XXPositiveNegativeBarChart alloc] initW
 
 
 ```objectivec
-/**
-XXLineChart初始化方法
-*/
+
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
 ```
 
@@ -73,7 +71,6 @@ XJYPieItem *item3 = [[XJYPieItem alloc] initWithDataNumber:[NSNumber numberWithD
 XJYPieItem *item4 = [[XJYPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:52] color:colorArray[3] dataDescribe:dataArray[3]];
 [pieItems addObject:item4];
         
-//设置dataItemArray 
 self.pieChartView.dataItemArray = pieItems;
         
 
