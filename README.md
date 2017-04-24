@@ -18,7 +18,7 @@ Add The positive and negative Bar Chart**
 
 
 
-###### Installation With Cocoapods
+###### Installation With CocoaPods
 ```
 pod 'XJYChart'
 ```
