@@ -1,4 +1,4 @@
-###### XJYChart
+#### XJYChart
 
  A High-performance, Elegant And Easy-to-integrate Charting Framework.
 
