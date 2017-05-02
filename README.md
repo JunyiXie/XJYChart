@@ -107,6 +107,10 @@ Example
 
 Directly Run To See XJYChart Example
 
+
+使用该框架的App
+- 急用钱
+
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG)
