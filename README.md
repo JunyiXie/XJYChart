@@ -6,9 +6,16 @@
 
 
 update 0.0.3
-
+Add XJYCycleView  
+- touch
+- gradient
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image7.PNG)
 
+use XIB or Code
+```objectivec
+//XJYCycleView
+- (instancetype)initWithFrame:(CGRect)frame;
+```
 
  Update 0.0.2
 
