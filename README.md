@@ -5,6 +5,10 @@
 ![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
 
 
+update 0.0.3
+
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image7.PNG)
+
 
  Update 0.0.2
 
