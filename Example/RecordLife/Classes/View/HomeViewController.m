@@ -13,6 +13,7 @@
 #import "HomeFourTableViewCell.h"
 #import "HomeFiveTableViewCell.h"
 #import "HomeSixTableViewCell.h"
+#import "CycleTableViewCell.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -52,10 +53,7 @@
     [super updateViewConstraints];
 }
 
-
-
 #pragma mark Lazy Loading
-
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] init];
@@ -67,6 +65,8 @@
         [_tableView registerClass:[HomeFourTableViewCell class] forCellReuseIdentifier:kHomeFourTableViewCell];
         [_tableView registerClass:[HomeFiveTableViewCell class] forCellReuseIdentifier:kHomeFiveTableViewCell];
         [_tableView registerClass:[HomeSixTableViewCell class] forCellReuseIdentifier:kHomeSixTableViewCell];
+        [_tableView registerNib:[UINib nibWithNibName:@"CycleTableViewCell" bundle:nil] forCellReuseIdentifier:@"CycleTableViewCell"];
+        
         _tableView.dataSource = self;
         _tableView.delegate = self;
     }
@@ -91,7 +91,7 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -115,7 +115,8 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeSixTableViewCell forIndexPath:indexPath];
         return cell;
     } else if (indexPath.section == 4) {
-
+        CycleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CycleTableViewCell" forIndexPath:indexPath];
+        return cell;
     } else if (indexPath.section == 5) {
 
     }
@@ -134,14 +135,18 @@
     } else if (section == 3) {
         return @"正负条形图";
     } else {
-        return @"";
+        return @"可滑动的渐变环形图";
     }
 }
 
 #pragma mark UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 200;
+    if (indexPath.section == 4) {
+        return 400;
+    } else {
+        return 200;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

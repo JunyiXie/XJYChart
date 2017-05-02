@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F0369AD1EB744AA003FB013 /* XJYCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0369AC1EB744AA003FB013 /* XJYCycleView.m */; };
+		9F0369B11EB744CC003FB013 /* CycleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0369AF1EB744CC003FB013 /* CycleTableViewCell.m */; };
+		9F0369B21EB744CC003FB013 /* CycleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F0369B01EB744CC003FB013 /* CycleTableViewCell.xib */; };
+		9F0369B51EB75051003FB013 /* XJYTapCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0369B41EB75051003FB013 /* XJYTapCycleView.m */; };
+		9F0369FD1EB778E9003FB013 /* BtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0369FC1EB778E9003FB013 /* BtnView.m */; };
 		9F0F82561E9F7999009763FF /* AbscissaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F821C1E9F7999009763FF /* AbscissaView.m */; };
 		9F0F82571E9F7999009763FF /* CALayer+XXLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F821E1E9F7999009763FF /* CALayer+XXLayer.m */; };
 		9F0F825D1E9F7999009763FF /* OrdinateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82291E9F7999009763FF /* OrdinateView.m */; };
@@ -88,6 +93,15 @@
 /* Begin PBXFileReference section */
 		268B4BE433119986366F9157 /* Pods-RecordLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.release.xcconfig"; sourceTree = "<group>"; };
 		37737D6A36A792975C04CD82 /* Pods-RecordLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.debug.xcconfig"; sourceTree = "<group>"; };
+		9F0369AB1EB744AA003FB013 /* XJYCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYCycleView.h; sourceTree = "<group>"; };
+		9F0369AC1EB744AA003FB013 /* XJYCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYCycleView.m; sourceTree = "<group>"; };
+		9F0369AE1EB744CC003FB013 /* CycleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleTableViewCell.h; sourceTree = "<group>"; };
+		9F0369AF1EB744CC003FB013 /* CycleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleTableViewCell.m; sourceTree = "<group>"; };
+		9F0369B01EB744CC003FB013 /* CycleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CycleTableViewCell.xib; sourceTree = "<group>"; };
+		9F0369B31EB75051003FB013 /* XJYTapCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYTapCycleView.h; sourceTree = "<group>"; };
+		9F0369B41EB75051003FB013 /* XJYTapCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYTapCycleView.m; sourceTree = "<group>"; };
+		9F0369FB1EB778E9003FB013 /* BtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtnView.h; sourceTree = "<group>"; };
+		9F0369FC1EB778E9003FB013 /* BtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtnView.m; sourceTree = "<group>"; };
 		9F0F821B1E9F7999009763FF /* AbscissaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbscissaView.h; sourceTree = "<group>"; };
 		9F0F821C1E9F7999009763FF /* AbscissaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbscissaView.m; sourceTree = "<group>"; };
 		9F0F821D1E9F7999009763FF /* CALayer+XXLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+XXLayer.h"; sourceTree = "<group>"; };
@@ -231,6 +245,8 @@
 		9F0F821A1E9F7999009763FF /* XJYChart */ = {
 			isa = PBXGroup;
 			children = (
+				9F0369AB1EB744AA003FB013 /* XJYCycleView.h */,
+				9F0369AC1EB744AA003FB013 /* XJYCycleView.m */,
 				9FC59C311EA8B5C200257ECC /* XXAnimationLabel.h */,
 				9FC59C321EA8B5C200257ECC /* XXAnimationLabel.m */,
 				9FC59C2B1EA8B5B000257ECC /* CAShapeLayer+frameCategory.h */,
@@ -428,6 +444,13 @@
 				9FCCC1A21EA4F11500D54EF7 /* HomeFiveTableViewCell.m */,
 				9FCCC1A41EA4F14800D54EF7 /* HomeSixTableViewCell.h */,
 				9FCCC1A51EA4F14800D54EF7 /* HomeSixTableViewCell.m */,
+				9F0369AE1EB744CC003FB013 /* CycleTableViewCell.h */,
+				9F0369AF1EB744CC003FB013 /* CycleTableViewCell.m */,
+				9F0369B01EB744CC003FB013 /* CycleTableViewCell.xib */,
+				9F0369B31EB75051003FB013 /* XJYTapCycleView.h */,
+				9F0369B41EB75051003FB013 /* XJYTapCycleView.m */,
+				9F0369FB1EB778E9003FB013 /* BtnView.h */,
+				9F0369FC1EB778E9003FB013 /* BtnView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -565,6 +588,7 @@
 			files = (
 				9F3DC7561E2E36B600C26D86 /* LaunchScreen.storyboard in Resources */,
 				9F3DC7531E2E36B600C26D86 /* Assets.xcassets in Resources */,
+				9F0369B21EB744CC003FB013 /* CycleTableViewCell.xib in Resources */,
 				9F3DC7511E2E36B600C26D86 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -651,6 +675,7 @@
 				9F3DC79B1E2E59DF00C26D86 /* XJYTableViewCell.m in Sources */,
 				9FCCC1661EA4BC3E00D54EF7 /* XPositiveNegativeBarContainerView.m in Sources */,
 				9FCCC1A31EA4F11500D54EF7 /* HomeFiveTableViewCell.m in Sources */,
+				9F0369B51EB75051003FB013 /* XJYTapCycleView.m in Sources */,
 				9F0F82711E9F7999009763FF /* XXLineChartItem.m in Sources */,
 				9F0F82611E9F7999009763FF /* XBarContainerView.m in Sources */,
 				9F0F825E1E9F7999009763FF /* RandomNumerHelper.m in Sources */,
@@ -672,11 +697,14 @@
 				9F0F82641E9F7999009763FF /* XJYBarItem.m in Sources */,
 				9F0F826B1E9F7999009763FF /* XJYPieItem.m in Sources */,
 				9F0F825F1E9F7999009763FF /* SGLabel.m in Sources */,
+				9F0369FD1EB778E9003FB013 /* BtnView.m in Sources */,
+				9F0369B11EB744CC003FB013 /* CycleTableViewCell.m in Sources */,
 				9F0F82701E9F7999009763FF /* XXLineChart.m in Sources */,
 				9F0F82561E9F7999009763FF /* AbscissaView.m in Sources */,
 				9FCCC1A61EA4F14800D54EF7 /* HomeSixTableViewCell.m in Sources */,
 				9FC59C2F1EA8B5B000257ECC /* CAShapeLayer+frameCategory.m in Sources */,
 				9F3DC7481E2E36B600C26D86 /* main.m in Sources */,
+				9F0369AD1EB744AA003FB013 /* XJYCycleView.m in Sources */,
 				9FB579031E349C9200339633 /* HomeTwoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

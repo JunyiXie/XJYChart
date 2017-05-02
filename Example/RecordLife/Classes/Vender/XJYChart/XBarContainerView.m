@@ -223,6 +223,7 @@
 - (CAGradientLayer *)rectGradientLayerWithBounds:(CGRect)rect {
     //颜色渐变层
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    
     gradientLayer.frame = rect;
     gradientLayer.colors = @[(__bridge id)GradientFillColor1,(__bridge id)GradientFillColor2];
     

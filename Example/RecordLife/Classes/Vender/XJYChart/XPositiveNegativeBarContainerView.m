@@ -416,6 +416,9 @@ typedef enum : NSUInteger {
             self.coverLayer = [self rectGradientLayerWithBounds:layerFrame];
             self.coverLayer.selectIdxNumber = @(idx);
             
+            // addAnimation
+            [self AddSpringAnimationToLayer:self.coverLayer];
+            
             [shapeLayer addSublayer:self.coverLayer];
             return ;
         }
@@ -447,11 +450,26 @@ typedef enum : NSUInteger {
             subShapeLayer.selectStatusNumber = [NSNumber numberWithBool: !boolValue];
             self.coverLayer = [self rectGradientLayerWithBounds:subShapeLayer.frameValue.CGRectValue];
             self.coverLayer.selectIdxNumber = @(idx);
+            
+            // addAnimation
+            [self AddSpringAnimationToLayer:self.coverLayer];
+            
             [subShapeLayer addSublayer:self.coverLayer];
             return ;
         }
     }];
     
+}
+
+#pragma mark AnimationHelper
+
+- (void)AddSpringAnimationToLayer:(CALayer *)layer {
+    // animation
+    CASpringAnimation *spring = [CASpringAnimation animationWithKeyPath:@"transform.scale"];
+    spring.fromValue = @0.9;
+    spring.toValue = @1;
+    spring.duration = 0.5;
+    [layer addAnimation:spring forKey:@"transform.scale"];
 }
 
 

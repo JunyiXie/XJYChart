@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "XJYChart"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "A High-performance, Elegant And Easy-to-integrate Charting Framework.."
 
   s.description  = "A High-performance, Elegant And Easy-to-integrate Charting Framework"
@@ -68,7 +68,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/JunyiXie/XJYChart.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/JunyiXie/XJYChart.git", :tag => "0.0.3" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

@@ -89,6 +89,7 @@ typedef enum : NSUInteger {
     }];
     
     
+    
     //绘制条
     
     //每个条的宽度
@@ -203,6 +204,16 @@ typedef enum : NSUInteger {
         [fillShapeLayerArray addObject:fillRectShapeLayer];
     }];
     
+    // 绘制正负分割线
+    CGFloat y;
+    y = self.top.doubleValue/(self.top.doubleValue + fabs(self.bottom.doubleValue))*self.frame.size.height;
+    CGContextRef contentRef = UIGraphicsGetCurrentContext();
+    CGContextSetStrokeColorWithColor(contentRef, XJYRed.CGColor);
+    CGContextSetLineWidth(contentRef, 1.0);
+    CGContextMoveToPoint(contentRef, 0, y);
+    CGContextAddLineToPoint(contentRef, self.frame.size.width, y);
+    CGContextStrokePath(contentRef);
+    
 }
 
 
@@ -238,7 +249,7 @@ typedef enum : NSUInteger {
     chartLine.path = temPath.CGPath;
     chartLine.strokeStart = 0.0;
     chartLine.strokeEnd = 1.0;
-    chartLine.strokeColor = XJYBlue.CGColor;
+    chartLine.strokeColor = fillColor.CGColor;
     [chartLine addAnimation:self.pathAnimation forKey:@"strokeEndAnimation"];
     //由于CAShapeLayer.frame = (0,0,0,0) 所以用这个判断点击
     chartLine.frameValue = [NSValue valueWithCGRect:rect];
@@ -308,14 +319,14 @@ typedef enum : NSUInteger {
         chartLine.path = temPath.CGPath;
         chartLine.strokeStart = 0.0;
         chartLine.strokeEnd = 1.0;
-        chartLine.strokeColor = XJYBlue.CGColor;
+        chartLine.strokeColor = fillColor.CGColor;
         [chartLine addAnimation:self.pathAnimation forKey:@"strokeEndAnimation"];
         //由于CAShapeLayer.frame = (0,0,0,0) 所以用这个判断点击
         chartLine.frameValue = [NSValue valueWithCGRect:rect];
         chartLine.selectStatusNumber = [NSNumber numberWithBool:NO];
         return chartLine;
     } else {
-        CAShapeLayer *noAnimationLayer = [self rectShapeLayerWithBounds:rect fillColor:XJYBlue];
+        CAShapeLayer *noAnimationLayer = [self rectShapeLayerWithBounds:rect fillColor:fillColor];
         noAnimationLayer.frameValue = [NSValue valueWithCGRect:rect];
         noAnimationLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
         return noAnimationLayer;
@@ -405,8 +416,10 @@ typedef enum : NSUInteger {
             self.coverLayer = [self rectGradientLayerWithBounds:layerFrame];
             self.coverLayer.selectIdxNumber = @(idx);
             
+            // addAnimation
+            [self AddSpringAnimationToLayer:self.coverLayer];
+            
             [shapeLayer addSublayer:self.coverLayer];
-            //找到就可以停止循环了
             return ;
         }
         
@@ -437,11 +450,26 @@ typedef enum : NSUInteger {
             subShapeLayer.selectStatusNumber = [NSNumber numberWithBool: !boolValue];
             self.coverLayer = [self rectGradientLayerWithBounds:subShapeLayer.frameValue.CGRectValue];
             self.coverLayer.selectIdxNumber = @(idx);
+            
+            // addAnimation
+            [self AddSpringAnimationToLayer:self.coverLayer];
+            
             [subShapeLayer addSublayer:self.coverLayer];
             return ;
         }
     }];
     
+}
+
+#pragma mark AnimationHelper
+
+- (void)AddSpringAnimationToLayer:(CALayer *)layer {
+    // animation
+    CASpringAnimation *spring = [CASpringAnimation animationWithKeyPath:@"transform.scale"];
+    spring.fromValue = @0.9;
+    spring.toValue = @1;
+    spring.duration = 0.5;
+    [layer addAnimation:spring forKey:@"transform.scale"];
 }
 
 
