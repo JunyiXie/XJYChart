@@ -1,6 +1,14 @@
 #### XJYChart
 
  A High-performance, Elegant And Easy-to-integrate Charting Framework.
+ 
+ 
+ 
+ ###### Installation With CocoaPods
+```
+pod 'XJYChart'
+```
+
 
 ![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
 
@@ -29,10 +37,6 @@ Add The positive and negative Bar Chart**
 
 
 
-###### Installation With CocoaPods
-```
-pod 'XJYChart'
-```
 
 > How to Use
 
