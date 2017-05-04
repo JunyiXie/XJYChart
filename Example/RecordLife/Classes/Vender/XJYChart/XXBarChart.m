@@ -69,8 +69,8 @@
 
 #pragma mark Notification 
 - (void)touchNotification:(NSDictionary *)info {
-    NSNumber *idxNumber = info[[XJYNotificationBridge shareXJYNotificationBridge].BarIdxNumberKey];
-    [self.barChartDeleagte touchBarAtIdx:idxNumber.integerValue];
+//    NSNumber *idxNumber = info[[XJYNotificationBridge shareXJYNotificationBridge].BarIdxNumberKey];
+//    [self.barChartDeleagte touchBarAtIdx:idxNumber.integerValue];
 }
 
 @end
