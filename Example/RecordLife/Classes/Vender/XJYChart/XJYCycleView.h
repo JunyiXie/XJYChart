@@ -19,9 +19,8 @@
 @end
 
 @interface XJYCycleView : UIControl
+/// progress 0.0 ~ 1.0
 @property (nonatomic, assign) CGFloat progress;
-@property (nonatomic, strong) UILabel *label;
-@property (nonatomic,assign) int lineWidth;
-@property (nonatomic,setter=changeAngle:) int angle;
+
 @property (nonatomic, weak) id<XJYCycleViewDelegate> cycleViewDeleagte;
 @end
