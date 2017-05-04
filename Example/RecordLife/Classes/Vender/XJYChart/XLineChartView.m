@@ -30,7 +30,6 @@
         self.dataItemArray = dataItemArray;
         self.backgroundColor = [UIColor whiteColor];
         self.dataDescribeArray = dataDescribeArray;
-        
         self.contentSize = [self computeSrollViewCententSizeFromItemArray:self.dataItemArray];
         
         [self addSubview:self.abscissaView];
@@ -58,14 +57,18 @@
 #pragma mark Get
 - (AbscissaView *)abscissaView {
     if (!_abscissaView) {
-        _abscissaView = [[AbscissaView alloc] initWithFrame:CGRectMake(0, self.contentSize.height - AbscissaHeight, self.contentSize.width, AbscissaHeight) dataItemArray:self.dataDescribeArray];
+        _abscissaView = [[AbscissaView alloc] initWithFrame:CGRectMake(0, self.contentSize.height - AbscissaHeight, self.contentSize.width, AbscissaHeight)
+                                              dataItemArray:self.dataDescribeArray];
     }
     return _abscissaView;
 }
 
 - (XLineContainerView *)lineContainerView {
     if (!_lineContainerView) {
-        _lineContainerView = [[XLineContainerView alloc] initWithFrame:CGRectMake(0, 0, self.contentSize.width, self.contentSize.height - AbscissaHeight) dataItemArray:self.dataItemArray topNumber:self.top bottomNumber:self.bottom];
+        _lineContainerView = [[XLineContainerView alloc] initWithFrame:CGRectMake(0, 0, self.contentSize.width, self.contentSize.height - AbscissaHeight)
+                                                         dataItemArray:self.dataItemArray
+                                                             topNumber:self.top
+                                                          bottomNumber:self.bottom];
     }
     return _lineContainerView;
 }

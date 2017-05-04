@@ -199,9 +199,7 @@
     CGPoint centerPoint = CGPointMake(self.frame.size.width/2,
                                       self.frame.size.height/2);
     //center to point angle
-    float currentAngle = AngleFromNorth(centerPoint,
-                                        lastPoint,
-                                        NO);
+    float currentAngle = AngleFromNorth(centerPoint,lastPoint,NO);
     int angleInt = floor(currentAngle);
     //change the starting point so do judge
     self.angle = angleInt;
@@ -238,7 +236,7 @@ static inline float AngleFromNorth(CGPoint p1, CGPoint p2, BOOL flipped) {
 #pragma mark - Set
 
 - (void)setProgress:(CGFloat)progress {
-    self.progress = progress;
+    _progress = progress;
     [self setNeedsDisplay];
 }
 
