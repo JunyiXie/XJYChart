@@ -145,6 +145,8 @@
     } else {
         self.progress = (self.angle + 270)/360.0;
     }
+    
+    NSLog(@"%f",self.progress);
     [self.cycleViewDeleagte ratioChange:self.progress];
     [self setNeedsDisplay];
 }
@@ -164,8 +166,8 @@ static inline float AngleFromNorth(CGPoint p1, CGPoint p2, BOOL flipped) {
     CGPoint centerPoint = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
     CGPoint result;
     //Plus the amount of the front (deal with the issue of gradual change color)
-    result.y = round(centerPoint.y + radius * sin(RADIANS_TO_DEGREES(angleInt+3))) ;
-    result.x = round(centerPoint.x + radius * cos(RADIANS_TO_DEGREES(angleInt+3)));
+    result.y = round(centerPoint.y + radius * sin(DEGREES_TO_RADIANS(angleInt+3))) ;
+    result.x = round(centerPoint.x + radius * cos(DEGREES_TO_RADIANS(angleInt+3)));
     return result;
 }
 

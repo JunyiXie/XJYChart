@@ -9,17 +9,17 @@
 #import "XXBarChart.h"
 #import "XBarChartView.h"
 #import "OrdinateView.h"
+#import "XJYNotificationBridge.h"
 
 #define OrdinateWidth 30
 #define BarChartViewTopInterval 10
 
 
+
 @interface XXBarChart ()
 
 @property (nonatomic, strong) XBarChartView *barChartView;
-
 @property (nonatomic, strong) OrdinateView *ordinateView;
-
 
 @end
 
@@ -35,6 +35,10 @@
         
         [self addSubview:self.ordinateView];
         [self addSubview:self.barChartView];
+        
+        // Notification
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(touchNotification:) name:[XJYNotificationBridge shareXJYNotificationBridge].TouchBarNotification object:nil];
+    
     }
     return self;
 }
@@ -60,6 +64,13 @@
         _ordinateView.backgroundColor = [UIColor whiteColor];
     }
     return _ordinateView;
+}
+
+
+#pragma mark Notification 
+- (void)touchNotification:(NSDictionary *)info {
+    NSNumber *idxNumber = info[[XJYNotificationBridge shareXJYNotificationBridge].BarIdxNumberKey];
+    [self.barChartDeleagte touchBarAtIdx:idxNumber.integerValue];
 }
 
 @end

@@ -47,6 +47,7 @@
 		9F3DC79B1E2E59DF00C26D86 /* XJYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC79A1E2E59DF00C26D86 /* XJYTableViewCell.m */; };
 		9F3DC79E1E2E5A2C00C26D86 /* HomeOneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC79D1E2E5A2C00C26D86 /* HomeOneTableViewCell.m */; };
 		9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */; };
+		9F96A8E61EBA0DDD00BDC2C9 /* XJYNotificationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F96A8E51EBA0DDD00BDC2C9 /* XJYNotificationBridge.m */; };
 		9FB579031E349C9200339633 /* HomeTwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB579021E349C9200339633 /* HomeTwoTableViewCell.m */; };
 		9FBEEDE31E35D72D00DABF83 /* HomeThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEEDE21E35D72D00DABF83 /* HomeThreeTableViewCell.m */; };
 		9FC59C2F1EA8B5B000257ECC /* CAShapeLayer+frameCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC59C2C1EA8B5B000257ECC /* CAShapeLayer+frameCategory.m */; };
@@ -176,6 +177,8 @@
 		9F3DC79D1E2E5A2C00C26D86 /* HomeOneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeOneTableViewCell.m; sourceTree = "<group>"; };
 		9F3DC79F1E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeOneTableViewCellViewModel.h; sourceTree = "<group>"; };
 		9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeOneTableViewCellViewModel.m; sourceTree = "<group>"; };
+		9F96A8E41EBA0DDD00BDC2C9 /* XJYNotificationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYNotificationBridge.h; sourceTree = "<group>"; };
+		9F96A8E51EBA0DDD00BDC2C9 /* XJYNotificationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYNotificationBridge.m; sourceTree = "<group>"; };
 		9FB579011E349C9200339633 /* HomeTwoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTwoTableViewCell.h; sourceTree = "<group>"; };
 		9FB579021E349C9200339633 /* HomeTwoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTwoTableViewCell.m; sourceTree = "<group>"; };
 		9FBEEDE11E35D72D00DABF83 /* HomeThreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeThreeTableViewCell.h; sourceTree = "<group>"; };
@@ -297,6 +300,8 @@
 				9FCCC19C1EA4E99000D54EF7 /* XXPositiveNegativeBarChartView.m */,
 				9FCCC1641EA4BC3E00D54EF7 /* XPositiveNegativeBarContainerView.h */,
 				9FCCC1651EA4BC3E00D54EF7 /* XPositiveNegativeBarContainerView.m */,
+				9F96A8E41EBA0DDD00BDC2C9 /* XJYNotificationBridge.h */,
+				9F96A8E51EBA0DDD00BDC2C9 /* XJYNotificationBridge.m */,
 			);
 			path = XJYChart;
 			sourceTree = "<group>";
@@ -696,6 +701,7 @@
 				9FBEEDE31E35D72D00DABF83 /* HomeThreeTableViewCell.m in Sources */,
 				9F0F82641E9F7999009763FF /* XJYBarItem.m in Sources */,
 				9F0F826B1E9F7999009763FF /* XJYPieItem.m in Sources */,
+				9F96A8E61EBA0DDD00BDC2C9 /* XJYNotificationBridge.m in Sources */,
 				9F0F825F1E9F7999009763FF /* SGLabel.m in Sources */,
 				9F0369FD1EB778E9003FB013 /* BtnView.m in Sources */,
 				9F0369B11EB744CC003FB013 /* CycleTableViewCell.m in Sources */,

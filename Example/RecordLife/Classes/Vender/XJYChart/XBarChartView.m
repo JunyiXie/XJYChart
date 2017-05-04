@@ -22,16 +22,10 @@
 @interface XBarChartView()
 
 @property (nonatomic, strong) XBarContainerView *barContainerView;
-
-
 @property (nonatomic, strong) NSMutableArray<UIColor *> *colorArray;
-
 @property (nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
-
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *dataNumberArray;
-
 @property (nonatomic, assign) BOOL needScroll;
-
 @property (nonatomic, strong) AbscissaView *abscissaView;
 
 @end
