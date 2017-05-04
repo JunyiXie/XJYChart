@@ -12,6 +12,9 @@ pod 'XJYChart'
 
 ![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
 
+<audio src="https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart" controls="controls">
+Your browser does not support the audio tag.
+</audio>
 
 update 0.0.3
 Add XJYCycleView  
