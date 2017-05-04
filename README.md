@@ -15,8 +15,10 @@ pod 'XJYChart'
 
 update 0.0.3
 Add XJYCycleView  
+
 - touch
 - gradient
+
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image7.PNG)
 
 use XIB or Code
