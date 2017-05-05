@@ -5,18 +5,18 @@
  
 #### Chart In This Framework
 
-- [x] **LineChart
-- [x] BarChart
-- [x] PositiveNegativeBarChart
-- [x] PieChart
-- [x] CycleChart**
+- [x] **LineChart**
+- [x] **BarChart**
+- [x] **PositiveNegativeBarChart**
+- [x] **PieChart**
+- [x] **CycleChart**
 
 #### All Chart Support 
 
-- [x] **Animation
-- [x] Touch
-- [x] Scroll
-- [x] Beautiful**
+- [x] **Animation**
+- [x] **Touch**
+- [x] **Scroll**
+- [x] **Beautiful**
 
  ###### Installation With CocoaPods
 ```
