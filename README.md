@@ -1,5 +1,7 @@
 ### XJYChart
 
+![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/icon.png)
+
   `High-performance` `Elegant`  `Easy-to-integrate` `Charting Framework`.
  
  ![License](https://img.shields.io/badge/license-MIT-green.svg)
