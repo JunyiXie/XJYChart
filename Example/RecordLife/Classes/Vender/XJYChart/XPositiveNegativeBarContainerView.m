@@ -32,18 +32,13 @@ typedef enum : NSUInteger {
 
 @interface XPositiveNegativeBarContainerView ()
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
-
 @property (nonatomic, strong) NSMutableArray<UIColor *> *colorArray;
-
 @property (nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
-
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *dataNumberArray;
-
-//值高度填充
+//值填充
 @property (nonatomic, strong) NSMutableArray<CALayer *> *layerArray;
 //背景填充
 @property (nonatomic, strong) NSMutableArray<CALayer *> *fillLayerArray;
-
 @property (nonatomic, strong) CALayer *coverLayer;
 @end
 
@@ -52,7 +47,6 @@ typedef enum : NSUInteger {
 
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  {
     if (self = [super initWithFrame:frame]) {
-        
         self.backgroundColor = [UIColor whiteColor];
         self.layerArray = [[NSMutableArray alloc] init];
         self.fillLayerArray = [[NSMutableArray alloc] init];
@@ -62,15 +56,12 @@ typedef enum : NSUInteger {
         self.dataItemArray = dataItemArray;
         self.top = topNumbser;
         self.bottom = bottomNumber;
-        
     }
     return self;
-    
 }
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    
     [self strokeChart];
     
 }
@@ -88,11 +79,7 @@ typedef enum : NSUInteger {
         [self.dataDescribeArray addObject:obj.dataDescribe];
     }];
     
-    
-    
-    //绘制条
-    
-    //每个条的宽度
+    //绘制bar
     CGFloat width = (self.bounds.size.width / self.dataItemArray.count) / 3 * 2;
     //每个条的x坐标
     NSMutableArray<NSNumber *> *xArray = [[NSMutableArray alloc] init];
@@ -100,8 +87,6 @@ typedef enum : NSUInteger {
         CGFloat x = self.bounds.size.width * [[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:idx count:self.dataItemArray.count];
         [xArray addObject:@(x)];
     }];
-    
-    
     
     //每个背景条的rect
     NSMutableArray<NSValue *> *rectArray = [[NSMutableArray alloc] init];
@@ -112,7 +97,6 @@ typedef enum : NSUInteger {
         CGRect rect = CGRectMake(number.doubleValue - width/2, 0, width, height);
         [rectArray addObject:[NSValue valueWithCGRect:rect]];
     }];
-    
     
     //根据rect 绘制背景条
     [rectArray enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -139,13 +123,10 @@ typedef enum : NSUInteger {
             [fillHeightArray addObject:@(height)];
         }
     }];
-    
-    
     //计算填充的矩形
     NSMutableArray<NSValue *> *fillRectArray = [[NSMutableArray alloc] init];
     [xArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         //height - fillHeightArray[idx].doubleValue 计算起始Y...
-        
         CGRect fillRect;
         // 正负判断,高度是否大于0
         if (self.dataNumberArray[idx].doubleValue >= 0) {
@@ -158,9 +139,7 @@ typedef enum : NSUInteger {
         }
         [fillRectArray addObject:[NSValue valueWithCGRect:fillRect]];
     }];
-    
-    
-    
+
     //根据fillrect 绘制填充的fillrect 与 topLabel
     NSMutableArray *fillShapeLayerArray = [[NSMutableArray alloc] init];
     
@@ -193,9 +172,7 @@ typedef enum : NSUInteger {
         }
         
         [topLabel countFromCurrentTo:topLabel.text.floatValue duration:animationDuration];
-//        [UIView animateWithDuration:animationDuration animations:^{
             topLabel.center = tempCenter;
-//        }];
         
         [self.layer addSublayer:fillRectShapeLayer];
         //将绘制的Layer保存
@@ -213,7 +190,6 @@ typedef enum : NSUInteger {
     CGContextMoveToPoint(contentRef, 0, y);
     CGContextAddLineToPoint(contentRef, self.frame.size.width, y);
     CGContextStrokePath(contentRef);
-    
 }
 
 
@@ -224,16 +200,9 @@ typedef enum : NSUInteger {
 #pragma mark HelpMethods
 
 - (CAShapeLayer *)rectAnimationLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor {
-    //动画的path
     CGPoint startPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y + rect.size.height));
     CGPoint endPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y));
-    
-    
-    
-    //真实的线
-    //    UIBezierPath *animationPath = [[UIBezierPath alloc] init];
-    //    [animationPath moveToPoint:startPoint];
-    //    [animationPath addLineToPoint:endPoint];
+
     CAShapeLayer *chartLine = [CAShapeLayer layer];
     chartLine.lineCap = kCALineCapSquare;
     chartLine.lineJoin = kCALineJoinRound;
@@ -245,7 +214,7 @@ typedef enum : NSUInteger {
     UIBezierPath *temPath = [[UIBezierPath alloc] init];
     [temPath moveToPoint:temStartPoint];
     [temPath addLineToPoint:temEndPoint];
-    
+    //动画的path
     chartLine.path = temPath.CGPath;
     chartLine.strokeStart = 0.0;
     chartLine.strokeEnd = 1.0;
@@ -298,7 +267,6 @@ typedef enum : NSUInteger {
             temStartPoint = CGPointMake(startPoint.x, startPoint.y + rect.size.width/2);
             temEndPoint = CGPointMake(endPoint.x, endPoint.y - rect.size.width/2);
         }
-
     }
     
     //临时调试 以后添加动画

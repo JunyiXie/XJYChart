@@ -22,12 +22,8 @@
 
 @interface XLineContainerView()
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
-//二维数组
 @property (nonatomic, strong) NSMutableArray<NSMutableArray<NSValue *> *> *pointsArrays;
-
 @property (nonatomic, strong) NSMutableArray<CAShapeLayer *> *shapeLayerArray;
-
-//点击高亮的layer
 @property (nonatomic, strong) CAShapeLayer *coverLayer;
 @property (nonatomic, strong) NSMutableArray<XXAnimationLabel *> *labelArray;
 @end

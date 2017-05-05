@@ -8,11 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
-
-
-
-
 @interface XJYNotificationBridge : NSObject
 
 + (instancetype)shareXJYNotificationBridge;
