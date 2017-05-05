@@ -7,6 +7,9 @@
  ![License](https://img.shields.io/badge/license-MIT-green.svg)
  ![release](https://img.shields.io/badge/XJYChart-v1.0.0-blue.svg)
  ![cocoapods](https://img.shields.io/badge/Cocoapods-v1.0.0-green.svg)
+ 
+ 
+ XJYChart can give App more interactive, it supports touch, slide. Unlike other charting frameworks, XJYChart uses a component-based design that is very solid, giving XJYChart an easy iteration feature. Support the beautiful animation effect, have the perfect event response mechanism. And the performance is very good. Based on Core Animation. Easy to use, easy to modify. Elegant interface, smooth animation.
 
 ***
 ### Charts
