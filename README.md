@@ -2,9 +2,17 @@
 
  A `High-performance` `Elegant`  `Easy-to-integrate` `Charting Framework`.
  
-  
+- [x] LineChart
+- [x] BarChart
+- [x] PositiveNegativeBarChart
+- [x] PieChart
+- [x] CycleChart
 
- 
+- [x] Animation
+- [x] Touch
+- [x] Scroll
+- [x] Beautiful
+
  ###### Installation With CocoaPods
 ```
 pod 'XJYChart'
