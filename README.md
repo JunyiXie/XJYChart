@@ -1,7 +1,8 @@
 #### XJYChart
 
  A `High-performance` `Elegant`  `Easy-to-integrate` `Charting Framework`.
- [![Bower](https://img.shields.io/bower/l/bootstrap.svg)]()[![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)]()[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)]()
+ 
+ [![Bower](https://img.shields.io/bower/l/bootstrap.svg)]()[![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)]()[![GitHub release]
  
 #### Chart In This Framework
 
