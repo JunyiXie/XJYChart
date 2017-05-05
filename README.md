@@ -36,8 +36,10 @@ pod 'XJYChart'
 ```
 
 update 0.0.3
-+ Add XJYCycleView   
 
+```diff
++ Add XJYCycleView   
+```
 - touch
 - gradient
 
@@ -50,9 +52,10 @@ use XIB or Code
 ```
 
 Update 0.0.2
+```diff
 - Clear abandoned API
 + Add The positive and negative Bar Chart**
-
+```
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG)
 
 #### How to Use
