@@ -1,4 +1,4 @@
-### XJYChart
+## XJYChart
 
 ![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/icon.png)
 
@@ -9,7 +9,7 @@
  ![cocoapods](https://img.shields.io/badge/Cocoapods-v1.0.0-green.svg)
 
 ***
-#### Charts In This Framework
+### Charts
 
 - [x] **LineChart**
 - [x] **BarChart**
@@ -18,7 +18,7 @@
 - [x] **CycleChart**
 
 ***
-#### All Chart Support 
+### Features
 
 - [x] **Animation**
 - [x] **Touch**
@@ -32,7 +32,7 @@
 
 
 
- ###### Installation With CocoaPods
+ ### Installation With CocoaPods
 ```
 pod 'XJYChart'
 ```
@@ -111,7 +111,7 @@ Provide many colors In XJYColor.h
 ...
 
 
-#### Update 
+### Update 
 
 ###### Update 1.1 
 Added slippery graph And Chart Animations
