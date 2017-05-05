@@ -2,11 +2,16 @@
 
  A `High-performance` `Elegant`  `Easy-to-integrate` `Charting Framework`.
  
-- [x] LineChart
+ 
+#### Chart In This Framework
+
+- [x] **LineChart**
 - [x] BarChart
 - [x] PositiveNegativeBarChart
 - [x] PieChart
 - [x] CycleChart
+
+#### All Chart Support 
 
 - [x] Animation
 - [x] Touch
