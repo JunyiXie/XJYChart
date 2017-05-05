@@ -1,8 +1,9 @@
 #### XJYChart
 
- A High-performance, Elegant And Easy-to-integrate Charting Framework.
+ A `High-performance` `Elegant`  `Easy-to-integrate` `Charting Framework`.
  
- 
+  
+
  
  ###### Installation With CocoaPods
 ```
