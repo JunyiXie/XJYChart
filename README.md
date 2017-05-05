@@ -2,7 +2,10 @@
 
  A `High-performance` `Elegant`  `Easy-to-integrate` `Charting Framework`.
  
- [![Bower](https://img.shields.io/bower/l/bootstrap.svg)]()[![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)]()![![release](https://img.shields.io/badge/XJYChart-v1.0.0-blue.svg)
+ [![Bower](https://img.shields.io/bower/l/bootstrap.svg)]()
+ [![CircleCI](https://img.shields.io/circleci/project/github/RedSparr0w/node-csgo-parser.svg)]()
+ [![release](https://img.shields.io/badge/XJYChart-v1.0.0-blue.svg)
+ [![cocoapods](https://img.shields.io/badge/Cocoapods-v1.0.0-green.svg)
  
 #### Chart In This Framework
 
