@@ -8,7 +8,7 @@
  ![cocoapods](https://img.shields.io/badge/Cocoapods-v1.0.0-green.svg)
 
 ***
-#### Chart In This Framework
+#### Charts In This Framework
 
 - [x] **LineChart**
 - [x] **BarChart**
@@ -24,19 +24,20 @@
 - [x] **Scroll**
 - [x] **Beautiful**
 
-
-
 ***
+
+
+![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
+
+
+
  ###### Installation With CocoaPods
 ```
 pod 'XJYChart'
 ```
 
-
-![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
-
 update 0.0.3
-Add XJYCycleView  
++ Add XJYCycleView   
 
 - touch
 - gradient
@@ -49,18 +50,11 @@ use XIB or Code
 - (instancetype)initWithFrame:(CGRect)frame;
 ```
 
- Update 0.0.2
-
-Clear abandoned API
-
- Update :
-Add The positive and negative Bar Chart**
+Update 0.0.2
+- Clear abandoned API
++ Add The positive and negative Bar Chart**
 
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG)
-
-
-
-
 
 #### How to Use
 
@@ -84,12 +78,15 @@ XXPositiveNegativeBarChart *barChart = [[XXPositiveNegativeBarChart alloc] initW
 - (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color dataDescribe:(NSString *)dataDescribe;
 ```
 
-
 ```objectivec
 XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0];
 ```
 
-
+###### Cycle Chart
+```objectivec
+//XJYCycleView
+- (instancetype)initWithFrame:(CGRect)frame;
+```
 
 ###### PieChart
 
