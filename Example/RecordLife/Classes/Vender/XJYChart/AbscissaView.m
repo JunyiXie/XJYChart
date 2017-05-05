@@ -8,7 +8,6 @@
 
 #import "AbscissaView.h"
 #import "XJYChart.h"
-#import "SGLabel.h"
 @interface AbscissaView ()
 
 @property (nonatomic, strong) NSMutableArray<UILabel *> *labelArray;
@@ -72,7 +71,7 @@
 //        [self addSubview:label];
 //
         
-        SGLabel *label = [[SGLabel alloc] initWithFrame:CGRectMake(labelWidth * i + intervalWidth, 0, labelWidth - 2*intervalWidth, self.frame.size.height) text:self.dataDescribeArray[i]];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(labelWidth * i + intervalWidth, 0, labelWidth - 2*intervalWidth, self.frame.size.height)];
         label.text = self.dataDescribeArray[i];
         label.backgroundColor = XJYWhite;
         label.font = [UIFont fontWithName:@"Helvetica Neue" size:10];
