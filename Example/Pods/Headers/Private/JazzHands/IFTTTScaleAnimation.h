@@ -1,1 +1,0 @@
-../../../JazzHands/JazzHands/IFTTTScaleAnimation.h
