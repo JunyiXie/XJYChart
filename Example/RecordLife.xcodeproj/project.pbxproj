@@ -47,6 +47,7 @@
 		9F3DC79B1E2E59DF00C26D86 /* XJYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC79A1E2E59DF00C26D86 /* XJYTableViewCell.m */; };
 		9F3DC79E1E2E5A2C00C26D86 /* HomeOneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC79D1E2E5A2C00C26D86 /* HomeOneTableViewCell.m */; };
 		9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */; };
+		9F43065F1EBDF84A00959BD8 /* XJYAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F43065E1EBDF84A00959BD8 /* XJYAnimation.m */; };
 		9F96A8E61EBA0DDD00BDC2C9 /* XJYNotificationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F96A8E51EBA0DDD00BDC2C9 /* XJYNotificationBridge.m */; };
 		9FB579031E349C9200339633 /* HomeTwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB579021E349C9200339633 /* HomeTwoTableViewCell.m */; };
 		9FBEEDE31E35D72D00DABF83 /* HomeThreeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FBEEDE21E35D72D00DABF83 /* HomeThreeTableViewCell.m */; };
@@ -177,6 +178,8 @@
 		9F3DC79D1E2E5A2C00C26D86 /* HomeOneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeOneTableViewCell.m; sourceTree = "<group>"; };
 		9F3DC79F1E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeOneTableViewCellViewModel.h; sourceTree = "<group>"; };
 		9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeOneTableViewCellViewModel.m; sourceTree = "<group>"; };
+		9F43065D1EBDF84A00959BD8 /* XJYAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYAnimation.h; sourceTree = "<group>"; };
+		9F43065E1EBDF84A00959BD8 /* XJYAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYAnimation.m; sourceTree = "<group>"; };
 		9F96A8E41EBA0DDD00BDC2C9 /* XJYNotificationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYNotificationBridge.h; sourceTree = "<group>"; };
 		9F96A8E51EBA0DDD00BDC2C9 /* XJYNotificationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYNotificationBridge.m; sourceTree = "<group>"; };
 		9FB579011E349C9200339633 /* HomeTwoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTwoTableViewCell.h; sourceTree = "<group>"; };
@@ -302,6 +305,8 @@
 				9FCCC1651EA4BC3E00D54EF7 /* XPositiveNegativeBarContainerView.m */,
 				9F96A8E41EBA0DDD00BDC2C9 /* XJYNotificationBridge.h */,
 				9F96A8E51EBA0DDD00BDC2C9 /* XJYNotificationBridge.m */,
+				9F43065D1EBDF84A00959BD8 /* XJYAnimation.h */,
+				9F43065E1EBDF84A00959BD8 /* XJYAnimation.m */,
 			);
 			path = XJYChart;
 			sourceTree = "<group>";
@@ -667,6 +672,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F43065F1EBDF84A00959BD8 /* XJYAnimation.m in Sources */,
 				9F3DC7921E2E566500C26D86 /* XJYViewController.m in Sources */,
 				9F0F825D1E9F7999009763FF /* OrdinateView.m in Sources */,
 				9F0F82671E9F7999009763FF /* XJYColor.m in Sources */,

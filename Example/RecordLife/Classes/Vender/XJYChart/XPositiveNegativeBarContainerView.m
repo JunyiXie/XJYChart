@@ -14,7 +14,7 @@
 #import "CAShapeLayer+frameCategory.h"
 #import "XXAnimationLabel.h"
 #import "CALayer+XXLayer.h"
-
+#import "XJYAnimation.h"
 
 
 #define GradientFillColor1 [UIColor colorWithRed:117/255.0 green:184/255.0 blue:245/255.0 alpha:1].CGColor
@@ -32,6 +32,8 @@ typedef enum : NSUInteger {
 
 @interface XPositiveNegativeBarContainerView ()
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
+
+
 @property (nonatomic, strong) NSMutableArray<UIColor *> *colorArray;
 @property (nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *dataNumberArray;
@@ -39,6 +41,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) NSMutableArray<CALayer *> *layerArray;
 //背景填充
 @property (nonatomic, strong) NSMutableArray<CALayer *> *fillLayerArray;
+
 @property (nonatomic, strong) CALayer *coverLayer;
 @end
 
@@ -48,11 +51,15 @@ typedef enum : NSUInteger {
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
+        
+        self.coverLayer = [CALayer layer];
+        
         self.layerArray = [[NSMutableArray alloc] init];
         self.fillLayerArray = [[NSMutableArray alloc] init];
-        self.dataItemArray = [[NSMutableArray alloc] init];
         self.colorArray = [[NSMutableArray alloc] init];
         self.dataNumberArray = [[NSMutableArray alloc] init];
+        self.dataDescribeArray = [[NSMutableArray alloc] init];
+        
         self.dataItemArray = dataItemArray;
         self.top = topNumbser;
         self.bottom = bottomNumber;
@@ -60,9 +67,31 @@ typedef enum : NSUInteger {
     return self;
 }
 
+
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
+    [self cleanPreDrawAndData];
     [self strokeChart];
+    
+}
+
+- (void)cleanPreDrawAndData {
+    
+    // remove layer
+    [self.coverLayer removeFromSuperlayer];
+    [self.layerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperlayer];
+    }];
+    [self.fillLayerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperlayer];
+    }];
+    
+    // clean array
+    [self.layerArray removeAllObjects];
+    [self.fillLayerArray removeAllObjects];
+    [self.colorArray removeAllObjects];
+    [self.dataNumberArray removeAllObjects];
+    [self.dataDescribeArray removeAllObjects];
     
 }
 
@@ -385,7 +414,7 @@ typedef enum : NSUInteger {
             self.coverLayer.selectIdxNumber = @(idx);
             
             // addAnimation
-            [self AddSpringAnimationToLayer:self.coverLayer];
+            [self.coverLayer addAnimation:[XJYAnimation getBarChartSpringAnimationWithLayer:self.coverLayer] forKey:@"position.y"];
             
             [shapeLayer addSublayer:self.coverLayer];
             return ;
@@ -420,7 +449,7 @@ typedef enum : NSUInteger {
             self.coverLayer.selectIdxNumber = @(idx);
             
             // addAnimation
-            [self AddSpringAnimationToLayer:self.coverLayer];
+            [self.coverLayer addAnimation:[XJYAnimation getBarChartSpringAnimationWithLayer:self.coverLayer] forKey:@"position.y"];
             
             [subShapeLayer addSublayer:self.coverLayer];
             return ;
@@ -429,16 +458,6 @@ typedef enum : NSUInteger {
     
 }
 
-#pragma mark AnimationHelper
-
-- (void)AddSpringAnimationToLayer:(CALayer *)layer {
-    // animation
-    CASpringAnimation *spring = [CASpringAnimation animationWithKeyPath:@"transform.scale"];
-    spring.fromValue = @0.9;
-    spring.toValue = @1;
-    spring.duration = 0.5;
-    [layer addAnimation:spring forKey:@"transform.scale"];
-}
 
 
 @end

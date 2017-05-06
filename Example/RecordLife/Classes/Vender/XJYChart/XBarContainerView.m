@@ -13,7 +13,7 @@
 #import "CAShapeLayer+frameCategory.h"
 #import "XXAnimationLabel.h"
 #import "CALayer+XXLayer.h"
-
+#import "XJYAnimation.h"
 #import "XJYNotificationBridge.h"
 
 #pragma mark - Macro
@@ -40,11 +40,14 @@
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
+        
+        self.coverLayer = [CALayer layer];
+
         self.layerArray = [[NSMutableArray alloc] init];
         self.backgroundLayerArray = [[NSMutableArray alloc] init];
-        self.dataItemArray = [[NSMutableArray alloc] init];
         self.colorArray = [[NSMutableArray alloc] init];
         self.dataNumberArray = [[NSMutableArray alloc] init];
+        
         self.dataItemArray = dataItemArray;
         self.top = topNumbser;
         self.bottom = bottomNumber;
@@ -56,15 +59,31 @@
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
+    [self cleanPreDrawAndData];
     [self strokeChart];
 }
 
-- (void)strokeChart {
+- (void)cleanPreDrawAndData {
+    //remove layer
+    [self.layerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperlayer];
+    }];
+    [self.backgroundLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperlayer];
+    }];
+    [self.coverLayer removeFromSuperlayer];
     
-    //To prevent multiple calls ,must clean up the data
+    //clean array
+    [self.layerArray removeAllObjects];
+    [self.backgroundLayerArray removeAllObjects];
     [self.colorArray removeAllObjects];
     [self.dataNumberArray removeAllObjects];
-    [self.dataDescribeArray removeAllObjects];
+}
+
+
+- (void)strokeChart {
+    
+
     // data filter
     [self.dataItemArray enumerateObjectsUsingBlock:^(XJYBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self.colorArray addObject:obj.color];
@@ -232,6 +251,7 @@
     gradientLayer.colors = @[(__bridge id)GradientFillColor1,(__bridge id)GradientFillColor2];
     gradientLayer.startPoint = CGPointMake(0.5, 0);
     gradientLayer.endPoint = CGPointMake(0.5, 1);
+    [gradientLayer addAnimation:[XJYAnimation getBarChartSpringAnimationWithLayer:gradientLayer] forKey:@""];
     return gradientLayer;
 }
 

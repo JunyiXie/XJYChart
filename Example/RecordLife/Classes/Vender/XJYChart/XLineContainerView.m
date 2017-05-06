@@ -12,7 +12,7 @@
 #import "XJYColor.h"
 #import "CAShapeLayer+frameCategory.h"
 #import "XXAnimationLabel.h"
-
+#import "XJYAnimation.h"
 
 
 #pragma mark - Macro
@@ -22,10 +22,13 @@
 
 @interface XLineContainerView()
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
+
+
 @property (nonatomic, strong) NSMutableArray<NSMutableArray<NSValue *> *> *pointsArrays;
 @property (nonatomic, strong) NSMutableArray<CAShapeLayer *> *shapeLayerArray;
 @property (nonatomic, strong) CAShapeLayer *coverLayer;
 @property (nonatomic, strong) NSMutableArray<XXAnimationLabel *> *labelArray;
+
 @end
 
 @implementation XLineContainerView
@@ -33,14 +36,17 @@
 
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber {
     if (self = [super initWithFrame:frame]) {
-        self.coverLayer = [CAShapeLayer layer];
+        
         self.backgroundColor = [UIColor whiteColor];
+
+        self.coverLayer = [CAShapeLayer layer];
         self.shapeLayerArray = [NSMutableArray new];
+        self.pointsArrays = [NSMutableArray new];
+        self.labelArray = [NSMutableArray new];
+        
         self.dataItemArray = dataItemArray;
         self.top  = topNumber;
         self.bottom = bottomNumber;
-        self.pointsArrays = [NSMutableArray new];
-        self.labelArray = [NSMutableArray new];
     }
     return self;
 }
@@ -50,7 +56,8 @@
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     CGContextRef contextRef = UIGraphicsGetCurrentContext();
-    // Stroke
+    
+    [self cleanPreDrawLayerAndData];
     [self strokeAuxiliaryLineInContext:contextRef];
     [self strokePointInContext:contextRef];
     [self strokeLineChart];
@@ -81,8 +88,24 @@
     
 }
 
+
+- (void)cleanPreDrawLayerAndData {
+    
+    //clean previous draw layer
+    [self.coverLayer removeFromSuperlayer];
+    [self.shapeLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperlayer];
+    }];
+    //empty data array
+    [self.pointsArrays removeAllObjects];
+    [self.shapeLayerArray removeAllObjects];
+    [self.labelArray removeAllObjects];
+    
+}
+
 /// Stroke Point
 - (void)strokePointInContext:(CGContextRef)context {
+    
     
     // Get Points
     [self.dataItemArray enumerateObjectsUsingBlock:^(XXLineChartItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -208,7 +231,7 @@
     return chartLine;
 }
 
-- (CAShapeLayer *)shapeLayerWithPath:(CGPathRef)path color:(UIColor *)color {
+- (CAShapeLayer *)coverShapeLayerWithPath:(CGPathRef)path color:(UIColor *)color {
     CAShapeLayer *chartLine = [CAShapeLayer layer];
     chartLine.lineCap = kCALineCapRound;
     chartLine.lineJoin = kCALineJoinRound;
@@ -217,6 +240,8 @@
     chartLine.strokeStart = 0.0;
     chartLine.strokeEnd = 1.0;
     chartLine.strokeColor = color.CGColor;
+    CASpringAnimation *springAnimation = [XJYAnimation getLineChartSpringAnimationWithLayer:chartLine];
+    [chartLine addAnimation:springAnimation forKey:@"position.y"];
     return chartLine;
 }
 
@@ -306,7 +331,7 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
                 [self.labelArray removeAllObjects];
                 [self.coverLayer removeFromSuperlayer];
 
-                self.coverLayer = [self shapeLayerWithPath:self.shapeLayerArray[shapeLayerIndex].path color:[UIColor tomatoColor]];
+                self.coverLayer = [self coverShapeLayerWithPath:self.shapeLayerArray[shapeLayerIndex].path color:[UIColor tomatoColor]];
                 self.coverLayer.selectStatusNumber = [NSNumber numberWithBool:YES];
                 [self.layer addSublayer:self.coverLayer];
                 
