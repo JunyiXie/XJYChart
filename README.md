@@ -95,6 +95,15 @@ XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375
 - (instancetype)initWithFrame:(CGRect)frame;
 ```
 
+###### BarChart
+```objectivec
+XXBarChart *barChart = [[XXBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@150 bottomNumber:@(0)];
+```
+####### BarChartdelegate
+```objectivec
+- (void)touchBarAtIdx:(NSUInteger)idx;
+```
+
 ###### PieChart
 
 ```objectivec
