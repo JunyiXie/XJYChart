@@ -83,7 +83,6 @@
 
 - (void)strokeChart {
     
-
     // data filter
     [self.dataItemArray enumerateObjectsUsingBlock:^(XJYBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self.colorArray addObject:obj.color];
@@ -140,10 +139,6 @@
         [self.layerArray addObject:fillRectShapeLayer];
         [fillShapeLayerArray addObject:fillRectShapeLayer];
     }];
-    
-
-    
-    
 
 }
 
@@ -182,8 +177,7 @@
         CGRect rect = obj.CGRectValue;
         CAShapeLayer *rectShapeLayer = [self rectShapeLayerWithBounds:rect
                                                             fillColor:BarBackgroundFillColor];
-        [self.backgroundLayerArray addObject:rectShapeLayer];
-        [self.layer addSublayer:rectShapeLayer];
+        [backgroundLayerArray addObject:rectShapeLayer];
     }];
     return backgroundLayerArray;
 }
@@ -267,6 +261,7 @@
 #pragma mark - Touch
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+
     CGPoint __block point = [[touches anyObject] locationInView:self];
     
     //touch value area

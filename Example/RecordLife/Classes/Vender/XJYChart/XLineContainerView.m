@@ -96,6 +96,9 @@
     [self.shapeLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperlayer];
     }];
+    [self.labelArray enumerateObjectsUsingBlock:^(XXAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperview];
+    }];
     //empty data array
     [self.pointsArrays removeAllObjects];
     [self.shapeLayerArray removeAllObjects];

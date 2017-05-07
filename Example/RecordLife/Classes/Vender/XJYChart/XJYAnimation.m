@@ -34,7 +34,6 @@
     springAnimation.toValue = @(layer.position.y + 0);
     springAnimation.duration = springAnimation.settlingDuration;
     return springAnimation;
-    
 }
 
 
