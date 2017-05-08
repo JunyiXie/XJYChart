@@ -74,7 +74,7 @@ XXPositiveNegativeBarChart *barChart = [[XXPositiveNegativeBarChart alloc] initW
 ###### XXLineChart
 - colorMode
 ```diff
-- lineMode
++ lineMode
     + CurveLine
     + BrokenLine
 ```
