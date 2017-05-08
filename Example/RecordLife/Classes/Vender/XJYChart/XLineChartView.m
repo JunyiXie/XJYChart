@@ -74,8 +74,12 @@
 }
 
 
-- (void)setColorModel:(XXColorModel)colorModel {
-    _colorModel = colorModel;
-    self.lineContainerView.colorModel = colorModel;
+- (void)setColorMode:(XXColorMode)colorMode {
+    _colorMode = colorMode;
+    self.lineContainerView.colorMode = colorMode;
+}
+- (void)setLineMode:(XXLineMode)lineMode {
+    _lineMode = lineMode;
+    self.lineContainerView.lineMode = lineMode;
 }
 @end

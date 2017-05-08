@@ -38,6 +38,7 @@
  */
 @property (nonatomic, strong) NSNumber *bottom;
 
-@property (nonatomic, assign) XXColorModel colorModel;
+@property (nonatomic, assign) XXColorMode colorMode;
+@property (nonatomic, assign) XXLineMode lineMode;
 
 @end

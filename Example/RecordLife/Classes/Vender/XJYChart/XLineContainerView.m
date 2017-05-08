@@ -14,7 +14,6 @@
 #import "XXAnimationLabel.h"
 #import "XJYAnimation.h"
 
-
 #pragma mark - Macro
 
 #define LineWidth 6.0
@@ -47,6 +46,8 @@
         self.dataItemArray = dataItemArray;
         self.top  = topNumber;
         self.bottom = bottomNumber;
+        self.lineMode = BrokenLine;
+        self.colorMode = Random;
     }
     return self;
 }
@@ -140,7 +141,7 @@
 /// Stroke Line
 - (void)strokeLineChart {
     [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (self.colorModel == Random) {
+        if (self.colorMode == Random) {
             [self.shapeLayerArray addObject:[self shapeLayerWithPoints:obj
                                                                 colors:[[XJYColor shareXJYColor] randomColorInColorArray]]];
         } else {
@@ -191,8 +192,19 @@
         CGPoint temPoint1 = CGPointMake(point1.x, self.frame.size.height - point1.y);
         CGPoint temPoint2 = CGPointMake(point2.x, self.frame.size.height - point2.y);
         [line moveToPoint:temPoint1];
-        [line addLineToPoint:temPoint2];
         
+        if (self.lineMode == BrokenLine) {
+            [line addLineToPoint:temPoint2];
+        } else if (self.lineMode == CurveLine) {
+            CGPoint midPoint = [XLineContainerView midPointBetweenPoint1:temPoint1 andPoint2:temPoint2];
+            [line addQuadCurveToPoint:midPoint
+                         controlPoint:[XLineContainerView controlPointBetweenPoint1:midPoint andPoint2:temPoint1]];
+            [line addQuadCurveToPoint:temPoint2
+                         controlPoint:[XLineContainerView controlPointBetweenPoint1:midPoint andPoint2:temPoint2]];
+        } else {
+            [line addLineToPoint:temPoint2];
+        }
+
         //当前线段的四个点
         CGPoint rectPoint1 = CGPointMake(temPoint1.x - touchLineWidth/2, temPoint1.y - touchLineWidth/2);
         NSValue *value1 = [NSValue valueWithCGPoint:rectPoint1];
@@ -225,6 +237,7 @@
     chartLine.strokeStart = 0.0;
     chartLine.strokeEnd = 1.0;
     chartLine.strokeColor = color.CGColor;
+    chartLine.fillColor = [UIColor clearColor].CGColor;
     
     //selectedStatus
     chartLine.selectStatusNumber = [NSNumber numberWithBool:NO];
@@ -243,6 +256,7 @@
     chartLine.strokeStart = 0.0;
     chartLine.strokeEnd = 1.0;
     chartLine.strokeColor = color.CGColor;
+    chartLine.fillColor = [UIColor clearColor].CGColor;
     CASpringAnimation *springAnimation = [XJYAnimation getLineChartSpringAnimationWithLayer:chartLine];
     [chartLine addAnimation:springAnimation forKey:@"position.y"];
     return chartLine;
@@ -258,7 +272,7 @@
 }
 
 
-#pragma mark - Contain Point Algorithm
+#pragma mark - Algorithm
 
 - (BOOL)containPoint:(NSValue *)pointValue Points:(NSMutableArray<NSValue *> *)pointsArray {
     float vertx[4] = {0,0,0,0};
@@ -284,6 +298,23 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
   }
   return c;
 }
+
+
++ (CGPoint)controlPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2 {
+    CGPoint controlPoint = [self midPointBetweenPoint1:point1 andPoint2:point2];
+    CGFloat diffY = abs((int) (point2.y - controlPoint.y));
+    if (point1.y < point2.y)
+        controlPoint.y += diffY;
+    else if (point1.y > point2.y)
+        controlPoint.y -= diffY;
+    return controlPoint;
+}
+
++ (CGPoint)midPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2 {
+    return CGPointMake((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
+}
+
+
 
 
 #pragma mark - Touch

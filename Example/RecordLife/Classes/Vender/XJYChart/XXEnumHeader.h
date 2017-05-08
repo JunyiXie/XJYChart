@@ -8,9 +8,14 @@
 
 #ifndef XXEnumHeader_h
 #define XXEnumHeader_h
-typedef NS_ENUM(NSUInteger, XXColorModel) {
+typedef NS_ENUM(NSUInteger, XXColorMode) {
     Random,
     Custom,
+};
+
+typedef NS_ENUM(NSUInteger, XXLineMode) {
+    BrokenLine,
+    CurveLine,
 };
 
 

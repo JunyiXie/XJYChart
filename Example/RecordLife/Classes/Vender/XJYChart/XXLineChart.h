@@ -18,9 +18,9 @@
  Random ：RandomColor
  Custom :  need to set (at XXLineChartItem)
  */
-@property (nonatomic, assign) XXColorModel colorModel;
+@property (nonatomic, assign) XXColorMode colorMode;
 
-
+@property (nonatomic, assign) XXLineMode lineMode;
 
 
 /**

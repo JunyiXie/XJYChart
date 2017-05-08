@@ -59,10 +59,14 @@
 }
 
 #pragma mark Set
-- (void)setColorModel:(XXColorModel)colorModel {
-    _colorModel = colorModel;
-    self.lineChartView.colorModel = colorModel;
+- (void)setColorMode:(XXColorMode)colorMode {
+    _colorMode = colorMode;
+    self.lineChartView.colorMode = colorMode;
 }
 
+- (void)setLineMode:(XXLineMode)lineMode {
+    _lineMode = lineMode;
+    self.lineChartView.lineMode = lineMode;
+}
 
 @end
