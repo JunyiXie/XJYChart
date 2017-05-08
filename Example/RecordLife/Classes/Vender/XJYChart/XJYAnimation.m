@@ -7,7 +7,6 @@
 //
 
 #import "XJYAnimation.h"
-
 @implementation XJYAnimation
 
 

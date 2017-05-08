@@ -16,7 +16,6 @@
 		9F0F82571E9F7999009763FF /* CALayer+XXLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F821E1E9F7999009763FF /* CALayer+XXLayer.m */; };
 		9F0F825D1E9F7999009763FF /* OrdinateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82291E9F7999009763FF /* OrdinateView.m */; };
 		9F0F825E1E9F7999009763FF /* RandomNumerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F822B1E9F7999009763FF /* RandomNumerHelper.m */; };
-		9F0F825F1E9F7999009763FF /* SGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F822E1E9F7999009763FF /* SGLabel.m */; };
 		9F0F82601E9F7999009763FF /* XBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82301E9F7999009763FF /* XBarChartView.m */; };
 		9F0F82611E9F7999009763FF /* XBarContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82321E9F7999009763FF /* XBarContainerView.m */; };
 		9F0F82621E9F7999009763FF /* XJYAuxiliaryCalculationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82341E9F7999009763FF /* XJYAuxiliaryCalculationHelper.m */; };
@@ -112,8 +111,6 @@
 		9F0F82291E9F7999009763FF /* OrdinateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdinateView.m; sourceTree = "<group>"; };
 		9F0F822A1E9F7999009763FF /* RandomNumerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomNumerHelper.h; sourceTree = "<group>"; };
 		9F0F822B1E9F7999009763FF /* RandomNumerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomNumerHelper.m; sourceTree = "<group>"; };
-		9F0F822D1E9F7999009763FF /* SGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLabel.h; sourceTree = "<group>"; };
-		9F0F822E1E9F7999009763FF /* SGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLabel.m; sourceTree = "<group>"; };
 		9F0F822F1E9F7999009763FF /* XBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarChartView.h; sourceTree = "<group>"; };
 		9F0F82301E9F7999009763FF /* XBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarChartView.m; sourceTree = "<group>"; };
 		9F0F82311E9F7999009763FF /* XBarContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarContainerView.h; sourceTree = "<group>"; };
@@ -180,6 +177,7 @@
 		9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeOneTableViewCellViewModel.m; sourceTree = "<group>"; };
 		9F43065D1EBDF84A00959BD8 /* XJYAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYAnimation.h; sourceTree = "<group>"; };
 		9F43065E1EBDF84A00959BD8 /* XJYAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYAnimation.m; sourceTree = "<group>"; };
+		9F734DDC1EBF669B002ABF14 /* RecordLife-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecordLife-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F96A8E41EBA0DDD00BDC2C9 /* XJYNotificationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYNotificationBridge.h; sourceTree = "<group>"; };
 		9F96A8E51EBA0DDD00BDC2C9 /* XJYNotificationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYNotificationBridge.m; sourceTree = "<group>"; };
 		9FB579011E349C9200339633 /* HomeTwoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTwoTableViewCell.h; sourceTree = "<group>"; };
@@ -267,7 +265,6 @@
 				9F0F82291E9F7999009763FF /* OrdinateView.m */,
 				9F0F822A1E9F7999009763FF /* RandomNumerHelper.h */,
 				9F0F822B1E9F7999009763FF /* RandomNumerHelper.m */,
-				9F0F822C1E9F7999009763FF /* SGText */,
 				9F0F82331E9F7999009763FF /* XJYAuxiliaryCalculationHelper.h */,
 				9F0F82341E9F7999009763FF /* XJYAuxiliaryCalculationHelper.m */,
 				9F0F82371E9F7999009763FF /* XJYBarItem.h */,
@@ -311,18 +308,10 @@
 			path = XJYChart;
 			sourceTree = "<group>";
 		};
-		9F0F822C1E9F7999009763FF /* SGText */ = {
-			isa = PBXGroup;
-			children = (
-				9F0F822D1E9F7999009763FF /* SGLabel.h */,
-				9F0F822E1E9F7999009763FF /* SGLabel.m */,
-			);
-			path = SGText;
-			sourceTree = "<group>";
-		};
 		9F3DC73A1E2E36B600C26D86 = {
 			isa = PBXGroup;
 			children = (
+				9F734DDC1EBF669B002ABF14 /* RecordLife-Bridging-Header.h */,
 				9F3DC7791E2E428200C26D86 /* PrefixHeader.pch */,
 				9F3DC7451E2E36B600C26D86 /* RecordLife */,
 				9F3DC75F1E2E36B600C26D86 /* RecordLifeTests */,
@@ -555,6 +544,7 @@
 					9F3DC7421E2E36B600C26D86 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = XNWYRFUG25;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					9F3DC75B1E2E36B600C26D86 = {
@@ -708,7 +698,6 @@
 				9F0F82641E9F7999009763FF /* XJYBarItem.m in Sources */,
 				9F0F826B1E9F7999009763FF /* XJYPieItem.m in Sources */,
 				9F96A8E61EBA0DDD00BDC2C9 /* XJYNotificationBridge.m in Sources */,
-				9F0F825F1E9F7999009763FF /* SGLabel.m in Sources */,
 				9F0369FD1EB778E9003FB013 /* BtnView.m in Sources */,
 				9F0369B11EB744CC003FB013 /* CycleTableViewCell.m in Sources */,
 				9F0F82701E9F7999009763FF /* XXLineChart.m in Sources */,
@@ -869,13 +858,18 @@
 			baseConfigurationReference = 37737D6A36A792975C04CD82 /* Pods-RecordLife.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = NO;
 				DEVELOPMENT_TEAM = XNWYRFUG25;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = RecordLife/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.XJY..;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RecordLife-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -884,13 +878,17 @@
 			baseConfigurationReference = 268B4BE433119986366F9157 /* Pods-RecordLife.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = NO;
 				DEVELOPMENT_TEAM = XNWYRFUG25;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = RecordLife/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.XJY..;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RecordLife-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
