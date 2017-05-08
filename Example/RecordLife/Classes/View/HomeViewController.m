@@ -14,6 +14,8 @@
 #import "HomeFiveTableViewCell.h"
 #import "HomeSixTableViewCell.h"
 #import "CycleTableViewCell.h"
+
+#import "masonry.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;

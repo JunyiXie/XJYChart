@@ -7,8 +7,17 @@
 //
 
 #import "XJYAnimation.h"
+#import "LSAnimator.h"
 @implementation XJYAnimation
 
++ (instancetype)shareInstance {
+    static XJYAnimation *ivar = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        ivar = [XJYAnimation new];
+    });
+    return ivar;
+}
 
 
 + (CASpringAnimation *)getLineChartSpringAnimationWithLayer:(CALayer *)layer {
@@ -33,6 +42,10 @@
     springAnimation.toValue = @(layer.position.y + 0);
     springAnimation.duration = springAnimation.settlingDuration;
     return springAnimation;
+}
+
+- (void)addLSSpringFrameAnimation:(CALayer *)layer {
+    layer.ls_spring.ls_scale(1.1).ls_spring.ls_thenAfter(0.3).ls_scale(1.0/1.1).ls_spring.ls_animate(1);
 }
 
 

@@ -13,7 +13,6 @@
 #import "CAShapeLayer+frameCategory.h"
 #import "XXAnimationLabel.h"
 #import "XJYAnimation.h"
-
 #pragma mark - Macro
 
 #define LineWidth 6.0
@@ -257,8 +256,10 @@
     chartLine.strokeEnd = 1.0;
     chartLine.strokeColor = color.CGColor;
     chartLine.fillColor = [UIColor clearColor].CGColor;
+    
     CASpringAnimation *springAnimation = [XJYAnimation getLineChartSpringAnimationWithLayer:chartLine];
     [chartLine addAnimation:springAnimation forKey:@"position.y"];
+    
     return chartLine;
 }
 

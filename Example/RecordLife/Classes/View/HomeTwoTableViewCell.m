@@ -7,6 +7,7 @@
 //
 
 #import "HomeTwoTableViewCell.h"
+#import "XJYChart.h"
 
 @interface HomeTwoTableViewCell ()
 

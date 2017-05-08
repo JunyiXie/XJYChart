@@ -29,6 +29,12 @@
 		9F0F826F1E9F7999009763FF /* XXBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82501E9F7999009763FF /* XXBarChart.m */; };
 		9F0F82701E9F7999009763FF /* XXLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82531E9F7999009763FF /* XXLineChart.m */; };
 		9F0F82711E9F7999009763FF /* XXLineChartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82551E9F7999009763FF /* XXLineChartItem.m */; };
+		9F2813A01EC0A1E00024E19F /* CALayer+LSAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2813931EC0A1E00024E19F /* CALayer+LSAnimator.m */; };
+		9F2813A11EC0A1E00024E19F /* LSAnimatorChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2813971EC0A1E00024E19F /* LSAnimatorChain.m */; };
+		9F2813A21EC0A1E00024E19F /* LSAnimatorLinker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2813991EC0A1E00024E19F /* LSAnimatorLinker.m */; };
+		9F2813A31EC0A1E00024E19F /* LSKeyframeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F28139B1EC0A1E00024E19F /* LSKeyframeAnimation.m */; };
+		9F2813A41EC0A1E00024E19F /* LSKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F28139C1EC0A1E00024E19F /* LSKeyframeAnimationFunctions.c */; };
+		9F2813A51EC0A1E00024E19F /* UIView+LSAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F28139F1EC0A1E00024E19F /* UIView+LSAnimator.m */; };
 		9F3B2A161E797580000FB7DB /* HomeFourTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B2A151E797580000FB7DB /* HomeFourTableViewCell.m */; };
 		9F3DC7481E2E36B600C26D86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7471E2E36B600C26D86 /* main.m */; };
 		9F3DC74B1E2E36B600C26D86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC74A1E2E36B600C26D86 /* AppDelegate.m */; };
@@ -140,6 +146,20 @@
 		9F0F82531E9F7999009763FF /* XXLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXLineChart.m; sourceTree = "<group>"; };
 		9F0F82541E9F7999009763FF /* XXLineChartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXLineChartItem.h; sourceTree = "<group>"; };
 		9F0F82551E9F7999009763FF /* XXLineChartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXLineChartItem.m; sourceTree = "<group>"; };
+		9F2813921EC0A1E00024E19F /* CALayer+LSAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+LSAnimator.h"; sourceTree = "<group>"; };
+		9F2813931EC0A1E00024E19F /* CALayer+LSAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LSAnimator.m"; sourceTree = "<group>"; };
+		9F2813941EC0A1E00024E19F /* LSAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAnimator.h; sourceTree = "<group>"; };
+		9F2813951EC0A1E00024E19F /* LSAnimatorBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAnimatorBlocks.h; sourceTree = "<group>"; };
+		9F2813961EC0A1E00024E19F /* LSAnimatorChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAnimatorChain.h; sourceTree = "<group>"; };
+		9F2813971EC0A1E00024E19F /* LSAnimatorChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAnimatorChain.m; sourceTree = "<group>"; };
+		9F2813981EC0A1E00024E19F /* LSAnimatorLinker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAnimatorLinker.h; sourceTree = "<group>"; };
+		9F2813991EC0A1E00024E19F /* LSAnimatorLinker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAnimatorLinker.m; sourceTree = "<group>"; };
+		9F28139A1EC0A1E00024E19F /* LSKeyframeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSKeyframeAnimation.h; sourceTree = "<group>"; };
+		9F28139B1EC0A1E00024E19F /* LSKeyframeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSKeyframeAnimation.m; sourceTree = "<group>"; };
+		9F28139C1EC0A1E00024E19F /* LSKeyframeAnimationFunctions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LSKeyframeAnimationFunctions.c; sourceTree = "<group>"; };
+		9F28139D1EC0A1E00024E19F /* LSKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
+		9F28139E1EC0A1E00024E19F /* UIView+LSAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LSAnimator.h"; sourceTree = "<group>"; };
+		9F28139F1EC0A1E00024E19F /* UIView+LSAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LSAnimator.m"; sourceTree = "<group>"; };
 		9F3B2A141E797580000FB7DB /* HomeFourTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFourTableViewCell.h; sourceTree = "<group>"; };
 		9F3B2A151E797580000FB7DB /* HomeFourTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFourTableViewCell.m; sourceTree = "<group>"; };
 		9F3DC7431E2E36B600C26D86 /* RecordLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,7 +178,6 @@
 		9F3DC7671E2E36B600C26D86 /* RecordLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecordLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3DC76B1E2E36B600C26D86 /* RecordLifeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordLifeUITests.m; sourceTree = "<group>"; };
 		9F3DC76D1E2E36B600C26D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F3DC7791E2E428200C26D86 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9F3DC77E1E2E492B00C26D86 /* XJYIPTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYIPTools.h; sourceTree = "<group>"; };
 		9F3DC77F1E2E492B00C26D86 /* XJYIPTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYIPTools.m; sourceTree = "<group>"; };
 		9F3DC7861E2E492B00C26D86 /* XJYPopOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYPopOption.h; sourceTree = "<group>"; };
@@ -249,6 +268,7 @@
 		9F0F821A1E9F7999009763FF /* XJYChart */ = {
 			isa = PBXGroup;
 			children = (
+				9F2813911EC0A1E00024E19F /* LSAnimator */,
 				9F0369AB1EB744AA003FB013 /* XJYCycleView.h */,
 				9F0369AC1EB744AA003FB013 /* XJYCycleView.m */,
 				9FC59C311EA8B5C200257ECC /* XXAnimationLabel.h */,
@@ -308,11 +328,31 @@
 			path = XJYChart;
 			sourceTree = "<group>";
 		};
+		9F2813911EC0A1E00024E19F /* LSAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				9F2813921EC0A1E00024E19F /* CALayer+LSAnimator.h */,
+				9F2813931EC0A1E00024E19F /* CALayer+LSAnimator.m */,
+				9F2813941EC0A1E00024E19F /* LSAnimator.h */,
+				9F2813951EC0A1E00024E19F /* LSAnimatorBlocks.h */,
+				9F2813961EC0A1E00024E19F /* LSAnimatorChain.h */,
+				9F2813971EC0A1E00024E19F /* LSAnimatorChain.m */,
+				9F2813981EC0A1E00024E19F /* LSAnimatorLinker.h */,
+				9F2813991EC0A1E00024E19F /* LSAnimatorLinker.m */,
+				9F28139A1EC0A1E00024E19F /* LSKeyframeAnimation.h */,
+				9F28139B1EC0A1E00024E19F /* LSKeyframeAnimation.m */,
+				9F28139C1EC0A1E00024E19F /* LSKeyframeAnimationFunctions.c */,
+				9F28139D1EC0A1E00024E19F /* LSKeyframeAnimationFunctions.h */,
+				9F28139E1EC0A1E00024E19F /* UIView+LSAnimator.h */,
+				9F28139F1EC0A1E00024E19F /* UIView+LSAnimator.m */,
+			);
+			path = LSAnimator;
+			sourceTree = "<group>";
+		};
 		9F3DC73A1E2E36B600C26D86 = {
 			isa = PBXGroup;
 			children = (
 				9F734DDC1EBF669B002ABF14 /* RecordLife-Bridging-Header.h */,
-				9F3DC7791E2E428200C26D86 /* PrefixHeader.pch */,
 				9F3DC7451E2E36B600C26D86 /* RecordLife */,
 				9F3DC75F1E2E36B600C26D86 /* RecordLifeTests */,
 				9F3DC76A1E2E36B600C26D86 /* RecordLifeUITests */,
@@ -673,12 +713,15 @@
 				9F0F826C1E9F7999009763FF /* XJYPointView.m in Sources */,
 				9F3DC78A1E2E492B00C26D86 /* XJYIPTools.m in Sources */,
 				9F0F82621E9F7999009763FF /* XJYAuxiliaryCalculationHelper.m in Sources */,
+				9F2813A41EC0A1E00024E19F /* LSKeyframeAnimationFunctions.c in Sources */,
 				9F3DC79B1E2E59DF00C26D86 /* XJYTableViewCell.m in Sources */,
 				9FCCC1661EA4BC3E00D54EF7 /* XPositiveNegativeBarContainerView.m in Sources */,
 				9FCCC1A31EA4F11500D54EF7 /* HomeFiveTableViewCell.m in Sources */,
 				9F0369B51EB75051003FB013 /* XJYTapCycleView.m in Sources */,
 				9F0F82711E9F7999009763FF /* XXLineChartItem.m in Sources */,
+				9F2813A51EC0A1E00024E19F /* UIView+LSAnimator.m in Sources */,
 				9F0F82611E9F7999009763FF /* XBarContainerView.m in Sources */,
+				9F2813A31EC0A1E00024E19F /* LSKeyframeAnimation.m in Sources */,
 				9F0F825E1E9F7999009763FF /* RandomNumerHelper.m in Sources */,
 				9F3DC74E1E2E36B600C26D86 /* ViewController.m in Sources */,
 				9FCCC19D1EA4E99000D54EF7 /* XXPositiveNegativeBarChartView.m in Sources */,
@@ -691,6 +734,7 @@
 				9F0F826D1E9F7999009763FF /* XLineChartView.m in Sources */,
 				9F0F82601E9F7999009763FF /* XBarChartView.m in Sources */,
 				9F3DC79E1E2E5A2C00C26D86 /* HomeOneTableViewCell.m in Sources */,
+				9F2813A11EC0A1E00024E19F /* LSAnimatorChain.m in Sources */,
 				9F3DC7981E2E56B700C26D86 /* HomeViewControllerViewModel.m in Sources */,
 				9F3DC78F1E2E492B00C26D86 /* XJYPopOption.m in Sources */,
 				9F3DC7951E2E569100C26D86 /* HomeViewController.m in Sources */,
@@ -703,7 +747,9 @@
 				9F0F82701E9F7999009763FF /* XXLineChart.m in Sources */,
 				9F0F82561E9F7999009763FF /* AbscissaView.m in Sources */,
 				9FCCC1A61EA4F14800D54EF7 /* HomeSixTableViewCell.m in Sources */,
+				9F2813A01EC0A1E00024E19F /* CALayer+LSAnimator.m in Sources */,
 				9FC59C2F1EA8B5B000257ECC /* CAShapeLayer+frameCategory.m in Sources */,
+				9F2813A21EC0A1E00024E19F /* LSAnimatorLinker.m in Sources */,
 				9F3DC7481E2E36B600C26D86 /* main.m in Sources */,
 				9F0369AD1EB744AA003FB013 /* XJYCycleView.m in Sources */,
 				9FB579031E349C9200339633 /* HomeTwoTableViewCell.m in Sources */,
@@ -861,7 +907,7 @@
 				CLANG_ENABLE_MODULES = NO;
 				DEVELOPMENT_TEAM = XNWYRFUG25;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = RecordLife/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -881,7 +927,7 @@
 				CLANG_ENABLE_MODULES = NO;
 				DEVELOPMENT_TEAM = XNWYRFUG25;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = RecordLife/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

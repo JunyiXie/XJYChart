@@ -15,6 +15,7 @@
 #import "CALayer+XXLayer.h"
 #import "XJYAnimation.h"
 #import "XJYNotificationBridge.h"
+#import "LSAnimator.h"
 
 #pragma mark - Macro
 
@@ -239,13 +240,14 @@
     return topLabel;
 }
 
-- (CAGradientLayer *)rectGradientLayerWithBounds:(CGRect)rect {
+- (CAGradientLayer *)rectCoverGradientLayerWithBounds:(CGRect)rect {
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.frame = rect;
     gradientLayer.colors = @[(__bridge id)GradientFillColor1,(__bridge id)GradientFillColor2];
     gradientLayer.startPoint = CGPointMake(0.5, 0);
     gradientLayer.endPoint = CGPointMake(0.5, 1);
-    [gradientLayer addAnimation:[XJYAnimation getBarChartSpringAnimationWithLayer:gradientLayer] forKey:@""];
+//    [gradientLayer addAnimation:[XJYAnimation getBarChartSpringAnimationWithLayer:gradientLayer] forKey:@""];
+    [[XJYAnimation shareInstance] addLSSpringFrameAnimation:gradientLayer];
     return gradientLayer;
 }
 
@@ -265,36 +267,40 @@
     CGPoint __block point = [[touches anyObject] locationInView:self];
     
     //touch value area
-    [self.layerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        point = [obj convertPoint:point toLayer:self.layer];
-        CAShapeLayer *shapeLayer = (CAShapeLayer *)obj;
-        CGRect layerFrame = shapeLayer.frameValue.CGRectValue;
-        if (CGRectContainsPoint(layerFrame, point)) {
-            CAShapeLayer *preShapeLayer =  (CAShapeLayer *)self.layerArray[self.coverLayer.selectIdxNumber.intValue];
-            // change state
-            preShapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
-            NSLog(@"点击了 %lu bar  boolvalue", (unsigned long)idx + 1);
-            
-            // Notification + Deleagte To CallBack
-            [[NSNotificationCenter defaultCenter] postNotificationName:[XJYNotificationBridge shareXJYNotificationBridge].TouchBarNotification
-                                                                object:nil
-                                                              userInfo:@{[XJYNotificationBridge shareXJYNotificationBridge].BarIdxNumberKey:@(idx)}];
-            if (shapeLayer.selectStatusNumber.boolValue == TRUE) {
-                shapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
-                [self.coverLayer removeFromSuperlayer];
-                return ;
-            }
-            //remove last cover layer
-            [self.coverLayer removeFromSuperlayer];
-            BOOL boolValue = shapeLayer.selectStatusNumber.boolValue;
-            shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!boolValue];
-            self.coverLayer = [self rectGradientLayerWithBounds:layerFrame];
-            self.coverLayer.selectIdxNumber = @(idx);
-            [shapeLayer addSublayer:self.coverLayer];
-            return ;
-        }
-        
-    }];
+    // tem abandoned
+//    [self.layerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        point = [obj convertPoint:point toLayer:self.layer];
+//        CAShapeLayer *shapeLayer = (CAShapeLayer *)obj;
+//        CGRect layerFrame = shapeLayer.frameValue.CGRectValue;
+//        if (CGRectContainsPoint(layerFrame, point)) {
+//            CAShapeLayer *preShapeLayer =  (CAShapeLayer *)self.layerArray[self.coverLayer.selectIdxNumber.intValue];
+//            // change state
+//            preShapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
+//            NSLog(@"点击了 %lu bar  boolvalue", (unsigned long)idx + 1);
+//            
+//            // Notification + Deleagte To CallBack
+//            [[NSNotificationCenter defaultCenter] postNotificationName:[XJYNotificationBridge shareXJYNotificationBridge].TouchBarNotification
+//                                                                object:nil
+//                                                              userInfo:@{[XJYNotificationBridge shareXJYNotificationBridge].BarIdxNumberKey:@(idx)}];
+//            if (shapeLayer.selectStatusNumber.boolValue == TRUE) {
+//                shapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
+//                [self.coverLayer removeFromSuperlayer];
+//                return ;
+//            }
+//            //remove last cover layer
+//            [self.coverLayer removeFromSuperlayer];
+//            BOOL boolValue = shapeLayer.selectStatusNumber.boolValue;
+//            shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!boolValue];
+//            self.coverLayer = [self rectCoverGradientLayerWithBounds:layerFrame];
+//            self.coverLayer.selectIdxNumber = @(idx);
+//
+//            
+//
+//            [shapeLayer addSublayer:self.coverLayer];
+//            return ;
+//        }
+//        
+//    }];
     
     //touch whole bar
     [self.backgroundLayerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -319,8 +325,9 @@
             }
             BOOL boolValue = subShapeLayer.selectStatusNumber.boolValue;
             subShapeLayer.selectStatusNumber = [NSNumber numberWithBool: !boolValue];
-            self.coverLayer = [self rectGradientLayerWithBounds:subShapeLayer.frameValue.CGRectValue];
+            self.coverLayer = [self rectCoverGradientLayerWithBounds:subShapeLayer.frameValue.CGRectValue];
             self.coverLayer.selectIdxNumber = @(idx);
+            
             [subShapeLayer addSublayer:self.coverLayer];
             return ;
         }
