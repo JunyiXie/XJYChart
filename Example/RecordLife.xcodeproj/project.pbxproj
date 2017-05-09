@@ -35,6 +35,8 @@
 		9F2813A31EC0A1E00024E19F /* LSKeyframeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F28139B1EC0A1E00024E19F /* LSKeyframeAnimation.m */; };
 		9F2813A41EC0A1E00024E19F /* LSKeyframeAnimationFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F28139C1EC0A1E00024E19F /* LSKeyframeAnimationFunctions.c */; };
 		9F2813A51EC0A1E00024E19F /* UIView+LSAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F28139F1EC0A1E00024E19F /* UIView+LSAnimator.m */; };
+		9F2813F01EC1E8030024E19F /* XAreaLineContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2813EF1EC1E8030024E19F /* XAreaLineContainerView.m */; };
+		9F2813F31EC1F7AC0024E19F /* AreaLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2813F21EC1F7AC0024E19F /* AreaLineTableViewCell.m */; };
 		9F3B2A161E797580000FB7DB /* HomeFourTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B2A151E797580000FB7DB /* HomeFourTableViewCell.m */; };
 		9F3DC7481E2E36B600C26D86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7471E2E36B600C26D86 /* main.m */; };
 		9F3DC74B1E2E36B600C26D86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC74A1E2E36B600C26D86 /* AppDelegate.m */; };
@@ -160,6 +162,10 @@
 		9F28139D1EC0A1E00024E19F /* LSKeyframeAnimationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSKeyframeAnimationFunctions.h; sourceTree = "<group>"; };
 		9F28139E1EC0A1E00024E19F /* UIView+LSAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LSAnimator.h"; sourceTree = "<group>"; };
 		9F28139F1EC0A1E00024E19F /* UIView+LSAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LSAnimator.m"; sourceTree = "<group>"; };
+		9F2813EE1EC1E8030024E19F /* XAreaLineContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAreaLineContainerView.h; sourceTree = "<group>"; };
+		9F2813EF1EC1E8030024E19F /* XAreaLineContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAreaLineContainerView.m; sourceTree = "<group>"; };
+		9F2813F11EC1F7AC0024E19F /* AreaLineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaLineTableViewCell.h; sourceTree = "<group>"; };
+		9F2813F21EC1F7AC0024E19F /* AreaLineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaLineTableViewCell.m; sourceTree = "<group>"; };
 		9F3B2A141E797580000FB7DB /* HomeFourTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFourTableViewCell.h; sourceTree = "<group>"; };
 		9F3B2A151E797580000FB7DB /* HomeFourTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFourTableViewCell.m; sourceTree = "<group>"; };
 		9F3DC7431E2E36B600C26D86 /* RecordLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,6 +318,8 @@
 				9F0F824C1E9F7999009763FF /* XLineChartView.m */,
 				9F0F824D1E9F7999009763FF /* XLineContainerView.h */,
 				9F0F824E1E9F7999009763FF /* XLineContainerView.m */,
+				9F2813EE1EC1E8030024E19F /* XAreaLineContainerView.h */,
+				9F2813EF1EC1E8030024E19F /* XAreaLineContainerView.m */,
 				9F0F82541E9F7999009763FF /* XXLineChartItem.h */,
 				9F0F82551E9F7999009763FF /* XXLineChartItem.m */,
 				9FCCC1981EA4E91E00D54EF7 /* XXPositiveNegativeBarChart.h */,
@@ -486,6 +494,8 @@
 				9F0369AE1EB744CC003FB013 /* CycleTableViewCell.h */,
 				9F0369AF1EB744CC003FB013 /* CycleTableViewCell.m */,
 				9F0369B01EB744CC003FB013 /* CycleTableViewCell.xib */,
+				9F2813F11EC1F7AC0024E19F /* AreaLineTableViewCell.h */,
+				9F2813F21EC1F7AC0024E19F /* AreaLineTableViewCell.m */,
 				9F0369B31EB75051003FB013 /* XJYTapCycleView.h */,
 				9F0369B41EB75051003FB013 /* XJYTapCycleView.m */,
 				9F0369FB1EB778E9003FB013 /* BtnView.h */,
@@ -707,6 +717,7 @@
 				9F0F825D1E9F7999009763FF /* OrdinateView.m in Sources */,
 				9F0F82671E9F7999009763FF /* XJYColor.m in Sources */,
 				9FCCC19A1EA4E91E00D54EF7 /* XXPositiveNegativeBarChart.m in Sources */,
+				9F2813F31EC1F7AC0024E19F /* AreaLineTableViewCell.m in Sources */,
 				9FC59C301EA8B5B000257ECC /* Colours.m in Sources */,
 				9FC59C331EA8B5C200257ECC /* XXAnimationLabel.m in Sources */,
 				9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */,
@@ -728,6 +739,7 @@
 				9F0F826E1E9F7999009763FF /* XLineContainerView.m in Sources */,
 				9F3B2A161E797580000FB7DB /* HomeFourTableViewCell.m in Sources */,
 				9F0F826A1E9F7999009763FF /* XJYPieChart.m in Sources */,
+				9F2813F01EC1E8030024E19F /* XAreaLineContainerView.m in Sources */,
 				9F0F82571E9F7999009763FF /* CALayer+XXLayer.m in Sources */,
 				9F3DC74B1E2E36B600C26D86 /* AppDelegate.m in Sources */,
 				9F0F826F1E9F7999009763FF /* XXBarChart.m in Sources */,

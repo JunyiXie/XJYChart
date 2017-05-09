@@ -27,12 +27,13 @@
 
 @implementation XXLineChart
 
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber {
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber graphMode:(XXLineGraphMode)graphMode {
     if (self = [super initWithFrame:frame]) {
         self.top = topNumbser;
         self.bottom = bottomNumber;
         self.dataItemArray = dataItemArray;
         self.dataDescribeArray = dataDiscribeArray;
+        self.lineGraphMode = graphMode;
         
         [self addSubview:self.ordinateView];
         [self addSubview:self.lineChartView];
@@ -53,7 +54,7 @@
 
 - (XLineChartView *)lineChartView {
     if (!_lineChartView) {
-        _lineChartView = [[XLineChartView alloc] initWithFrame:CGRectMake(OrdinateWidth, LineChartViewTopInterval, self.frame.size.width - OrdinateWidth, self.frame.size.height - LineChartViewTopInterval) dataItemArray:self.dataItemArray dataDescribeArray:self.dataDescribeArray topNumber:self.top bottomNumber:self.bottom];
+        _lineChartView = [[XLineChartView alloc] initWithFrame:CGRectMake(OrdinateWidth, LineChartViewTopInterval, self.frame.size.width - OrdinateWidth, self.frame.size.height - LineChartViewTopInterval) dataItemArray:self.dataItemArray dataDescribeArray:self.dataDescribeArray topNumber:self.top bottomNumber:self.bottom  graphMode:self.lineGraphMode];
     }
     return _lineChartView;
 }
@@ -68,5 +69,7 @@
     _lineMode = lineMode;
     self.lineChartView.lineMode = lineMode;
 }
+
+
 
 @end

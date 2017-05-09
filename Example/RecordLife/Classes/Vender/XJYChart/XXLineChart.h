@@ -17,15 +17,36 @@
 /**
  Random ：RandomColor
  Custom :  need to set (at XXLineChartItem)
+ 
+ Default is Random
  */
 @property (nonatomic, assign) XXColorMode colorMode;
 
+
+/**
+ Line Mode
+ - BrokeLine
+ - CurveLine
+ 
+ Default is BrokeLine
+
+ */
 @property (nonatomic, assign) XXLineMode lineMode;
+
+
+/**
+ Line Graph Mode
+ - MutiLine
+ - GraphLine
+ 
+ Default is MutiLine
+ */
+@property (nonatomic, assign) XXLineGraphMode lineGraphMode;
 
 
 /**
  XXLineChart初始化方法
  */
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber graphMode:(XXLineGraphMode)graphMode;
 
 @end

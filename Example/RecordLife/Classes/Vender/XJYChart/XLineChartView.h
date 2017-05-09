@@ -20,7 +20,7 @@
  @param bottomNumber buttom
  @return instancetype
  */
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDescribeArray:(NSMutableArray<NSString *> *)dataDescribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber ;
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDescribeArray:(NSMutableArray<NSString *> *)dataDescribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  graphMode:(XXLineGraphMode)graphMode;
 
 /**
  dataItemArray
@@ -38,7 +38,34 @@
  */
 @property (nonatomic, strong) NSNumber *bottom;
 
+/**
+ Random ：RandomColor
+ Custom :  need to set (at XXLineChartItem)
+ 
+ Default is Random
+ */
 @property (nonatomic, assign) XXColorMode colorMode;
+
+
+/**
+ Line Mode
+ - BrokeLine
+ - CurveLine
+ 
+ Default is BrokeLine
+ 
+ */
 @property (nonatomic, assign) XXLineMode lineMode;
+
+
+/**
+ Line Graph Mode
+ - MutiLine
+ - GraphLine
+ 
+ Default is MutiLine
+ */
+@property (nonatomic, assign) XXLineGraphMode lineGraphMode;
+
 
 @end

@@ -18,5 +18,11 @@ typedef NS_ENUM(NSUInteger, XXLineMode) {
     CurveLine,
 };
 
+typedef NS_ENUM(NSUInteger, XXLineGraphMode) {
+    MutiLineGraph,
+    AreaLineGraph,
+};
+
+
 
 #endif /* XXEnumHeader_h */

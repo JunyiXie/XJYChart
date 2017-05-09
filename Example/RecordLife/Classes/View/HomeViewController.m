@@ -14,6 +14,7 @@
 #import "HomeFiveTableViewCell.h"
 #import "HomeSixTableViewCell.h"
 #import "CycleTableViewCell.h"
+#import "AreaLineTableViewCell.h"
 
 #import "masonry.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -68,6 +69,7 @@
         [_tableView registerClass:[HomeFiveTableViewCell class] forCellReuseIdentifier:kHomeFiveTableViewCell];
         [_tableView registerClass:[HomeSixTableViewCell class] forCellReuseIdentifier:kHomeSixTableViewCell];
         [_tableView registerNib:[UINib nibWithNibName:@"CycleTableViewCell" bundle:nil] forCellReuseIdentifier:@"CycleTableViewCell"];
+        [_tableView registerClass:[AreaLineTableViewCell class] forCellReuseIdentifier:kAreaLineTableViewCell];
         
         _tableView.dataSource = self;
         _tableView.delegate = self;
@@ -93,7 +95,7 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 5;
+    return 6;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -120,7 +122,8 @@
         CycleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CycleTableViewCell" forIndexPath:indexPath];
         return cell;
     } else if (indexPath.section == 5) {
-
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kAreaLineTableViewCell forIndexPath:indexPath];
+        return cell;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeOneTableViewCell forIndexPath:indexPath];
     return cell;
@@ -136,8 +139,10 @@
         return @"可滑动可点击的条形图";
     } else if (section == 3) {
         return @"正负条形图";
-    } else {
+    } else if (section == 4){
         return @"可滑动的渐变环形图";
+    } else {
+        return @"区域折线图";
     }
 }
 
