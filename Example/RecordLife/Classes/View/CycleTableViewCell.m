@@ -60,7 +60,6 @@
 #pragma mark 回调
 - (void)ratioChange:(CGFloat)ratio {
     
-
     //传给你比例!
     self.moneyLabel.text = [NSString stringWithFormat:@"%.0f元",ratio * self.max];
     if (ratio >= 0.95) {

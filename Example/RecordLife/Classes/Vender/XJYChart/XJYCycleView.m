@@ -25,7 +25,7 @@
 
 #pragma mark - Property
 @property (nonatomic,assign) int lineWidth;
-@property (nonatomic,assign) int angle;
+@property (nonatomic,assign) float angle;
 @property (nonatomic, strong) CAShapeLayer *progressLayer;
 @property (nonatomic, strong) CALayer *gradientLayer;
 @property (nonatomic, strong) CAShapeLayer *hLayer;
@@ -200,7 +200,8 @@
                                       self.frame.size.height/2);
     //center to point angle
     float currentAngle = AngleFromNorth(centerPoint,lastPoint,NO);
-    int angleInt = floor(currentAngle);
+//    int angleInt = floor(currentAngle);
+    float angleInt = currentAngle;
     //change the starting point so do judge
     self.angle = angleInt;
     if (self.angle >= 90 && self.angle <= 360 ) {
