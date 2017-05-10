@@ -151,19 +151,25 @@
 //compute Points Arrays
 - (NSMutableArray<NSMutableArray<NSValue *> *> *)getPointsArrays {
     
-    NSMutableArray *pointsArrays = [NSMutableArray new];
-    // Get Points
-    [self.dataItemArray enumerateObjectsUsingBlock:^(XXLineChartItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSMutableArray *numberArray = obj.numberArray;
-        NSMutableArray *linePointArray = [NSMutableArray new];
-        [obj.numberArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            CGPoint point = [self calculateDrawablePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
-            NSValue *pointValue = [NSValue valueWithCGPoint:point];
-            [linePointArray addObject:pointValue];
+    // 避免重复计算
+    if (self.pointsArrays.count > 0) {
+        return self.pointsArrays;
+    } else {
+        NSMutableArray *pointsArrays = [NSMutableArray new];
+        // Get Points
+        [self.dataItemArray enumerateObjectsUsingBlock:^(XXLineChartItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSMutableArray *numberArray = obj.numberArray;
+            NSMutableArray *linePointArray = [NSMutableArray new];
+            [obj.numberArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                CGPoint point = [self calculateDrawablePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
+                NSValue *pointValue = [NSValue valueWithCGPoint:point];
+                [linePointArray addObject:pointValue];
+            }];
+            [pointsArrays addObject:linePointArray];
         }];
-        [pointsArrays addObject:linePointArray];
-    }];
-    return pointsArrays;
+        return pointsArrays;
+    }
+    
 }
 
 #pragma mark Helper

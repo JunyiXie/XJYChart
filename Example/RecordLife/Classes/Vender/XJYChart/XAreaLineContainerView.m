@@ -16,7 +16,7 @@
 #pragma mark - Macro
 
 #define LineWidth 6.0
-#define PointDiameter 13.0
+#define PointDiameter 11.0
 
 @interface XAreaLineContainerView ()
 
@@ -32,6 +32,8 @@
  */
 @property (nonatomic, strong) NSMutableArray<NSValue *> *points;
 
+@property (nonatomic, strong) UIColor *areaColor;
+
 @end
 
 
@@ -41,7 +43,7 @@
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber {
     if (self = [super initWithFrame:frame]) {
         
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = XJYBlue;
         
         self.coverLayer = [CAShapeLayer layer];
         self.shapeLayerArray = [NSMutableArray new];
@@ -57,14 +59,56 @@
     return self;
 }
 
+
+
 - (void)drawRect:(CGRect)rect {
-    [super drawRect:rect];
     
-    self.points = [self getPoints];
+    [self cleanPreDrawLayerAndData];
+    
+    [super drawRect:rect];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self strokePointInContext:context];
+    [self strokeLine];
+    
+
+}
+
+- (void)strokePointInContext:(CGContextRef)context {
+    
+    self.points = [self getDrawablePoints];
+    UIColor *pointColor = [UIColor whiteColor];
+    UIColor *wireframeColor = [UIColor whiteColor];;
+    [self.points enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        //画点
+        NSValue *pointValue = obj;
+        CGPoint point = pointValue.CGPointValue;
+        CGContextSetFillColorWithColor(context, pointColor.CGColor);//填充颜色
+        CGContextSetStrokeColorWithColor(context, wireframeColor.CGColor);//线框颜色
+        CGContextFillEllipseInRect(context, CGRectMake(point.x - PointDiameter/2, point.y - PointDiameter/2, PointDiameter, PointDiameter));
+    }];
+}
+
+
+- (void)cleanPreDrawLayerAndData {
+    
+    [self.shapeLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperlayer];
+    }];
+    [self.labelArray enumerateObjectsUsingBlock:^(XXAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperview];
+    }];
+    [self.shapeLayerArray removeAllObjects];
+    [self.labelArray removeAllObjects];
+    [self.points removeAllObjects];
+    
+}
+
+
+- (void)strokeLine {
+    self.points = [self getDrawablePoints];
     
     CGPoint temfirstPoint = self.points[0].CGPointValue;
     CGPoint temlastPoint = self.points.lastObject.CGPointValue;
-    
     CGPoint firstPoint = CGPointMake(0, temfirstPoint.y);
     CGPoint lastPoint = CGPointMake(self.frame.size.width, temlastPoint.y);
     
@@ -74,31 +118,30 @@
     CGPoint leftConerPoint = CGPointMake(self.frame.origin.x, self.frame.origin.y + self.frame.size.height);
     CGPoint rightConerPoint = CGPointMake(self.frame.origin.x + self.frame.size.width, self.frame.origin.y + self.frame.size.height);
     
-    
     CAShapeLayer *lineLayer = [self getLineShapeLayerWithPoints:self.points leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint];
-     
-    
     [self.layer addSublayer:lineLayer];
 }
 
+- (NSMutableArray<NSValue *> *)getDrawablePoints {
 
-- (NSMutableArray<NSValue *> *)getPoints {
-
-    NSMutableArray *linePointArray = [NSMutableArray new];
-    XXLineChartItem *item = self.dataItemArray[0];
-    
-    // Get Points
-    NSMutableArray *numberArray = item.numberArray;
-    [item.numberArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        CGPoint point = [self calculateDrawablePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
-        //坐标系反转
-        NSValue *pointValue = [NSValue valueWithCGPoint:point];
-        [linePointArray addObject:pointValue];
-    }];
-    
-    return linePointArray;
-    
+    if (self.points.count > 0) {
+        return self.points;
+    } else {
+        NSMutableArray *linePointArray = [NSMutableArray new];
+        XXLineChartItem *item = self.dataItemArray[0];
+        
+        // Get Points
+        NSMutableArray *numberArray = item.numberArray;
+        [item.numberArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            CGPoint point = [self calculateDrawablePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
+            //坐标系反转
+            NSValue *pointValue = [NSValue valueWithCGPoint:point];
+            [linePointArray addObject:pointValue];
+        }];
+        return linePointArray;
+    }
 }
+
 
 - (CAShapeLayer *)getLineShapeLayerWithPoints:(NSArray<NSValue *> *)points leftConerPoint:(CGPoint)leftConerPoint rightConerPoint:(CGPoint)rightConerPoint {
     CAShapeLayer *lineLayer = [CAShapeLayer layer];
@@ -127,11 +170,21 @@
     [line addLineToPoint:points[0].CGPointValue];
     lineLayer.path = line.CGPath;
     lineLayer.strokeColor = [UIColor clearColor].CGColor;
-    lineLayer.fillColor = XJYGreen.CGColor;
-    lineLayer.lineWidth = 2;
+    lineLayer.fillColor = [self getFillColor].CGColor;
+    lineLayer.opacity = 0.3;
+    lineLayer.lineWidth = 4;
     lineLayer.lineCap = kCALineCapRound;
     lineLayer.lineJoin = kCALineJoinRound;
     return lineLayer;
+}
+
+- (UIColor *)getFillColor {
+    if (self.colorMode == Custom) {
+        self.areaColor = self.dataItemArray[0].color;
+    } else {
+        self.areaColor = XJYWhite;
+    }
+    return self.areaColor;
 }
 
 

@@ -15,27 +15,20 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         NSMutableArray *itemArray = [[NSMutableArray alloc] init];
-        NSMutableArray *numbersArray = [NSMutableArray new];
-        for (int j = 0; j<5; j++) {
+
+        NSMutableArray *numberArray = [NSMutableArray new];
             
-            NSMutableArray *numberArray = [NSMutableArray new];
-            
-            for (int i = 0; i<5; i++) {
-                int num = [[RandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14] * [[RandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14];
-                NSNumber *number = [NSNumber numberWithInt:num];
-                [numberArray addObject:number];
-            }
-            
-            [numbersArray addObject:numberArray];
-        }
+//        for (int i = 0; i<5; i++) {
+//            int num = [[RandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14] * [[RandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14];
+//            NSNumber *number = [NSNumber numberWithInt:num];
+//            [numberArray addObject:number];
+//        }
         
-        NSArray *colorArray = @[[UIColor robinEggColor]];
+        numberArray = [NSMutableArray arrayWithArray:@[@75,@63,@183,@109,@88]];
+
         
-        for (int i = 0; i<1; i++) {
-            
-            XXLineChartItem *item = [[XXLineChartItem alloc] initWithDataNumberArray:numbersArray[i] color:colorArray[i] dataDescribe:@"111"];
-            [itemArray addObject:item];
-        }
+        XXLineChartItem *item = [[XXLineChartItem alloc] initWithDataNumberArray:numberArray color:XJYWhite dataDescribe:@"111"];
+        [itemArray addObject:item];
         XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0  graphMode:AreaLineGraph];
         lineChart.colorMode = Custom;
         lineChart.lineMode = CurveLine;
