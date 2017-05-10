@@ -62,12 +62,25 @@
     
     self.points = [self getPoints];
     
+    CGPoint temfirstPoint = self.points[0].CGPointValue;
+    CGPoint temlastPoint = self.points.lastObject.CGPointValue;
+    
+    CGPoint firstPoint = CGPointMake(0, temfirstPoint.y);
+    CGPoint lastPoint = CGPointMake(self.frame.size.width, temlastPoint.y);
+    
+    [self.points insertObject:[NSValue valueWithCGPoint:firstPoint] atIndex:0];
+    [self.points addObject:[NSValue valueWithCGPoint:lastPoint]];
+    
     CGPoint leftConerPoint = CGPointMake(self.frame.origin.x, self.frame.origin.y + self.frame.size.height);
     CGPoint rightConerPoint = CGPointMake(self.frame.origin.x + self.frame.size.width, self.frame.origin.y + self.frame.size.height);
     
+    
     CAShapeLayer *lineLayer = [self getLineShapeLayerWithPoints:self.points leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint];
+     
+    
     [self.layer addSublayer:lineLayer];
 }
+
 
 - (NSMutableArray<NSValue *> *)getPoints {
 
@@ -77,7 +90,8 @@
     // Get Points
     NSMutableArray *numberArray = item.numberArray;
     [item.numberArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        CGPoint point = [self calculatePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
+        CGPoint point = [self calculateDrawablePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
+        //坐标系反转
         NSValue *pointValue = [NSValue valueWithCGPoint:point];
         [linePointArray addObject:pointValue];
     }];
@@ -90,40 +104,38 @@
     CAShapeLayer *lineLayer = [CAShapeLayer layer];
     UIBezierPath *line = [[UIBezierPath alloc] init];
     
-    // curve
+    // line
     for(int i = 0; i < points.count - 1; i++) {
         CGPoint point1 = points[i].CGPointValue;
         CGPoint point2 = points[i + 1].CGPointValue;
         if (i == 0) {
             [line moveToPoint:point1];
         }
-        
         if (self.lineMode == CurveLine) {
             CGPoint midPoint = [XAreaLineContainerView midPointBetweenPoint1:point1 andPoint2:point2];
-            [line addQuadCurveToPoint:midPoint controlPoint:[XAreaLineContainerView controlPointBetweenPoint1:point1 andPoint2:midPoint]];
-            [line addQuadCurveToPoint:point2 controlPoint:[XAreaLineContainerView controlPointBetweenPoint1:point2 andPoint2:midPoint]];
+            [line addQuadCurveToPoint:midPoint
+                         controlPoint:[XAreaLineContainerView controlPointBetweenPoint1:midPoint andPoint2:point1]];
+            [line addQuadCurveToPoint:point2
+                         controlPoint:[XAreaLineContainerView controlPointBetweenPoint1:midPoint andPoint2:point2]];
         } else {
             [line addLineToPoint:point2];
         }
-    
     }
-    
     // closePoint
     [line addLineToPoint:rightConerPoint];
     [line addLineToPoint:leftConerPoint];
     [line addLineToPoint:points[0].CGPointValue];
-    
     lineLayer.path = line.CGPath;
     lineLayer.strokeColor = [UIColor clearColor].CGColor;
     lineLayer.fillColor = XJYGreen.CGColor;
     lineLayer.lineWidth = 2;
     lineLayer.lineCap = kCALineCapRound;
     lineLayer.lineJoin = kCALineJoinRound;
-    
     return lineLayer;
 }
 
 
+#pragma mark - Control Point Compute
 + (CGPoint)controlPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2 {
     CGPoint controlPoint = [self midPointBetweenPoint1:point1 andPoint2:point2];
     CGFloat diffY = abs((int) (point2.y - controlPoint.y));
@@ -139,16 +151,16 @@
 }
 
 
-#pragma mark HelpMethods
+#pragma mark - Help Methods
 // Calculate -> Point
-- (CGPoint)calculatePointWithNumber:(NSNumber *)number idx:(NSUInteger)idx numberArray:(NSMutableArray *)numberArray bounds:(CGRect)bounds {
+- (CGPoint)calculateDrawablePointWithNumber:(NSNumber *)number idx:(NSUInteger)idx numberArray:(NSMutableArray *)numberArray bounds:(CGRect)bounds {
     CGFloat percentageH =[[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:number.doubleValue];
     CGFloat percentageW = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:(idx) count:numberArray.count];
     CGFloat pointY = percentageH * bounds.size.height;
     CGFloat pointX = percentageW * bounds.size.width;
-    
     CGPoint point = CGPointMake(pointX, pointY);
-    return point;
+    CGPoint rightCoordinatePoint = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] changeCoordinateSystem:point withViewHeight:self.frame.size.height];
+    return rightCoordinatePoint;
 }
 
 @end

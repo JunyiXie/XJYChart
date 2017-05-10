@@ -38,7 +38,7 @@
         }
         XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0  graphMode:AreaLineGraph];
         lineChart.colorMode = Custom;
-        lineChart.lineMode = BrokenLine;
+        lineChart.lineMode = CurveLine;
         [self.contentView addSubview:lineChart];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }

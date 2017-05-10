@@ -126,7 +126,7 @@
             CGPoint point = pointValue.CGPointValue;
             CGContextSetFillColorWithColor(context, pointColor.CGColor);//填充颜色
             CGContextSetStrokeColorWithColor(context, wireframeColor.CGColor);//线框颜色
-            CGContextFillEllipseInRect(context, CGRectMake(point.x - PointDiameter/2, self.bounds.size.height - point.y - PointDiameter/2, PointDiameter, PointDiameter));
+            CGContextFillEllipseInRect(context, CGRectMake(point.x - PointDiameter/2, point.y - PointDiameter/2, PointDiameter, PointDiameter));
         }];
     }];
 }
@@ -157,7 +157,7 @@
         NSMutableArray *numberArray = obj.numberArray;
         NSMutableArray *linePointArray = [NSMutableArray new];
         [obj.numberArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            CGPoint point = [self calculatePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
+            CGPoint point = [self calculateDrawablePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
             NSValue *pointValue = [NSValue valueWithCGPoint:point];
             [linePointArray addObject:pointValue];
         }];
@@ -174,15 +174,17 @@
  @param idx like 0.1.2.3...
  @return CGPoint
  */
-- (CGPoint)calculatePointWithNumber:(NSNumber *)number idx:(NSUInteger)idx numberArray:(NSMutableArray *)numberArray bounds:(CGRect)bounds {
+// Calculate -> Point
+- (CGPoint)calculateDrawablePointWithNumber:(NSNumber *)number idx:(NSUInteger)idx numberArray:(NSMutableArray *)numberArray bounds:(CGRect)bounds {
     CGFloat percentageH =[[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:number.doubleValue];
     CGFloat percentageW = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:(idx) count:numberArray.count];
     CGFloat pointY = percentageH * bounds.size.height;
     CGFloat pointX = percentageW * bounds.size.width;
-    
     CGPoint point = CGPointMake(pointX, pointY);
-    return point;
+    CGPoint rightCoordinatePoint = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] changeCoordinateSystem:point withViewHeight:self.frame.size.height];
+    return rightCoordinatePoint;
 }
+
 
 - (CAShapeLayer *)shapeLayerWithPoints:(NSMutableArray<NSValue *> *)pointsValueArray colors:(UIColor *)color {
     UIBezierPath *line = [[UIBezierPath alloc] init];
@@ -197,32 +199,30 @@
     
     for (int i = 0; i < pointsValueArray.count - 1; i++) {
         CGPoint point1 = pointsValueArray[i].CGPointValue;
+        
         CGPoint point2 = pointsValueArray[i + 1].CGPointValue;
-        //坐标系反转
-        CGPoint temPoint1 = CGPointMake(point1.x, self.frame.size.height - point1.y);
-        CGPoint temPoint2 = CGPointMake(point2.x, self.frame.size.height - point2.y);
-        [line moveToPoint:temPoint1];
+        [line moveToPoint:point1];
         
         if (self.lineMode == BrokenLine) {
-            [line addLineToPoint:temPoint2];
+            [line addLineToPoint:point2];
         } else if (self.lineMode == CurveLine) {
-            CGPoint midPoint = [XLineContainerView midPointBetweenPoint1:temPoint1 andPoint2:temPoint2];
+            CGPoint midPoint = [XLineContainerView midPointBetweenPoint1:point1 andPoint2:point2];
             [line addQuadCurveToPoint:midPoint
-                         controlPoint:[XLineContainerView controlPointBetweenPoint1:midPoint andPoint2:temPoint1]];
-            [line addQuadCurveToPoint:temPoint2
-                         controlPoint:[XLineContainerView controlPointBetweenPoint1:midPoint andPoint2:temPoint2]];
+                         controlPoint:[XLineContainerView controlPointBetweenPoint1:midPoint andPoint2:point1]];
+            [line addQuadCurveToPoint:point2
+                         controlPoint:[XLineContainerView controlPointBetweenPoint1:midPoint andPoint2:point2]];
         } else {
-            [line addLineToPoint:temPoint2];
+            [line addLineToPoint:point2];
         }
-
+        
         //当前线段的四个点
-        CGPoint rectPoint1 = CGPointMake(temPoint1.x - touchLineWidth/2, temPoint1.y - touchLineWidth/2);
+        CGPoint rectPoint1 = CGPointMake(point1.x - touchLineWidth/2, point1.y - touchLineWidth/2);
         NSValue *value1 = [NSValue valueWithCGPoint:rectPoint1];
-        CGPoint rectPoint2 = CGPointMake(temPoint1.x - touchLineWidth/2, temPoint1.y + touchLineWidth/2);
+        CGPoint rectPoint2 = CGPointMake(point1.x - touchLineWidth/2, point1.y + touchLineWidth/2);
         NSValue *value2 = [NSValue valueWithCGPoint:rectPoint2];
-        CGPoint rectPoint3 = CGPointMake(temPoint2.x + touchLineWidth/2, temPoint2.y - touchLineWidth/2);
+        CGPoint rectPoint3 = CGPointMake(point2.x + touchLineWidth/2, point2.y - touchLineWidth/2);
         NSValue *value3 = [NSValue valueWithCGPoint:rectPoint3];
-        CGPoint rectPoint4 = CGPointMake(temPoint2.x + touchLineWidth/2, temPoint2.y + touchLineWidth/2);
+        CGPoint rectPoint4 = CGPointMake(point2.x + touchLineWidth/2, point2.y + touchLineWidth/2);
         NSValue *value4 = [NSValue valueWithCGPoint:rectPoint4];
         
         //当前线段的矩形组成点
@@ -251,10 +251,10 @@
     
     //selectedStatus
     chartLine.selectStatusNumber = [NSNumber numberWithBool:NO];
-    
     [chartLine addAnimation:self.pathAnimation forKey:@"strokeEndAnimation"];
     
     return chartLine;
+
 }
 
 - (CAShapeLayer *)coverShapeLayerWithPath:(CGPathRef)path color:(UIColor *)color {

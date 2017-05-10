@@ -100,7 +100,7 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
 
 - (XAreaLineContainerView *)areaLineContainerView {
     if (!_areaLineContainerView) {
-        _areaLineContainerView = [[XAreaLineContainerView alloc] initWithFrame:CGRectMake(0, 0, self.contentSize.width, self.contentSize.height - AbscissaHeight)
+        _areaLineContainerView = [[XAreaLineContainerView alloc] initWithFrame:CGRectMake(0, 0, self.contentSize.width - 5, self.contentSize.height - AbscissaHeight)
                                                                  dataItemArray:self.dataItemArray
                                                                      topNumber:self.top
                                                                   bottomNumber:self.bottom];
@@ -111,13 +111,14 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
 
 - (void)setColorMode:(XXColorMode)colorMode {
     _colorMode = colorMode;
-    
     // two kind of containerview use kvo instand of inhert
     // not safe i will fix it !
     [self.contanierView setValue:@(colorMode) forKey:KVOKeyColorMode];
 }
 - (void)setLineMode:(XXLineMode)lineMode {
     _lineMode = lineMode;
+    // two kind of containerview use kvo instand of inhert
+    // not safe i will fix it !
     [self.contanierView setValue:@(lineMode) forKey:KVOKeyLineGraphMode];
 }
 

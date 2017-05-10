@@ -67,4 +67,14 @@
  @return 0.xxx
  */
 - (CGFloat) findPercentageOfAngleInCircle:(CGPoint)center fromPoint:(CGPoint)reference;
+
+
+/**
+ changeCoordinateSystem to Drawable Point
+
+ @param point point
+ @param height view height
+ @return drawable Point
+ */
+- (CGPoint)changeCoordinateSystem:(CGPoint)point withViewHeight:(CGFloat)height;
 @end
