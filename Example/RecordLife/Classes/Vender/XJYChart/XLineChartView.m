@@ -13,8 +13,13 @@
 #define PartWidth 40
 #define AbscissaHeight 30
 
+NSString *KVOKeyColorMode = @"colorMode";
+NSString *KVOKeyLineGraphMode = @"lineMode";
+
 @interface XLineChartView ()
 @property (nonatomic, strong) AbscissaView *abscissaView;
+
+@property (nonatomic, strong) UIView *contanierView;
 @property (nonatomic, strong) XLineContainerView *lineContainerView;
 @property (nonatomic, strong) XAreaLineContainerView *areaLineContainerView;
 
@@ -43,12 +48,17 @@
     return self;
 }
 
-
+// Acorrding Line Graph Mode Choose Which LineContanier View
 - (UIView *)getLineChartContainerViewWithGraphMode:(XXLineGraphMode)lineGraphMode {
     if (lineGraphMode == AreaLineGraph) {
-        return self.areaLineContainerView;
+        self.contanierView = self.areaLineContainerView;
+        return self.contanierView;
+    } else if (lineGraphMode == BrokenLine){
+        self.contanierView = self.lineContainerView;
+        return self.contanierView;
     } else {
-        return self.lineContainerView;
+        self.contanierView = self.lineContainerView;
+        return self.contanierView;
     }
     
 }
@@ -101,11 +111,14 @@
 
 - (void)setColorMode:(XXColorMode)colorMode {
     _colorMode = colorMode;
-    self.lineContainerView.colorMode = colorMode;
+    
+    // two kind of containerview use kvo instand of inhert
+    // not safe i will fix it !
+    [self.contanierView setValue:@(colorMode) forKey:KVOKeyColorMode];
 }
 - (void)setLineMode:(XXLineMode)lineMode {
     _lineMode = lineMode;
-    self.lineContainerView.lineMode = lineMode;
+    [self.contanierView setValue:@(lineMode) forKey:KVOKeyLineGraphMode];
 }
 
 

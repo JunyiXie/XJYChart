@@ -101,7 +101,7 @@
         if (self.lineMode == CurveLine) {
             CGPoint midPoint = [XAreaLineContainerView midPointBetweenPoint1:point1 andPoint2:point2];
             [line addQuadCurveToPoint:midPoint controlPoint:[XAreaLineContainerView controlPointBetweenPoint1:point1 andPoint2:midPoint]];
-            [line addQuadCurveToPoint:point2 controlPoint:[XAreaLineContainerView controlPointBetweenPoint1:midPoint andPoint2:point2]];
+            [line addQuadCurveToPoint:point2 controlPoint:[XAreaLineContainerView controlPointBetweenPoint1:point2 andPoint2:midPoint]];
         } else {
             [line addLineToPoint:point2];
         }
@@ -116,7 +116,7 @@
     lineLayer.path = line.CGPath;
     lineLayer.strokeColor = [UIColor clearColor].CGColor;
     lineLayer.fillColor = XJYGreen.CGColor;
-    lineLayer.lineWidth = 3;
+    lineLayer.lineWidth = 2;
     lineLayer.lineCap = kCALineCapRound;
     lineLayer.lineJoin = kCALineJoinRound;
     
@@ -138,7 +138,6 @@
     return CGPointMake((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
 }
 
-#pragma mark 抽取数据提取
 
 #pragma mark HelpMethods
 // Calculate -> Point

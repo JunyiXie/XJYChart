@@ -29,12 +29,12 @@
 
 @property (nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
 /**
- 纵坐标最高点
+ The vertical high
  */
 @property (nonatomic, strong) NSNumber *top;
 
 /**
- 纵坐标最低点
+ The vertical low
  */
 @property (nonatomic, strong) NSNumber *bottom;
 

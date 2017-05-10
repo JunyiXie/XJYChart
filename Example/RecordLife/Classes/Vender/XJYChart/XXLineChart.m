@@ -41,9 +41,7 @@
     return self;
 }
 
-
-
-#pragma mark Get 
+#pragma mark Get
 
 - (OrdinateView *)ordinateView {
     if (!_ordinateView) {

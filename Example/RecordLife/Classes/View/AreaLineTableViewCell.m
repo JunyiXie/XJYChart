@@ -15,9 +15,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         NSMutableArray *itemArray = [[NSMutableArray alloc] init];
-        
         NSMutableArray *numbersArray = [NSMutableArray new];
-        
         for (int j = 0; j<5; j++) {
             
             NSMutableArray *numberArray = [NSMutableArray new];
