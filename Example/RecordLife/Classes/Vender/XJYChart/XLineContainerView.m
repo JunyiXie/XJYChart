@@ -389,8 +389,7 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
                 
                 [self.pointsArrays[shapeLayerIndex] enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     CGPoint point = obj.CGPointValue;
-                    CGPoint reversePoint = CGPointMake(point.x, self.frame.size.height - point.y );
-                    XXAnimationLabel *label = [self topLabelWithPoint:reversePoint fillColor:[UIColor clearColor] text:@"0"];
+                    XXAnimationLabel *label = [self topLabelWithPoint:point fillColor:[UIColor clearColor] text:@"0"];
                     CGFloat textNum = self.dataItemArray[shapeLayerIndex].numberArray[idx].doubleValue;
                     [self.labelArray addObject:label];
                     [self addSubview:label];

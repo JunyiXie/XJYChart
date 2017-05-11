@@ -6,10 +6,11 @@
 //  Copyright © 2017 谢俊逸. All rights reserved.
 //
 
+#import "XJYChartView.h"
 #import "XJYLineChart.h"
-#import "Masonry/Masonry.h"
+#import "Masonry.h"
 
-@interface XJYLineChartView : UIView
+@interface XJYLineChartView : XJYChartView
 
 @property (nonatomic, strong) NSMutableArray *levelDataArray;
 
