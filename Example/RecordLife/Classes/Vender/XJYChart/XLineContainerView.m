@@ -169,7 +169,6 @@
         }];
         return pointsArrays;
     }
-    
 }
 
 #pragma mark Helper

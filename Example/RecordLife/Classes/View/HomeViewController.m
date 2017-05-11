@@ -15,6 +15,7 @@
 #import "HomeSixTableViewCell.h"
 #import "CycleTableViewCell.h"
 #import "AreaLineTableViewCell.h"
+#import "StackAreaTableViewCell.h"
 
 #import "masonry.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -70,6 +71,8 @@
         [_tableView registerClass:[HomeSixTableViewCell class] forCellReuseIdentifier:kHomeSixTableViewCell];
         [_tableView registerNib:[UINib nibWithNibName:@"CycleTableViewCell" bundle:nil] forCellReuseIdentifier:@"CycleTableViewCell"];
         [_tableView registerClass:[AreaLineTableViewCell class] forCellReuseIdentifier:kAreaLineTableViewCell];
+        [_tableView registerClass:[StackAreaTableViewCell class] forCellReuseIdentifier:kStackAreaTableViewCell];
+        
         
         _tableView.dataSource = self;
         _tableView.delegate = self;
@@ -95,7 +98,7 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 6;
+    return 7;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -124,6 +127,9 @@
     } else if (indexPath.section == 5) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kAreaLineTableViewCell forIndexPath:indexPath];
         return cell;
+    } else if (indexPath.section == 6) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kStackAreaTableViewCell forIndexPath:indexPath];
+        return cell;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeOneTableViewCell forIndexPath:indexPath];
     return cell;
@@ -141,8 +147,12 @@
         return @"正负条形图";
     } else if (section == 4){
         return @"可滑动的渐变环形图";
-    } else {
+    } else if (section == 5){
         return @"区域折线图";
+    } else if (section == 6) {
+        return @"多重区域折线图";
+    } else {
+        return @"";
     }
 }
 

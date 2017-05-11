@@ -21,6 +21,7 @@ typedef NS_ENUM(NSUInteger, XXLineMode) {
 typedef NS_ENUM(NSUInteger, XXLineGraphMode) {
     MutiLineGraph,
     AreaLineGraph,
+    StackAreaLineGraph,
 };
 
 

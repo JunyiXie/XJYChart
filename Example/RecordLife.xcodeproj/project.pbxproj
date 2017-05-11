@@ -30,6 +30,8 @@
 		9F0F82701E9F7999009763FF /* XXLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82531E9F7999009763FF /* XXLineChart.m */; };
 		9F0F82711E9F7999009763FF /* XXLineChartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0F82551E9F7999009763FF /* XXLineChartItem.m */; };
 		9F20B9391EC444CA00973A15 /* UIGestureRecognizer+XXGes.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20B9381EC444CA00973A15 /* UIGestureRecognizer+XXGes.m */; };
+		9F20B93F1EC47CAB00973A15 /* XStackAreaLineContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20B93E1EC47CAB00973A15 /* XStackAreaLineContainerView.m */; };
+		9F20B9421EC4990700973A15 /* StackAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20B9411EC4990700973A15 /* StackAreaTableViewCell.m */; };
 		9F2813A01EC0A1E00024E19F /* CALayer+LSAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2813931EC0A1E00024E19F /* CALayer+LSAnimator.m */; };
 		9F2813A11EC0A1E00024E19F /* LSAnimatorChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2813971EC0A1E00024E19F /* LSAnimatorChain.m */; };
 		9F2813A21EC0A1E00024E19F /* LSAnimatorLinker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2813991EC0A1E00024E19F /* LSAnimatorLinker.m */; };
@@ -151,6 +153,10 @@
 		9F0F82551E9F7999009763FF /* XXLineChartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXLineChartItem.m; sourceTree = "<group>"; };
 		9F20B9371EC444CA00973A15 /* UIGestureRecognizer+XXGes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+XXGes.h"; sourceTree = "<group>"; };
 		9F20B9381EC444CA00973A15 /* UIGestureRecognizer+XXGes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+XXGes.m"; sourceTree = "<group>"; };
+		9F20B93D1EC47CAB00973A15 /* XStackAreaLineContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStackAreaLineContainerView.h; sourceTree = "<group>"; };
+		9F20B93E1EC47CAB00973A15 /* XStackAreaLineContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStackAreaLineContainerView.m; sourceTree = "<group>"; };
+		9F20B9401EC4990700973A15 /* StackAreaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackAreaTableViewCell.h; sourceTree = "<group>"; };
+		9F20B9411EC4990700973A15 /* StackAreaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackAreaTableViewCell.m; sourceTree = "<group>"; };
 		9F2813921EC0A1E00024E19F /* CALayer+LSAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+LSAnimator.h"; sourceTree = "<group>"; };
 		9F2813931EC0A1E00024E19F /* CALayer+LSAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LSAnimator.m"; sourceTree = "<group>"; };
 		9F2813941EC0A1E00024E19F /* LSAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAnimator.h; sourceTree = "<group>"; };
@@ -325,6 +331,8 @@
 				9F0F824E1E9F7999009763FF /* XLineContainerView.m */,
 				9F2813EE1EC1E8030024E19F /* XAreaLineContainerView.h */,
 				9F2813EF1EC1E8030024E19F /* XAreaLineContainerView.m */,
+				9F20B93D1EC47CAB00973A15 /* XStackAreaLineContainerView.h */,
+				9F20B93E1EC47CAB00973A15 /* XStackAreaLineContainerView.m */,
 				9F0F82541E9F7999009763FF /* XXLineChartItem.h */,
 				9F0F82551E9F7999009763FF /* XXLineChartItem.m */,
 				9FCCC1981EA4E91E00D54EF7 /* XXPositiveNegativeBarChart.h */,
@@ -501,6 +509,8 @@
 				9F0369B01EB744CC003FB013 /* CycleTableViewCell.xib */,
 				9F2813F11EC1F7AC0024E19F /* AreaLineTableViewCell.h */,
 				9F2813F21EC1F7AC0024E19F /* AreaLineTableViewCell.m */,
+				9F20B9401EC4990700973A15 /* StackAreaTableViewCell.h */,
+				9F20B9411EC4990700973A15 /* StackAreaTableViewCell.m */,
 				9F0369B31EB75051003FB013 /* XJYTapCycleView.h */,
 				9F0369B41EB75051003FB013 /* XJYTapCycleView.m */,
 				9F0369FB1EB778E9003FB013 /* BtnView.h */,
@@ -759,6 +769,7 @@
 				9FBEEDE31E35D72D00DABF83 /* HomeThreeTableViewCell.m in Sources */,
 				9F0F82641E9F7999009763FF /* XJYBarItem.m in Sources */,
 				9F0F826B1E9F7999009763FF /* XJYPieItem.m in Sources */,
+				9F20B93F1EC47CAB00973A15 /* XStackAreaLineContainerView.m in Sources */,
 				9F96A8E61EBA0DDD00BDC2C9 /* XJYNotificationBridge.m in Sources */,
 				9F0369FD1EB778E9003FB013 /* BtnView.m in Sources */,
 				9F0369B11EB744CC003FB013 /* CycleTableViewCell.m in Sources */,
@@ -769,6 +780,7 @@
 				9FC59C2F1EA8B5B000257ECC /* CAShapeLayer+frameCategory.m in Sources */,
 				9F2813A21EC0A1E00024E19F /* LSAnimatorLinker.m in Sources */,
 				9F3DC7481E2E36B600C26D86 /* main.m in Sources */,
+				9F20B9421EC4990700973A15 /* StackAreaTableViewCell.m in Sources */,
 				9F0369AD1EB744AA003FB013 /* XJYCycleView.m in Sources */,
 				9FB579031E349C9200339633 /* HomeTwoTableViewCell.m in Sources */,
 			);
