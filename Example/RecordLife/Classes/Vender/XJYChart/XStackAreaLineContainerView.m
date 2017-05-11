@@ -82,14 +82,7 @@
     }];
     
     NSMutableArray<UIColor *> *colors = [self getColors];
-    // draw line
-//    [self.stackAreaPointsArray enumerateObjectsUsingBlock:^(NSMutableArray<NSValue *> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        CGPoint leftConerPoint = CGPointMake(self.frame.origin.x, self.frame.origin.y + self.frame.size.height);
-//        CGPoint rightConerPoint = CGPointMake(self.frame.origin.x + self.frame.size.width, self.frame.origin.y + self.frame.size.height);
-//        CAShapeLayer *lineLayer = [self getLineShapeLayerWithPoints:obj leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint color:colors[idx]];
-//        [self.shapeLayerArray addObject:lineLayer];
-//        [self.layer addSublayer:lineLayer];
-//    }];
+
     
     for (NSInteger i = self.stackAreaPointsArray.count - 1; i >= 0; i --) {
         CGPoint leftConerPoint = CGPointMake(self.frame.origin.x, self.frame.origin.y + self.frame.size.height);
@@ -110,8 +103,8 @@
     NSInteger count = self.dataItemArray[0].numberArray.count;
     CGFloat perWidth = self.frame.size.width / count;
     for (int i =0 ; i < count; i++) {
-        CGContextMoveToPoint(context, perWidth * i,0);
-        CGContextAddLineToPoint(context,perWidth * i,self.frame.size.height);
+        CGContextMoveToPoint(context,perWidth * (i+1) - perWidth/2,0);
+        CGContextAddLineToPoint(context,perWidth * (i+1) - perWidth/2,self.frame.size.height);
         CGContextStrokePath(context);
     }
     
