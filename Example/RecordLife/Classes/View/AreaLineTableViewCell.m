@@ -24,7 +24,7 @@
 //            [numberArray addObject:number];
 //        }
         
-        numberArray = [NSMutableArray arrayWithArray:@[@75,@63,@183,@109,@88]];
+        numberArray = [NSMutableArray arrayWithArray:@[@75,@63,@183,@109,@88,@75,@63,@183,@109,@88]];
 
         
         XXLineChartItem *item = [[XXLineChartItem alloc] initWithDataNumberArray:numberArray color:XJYWhite dataDescribe:@"111"];

@@ -11,16 +11,15 @@
 @implementation CALayer (XXLayer)
 
 //selectIdx
-static char kAssociatedObjectKey;
+static char kSelectIdxNumber;
 
 
 - (void)setSelectIdxNumber:(id)selectIdxNumber {
-    objc_setAssociatedObject(self, &kAssociatedObjectKey, selectIdxNumber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &kSelectIdxNumber, selectIdxNumber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (id)selectIdxNumber {
-    return objc_getAssociatedObject(self, &kAssociatedObjectKey);
+    return objc_getAssociatedObject(self, &kSelectIdxNumber);
 }
-
 
 @end

@@ -10,6 +10,8 @@
 #import "AbscissaView.h"
 #import "XLineContainerView.h"
 #import "XAreaLineContainerView.h"
+#import "UIGestureRecognizer+XXGes.h"
+#import "XJYColor.h"
 #define PartWidth 40
 #define AbscissaHeight 30
 
@@ -37,32 +39,44 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
         self.backgroundColor = [UIColor whiteColor];
         self.dataDescribeArray = dataDescribeArray;
         self.contentSize = [self computeSrollViewCententSizeFromItemArray:self.dataItemArray];
-    
+        
         // default line graph mode
         self.lineGraphMode = graphMode;
         
         [self addSubview:self.abscissaView];
-        [self addSubview:[self getLineChartContainerViewWithGraphMode:self.lineGraphMode]];
+        self.contanierView = [self getLineChartContainerViewWithGraphMode:self.lineGraphMode];
+        [self addGesForView:self.contanierView];
+        [self addSubview:self.contanierView];
         
+        if ([self.contanierView isKindOfClass:[XAreaLineContainerView class]]) {
+            self.bounces = NO;
+            self.backgroundColor = XJYBlue;
+        }
     }
     return self;
+}
+
+- (void)addGesForView:(UIView *)view {
+    UIPinchGestureRecognizer *pinchGes = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchView:)];
+    [view addGestureRecognizer:pinchGes];
+    
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapView:)];
+    tapGes.numberOfTapsRequired = 2;
+    tapGes.numberOfTouchesRequired = 1;
+    [view addGestureRecognizer:tapGes];
 }
 
 // Acorrding Line Graph Mode Choose Which LineContanier View
 - (UIView *)getLineChartContainerViewWithGraphMode:(XXLineGraphMode)lineGraphMode {
     if (lineGraphMode == AreaLineGraph) {
-        self.contanierView = self.areaLineContainerView;
-        return self.contanierView;
+        return self.areaLineContainerView;
     } else if (lineGraphMode == BrokenLine){
-        self.contanierView = self.lineContainerView;
-        return self.contanierView;
+        return self.lineContainerView;
     } else {
-        self.contanierView = self.lineContainerView;
-        return self.contanierView;
+        return self.lineContainerView;
     }
     
 }
-
 
 //计算是否需要滚动
 - (CGSize)computeSrollViewCententSizeFromItemArray:(NSMutableArray<XXLineChartItem *> *)itemArray {
@@ -75,6 +89,32 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
         return CGSizeMake(width, height);
     }
     
+}
+
+#pragma mark PinchGesAction
+
+- (void)tapView:(UITapGestureRecognizer *)tapGes {
+    
+    if (tapGes.hasTapedBoolNumber.boolValue == YES) {
+        CGAffineTransform transform = CGAffineTransformIdentity;
+        tapGes.view.transform = transform;
+        tapGes.hasTapedBoolNumber = [NSNumber numberWithBool:NO];
+    } else {
+        //每次缩放以上一次为标准
+        tapGes.view.transform = CGAffineTransformScale(tapGes.view.transform, 1.5, 1.5);
+        tapGes.hasTapedBoolNumber = [NSNumber numberWithBool:YES];
+    }
+    
+}
+
+- (void)pinchView:(UIPinchGestureRecognizer *)pinchGes {
+    
+    if (pinchGes.state == UIGestureRecognizerStateEnded) {
+        CGAffineTransform transform = CGAffineTransformIdentity;
+        pinchGes.view.transform = CGAffineTransformScale(transform, 1, 1);
+    }
+    pinchGes.view.transform = CGAffineTransformScale(pinchGes.view.transform, pinchGes.scale, pinchGes.scale);
+    pinchGes.scale = 1;
 }
 
 
@@ -100,7 +140,7 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
 
 - (XAreaLineContainerView *)areaLineContainerView {
     if (!_areaLineContainerView) {
-        _areaLineContainerView = [[XAreaLineContainerView alloc] initWithFrame:CGRectMake(0, 0, self.contentSize.width - 5, self.contentSize.height - AbscissaHeight)
+        _areaLineContainerView = [[XAreaLineContainerView alloc] initWithFrame:CGRectMake(0, 0, self.contentSize.width, self.contentSize.height - AbscissaHeight)
                                                                  dataItemArray:self.dataItemArray
                                                                      topNumber:self.top
                                                                   bottomNumber:self.bottom];

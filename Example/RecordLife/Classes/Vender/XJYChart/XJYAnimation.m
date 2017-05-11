@@ -48,5 +48,9 @@
     layer.ls_spring.ls_scale(1.1).ls_spring.ls_thenAfter(0.3).ls_scale(1.0/1.1).ls_spring.ls_animate(1);
 }
 
+- (void)addLSSpringScaleAnimation:(UIView *)view {
+    view.ls_spring.ls_scale(1.1).ls_spring.ls_thenAfter(0.3).ls_scale(1.0/1.1).ls_spring.ls_animate(1);
+}
+
 
 @end
