@@ -40,6 +40,14 @@
 pod 'XJYChart'
 ```
 
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image7.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image8.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image9.PNG)
+
 update 0.0.3
 
 ```diff
@@ -48,7 +56,6 @@ update 0.0.3
 - touch
 - gradient
 
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image7.PNG)
 
 use XIB or Code
 ```objectivec
@@ -61,7 +68,6 @@ Update 0.0.2
 - Clear abandoned API
 + Add The positive and negative Bar Chart**
 ```
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG)
 
 #### How to Use
 
@@ -75,8 +81,8 @@ XXPositiveNegativeBarChart *barChart = [[XXPositiveNegativeBarChart alloc] initW
 - colorMode
 ```diff
 + lineMode
-    + CurveLine
-    + BrokenLine
++ CurveLine
++ BrokenLine
 ```
 
 
@@ -92,8 +98,8 @@ XXPositiveNegativeBarChart *barChart = [[XXPositiveNegativeBarChart alloc] initW
 ```
 
 LineGraphMode:
- MutiLineGraph
- AreaLineGraph
+MutiLineGraph
+AreaLineGraph
 
 ```objectivec
 XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0  graphMode:MutiLineGraph];
@@ -122,7 +128,7 @@ NSMutableArray *pieItems = [[NSMutableArray alloc] init];
 NSArray *colorArray = @[RGB(145, 235, 253), RGB(198, 255, 150), RGB(254, 248, 150), RGB(253, 210, 147)];
 NSArray *dataArray = @[@"iPhone6",@"iPhone6 Plus",@"iPhone6s",@"其他"];
 XJYPieItem *item1 = [[XJYPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:20.9] color:colorArray[0] dataDescribe:dataArray[0]];
-            [pieItems addObject:item1];
+[pieItems addObject:item1];
 XJYPieItem *item2 = [[XJYPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:14.82] color:colorArray[1] dataDescribe:dataArray[1]];
 [pieItems addObject:item2];  
 self.pieChartView.dataItemArray = pieItems;
@@ -138,19 +144,4 @@ Provide many colors In XJYColor.h
 ###### Update 1.1 
 Added slippery graph And Chart Animations
 Example 
-
-Directly Run To See XJYChart Example
-
-
-使用该框架的App
-- 急用钱
-
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/CurveLine.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image7.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image8.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image9.PNG)
 
