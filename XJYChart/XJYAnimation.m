@@ -7,7 +7,7 @@
 //
 
 #import "XJYAnimation.h"
-#import "LSAnimator.h"
+//#import "LSAnimator.h"
 @implementation XJYAnimation
 
 + (instancetype)shareInstance {
@@ -45,11 +45,11 @@
 }
 
 - (void)addLSSpringFrameAnimation:(CALayer *)layer {
-    layer.ls_spring.ls_scale(1.1).ls_spring.ls_thenAfter(0.3).ls_scale(1.0/1.1).ls_spring.ls_animate(1);
+//    layer.ls_spring.ls_scale(1.1).ls_spring.ls_thenAfter(0.3).ls_scale(1.0/1.1).ls_spring.ls_animate(1);
 }
 
 - (void)addLSSpringScaleAnimation:(UIView *)view {
-    view.ls_spring.ls_scale(1.1).ls_spring.ls_thenAfter(0.3).ls_scale(1.0/1.1).ls_spring.ls_animate(1);
+//    view.ls_spring.ls_scale(1.1).ls_spring.ls_thenAfter(0.3).ls_scale(1.0/1.1).ls_spring.ls_animate(1);
 }
 
 

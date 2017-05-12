@@ -15,7 +15,6 @@
 #import "CALayer+XXLayer.h"
 #import "XJYAnimation.h"
 #import "XJYNotificationBridge.h"
-#import "LSAnimator.h"
 
 #pragma mark - Macro
 
