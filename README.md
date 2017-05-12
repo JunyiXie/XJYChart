@@ -48,7 +48,16 @@ pod 'XJYChart'
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image8.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image9.PNG)
 
-update 0.0.3
+
+update 1.1.0
+
+```diff
++ .CurveLine
++ .AreaGraph
++ .StackAreaGraph
+```
+
+update 1.0.0
 
 ```diff
 + Add XJYCycleView   
