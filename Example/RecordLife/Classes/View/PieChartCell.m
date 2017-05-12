@@ -6,17 +6,17 @@
 //  Copyright © 2017 谢俊逸. All rights reserved.
 //
 
-#import "HomeTwoTableViewCell.h"
+#import "PieChartCell.h"
 #import "XJYChart.h"
 
-@interface HomeTwoTableViewCell ()
+@interface PieChartCell ()
 
 @property (nonatomic, strong) XJYPieChart *pieChartView;
 
 
 @end
 
-@implementation HomeTwoTableViewCell
+@implementation PieChartCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {

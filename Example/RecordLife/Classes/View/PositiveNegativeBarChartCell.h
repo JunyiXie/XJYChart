@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-static NSString *kHomeSixTableViewCell = @"HomeSixTableViewCell";
+static NSString *kPositiveNegativeBarChartCell = @"PositiveNegativeBarChartCell";
 
-@interface HomeSixTableViewCell : UITableViewCell
+@interface PositiveNegativeBarChartCell : UITableViewCell
 
 @end

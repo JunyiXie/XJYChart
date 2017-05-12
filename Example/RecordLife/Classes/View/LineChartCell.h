@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-static NSString *kHomeFiveTableViewCell = @"HomeFiveTableViewCell";
+static NSString *kLineChartCell = @"LineChartCell";
 
-@interface HomeFiveTableViewCell : UITableViewCell
+@interface LineChartCell : UITableViewCell
 
 @end

@@ -6,14 +6,14 @@
 //  Copyright © 2017 谢俊逸. All rights reserved.
 //
 
-#import "HomeFourTableViewCell.h"
+#import "BarChartCell.h"
 #import "XJYChart.h"
 
-@interface HomeFourTableViewCell()<XXBarChartDelegate>
+@interface BarChartCell()<XXBarChartDelegate>
 
 @end
 
-@implementation HomeFourTableViewCell
+@implementation BarChartCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

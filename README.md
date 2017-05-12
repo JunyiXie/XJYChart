@@ -146,9 +146,11 @@ Directly Run To See XJYChart Example
 - 急用钱
 
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/CurveLine.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image7.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image8.PNG)
+![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image9.PNG)
 

@@ -6,9 +6,9 @@
 //  Copyright © 2017 谢俊逸. All rights reserved.
 //
 
-#import "HomeFiveTableViewCell.h"
+#import "LineChartCell.h"
 #import "XJYChart.h"
-@implementation HomeFiveTableViewCell
+@implementation LineChartCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

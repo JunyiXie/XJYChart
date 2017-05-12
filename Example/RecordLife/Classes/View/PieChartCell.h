@@ -7,7 +7,7 @@
 //
 
 #import "XJYTableViewCell.h"
-static NSString *kHomeTwoTableViewCell = @"HomeTwoTableViewCell";
-@interface HomeTwoTableViewCell : XJYTableViewCell
+static NSString *kPieChartCell = @"PieChartCell";
+@interface PieChartCell : XJYTableViewCell
 
 @end

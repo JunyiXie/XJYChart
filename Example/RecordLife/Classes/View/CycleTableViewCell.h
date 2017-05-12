@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "XJYCycleView.h"
 #import "XJYTapCycleView.h"
+
+
+static NSString *kCycleTableViewCell = @"CycleTableViewCell";
+
 @interface CycleTableViewCell : UITableViewCell
 
 

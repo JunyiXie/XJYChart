@@ -7,12 +7,10 @@
 //
 
 #import "HomeViewController.h"
-#import "HomeOneTableViewCell.h"
-#import "HomeTwoTableViewCell.h"
-#import "HomeThreeTableViewCell.h"
-#import "HomeFourTableViewCell.h"
-#import "HomeFiveTableViewCell.h"
-#import "HomeSixTableViewCell.h"
+#import "PieChartCell.h"
+#import "BarChartCell.h"
+#import "LineChartCell.h"
+#import "PositiveNegativeBarChartCell.h"
 #import "CycleTableViewCell.h"
 #import "AreaLineTableViewCell.h"
 #import "StackAreaTableViewCell.h"
@@ -63,12 +61,12 @@
         _tableView = [[UITableView alloc] init];
 //        _tableView.backgroundColor = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1];
 #pragma mark Register Cell
-        [_tableView registerClass:[HomeOneTableViewCell class] forCellReuseIdentifier:kHomeOneTableViewCell];
-        [_tableView registerClass:[HomeTwoTableViewCell class] forCellReuseIdentifier:kHomeTwoTableViewCell];
-        [_tableView registerClass:[HomeThreeTableViewCell class] forCellReuseIdentifier:kHomeThreeTableViewCell];
-        [_tableView registerClass:[HomeFourTableViewCell class] forCellReuseIdentifier:kHomeFourTableViewCell];
-        [_tableView registerClass:[HomeFiveTableViewCell class] forCellReuseIdentifier:kHomeFiveTableViewCell];
-        [_tableView registerClass:[HomeSixTableViewCell class] forCellReuseIdentifier:kHomeSixTableViewCell];
+
+        [_tableView registerClass:[PieChartCell class] forCellReuseIdentifier:kPieChartCell];
+
+        [_tableView registerClass:[BarChartCell class] forCellReuseIdentifier:kBarChartCell];
+        [_tableView registerClass:[LineChartCell class] forCellReuseIdentifier:kLineChartCell];
+        [_tableView registerClass:[PositiveNegativeBarChartCell class] forCellReuseIdentifier:kPositiveNegativeBarChartCell];
         [_tableView registerNib:[UINib nibWithNibName:@"CycleTableViewCell" bundle:nil] forCellReuseIdentifier:@"CycleTableViewCell"];
         [_tableView registerClass:[AreaLineTableViewCell class] forCellReuseIdentifier:kAreaLineTableViewCell];
         [_tableView registerClass:[StackAreaTableViewCell class] forCellReuseIdentifier:kStackAreaTableViewCell];
@@ -109,20 +107,20 @@
     
     if (indexPath.section == 0) {
 
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeFiveTableViewCell forIndexPath:indexPath];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kLineChartCell forIndexPath:indexPath];
         return cell;
 
     } else if (indexPath.section == 1) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeTwoTableViewCell forIndexPath:indexPath];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPieChartCell forIndexPath:indexPath];
         return cell;
     } else if (indexPath.section == 2) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeFourTableViewCell forIndexPath:indexPath];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kBarChartCell forIndexPath:indexPath];
         return cell;
     } else if (indexPath.section == 3) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeSixTableViewCell forIndexPath:indexPath];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPositiveNegativeBarChartCell forIndexPath:indexPath];
         return cell;
     } else if (indexPath.section == 4) {
-        CycleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CycleTableViewCell" forIndexPath:indexPath];
+        CycleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCycleTableViewCell forIndexPath:indexPath];
         return cell;
     } else if (indexPath.section == 5) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kAreaLineTableViewCell forIndexPath:indexPath];
@@ -131,7 +129,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kStackAreaTableViewCell forIndexPath:indexPath];
         return cell;
     }
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kHomeOneTableViewCell forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPositiveNegativeBarChartCell forIndexPath:indexPath];
     return cell;
 
 }
