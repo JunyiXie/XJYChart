@@ -93,5 +93,10 @@
     return (reference.x - center.x) > 0 ? percentage : percentage + .5;
 }
 
+// 改变成容易绘制的坐标系
+- (CGPoint)changeCoordinateSystem:(CGPoint)point withViewHeight:(CGFloat)height {
+    CGPoint temPoint = CGPointMake(point.x, height - point.y);
+    return temPoint;
+}
 
 @end

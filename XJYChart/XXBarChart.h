@@ -9,7 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "XJYBarItem.h"
 
+
+@protocol XXBarChartDelegate <NSObject>
+/// touch bar idx
+- (void)touchBarAtIdx:(NSUInteger)idx;
+
+@end
+
+
 @interface XXBarChart : UIView
+
+//delegate
+@property (nonatomic, strong) id<XXBarChartDelegate> barChartDeleagte;
+
 /**
  初始化方法
  
@@ -37,5 +49,6 @@
  纵坐标最低点
  */
 @property (nonatomic, strong) NSNumber *bottom;
+
 
 @end

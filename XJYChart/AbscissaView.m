@@ -8,7 +8,6 @@
 
 #import "AbscissaView.h"
 #import "XJYChart.h"
-#import "SGLabel.h"
 @interface AbscissaView ()
 
 @property (nonatomic, strong) NSMutableArray<UILabel *> *labelArray;
@@ -62,21 +61,21 @@
     CGFloat labelWidth = self.frame.size.width / self.dataDescribeArray.count;
     CGFloat intervalWidth = labelWidth/6;
     for (int i = 0; i < self.dataDescribeArray.count; i++) {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(labelWidth * i + intervalWidth, 0, labelWidth - 2*intervalWidth, self.frame.size.height)];
+        label.text = self.dataDescribeArray[i];
+//        label.backgroundColor = [[XJYColor shareXJYColor] randomColorInColorArray];
+        label.adjustsFontSizeToFitWidth = YES;
+        label.font = [UIFont fontWithName:@"Helvetica Neue" size:10];
+        label.numberOfLines = 0;
+        label.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:label];
+
+        
 //        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(labelWidth * i + intervalWidth, 0, labelWidth - 2*intervalWidth, self.frame.size.height)];
 //        label.text = self.dataDescribeArray[i];
-////        label.backgroundColor = [[XJYColor shareXJYColor] randomColorInColorArray];
-//        label.adjustsFontSizeToFitWidth = YES;
+//        label.backgroundColor = XJYWhite;
 //        label.font = [UIFont fontWithName:@"Helvetica Neue" size:10];
-//        label.numberOfLines = 0;
-//        label.textAlignment = NSTextAlignmentCenter;
 //        [self addSubview:label];
-//
-        
-        SGLabel *label = [[SGLabel alloc] initWithFrame:CGRectMake(labelWidth * i + intervalWidth, 0, labelWidth - 2*intervalWidth, self.frame.size.height) text:self.dataDescribeArray[i]];
-        label.text = self.dataDescribeArray[i];
-        label.backgroundColor = XJYWhite;
-        label.font = [UIFont fontWithName:@"Helvetica Neue" size:10];
-        [self addSubview:label];
         
     }
     

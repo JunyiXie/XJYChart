@@ -13,10 +13,6 @@
 @property (nonatomic, strong) NSNumber *dataNumber;
 @property (nonatomic, strong) NSString *dataDescribe;
 
-
-
-
-
 /**
  设置数据item
 

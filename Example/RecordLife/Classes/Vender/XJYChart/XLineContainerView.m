@@ -50,9 +50,11 @@
         self.bottom = bottomNumber;
         self.lineMode = BrokenLine;
         self.colorMode = Random;
+        
     }
     return self;
 }
+
 
 #pragma mark - Draw
 

@@ -47,7 +47,6 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
         
         [self addSubview:self.abscissaView];
         self.contanierView = [self getLineChartContainerViewWithGraphMode:self.lineGraphMode];
-        [self addGesForView:self.contanierView];
         [self addSubview:self.contanierView];
         
         if ([self.contanierView isKindOfClass:[XAreaLineContainerView class]]) {
@@ -58,15 +57,7 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
     return self;
 }
 
-- (void)addGesForView:(UIView *)view {
-    UIPinchGestureRecognizer *pinchGes = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchView:)];
-    [view addGestureRecognizer:pinchGes];
-    
-    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapView:)];
-    tapGes.numberOfTapsRequired = 2;
-    tapGes.numberOfTouchesRequired = 1;
-    [view addGestureRecognizer:tapGes];
-}
+
 
 // Acorrding Line Graph Mode Choose Which LineContanier View
 - (UIView *)getLineChartContainerViewWithGraphMode:(XXLineGraphMode)lineGraphMode {
@@ -95,31 +86,6 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
     
 }
 
-#pragma mark PinchGesAction
-
-- (void)tapView:(UITapGestureRecognizer *)tapGes {
-    
-    if (tapGes.hasTapedBoolNumber.boolValue == YES) {
-        CGAffineTransform transform = CGAffineTransformIdentity;
-        tapGes.view.transform = transform;
-        tapGes.hasTapedBoolNumber = [NSNumber numberWithBool:NO];
-    } else {
-        //每次缩放以上一次为标准
-        tapGes.view.transform = CGAffineTransformScale(tapGes.view.transform, 1.5, 1.5);
-        tapGes.hasTapedBoolNumber = [NSNumber numberWithBool:YES];
-    }
-    
-}
-
-- (void)pinchView:(UIPinchGestureRecognizer *)pinchGes {
-    
-    if (pinchGes.state == UIGestureRecognizerStateEnded) {
-        CGAffineTransform transform = CGAffineTransformIdentity;
-        pinchGes.view.transform = CGAffineTransformScale(transform, 1, 1);
-    }
-    pinchGes.view.transform = CGAffineTransformScale(pinchGes.view.transform, pinchGes.scale, pinchGes.scale);
-    pinchGes.scale = 1;
-}
 
 
 #pragma mark Get

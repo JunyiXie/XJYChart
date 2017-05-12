@@ -20,4 +20,5 @@
 #import "XXEnumHeader.h"
 #import "XXPositiveNegativeBarChart.h"
 #import "XJYCycleView.h"
+
 #endif /* XJYChart_h */
