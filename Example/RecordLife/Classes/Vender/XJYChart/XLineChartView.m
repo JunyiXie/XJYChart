@@ -129,9 +129,6 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
     return _stackAreaLineContainerView;
 }
 
-
-
-
 #pragma mark - Set
 
 - (void)setColorMode:(XXColorMode)colorMode {

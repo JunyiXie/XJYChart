@@ -21,16 +21,12 @@
 
 @interface XStackAreaLineContainerView ()
 
-
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
-@property (nonatomic, strong) NSMutableArray<CAShapeLayer *> *shapeLayerArray;
 @property (nonatomic, strong) CAShapeLayer *coverLayer;
+
+@property (nonatomic, strong) NSMutableArray<CAShapeLayer *> *shapeLayerArray;
 @property (nonatomic, strong) NSMutableArray<XXAnimationLabel *> *labelArray;
-
-
-
 @property (nonatomic, strong) NSMutableArray<NSMutableArray<NSValue *> *> *stackAreaPointsArray;
-
 @property (nonatomic, strong) NSMutableArray<NSMutableArray<NSNumber *> *> *stackValuesArray;
 
 @end
@@ -83,7 +79,6 @@
     
     NSMutableArray<UIColor *> *colors = [self getColors];
 
-    
     for (NSInteger i = self.stackAreaPointsArray.count - 1; i >= 0; i --) {
         CGPoint leftConerPoint = CGPointMake(self.frame.origin.x, self.frame.origin.y + self.frame.size.height);
         CGPoint rightConerPoint = CGPointMake(self.frame.origin.x + self.frame.size.width, self.frame.origin.y + self.frame.size.height);
@@ -93,8 +88,6 @@
     }
 }
 
-
-/// Stroke Auxiliary
 - (void)strokeAuxiliaryLineInContext:(CGContextRef)context {
     
     CGContextSetStrokeColorWithColor(context, [UIColor colorWithWhite:1 alpha:0.5].CGColor);
@@ -107,7 +100,6 @@
         CGContextAddLineToPoint(context,perWidth * (i+1) - perWidth/2,self.frame.size.height);
         CGContextStrokePath(context);
     }
-    
 }
 
 - (void)strokePointInContext:(CGContextRef)context {
@@ -139,7 +131,6 @@
     }];
     [self.shapeLayerArray removeAllObjects];
     [self.labelArray removeAllObjects];
-    
 }
 
 #pragma mark - Calculate

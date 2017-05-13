@@ -21,15 +21,14 @@
 @interface XLineContainerView()
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
 
-
-
-@property (nonatomic, strong) NSMutableArray<CAShapeLayer *> *shapeLayerArray;
 @property (nonatomic, strong) CAShapeLayer *coverLayer;
-@property (nonatomic, strong) NSMutableArray<XXAnimationLabel *> *labelArray;
 /**
  All lines points
  */
 @property (nonatomic, strong) NSMutableArray<NSMutableArray<NSValue *> *> *pointsArrays;
+@property (nonatomic, strong) NSMutableArray<CAShapeLayer *> *shapeLayerArray;
+@property (nonatomic, strong) NSMutableArray<XXAnimationLabel *> *labelArray;
+
 @end
 
 @implementation XLineContainerView
@@ -39,7 +38,6 @@
     if (self = [super initWithFrame:frame]) {
         
         self.backgroundColor = [UIColor whiteColor];
-
         self.coverLayer = [CAShapeLayer layer];
         self.shapeLayerArray = [NSMutableArray new];
         self.pointsArrays = [NSMutableArray new];
@@ -50,7 +48,6 @@
         self.bottom = bottomNumber;
         self.lineMode = BrokenLine;
         self.colorMode = Random;
-        
     }
     return self;
 }
@@ -61,7 +58,6 @@
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     CGContextRef contextRef = UIGraphicsGetCurrentContext();
-    
     [self cleanPreDrawLayerAndData];
     [self strokeAuxiliaryLineInContext:contextRef];
     [self strokePointInContext:contextRef];
@@ -76,14 +72,14 @@
     CGFloat lengths[2] = {5.0,5.0};
     CGContextSetLineDash(context, 0, lengths, 2);
     CGContextSetLineWidth(context, 0.3);
-//     Auxiliary line
+    //auxiliary Line
     for (int i =0 ; i<11; i++) {
         CGContextMoveToPoint(context, 5,self.frame.size.height - (self.frame.size.height)/11 * i);
         CGContextAddLineToPoint(context,self.frame.size.width,self.frame.size.height - ((self.frame.size.height)/11) * i);
         CGContextStrokePath(context);
     }
     CGContextRestoreGState(context);
-    //ordinate line
+
     CGContextMoveToPoint(context, 5, 0);
     CGContextAddLineToPoint(context, 5, self.frame.size.height);
     CGContextStrokePath(context);
@@ -96,13 +92,10 @@
     [[UIColor grayColor] setStroke];
     arrow.lineCapStyle = kCGLineCapRound;
     [arrow stroke];
-    
 }
-
 
 - (void)cleanPreDrawLayerAndData {
     
-    //clean previous draw layer
     [self.coverLayer removeFromSuperlayer];
     [self.shapeLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperlayer];
@@ -110,22 +103,18 @@
     [self.labelArray enumerateObjectsUsingBlock:^(XXAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
-    //empty data array
+
     [self.pointsArrays removeAllObjects];
     [self.shapeLayerArray removeAllObjects];
     [self.labelArray removeAllObjects];
     
 }
 
-
-
 /// Stroke Point
 - (void)strokePointInContext:(CGContextRef)context {
     
     self.pointsArrays = [self getPointsArrays];
-    
     [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        
         UIColor *pointColor = [[XJYColor shareXJYColor] randomColorInColorArray];
         UIColor *wireframeColor = [[XJYColor shareXJYColor] randomColorInColorArray];
         [obj enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -208,8 +197,6 @@
     chartLine.lineWidth = LineWidth;
     
     CGFloat touchLineWidth = 40;
-    
-    
     for (int i = 0; i < pointsValueArray.count - 1; i++) {
         CGPoint point1 = pointsValueArray[i].CGPointValue;
         
@@ -252,8 +239,6 @@
         } else {
             [chartLine.segementPointsArrays addObject:segementPointsArray];
         }
-        
-        
     }
     
     chartLine.path = line.CGPath;
@@ -261,13 +246,11 @@
     chartLine.strokeEnd = 1.0;
     chartLine.strokeColor = color.CGColor;
     chartLine.fillColor = [UIColor clearColor].CGColor;
-    
     //selectedStatus
     chartLine.selectStatusNumber = [NSNumber numberWithBool:NO];
     [chartLine addAnimation:self.pathAnimation forKey:@"strokeEndAnimation"];
     
     return chartLine;
-
 }
 
 - (CAShapeLayer *)coverShapeLayerWithPath:(CGPathRef)path color:(UIColor *)color {
@@ -324,7 +307,6 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
   return c;
 }
 
-
 + (CGPoint)controlPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2 {
     CGPoint controlPoint = [self midPointBetweenPoint1:point1 andPoint2:point2];
     CGFloat diffY = abs((int) (point2.y - controlPoint.y));
@@ -338,9 +320,6 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
 + (CGPoint)midPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2 {
     return CGPointMake((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
 }
-
-
-
 
 #pragma mark - Touch
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
