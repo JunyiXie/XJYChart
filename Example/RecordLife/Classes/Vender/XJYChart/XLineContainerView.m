@@ -15,8 +15,8 @@
 #import "XJYAnimation.h"
 #pragma mark - Macro
 
-#define LineWidth 6.0
-#define PointDiameter 13.0
+#define LineWidth 3.0
+#define PointDiameter 7.0
 
 @interface XLineContainerView()
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
@@ -70,19 +70,25 @@
 
 /// Stroke Auxiliary
 - (void)strokeAuxiliaryLineInContext:(CGContextRef)context {
-    CGContextSetStrokeColorWithColor(context, [UIColor lightGrayColor].CGColor);
-    // Auxiliary line
+    CGContextSetStrokeColorWithColor(context, [UIColor grayColor].CGColor);
+    
+    CGContextSaveGState(context);
+    CGFloat lengths[2] = {5.0,5.0};
+    CGContextSetLineDash(context, 0, lengths, 2);
+    CGContextSetLineWidth(context, 0.3);
+//     Auxiliary line
     for (int i =0 ; i<11; i++) {
         CGContextMoveToPoint(context, 5,self.frame.size.height - (self.frame.size.height)/11 * i);
         CGContextAddLineToPoint(context,self.frame.size.width,self.frame.size.height - ((self.frame.size.height)/11) * i);
         CGContextStrokePath(context);
     }
+    CGContextRestoreGState(context);
     //ordinate line
     CGContextMoveToPoint(context, 5, 0);
     CGContextAddLineToPoint(context, 5, self.frame.size.height);
     CGContextStrokePath(context);
     UIBezierPath *arrow = [[UIBezierPath alloc] init];
-    arrow.lineWidth = 1;
+    arrow.lineWidth = 0.7;
     [arrow moveToPoint:CGPointMake(0, 8)];
     [arrow addLineToPoint:CGPointMake(5, 0)];
     [arrow moveToPoint:CGPointMake(5, 0)];

@@ -139,42 +139,35 @@
 
 
 - (NSMutableArray<NSValue *> *)getAreaDrawablePoints {
-    if (self.areaPoints.count > 0) {
-        return self.areaPoints;
-    } else {
-        self.points = [self getDrawablePoints];
-        self.areaPoints = [self.points mutableCopy];
-        CGPoint temfirstPoint = self.points[0].CGPointValue;
-        CGPoint temlastPoint = self.points.lastObject.CGPointValue;
-        CGPoint firstPoint = CGPointMake(0, temfirstPoint.y);
-        CGPoint lastPoint = CGPointMake(self.frame.size.width, temlastPoint.y);
-        
-        [self.areaPoints insertObject:[NSValue valueWithCGPoint:firstPoint] atIndex:0];
-        [self.areaPoints addObject:[NSValue valueWithCGPoint:lastPoint]];
-        
-        return self.areaPoints;
-    }
+
+    self.points = [self getDrawablePoints];
+    self.areaPoints = [self.points mutableCopy];
+    CGPoint temfirstPoint = self.points[0].CGPointValue;
+    CGPoint temlastPoint = self.points.lastObject.CGPointValue;
+    CGPoint firstPoint = CGPointMake(0, temfirstPoint.y);
+    CGPoint lastPoint = CGPointMake(self.frame.size.width, temlastPoint.y);
+    
+    [self.areaPoints insertObject:[NSValue valueWithCGPoint:firstPoint] atIndex:0];
+    [self.areaPoints addObject:[NSValue valueWithCGPoint:lastPoint]];
+    
+    return self.areaPoints;
     
 }
 
 - (NSMutableArray<NSValue *> *)getDrawablePoints {
 
-    if (self.points.count > 0) {
-        return self.points;
-    } else {
-        NSMutableArray *linePointArray = [NSMutableArray new];
-        XXLineChartItem *item = self.dataItemArray[0];
-        
-        // Get Points
-        NSMutableArray *numberArray = item.numberArray;
-        [item.numberArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            CGPoint point = [self calculateDrawablePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
-            //坐标系反转
-            NSValue *pointValue = [NSValue valueWithCGPoint:point];
-            [linePointArray addObject:pointValue];
-        }];
-        return linePointArray;
-    }
+    NSMutableArray *linePointArray = [NSMutableArray new];
+    XXLineChartItem *item = self.dataItemArray[0];
+    
+    // Get Points
+    NSMutableArray *numberArray = item.numberArray;
+    [item.numberArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGPoint point = [self calculateDrawablePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
+        //坐标系反转
+        NSValue *pointValue = [NSValue valueWithCGPoint:point];
+        [linePointArray addObject:pointValue];
+    }];
+    return linePointArray;
 }
 
 
