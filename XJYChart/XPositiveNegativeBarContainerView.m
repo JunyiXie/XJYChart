@@ -29,11 +29,10 @@ typedef enum : NSUInteger {
     Negative,
 } Valuence;
 
-
 @interface XPositiveNegativeBarContainerView ()
+
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
-
-
+@property (nonatomic, strong) CALayer *coverLayer;
 @property (nonatomic, strong) NSMutableArray<UIColor *> *colorArray;
 @property (nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *dataNumberArray;
@@ -42,18 +41,15 @@ typedef enum : NSUInteger {
 //背景填充
 @property (nonatomic, strong) NSMutableArray<CALayer *> *fillLayerArray;
 
-@property (nonatomic, strong) CALayer *coverLayer;
 @end
 
 @implementation XPositiveNegativeBarContainerView
 
-
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
-        
         self.coverLayer = [CALayer layer];
-        
+
         self.layerArray = [[NSMutableArray alloc] init];
         self.fillLayerArray = [[NSMutableArray alloc] init];
         self.colorArray = [[NSMutableArray alloc] init];
@@ -134,8 +130,7 @@ typedef enum : NSUInteger {
         [self.fillLayerArray addObject:rectShapeLayer];
         [self.layer addSublayer:rectShapeLayer];
     }];
-    
-    
+
     //fillHeightArray 是高度的绝对值
     //每个条根据数值大小填充的高度
     NSMutableArray<NSNumber *> *fillHeightArray = [[NSMutableArray alloc] init];
@@ -221,11 +216,6 @@ typedef enum : NSUInteger {
     CGContextStrokePath(contentRef);
 }
 
-
-#pragma mark Get
-
-
-
 #pragma mark HelpMethods
 
 - (CAShapeLayer *)rectAnimationLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor {
@@ -285,7 +275,6 @@ typedef enum : NSUInteger {
         //动画的path
         startPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y));
         endPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y + rect.size.height));
-
         // 做不做动画
         // 由于利用starpoint endpoint 要考虑线宽
         if (rect.size.width/2 > rect.size.height/2) {
@@ -328,9 +317,6 @@ typedef enum : NSUInteger {
         noAnimationLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
         return noAnimationLayer;
     }
-
-
-
 }
 
 - (CAShapeLayer *)rectShapeLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor {
@@ -455,7 +441,6 @@ typedef enum : NSUInteger {
             return ;
         }
     }];
-    
 }
 
 

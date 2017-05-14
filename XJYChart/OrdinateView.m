@@ -14,11 +14,9 @@
 @property (nonatomic, assign) CGFloat top;
 @property (nonatomic, assign) CGFloat bottom;
 
-
 @end
 
 @implementation OrdinateView
-
 
 - (instancetype)initWithFrame:(CGRect)frame topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber {
     self = [self initWithFrame:frame];
@@ -30,13 +28,11 @@
         [self.labelArray addObject:label];
     }
     [self setupUI];
-    
     return self;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        
     }
     return self;
 }
@@ -49,9 +45,7 @@
         
         obj.frame = CGRectMake(0, idx * height * 2, width, height);
         obj.font = [UIFont systemFontOfSize:12];
-
         obj.text = [NSString stringWithFormat:@"%.0f",(3 - idx) *(self.top - self.bottom) / 3 + self.bottom];
-        
         obj.textAlignment = NSTextAlignmentCenter;
         obj.backgroundColor = [UIColor whiteColor];
         

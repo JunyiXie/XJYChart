@@ -38,7 +38,6 @@
     if (self = [super initWithFrame:frame]) {
         
         self.backgroundColor = XJYBlue;
-        
         self.coverLayer = [CAShapeLayer layer];
         self.shapeLayerArray = [NSMutableArray new];
         self.labelArray = [NSMutableArray new];
@@ -64,7 +63,6 @@
     [self strokeAuxiliaryLineInContext:context];
     [self strokeLine];
     [self strokePointInContext:context];
-
 }
 
 - (void)strokeLine {

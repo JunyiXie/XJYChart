@@ -42,24 +42,6 @@
 
 - (void)setupColorArray {
     self.colorArray = [NSMutableArray new];
-//    [self.colorArray addObject:XJYLightBlue];
-//    [self.colorArray addObject:XJYGreen];
-////    [self.colorArray addObject:XJYLightGreen];
-//    [self.colorArray addObject:XJYFreshGreen];
-//    [self.colorArray addObject:XJYDeepGreen];
-//    [self.colorArray addObject:XJYRed];
-//    [self.colorArray addObject:XJYMauve];
-//    [self.colorArray addObject:XJYBrown];
-//    [self.colorArray addObject:XJYBlue];
-//    [self.colorArray addObject:XJYDarkBlue];
-//    [self.colorArray addObject:XJYYellow];
-//    [self.colorArray addObject:XJYHealYellow];
-//    [self.colorArray addObject:XJYLightYellow];
-//    [self.colorArray addObject:XJYPinkDark];
-//    [self.colorArray addObject:XJYStarYellow];
-//    [self.colorArray addObject:XJYTwitterColor];
-//    [self.colorArray addObject:XJYWeiboColor];
-//    [self.colorArray addObject:XJYiOSGreenColor];
     
     self.colors = @[@"infoBlue",
                     @"success",

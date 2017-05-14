@@ -15,50 +15,48 @@
 
 //http://stackoverflow.com/questions/28447744/frame-origin-and-bounds-size-of-cashapelayer-are-set-to-0
 // frame
-static char kAssociatedObjectKey;
+static char kFrameKey;
 
 //selected status
-static char kAssociatedObjectKey2;
+static char kSelectedStatusKey;
 
 //backgroundFrame
-static char kAssociatedObjectKey3;
+static char kBackgroundFrameKey;
 
 //segementPointsArrays
-static char kAssociatedObjectKey4;
+static char kSegementPointsArraysKey;
 
 
 - (void)setFrameValue:(id)frameValue {
-    objc_setAssociatedObject(self, &kAssociatedObjectKey, frameValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &kFrameKey, frameValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (id)frameValue {
-    return objc_getAssociatedObject(self, &kAssociatedObjectKey);
+    return objc_getAssociatedObject(self, &kFrameKey);
 }
 
 - (void)setSelectStatusNumber:(id)selectStatusNumber {
-    objc_setAssociatedObject(self, &kAssociatedObjectKey2, selectStatusNumber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &kSelectedStatusKey, selectStatusNumber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (id)selectStatusNumber {
-    return objc_getAssociatedObject(self, &kAssociatedObjectKey2);
+    return objc_getAssociatedObject(self, &kSelectedStatusKey);
 }
 
 - (void)setBackgroundFrameValue:(id)backgroundFrameValue {
-    objc_setAssociatedObject(self, &kAssociatedObjectKey3, backgroundFrameValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &kBackgroundFrameKey, backgroundFrameValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (id)backgroundFrameValue {
-    return objc_getAssociatedObject(self, &kAssociatedObjectKey3);
+    return objc_getAssociatedObject(self, &kBackgroundFrameKey);
 }
 
-
-
 - (void)setSegementPointsArrays:(id)segementPointsArrays {
-    objc_setAssociatedObject(self, &kAssociatedObjectKey4, segementPointsArrays, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &kSegementPointsArraysKey, segementPointsArrays, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (id)segementPointsArrays {
-    return objc_getAssociatedObject(self, &kAssociatedObjectKey4);
+    return objc_getAssociatedObject(self, &kSegementPointsArraysKey);
 }
 
 

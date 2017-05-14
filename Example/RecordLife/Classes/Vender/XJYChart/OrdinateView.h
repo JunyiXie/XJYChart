@@ -11,6 +11,14 @@
 @interface OrdinateView : UIView
 
 
+/**
+ init
+
+ @param frame frame
+ @param topNumber top number in ordinate View
+ @param bottomNumber bottom number in ordinate View
+ @return ordinate View instance
+ */
 - (instancetype)initWithFrame:(CGRect)frame topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber;
 
 @end

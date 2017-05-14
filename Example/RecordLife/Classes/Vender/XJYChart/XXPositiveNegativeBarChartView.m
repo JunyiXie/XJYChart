@@ -15,22 +15,16 @@
 #import "XPositiveNegativeBarContainerView.h"
 
 #define AbscissaHeight 30
-
 #define PartWidth 50.0
 #define BarBackgroundFillColor [UIColor colorWithRed:232/255.0 green:232/255.0 blue:232/255.0 alpha:1]
 
 @interface XXPositiveNegativeBarChartView ()
+
 @property (nonatomic, strong) XPositiveNegativeBarContainerView *barPNContainerView;
-
-
 @property (nonatomic, strong) NSMutableArray<UIColor *> *colorArray;
-
 @property (nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
-
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *dataNumberArray;
-
 @property (nonatomic, assign) BOOL needScroll;
-
 @property (nonatomic, strong) AbscissaView *abscissaView;
 
 @end
@@ -51,7 +45,6 @@
         
         [self addSubview:self.barPNContainerView];
         [self addSubview:self.abscissaView];
-        
     }
     return self;
 }
@@ -61,7 +54,6 @@
     }
     return self;
 }
-
 
 //计算是否需要滚动
 - (CGSize)computeSrollViewCententSizeFromItemArray:(NSMutableArray<XJYBarItem *> *)itemArray {
@@ -75,7 +67,6 @@
         CGFloat height = self.frame.size.height;
         return CGSizeMake(width, height);
     }
-    
 }
 
 - (void)layoutSubviews {
@@ -91,7 +82,6 @@
     }
     return _abscissaView;
 }
-
 
 - (XPositiveNegativeBarContainerView *)barPNContainerView {
     if (!_barPNContainerView) {

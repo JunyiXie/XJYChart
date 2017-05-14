@@ -66,13 +66,11 @@
 
 /// Stroke Auxiliary
 - (void)strokeAuxiliaryLineInContext:(CGContextRef)context {
-    CGContextSetStrokeColorWithColor(context, [UIColor grayColor].CGColor);
     
     CGContextSaveGState(context);
     CGFloat lengths[2] = {5.0,5.0};
     CGContextSetLineDash(context, 0, lengths, 2);
     CGContextSetLineWidth(context, 0.3);
-    //auxiliary Line
     for (int i =0 ; i<11; i++) {
         CGContextMoveToPoint(context, 5,self.frame.size.height - (self.frame.size.height)/11 * i);
         CGContextAddLineToPoint(context,self.frame.size.width,self.frame.size.height - ((self.frame.size.height)/11) * i);
@@ -80,18 +78,29 @@
     }
     CGContextRestoreGState(context);
 
+    CGContextSaveGState(context);
+    CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+    // ordinate
     CGContextMoveToPoint(context, 5, 0);
     CGContextAddLineToPoint(context, 5, self.frame.size.height);
     CGContextStrokePath(context);
+    
+    // abscissa
+    CGContextMoveToPoint(context, 5,self.frame.size.height);
+    CGContextAddLineToPoint(context,self.frame.size.width,self.frame.size.height);
+    CGContextStrokePath(context);
+    
+    // arrow
     UIBezierPath *arrow = [[UIBezierPath alloc] init];
     arrow.lineWidth = 0.7;
     [arrow moveToPoint:CGPointMake(0, 8)];
     [arrow addLineToPoint:CGPointMake(5, 0)];
     [arrow moveToPoint:CGPointMake(5, 0)];
     [arrow addLineToPoint:CGPointMake(10, 8)];
-    [[UIColor grayColor] setStroke];
+    [[UIColor blackColor] setStroke];
     arrow.lineCapStyle = kCGLineCapRound;
     [arrow stroke];
+    CGContextRestoreGState(context);
 }
 
 - (void)cleanPreDrawLayerAndData {

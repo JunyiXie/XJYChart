@@ -19,7 +19,6 @@
     return ivar;
 }
 
-
 + (CASpringAnimation *)getLineChartSpringAnimationWithLayer:(CALayer *)layer {
     CASpringAnimation *springAnimation = [CASpringAnimation animationWithKeyPath:@"position.y"];
     springAnimation.damping = 5;

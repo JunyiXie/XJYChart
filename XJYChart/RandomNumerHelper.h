@@ -10,7 +10,19 @@
 
 @interface RandomNumerHelper : NSObject
 
+/**
+ Singleton
 
+ @return Singleton
+ */
 + (instancetype)shareRandomNumberHelper;
+
+
+/**
+ a number small than max
+
+ @param max max
+ @return number
+ */
 - (int)randomNumberSmallThan:(NSInteger)max;
 @end

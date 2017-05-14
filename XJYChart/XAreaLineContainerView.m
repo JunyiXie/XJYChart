@@ -21,33 +21,25 @@
 @interface XAreaLineContainerView ()
 
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
-
-
-
-@property (nonatomic, strong) NSMutableArray<CAShapeLayer *> *shapeLayerArray;
 @property (nonatomic, strong) CAShapeLayer *coverLayer;
-@property (nonatomic, strong) NSMutableArray<XXAnimationLabel *> *labelArray;
+@property (nonatomic, strong) UIColor *areaColor;
+
 /**
  All lines points
  */
 @property (nonatomic, strong) NSMutableArray<NSValue *> *points;
-
-
+@property (nonatomic, strong) NSMutableArray<XXAnimationLabel *> *labelArray;
+@property (nonatomic, strong) NSMutableArray<CAShapeLayer *> *shapeLayerArray;
 @property (nonatomic, strong) NSMutableArray<NSValue *> *areaPoints;
-
-@property (nonatomic, strong) UIColor *areaColor;
 
 @end
 
 
 @implementation XAreaLineContainerView
 
-
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber {
     if (self = [super initWithFrame:frame]) {
-        
         self.backgroundColor = XJYBlue;
-        
         self.coverLayer = [CAShapeLayer layer];
         self.shapeLayerArray = [NSMutableArray new];
         self.points = [NSMutableArray new];
@@ -68,18 +60,17 @@
 - (void)drawRect:(CGRect)rect {
     
     [self cleanPreDrawLayerAndData];
-    
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self strokeAuxiliaryLineInContext:context];
     [self strokePointInContext:context];
     [self strokeLine];
     
-
 }
 
 /// Stroke Auxiliary
 - (void)strokeAuxiliaryLineInContext:(CGContextRef)context {
+    
     CGContextSetStrokeColorWithColor(context, [UIColor colorWithWhite:1 alpha:0.5].CGColor);
     CGFloat lengths[2] = { 5, 5 };
     CGContextSetLineDash(context, 0, lengths, 2);
@@ -90,7 +81,6 @@
         CGContextAddLineToPoint(context,self.points[i].CGPointValue.x,self.frame.size.height);
         CGContextStrokePath(context);
     }
-
 }
 
 
@@ -123,13 +113,12 @@
     [self.labelArray removeAllObjects];
     [self.points removeAllObjects];
     [self.areaPoints removeAllObjects];
-    
 }
 
 
 - (void)strokeLine {
-    self.areaPoints = [self getAreaDrawablePoints];
     
+    self.areaPoints = [self getAreaDrawablePoints];
     CGPoint leftConerPoint = CGPointMake(self.frame.origin.x, self.frame.origin.y + self.frame.size.height);
     CGPoint rightConerPoint = CGPointMake(self.frame.origin.x + self.frame.size.width, self.frame.origin.y + self.frame.size.height);
     
@@ -139,42 +128,34 @@
 
 
 - (NSMutableArray<NSValue *> *)getAreaDrawablePoints {
-    if (self.areaPoints.count > 0) {
-        return self.areaPoints;
-    } else {
-        self.points = [self getDrawablePoints];
-        self.areaPoints = [self.points mutableCopy];
-        CGPoint temfirstPoint = self.points[0].CGPointValue;
-        CGPoint temlastPoint = self.points.lastObject.CGPointValue;
-        CGPoint firstPoint = CGPointMake(0, temfirstPoint.y);
-        CGPoint lastPoint = CGPointMake(self.frame.size.width, temlastPoint.y);
-        
-        [self.areaPoints insertObject:[NSValue valueWithCGPoint:firstPoint] atIndex:0];
-        [self.areaPoints addObject:[NSValue valueWithCGPoint:lastPoint]];
-        
-        return self.areaPoints;
-    }
+
+    self.points = [self getDrawablePoints];
+    self.areaPoints = [self.points mutableCopy];
+    CGPoint temfirstPoint = self.points[0].CGPointValue;
+    CGPoint temlastPoint = self.points.lastObject.CGPointValue;
+    CGPoint firstPoint = CGPointMake(0, temfirstPoint.y);
+    CGPoint lastPoint = CGPointMake(self.frame.size.width, temlastPoint.y);
     
+    [self.areaPoints insertObject:[NSValue valueWithCGPoint:firstPoint] atIndex:0];
+    [self.areaPoints addObject:[NSValue valueWithCGPoint:lastPoint]];
+    
+    return self.areaPoints;
 }
 
 - (NSMutableArray<NSValue *> *)getDrawablePoints {
 
-    if (self.points.count > 0) {
-        return self.points;
-    } else {
-        NSMutableArray *linePointArray = [NSMutableArray new];
-        XXLineChartItem *item = self.dataItemArray[0];
-        
-        // Get Points
-        NSMutableArray *numberArray = item.numberArray;
-        [item.numberArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            CGPoint point = [self calculateDrawablePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
-            //坐标系反转
-            NSValue *pointValue = [NSValue valueWithCGPoint:point];
-            [linePointArray addObject:pointValue];
-        }];
-        return linePointArray;
-    }
+    NSMutableArray *linePointArray = [NSMutableArray new];
+    XXLineChartItem *item = self.dataItemArray[0];
+    
+    // Get Points
+    NSMutableArray *numberArray = item.numberArray;
+    [item.numberArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGPoint point = [self calculateDrawablePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
+        //坐标系反转
+        NSValue *pointValue = [NSValue valueWithCGPoint:point];
+        [linePointArray addObject:pointValue];
+    }];
+    return linePointArray;
 }
 
 

@@ -10,12 +10,7 @@
 
 @interface XJYAuxiliaryCalculationHelper : NSObject
 
-
-
 + (instancetype)shareCalculationHelper;
-
-
-
 /**
  计算正高度占比
 

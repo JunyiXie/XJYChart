@@ -8,19 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface XXLineChartItem : NSObject
-
 
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic, strong) NSString *dataDescribe;
-
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *numberArray;
-
-
-
-
-
 /**
  设置数据item
  

@@ -10,8 +10,13 @@
 
 @interface AbscissaView : UIView
 
+/**
+ init
 
-
+ @param frame frame
+ @param dataItemArray datas
+ @return AbscissaView instance
+ */
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray *)dataItemArray;
 
 @end

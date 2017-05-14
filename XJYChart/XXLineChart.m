@@ -35,16 +35,11 @@
         self.dataItemArray = dataItemArray;
         self.dataDescribeArray = dataDiscribeArray;
         self.lineGraphMode = graphMode;
-        
-        
         self.layer.masksToBounds = YES;
-        
-        
         [self addGesForView:self.lineChartView];
         self.lineChartView.layer.masksToBounds = YES;
         [self addSubview:self.ordinateView];
         [self addSubview:self.lineChartView];
-        
         
     }
     return self;

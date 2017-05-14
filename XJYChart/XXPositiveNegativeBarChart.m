@@ -11,16 +11,15 @@
 #import "OrdinateView.h"
 #define OrdinateWidth 30
 #define BarChartViewTopInterval 10
-@interface XXPositiveNegativeBarChart ()
-@property (nonatomic, strong) XXPositiveNegativeBarChartView *barChartView;
 
+@interface XXPositiveNegativeBarChart ()
+
+@property (nonatomic, strong) XXPositiveNegativeBarChartView *barChartView;
 @property (nonatomic, strong) OrdinateView *ordinateView;
 
 @end
 
-
 @implementation XXPositiveNegativeBarChart
-
 
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber {
     if (self = [super initWithFrame:frame]) {

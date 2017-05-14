@@ -33,7 +33,6 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, strong) CABasicAnimation *pathAnimation;
 @property (nonatomic, strong) CALayer *coverLayer;
-
 @property (nonatomic, strong) NSMutableArray<UIColor *> *colorArray;
 @property (nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *dataNumberArray;
@@ -49,9 +48,8 @@ typedef enum : NSUInteger {
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
-        
         self.coverLayer = [CALayer layer];
-        
+
         self.layerArray = [[NSMutableArray alloc] init];
         self.fillLayerArray = [[NSMutableArray alloc] init];
         self.colorArray = [[NSMutableArray alloc] init];

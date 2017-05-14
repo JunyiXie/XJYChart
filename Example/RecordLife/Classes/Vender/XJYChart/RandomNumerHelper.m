@@ -19,7 +19,6 @@
     return helper;
 }
 
-
 - (int)randomNumberSmallThan:(int)max {
     int idx = arc4random() % max;
     return idx;

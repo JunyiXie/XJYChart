@@ -20,21 +20,15 @@
 @property (nonatomic, strong) CAShapeLayer *pieAnimationMaskLayer;
 @property (nonatomic, strong) CAShapeLayer *heightLightSector;
 @property (nonatomic, strong) NSMutableDictionary *selectedItems;
-
 @property (nonatomic, strong) UIView *contentView;
-
 @property (nonatomic, strong) UIView *informationView;
-
 @property (nonatomic, assign) CGFloat outerRadius;
 @property (nonatomic, assign) CGFloat innerRadius;
-
 @property (nonatomic, strong) NSMutableArray<UIColor *> *colorArray;
 @property (nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *dataNumberArray;
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *strokeStartArray;
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *strokeEndArray;
-
-
 
 @end
 
@@ -343,8 +337,6 @@
     descriptionLabel.backgroundColor = [UIColor clearColor];
     return descriptionLabel;
 }
-
-
 
 
 @end

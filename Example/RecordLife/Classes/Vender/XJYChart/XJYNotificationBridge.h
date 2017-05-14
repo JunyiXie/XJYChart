@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ Cross layer using the same Notification info
+ */
 @interface XJYNotificationBridge : NSObject
 
 + (instancetype)shareXJYNotificationBridge;

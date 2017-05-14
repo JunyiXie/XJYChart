@@ -13,7 +13,6 @@
 //selectIdx
 static char kSelectIdxNumber;
 
-
 - (void)setSelectIdxNumber:(id)selectIdxNumber {
     objc_setAssociatedObject(self, &kSelectIdxNumber, selectIdxNumber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
