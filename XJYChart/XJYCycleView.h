@@ -1,9 +1,10 @@
+
 //
-//  TBCycleView.h
-//  TBCycleProgress
+//  XBarView.h
+//  RecordLife
 //
-//  Created by qianjianeng on 16/2/22.
-//  Copyright © 2016年 SF. All rights reserved.
+//  Created by 谢俊逸 on 15/03/2017.
+//  Copyright © 2017 谢俊逸. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
