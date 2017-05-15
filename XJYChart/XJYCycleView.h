@@ -1,6 +1,6 @@
 
 //
-//  XBarView.h
+//  XJYCycleView.h
 //  RecordLife
 //
 //  Created by 谢俊逸 on 15/03/2017.
