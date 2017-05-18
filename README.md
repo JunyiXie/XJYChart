@@ -154,3 +154,5 @@ Provide many colors In XJYColor.h
 Added slippery graph And Chart Animations
 Example 
 
+
+> 没错 XJYChart 就是偶写的，它还只是一个宝宝，需要你们的贡献，贡献代码、整理文档、提 bug & issue 甚至是帮着 P 图都算是贡献，都可以加群：277041324 
