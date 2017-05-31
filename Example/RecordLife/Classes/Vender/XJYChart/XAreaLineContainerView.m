@@ -171,11 +171,11 @@
             [line moveToPoint:point1];
         }
         if (self.lineMode == CurveLine) {
-            CGPoint midPoint = [XAreaLineContainerView midPointBetweenPoint1:point1 andPoint2:point2];
+            CGPoint midPoint = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] midPointBetweenPoint1:point1 andPoint2:point2];
             [line addQuadCurveToPoint:midPoint
-                         controlPoint:[XAreaLineContainerView controlPointBetweenPoint1:midPoint andPoint2:point1]];
+                         controlPoint:[[XJYAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point1]];
             [line addQuadCurveToPoint:point2
-                         controlPoint:[XAreaLineContainerView controlPointBetweenPoint1:midPoint andPoint2:point2]];
+                         controlPoint:[[XJYAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point2]];
         } else {
             [line addLineToPoint:point2];
         }
@@ -205,20 +205,6 @@
 
 
 #pragma mark - Control Point Compute
-+ (CGPoint)controlPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2 {
-    CGPoint controlPoint = [self midPointBetweenPoint1:point1 andPoint2:point2];
-    CGFloat diffY = abs((int) (point2.y - controlPoint.y));
-    if (point1.y < point2.y)
-        controlPoint.y += diffY;
-    else if (point1.y > point2.y)
-        controlPoint.y -= diffY;
-    return controlPoint;
-}
-
-+ (CGPoint)midPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2 {
-    return CGPointMake((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
-}
-
 
 #pragma mark - Help Methods
 // Calculate -> Point

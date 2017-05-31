@@ -99,4 +99,49 @@
     return temPoint;
 }
 
+
+- (CGPoint)controlPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2 {
+    CGPoint controlPoint = [self midPointBetweenPoint1:point1 andPoint2:point2];
+    CGFloat diffY = abs((int) (point2.y - controlPoint.y));
+    if (point1.y < point2.y)
+        controlPoint.y += diffY;
+    else if (point1.y > point2.y)
+        controlPoint.y -= diffY;
+    return controlPoint;
+}
+
+- (CGPoint)midPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2 {
+    return CGPointMake((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
+}
+
+
+/// 计算点是否在多边形内
+- (BOOL)containPoint:(NSValue *)pointValue Points:(NSMutableArray<NSValue *> *)pointsArray {
+    float vertx[4] = {0,0,0,0};
+    float verty[4] = {0,0,0,0};
+    CGPoint targetPoint = pointValue.CGPointValue;
+    unsigned i = 0;
+    for (i = 0; i < pointsArray.count; i = i + 1) {
+        CGPoint point1 = pointsArray[i].CGPointValue;
+        vertx[i] = point1.x;
+        verty[i] = point1.y;
+    }
+    return pnpoly(4, vertx, verty, targetPoint.x, targetPoint.y);
+}
+// 判断算法
+int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
+    int i, j, c = 0;
+    for (i = 0, j = nvert - 1; i < nvert; j = i++) {
+        if (((verty[i] > testy) != (verty[j] > testy)) &&
+            (testx <
+             (vertx[j] - vertx[i]) * (testy - verty[i]) / (verty[j] - verty[i]) +
+             vertx[i]))
+            c = !c;
+    }
+    return c;
+}
+
+
+
+
 @end

@@ -72,4 +72,36 @@
  @return drawable Point
  */
 - (CGPoint)changeCoordinateSystem:(CGPoint)point withViewHeight:(CGFloat)height;
+
+
+
+/**
+ Compute control Point Between Point1 And Point2
+
+ @param point1 point1
+ @param point2 point2
+ @return controlPoint
+ */
+- (CGPoint)controlPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2;
+
+
+
+/**
+ Compute Mid Point Between Point1 And Point2
+
+ @param point1 point1
+ @param point2 point2
+ @return midPoint
+ */
+- (CGPoint)midPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2;
+
+
+/**
+ Judge a Point Whether or not in a polygon
+
+ @param pointValue pointValue
+ @param pointsArray polygon points
+ @return YES/NO
+ */
+- (BOOL)containPoint:(NSValue *)pointValue Points:(NSMutableArray<NSValue *> *)pointsArray;
 @end

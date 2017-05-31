@@ -141,11 +141,9 @@
 - (void)strokeLineChart {
     [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (self.colorMode == Random) {
-            [self.shapeLayerArray addObject:[self shapeLayerWithPoints:obj
-                                                                colors:[[XJYColor shareXJYColor] randomColorInColorArray]]];
+            [self.shapeLayerArray addObject:[self lineShapeLayerWithPoints:obj colors:[[XJYColor shareXJYColor] randomColorInColorArray] lineMode:self.lineMode]];
         } else {
-            [self.shapeLayerArray addObject:[self shapeLayerWithPoints:obj
-                                                                colors:self.dataItemArray[idx].color]];
+            [self.shapeLayerArray addObject:[self lineShapeLayerWithPoints:obj colors:self.dataItemArray[idx].color lineMode:self.lineMode]];
         }
     }];
     
@@ -167,7 +165,7 @@
             NSMutableArray *numberArray = obj.numberArray;
             NSMutableArray *linePointArray = [NSMutableArray new];
             [obj.numberArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                CGPoint point = [self calculateDrawablePointWithNumber:obj idx:idx numberArray:numberArray bounds:self.bounds];
+                CGPoint point = [self calculateDrawablePointWithNumber:obj idx:idx count:numberArray.count bounds:self.bounds];
                 NSValue *pointValue = [NSValue valueWithCGPoint:point];
                 [linePointArray addObject:pointValue];
             }];
@@ -186,9 +184,9 @@
  @return CGPoint
  */
 // Calculate -> Point
-- (CGPoint)calculateDrawablePointWithNumber:(NSNumber *)number idx:(NSUInteger)idx numberArray:(NSMutableArray *)numberArray bounds:(CGRect)bounds {
+- (CGPoint)calculateDrawablePointWithNumber:(NSNumber *)number idx:(NSUInteger)idx count:(NSUInteger)count bounds:(CGRect)bounds {
     CGFloat percentageH =[[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:number.doubleValue];
-    CGFloat percentageW = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:(idx) count:numberArray.count];
+    CGFloat percentageW = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:(idx) count:count];
     CGFloat pointY = percentageH * bounds.size.height;
     CGFloat pointX = percentageW * bounds.size.width;
     CGPoint point = CGPointMake(pointX, pointY);
@@ -197,7 +195,8 @@
 }
 
 
-- (CAShapeLayer *)shapeLayerWithPoints:(NSMutableArray<NSValue *> *)pointsValueArray colors:(UIColor *)color {
+
+- (CAShapeLayer *)lineShapeLayerWithPoints:(NSMutableArray<NSValue *> *)pointsValueArray colors:(UIColor *)color lineMode:(XXLineMode)lineMode {
     UIBezierPath *line = [[UIBezierPath alloc] init];
     
     CAShapeLayer *chartLine = [CAShapeLayer layer];
@@ -212,14 +211,14 @@
         CGPoint point2 = pointsValueArray[i + 1].CGPointValue;
         [line moveToPoint:point1];
         
-        if (self.lineMode == BrokenLine) {
+        if (lineMode == BrokenLine) {
             [line addLineToPoint:point2];
-        } else if (self.lineMode == CurveLine) {
-            CGPoint midPoint = [XLineContainerView midPointBetweenPoint1:point1 andPoint2:point2];
+        } else if (lineMode == CurveLine) {
+            CGPoint midPoint = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] midPointBetweenPoint1:point1 andPoint2:point2];
             [line addQuadCurveToPoint:midPoint
-                         controlPoint:[XLineContainerView controlPointBetweenPoint1:midPoint andPoint2:point1]];
+                         controlPoint:[[XJYAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point1]];
             [line addQuadCurveToPoint:point2
-                         controlPoint:[XLineContainerView controlPointBetweenPoint1:midPoint andPoint2:point2]];
+                         controlPoint:[[XJYAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point2]];
         } else {
             [line addLineToPoint:point2];
         }
@@ -289,47 +288,6 @@
 }
 
 
-#pragma mark - Algorithm
-
-- (BOOL)containPoint:(NSValue *)pointValue Points:(NSMutableArray<NSValue *> *)pointsArray {
-    float vertx[4] = {0,0,0,0};
-    float verty[4] = {0,0,0,0};
-    CGPoint targetPoint = pointValue.CGPointValue;
-    unsigned i = 0;
-    for (i = 0; i < pointsArray.count; i = i + 1) {
-      CGPoint point1 = pointsArray[i].CGPointValue;
-      vertx[i] = point1.x;
-      verty[i] = point1.y;
-    }
-    return pnpoly(4, vertx, verty, targetPoint.x, targetPoint.y);
-}
-// 判断算法
-int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
-  int i, j, c = 0;
-  for (i = 0, j = nvert - 1; i < nvert; j = i++) {
-    if (((verty[i] > testy) != (verty[j] > testy)) &&
-        (testx <
-         (vertx[j] - vertx[i]) * (testy - verty[i]) / (verty[j] - verty[i]) +
-             vertx[i]))
-      c = !c;
-  }
-  return c;
-}
-
-+ (CGPoint)controlPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2 {
-    CGPoint controlPoint = [self midPointBetweenPoint1:point1 andPoint2:point2];
-    CGFloat diffY = abs((int) (point2.y - controlPoint.y));
-    if (point1.y < point2.y)
-        controlPoint.y += diffY;
-    else if (point1.y > point2.y)
-        controlPoint.y -= diffY;
-    return controlPoint;
-}
-
-+ (CGPoint)midPointBetweenPoint1:(CGPoint)point1 andPoint2:(CGPoint)point2 {
-    return CGPointMake((point1.x + point2.x) / 2, (point1.y + point2.y) / 2);
-}
-
 #pragma mark - Touch
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
@@ -353,7 +311,7 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
         //找到这一段上的点s
         NSMutableArray<NSValue *> *points = segementPointsArrays[areaIdx];
         NSUInteger shapeLayerIndex = idx;
-        if ([self containPoint:[NSValue valueWithCGPoint:point] Points:points]) {
+        if ([[XJYAuxiliaryCalculationHelper shareCalculationHelper] containPoint:[NSValue valueWithCGPoint:point] Points:points]) {
             
             // 点击的是高亮的Line
             if (self.coverLayer.selectStatusNumber.boolValue == YES) {

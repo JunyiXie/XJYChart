@@ -42,6 +42,7 @@
     if (self = [super initWithFrame:frame]) {
         [self viewConfiguration];
         [self setNeedsDisplay];
+
     }
     return self;
 }
