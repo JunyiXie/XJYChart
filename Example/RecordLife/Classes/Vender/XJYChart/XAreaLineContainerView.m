@@ -29,7 +29,6 @@
  */
 @property (nonatomic, strong) NSMutableArray<NSValue *> *points;
 @property (nonatomic, strong) NSMutableArray<XXAnimationLabel *> *labelArray;
-@property (nonatomic, strong) NSMutableArray<CAShapeLayer *> *shapeLayerArray;
 @property (nonatomic, strong) NSMutableArray<NSValue *> *areaPoints;
 
 @end
@@ -41,7 +40,6 @@
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = XJYBlue;
         self.coverLayer = [CAShapeLayer layer];
-        self.shapeLayerArray = [NSMutableArray new];
         self.points = [NSMutableArray new];
         self.labelArray = [NSMutableArray new];
         self.areaPoints = [NSMutableArray new];
@@ -102,14 +100,14 @@
 
 - (void)cleanPreDrawLayerAndData {
     
-    [self.shapeLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [obj removeFromSuperlayer];
+
+    [self.layer.sublayers enumerateObjectsUsingBlock:^(CALayer * _Nonnull sublayer, NSUInteger idx, BOOL * _Nonnull stop) {
+        [sublayer removeFromSuperlayer];
     }];
     [self.labelArray enumerateObjectsUsingBlock:^(XXAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
     
-    [self.shapeLayerArray removeAllObjects];
     [self.labelArray removeAllObjects];
     [self.points removeAllObjects];
     [self.areaPoints removeAllObjects];
@@ -202,6 +200,7 @@
     }
     return self.areaColor;
 }
+
 
 
 #pragma mark - Control Point Compute
