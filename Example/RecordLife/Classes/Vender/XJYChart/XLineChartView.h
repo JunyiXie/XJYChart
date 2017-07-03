@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XXLineChartItem.h"
-#import "XXEnumHeader.h"
+#import "XLineChartItem.h"
+#import "XEnumHeader.h"
 @interface XLineChartView : UIScrollView
 /**
  初始化方法
@@ -20,12 +20,12 @@
  @param bottomNumber buttom
  @return instancetype
  */
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDescribeArray:(NSMutableArray<NSString *> *)dataDescribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  graphMode:(XXLineGraphMode)graphMode;
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray dataDescribeArray:(NSMutableArray<NSString *> *)dataDescribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  graphMode:(XXLineGraphMode)graphMode;
 
 /**
  dataItemArray
  */
-@property (nonatomic, strong) NSMutableArray<XXLineChartItem *> *dataItemArray;
+@property (nonatomic, strong) NSMutableArray<XLineChartItem *> *dataItemArray;
 
 @property (nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
 /**
@@ -40,7 +40,7 @@
 
 /**
  Random ：RandomColor
- Custom :  need to set (at XXLineChartItem)
+ Custom :  need to set (at XLineChartItem)
  
  Default is Random
  */

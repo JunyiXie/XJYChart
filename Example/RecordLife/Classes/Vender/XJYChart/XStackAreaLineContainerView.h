@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XXLineChartItem.h"
-#import "XXEnumHeader.h"
+#import "XLineChartItem.h"
+#import "XEnumHeader.h"
 
 @interface XStackAreaLineContainerView : UIView
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber;
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber;
 /**
  dataItemArray
  */
-@property (nonatomic, strong) NSMutableArray<XXLineChartItem *> *dataItemArray;
+@property (nonatomic, strong) NSMutableArray<XLineChartItem *> *dataItemArray;
 /**
  纵坐标最高点
  */

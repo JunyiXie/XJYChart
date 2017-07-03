@@ -7,7 +7,7 @@
 //
 
 #import "LineChartCell.h"
-#import "XJYChart.h"
+#import "XChart.h"
 @implementation LineChartCell
 
 - (void)awakeFromNib {
@@ -32,7 +32,7 @@
             NSMutableArray *numberArray = [NSMutableArray new];
             
             for (int i = 0; i<5; i++) {
-                int num = [[RandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14] * [[RandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14];
+                int num = [[XRandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14] * [[XRandomNumerHelper shareRandomNumberHelper] randomNumberSmallThan:14];
                 NSNumber *number = [NSNumber numberWithInt:num];
                 [numberArray addObject:number];
             }
@@ -45,10 +45,10 @@
         
         for (int i = 0; i<5; i++) {
             
-            XXLineChartItem *item = [[XXLineChartItem alloc] initWithDataNumberArray:numbersArray[i] color:colorArray[i] dataDescribe:@"111"];
+            XLineChartItem *item = [[XLineChartItem alloc] initWithDataNumberArray:numbersArray[i] color:colorArray[i] dataDescribe:@"111"];
             [itemArray addObject:item];
         }
-        XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0  graphMode:MutiLineGraph];
+        XLineChart *lineChart = [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0  graphMode:MutiLineGraph];
         lineChart.colorMode = Custom;
         lineChart.lineMode = CurveLine;
         [self.contentView addSubview:lineChart];

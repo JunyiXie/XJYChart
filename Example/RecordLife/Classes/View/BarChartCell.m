@@ -7,9 +7,9 @@
 //
 
 #import "BarChartCell.h"
-#import "XJYChart.h"
+#import "XChart.h"
 
-@interface BarChartCell()<XXBarChartDelegate>
+@interface BarChartCell()<XBarChartDelegate>
 
 @end
 
@@ -30,62 +30,62 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
 
         NSMutableArray *itemArray = [[NSMutableArray alloc] init];
-        XJYBarItem *item1 = [[XJYBarItem alloc] initWithDataNumber:@(50.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+        XBarItem *item1 = [[XBarItem alloc] initWithDataNumber:@(50.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
         [itemArray addObject:item1];
-        XJYBarItem *item2 = [[XJYBarItem alloc] initWithDataNumber:@(90.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+        XBarItem *item2 = [[XBarItem alloc] initWithDataNumber:@(90.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
         [itemArray addObject:item2];
-        XJYBarItem *item3 = [[XJYBarItem alloc] initWithDataNumber:@(80.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+        XBarItem *item3 = [[XBarItem alloc] initWithDataNumber:@(80.99) color:[UIColor redColor] dataDescribe:@"Win8"];
         [itemArray addObject:item3];
-        XJYBarItem *item4 = [[XJYBarItem alloc] initWithDataNumber:@(110.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
+        XBarItem *item4 = [[XBarItem alloc] initWithDataNumber:@(110.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
         [itemArray addObject:item4];
-        XJYBarItem *item5 = [[XJYBarItem alloc] initWithDataNumber:@(92.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
+        XBarItem *item5 = [[XBarItem alloc] initWithDataNumber:@(92.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
         [itemArray addObject:item5];
         
-        XJYBarItem *item6 = [[XJYBarItem alloc] initWithDataNumber:@(74.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+        XBarItem *item6 = [[XBarItem alloc] initWithDataNumber:@(74.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
         [itemArray addObject:item6];
-        XJYBarItem *item7 = [[XJYBarItem alloc] initWithDataNumber:@(50.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+        XBarItem *item7 = [[XBarItem alloc] initWithDataNumber:@(50.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
         [itemArray addObject:item7];
-        XJYBarItem *item8 = [[XJYBarItem alloc] initWithDataNumber:@(44.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+        XBarItem *item8 = [[XBarItem alloc] initWithDataNumber:@(44.99) color:[UIColor redColor] dataDescribe:@"Win8"];
         [itemArray addObject:item8];
-        XJYBarItem *item9 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
+        XBarItem *item9 = [[XBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
         [itemArray addObject:item9];
-        XJYBarItem *item10 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
+        XBarItem *item10 = [[XBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
         [itemArray addObject:item10];
 //
-        XJYBarItem *item11 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+        XBarItem *item11 = [[XBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
         [itemArray addObject:item11];
-        XJYBarItem *item12 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+        XBarItem *item12 = [[XBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
         [itemArray addObject:item12];
-        XJYBarItem *item13 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+        XBarItem *item13 = [[XBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
         [itemArray addObject:item13];
-        XJYBarItem *item14 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
+        XBarItem *item14 = [[XBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
         [itemArray addObject:item14];
-        XJYBarItem *item15 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
+        XBarItem *item15 = [[XBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
         [itemArray addObject:item15];
         
-        XJYBarItem *item16 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+        XBarItem *item16 = [[XBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
         [itemArray addObject:item16];
-        XJYBarItem *item17 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+        XBarItem *item17 = [[XBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
         [itemArray addObject:item17];
-        XJYBarItem *item18 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+        XBarItem *item18 = [[XBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
         [itemArray addObject:item18];
-        XJYBarItem *item19 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
+        XBarItem *item19 = [[XBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
         [itemArray addObject:item19];
-        XJYBarItem *item20 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
+        XBarItem *item20 = [[XBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
         [itemArray addObject:item20];
 
-        XJYBarItem *item21 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
+        XBarItem *item21 = [[XBarItem alloc] initWithDataNumber:@(0.93) color:[UIColor greenColor] dataDescribe:@"MAC Os"];
         [itemArray addObject:item21];
-        XJYBarItem *item22 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
+        XBarItem *item22 = [[XBarItem alloc] initWithDataNumber:@(7.04) color:[UIColor greenColor] dataDescribe:@"Win10"];
         [itemArray addObject:item22];
-        XJYBarItem *item23 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
+        XBarItem *item23 = [[XBarItem alloc] initWithDataNumber:@(4.99) color:[UIColor redColor] dataDescribe:@"Win8"];
         [itemArray addObject:item23];
-        XJYBarItem *item24 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
+        XBarItem *item24 = [[XBarItem alloc] initWithDataNumber:@(28.48) color:[UIColor greenColor] dataDescribe:@"WinXP"];
         [itemArray addObject:item24];
-        XJYBarItem *item25 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
+        XBarItem *item25 = [[XBarItem alloc] initWithDataNumber:@(52.91) color:[UIColor greenColor] dataDescribe:@"Win7"];
         [itemArray addObject:item25];
 
-        XXBarChart *barChart = [[XXBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@150 bottomNumber:@(0)];
+        XBarChart *barChart = [[XBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@150 bottomNumber:@(0)];
         barChart.barChartDeleagte = self;
         [self.contentView addSubview:barChart];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -94,9 +94,9 @@
 }
 
 
-#pragma mark XXBarChartDelegate
+#pragma mark XBarChartDelegate
 
 - (void)touchBarAtIdx:(NSUInteger)idx {
-    NSLog(@"XXBarChartDelegate touch Bat At idx %lu",idx);
+    NSLog(@"XBarChartDelegate touch Bat At idx %lu",idx);
 }
 @end

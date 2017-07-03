@@ -7,12 +7,12 @@
 //
 
 #import "XLineChartView.h"
-#import "AbscissaView.h"
+#import "XAbscissaView.h"
 #import "XLineContainerView.h"
 #import "XAreaLineContainerView.h"
 #import "XStackAreaLineContainerView.h"
 #import "UIGestureRecognizer+XXGes.h"
-#import "XJYColor.h"
+#import "XColor.h"
 #define PartWidth 40
 #define AbscissaHeight 30
 
@@ -20,7 +20,7 @@ NSString *KVOKeyColorMode = @"colorMode";
 NSString *KVOKeyLineGraphMode = @"lineMode";
 
 @interface XLineChartView ()
-@property (nonatomic, strong) AbscissaView *abscissaView;
+@property (nonatomic, strong) XAbscissaView *XAbscissaView;
 
 @property (nonatomic, strong) UIView *contanierView;
 @property (nonatomic, strong) XLineContainerView *lineContainerView;
@@ -33,7 +33,7 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
 
 
 
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDescribeArray:(NSMutableArray<NSString *> *)dataDescribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  graphMode:(XXLineGraphMode)graphMode {
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray dataDescribeArray:(NSMutableArray<NSString *> *)dataDescribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  graphMode:(XXLineGraphMode)graphMode {
     if (self = [super initWithFrame:frame]) {
         self.top = topNumbser;
         self.bottom = bottomNumber;
@@ -45,7 +45,7 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
         // default line graph mode
         self.lineGraphMode = graphMode;
         
-        [self addSubview:self.abscissaView];
+        [self addSubview:self.XAbscissaView];
         self.contanierView = [self getLineChartContainerViewWithGraphMode:self.lineGraphMode];
         [self addSubview:self.contanierView];
         
@@ -74,8 +74,8 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
 }
 
 //计算是否需要滚动
-- (CGSize)computeSrollViewCententSizeFromItemArray:(NSMutableArray<XXLineChartItem *> *)itemArray {
-    XXLineChartItem *item = itemArray[0];
+- (CGSize)computeSrollViewCententSizeFromItemArray:(NSMutableArray<XLineChartItem *> *)itemArray {
+    XLineChartItem *item = itemArray[0];
     if (item.numberArray.count <= 8) {
         return CGSizeMake(self.frame.size.width, self.frame.size.height);
     } else {
@@ -89,12 +89,12 @@ NSString *KVOKeyLineGraphMode = @"lineMode";
 
 
 #pragma mark Get
-- (AbscissaView *)abscissaView {
-    if (!_abscissaView) {
-        _abscissaView = [[AbscissaView alloc] initWithFrame:CGRectMake(0, self.contentSize.height - AbscissaHeight, self.contentSize.width, AbscissaHeight)
+- (XAbscissaView *)XAbscissaView {
+    if (!_XAbscissaView) {
+        _XAbscissaView = [[XAbscissaView alloc] initWithFrame:CGRectMake(0, self.contentSize.height - AbscissaHeight, self.contentSize.width, AbscissaHeight)
                                               dataItemArray:self.dataDescribeArray];
     }
-    return _abscissaView;
+    return _XAbscissaView;
 }
 
 #pragma mark Containers

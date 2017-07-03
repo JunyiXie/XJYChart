@@ -8,13 +8,13 @@
 
 #import "XPositiveNegativeBarContainerView.h"
 #import "XBarContainerView.h"
-#import "XJYAuxiliaryCalculationHelper.h"
-#import "AbscissaView.h"
-#import "XJYColor.h"
+#import "XAuxiliaryCalculationHelper.h"
+#import "XAbscissaView.h"
+#import "XColor.h"
 #import "CAShapeLayer+frameCategory.h"
-#import "XXAnimationLabel.h"
+#import "XAnimationLabel.h"
 #import "CALayer+XXLayer.h"
-#import "XJYAnimation.h"
+#import "XAnimation.h"
 
 
 #define GradientFillColor1 [UIColor colorWithRed:117/255.0 green:184/255.0 blue:245/255.0 alpha:1].CGColor
@@ -45,7 +45,7 @@ typedef enum : NSUInteger {
 
 @implementation XPositiveNegativeBarContainerView
 
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  {
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
         self.coverLayer = [CALayer layer];
@@ -98,7 +98,7 @@ typedef enum : NSUInteger {
     [self.dataNumberArray removeAllObjects];
     [self.dataDescribeArray removeAllObjects];
     
-    [self.dataItemArray enumerateObjectsUsingBlock:^(XJYBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.dataItemArray enumerateObjectsUsingBlock:^(XBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self.colorArray addObject:obj.color];
         [self.dataNumberArray addObject:obj.dataNumber];
         [self.dataDescribeArray addObject:obj.dataDescribe];
@@ -108,8 +108,8 @@ typedef enum : NSUInteger {
     CGFloat width = (self.bounds.size.width / self.dataItemArray.count) / 3 * 2;
     //每个条的x坐标
     NSMutableArray<NSNumber *> *xArray = [[NSMutableArray alloc] init];
-    [self.dataItemArray enumerateObjectsUsingBlock:^(XJYBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        CGFloat x = self.bounds.size.width * [[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:idx count:self.dataItemArray.count];
+    [self.dataItemArray enumerateObjectsUsingBlock:^(XBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGFloat x = self.bounds.size.width * [[XAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:idx count:self.dataItemArray.count];
         [xArray addObject:@(x)];
     }];
     
@@ -134,16 +134,16 @@ typedef enum : NSUInteger {
     //fillHeightArray 是高度的绝对值
     //每个条根据数值大小填充的高度
     NSMutableArray<NSNumber *> *fillHeightArray = [[NSMutableArray alloc] init];
-    [self.dataItemArray enumerateObjectsUsingBlock:^(XJYBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.dataItemArray enumerateObjectsUsingBlock:^(XBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         // 正负判断
         if (self.dataNumberArray[idx].doubleValue >= 0) {
             CGFloat topH = self.top.doubleValue*(self.bounds.size.height)/(self.top.doubleValue - self.bottom.doubleValue);
-            CGFloat height = fabs([[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateThePositiveNegativeProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:self.dataNumberArray[idx].doubleValue] * topH);
+            CGFloat height = fabs([[XAuxiliaryCalculationHelper shareCalculationHelper] calculateThePositiveNegativeProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:self.dataNumberArray[idx].doubleValue] * topH);
             [fillHeightArray addObject:@(height)];
         } else {
             
             CGFloat bottomH = self.bottom.doubleValue*(self.bounds.size.height)/(self.top.doubleValue - self.bottom.doubleValue);
-            CGFloat height = fabs([[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateThePositiveNegativeProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:self.dataNumberArray[idx].doubleValue] * bottomH);
+            CGFloat height = fabs([[XAuxiliaryCalculationHelper shareCalculationHelper] calculateThePositiveNegativeProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:self.dataNumberArray[idx].doubleValue] * bottomH);
             [fillHeightArray addObject:@(height)];
         }
     }];
@@ -181,7 +181,7 @@ typedef enum : NSUInteger {
         
 
         CGPoint tempCenter;
-        XXAnimationLabel *topLabel;
+        XAnimationLabel *topLabel;
         
         if (self.dataNumberArray[idx].doubleValue >= 0) {
             topLabel = [self topLabelWithRect:CGRectMake(fillRect.origin.x, fillRect.origin.y - 15, fillRect.size.width, 15) fillColor:[UIColor clearColor] text:self.dataNumberArray[idx].stringValue];
@@ -332,11 +332,11 @@ typedef enum : NSUInteger {
     return rectLayer;
 }
 
-- (XXAnimationLabel *)topLabelWithRect:(CGRect)rect fillColor:(UIColor *)color text:(NSString *)text {
+- (XAnimationLabel *)topLabelWithRect:(CGRect)rect fillColor:(UIColor *)color text:(NSString *)text {
     
     CGFloat number = text.floatValue;
     NSString *labelText = [NSString stringWithFormat:@"%.0f", number];
-    XXAnimationLabel *topLabel = [[XXAnimationLabel alloc] initWithFrame:rect];
+    XAnimationLabel *topLabel = [[XAnimationLabel alloc] initWithFrame:rect];
     topLabel.backgroundColor = color;
     [topLabel setTextAlignment:NSTextAlignmentCenter];
     topLabel.text = labelText;
@@ -400,7 +400,7 @@ typedef enum : NSUInteger {
             self.coverLayer.selectIdxNumber = @(idx);
             
             // addAnimation
-            [self.coverLayer addAnimation:[XJYAnimation getBarChartSpringAnimationWithLayer:self.coverLayer] forKey:@"position.y"];
+            [self.coverLayer addAnimation:[XAnimation getBarChartSpringAnimationWithLayer:self.coverLayer] forKey:@"position.y"];
             
             [shapeLayer addSublayer:self.coverLayer];
             return ;
@@ -435,7 +435,7 @@ typedef enum : NSUInteger {
             self.coverLayer.selectIdxNumber = @(idx);
             
             // addAnimation
-            [self.coverLayer addAnimation:[XJYAnimation getBarChartSpringAnimationWithLayer:self.coverLayer] forKey:@"position.y"];
+            [self.coverLayer addAnimation:[XAnimation getBarChartSpringAnimationWithLayer:self.coverLayer] forKey:@"position.y"];
             
             [subShapeLayer addSublayer:self.coverLayer];
             return ;

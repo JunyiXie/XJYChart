@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"XJYChart";
+    self.title = @"XChart";
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addSubview:self.tableView];
     self.navigationItem.leftBarButtonItem = self.leftBarItem;

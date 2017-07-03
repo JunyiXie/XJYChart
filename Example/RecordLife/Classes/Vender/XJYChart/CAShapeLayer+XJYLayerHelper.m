@@ -40,11 +40,11 @@
         if (lineMode == BrokenLine) {
             [line addLineToPoint:point2];
         } else if (lineMode == CurveLine) {
-            CGPoint midPoint = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] midPointBetweenPoint1:point1 andPoint2:point2];
+            CGPoint midPoint = [[XAuxiliaryCalculationHelper shareCalculationHelper] midPointBetweenPoint1:point1 andPoint2:point2];
             [line addQuadCurveToPoint:midPoint
-                         controlPoint:[[XJYAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point1]];
+                         controlPoint:[[XAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point1]];
             [line addQuadCurveToPoint:point2
-                         controlPoint:[[XJYAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point2]];
+                         controlPoint:[[XAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point2]];
         } else {
             [line addLineToPoint:point2];
         }

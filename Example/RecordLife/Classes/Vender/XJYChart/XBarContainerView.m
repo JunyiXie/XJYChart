@@ -7,14 +7,14 @@
 //
 
 #import "XBarContainerView.h"
-#import "XJYAuxiliaryCalculationHelper.h"
-#import "AbscissaView.h"
-#import "XJYColor.h"
+#import "XAuxiliaryCalculationHelper.h"
+#import "XAbscissaView.h"
+#import "XColor.h"
 #import "CAShapeLayer+frameCategory.h"
-#import "XXAnimationLabel.h"
+#import "XAnimationLabel.h"
 #import "CALayer+XXLayer.h"
-#import "XJYAnimation.h"
-#import "XJYNotificationBridge.h"
+#import "XAnimation.h"
+#import "XNotificationBridge.h"
 
 #pragma mark - Macro
 
@@ -37,7 +37,7 @@
 @implementation XBarContainerView
 
 
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  {
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber  {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor whiteColor];
         
@@ -84,7 +84,7 @@
 - (void)strokeChart {
     
     // data filter
-    [self.dataItemArray enumerateObjectsUsingBlock:^(XJYBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.dataItemArray enumerateObjectsUsingBlock:^(XBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self.colorArray addObject:obj.color];
         [self.dataNumberArray addObject:obj.dataNumber];
         [self.dataDescribeArray addObject:obj.dataDescribe];
@@ -100,8 +100,8 @@
 
     //fill layer
     NSMutableArray<NSNumber *> *fillHeightArray = [[NSMutableArray alloc] init];
-    [self.dataItemArray enumerateObjectsUsingBlock:^(XJYBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        CGFloat height = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfHeightByTop:self.top.doubleValue
+    [self.dataItemArray enumerateObjectsUsingBlock:^(XBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGFloat height = [[XAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfHeightByTop:self.top.doubleValue
                                                                                                               bottom:self.bottom.doubleValue
                                                                                                               height:self.dataNumberArray[idx].doubleValue] * self.bounds.size.height;
         [fillHeightArray addObject:@(height)];
@@ -120,7 +120,7 @@
         CAShapeLayer *fillRectShapeLayer = [self rectAnimationLayerWithBounds:fillRect
                                                                     fillColor:self.dataItemArray[idx].color];
         // animation number label
-        XXAnimationLabel *topLabel = [self topLabelWithRect:CGRectMake(fillRect.origin.x, fillRect.origin.y - 15, fillRect.size.width, 15)
+        XAnimationLabel *topLabel = [self topLabelWithRect:CGRectMake(fillRect.origin.x, fillRect.origin.y - 15, fillRect.size.width, 15)
                                                   fillColor:[UIColor clearColor]
                                                        text:self.dataNumberArray[idx].stringValue];
         
@@ -153,8 +153,8 @@
 - (NSMutableArray *)getxArray {
     // x coordinates
     NSMutableArray<NSNumber *> *xArray = [[NSMutableArray alloc] init];
-    [self.dataItemArray enumerateObjectsUsingBlock:^(XJYBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        CGFloat x = self.bounds.size.width * [[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:idx
+    [self.dataItemArray enumerateObjectsUsingBlock:^(XBarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGFloat x = self.bounds.size.width * [[XAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:idx
                                                                                                                                   count:self.dataItemArray.count];
         [xArray addObject:@(x)];
     }];
@@ -227,10 +227,10 @@
     return rectLayer;
 }
 
-- (XXAnimationLabel *)topLabelWithRect:(CGRect)rect fillColor:(UIColor *)color text:(NSString *)text {
+- (XAnimationLabel *)topLabelWithRect:(CGRect)rect fillColor:(UIColor *)color text:(NSString *)text {
     CGFloat number = text.floatValue;
     NSString *labelText = [NSString stringWithFormat:@"%.1f", number];
-    XXAnimationLabel *topLabel = [[XXAnimationLabel alloc] initWithFrame:rect];
+    XAnimationLabel *topLabel = [[XAnimationLabel alloc] initWithFrame:rect];
     topLabel.backgroundColor = color;
     [topLabel setTextAlignment:NSTextAlignmentCenter];
     topLabel.text = labelText;
@@ -245,8 +245,8 @@
     gradientLayer.colors = @[(__bridge id)GradientFillColor1,(__bridge id)GradientFillColor2];
     gradientLayer.startPoint = CGPointMake(0.5, 0);
     gradientLayer.endPoint = CGPointMake(0.5, 1);
-//    [gradientLayer addAnimation:[XJYAnimation getBarChartSpringAnimationWithLayer:gradientLayer] forKey:@""];
-    [[XJYAnimation shareInstance] addLSSpringFrameAnimation:gradientLayer];
+//    [gradientLayer addAnimation:[XAnimation getBarChartSpringAnimationWithLayer:gradientLayer] forKey:@""];
+    [[XAnimation shareInstance] addLSSpringFrameAnimation:gradientLayer];
     return gradientLayer;
 }
 
@@ -278,9 +278,9 @@
 //            NSLog(@"点击了 %lu bar  boolvalue", (unsigned long)idx + 1);
 //            
 //            // Notification + Deleagte To CallBack
-//            [[NSNotificationCenter defaultCenter] postNotificationName:[XJYNotificationBridge shareXJYNotificationBridge].TouchBarNotification
+//            [[NSNotificationCenter defaultCenter] postNotificationName:[XNotificationBridge shareXNotificationBridge].TouchBarNotification
 //                                                                object:nil
-//                                                              userInfo:@{[XJYNotificationBridge shareXJYNotificationBridge].BarIdxNumberKey:@(idx)}];
+//                                                              userInfo:@{[XNotificationBridge shareXNotificationBridge].BarIdxNumberKey:@(idx)}];
 //            if (shapeLayer.selectStatusNumber.boolValue == TRUE) {
 //                shapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
 //                [self.coverLayer removeFromSuperlayer];
@@ -313,9 +313,9 @@
             [self.coverLayer removeFromSuperlayer];
             
             // Notification + Deleagte To CallBack
-            [[NSNotificationCenter defaultCenter] postNotificationName:[XJYNotificationBridge shareXJYNotificationBridge].TouchBarNotification
+            [[NSNotificationCenter defaultCenter] postNotificationName:[XNotificationBridge shareXNotificationBridge].TouchBarNotification
                                                                 object:nil
-                                                              userInfo:@{[XJYNotificationBridge shareXJYNotificationBridge].BarIdxNumberKey:@(idx)}];
+                                                              userInfo:@{[XNotificationBridge shareXNotificationBridge].BarIdxNumberKey:@(idx)}];
             CAShapeLayer *subShapeLayer = (CAShapeLayer *)self.layerArray[idx];
             if (subShapeLayer.selectStatusNumber.boolValue == YES) {
                 subShapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];

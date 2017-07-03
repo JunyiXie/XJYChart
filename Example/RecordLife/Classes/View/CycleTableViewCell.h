@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XJYCycleView.h"
+#import "XCycleView.h"
 #import "XJYTapCycleView.h"
 
 
@@ -16,7 +16,7 @@ static NSString *kCycleTableViewCell = @"CycleTableViewCell";
 @interface CycleTableViewCell : UITableViewCell
 
 
-@property (strong, nonatomic) IBOutlet XJYCycleView *cycleView;
+@property (strong, nonatomic) IBOutlet XCycleView *cycleView;
 @property (strong, nonatomic) IBOutlet UILabel *moneyLabel;
 
 //@property (strong, nonatomic) IBOutlet XJYTapCycleView *tap1;

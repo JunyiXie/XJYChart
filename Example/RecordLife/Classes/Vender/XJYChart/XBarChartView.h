@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XJYBarItem.h"
+#import "XBarItem.h"
 
 @interface XBarChartView : UIScrollView
 
@@ -20,12 +20,12 @@
  @param bottomNumber buttom
  @return instancetype
  */
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XJYBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
 
 /**
  dataItemArray
  */
-@property (nonatomic, strong) NSMutableArray<XJYBarItem *> *dataItemArray;
+@property (nonatomic, strong) NSMutableArray<XBarItem *> *dataItemArray;
 /**
  纵坐标最高点
  */

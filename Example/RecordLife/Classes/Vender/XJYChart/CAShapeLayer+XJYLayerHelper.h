@@ -8,8 +8,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
-#import "XXEnumHeader.h"
-#import "XJYAuxiliaryCalculationHelper.h"
+#import "XEnumHeader.h"
+#import "XAuxiliaryCalculationHelper.h"
 
 
 @interface CAShapeLayer (XJYLayerHelper)

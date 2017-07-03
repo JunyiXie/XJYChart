@@ -7,11 +7,11 @@
 //
 
 #import "XAreaLineContainerView.h"
-#import "XJYAuxiliaryCalculationHelper.h"
-#import "XJYColor.h"
+#import "XAuxiliaryCalculationHelper.h"
+#import "XColor.h"
 #import "CAShapeLayer+frameCategory.h"
-#import "XXAnimationLabel.h"
-#import "XJYAnimation.h"
+#import "XAnimationLabel.h"
+#import "XAnimation.h"
 
 #pragma mark - Macro
 
@@ -28,7 +28,7 @@
  All lines points
  */
 @property (nonatomic, strong) NSMutableArray<NSValue *> *points;
-@property (nonatomic, strong) NSMutableArray<XXAnimationLabel *> *labelArray;
+@property (nonatomic, strong) NSMutableArray<XAnimationLabel *> *labelArray;
 @property (nonatomic, strong) NSMutableArray<NSValue *> *areaPoints;
 
 @end
@@ -36,7 +36,7 @@
 
 @implementation XAreaLineContainerView
 
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber {
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = XJYBlue;
         self.coverLayer = [CAShapeLayer layer];
@@ -104,7 +104,7 @@
     [self.layer.sublayers enumerateObjectsUsingBlock:^(CALayer * _Nonnull sublayer, NSUInteger idx, BOOL * _Nonnull stop) {
         [sublayer removeFromSuperlayer];
     }];
-    [self.labelArray enumerateObjectsUsingBlock:^(XXAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.labelArray enumerateObjectsUsingBlock:^(XAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
     
@@ -143,7 +143,7 @@
 - (NSMutableArray<NSValue *> *)getDrawablePoints {
 
     NSMutableArray *linePointArray = [NSMutableArray new];
-    XXLineChartItem *item = self.dataItemArray[0];
+    XLineChartItem *item = self.dataItemArray[0];
     
     // Get Points
     NSMutableArray *numberArray = item.numberArray;
@@ -169,11 +169,11 @@
             [line moveToPoint:point1];
         }
         if (self.lineMode == CurveLine) {
-            CGPoint midPoint = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] midPointBetweenPoint1:point1 andPoint2:point2];
+            CGPoint midPoint = [[XAuxiliaryCalculationHelper shareCalculationHelper] midPointBetweenPoint1:point1 andPoint2:point2];
             [line addQuadCurveToPoint:midPoint
-                         controlPoint:[[XJYAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point1]];
+                         controlPoint:[[XAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point1]];
             [line addQuadCurveToPoint:point2
-                         controlPoint:[[XJYAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point2]];
+                         controlPoint:[[XAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point2]];
         } else {
             [line addLineToPoint:point2];
         }
@@ -208,12 +208,12 @@
 #pragma mark - Help Methods
 // Calculate -> Point
 - (CGPoint)calculateDrawablePointWithNumber:(NSNumber *)number idx:(NSUInteger)idx numberArray:(NSMutableArray *)numberArray bounds:(CGRect)bounds {
-    CGFloat percentageH =[[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:number.doubleValue];
-    CGFloat percentageW = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:(idx) count:numberArray.count];
+    CGFloat percentageH =[[XAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:number.doubleValue];
+    CGFloat percentageW = [[XAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:(idx) count:numberArray.count];
     CGFloat pointY = percentageH * bounds.size.height;
     CGFloat pointX = percentageW * bounds.size.width;
     CGPoint point = CGPointMake(pointX, pointY);
-    CGPoint rightCoordinatePoint = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] changeCoordinateSystem:point withViewHeight:self.frame.size.height];
+    CGPoint rightCoordinatePoint = [[XAuxiliaryCalculationHelper shareCalculationHelper] changeCoordinateSystem:point withViewHeight:self.frame.size.height];
     return rightCoordinatePoint;
 }
 

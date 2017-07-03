@@ -7,7 +7,7 @@
 //
 
 #import "PositiveNegativeBarChartCell.h"
-#import "XJYChart.h"
+#import "XChart.h"
 
 @implementation PositiveNegativeBarChartCell
 
@@ -26,62 +26,62 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         
         NSMutableArray *itemArray = [[NSMutableArray alloc] init];
-        XJYBarItem *item1 = [[XJYBarItem alloc] initWithDataNumber:@(-80.93) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item1 = [[XBarItem alloc] initWithDataNumber:@(-80.93) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item1];
-        XJYBarItem *item2 = [[XJYBarItem alloc] initWithDataNumber:@(-107.04) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item2 = [[XBarItem alloc] initWithDataNumber:@(-107.04) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item2];
-        XJYBarItem *item3 = [[XJYBarItem alloc] initWithDataNumber:@(77.99) color:XJYDarkBlue  dataDescribe:@"test"];
+        XBarItem *item3 = [[XBarItem alloc] initWithDataNumber:@(77.99) color:XJYDarkBlue  dataDescribe:@"test"];
         [itemArray addObject:item3];
-        XJYBarItem *item4 = [[XJYBarItem alloc] initWithDataNumber:@(57.48) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item4 = [[XBarItem alloc] initWithDataNumber:@(57.48) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item4];
-        XJYBarItem *item5 = [[XJYBarItem alloc] initWithDataNumber:@(-89.91) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item5 = [[XBarItem alloc] initWithDataNumber:@(-89.91) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item5];
         
-        XJYBarItem *item6 = [[XJYBarItem alloc] initWithDataNumber:@(66.93) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item6 = [[XBarItem alloc] initWithDataNumber:@(66.93) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item6];
-        XJYBarItem *item7 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item7 = [[XBarItem alloc] initWithDataNumber:@(7.04) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item7];
-        XJYBarItem *item8 = [[XJYBarItem alloc] initWithDataNumber:@(-77.99) color:XJYDarkBlue  dataDescribe:@"test"];
+        XBarItem *item8 = [[XBarItem alloc] initWithDataNumber:@(-77.99) color:XJYDarkBlue  dataDescribe:@"test"];
         [itemArray addObject:item8];
-        XJYBarItem *item9 = [[XJYBarItem alloc] initWithDataNumber:@(-28.48) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item9 = [[XBarItem alloc] initWithDataNumber:@(-28.48) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item9];
-        XJYBarItem *item10 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item10 = [[XBarItem alloc] initWithDataNumber:@(52.91) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item10];
         //
-        XJYBarItem *item11 = [[XJYBarItem alloc] initWithDataNumber:@(-0.93) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item11 = [[XBarItem alloc] initWithDataNumber:@(-0.93) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item11];
-        XJYBarItem *item12 = [[XJYBarItem alloc] initWithDataNumber:@(-7.04) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item12 = [[XBarItem alloc] initWithDataNumber:@(-7.04) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item12];
-        XJYBarItem *item13 = [[XJYBarItem alloc] initWithDataNumber:@(44.99) color:XJYDarkBlue  dataDescribe:@"test"];
+        XBarItem *item13 = [[XBarItem alloc] initWithDataNumber:@(44.99) color:XJYDarkBlue  dataDescribe:@"test"];
         [itemArray addObject:item13];
-        XJYBarItem *item14 = [[XJYBarItem alloc] initWithDataNumber:@(28.48) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item14 = [[XBarItem alloc] initWithDataNumber:@(28.48) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item14];
-        XJYBarItem *item15 = [[XJYBarItem alloc] initWithDataNumber:@(-52.91) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item15 = [[XBarItem alloc] initWithDataNumber:@(-52.91) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item15];
         
-        XJYBarItem *item16 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item16 = [[XBarItem alloc] initWithDataNumber:@(0.93) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item16];
-        XJYBarItem *item17 = [[XJYBarItem alloc] initWithDataNumber:@(77.04) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item17 = [[XBarItem alloc] initWithDataNumber:@(77.04) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item17];
-        XJYBarItem *item18 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:XJYDarkBlue  dataDescribe:@"test"];
+        XBarItem *item18 = [[XBarItem alloc] initWithDataNumber:@(4.99) color:XJYDarkBlue  dataDescribe:@"test"];
         [itemArray addObject:item18];
-        XJYBarItem *item19 = [[XJYBarItem alloc] initWithDataNumber:@(-28.48) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item19 = [[XBarItem alloc] initWithDataNumber:@(-28.48) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item19];
-        XJYBarItem *item20 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item20 = [[XBarItem alloc] initWithDataNumber:@(52.91) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item20];
         
-        XJYBarItem *item21 = [[XJYBarItem alloc] initWithDataNumber:@(0.93) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item21 = [[XBarItem alloc] initWithDataNumber:@(0.93) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item21];
-        XJYBarItem *item22 = [[XJYBarItem alloc] initWithDataNumber:@(7.04) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item22 = [[XBarItem alloc] initWithDataNumber:@(7.04) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item22];
-        XJYBarItem *item23 = [[XJYBarItem alloc] initWithDataNumber:@(4.99) color:XJYDarkBlue  dataDescribe:@"test"];
+        XBarItem *item23 = [[XBarItem alloc] initWithDataNumber:@(4.99) color:XJYDarkBlue  dataDescribe:@"test"];
         [itemArray addObject:item23];
-        XJYBarItem *item24 = [[XJYBarItem alloc] initWithDataNumber:@(44.48) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item24 = [[XBarItem alloc] initWithDataNumber:@(44.48) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item24];
-        XJYBarItem *item25 = [[XJYBarItem alloc] initWithDataNumber:@(52.91) color:XJYDarkBlue dataDescribe:@"test"];
+        XBarItem *item25 = [[XBarItem alloc] initWithDataNumber:@(52.91) color:XJYDarkBlue dataDescribe:@"test"];
         [itemArray addObject:item25];
         
-        XXPositiveNegativeBarChart *barChart = [[XXPositiveNegativeBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@(-170)];
+        XPositiveNegativeBarChart *barChart = [[XPositiveNegativeBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@(-170)];
         
         [self.contentView addSubview:barChart];
         self.selectionStyle = UITableViewCellSelectionStyleNone;

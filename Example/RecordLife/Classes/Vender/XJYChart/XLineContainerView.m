@@ -8,11 +8,11 @@
 //MAC OS  和 iOS 的坐标系问题
 
 #import "XLineContainerView.h"
-#import "XJYAuxiliaryCalculationHelper.h"
-#import "XJYColor.h"
+#import "XAuxiliaryCalculationHelper.h"
+#import "XColor.h"
 #import "CAShapeLayer+frameCategory.h"
-#import "XXAnimationLabel.h"
-#import "XJYAnimation.h"
+#import "XAnimationLabel.h"
+#import "XAnimation.h"
 #pragma mark - Macro
 
 #define LineWidth 3.0
@@ -27,14 +27,14 @@
  */
 @property (nonatomic, strong) NSMutableArray<NSMutableArray<NSValue *> *> *pointsArrays;
 @property (nonatomic, strong) NSMutableArray<CAShapeLayer *> *shapeLayerArray;
-@property (nonatomic, strong) NSMutableArray<XXAnimationLabel *> *labelArray;
+@property (nonatomic, strong) NSMutableArray<XAnimationLabel *> *labelArray;
 
 @end
 
 @implementation XLineContainerView
 
 
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber {
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber {
     if (self = [super initWithFrame:frame]) {
         
         self.backgroundColor = [UIColor whiteColor];
@@ -109,7 +109,7 @@
     [self.shapeLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperlayer];
     }];
-    [self.labelArray enumerateObjectsUsingBlock:^(XXAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.labelArray enumerateObjectsUsingBlock:^(XAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
 
@@ -124,8 +124,8 @@
     
     self.pointsArrays = [self getPointsArrays];
     [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIColor *pointColor = [[XJYColor shareXJYColor] randomColorInColorArray];
-        UIColor *wireframeColor = [[XJYColor shareXJYColor] randomColorInColorArray];
+        UIColor *pointColor = [[XColor shareXColor] randomColorInColorArray];
+        UIColor *wireframeColor = [[XColor shareXColor] randomColorInColorArray];
         [obj enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             //画点
             NSValue *pointValue = obj;
@@ -141,7 +141,7 @@
 - (void)strokeLineChart {
     [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (self.colorMode == Random) {
-            [self.shapeLayerArray addObject:[self lineShapeLayerWithPoints:obj colors:[[XJYColor shareXJYColor] randomColorInColorArray] lineMode:self.lineMode]];
+            [self.shapeLayerArray addObject:[self lineShapeLayerWithPoints:obj colors:[[XColor shareXColor] randomColorInColorArray] lineMode:self.lineMode]];
         } else {
             [self.shapeLayerArray addObject:[self lineShapeLayerWithPoints:obj colors:self.dataItemArray[idx].color lineMode:self.lineMode]];
         }
@@ -161,7 +161,7 @@
     } else {
         NSMutableArray *pointsArrays = [NSMutableArray new];
         // Get Points
-        [self.dataItemArray enumerateObjectsUsingBlock:^(XXLineChartItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.dataItemArray enumerateObjectsUsingBlock:^(XLineChartItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSMutableArray *numberArray = obj.numberArray;
             NSMutableArray *linePointArray = [NSMutableArray new];
             [obj.numberArray enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -185,12 +185,12 @@
  */
 // Calculate -> Point
 - (CGPoint)calculateDrawablePointWithNumber:(NSNumber *)number idx:(NSUInteger)idx count:(NSUInteger)count bounds:(CGRect)bounds {
-    CGFloat percentageH =[[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:number.doubleValue];
-    CGFloat percentageW = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:(idx) count:count];
+    CGFloat percentageH =[[XAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfHeightByTop:self.top.doubleValue bottom:self.bottom.doubleValue height:number.doubleValue];
+    CGFloat percentageW = [[XAuxiliaryCalculationHelper shareCalculationHelper] calculateTheProportionOfWidthByIdx:(idx) count:count];
     CGFloat pointY = percentageH * bounds.size.height;
     CGFloat pointX = percentageW * bounds.size.width;
     CGPoint point = CGPointMake(pointX, pointY);
-    CGPoint rightCoordinatePoint = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] changeCoordinateSystem:point withViewHeight:self.frame.size.height];
+    CGPoint rightCoordinatePoint = [[XAuxiliaryCalculationHelper shareCalculationHelper] changeCoordinateSystem:point withViewHeight:self.frame.size.height];
     return rightCoordinatePoint;
 }
 
@@ -214,11 +214,11 @@
         if (lineMode == BrokenLine) {
             [line addLineToPoint:point2];
         } else if (lineMode == CurveLine) {
-            CGPoint midPoint = [[XJYAuxiliaryCalculationHelper shareCalculationHelper] midPointBetweenPoint1:point1 andPoint2:point2];
+            CGPoint midPoint = [[XAuxiliaryCalculationHelper shareCalculationHelper] midPointBetweenPoint1:point1 andPoint2:point2];
             [line addQuadCurveToPoint:midPoint
-                         controlPoint:[[XJYAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point1]];
+                         controlPoint:[[XAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point1]];
             [line addQuadCurveToPoint:point2
-                         controlPoint:[[XJYAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point2]];
+                         controlPoint:[[XAuxiliaryCalculationHelper shareCalculationHelper] controlPointBetweenPoint1:midPoint andPoint2:point2]];
         } else {
             [line addLineToPoint:point2];
         }
@@ -272,7 +272,7 @@
     chartLine.strokeColor = color.CGColor;
     chartLine.fillColor = [UIColor clearColor].CGColor;
     
-    CASpringAnimation *springAnimation = [XJYAnimation getLineChartSpringAnimationWithLayer:chartLine];
+    CASpringAnimation *springAnimation = [XAnimation getLineChartSpringAnimationWithLayer:chartLine];
     [chartLine addAnimation:springAnimation forKey:@"position.y"];
     
     return chartLine;
@@ -311,14 +311,14 @@
         //找到这一段上的点s
         NSMutableArray<NSValue *> *points = segementPointsArrays[areaIdx];
         NSUInteger shapeLayerIndex = idx;
-        if ([[XJYAuxiliaryCalculationHelper shareCalculationHelper] containPoint:[NSValue valueWithCGPoint:point] Points:points]) {
+        if ([[XAuxiliaryCalculationHelper shareCalculationHelper] containPoint:[NSValue valueWithCGPoint:point] Points:points]) {
             
             // 点击的是高亮的Line
             if (self.coverLayer.selectStatusNumber.boolValue == YES) {
                 
                 // remove pre layer and label
                 [self.coverLayer removeFromSuperlayer];
-                [self.labelArray enumerateObjectsUsingBlock:^(XXAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [self.labelArray enumerateObjectsUsingBlock:^(XAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     [obj removeFromSuperview];
                 }];
                 
@@ -330,7 +330,7 @@
             // 点击的是非高亮的Line
             else {
                 // remove pre layer and label
-                [self.labelArray enumerateObjectsUsingBlock:^(XXAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [self.labelArray enumerateObjectsUsingBlock:^(XAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     [obj removeFromSuperview];
                 }];
                 [self.labelArray removeAllObjects];
@@ -342,7 +342,7 @@
                 
                 [self.pointsArrays[shapeLayerIndex] enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     CGPoint point = obj.CGPointValue;
-                    XXAnimationLabel *label = [self topLabelWithPoint:point fillColor:[UIColor clearColor] text:@"0"];
+                    XAnimationLabel *label = [self topLabelWithPoint:point fillColor:[UIColor clearColor] text:@"0"];
                     CGFloat textNum = self.dataItemArray[shapeLayerIndex].numberArray[idx].doubleValue;
                     [self.labelArray addObject:label];
                     [self addSubview:label];
@@ -353,11 +353,11 @@
     }];
 }
 
-- (XXAnimationLabel *)topLabelWithRect:(CGRect)rect fillColor:(UIColor *)color text:(NSString *)text {
+- (XAnimationLabel *)topLabelWithRect:(CGRect)rect fillColor:(UIColor *)color text:(NSString *)text {
     
     CGFloat number = text.floatValue;
     NSString *labelText = [NSString stringWithFormat:@"%.1f", number];
-    XXAnimationLabel *topLabel = [[XXAnimationLabel alloc] initWithFrame:rect];
+    XAnimationLabel *topLabel = [[XAnimationLabel alloc] initWithFrame:rect];
     topLabel.backgroundColor = color;
     [topLabel setTextAlignment:NSTextAlignmentCenter];
     topLabel.text = labelText;
@@ -367,12 +367,12 @@
 }
 
 
-- (XXAnimationLabel *)topLabelWithPoint:(CGPoint)point fillColor:(UIColor *)color text:(NSString *)text {
+- (XAnimationLabel *)topLabelWithPoint:(CGPoint)point fillColor:(UIColor *)color text:(NSString *)text {
     
     CGRect rect = CGRectMake(point.x - 30, point.y - 35, 60, 35);
     CGFloat number = text.floatValue;
     NSString *labelText = [NSString stringWithFormat:@"%.1f", number];
-    XXAnimationLabel *topLabel = [[XXAnimationLabel alloc] initWithFrame:rect];
+    XAnimationLabel *topLabel = [[XAnimationLabel alloc] initWithFrame:rect];
     topLabel.backgroundColor = color;
     [topLabel setTextAlignment:NSTextAlignmentCenter];
     topLabel.text = labelText;
