@@ -1,5 +1,5 @@
-![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/icon.png)
- 
+
+![fun](https://github.com/JunyiXie/XJYChart/raw/master/photos/icon.png) 
 ![release](https://img.shields.io/badge/XJYChart-v1.0.0-blue.svg)
 [![Version](https://img.shields.io/cocoapods/v/XJYChart.svg?style=flat)](http://cocoapods.org/pods/XJYChart)
 [![Platform](https://img.shields.io/cocoapods/p/XJYChart.svg?style=flat)](http://cocoapods.org/pods/XJYChart)
