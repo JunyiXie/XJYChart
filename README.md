@@ -55,13 +55,13 @@ $ pod install
 
 ## How to Use
 
-### XXPositiveNegativeBarChart
+### XPositiveNegativeBarChart
 
 ```objectivec
-XXPositiveNegativeBarChart *barChart = [[XXPositiveNegativeBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@(-170)];
+XPositiveNegativeBarChart *barChart = [[XPositiveNegativeBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@(-170)];
 ```
 
-### XXLineChart
+### XLineChart
 
 - colorMode
 
@@ -72,10 +72,10 @@ XXPositiveNegativeBarChart *barChart = [[XXPositiveNegativeBarChart alloc] initW
 ```
 
 ```objectivec
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XXLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
+- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
 ```
 
-### XXLineChartItem
+### XLineChartItem
 
 ```objectivec
 - (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color dataDescribe:(NSString *)dataDescribe;
@@ -86,20 +86,20 @@ MutiLineGraph
 AreaLineGraph
 
 ```objectivec
-XXLineChart *lineChart = [[XXLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0  graphMode:MutiLineGraph];
+XLineChart *lineChart = [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0  graphMode:MutiLineGraph];
 ```
 
 ### Cycle Chart
 
 ```objectivec
-//XJYCycleView
+//XCycleView
 - (instancetype)initWithFrame:(CGRect)frame;
 ```
 
 ### BarChart
 
 ```objectivec
-XXBarChart *barChart = [[XXBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@150 bottomNumber:@(0)];
+XBarChart *barChart = [[XBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@150 bottomNumber:@(0)];
 ```
 
 - BarChartdelegate
@@ -111,20 +111,20 @@ XXBarChart *barChart = [[XXBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 2
 ### PieChart
 
 ```objectivec
-self.pieChartView = [[XJYPieChart alloc] init];
+self.pieChartView = [[XPieChart alloc] init];
 NSMutableArray *pieItems = [[NSMutableArray alloc] init];
 NSArray *colorArray = @[RGB(145, 235, 253), RGB(198, 255, 150), RGB(254, 248, 150), RGB(253, 210, 147)];
 NSArray *dataArray = @[@"iPhone6",@"iPhone6 Plus",@"iPhone6s",@"其他"];
-XJYPieItem *item1 = [[XJYPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:20.9] color:colorArray[0] dataDescribe:dataArray[0]];
+XPieItem *item1 = [[XPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:20.9] color:colorArray[0] dataDescribe:dataArray[0]];
 [pieItems addObject:item1];
-XJYPieItem *item2 = [[XJYPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:14.82] color:colorArray[1] dataDescribe:dataArray[1]];
+XPieItem *item2 = [[XPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:14.82] color:colorArray[1] dataDescribe:dataArray[1]];
 [pieItems addObject:item2];  
 self.pieChartView.dataItemArray = pieItems;
 ```
 
 ### ChartColor 
 
-Provide many colors In XJYColor.h
+Provide many colors In XColor.h
 ...
 
 ## Update 
@@ -143,7 +143,7 @@ Example
 ### Update 1.0.0
 
 ```diff
-+ Add XJYCycleView   
++ Add XCycleView   
 ```
 
 - touch
@@ -152,7 +152,7 @@ Example
 Use XIB or Code
 
 ```objectivec
-//XJYCycleView
+//XCycleView
 - (instancetype)initWithFrame:(CGRect)frame;
 ```
 
