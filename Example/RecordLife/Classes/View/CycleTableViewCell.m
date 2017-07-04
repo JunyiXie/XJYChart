@@ -8,7 +8,7 @@
 
 #import "CycleTableViewCell.h"
 
-@interface CycleTableViewCell ()<XJYCycleViewDelegate>
+@interface CycleTableViewCell ()<XCycleViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *showMoneyRangeLabel;
 
