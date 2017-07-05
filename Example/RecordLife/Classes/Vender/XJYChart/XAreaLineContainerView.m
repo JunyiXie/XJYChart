@@ -12,7 +12,7 @@
 #import "CAShapeLayer+frameCategory.h"
 #import "XAnimationLabel.h"
 #import "XAnimation.h"
-
+#import "XAnimator.h"
 #pragma mark - Macro
 
 #define LineWidth 6.0
@@ -53,8 +53,23 @@
     return self;
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 
+    
+    XAnimator *animator = [[XAnimator alloc] init];
+    [animator XAnimatorCountFrom:50 CurrentTo:150 duration:3 animationBlock:^(CGFloat nowNumber) {
+        self.dataItemArray[0].numberArray[3] = @(nowNumber);
+        [self setNeedsDisplay];
+    }];
 
+}
+- (void)updateNumberValues {
+
+    
+}
+- (void)completeAnimation {
+    
+}
 - (void)drawRect:(CGRect)rect {
     
     [self cleanPreDrawLayerAndData];

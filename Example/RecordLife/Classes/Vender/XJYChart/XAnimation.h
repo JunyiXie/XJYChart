@@ -15,4 +15,9 @@
 - (void)addLSSpringScaleAnimation:(UIView *)view;
 + (CASpringAnimation *)getLineChartSpringAnimationWithLayer:(CALayer *)layer;
 + (CASpringAnimation *)getBarChartSpringAnimationWithLayer:(CALayer *)layer;
+
+
+
+
+
 @end
