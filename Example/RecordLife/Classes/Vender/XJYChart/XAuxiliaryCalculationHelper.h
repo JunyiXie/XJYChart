@@ -104,4 +104,15 @@
  @return YES/NO
  */
 - (BOOL)containPoint:(NSValue *)pointValue Points:(NSMutableArray<NSValue *> *)pointsArray;
+
+
+/**
+ pointy in view flip increment
+
+ @param boudnsHeight view.bounds.height
+ @param targetHeight pointEndHeight
+ @param percentage percentagep
+ @return y
+ */
+- (CGFloat)getYInFilpIncrementWithBoundsH:(CGFloat)boudnsHeight targetHeight:(CGFloat)targetHeight percentage:(CGFloat)percentage;
 @end

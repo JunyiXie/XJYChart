@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 
 
-typedef void(^AnimatorNumberBlock)(CGFloat nowNumber);
-
+typedef void(^AnimatorPercentageBlock)(CGFloat percentage);
+typedef void(^AnimatorCurrentValueBlock)(CGFloat result);
 @interface XAnimator : NSObject
+- (void)AnimatorCountFrom:(CGFloat)from
+                 CurrentTo:(CGFloat)to
+                  duration:(CGFloat)duration
+            animationBlock:(AnimatorCurrentValueBlock)block;
 
-- (void)XAnimatorCountFrom:(CGFloat)from CurrentTo:(CGFloat)to duration:(CGFloat)duration animationBlock:(AnimatorNumberBlock)block;
+- (void)AnimatorDuration:(CGFloat)duration
+           animationBlock:(AnimatorPercentageBlock)block;
+
 @end

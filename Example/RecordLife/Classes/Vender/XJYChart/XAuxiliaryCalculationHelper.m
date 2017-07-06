@@ -142,6 +142,9 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
 }
 
 
-
+/// 翻转递增
+- (CGFloat)getYInFilpIncrementWithBoundsH:(CGFloat)boudnsHeight targetHeight:(CGFloat)targetHeight percentage:(CGFloat)percentage {
+    return boudnsHeight - (boudnsHeight - targetHeight) * percentage;
+}
 
 @end
