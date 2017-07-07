@@ -110,9 +110,21 @@
  pointy in view flip increment
 
  @param boudnsHeight view.bounds.height
- @param targetHeight pointEndHeight
+ @param targetY targetY
  @param percentage percentagep
  @return y
  */
-- (CGFloat)getYInFilpIncrementWithBoundsH:(CGFloat)boudnsHeight targetHeight:(CGFloat)targetHeight percentage:(CGFloat)percentage;
+- (CGFloat)getOriginYIncreaseInFilpCoordinateSystemWithBoundsH:(CGFloat)boudnsHeight targetY:(CGFloat)targetY percentage:(CGFloat)percentage;
+    
+    
+/**
+ 根据原始的Y,Y在翻转坐标系中对应的值*比例,得到iOS原始坐标系中的Y值.originY ---> filpY * ration ---> originY
+ @param ratio ratio
+ @param boundsH boundsH
+ @param originY originY
+ @return originY 
+ */
+- (CGFloat)getOriginYInFilpCoordinateSystemWithRatio:(CGFloat)ratio
+                                             boundsH:(CGFloat)boundsH
+                                             originY:(CGFloat)originY;
 @end

@@ -8,6 +8,37 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, XTimingFunctionsType) {
+    XLinearInterpolation,
+    XQuadraticEaseIn,
+    XQuadraticEaseOut,
+    XQuadraticEaseInOut,
+    XCubicEaseIn,
+    XCubicEaseOut,
+    XCubicEaseInOut,
+    XQuarticEaseIn,
+    XQuarticEaseOut,
+    XQuarticEaseInOut,
+    XQuinticEaseIn,
+    XSineEaseIn,
+    XSineEaseOut,
+    XSineEaseInOut,
+    XCircularEaseIn,
+    XCircularEaseOut,
+    XCircularEaseInOut,
+    XExponentialEaseIn,
+    XExponentialEaseOut,
+    XExponentialEaseInOut,
+    XElasticEaseIn,
+    XElasticEaseOut,
+    XElasticEaseInOut,
+    XBackEaseIn,
+    XBackEaseOut,
+    XBackEaseInOut,
+    XBounceEaseIn,
+    XBounceEaseOut,
+    XBounceEaseInOut,
+};
 
 typedef void(^AnimatorPercentageBlock)(CGFloat percentage);
 typedef void(^AnimatorCurrentValueBlock)(CGFloat result);

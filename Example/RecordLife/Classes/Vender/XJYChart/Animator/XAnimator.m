@@ -7,7 +7,7 @@
 //
 
 #import "XAnimator.h"
-
+#import "easing.h"
 typedef NS_ENUM(NSUInteger, XDisplayLinkAnimatorResultType) {
   XPercentage,
   XResult,
@@ -61,7 +61,7 @@ typedef NS_ENUM(NSUInteger, XDisplayLinkAnimatorResultType) {
 }
 
 
-
+///add displaylink
 - (void)addDisplayLink {
   self.timer = [CADisplayLink displayLinkWithTarget:self
                                            selector:@selector(updateValue:)];
@@ -69,7 +69,6 @@ typedef NS_ENUM(NSUInteger, XDisplayLinkAnimatorResultType) {
                    forMode:NSRunLoopCommonModes];
 }
 
-// 值的更新 以后还要加上 x->f(x)->y 映射
 - (void)updateValue:(CADisplayLink*)timer {
   CGFloat now = [NSDate timeIntervalSinceReferenceDate];
   self.progress += now - self.lastUpdateTime;
@@ -92,11 +91,28 @@ typedef NS_ENUM(NSUInteger, XDisplayLinkAnimatorResultType) {
       [self iterationCurrentValue:self.currentValue];
     } break;
     case XPercentage: {
-      [self iterationPercentage:[self getPercentage]];
+        [self iterationPercentage:[self timingFunctionMapping:[self getPercentage] functionType:XBounceEaseInOut]];
     } break;
   }
 }
 
+- (AHFloat)timingFunctionMapping:(AHFloat)value functionType:(XTimingFunctionsType)type {
+    switch (type) {
+        case XBounceEaseInOut:
+        {
+            return BounceEaseInOut(value);
+        }
+        break;
+        
+        default:
+        {
+            return CubicEaseIn(value);
+        }
+        break;
+    }
+    
+}
+    
 // 当前值作为迭代结果
 - (void)iterationCurrentValue:(CGFloat)currentValue {
   self.animationCurrentValueBlock(currentValue);

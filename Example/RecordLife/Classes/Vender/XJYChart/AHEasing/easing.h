@@ -30,6 +30,8 @@ extern "C" {
 
 typedef AHFloat (*AHEasingFunction)(AHFloat);
 
+
+
 // Linear interpolation (no easing)
 AHFloat LinearInterpolation(AHFloat p);
 

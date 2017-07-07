@@ -18,8 +18,7 @@
 #define LineWidth 6.0
 #define PointDiameter 11.0
 
-#define mark -XGraphAnimationNode
-typedef void (^MapPoint)(CGPoint point);
+#define mark - XGraphAnimationNode
 @interface XGraphAnimationNode : NSObject
 
 @property (nonatomic, assign) CGPoint graphAnimationEndPoint;
@@ -151,15 +150,15 @@ typedef void (^MapPoint)(CGPoint point);
 - (void)startAnimation
 {
     XAnimator* animator = [[XAnimator alloc] init];
-    [animator AnimatorDuration:2
+    [animator AnimatorDuration:0.85
                 animationBlock:^(CGFloat percentage) {
                     [self.areaAnimationManager.areaAnimationNodes
                         enumerateObjectsUsingBlock:^(
                             XGraphAnimationNode* _Nonnull node, NSUInteger idx,
                             BOOL* _Nonnull stop) {
                             node.graphAnimationCurrentPoint = CGPointMake(node.getAnimationNodeX,
-                                [[XAuxiliaryCalculationHelper shareCalculationHelper] getYInFilpIncrementWithBoundsH:self.bounds.size.height
-                                                                                                        targetHeight:node.getAnimationNodeEndY
+                                [[XAuxiliaryCalculationHelper shareCalculationHelper] getYIncreaseInFilpCoordinateSystemWithBoundsH:self.bounds.size.height
+                                                                                                          targetY: node.getAnimationNodeEndY
                                                                                                           percentage:percentage]);
                         }];
                     [self setNeedsDisplay];
