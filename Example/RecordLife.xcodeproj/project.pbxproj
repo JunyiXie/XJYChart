@@ -31,6 +31,7 @@
 		9F3DC79B1E2E59DF00C26D86 /* XJYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC79A1E2E59DF00C26D86 /* XJYTableViewCell.m */; };
 		9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */; };
 		9F96A8E61EBA0DDD00BDC2C9 /* XNotificationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F96A8E51EBA0DDD00BDC2C9 /* XNotificationBridge.m */; };
+		9F9A3DE11F2F757A0052E610 /* XAnimationPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A3DE01F2F757A0052E610 /* XAnimationPath.m */; };
 		9FB579031E349C9200339633 /* PieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB579021E349C9200339633 /* PieChartCell.m */; };
 		9FC9E1FF1F0F2467008D1445 /* CAKeyframeAnimation+AHEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9E1BD1F0F2467008D1445 /* CAKeyframeAnimation+AHEasing.m */; };
 		9FC9E2001F0F2467008D1445 /* easing.c in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9E1BE1F0F2467008D1445 /* easing.c */; };
@@ -152,6 +153,8 @@
 		9F734DDC1EBF669B002ABF14 /* RecordLife-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecordLife-Bridging-Header.h"; sourceTree = "<group>"; };
 		9F96A8E41EBA0DDD00BDC2C9 /* XNotificationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNotificationBridge.h; sourceTree = "<group>"; };
 		9F96A8E51EBA0DDD00BDC2C9 /* XNotificationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNotificationBridge.m; sourceTree = "<group>"; };
+		9F9A3DDF1F2F757A0052E610 /* XAnimationPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAnimationPath.h; sourceTree = "<group>"; };
+		9F9A3DE01F2F757A0052E610 /* XAnimationPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAnimationPath.m; sourceTree = "<group>"; };
 		9FB579011E349C9200339633 /* PieChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartCell.h; sourceTree = "<group>"; };
 		9FB579021E349C9200339633 /* PieChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartCell.m; sourceTree = "<group>"; };
 		9FC9E1BC1F0F2467008D1445 /* CAKeyframeAnimation+AHEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAKeyframeAnimation+AHEasing.h"; sourceTree = "<group>"; };
@@ -467,6 +470,8 @@
 				9FC9E1C21F0F2467008D1445 /* XAnimation.m */,
 				9FC9E1C31F0F2467008D1445 /* XAnimator.h */,
 				9FC9E1C41F0F2467008D1445 /* XAnimator.m */,
+				9F9A3DDF1F2F757A0052E610 /* XAnimationPath.h */,
+				9F9A3DE01F2F757A0052E610 /* XAnimationPath.m */,
 			);
 			path = Animator;
 			sourceTree = "<group>";
@@ -787,6 +792,7 @@
 				9FC9E21C1F0F2467008D1445 /* Colours.m in Sources */,
 				9FC9E2091F0F2467008D1445 /* OrdinateView.m in Sources */,
 				9F20B9421EC4990700973A15 /* StackAreaTableViewCell.m in Sources */,
+				9F9A3DE11F2F757A0052E610 /* XAnimationPath.m in Sources */,
 				9FC9E2151F0F2467008D1445 /* XLineContainerView.m in Sources */,
 				9FB579031E349C9200339633 /* PieChartCell.m in Sources */,
 				9FC9E2071F0F2467008D1445 /* CAShapeLayer+XJYLayerHelper.m in Sources */,

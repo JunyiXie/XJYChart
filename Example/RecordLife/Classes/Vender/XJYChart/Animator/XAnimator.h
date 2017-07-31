@@ -43,12 +43,9 @@ typedef NS_ENUM(NSUInteger, XTimingFunctionsType) {
 typedef void(^AnimatorPercentageBlock)(CGFloat percentage);
 typedef void(^AnimatorCurrentValueBlock)(CGFloat result);
 @interface XAnimator : NSObject
-- (void)AnimatorCountFrom:(CGFloat)from
-                 CurrentTo:(CGFloat)to
-                  duration:(CGFloat)duration
-            animationBlock:(AnimatorCurrentValueBlock)block;
 
 - (void)AnimatorDuration:(CGFloat)duration
-           animationBlock:(AnimatorPercentageBlock)block;
+          timingFuncType:(XTimingFunctionsType)timingFuncType
+          animationBlock:(AnimatorPercentageBlock)block;
 
 @end

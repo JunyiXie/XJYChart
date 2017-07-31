@@ -15,8 +15,8 @@
 - (void)addLSSpringScaleAnimation:(UIView *)view;
 + (CASpringAnimation *)getLineChartSpringAnimationWithLayer:(CALayer *)layer;
 + (CASpringAnimation *)getBarChartSpringAnimationWithLayer:(CALayer *)layer;
-
-
++ (CABasicAnimation *)morphAnimationFromPath:(UIBezierPath *)fromPath toPath:(UIBezierPath *)toPath duration:(CGFloat)duration;
++ (CABasicAnimation *)frameAnimatonFromRect:(CGRect)fromRect toRect:(CGRect)toRect duration:(CGFloat)duration;
 
 
 

@@ -30,6 +30,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber graphMode:(XXLineGraphMode)graphMode {
     if (self = [super initWithFrame:frame]) {
+        self.isAllowGesture = NO;
         self.top = topNumbser;
         self.bottom = bottomNumber;
         self.dataItemArray = dataItemArray;
@@ -58,6 +59,10 @@
 }
 - (void)pinchView:(UIPinchGestureRecognizer *)pinchGes {
     
+    if (self.isAllowGesture == NO) {
+        return ;
+    }
+    
     if (pinchGes.state == UIGestureRecognizerStateEnded) {
         CGAffineTransform transform = CGAffineTransformIdentity;
         pinchGes.view.transform = CGAffineTransformScale(transform, 1, 1);
@@ -67,6 +72,10 @@
 }
 
 - (void)tapView:(UITapGestureRecognizer *)tapGes {
+    
+    if (self.isAllowGesture == NO) {
+        return ;
+    }
     
     if (tapGes.hasTapedBoolNumber.boolValue == YES) {
         CGAffineTransform transform = CGAffineTransformIdentity;

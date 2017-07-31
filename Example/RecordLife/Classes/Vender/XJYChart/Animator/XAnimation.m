@@ -43,6 +43,27 @@
     return springAnimation;
 }
 
+
++ (CABasicAnimation *)morphAnimationFromPath:(UIBezierPath *)fromPath toPath:(UIBezierPath *)toPath duration:(CGFloat)duration {
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"path"];
+    animation.duration = duration;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.fromValue = (id)fromPath.CGPath;
+    animation.toValue = (id)toPath.CGPath;
+    
+    return animation;
+}
+
++ (CABasicAnimation *)frameAnimatonFromRect:(CGRect)fromRect toRect:(CGRect)toRect duration:(CGFloat)duration {
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"frame"];
+    animation.duration = duration;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.fromValue = (id)[NSValue valueWithCGRect:fromRect];
+    animation.toValue = (id)[NSValue valueWithCGRect:toRect];
+    
+    return animation;
+}
+
 - (void)addLSSpringFrameAnimation:(CALayer *)layer {
 //    layer.ls_spring.ls_scale(1.1).ls_spring.ls_thenAfter(0.3).ls_scale(1.0/1.1).ls_spring.ls_animate(1);
 }

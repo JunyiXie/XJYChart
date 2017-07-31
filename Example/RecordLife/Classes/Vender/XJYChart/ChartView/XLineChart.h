@@ -14,6 +14,10 @@
 @interface XLineChart : UIView
 
 
+/// tap and pin gesture
+@property (nonatomic, assign) BOOL isAllowGesture;
+
+
 /**
  Random ：RandomColor
  Custom :  need to set (at XLineChartItem)

@@ -23,7 +23,7 @@ typedef NS_ENUM(NSUInteger, XDisplayLinkAnimatorResultType) {
 @property(nonatomic, strong) CADisplayLink* timer;
 @property(nonatomic, assign) CGFloat currentValue;
 @property(nonatomic, assign) XDisplayLinkAnimatorResultType resultType;
-
+@property(nonatomic, assign) XTimingFunctionsType timingFuncType;
 @property(nonatomic, strong)
     AnimatorCurrentValueBlock animationCurrentValueBlock;
 @property(nonatomic, strong) AnimatorPercentageBlock animationPercentageBlock;
@@ -49,11 +49,12 @@ typedef NS_ENUM(NSUInteger, XDisplayLinkAnimatorResultType) {
 }
 
 - (void)AnimatorDuration:(CGFloat)duration
+              timingFuncType:(XTimingFunctionsType)timingFuncType
            animationBlock:(AnimatorPercentageBlock)block {
     self.startingValue = 0;
     self.destinationValue = 100;
     self.animationPercentageBlock = block;
-    
+    self.timingFuncType = timingFuncType;
     // 结果类型
     self.resultType = XPercentage;
     
@@ -91,7 +92,7 @@ typedef NS_ENUM(NSUInteger, XDisplayLinkAnimatorResultType) {
       [self iterationCurrentValue:self.currentValue];
     } break;
     case XPercentage: {
-        [self iterationPercentage:[self timingFunctionMapping:[self getPercentage] functionType:XBounceEaseInOut]];
+        [self iterationPercentage:[self timingFunctionMapping:[self getPercentage] functionType:self.timingFuncType]];
     } break;
   }
 }
@@ -103,6 +104,10 @@ typedef NS_ENUM(NSUInteger, XDisplayLinkAnimatorResultType) {
             return BounceEaseInOut(value);
         }
         break;
+        case XQuarticEaseInOut:
+        {
+            return QuarticEaseInOut(value);
+        }
         
         default:
         {
