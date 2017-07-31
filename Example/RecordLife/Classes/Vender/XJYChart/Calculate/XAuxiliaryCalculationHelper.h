@@ -116,7 +116,9 @@
  */
 - (CGFloat)getOriginYIncreaseInFilpCoordinateSystemWithBoundsH:(CGFloat)boudnsHeight targetY:(CGFloat)targetY percentage:(CGFloat)percentage;
     
-    
+
+/// 得到ios坐标系Y  通过 *递增比例 的方式
+
 /**
  根据原始的Y,Y在翻转坐标系中对应的值*比例,得到iOS原始坐标系中的Y值.originY ---> filpY * ration ---> originY
  @param ratio ratio

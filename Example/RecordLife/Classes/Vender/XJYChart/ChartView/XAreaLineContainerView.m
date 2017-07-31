@@ -157,7 +157,7 @@
                             XGraphAnimationNode* _Nonnull node, NSUInteger idx,
                             BOOL* _Nonnull stop) {
                             node.graphAnimationCurrentPoint = CGPointMake(node.getAnimationNodeX,
-                                [[XAuxiliaryCalculationHelper shareCalculationHelper] getYIncreaseInFilpCoordinateSystemWithBoundsH:self.bounds.size.height
+                                [[XAuxiliaryCalculationHelper shareCalculationHelper] getOriginYIncreaseInFilpCoordinateSystemWithBoundsH:self.bounds.size.height
                                                                                                           targetY: node.getAnimationNodeEndY
                                                                                                           percentage:percentage]);
                         }];
