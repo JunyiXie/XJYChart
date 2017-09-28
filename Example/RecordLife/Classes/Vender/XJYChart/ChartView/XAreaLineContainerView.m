@@ -151,12 +151,18 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    [self cleanPreDrawLayerAndData];
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self strokeAuxiliaryLineInContext:context];
-    [self strokePointInContext:context];
+}
+
+- (void)layoutSubviews {
+    // remove pre data and layer
+    [self cleanPreDrawLayerAndData];
+    // Add SubLayers
+    [self strokePointInContext];
     [self strokeLine];
+    [super layoutSubviews];
 }
 // Start Animation
 - (void)startAnimation
@@ -175,7 +181,7 @@
                                                                                                           targetY: node.getAnimationNodeEndY
                                                                                                           percentage:percentage]);
                         }];
-                    [self setNeedsDisplay];
+                    [self setNeedsLayout];
                 }];
 }
 
@@ -214,7 +220,7 @@
     }
 }
 
-- (void)strokePointInContext:(CGContextRef)context
+- (void)strokePointInContext
 {
     UIColor* pointColor = [UIColor whiteColor];
     UIColor* wireframeColor = [UIColor whiteColor];
@@ -245,13 +251,6 @@
 
 - (void)cleanPreDrawLayerAndData
 {
-/* sublayer array mutate bug and conflict with layer add ... who tell me why?
-    [self.layer.sublayers
-     enumerateObjectsUsingBlock:^(CALayer* _Nonnull sublayer, NSUInteger idx,
-                                  BOOL* _Nonnull stop) {
-         [sublayer removeFromSuperlayer];
-     }];
-*/
     //work well
     self.layer.sublayers = nil;
     [self.labelArray
