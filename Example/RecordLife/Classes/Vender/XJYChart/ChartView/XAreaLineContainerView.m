@@ -136,6 +136,9 @@
 
         // 数据处理，集中管理
         self.areaAnimationManager = [self makeAreaAnimationManager];
+        
+        //
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeAlive) name:UIApplicationDidBecomeActiveNotification object:nil];
     }
     return self;
 }
@@ -300,16 +303,8 @@
         [lineLayer addAnimation:[XAnimation morphAnimationFromPath:[UIBezierPath bezierPathWithCGPath:startLayer.path] toPath:[UIBezierPath bezierPathWithCGPath:lineLayer.path] duration:2] forKey:@"pathAnimation"];
     }
 
-    
     // add layer
     [self.layer addSublayer:lineLayer];
-    
-    
-    
-
-    
-    
-    
 }
 
 #pragma mark data Handling
@@ -418,6 +413,11 @@
     lineLayer.lineCap = kCALineCapRound;
     lineLayer.lineJoin = kCALineJoinRound;
     return lineLayer;
+}
+
+#pragma mark Notification Action
+- (void)becomeAlive {
+    [self startAnimation];
 }
 
 #pragma mark - Control Point Compute
