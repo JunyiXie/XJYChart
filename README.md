@@ -15,9 +15,6 @@ XJYChart can give App more interactive, it supports touch, slide. Unlike other c
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG)
 ![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image7.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image8.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image9.PNG)
 
 ## Charts
 
