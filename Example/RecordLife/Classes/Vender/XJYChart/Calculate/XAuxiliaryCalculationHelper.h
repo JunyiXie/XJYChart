@@ -109,12 +109,18 @@
 /**
  pointy in view flip increment
 
- @param boudnsHeight view.bounds.height
- @param targetY targetY
- @param percentage percentagep
- @return y
+
+ @param boudnsHeight boudnsHeight view.bounds.height
+ @param targetY targetY targetY
+ @param percentage percentage percentagep
+ @param startRatio start ratio
+ @return originY
  */
-- (CGFloat)getOriginYIncreaseInFilpCoordinateSystemWithBoundsH:(CGFloat)boudnsHeight targetY:(CGFloat)targetY percentage:(CGFloat)percentage;
+- (CGFloat)
+getOriginYIncreaseInFilpCoordinateSystemWithBoundsH:(CGFloat)boudnsHeight
+targetY:(CGFloat)targetY
+percentage:(CGFloat)percentage
+startRatio:(CGFloat)startRatio;
     
 /// 翻转坐标系中 高度的ratio 还是用 原坐标系表示
 - (CGFloat)getOriginYInFilpCoordinateSystemWithRatio:(CGFloat)ratio

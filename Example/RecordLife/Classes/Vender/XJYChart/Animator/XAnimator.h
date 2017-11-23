@@ -40,9 +40,18 @@ typedef NS_ENUM(NSUInteger, XTimingFunctionsType) {
     XBounceEaseInOut,
 };
 
+
+@protocol XAnimationDelegate
+
+- (void)animationAfterIteration;
+
+@end
+
 typedef void(^AnimatorPercentageBlock)(CGFloat percentage);
 typedef void(^AnimatorCurrentValueBlock)(CGFloat result);
 @interface XAnimator : NSObject
+
+@property (nonatomic, weak) id animationDeleagte;
 
 - (void)AnimatorDuration:(CGFloat)duration
           timingFuncType:(XTimingFunctionsType)timingFuncType

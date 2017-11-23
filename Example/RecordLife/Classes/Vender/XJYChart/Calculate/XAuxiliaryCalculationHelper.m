@@ -160,9 +160,10 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
 - (CGFloat)
 getOriginYIncreaseInFilpCoordinateSystemWithBoundsH:(CGFloat)boudnsHeight
                                             targetY:(CGFloat)targetY
-                                         percentage:(CGFloat)percentage {
+                                         percentage:(CGFloat)percentage
+                                         startRatio:(CGFloat)startRatio {
   return [self
-      getOriginYBySectionIncreaseInFilpCoordinateSystemWithStartRatio:0.3
+      getOriginYBySectionIncreaseInFilpCoordinateSystemWithStartRatio:startRatio
                                                               targetY:targetY
                                                               boundsH:
                                                                   boudnsHeight
@@ -245,3 +246,8 @@ getOriginYBySectionIncreaseInFilpCoordinateSystemWithStartRatio:
 }
     
 @end
+
+
+
+
+

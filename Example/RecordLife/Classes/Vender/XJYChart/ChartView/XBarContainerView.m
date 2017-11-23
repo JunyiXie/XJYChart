@@ -265,42 +265,6 @@
 
     CGPoint __block point = [[touches anyObject] locationInView:self];
     
-    //touch value area
-    // tem abandoned
-//    [self.layerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        point = [obj convertPoint:point toLayer:self.layer];
-//        CAShapeLayer *shapeLayer = (CAShapeLayer *)obj;
-//        CGRect layerFrame = shapeLayer.frameValue.CGRectValue;
-//        if (CGRectContainsPoint(layerFrame, point)) {
-//            CAShapeLayer *preShapeLayer =  (CAShapeLayer *)self.layerArray[self.coverLayer.selectIdxNumber.intValue];
-//            // change state
-//            preShapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
-//            NSLog(@"点击了 %lu bar  boolvalue", (unsigned long)idx + 1);
-//            
-//            // Notification + Deleagte To CallBack
-//            [[NSNotificationCenter defaultCenter] postNotificationName:[XNotificationBridge shareXNotificationBridge].TouchBarNotification
-//                                                                object:nil
-//                                                              userInfo:@{[XNotificationBridge shareXNotificationBridge].BarIdxNumberKey:@(idx)}];
-//            if (shapeLayer.selectStatusNumber.boolValue == TRUE) {
-//                shapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
-//                [self.coverLayer removeFromSuperlayer];
-//                return ;
-//            }
-//            //remove last cover layer
-//            [self.coverLayer removeFromSuperlayer];
-//            BOOL boolValue = shapeLayer.selectStatusNumber.boolValue;
-//            shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!boolValue];
-//            self.coverLayer = [self rectCoverGradientLayerWithBounds:layerFrame];
-//            self.coverLayer.selectIdxNumber = @(idx);
-//
-//            
-//
-//            [shapeLayer addSublayer:self.coverLayer];
-//            return ;
-//        }
-//        
-//    }];
-    
     //touch whole bar
     [self.backgroundLayerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CAShapeLayer *shapeLayer = (CAShapeLayer *)obj;
