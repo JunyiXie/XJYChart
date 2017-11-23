@@ -107,7 +107,7 @@
     
     if (indexPath.section == 0) {
 
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kLineChartCell forIndexPath:indexPath];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kAreaLineTableViewCell forIndexPath:indexPath];
         return cell;
 
     } else if (indexPath.section == 1) {
@@ -123,7 +123,7 @@
         CycleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCycleTableViewCell forIndexPath:indexPath];
         return cell;
     } else if (indexPath.section == 5) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kAreaLineTableViewCell forIndexPath:indexPath];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kLineChartCell forIndexPath:indexPath];
         return cell;
     } else if (indexPath.section == 6) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kStackAreaTableViewCell forIndexPath:indexPath];
@@ -136,7 +136,8 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return @"可滑动可点击的折线图";
+        
+        return @"区域折线图";
     } else if (section == 1) {
         return @"饼图";
     } else if (section == 2) {
@@ -146,13 +147,14 @@
     } else if (section == 4){
         return @"可滑动的渐变环形图";
     } else if (section == 5){
-        return @"区域折线图";
+        return @"可滑动可点击的折线图";
     } else if (section == 6) {
         return @"多重区域折线图";
     } else {
         return @"";
     }
 }
+
 
 #pragma mark UITableViewDelegate
 
@@ -167,5 +169,6 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 25;
 }
+
 
 @end

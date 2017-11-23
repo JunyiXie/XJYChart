@@ -18,6 +18,10 @@
 #define LineWidth 6.0
 #define PointDiameter 11.0
 
+
+//Animation start ratio
+#define StartRatio 0.3
+
 #define mark - XGraphAnimationNode
 @interface XGraphAnimationNode : NSObject
 
@@ -100,8 +104,6 @@
 @property (nonatomic, strong) UIColor* areaColor;
 
 
-/// 使用CADisplayLink 时 禁用 属性动画
-@property (nonatomic, assign) BOOL isAllowPathAnimation;
 
 /**
  All lines points
@@ -126,8 +128,7 @@
         self.drawablePoints = [NSMutableArray new];
         self.labelArray = [NSMutableArray new];
         self.areaNodes = [NSMutableArray new];
-        self.isAllowPathAnimation = YES;
-        
+
         self.dataItemArray = dataItemArray;
         self.top = topNumber;
         self.bottom = bottomNumber;
@@ -137,8 +138,15 @@
         // 数据处理，集中管理
         self.areaAnimationManager = [self makeAreaAnimationManager];
         
-        //
+        
+#pragma mark Register Notifications
+        
+        // App Alive Animation Notification
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeAlive) name:UIApplicationDidBecomeActiveNotification object:nil];
+        
+        // App Resign Set Animation Start State
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
+        
     }
     return self;
 }
@@ -160,17 +168,11 @@
 }
 
 - (void)layoutSubviews {
-    // remove pre data and layer
-    [self cleanPreDrawLayerAndData];
-    // Add SubLayers
-    [self strokePointInContext];
-    [self strokeLine];
     [super layoutSubviews];
 }
 // Start Animation
 - (void)startAnimation
 {
-    self.isAllowPathAnimation = NO;
     XAnimator* animator = [[XAnimator alloc] init];
     [animator AnimatorDuration:2
                 timingFuncType:XQuarticEaseInOut
@@ -182,10 +184,18 @@
                             node.graphAnimationCurrentPoint = CGPointMake(node.getAnimationNodeX,
                                 [[XAuxiliaryCalculationHelper shareCalculationHelper] getOriginYIncreaseInFilpCoordinateSystemWithBoundsH:self.bounds.size.height
                                                                                                           targetY: node.getAnimationNodeEndY
-                                                                                                          percentage:percentage]);
+                                                                                                                               percentage:percentage startRatio:StartRatio]);
                         }];
-                    [self setNeedsLayout];
+                    [self refreshView];
                 }];
+}
+
+- (void)refreshView {
+    // remove pre data and layer
+    [self cleanPreDrawAndDataCache];
+    // Add SubLayers
+    [self strokePointInContext];
+    [self strokeLine];
 }
 
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event
@@ -240,19 +250,12 @@
             
             pointLayer.path = path.CGPath;
             pointLayer.fillColor = pointColor.CGColor;
-            if (self.isAllowPathAnimation) {
-                UIBezierPath *startPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(point.x - PointDiameter / 2,
-                                                                                             [[XAuxiliaryCalculationHelper shareCalculationHelper] getOriginYInFilpCoordinateSystemWithRatio:0.3 boundsH:self.frame.size.width
-                                                                                                                                                                                     originY:point.y - PointDiameter / 2],
-                                                                                             PointDiameter, PointDiameter)  cornerRadius:PointDiameter/2];
-                 [pointLayer addAnimation:[XAnimation morphAnimationFromPath:startPath toPath:[UIBezierPath bezierPathWithCGPath:pointLayer.path] duration:2] forKey:@"path"];
-            }
 
             [self.layer addSublayer:pointLayer];
         }];
 }
 
-- (void)cleanPreDrawLayerAndData
+- (void)cleanPreDrawAndDataCache
 {
     //work well
     self.layer.sublayers = nil;
@@ -286,22 +289,6 @@
                                                  leftConerPoint:leftConerPoint
                                                 rightConerPoint:rightConerPoint];
 
-    // add animation
-    if (self.isAllowPathAnimation == YES) {
-        // animation start layer
-        NSMutableArray *startPointArray = [NSMutableArray new];
-        [currentPointArray enumerateObjectsUsingBlock:^(NSValue *  _Nonnull pointValue, NSUInteger idx, BOOL * _Nonnull stop) {
-            CGPoint point = pointValue.CGPointValue;
-            CGPoint startPoint = CGPointMake(point.x, [[XAuxiliaryCalculationHelper shareCalculationHelper] getOriginYInFilpCoordinateSystemWithRatio:0.3 boundsH:self.frame.size.height originY:point.y]);
-            [startPointArray addObject:[NSValue valueWithCGPoint:startPoint]];
-        }];
-        
-        CGPoint startLeftP = CGPointMake(leftConerPoint.x, [[XAuxiliaryCalculationHelper shareCalculationHelper] getOriginYInFilpCoordinateSystemWithRatio:0.3 boundsH:self.frame.size.width originY:leftConerPoint.y]);
-        CGPoint startRightP = CGPointMake(rightConerPoint.x, [[XAuxiliaryCalculationHelper shareCalculationHelper] getOriginYInFilpCoordinateSystemWithRatio:0.3 boundsH:self.frame.size.width originY:rightConerPoint.y]);
-        CAShapeLayer *startLayer = [self getLineShapeLayerWithPoints:startPointArray leftConerPoint:startLeftP rightConerPoint:startRightP];
-    
-        [lineLayer addAnimation:[XAnimation morphAnimationFromPath:[UIBezierPath bezierPathWithCGPath:startLayer.path] toPath:[UIBezierPath bezierPathWithCGPath:lineLayer.path] duration:2] forKey:@"pathAnimation"];
-    }
 
     // add layer
     [self.layer addSublayer:lineLayer];
@@ -415,9 +402,28 @@
     return lineLayer;
 }
 
+
+#pragma mark Observerhelper
+
+
+
 #pragma mark Notification Action
 - (void)becomeAlive {
     [self startAnimation];
+}
+
+- (void)enterBackground {
+    [self.areaAnimationManager.areaNodes
+     enumerateObjectsUsingBlock:^(
+                                  XGraphAnimationNode* _Nonnull node, NSUInteger idx,
+                                  BOOL* _Nonnull stop) {
+         node.graphAnimationCurrentPoint = CGPointMake(node.getAnimationNodeX,
+                                                       [[XAuxiliaryCalculationHelper shareCalculationHelper] getOriginYIncreaseInFilpCoordinateSystemWithBoundsH:self.bounds.size.height
+                                                                                                                                                         targetY: node.getAnimationNodeEndY
+                                                                                                                                                      percentage:0 startRatio:StartRatio]);
+     }];
+    [self refreshView];
+    
 }
 
 #pragma mark - Control Point Compute
