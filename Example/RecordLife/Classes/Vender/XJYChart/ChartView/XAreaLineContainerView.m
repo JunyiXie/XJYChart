@@ -23,11 +23,21 @@
 #define StartRatio 0.3
 
 #define mark - XGraphAnimationNode
+
+
+
+/**
+ Contain Point in CADisplayLink Animation Information.
+ 
+ CurrentPoint: Use it to draw.
+ EndPoint: Save final view point.
+ 
+ */
 @interface XGraphAnimationNode : NSObject
 
 @property (nonatomic, assign) CGPoint graphAnimationEndPoint;
-@property (nonatomic, assign) CGPoint graphAnimationStartPoint;
 @property (nonatomic, assign) CGPoint graphAnimationCurrentPoint;
+
 - (instancetype)initWithAnimationEndPoint:(CGPoint)endPoint;
 - (CGFloat)getAnimationNodeX;
 - (CGFloat)getAnimationNodeEndY;
@@ -61,6 +71,12 @@
 }
 
 @end
+
+
+/**
+ Manager points.
+ Draw layer use.
+ */
 
 @interface XAreaAnimationManager : NSObject
 
@@ -98,6 +114,16 @@
 
 @end
 
+/**
+ Animation :
+ Using CADisplayLink animation.
+ By Adding the CALayer In The View.
+ Change Shape And Readding.
+ 
+ EnterAnimaton:
+ when UIApplicationDidBecomeActiveNotification add Animation.
+ When UIApplicationDidEnterBackgroundNotification. Reset View Will Make Animation More coordination.
+ */
 @interface XAreaLineContainerView ()
 
 @property (nonatomic, strong) CABasicAnimation* pathAnimation;
@@ -167,9 +193,6 @@
     [self strokeAuxiliaryLineInContext:context];
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-}
 // Start Animation
 - (void)startAnimation
 {
