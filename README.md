@@ -7,14 +7,12 @@
 
 > XJYChart - A High-performance, Elegant, Easy-to-integrate Charting Framework.
  
-XJYChart can give App more interactive, it supports touch, slide. Unlike other charting frameworks, XJYChart uses a component-based design that is very solid, giving XJYChart an easy iteration feature. Support the beautiful animation effect, have the perfect event response mechanism. And the performance is very good. Based on Core Animation. Easy to use, easy to modify. Elegant interface, smooth animation.
-
 ## Overview
 
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG)
-![image](https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG)
+<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG" align="left" height="400" width="300" ></a>
+<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG" align="left" height="400" width="300" ></a>
+<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG" align="left" height="400" width="300" ></a>
+<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG" align="left" height="400" width="300" ></a>
 
 ## Charts
 
