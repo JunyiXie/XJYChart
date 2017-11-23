@@ -29,7 +29,6 @@
 - [x] **Scroll**
 - [x] **Beautiful**
 
-![gif](https://github.com/JunyiXie/XJYChart/raw/master/photos/XJYChart.gif)
 
 ## Installation
 
