@@ -63,6 +63,7 @@ Eg:
 
 ### XPositiveNegativeBarChart
 
+```objectivec
 /**
 初始化方法
 
@@ -72,18 +73,20 @@ Eg:
 @param bottomNumber buttom
 @return instancetype
 */
-```objectivec
+
 XPositiveNegativeBarChart *barChart = [[XPositiveNegativeBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@(-170)];
 ```
 
 ### XLineChartItem
 
+
+```objectivec
 /**
 @param numberArray data number in a line
 @param color the line color
 @return XLineChartItem instance
 */
-```objectivec
+
 - (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color;
 ```
 
