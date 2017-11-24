@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F51CF9D1FC812BF007BFEC2 /* XShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F51CF9B1FC812BF007BFEC2 /* XShape.m */; };
+		3F51CFA41FC812D9007BFEC2 /* XNotificationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F51CFA31FC812D9007BFEC2 /* XNotificationBridge.m */; };
 		9F0369B11EB744CC003FB013 /* CycleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0369AF1EB744CC003FB013 /* CycleTableViewCell.m */; };
 		9F0369B21EB744CC003FB013 /* CycleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F0369B01EB744CC003FB013 /* CycleTableViewCell.xib */; };
 		9F0369B51EB75051003FB013 /* XJYTapCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0369B41EB75051003FB013 /* XJYTapCycleView.m */; };
 		9F0369FD1EB778E9003FB013 /* BtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0369FC1EB778E9003FB013 /* BtnView.m */; };
-		9F146A0C1F0A322C002B966B /* XShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F146A0B1F0A322C002B966B /* XShape.m */; };
 		9F20B9421EC4990700973A15 /* StackAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F20B9411EC4990700973A15 /* StackAreaTableViewCell.m */; };
 		9F2813F31EC1F7AC0024E19F /* AreaLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2813F21EC1F7AC0024E19F /* AreaLineTableViewCell.m */; };
 		9F3B2A161E797580000FB7DB /* BarChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3B2A151E797580000FB7DB /* BarChartCell.m */; };
@@ -23,14 +24,11 @@
 		9F3DC7561E2E36B600C26D86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3DC7541E2E36B600C26D86 /* LaunchScreen.storyboard */; };
 		9F3DC7611E2E36B600C26D86 /* RecordLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7601E2E36B600C26D86 /* RecordLifeTests.m */; };
 		9F3DC76C1E2E36B600C26D86 /* RecordLifeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC76B1E2E36B600C26D86 /* RecordLifeUITests.m */; };
-		9F3DC78A1E2E492B00C26D86 /* XJYIPTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC77F1E2E492B00C26D86 /* XJYIPTools.m */; };
-		9F3DC78F1E2E492B00C26D86 /* XJYPopOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7871E2E492B00C26D86 /* XJYPopOption.m */; };
 		9F3DC7921E2E566500C26D86 /* XJYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7911E2E566500C26D86 /* XJYViewController.m */; };
 		9F3DC7951E2E569100C26D86 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7941E2E569100C26D86 /* HomeViewController.m */; };
 		9F3DC7981E2E56B700C26D86 /* HomeViewControllerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7971E2E56B700C26D86 /* HomeViewControllerViewModel.m */; };
 		9F3DC79B1E2E59DF00C26D86 /* XJYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC79A1E2E59DF00C26D86 /* XJYTableViewCell.m */; };
 		9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */; };
-		9F96A8E61EBA0DDD00BDC2C9 /* XNotificationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F96A8E51EBA0DDD00BDC2C9 /* XNotificationBridge.m */; };
 		9F9A3DE11F2F757A0052E610 /* XAnimationPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9A3DE01F2F757A0052E610 /* XAnimationPath.m */; };
 		9FB579031E349C9200339633 /* PieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB579021E349C9200339633 /* PieChartCell.m */; };
 		9FC9E1FF1F0F2467008D1445 /* CAKeyframeAnimation+AHEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC9E1BD1F0F2467008D1445 /* CAKeyframeAnimation+AHEasing.m */; };
@@ -102,6 +100,11 @@
 /* Begin PBXFileReference section */
 		268B4BE433119986366F9157 /* Pods-RecordLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.release.xcconfig"; sourceTree = "<group>"; };
 		37737D6A36A792975C04CD82 /* Pods-RecordLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.debug.xcconfig"; sourceTree = "<group>"; };
+		3F51CF9B1FC812BF007BFEC2 /* XShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XShape.m; sourceTree = "<group>"; };
+		3F51CF9C1FC812BF007BFEC2 /* XShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XShape.h; sourceTree = "<group>"; };
+		3F51CFA11FC812D9007BFEC2 /* XEnumHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XEnumHeader.h; sourceTree = "<group>"; };
+		3F51CFA21FC812D9007BFEC2 /* XNotificationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNotificationBridge.h; sourceTree = "<group>"; };
+		3F51CFA31FC812D9007BFEC2 /* XNotificationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNotificationBridge.m; sourceTree = "<group>"; };
 		9F0369AE1EB744CC003FB013 /* CycleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleTableViewCell.h; sourceTree = "<group>"; };
 		9F0369AF1EB744CC003FB013 /* CycleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleTableViewCell.m; sourceTree = "<group>"; };
 		9F0369B01EB744CC003FB013 /* CycleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CycleTableViewCell.xib; sourceTree = "<group>"; };
@@ -111,9 +114,6 @@
 		9F0369FC1EB778E9003FB013 /* BtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtnView.m; sourceTree = "<group>"; };
 		9F0F82391E9F7999009763FF /* XChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XChart.h; sourceTree = "<group>"; };
 		9F0F823A1E9F7999009763FF /* XChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XChartDelegate.h; sourceTree = "<group>"; };
-		9F0F82511E9F7999009763FF /* XEnumHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XEnumHeader.h; sourceTree = "<group>"; };
-		9F146A0A1F0A322C002B966B /* XShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XShape.h; sourceTree = "<group>"; };
-		9F146A0B1F0A322C002B966B /* XShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XShape.m; sourceTree = "<group>"; };
 		9F20B9401EC4990700973A15 /* StackAreaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackAreaTableViewCell.h; sourceTree = "<group>"; };
 		9F20B9411EC4990700973A15 /* StackAreaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackAreaTableViewCell.m; sourceTree = "<group>"; };
 		9F2813F11EC1F7AC0024E19F /* AreaLineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaLineTableViewCell.h; sourceTree = "<group>"; };
@@ -136,10 +136,6 @@
 		9F3DC7671E2E36B600C26D86 /* RecordLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecordLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3DC76B1E2E36B600C26D86 /* RecordLifeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordLifeUITests.m; sourceTree = "<group>"; };
 		9F3DC76D1E2E36B600C26D86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F3DC77E1E2E492B00C26D86 /* XJYIPTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYIPTools.h; sourceTree = "<group>"; };
-		9F3DC77F1E2E492B00C26D86 /* XJYIPTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYIPTools.m; sourceTree = "<group>"; };
-		9F3DC7861E2E492B00C26D86 /* XJYPopOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYPopOption.h; sourceTree = "<group>"; };
-		9F3DC7871E2E492B00C26D86 /* XJYPopOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYPopOption.m; sourceTree = "<group>"; };
 		9F3DC7901E2E566500C26D86 /* XJYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYViewController.h; sourceTree = "<group>"; };
 		9F3DC7911E2E566500C26D86 /* XJYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYViewController.m; sourceTree = "<group>"; };
 		9F3DC7931E2E569100C26D86 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -151,8 +147,6 @@
 		9F3DC79F1E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeOneTableViewCellViewModel.h; sourceTree = "<group>"; };
 		9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeOneTableViewCellViewModel.m; sourceTree = "<group>"; };
 		9F734DDC1EBF669B002ABF14 /* RecordLife-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RecordLife-Bridging-Header.h"; sourceTree = "<group>"; };
-		9F96A8E41EBA0DDD00BDC2C9 /* XNotificationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNotificationBridge.h; sourceTree = "<group>"; };
-		9F96A8E51EBA0DDD00BDC2C9 /* XNotificationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNotificationBridge.m; sourceTree = "<group>"; };
 		9F9A3DDF1F2F757A0052E610 /* XAnimationPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAnimationPath.h; sourceTree = "<group>"; };
 		9F9A3DE01F2F757A0052E610 /* XAnimationPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAnimationPath.m; sourceTree = "<group>"; };
 		9FB579011E349C9200339633 /* PieChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartCell.h; sourceTree = "<group>"; };
@@ -252,6 +246,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F51CFA01FC812D9007BFEC2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3F51CFA11FC812D9007BFEC2 /* XEnumHeader.h */,
+				3F51CFA21FC812D9007BFEC2 /* XNotificationBridge.h */,
+				3F51CFA31FC812D9007BFEC2 /* XNotificationBridge.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		418BB01D6FA134C9D0D67B75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +276,7 @@
 		9F0F821A1E9F7999009763FF /* XJYChart */ = {
 			isa = PBXGroup;
 			children = (
+				3F51CFA01FC812D9007BFEC2 /* Helper */,
 				9FC9E1BB1F0F2467008D1445 /* AHEasing */,
 				9FC9E1C01F0F2467008D1445 /* Animator */,
 				9FC9E1C51F0F2467008D1445 /* Calculate */,
@@ -280,11 +285,6 @@
 				9FC9E1FA1F0F2467008D1445 /* Color */,
 				9F0F82391E9F7999009763FF /* XChart.h */,
 				9F0F823A1E9F7999009763FF /* XChartDelegate.h */,
-				9F0F82511E9F7999009763FF /* XEnumHeader.h */,
-				9F96A8E41EBA0DDD00BDC2C9 /* XNotificationBridge.h */,
-				9F96A8E51EBA0DDD00BDC2C9 /* XNotificationBridge.m */,
-				9F146A0A1F0A322C002B966B /* XShape.h */,
-				9F146A0B1F0A322C002B966B /* XShape.m */,
 			);
 			path = XJYChart;
 			sourceTree = "<group>";
@@ -359,47 +359,18 @@
 			isa = PBXGroup;
 			children = (
 				9F3DC77C1E2E492B00C26D86 /* Vender */,
-				9F3DC77B1E2E492B00C26D86 /* Model */,
 				9F3DC7881E2E492B00C26D86 /* View */,
 				9F3DC7891E2E492B00C26D86 /* ViewModel */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		9F3DC77B1E2E492B00C26D86 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		9F3DC77C1E2E492B00C26D86 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
 				9F0F821A1E9F7999009763FF /* XJYChart */,
-				9FACB8E81E2F4C1600CD5D05 /* XJYRespondCocoa */,
-				9F3DC77D1E2E492B00C26D86 /* XJYHttpTools */,
-				9F3DC7851E2E492B00C26D86 /* XJYPopView */,
 			);
 			path = Vender;
-			sourceTree = "<group>";
-		};
-		9F3DC77D1E2E492B00C26D86 /* XJYHttpTools */ = {
-			isa = PBXGroup;
-			children = (
-				9F3DC77E1E2E492B00C26D86 /* XJYIPTools.h */,
-				9F3DC77F1E2E492B00C26D86 /* XJYIPTools.m */,
-			);
-			path = XJYHttpTools;
-			sourceTree = "<group>";
-		};
-		9F3DC7851E2E492B00C26D86 /* XJYPopView */ = {
-			isa = PBXGroup;
-			children = (
-				9F3DC7861E2E492B00C26D86 /* XJYPopOption.h */,
-				9F3DC7871E2E492B00C26D86 /* XJYPopOption.m */,
-			);
-			path = XJYPopView;
 			sourceTree = "<group>";
 		};
 		9F3DC7881E2E492B00C26D86 /* View */ = {
@@ -443,13 +414,6 @@
 				9F3DC7A01E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		9FACB8E81E2F4C1600CD5D05 /* XJYRespondCocoa */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = XJYRespondCocoa;
 			sourceTree = "<group>";
 		};
 		9FC9E1BB1F0F2467008D1445 /* AHEasing */ = {
@@ -505,6 +469,8 @@
 		9FC9E1D31F0F2467008D1445 /* ChartView */ = {
 			isa = PBXGroup;
 			children = (
+				3F51CF9C1FC812BF007BFEC2 /* XShape.h */,
+				3F51CF9B1FC812BF007BFEC2 /* XShape.m */,
 				9FC9E1D41F0F2467008D1445 /* OrdinateView.h */,
 				9FC9E1D51F0F2467008D1445 /* OrdinateView.m */,
 				9FC9E1D61F0F2467008D1445 /* XAbscissaView.h */,
@@ -774,8 +740,8 @@
 				9F2813F31EC1F7AC0024E19F /* AreaLineTableViewCell.m in Sources */,
 				9FC9E1FF1F0F2467008D1445 /* CAKeyframeAnimation+AHEasing.m in Sources */,
 				9FC9E2081F0F2467008D1445 /* UIGestureRecognizer+XXGes.m in Sources */,
+				3F51CFA41FC812D9007BFEC2 /* XNotificationBridge.m in Sources */,
 				9F3DC7A11E2E5A4200C26D86 /* HomeOneTableViewCellViewModel.m in Sources */,
-				9F3DC78A1E2E492B00C26D86 /* XJYIPTools.m in Sources */,
 				9FC9E2001F0F2467008D1445 /* easing.c in Sources */,
 				9F3DC79B1E2E59DF00C26D86 /* XJYTableViewCell.m in Sources */,
 				9FC9E2101F0F2467008D1445 /* XBarItem.m in Sources */,
@@ -787,12 +753,12 @@
 				9FC9E21A1F0F2467008D1445 /* XPositiveNegativeBarContainerView.m in Sources */,
 				9F0369B51EB75051003FB013 /* XJYTapCycleView.m in Sources */,
 				9F3DC74E1E2E36B600C26D86 /* ViewController.m in Sources */,
+				3F51CF9D1FC812BF007BFEC2 /* XShape.m in Sources */,
 				9F3B2A161E797580000FB7DB /* BarChartCell.m in Sources */,
 				9FC9E21D1F0F2467008D1445 /* XColor.m in Sources */,
 				9F3DC74B1E2E36B600C26D86 /* AppDelegate.m in Sources */,
 				9FC9E20F1F0F2467008D1445 /* XBarContainerView.m in Sources */,
 				9F3DC7981E2E56B700C26D86 /* HomeViewControllerViewModel.m in Sources */,
-				9F3DC78F1E2E492B00C26D86 /* XJYPopOption.m in Sources */,
 				9FC9E2181F0F2467008D1445 /* XPositiveNegativeBarChart.m in Sources */,
 				9F3DC7951E2E569100C26D86 /* HomeViewController.m in Sources */,
 				9FC9E20A1F0F2467008D1445 /* XAbscissaView.m in Sources */,
@@ -801,7 +767,6 @@
 				9FC9E2191F0F2467008D1445 /* XPositiveNegativeBarChartView.m in Sources */,
 				9FC9E2051F0F2467008D1445 /* CALayer+XXLayer.m in Sources */,
 				9FC9E20D1F0F2467008D1445 /* XBarChart.m in Sources */,
-				9F96A8E61EBA0DDD00BDC2C9 /* XNotificationBridge.m in Sources */,
 				9F0369FD1EB778E9003FB013 /* BtnView.m in Sources */,
 				9FC9E2041F0F2467008D1445 /* XRandomNumerHelper.m in Sources */,
 				9FC9E2141F0F2467008D1445 /* XLineChartView.m in Sources */,
@@ -818,7 +783,6 @@
 				9FC9E2151F0F2467008D1445 /* XLineContainerView.m in Sources */,
 				9FB579031E349C9200339633 /* PieChartCell.m in Sources */,
 				9FC9E2071F0F2467008D1445 /* CAShapeLayer+XJYLayerHelper.m in Sources */,
-				9F146A0C1F0A322C002B966B /* XShape.m in Sources */,
 				9FC9E20B1F0F2467008D1445 /* XAnimationLabel.m in Sources */,
 				9FC9E21B1F0F2467008D1445 /* XStackAreaLineContainerView.m in Sources */,
 				9FC9E2031F0F2467008D1445 /* XAuxiliaryCalculationHelper.m in Sources */,
