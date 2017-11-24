@@ -11,7 +11,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#include "easing.h"
+#import "XAnimator.h"
 
 @interface CAKeyframeAnimation (AHEasing)
 
