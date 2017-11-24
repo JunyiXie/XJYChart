@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#ifdef AH_EASING_USE_DBL_PRECIS
+#define AH_FLOAT_TYPE double
+#else
+#define AH_FLOAT_TYPE float
+#endif
+typedef AH_FLOAT_TYPE AHFloat;
+typedef AHFloat (*AHEasingFunction)(AHFloat);
+
 typedef NS_ENUM(NSUInteger, XTimingFunctionsType) {
     XLinearInterpolation,
     XQuadraticEaseIn,
