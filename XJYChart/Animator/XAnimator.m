@@ -13,6 +13,11 @@ typedef NS_ENUM(NSUInteger, XDisplayLinkAnimatorResultType) {
   XResult,
 };
 
+extern AHFloat QuarticEaseInOut(AHFloat p);
+extern AHFloat BounceEaseInOut(AHFloat p);
+extern AHFloat CubicEaseIn(AHFloat p);
+
+
 @interface XAnimator ()
 @property(nonatomic, assign) CGFloat animationDuration;
 @property(nonatomic, assign) CGFloat startingValue;
@@ -148,7 +153,6 @@ typedef NS_ENUM(NSUInteger, XDisplayLinkAnimatorResultType) {
   // 添加DisplayLink
   [self addDisplayLink];
 }
-
 
 
 #pragma mark Get
