@@ -13,10 +13,6 @@ typedef NS_ENUM(NSUInteger, XDisplayLinkAnimatorResultType) {
   XResult,
 };
 
-extern AHFloat QuarticEaseInOut(AHFloat p);
-extern AHFloat BounceEaseInOut(AHFloat p);
-extern AHFloat CubicEaseIn(AHFloat p);
-
 
 @interface XAnimator ()
 @property(nonatomic, assign) CGFloat animationDuration;
@@ -109,17 +105,18 @@ extern AHFloat CubicEaseIn(AHFloat p);
             return BounceEaseInOut(value);
         }
         break;
-        case XQuarticEaseInOut:
-        {
-            return QuarticEaseInOut(value);
-        }
-        
+//        case XQuarticEaseInOut:
+//        {
+//            return QuarticEaseInOut(value);
+//        }
+
         default:
         {
             return CubicEaseIn(value);
         }
         break;
     }
+    return 0;
     
 }
     
