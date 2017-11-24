@@ -49,10 +49,42 @@ $ pod install
 
 ## How to Use
 
+**Qucikly Use**
+
+Eg:
+[AreaLineExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/AreaLineTableViewCell.m)
+[BarChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/BarChartCell.m)
+[CycleChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/CycleTableViewCell.m)
+[LineChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/LineChartCell.m)
+[PieChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/PieChartCell.m)
+[PositiveNegativeBarChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/PositiveNegativeBarChartCell.m)
+[StackAreaLineChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/StackAreaTableViewCell.m)
+
+
 ### XPositiveNegativeBarChart
 
+/**
+初始化方法
+
+@param frame frame
+@param dataItemArray items
+@param topNumbser top
+@param bottomNumber buttom
+@return instancetype
+*/
 ```objectivec
 XPositiveNegativeBarChart *barChart = [[XPositiveNegativeBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@(-170)];
+```
+
+### XLineChartItem
+
+/**
+@param numberArray data number in a line
+@param color the line color
+@return XLineChartItem instance
+*/
+```objectivec
+- (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color;
 ```
 
 ### XLineChart
@@ -69,11 +101,7 @@ XPositiveNegativeBarChart *barChart = [[XPositiveNegativeBarChart alloc] initWit
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
 ```
 
-### XLineChartItem
 
-```objectivec
-- (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color dataDescribe:(NSString *)dataDescribe;
-```
 
 LineGraphMode:
 MutiLineGraph

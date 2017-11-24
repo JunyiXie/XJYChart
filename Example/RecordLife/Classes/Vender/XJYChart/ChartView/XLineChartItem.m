@@ -10,9 +10,13 @@
 
 @implementation XLineChartItem
 
-- (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color dataDescribe:(NSString *)dataDescribe {
+/**
+ @param numberArray data number in a line
+ @param color the line color
+ @return XLineChartItem instance
+ */
+- (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color {
     if (self = [super init]) {
-        self.dataDescribe = dataDescribe;
         self.numberArray = numberArray;
         self.color = color;
     }

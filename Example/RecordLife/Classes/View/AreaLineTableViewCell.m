@@ -27,7 +27,7 @@
         numberArray = [NSMutableArray arrayWithArray:@[@75,@63,@183,@109,@88,@75,@63,@183,@109,@88]];
 
         
-        XLineChartItem *item = [[XLineChartItem alloc] initWithDataNumberArray:numberArray color:XJYWhite dataDescribe:@"111"];
+        XLineChartItem *item = [[XLineChartItem alloc] initWithDataNumberArray:numberArray color:XJYWhite];
         [itemArray addObject:item];
         XLineChart *lineChart = [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0  graphMode:AreaLineGraph];
         lineChart.colorMode = Custom;

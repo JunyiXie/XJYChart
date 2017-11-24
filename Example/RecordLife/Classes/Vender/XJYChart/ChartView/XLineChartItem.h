@@ -11,16 +11,14 @@
 @interface XLineChartItem : NSObject
 
 @property (nonatomic, strong) UIColor *color;
-@property (nonatomic, strong) NSString *dataDescribe;
 @property (nonatomic, strong) NSMutableArray<NSNumber *> *numberArray;
 /**
  设置数据item
  
  @param numberArray (NSNumber *)dataNumber
  @param color (UIColor *)color
- @param dataDescribe (NSString *)dataDescribe
  @return instancetype
  */
-- (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color dataDescribe:(NSString *)dataDescribe;
+- (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color;
 
 @end
