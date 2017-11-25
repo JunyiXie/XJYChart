@@ -68,7 +68,6 @@ typedef enum : NSUInteger {
     [super drawRect:rect];
     [self cleanPreDrawAndData];
     [self strokeChart];
-    
 }
 
 - (void)cleanPreDrawAndData {
@@ -401,7 +400,6 @@ typedef enum : NSUInteger {
         }
     }];
 }
-
 
 
 @end
