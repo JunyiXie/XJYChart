@@ -14,6 +14,7 @@
 #import "CycleTableViewCell.h"
 #import "AreaLineTableViewCell.h"
 #import "StackAreaTableViewCell.h"
+#import "SingleLineChartTableViewCell.h"
 
 #import "masonry.h"
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -70,6 +71,7 @@
         [_tableView registerNib:[UINib nibWithNibName:@"CycleTableViewCell" bundle:nil] forCellReuseIdentifier:@"CycleTableViewCell"];
         [_tableView registerClass:[AreaLineTableViewCell class] forCellReuseIdentifier:kAreaLineTableViewCell];
         [_tableView registerClass:[StackAreaTableViewCell class] forCellReuseIdentifier:kStackAreaTableViewCell];
+        [_tableView registerClass:[SingleLineChartTableViewCell class] forCellReuseIdentifier:kSingleLineChartCell];
         
         
         _tableView.dataSource = self;
@@ -96,7 +98,7 @@
 #pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 7;
+    return 8;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -111,8 +113,9 @@
         return cell;
 
     } else if (indexPath.section == 1) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPieChartCell forIndexPath:indexPath];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSingleLineChartCell forIndexPath:indexPath];
         return cell;
+
     } else if (indexPath.section == 2) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kBarChartCell forIndexPath:indexPath];
         return cell;
@@ -128,6 +131,9 @@
     } else if (indexPath.section == 6) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kStackAreaTableViewCell forIndexPath:indexPath];
         return cell;
+    } else if (indexPath.section == 7) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPieChartCell forIndexPath:indexPath];
+        return cell;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPositiveNegativeBarChartCell forIndexPath:indexPath];
     return cell;
@@ -136,20 +142,21 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        
         return @"区域折线图";
     } else if (section == 1) {
-        return @"饼图";
+        return @"单线折线图";
     } else if (section == 2) {
-        return @"可滑动可点击的条形图";
+        return @"条形图";
     } else if (section == 3) {
         return @"正负条形图";
     } else if (section == 4){
-        return @"可滑动的渐变环形图";
+        return @"渐变环形图";
     } else if (section == 5){
-        return @"可滑动可点击的折线图";
+        return @"多线折线图";
     } else if (section == 6) {
         return @"多重区域折线图";
+    } else if (section == 7) {
+        return @"饼图";
     } else {
         return @"";
     }

@@ -60,8 +60,8 @@
     CGContextRef contextRef = UIGraphicsGetCurrentContext();
     [self cleanPreDrawLayerAndData];
     [self strokeAuxiliaryLineInContext:contextRef];
-    [self strokePointInContext:contextRef];
     [self strokeLineChart];
+    [self strokePointInContext:contextRef];
 }
 
 /// Stroke Auxiliary
@@ -139,6 +139,7 @@
 
 /// Stroke Line
 - (void)strokeLineChart {
+    self.pointsArrays = [self getPointsArrays];
     [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (self.colorMode == Random) {
             [self.shapeLayerArray addObject:[self lineShapeLayerWithPoints:obj colors:[[XColor shareXColor] randomColorInColorArray] lineMode:self.lineMode]];
@@ -174,6 +175,7 @@
         return pointsArrays;
     }
 }
+
 
 #pragma mark Helper
 /**
@@ -272,8 +274,9 @@
     chartLine.strokeColor = color.CGColor;
     chartLine.fillColor = [UIColor clearColor].CGColor;
     
-    CASpringAnimation *springAnimation = [XAnimation getLineChartSpringAnimationWithLayer:chartLine];
-    [chartLine addAnimation:springAnimation forKey:@"position.y"];
+    // Remove ANimation
+//    CASpringAnimation *springAnimation = [XAnimation getLineChartSpringAnimationWithLayer:chartLine];
+//    [chartLine addAnimation:springAnimation forKey:@"position.y"];
     
     return chartLine;
 }
@@ -342,7 +345,7 @@
                 
                 [self.pointsArrays[shapeLayerIndex] enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     CGPoint point = obj.CGPointValue;
-                    XAnimationLabel *label = [self topLabelWithPoint:point fillColor:[UIColor clearColor] text:@"0"];
+                    XAnimationLabel *label = [XAnimationLabel topLabelWithPoint:point text:@"0" textColor:XJYBlack fillColor:[UIColor clearColor]];
                     CGFloat textNum = self.dataItemArray[shapeLayerIndex].numberArray[idx].doubleValue;
                     [self.labelArray addObject:label];
                     [self addSubview:label];
@@ -352,35 +355,5 @@
         }
     }];
 }
-
-- (XAnimationLabel *)topLabelWithRect:(CGRect)rect fillColor:(UIColor *)color text:(NSString *)text {
-    
-    CGFloat number = text.floatValue;
-    NSString *labelText = [NSString stringWithFormat:@"%.1f", number];
-    XAnimationLabel *topLabel = [[XAnimationLabel alloc] initWithFrame:rect];
-    topLabel.backgroundColor = color;
-    [topLabel setTextAlignment:NSTextAlignmentCenter];
-    topLabel.text = labelText;
-    [topLabel setFont:[UIFont systemFontOfSize:12]];
-    [topLabel setTextColor:XJYRed];
-    return topLabel;
-}
-
-
-- (XAnimationLabel *)topLabelWithPoint:(CGPoint)point fillColor:(UIColor *)color text:(NSString *)text {
-    
-    CGRect rect = CGRectMake(point.x - 30, point.y - 35, 60, 35);
-    CGFloat number = text.floatValue;
-    NSString *labelText = [NSString stringWithFormat:@"%.1f", number];
-    XAnimationLabel *topLabel = [[XAnimationLabel alloc] initWithFrame:rect];
-    topLabel.backgroundColor = color;
-    [topLabel setTextAlignment:NSTextAlignmentCenter];
-    topLabel.text = labelText;
-    [topLabel setFont:[UIFont systemFontOfSize:16]];
-    [topLabel setTextColor:XJYBlack];
-    return topLabel;
-    
-}
-
 
 @end
