@@ -15,7 +15,7 @@
 #import "XAnimationLabel.h"
 #import "CALayer+XXLayer.h"
 #import "XAnimation.h"
-
+#import "XNotificationBridge.h"
 
 #define GradientFillColor1 [UIColor colorWithRed:117/255.0 green:184/255.0 blue:245/255.0 alpha:1].CGColor
 #define GradientFillColor2 [UIColor colorWithRed:24/255.0 green:141/255.0 blue:240/255.0 alpha:1].CGColor
@@ -376,6 +376,8 @@ typedef enum : NSUInteger {
         
         if (CGRectContainsPoint(layerFrame, point)) {
             
+            
+            
             //上一次点击的layer,清空上一次的状态
             CAShapeLayer *preShapeLayer =  (CAShapeLayer *)self.layerArray[self.coverLayer.selectIdxNumber.intValue];
             preShapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
@@ -396,6 +398,12 @@ typedef enum : NSUInteger {
             self.coverLayer.selectIdxNumber = @(idx);
             
             [subShapeLayer addSublayer:self.coverLayer];
+            
+            // Notification + Deleagte To CallBack
+            [[NSNotificationCenter defaultCenter] postNotificationName:[XNotificationBridge shareXNotificationBridge].TouchPNBarNotification
+                                                                object:nil
+                                                              userInfo:@{[XNotificationBridge shareXNotificationBridge].PNBarIdxNumberKey:@(idx)}];
+            
             return ;
         }
     }];

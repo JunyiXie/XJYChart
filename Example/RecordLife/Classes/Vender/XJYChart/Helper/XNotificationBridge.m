@@ -22,7 +22,10 @@
 - (instancetype) init {
     if (self = [super init]) {
         self.TouchBarNotification = @"TouchBarNotification";
-        self.BarIdxNumberKey = @"TouchBarNotification";
+        self.BarIdxNumberKey = @"TouchBarNotificationKey";
+        
+        self.TouchPNBarNotification = @"TouchPNBarNotification";
+        self.PNBarIdxNumberKey = @"TouchPNBarNotificationKey";
     }
     return self;
 }

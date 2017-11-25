@@ -9,6 +9,7 @@
 #import "XPositiveNegativeBarChart.h"
 #import "XPositiveNegativeBarChartView.h"
 #import "OrdinateView.h"
+#import "XNotificationBridge.h"
 #define OrdinateWidth 30
 #define BarChartViewTopInterval 10
 
@@ -30,6 +31,8 @@
         
         [self addSubview:self.ordinateView];
         [self addSubview:self.barChartView];
+        // Notification
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(touchNotification:) name:[XNotificationBridge shareXNotificationBridge].TouchPNBarNotification object:nil];
     }
     return self;
 }
@@ -55,6 +58,15 @@
         _ordinateView.backgroundColor = [UIColor whiteColor];
     }
     return _ordinateView;
+}
+#pragma mark Notification
+- (void)touchNotification:(NSNotification *)noti {
+    
+    NSDictionary *info = noti.userInfo;
+    NSNumber *idxNumber = info[[[XNotificationBridge shareXNotificationBridge] PNBarIdxNumberKey]];
+    if ([self.barChartDeleagte respondsToSelector:@selector(touchBarAtIdx:)]) {
+        [self.barChartDeleagte touchBarAtIdx:idxNumber.integerValue];
+    }
 }
 
 

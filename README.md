@@ -66,7 +66,6 @@ Eg:
 
 ```objectivec
 /**
-初始化方法
 
 @param frame frame
 @param dataItemArray items

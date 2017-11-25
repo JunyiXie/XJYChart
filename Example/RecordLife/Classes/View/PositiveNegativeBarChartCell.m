@@ -8,7 +8,9 @@
 
 #import "PositiveNegativeBarChartCell.h"
 #import "XChart.h"
+@interface PositiveNegativeBarChartCell()<XPNBarChartDelegate>
 
+@end
 @implementation PositiveNegativeBarChartCell
 
 - (void)awakeFromNib {
@@ -82,10 +84,17 @@
         [itemArray addObject:item25];
         
         XPositiveNegativeBarChart *barChart = [[XPositiveNegativeBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@(-170)];
-        
+        barChart.barChartDeleagte = self;
         [self.contentView addSubview:barChart];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+        
+        
     }
     return self;
+}
+
+- (void)touchBarAtIdx:(NSUInteger)idx {
+    NSLog(@"XBarChartDelegate touch Bat At idx %lu",idx);
 }
 @end
