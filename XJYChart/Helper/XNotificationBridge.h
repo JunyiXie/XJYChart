@@ -14,7 +14,14 @@
 @interface XNotificationBridge : NSObject
 
 + (instancetype)shareXNotificationBridge;
+
+/// BarChart
 @property (nonatomic, strong) NSString *TouchBarNotification;
 @property (nonatomic, strong) NSString *BarIdxNumberKey;
+
+
+/// PositiveNegativeBarChart
+@property (nonatomic, strong) NSString *TouchPNBarNotification;
+@property (nonatomic, strong) NSString *PNBarIdxNumberKey;
 
 @end

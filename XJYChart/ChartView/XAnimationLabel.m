@@ -29,6 +29,40 @@
 @implementation XAnimationLabel
 
 
+#pragma mark Quick Initialize
+
++ (XAnimationLabel *)topLabelWithPoint:(CGPoint)point text:(NSString *)text textColor:(UIColor *) textColor fillColor:(UIColor *)fillColor {
+    
+    CGRect rect = CGRectMake(point.x - 30, point.y - 35, 60, 35);
+    CGFloat number = text.floatValue;
+    NSString *labelText = [NSString stringWithFormat:@"%.1f", number];
+    XAnimationLabel *topLabel = [[XAnimationLabel alloc] initWithFrame:rect];
+    topLabel.backgroundColor = fillColor;
+    [topLabel setTextAlignment:NSTextAlignmentCenter];
+    topLabel.text = labelText;
+    [topLabel setFont:[UIFont systemFontOfSize:16]];
+    [topLabel setTextColor:textColor];
+    return topLabel;
+    
+}
+
++ (XAnimationLabel *)topLabelWithFrame:(CGRect)frame text:(NSString *)text textColor:(UIColor *) textColor fillColor:(UIColor *)fillColor {
+    
+    CGFloat number = text.floatValue;
+    NSString *labelText = [NSString stringWithFormat:@"%.1f", number];
+    XAnimationLabel *topLabel = [[XAnimationLabel alloc] initWithFrame:frame];
+    topLabel.backgroundColor = fillColor;
+    [topLabel setTextAlignment:NSTextAlignmentCenter];
+    topLabel.text = labelText;
+    [topLabel setFont:[UIFont systemFontOfSize:12]];
+    [topLabel setTextColor:textColor];
+    return topLabel;
+}
+
+/// Start Animation
+- (void)countFromCurrentTo:(CGFloat)to duration:(CGFloat)duration {
+    [self countFrom:self.currentValue to:to duration:duration];
+}
 
 
 - (void)addDisplayLink {
@@ -75,15 +109,12 @@
     
     self.progress = 0.0;
     self.totalTime = duration;
-    
     self.lastUpdateTime = [NSDate timeIntervalSinceReferenceDate];
     
     [self addDisplayLink];
 }
 
-- (void)countFromCurrentTo:(CGFloat)to duration:(CGFloat)duration {
-    [self countFrom:self.currentValue to:to duration:duration];
-}
+
 
 #pragma mark Get 
 

@@ -51,6 +51,14 @@
         self.dataItemArray = dataItemArray;
         self.top = topNumbser;
         self.bottom = bottomNumber;
+        
+#pragma mark Notification
+        // App Alive Animation Notification
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(becomeAlive) name:UIApplicationDidBecomeActiveNotification object:nil];
+        
+        // App Resign Set Animation Start State
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
+        
     }
     return self;
 }
@@ -59,9 +67,15 @@
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
+//    [self cleanPreDrawAndData];
+//    [self strokeChart];
+}
+
+- (void)refreshView {
     [self cleanPreDrawAndData];
     [self strokeChart];
 }
+
 
 - (void)cleanPreDrawAndData {
     //remove layer
@@ -78,6 +92,7 @@
     [self.backgroundLayerArray removeAllObjects];
     [self.colorArray removeAllObjects];
     [self.dataNumberArray removeAllObjects];
+    
 }
 
 
@@ -298,5 +313,14 @@
     
 }
 
+#pragma mark Notification Action
+
+- (void)becomeAlive {
+    [self refreshView];
+}
+
+- (void)enterBackground {
+    [self cleanPreDrawAndData];
+}
 
 @end

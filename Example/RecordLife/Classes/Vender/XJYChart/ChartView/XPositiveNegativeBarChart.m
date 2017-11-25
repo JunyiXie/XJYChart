@@ -13,6 +13,8 @@
 #define OrdinateWidth 30
 #define BarChartViewTopInterval 10
 
+
+
 @interface XPositiveNegativeBarChart ()
 
 @property (nonatomic, strong) XPositiveNegativeBarChartView *barChartView;

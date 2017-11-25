@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "XBarItem.h"
 
+@protocol XPNBarChartDelegate <NSObject>
+/// touch bar idx
+- (void)touchBarAtIdx:(NSUInteger)idx;
+
+@end
+
 @interface XPositiveNegativeBarChart : UIView
 /**
  初始化方法
@@ -20,6 +26,7 @@
  @return instancetype
  */
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
+@property (nonatomic, strong) id<XPNBarChartDelegate> barChartDeleagte;
 
 /**
  dataItemArray

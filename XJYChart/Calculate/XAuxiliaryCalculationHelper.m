@@ -7,7 +7,7 @@
 //
 
 #import "XAuxiliaryCalculationHelper.h"
-
+#import <UIKit/UIKit.h>
 @implementation XAuxiliaryCalculationHelper
 
 + (instancetype)shareCalculationHelper {
@@ -141,7 +141,19 @@
     vertx[i] = point1.x;
     verty[i] = point1.y;
   }
-  return pnpoly(4, vertx, verty, targetPoint.x, targetPoint.y);
+//  return ;
+    
+    UIBezierPath *bPath = [UIBezierPath bezierPath];
+    [bPath moveToPoint:pointsArray[0].CGPointValue];
+    for (int i = 1; i < pointsArray.count; i = i + 1) {
+        CGPoint point = pointsArray[i].CGPointValue;
+        [bPath addLineToPoint:point];
+    }
+    [bPath closePath];
+
+//    return ;
+    
+    return CGPathContainsPoint(bPath.CGPath, nil, pointValue.CGPointValue, true) || pnpoly(4, vertx, verty, targetPoint.x, targetPoint.y);
 }
 // 判断算法
 int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
@@ -155,6 +167,7 @@ int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
   }
   return c;
 }
+
 #pragma mark - 坐标转换递增入口
 /// 得到ios坐标系Y  通过 *递增比例 的方式
 - (CGFloat)

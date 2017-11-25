@@ -15,7 +15,7 @@
 #import "XAnimationLabel.h"
 #import "CALayer+XXLayer.h"
 #import "XAnimation.h"
-
+#import "XNotificationBridge.h"
 
 #define GradientFillColor1 [UIColor colorWithRed:117/255.0 green:184/255.0 blue:245/255.0 alpha:1].CGColor
 #define GradientFillColor2 [UIColor colorWithRed:24/255.0 green:141/255.0 blue:240/255.0 alpha:1].CGColor
@@ -68,7 +68,6 @@ typedef enum : NSUInteger {
     [super drawRect:rect];
     [self cleanPreDrawAndData];
     [self strokeChart];
-    
 }
 
 - (void)cleanPreDrawAndData {
@@ -370,50 +369,14 @@ typedef enum : NSUInteger {
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     CGPoint __block point = [[touches anyObject] locationInView:self];
     
-    //点击有值柱子
-    [self.layerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        point = [obj convertPoint:point toLayer:self.layer];
-        CAShapeLayer *shapeLayer = (CAShapeLayer *)obj;
-        CGRect layerFrame = shapeLayer.frameValue.CGRectValue;
-        if (CGRectContainsPoint(layerFrame, point)) {
-            
-            //上一次点击的layer,清空上一次的状态
-            CAShapeLayer *preShapeLayer =  (CAShapeLayer *)self.layerArray[self.coverLayer.selectIdxNumber.intValue];
-            preShapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
-            
-            NSLog(@"点击了 %lu bar  boolvalue", (unsigned long)idx + 1);
-            NSLog(@"%d",shapeLayer.selectStatusNumber.boolValue);
-            //            shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!shapeLayer.selectStatusNumber.boolValue];
-            //
-            if (shapeLayer.selectStatusNumber.boolValue == TRUE) {
-                shapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
-                [self.coverLayer removeFromSuperlayer];
-                return ;
-            }
-            
-            //移除原来的
-            [self.coverLayer removeFromSuperlayer];
-            
-            BOOL boolValue = shapeLayer.selectStatusNumber.boolValue;
-            shapeLayer.selectStatusNumber = [NSNumber numberWithBool:!boolValue];
-            self.coverLayer = [self rectGradientLayerWithBounds:layerFrame];
-            self.coverLayer.selectIdxNumber = @(idx);
-            
-            // addAnimation
-            [self.coverLayer addAnimation:[XAnimation getBarChartSpringAnimationWithLayer:self.coverLayer] forKey:@"position.y"];
-            
-            [shapeLayer addSublayer:self.coverLayer];
-            return ;
-        }
-        
-    }];
-    
     //点击整个柱子
     [self.fillLayerArray enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CAShapeLayer *shapeLayer = (CAShapeLayer *)obj;
         CGRect layerFrame = shapeLayer.frameValue.CGRectValue;
         
         if (CGRectContainsPoint(layerFrame, point)) {
+            
+            
             
             //上一次点击的layer,清空上一次的状态
             CAShapeLayer *preShapeLayer =  (CAShapeLayer *)self.layerArray[self.coverLayer.selectIdxNumber.intValue];
@@ -434,15 +397,17 @@ typedef enum : NSUInteger {
             self.coverLayer = [self rectGradientLayerWithBounds:subShapeLayer.frameValue.CGRectValue];
             self.coverLayer.selectIdxNumber = @(idx);
             
-            // addAnimation
-            [self.coverLayer addAnimation:[XAnimation getBarChartSpringAnimationWithLayer:self.coverLayer] forKey:@"position.y"];
-            
             [subShapeLayer addSublayer:self.coverLayer];
+            
+            // Notification + Deleagte To CallBack
+            [[NSNotificationCenter defaultCenter] postNotificationName:[XNotificationBridge shareXNotificationBridge].TouchPNBarNotification
+                                                                object:nil
+                                                              userInfo:@{[XNotificationBridge shareXNotificationBridge].PNBarIdxNumberKey:@(idx)}];
+            
             return ;
         }
     }];
 }
-
 
 
 @end
