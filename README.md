@@ -6,6 +6,7 @@
 [![License](https://img.shields.io/cocoapods/l/XJYChart.svg?style=flat)](https://github.com/EyreFree/XJYChart/blob/master/LICENSE)
 
 > XJYChart - A High-performance, Elegant, Easy-to-integrate Charting Framework.
+> The Best iOS Objc Charts.
  
 ## Overview
 

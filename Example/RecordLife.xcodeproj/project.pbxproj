@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F10EA401FC93D5E00E6141D /* SingleLineChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F10EA3F1FC93D5E00E6141D /* SingleLineChartTableViewCell.m */; };
 		3F51CF9D1FC812BF007BFEC2 /* XShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F51CF9B1FC812BF007BFEC2 /* XShape.m */; };
 		3F51CFA41FC812D9007BFEC2 /* XNotificationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F51CFA31FC812D9007BFEC2 /* XNotificationBridge.m */; };
 		9F0369B11EB744CC003FB013 /* CycleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0369AF1EB744CC003FB013 /* CycleTableViewCell.m */; };
@@ -99,6 +100,8 @@
 /* Begin PBXFileReference section */
 		268B4BE433119986366F9157 /* Pods-RecordLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.release.xcconfig"; sourceTree = "<group>"; };
 		37737D6A36A792975C04CD82 /* Pods-RecordLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecordLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecordLife/Pods-RecordLife.debug.xcconfig"; sourceTree = "<group>"; };
+		3F10EA3E1FC93D5E00E6141D /* SingleLineChartTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleLineChartTableViewCell.h; sourceTree = "<group>"; };
+		3F10EA3F1FC93D5E00E6141D /* SingleLineChartTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleLineChartTableViewCell.m; sourceTree = "<group>"; };
 		3F51CF9B1FC812BF007BFEC2 /* XShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XShape.m; sourceTree = "<group>"; };
 		3F51CF9C1FC812BF007BFEC2 /* XShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XShape.h; sourceTree = "<group>"; };
 		3F51CFA11FC812D9007BFEC2 /* XEnumHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XEnumHeader.h; sourceTree = "<group>"; };
@@ -398,6 +401,8 @@
 				9F0369B41EB75051003FB013 /* XJYTapCycleView.m */,
 				9F0369FB1EB778E9003FB013 /* BtnView.h */,
 				9F0369FC1EB778E9003FB013 /* BtnView.m */,
+				3F10EA3E1FC93D5E00E6141D /* SingleLineChartTableViewCell.h */,
+				3F10EA3F1FC93D5E00E6141D /* SingleLineChartTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -747,6 +752,7 @@
 				9FC9E21A1F0F2467008D1445 /* XPositiveNegativeBarContainerView.m in Sources */,
 				9F0369B51EB75051003FB013 /* XJYTapCycleView.m in Sources */,
 				9F3DC74E1E2E36B600C26D86 /* ViewController.m in Sources */,
+				3F10EA401FC93D5E00E6141D /* SingleLineChartTableViewCell.m in Sources */,
 				3F51CF9D1FC812BF007BFEC2 /* XShape.m in Sources */,
 				9F3B2A161E797580000FB7DB /* BarChartCell.m in Sources */,
 				9FC9E21D1F0F2467008D1445 /* XColor.m in Sources */,
