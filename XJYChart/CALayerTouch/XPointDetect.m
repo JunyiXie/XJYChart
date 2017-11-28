@@ -40,8 +40,6 @@
 }
 + (NSArray<NSValue *> *)expandRectArea:(NSArray<NSValue *> *)area expandLength:(CGFloat)length {
     
-    NSLog(@"expandRectArea");
-    
     CGPoint originP1 = area[0].CGPointValue;
     CGPoint originP2 = area[1].CGPointValue;
     CGPoint originP3 = area[2].CGPointValue;
