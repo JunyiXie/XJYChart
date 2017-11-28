@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03FEB0055E5BBAFBEACB6F6A /* Pods_XJYChartDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6599B632011C55F9ADD36253 /* Pods_XJYChartDemo.framework */; };
+		3F686B361FCAA3CA00FF9B14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B351FCAA3CA00FF9B14 /* AppDelegate.m */; };
+		3F686B3C1FCAA3CA00FF9B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B3A1FCAA3CA00FF9B14 /* Main.storyboard */; };
+		3F686B3E1FCAA3CA00FF9B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B3D1FCAA3CA00FF9B14 /* Assets.xcassets */; };
+		3F686B411FCAA3CA00FF9B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B3F1FCAA3CA00FF9B14 /* LaunchScreen.storyboard */; };
+		3F686B441FCAA3CA00FF9B14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B431FCAA3CA00FF9B14 /* main.m */; };
+		3F686B671FCAA3FF00FF9B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B661FCAA3FF00FF9B14 /* AppDelegate.swift */; };
+		3F686B691FCAA3FF00FF9B14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B681FCAA3FF00FF9B14 /* ViewController.swift */; };
+		3F686B6C1FCAA3FF00FF9B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B6A1FCAA3FF00FF9B14 /* Main.storyboard */; };
+		3F686B6E1FCAA3FF00FF9B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B6D1FCAA3FF00FF9B14 /* Assets.xcassets */; };
+		3F686B711FCAA3FF00FF9B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B6F1FCAA3FF00FF9B14 /* LaunchScreen.storyboard */; };
+		3F686BE31FCAA47900FF9B14 /* AreaLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B781FCAA47900FF9B14 /* AreaLineTableViewCell.m */; };
+		3F686BE41FCAA47900FF9B14 /* BarChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B7A1FCAA47900FF9B14 /* BarChartCell.m */; };
+		3F686BE51FCAA47900FF9B14 /* BtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B7C1FCAA47900FF9B14 /* BtnView.m */; };
+		3F686BE61FCAA47900FF9B14 /* CycleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B7E1FCAA47900FF9B14 /* CycleTableViewCell.m */; };
+		3F686BE71FCAA47900FF9B14 /* CycleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B7F1FCAA47900FF9B14 /* CycleTableViewCell.xib */; };
+		3F686BE81FCAA47900FF9B14 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B811FCAA47900FF9B14 /* HomeViewController.m */; };
+		3F686BE91FCAA47900FF9B14 /* LineChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B831FCAA47900FF9B14 /* LineChartCell.m */; };
+		3F686BEA1FCAA47900FF9B14 /* PieChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B851FCAA47900FF9B14 /* PieChartCell.m */; };
+		3F686BEB1FCAA47900FF9B14 /* PositiveNegativeBarChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B871FCAA47900FF9B14 /* PositiveNegativeBarChartCell.m */; };
+		3F686BEC1FCAA47900FF9B14 /* SingleLineChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B891FCAA47900FF9B14 /* SingleLineChartTableViewCell.m */; };
+		3F686BED1FCAA47900FF9B14 /* StackAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B8B1FCAA47900FF9B14 /* StackAreaTableViewCell.m */; };
+		3F686BEE1FCAA47900FF9B14 /* XJYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B8D1FCAA47900FF9B14 /* XJYTableViewCell.m */; };
+		3F686BEF1FCAA47900FF9B14 /* XJYTapCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B8F1FCAA47900FF9B14 /* XJYTapCycleView.m */; };
+		3F686BF01FCAA47900FF9B14 /* XJYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B911FCAA47900FF9B14 /* XJYViewController.m */; };
+		3FAFF1E81FCD7B2C00CBEA39 /* XJYChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAFF1E71FCD7B2B00CBEA39 /* XJYChart.framework */; };
+		3FAFF1E91FCD7B2C00CBEA39 /* XJYChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAFF1E71FCD7B2B00CBEA39 /* XJYChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		723435C1E3D0B9B0BEC43A7F /* Pods_XJYChartDemo_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAE09ADE582BE0972E635F3 /* Pods_XJYChartDemo_Swift.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3F99EB111FCBE12E00369050 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FAFF1E21FCD759000CBEA39 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3FAFF1E91FCD7B2C00CBEA39 /* XJYChart.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3225CB1976A95A9AC77F3AAB /* Pods-XJYChartDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo.release.xcconfig"; sourceTree = "<group>"; };
+		3F686B311FCAA3CA00FF9B14 /* XJYChartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XJYChartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F686B341FCAA3CA00FF9B14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3F686B351FCAA3CA00FF9B14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3F686B3B1FCAA3CA00FF9B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F686B3D1FCAA3CA00FF9B14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F686B401FCAA3CA00FF9B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F686B421FCAA3CA00FF9B14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F686B431FCAA3CA00FF9B14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3F686B641FCAA3FF00FF9B14 /* XJYChartDemo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XJYChartDemo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F686B661FCAA3FF00FF9B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F686B681FCAA3FF00FF9B14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F686B6B1FCAA3FF00FF9B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F686B6D1FCAA3FF00FF9B14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F686B701FCAA3FF00FF9B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F686B721FCAA3FF00FF9B14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F686B771FCAA47900FF9B14 /* AreaLineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaLineTableViewCell.h; sourceTree = "<group>"; };
+		3F686B781FCAA47900FF9B14 /* AreaLineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaLineTableViewCell.m; sourceTree = "<group>"; };
+		3F686B791FCAA47900FF9B14 /* BarChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartCell.h; sourceTree = "<group>"; };
+		3F686B7A1FCAA47900FF9B14 /* BarChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartCell.m; sourceTree = "<group>"; };
+		3F686B7B1FCAA47900FF9B14 /* BtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtnView.h; sourceTree = "<group>"; };
+		3F686B7C1FCAA47900FF9B14 /* BtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtnView.m; sourceTree = "<group>"; };
+		3F686B7D1FCAA47900FF9B14 /* CycleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleTableViewCell.h; sourceTree = "<group>"; };
+		3F686B7E1FCAA47900FF9B14 /* CycleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleTableViewCell.m; sourceTree = "<group>"; };
+		3F686B7F1FCAA47900FF9B14 /* CycleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CycleTableViewCell.xib; sourceTree = "<group>"; };
+		3F686B801FCAA47900FF9B14 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		3F686B811FCAA47900FF9B14 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		3F686B821FCAA47900FF9B14 /* LineChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartCell.h; sourceTree = "<group>"; };
+		3F686B831FCAA47900FF9B14 /* LineChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartCell.m; sourceTree = "<group>"; };
+		3F686B841FCAA47900FF9B14 /* PieChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartCell.h; sourceTree = "<group>"; };
+		3F686B851FCAA47900FF9B14 /* PieChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartCell.m; sourceTree = "<group>"; };
+		3F686B861FCAA47900FF9B14 /* PositiveNegativeBarChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositiveNegativeBarChartCell.h; sourceTree = "<group>"; };
+		3F686B871FCAA47900FF9B14 /* PositiveNegativeBarChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositiveNegativeBarChartCell.m; sourceTree = "<group>"; };
+		3F686B881FCAA47900FF9B14 /* SingleLineChartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleLineChartTableViewCell.h; sourceTree = "<group>"; };
+		3F686B891FCAA47900FF9B14 /* SingleLineChartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleLineChartTableViewCell.m; sourceTree = "<group>"; };
+		3F686B8A1FCAA47900FF9B14 /* StackAreaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackAreaTableViewCell.h; sourceTree = "<group>"; };
+		3F686B8B1FCAA47900FF9B14 /* StackAreaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackAreaTableViewCell.m; sourceTree = "<group>"; };
+		3F686B8C1FCAA47900FF9B14 /* XJYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYTableViewCell.h; sourceTree = "<group>"; };
+		3F686B8D1FCAA47900FF9B14 /* XJYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYTableViewCell.m; sourceTree = "<group>"; };
+		3F686B8E1FCAA47900FF9B14 /* XJYTapCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYTapCycleView.h; sourceTree = "<group>"; };
+		3F686B8F1FCAA47900FF9B14 /* XJYTapCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYTapCycleView.m; sourceTree = "<group>"; };
+		3F686B901FCAA47900FF9B14 /* XJYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYViewController.h; sourceTree = "<group>"; };
+		3F686B911FCAA47900FF9B14 /* XJYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYViewController.m; sourceTree = "<group>"; };
+		3FAFF1E71FCD7B2B00CBEA39 /* XJYChart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XJYChart.framework; path = ../Products/XJYChart.framework; sourceTree = "<group>"; };
+		6599B632011C55F9ADD36253 /* Pods_XJYChartDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJYChartDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EAE09ADE582BE0972E635F3 /* Pods_XJYChartDemo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJYChartDemo_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC6A774479A329B1152375B /* Pods-XJYChartDemo-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		C3182931858B8E2B544A34A7 /* Pods-XJYChartDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DB3DCD0662C701896C552FBB /* Pods-XJYChartDemo-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F686B2E1FCAA3CA00FF9B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FAFF1E81FCD7B2C00CBEA39 /* XJYChart.framework in Frameworks */,
+				03FEB0055E5BBAFBEACB6F6A /* Pods_XJYChartDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F686B611FCAA3FF00FF9B14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				723435C1E3D0B9B0BEC43A7F /* Pods_XJYChartDemo_Swift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F686B281FCAA3CA00FF9B14 = {
+			isa = PBXGroup;
+			children = (
+				3FAFF1E71FCD7B2B00CBEA39 /* XJYChart.framework */,
+				3F686B331FCAA3CA00FF9B14 /* XJYChartDemo */,
+				3F686B651FCAA3FF00FF9B14 /* XJYChartDemo-Swift */,
+				3F686B321FCAA3CA00FF9B14 /* Products */,
+				5C711644C246B20C47D0BF8E /* Pods */,
+				CDFB04428541721A6CAB1972 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3F686B321FCAA3CA00FF9B14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F686B311FCAA3CA00FF9B14 /* XJYChartDemo.app */,
+				3F686B641FCAA3FF00FF9B14 /* XJYChartDemo-Swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F686B331FCAA3CA00FF9B14 /* XJYChartDemo */ = {
+			isa = PBXGroup;
+			children = (
+				3F686B761FCAA47900FF9B14 /* View */,
+				3F686B341FCAA3CA00FF9B14 /* AppDelegate.h */,
+				3F686B351FCAA3CA00FF9B14 /* AppDelegate.m */,
+				3F686B3A1FCAA3CA00FF9B14 /* Main.storyboard */,
+				3F686B3D1FCAA3CA00FF9B14 /* Assets.xcassets */,
+				3F686B3F1FCAA3CA00FF9B14 /* LaunchScreen.storyboard */,
+				3F686B421FCAA3CA00FF9B14 /* Info.plist */,
+				3F686B431FCAA3CA00FF9B14 /* main.m */,
+			);
+			path = XJYChartDemo;
+			sourceTree = "<group>";
+		};
+		3F686B651FCAA3FF00FF9B14 /* XJYChartDemo-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				3F686B661FCAA3FF00FF9B14 /* AppDelegate.swift */,
+				3F686B681FCAA3FF00FF9B14 /* ViewController.swift */,
+				3F686B6A1FCAA3FF00FF9B14 /* Main.storyboard */,
+				3F686B6D1FCAA3FF00FF9B14 /* Assets.xcassets */,
+				3F686B6F1FCAA3FF00FF9B14 /* LaunchScreen.storyboard */,
+				3F686B721FCAA3FF00FF9B14 /* Info.plist */,
+			);
+			path = "XJYChartDemo-Swift";
+			sourceTree = "<group>";
+		};
+		3F686B761FCAA47900FF9B14 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F686B771FCAA47900FF9B14 /* AreaLineTableViewCell.h */,
+				3F686B781FCAA47900FF9B14 /* AreaLineTableViewCell.m */,
+				3F686B791FCAA47900FF9B14 /* BarChartCell.h */,
+				3F686B7A1FCAA47900FF9B14 /* BarChartCell.m */,
+				3F686B7B1FCAA47900FF9B14 /* BtnView.h */,
+				3F686B7C1FCAA47900FF9B14 /* BtnView.m */,
+				3F686B7D1FCAA47900FF9B14 /* CycleTableViewCell.h */,
+				3F686B7E1FCAA47900FF9B14 /* CycleTableViewCell.m */,
+				3F686B7F1FCAA47900FF9B14 /* CycleTableViewCell.xib */,
+				3F686B801FCAA47900FF9B14 /* HomeViewController.h */,
+				3F686B811FCAA47900FF9B14 /* HomeViewController.m */,
+				3F686B821FCAA47900FF9B14 /* LineChartCell.h */,
+				3F686B831FCAA47900FF9B14 /* LineChartCell.m */,
+				3F686B841FCAA47900FF9B14 /* PieChartCell.h */,
+				3F686B851FCAA47900FF9B14 /* PieChartCell.m */,
+				3F686B861FCAA47900FF9B14 /* PositiveNegativeBarChartCell.h */,
+				3F686B871FCAA47900FF9B14 /* PositiveNegativeBarChartCell.m */,
+				3F686B881FCAA47900FF9B14 /* SingleLineChartTableViewCell.h */,
+				3F686B891FCAA47900FF9B14 /* SingleLineChartTableViewCell.m */,
+				3F686B8A1FCAA47900FF9B14 /* StackAreaTableViewCell.h */,
+				3F686B8B1FCAA47900FF9B14 /* StackAreaTableViewCell.m */,
+				3F686B8C1FCAA47900FF9B14 /* XJYTableViewCell.h */,
+				3F686B8D1FCAA47900FF9B14 /* XJYTableViewCell.m */,
+				3F686B8E1FCAA47900FF9B14 /* XJYTapCycleView.h */,
+				3F686B8F1FCAA47900FF9B14 /* XJYTapCycleView.m */,
+				3F686B901FCAA47900FF9B14 /* XJYViewController.h */,
+				3F686B911FCAA47900FF9B14 /* XJYViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C711644C246B20C47D0BF8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3182931858B8E2B544A34A7 /* Pods-XJYChartDemo.debug.xcconfig */,
+				3225CB1976A95A9AC77F3AAB /* Pods-XJYChartDemo.release.xcconfig */,
+				DB3DCD0662C701896C552FBB /* Pods-XJYChartDemo-Swift.debug.xcconfig */,
+				8BC6A774479A329B1152375B /* Pods-XJYChartDemo-Swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CDFB04428541721A6CAB1972 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7EAE09ADE582BE0972E635F3 /* Pods_XJYChartDemo_Swift.framework */,
+				6599B632011C55F9ADD36253 /* Pods_XJYChartDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F686B301FCAA3CA00FF9B14 /* XJYChartDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F686B471FCAA3CA00FF9B14 /* Build configuration list for PBXNativeTarget "XJYChartDemo" */;
+			buildPhases = (
+				4F896640C06383B555D8ADC2 /* [CP] Check Pods Manifest.lock */,
+				3F686B2D1FCAA3CA00FF9B14 /* Sources */,
+				3F686B2E1FCAA3CA00FF9B14 /* Frameworks */,
+				3F686B2F1FCAA3CA00FF9B14 /* Resources */,
+				71C302943CE4BFC36C0260CC /* [CP] Embed Pods Frameworks */,
+				958AD04EEDA0088D9478084F /* [CP] Copy Pods Resources */,
+				3FAFF1E21FCD759000CBEA39 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XJYChartDemo;
+			productName = XJYChartDemo;
+			productReference = 3F686B311FCAA3CA00FF9B14 /* XJYChartDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F686B631FCAA3FF00FF9B14 /* XJYChartDemo-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F686B731FCAA3FF00FF9B14 /* Build configuration list for PBXNativeTarget "XJYChartDemo-Swift" */;
+			buildPhases = (
+				7C5533EE0025FFE77FACF10F /* [CP] Check Pods Manifest.lock */,
+				3F686B601FCAA3FF00FF9B14 /* Sources */,
+				3F686B611FCAA3FF00FF9B14 /* Frameworks */,
+				3F686B621FCAA3FF00FF9B14 /* Resources */,
+				7C698CA410E060FD43097A26 /* [CP] Embed Pods Frameworks */,
+				57D0BB0728C402960385A522 /* [CP] Copy Pods Resources */,
+				3F99EB111FCBE12E00369050 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XJYChartDemo-Swift";
+			productName = "XJYChartDemo-Swift";
+			productReference = 3F686B641FCAA3FF00FF9B14 /* XJYChartDemo-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F686B291FCAA3CA00FF9B14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = JunyiXie;
+				TargetAttributes = {
+					3F686B301FCAA3CA00FF9B14 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					3F686B631FCAA3FF00FF9B14 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3F686B2C1FCAA3CA00FF9B14 /* Build configuration list for PBXProject "XJYChartDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F686B281FCAA3CA00FF9B14;
+			productRefGroup = 3F686B321FCAA3CA00FF9B14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F686B301FCAA3CA00FF9B14 /* XJYChartDemo */,
+				3F686B631FCAA3FF00FF9B14 /* XJYChartDemo-Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F686B2F1FCAA3CA00FF9B14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F686B411FCAA3CA00FF9B14 /* LaunchScreen.storyboard in Resources */,
+				3F686B3E1FCAA3CA00FF9B14 /* Assets.xcassets in Resources */,
+				3F686BE71FCAA47900FF9B14 /* CycleTableViewCell.xib in Resources */,
+				3F686B3C1FCAA3CA00FF9B14 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F686B621FCAA3FF00FF9B14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F686B711FCAA3FF00FF9B14 /* LaunchScreen.storyboard in Resources */,
+				3F686B6E1FCAA3FF00FF9B14 /* Assets.xcassets in Resources */,
+				3F686B6C1FCAA3FF00FF9B14 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F896640C06383B555D8ADC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XJYChartDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57D0BB0728C402960385A522 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71C302943CE4BFC36C0260CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C5533EE0025FFE77FACF10F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XJYChartDemo-Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C698CA410E060FD43097A26 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		958AD04EEDA0088D9478084F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F686B2D1FCAA3CA00FF9B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F686B441FCAA3CA00FF9B14 /* main.m in Sources */,
+				3F686BEB1FCAA47900FF9B14 /* PositiveNegativeBarChartCell.m in Sources */,
+				3F686BE91FCAA47900FF9B14 /* LineChartCell.m in Sources */,
+				3F686BEC1FCAA47900FF9B14 /* SingleLineChartTableViewCell.m in Sources */,
+				3F686BE31FCAA47900FF9B14 /* AreaLineTableViewCell.m in Sources */,
+				3F686BE51FCAA47900FF9B14 /* BtnView.m in Sources */,
+				3F686BE41FCAA47900FF9B14 /* BarChartCell.m in Sources */,
+				3F686BF01FCAA47900FF9B14 /* XJYViewController.m in Sources */,
+				3F686B361FCAA3CA00FF9B14 /* AppDelegate.m in Sources */,
+				3F686BEF1FCAA47900FF9B14 /* XJYTapCycleView.m in Sources */,
+				3F686BEE1FCAA47900FF9B14 /* XJYTableViewCell.m in Sources */,
+				3F686BED1FCAA47900FF9B14 /* StackAreaTableViewCell.m in Sources */,
+				3F686BE61FCAA47900FF9B14 /* CycleTableViewCell.m in Sources */,
+				3F686BE81FCAA47900FF9B14 /* HomeViewController.m in Sources */,
+				3F686BEA1FCAA47900FF9B14 /* PieChartCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F686B601FCAA3FF00FF9B14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F686B691FCAA3FF00FF9B14 /* ViewController.swift in Sources */,
+				3F686B671FCAA3FF00FF9B14 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3F686B3A1FCAA3CA00FF9B14 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F686B3B1FCAA3CA00FF9B14 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F686B3F1FCAA3CA00FF9B14 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F686B401FCAA3CA00FF9B14 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3F686B6A1FCAA3FF00FF9B14 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F686B6B1FCAA3FF00FF9B14 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F686B6F1FCAA3FF00FF9B14 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F686B701FCAA3FF00FF9B14 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F686B451FCAA3CA00FF9B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../XJYChart/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3F686B461FCAA3CA00FF9B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../XJYChart/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F686B481FCAA3CA00FF9B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3182931858B8E2B544A34A7 /* Pods-XJYChartDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X2V7CJP5W7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XJYChart/Product",
+					"$(PROJECT_DIR)/XJYChartDemo",
+					"$(PROJECT_DIR)/XChart/Products",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"$(SRCROOT)/XChart/Products/XChart.framework\"/**",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+				);
+				INFOPLIST_FILE = XJYChartDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Masonry\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.junyixie.XJYChartDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F686B491FCAA3CA00FF9B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3225CB1976A95A9AC77F3AAB /* Pods-XJYChartDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X2V7CJP5W7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XJYChart/Product",
+					"$(PROJECT_DIR)/XJYChartDemo",
+					"$(PROJECT_DIR)/XChart/Products",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"$(SRCROOT)/XChart/Products/XChart.framework\"/**",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+				);
+				INFOPLIST_FILE = XJYChartDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Masonry\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.junyixie.XJYChartDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3F686B741FCAA3FF00FF9B14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB3DCD0662C701896C552FBB /* Pods-XJYChartDemo-Swift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X2V7CJP5W7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XChart/Products",
+				);
+				INFOPLIST_FILE = "XJYChartDemo-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.junyixie.XJYChartDemo-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F686B751FCAA3FF00FF9B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BC6A774479A329B1152375B /* Pods-XJYChartDemo-Swift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X2V7CJP5W7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/XChart/Products",
+				);
+				INFOPLIST_FILE = "XJYChartDemo-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.junyixie.XJYChartDemo-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F686B2C1FCAA3CA00FF9B14 /* Build configuration list for PBXProject "XJYChartDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F686B451FCAA3CA00FF9B14 /* Debug */,
+				3F686B461FCAA3CA00FF9B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F686B471FCAA3CA00FF9B14 /* Build configuration list for PBXNativeTarget "XJYChartDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F686B481FCAA3CA00FF9B14 /* Debug */,
+				3F686B491FCAA3CA00FF9B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F686B731FCAA3FF00FF9B14 /* Build configuration list for PBXNativeTarget "XJYChartDemo-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F686B741FCAA3FF00FF9B14 /* Debug */,
+				3F686B751FCAA3FF00FF9B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F686B291FCAA3CA00FF9B14 /* Project object */;
+}
