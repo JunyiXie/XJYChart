@@ -7,6 +7,16 @@
 
 > XJYChart - A High-performance, Elegant, Easy-to-integrate Charting Framework.
 > The Best iOS Objc Charts.
+
+**相比于其他OC框架**
+
+**XJYChart 做到了**
+
+- 图表滚动
+- 折线图区域填充
+- 触摸支持
+- 显示动画
+- 区域高亮
  
 ## Overview
 
@@ -25,6 +35,7 @@
 - [x] **CycleChart**
 
 ## Features
+
 
 - [x] **Animation**
 - [x] **Touch**

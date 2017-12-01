@@ -181,6 +181,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F0F84751FD18B3F005914EE /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		3FAFF1161FCD609000CBEA39 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +201,7 @@
 			children = (
 				3FAFF1BD1FCD610100CBEA39 /* XChart.h */,
 				3FAFF1BE1FCD610100CBEA39 /* XChartDelegate.h */,
+				3F0F84751FD18B3F005914EE /* DataModel */,
 				3FAFF1651FCD60FA00CBEA39 /* AHEasing */,
 				3FAFF1351FCD60FA00CBEA39 /* Animator */,
 				3FAFF1681FCD60FA00CBEA39 /* CALayerTouch */,
