@@ -191,6 +191,8 @@
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
     [self strokeAuxiliaryLineInContext:context];
+  [self startAnimation];
+
 }
 
 // Start Animation

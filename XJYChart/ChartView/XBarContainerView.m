@@ -69,6 +69,7 @@
     [super drawRect:rect];
 //    [self cleanPreDrawAndData];
 //    [self strokeChart];
+  [self refreshView];
 }
 
 - (void)refreshView {
