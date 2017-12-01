@@ -8,7 +8,7 @@
 > XJYChart - A High-performance, Elegant, Easy-to-integrate Charting Framework.
 > The Best iOS Objc Charts.
 
-**相比于其他OC框架**
+**相比于其他OC图表框架**
 
 **XJYChart 做到了**
 
