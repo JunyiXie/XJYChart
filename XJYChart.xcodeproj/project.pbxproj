@@ -167,7 +167,7 @@
 		3FAFF1771FCD60FA00CBEA39 /* XNotificationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNotificationBridge.m; sourceTree = "<group>"; };
 		3FAFF1BD1FCD610100CBEA39 /* XChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XChart.h; sourceTree = "<group>"; };
 		3FAFF1BE1FCD610100CBEA39 /* XChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XChartDelegate.h; sourceTree = "<group>"; };
-		3FDCAD821FCD88A800FEC520 /* XJYChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XJYChart.framework; path = "/Users/junyixie/Library/Mobile Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/build/Debug-iphoneos/XJYChart.framework"; sourceTree = "<absolute>"; };
+		3FDCF4041FD14D0D00774114 /* XJYChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XJYChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				3FAFF1221FCD609000CBEA39 /* XJYChart */,
+				3FDCF4041FD14D0D00774114 /* XJYChart.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -396,7 +397,7 @@
 			);
 			name = XJYChart;
 			productName = XJYChart;
-			productReference = 3FDCAD821FCD88A800FEC520 /* XJYChart.framework */;
+			productReference = 3FDCF4041FD14D0D00774114 /* XJYChart.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */

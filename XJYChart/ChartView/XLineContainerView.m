@@ -209,6 +209,7 @@ CGFloat touchLineWidth = 20;
     chartLine.lineCap = kCALineCapRound;
     chartLine.lineJoin = kCALineJoinRound;
     chartLine.lineWidth = LineWidth;
+  chartLine.opacity = 0.5;
     
     for (int i = 0; i < pointsValueArray.count - 1; i++) {
         CGPoint point1 = pointsValueArray[i].CGPointValue;
