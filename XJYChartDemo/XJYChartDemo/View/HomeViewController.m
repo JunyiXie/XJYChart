@@ -123,9 +123,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPositiveNegativeBarChartCell forIndexPath:indexPath];
         return cell;
     } else if (indexPath.section == 4) {
-      UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kPositiveNegativeBarChartCell forIndexPath:indexPath];
-
-//        CycleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCycleTableViewCell forIndexPath:indexPath];
+        CycleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCycleTableViewCell forIndexPath:indexPath];
         return cell;
     } else if (indexPath.section == 5) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kLineChartCell forIndexPath:indexPath];
