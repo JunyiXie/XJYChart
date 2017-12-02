@@ -13,6 +13,8 @@
 #import "XAnimationLabel.h"
 #import "XAnimation.h"
 #import "XAnimator.h"
+#import "XRemoveFromSuperArray.h"
+#import "XRemoveManager.h"
 #pragma mark - Macro
 
 #define LineWidth 6.0
@@ -73,10 +75,10 @@
 @interface XAreaAnimationManager : NSObject
 
 /// area nodes
-@property(nonatomic, strong) NSMutableArray<XGraphAnimationNode *> *areaNodes;
+@property(nonatomic, strong) NSMutableArray<XGraphAnimationNode*>* areaNodes;
 /// animation needs nodes
 @property(nonatomic, strong)
-    NSMutableArray<XGraphAnimationNode *> *animationNodes;
+    NSMutableArray<XGraphAnimationNode*>* animationNodes;
 
 @end
 
@@ -87,16 +89,15 @@
   return self;
 }
 
-- (instancetype)initWithAreaNodes:
-    (NSMutableArray<XGraphAnimationNode *> *)nodes {
+- (instancetype)initWithAreaNodes:(NSMutableArray<XGraphAnimationNode*>*)nodes {
   if (self = [super init]) {
     self.areaNodes = nodes;
   }
   return self;
 }
 
-- (NSMutableArray<XGraphAnimationNode *> *)animationNodes {
-  NSMutableArray *nodes = [self.areaNodes mutableCopy];
+- (NSMutableArray<XGraphAnimationNode*>*)animationNodes {
+  NSMutableArray* nodes = [self.areaNodes mutableCopy];
   [nodes removeObjectAtIndex:0];
   [nodes removeLastObject];
   return nodes;
@@ -117,25 +118,29 @@
  */
 @interface XAreaLineContainerView ()
 
-@property(nonatomic, strong) CABasicAnimation *pathAnimation;
-@property(nonatomic, strong) UIColor *areaColor;
+@property(nonatomic, strong) XRemoveManager* removeManager;
+
+
+
+@property(nonatomic, strong) CABasicAnimation* pathAnimation;
+@property(nonatomic, strong) UIColor* areaColor;
 
 /**
  All lines points
  */
-@property(nonatomic, strong) NSMutableArray<NSValue *> *drawablePoints;
-@property(nonatomic, strong) NSMutableArray<XAnimationLabel *> *labelArray;
-@property(nonatomic, strong) NSMutableArray<XGraphAnimationNode *> *areaNodes;
+@property(nonatomic, strong) NSMutableArray<NSValue*>* drawablePoints;
+@property(nonatomic, strong) NSMutableArray<XAnimationLabel*>* labelArray;
+@property(nonatomic, strong) NSMutableArray<XGraphAnimationNode*>* areaNodes;
 
-@property(nonatomic, strong) XAreaAnimationManager *areaAnimationManager;
+@property(nonatomic, strong) XAreaAnimationManager* areaAnimationManager;
 @end
 
 @implementation XAreaLineContainerView
 
 - (instancetype)initWithFrame:(CGRect)frame
-                dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray
-                    topNumber:(NSNumber *)topNumber
-                 bottomNumber:(NSNumber *)bottomNumber {
+                dataItemArray:(NSMutableArray<XLineChartItem*>*)dataItemArray
+                    topNumber:(NSNumber*)topNumber
+                 bottomNumber:(NSNumber*)bottomNumber {
   if (self = [super initWithFrame:frame]) {
     self.backgroundColor = XJYBlue;
     self.drawablePoints = [NSMutableArray new];
@@ -147,6 +152,8 @@
     self.bottom = bottomNumber;
     self.lineMode = BrokenLine;
     self.colorMode = Random;
+    
+    self.removeManager = [[XRemoveManager alloc] init];
 
     // 数据处理，集中管理
     self.areaAnimationManager = [self makeAreaAnimationManager];
@@ -171,10 +178,10 @@
 }
 
 /// 数据 ---> AreaManager
-- (XAreaAnimationManager *)makeAreaAnimationManager {
+- (XAreaAnimationManager*)makeAreaAnimationManager {
   self.drawablePoints = [self getDrawablePoints];
   self.areaNodes = [self getAreaDrawableAnimationNodes];
-  XAreaAnimationManager *manager = [[XAreaAnimationManager alloc]
+  XAreaAnimationManager* manager = [[XAreaAnimationManager alloc]
       initWithAreaNodes:[self.areaNodes mutableCopy]];
   return manager;
 }
@@ -188,15 +195,15 @@
 
 // Start Animation
 - (void)startAnimation {
-  XAnimator *animator = [[XAnimator alloc] init];
+  XAnimator* animator = [[XAnimator alloc] init];
   [animator
       AnimatorDuration:2
         timingFuncType:XQuarticEaseInOut
         animationBlock:^(CGFloat percentage) {
           [self.areaAnimationManager
                   .areaNodes enumerateObjectsUsingBlock:^(
-                                 XGraphAnimationNode *_Nonnull node,
-                                 NSUInteger idx, BOOL *_Nonnull stop) {
+                                 XGraphAnimationNode* _Nonnull node,
+                                 NSUInteger idx, BOOL* _Nonnull stop) {
             node.graphAnimationCurrentPoint = CGPointMake(
                 node.getAnimationNodeX,
                 [[XAuxiliaryCalculationHelper shareCalculationHelper]
@@ -221,7 +228,7 @@
   [self strokeLine];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+- (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
   [self startAnimation];
 }
 
@@ -255,16 +262,16 @@
 }
 
 - (void)strokePointInContext {
-  UIColor *pointColor = [UIColor whiteColor];
-  UIColor *wireframeColor = [UIColor whiteColor];
+  UIColor* pointColor = [UIColor whiteColor];
+  UIColor* wireframeColor = [UIColor whiteColor];
   ;
 
   [self.areaAnimationManager.animationNodes
-      enumerateObjectsUsingBlock:^(XGraphAnimationNode *_Nonnull node,
-                                   NSUInteger idx, BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(XGraphAnimationNode* _Nonnull node,
+                                   NSUInteger idx, BOOL* _Nonnull stop) {
         CGPoint point = node.graphAnimationCurrentPoint;
-        CAShapeLayer *pointLayer = [CAShapeLayer layer];
-        UIBezierPath *path = [UIBezierPath
+        CAShapeLayer* pointLayer = [CAShapeLayer layer];
+        UIBezierPath* path = [UIBezierPath
             bezierPathWithRoundedRect:CGRectMake(point.x - PointDiameter / 2,
                                                  point.y - PointDiameter / 2,
                                                  PointDiameter, PointDiameter)
@@ -278,11 +285,15 @@
 }
 
 - (void)cleanPreDrawAndDataCache {
+  
+  // new
+  [self.removeManager removeDisplayContentAndItem];
+  
   // work well
   self.layer.sublayers = nil;
   [self.labelArray
-      enumerateObjectsUsingBlock:^(XAnimationLabel *_Nonnull obj,
-                                   NSUInteger idx, BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(XAnimationLabel* _Nonnull obj,
+                                   NSUInteger idx, BOOL* _Nonnull stop) {
         [obj removeFromSuperview];
       }];
 
@@ -293,10 +304,10 @@
 
 - (void)strokeLine {
   // animation end layer
-  NSMutableArray *currentPointArray = [NSMutableArray new];
+  NSMutableArray* currentPointArray = [NSMutableArray new];
   [self.areaAnimationManager.areaNodes
-      enumerateObjectsUsingBlock:^(XGraphAnimationNode *_Nonnull obj,
-                                   NSUInteger idx, BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(XGraphAnimationNode* _Nonnull obj,
+                                   NSUInteger idx, BOOL* _Nonnull stop) {
         [currentPointArray
             addObject:[NSValue
                           valueWithCGPoint:obj.graphAnimationCurrentPoint]];
@@ -306,7 +317,7 @@
   CGPoint rightConerPoint =
       CGPointMake(self.frame.origin.x + self.frame.size.width,
                   self.frame.origin.y + self.frame.size.height);
-  CAShapeLayer *lineLayer = [self getLineShapeLayerWithPoints:currentPointArray
+  CAShapeLayer* lineLayer = [self getLineShapeLayerWithPoints:currentPointArray
                                                leftConerPoint:leftConerPoint
                                               rightConerPoint:rightConerPoint];
 
@@ -315,7 +326,7 @@
 }
 
 #pragma mark data Handling
-- (NSMutableArray<XGraphAnimationNode *> *)getAreaDrawableAnimationNodes {
+- (NSMutableArray<XGraphAnimationNode*>*)getAreaDrawableAnimationNodes {
   self.drawablePoints = [self getDrawablePoints];
 
   // Make Close Points
@@ -327,8 +338,8 @@
   // AreaDrawablePoints
   self.areaNodes = [NSMutableArray new];
   [self.drawablePoints
-      enumerateObjectsUsingBlock:^(NSValue *_Nonnull pointValue, NSUInteger idx,
-                                   BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(NSValue* _Nonnull pointValue, NSUInteger idx,
+                                   BOOL* _Nonnull stop) {
         [self.areaNodes
             addObject:[[XGraphAnimationNode alloc]
                           initWithAnimationEndPoint:pointValue.CGPointValue]];
@@ -342,26 +353,26 @@
   return self.areaNodes;
 }
 
-- (NSMutableArray<NSValue *> *)getDrawablePoints {
-  NSMutableArray *linePointArray = [NSMutableArray new];
-  XLineChartItem *item = self.dataItemArray[0];
+- (NSMutableArray<NSValue*>*)getDrawablePoints {
+  NSMutableArray* linePointArray = [NSMutableArray new];
+  XLineChartItem* item = self.dataItemArray[0];
 
   // Get Points
-  NSMutableArray *numberArray = item.numberArray;
+  NSMutableArray* numberArray = item.numberArray;
   [item.numberArray
-      enumerateObjectsUsingBlock:^(NSNumber *_Nonnull obj, NSUInteger idx,
-                                   BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(NSNumber* _Nonnull obj, NSUInteger idx,
+                                   BOOL* _Nonnull stop) {
         CGPoint point = [self calculateDrawablePointWithNumber:obj
                                                            idx:idx
                                                    numberArray:numberArray
                                                         bounds:self.bounds];
-        NSValue *pointValue = [NSValue valueWithCGPoint:point];
+        NSValue* pointValue = [NSValue valueWithCGPoint:point];
         [linePointArray addObject:pointValue];
       }];
   return linePointArray;
 }
 
-- (UIColor *)getFillColor {
+- (UIColor*)getFillColor {
   if (self.colorMode == Custom) {
     self.areaColor = self.dataItemArray[0].color;
   } else {
@@ -372,11 +383,11 @@
 
 #pragma mark ShapeLayerDrawer
 
-- (CAShapeLayer *)getLineShapeLayerWithPoints:(NSArray<NSValue *> *)points
-                               leftConerPoint:(CGPoint)leftConerPoint
-                              rightConerPoint:(CGPoint)rightConerPoint {
-  CAShapeLayer *lineLayer = [CAShapeLayer layer];
-  UIBezierPath *line = [[UIBezierPath alloc] init];
+- (CAShapeLayer*)getLineShapeLayerWithPoints:(NSArray<NSValue*>*)points
+                              leftConerPoint:(CGPoint)leftConerPoint
+                             rightConerPoint:(CGPoint)rightConerPoint {
+  CAShapeLayer* lineLayer = [CAShapeLayer layer];
+  UIBezierPath* line = [[UIBezierPath alloc] init];
 
   // line
   for (int i = 0; i < points.count - 1; i++) {
@@ -426,9 +437,9 @@
 
 - (void)enterBackground {
   [self.areaAnimationManager.areaNodes enumerateObjectsUsingBlock:^(
-                                           XGraphAnimationNode *_Nonnull node,
+                                           XGraphAnimationNode* _Nonnull node,
                                            NSUInteger idx,
-                                           BOOL *_Nonnull stop) {
+                                           BOOL* _Nonnull stop) {
     node.graphAnimationCurrentPoint = CGPointMake(
         node.getAnimationNodeX,
         [[XAuxiliaryCalculationHelper shareCalculationHelper]
@@ -446,9 +457,9 @@
 
 #pragma mark - Help Methods
 // Calculate -> Point
-- (CGPoint)calculateDrawablePointWithNumber:(NSNumber *)number
+- (CGPoint)calculateDrawablePointWithNumber:(NSNumber*)number
                                         idx:(NSUInteger)idx
-                                numberArray:(NSMutableArray *)numberArray
+                                numberArray:(NSMutableArray*)numberArray
                                      bounds:(CGRect)bounds {
   CGFloat percentageH = [[XAuxiliaryCalculationHelper shareCalculationHelper]
       calculateTheProportionOfHeightByTop:self.top.doubleValue

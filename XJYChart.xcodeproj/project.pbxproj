@@ -21,6 +21,16 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		3F1E5F211FD2865000FC303B /* XRemoveFromSuperArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F1F1FD2865000FC303B /* XRemoveFromSuperArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F1E5F221FD2865000FC303B /* XRemoveFromSuperArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F201FD2865000FC303B /* XRemoveFromSuperArray.m */; };
+		3F1E5F721FD29DEE00FC303B /* XRemoveManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F701FD29DEE00FC303B /* XRemoveManager.h */; };
+		3F1E5F731FD29DEE00FC303B /* XRemoveManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F711FD29DEE00FC303B /* XRemoveManager.m */; };
+		3F1E5F761FD2A0F700FC303B /* XLineChartItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F741FD2A0F700FC303B /* XLineChartItem.h */; };
+		3F1E5F771FD2A0F700FC303B /* XLineChartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F751FD2A0F700FC303B /* XLineChartItem.m */; };
+		3F1E5F7A1FD2A12800FC303B /* XBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F781FD2A12800FC303B /* XBarItem.m */; };
+		3F1E5F7B1FD2A12800FC303B /* XBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F791FD2A12800FC303B /* XBarItem.h */; };
+		3F1E5F7E1FD2A14100FC303B /* XPieItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F7C1FD2A14100FC303B /* XPieItem.h */; };
+		3F1E5F7F1FD2A14100FC303B /* XPieItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F7D1FD2A14100FC303B /* XPieItem.m */; };
 		3FAFF1781FCD60FA00CBEA39 /* Colours.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF12C1FCD60FA00CBEA39 /* Colours.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FAFF1791FCD60FA00CBEA39 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF12D1FCD60FA00CBEA39 /* Colours.m */; };
 		3FAFF17A1FCD60FA00CBEA39 /* XColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF12E1FCD60FA00CBEA39 /* XColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -49,22 +59,16 @@
 		3FAFF1911FCD60FA00CBEA39 /* XBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF1481FCD60FA00CBEA39 /* XBarChartView.m */; };
 		3FAFF1921FCD60FA00CBEA39 /* XBarContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1491FCD60FA00CBEA39 /* XBarContainerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FAFF1931FCD60FA00CBEA39 /* XBarContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF14A1FCD60FA00CBEA39 /* XBarContainerView.m */; };
-		3FAFF1941FCD60FA00CBEA39 /* XBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF14B1FCD60FA00CBEA39 /* XBarItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3FAFF1951FCD60FA00CBEA39 /* XBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF14C1FCD60FA00CBEA39 /* XBarItem.m */; };
 		3FAFF1961FCD60FA00CBEA39 /* XCycleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF14D1FCD60FA00CBEA39 /* XCycleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FAFF1971FCD60FA00CBEA39 /* XCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF14E1FCD60FA00CBEA39 /* XCycleView.m */; };
 		3FAFF1981FCD60FA00CBEA39 /* XLineChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF14F1FCD60FA00CBEA39 /* XLineChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FAFF1991FCD60FA00CBEA39 /* XLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF1501FCD60FA00CBEA39 /* XLineChart.m */; };
-		3FAFF19A1FCD60FA00CBEA39 /* XLineChartItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1511FCD60FA00CBEA39 /* XLineChartItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3FAFF19B1FCD60FA00CBEA39 /* XLineChartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF1521FCD60FA00CBEA39 /* XLineChartItem.m */; };
 		3FAFF19C1FCD60FA00CBEA39 /* XLineChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1531FCD60FA00CBEA39 /* XLineChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FAFF19D1FCD60FA00CBEA39 /* XLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF1541FCD60FA00CBEA39 /* XLineChartView.m */; };
 		3FAFF19E1FCD60FA00CBEA39 /* XLineContainerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1551FCD60FA00CBEA39 /* XLineContainerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FAFF19F1FCD60FA00CBEA39 /* XLineContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF1561FCD60FA00CBEA39 /* XLineContainerView.m */; };
 		3FAFF1A01FCD60FA00CBEA39 /* XPieChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1571FCD60FA00CBEA39 /* XPieChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FAFF1A11FCD60FA00CBEA39 /* XPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF1581FCD60FA00CBEA39 /* XPieChart.m */; };
-		3FAFF1A21FCD60FA00CBEA39 /* XPieItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1591FCD60FA00CBEA39 /* XPieItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3FAFF1A31FCD60FA00CBEA39 /* XPieItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF15A1FCD60FA00CBEA39 /* XPieItem.m */; };
 		3FAFF1A41FCD60FA00CBEA39 /* XPositiveNegativeBarChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF15B1FCD60FA00CBEA39 /* XPositiveNegativeBarChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FAFF1A51FCD60FA00CBEA39 /* XPositiveNegativeBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF15C1FCD60FA00CBEA39 /* XPositiveNegativeBarChart.m */; };
 		3FAFF1A61FCD60FA00CBEA39 /* XPositiveNegativeBarChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF15D1FCD60FA00CBEA39 /* XPositiveNegativeBarChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,6 +99,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F1E5F1F1FD2865000FC303B /* XRemoveFromSuperArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRemoveFromSuperArray.h; sourceTree = "<group>"; };
+		3F1E5F201FD2865000FC303B /* XRemoveFromSuperArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRemoveFromSuperArray.m; sourceTree = "<group>"; };
+		3F1E5F701FD29DEE00FC303B /* XRemoveManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRemoveManager.h; sourceTree = "<group>"; };
+		3F1E5F711FD29DEE00FC303B /* XRemoveManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRemoveManager.m; sourceTree = "<group>"; };
+		3F1E5F741FD2A0F700FC303B /* XLineChartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChartItem.h; sourceTree = "<group>"; };
+		3F1E5F751FD2A0F700FC303B /* XLineChartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineChartItem.m; sourceTree = "<group>"; };
+		3F1E5F781FD2A12800FC303B /* XBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarItem.m; sourceTree = "<group>"; };
+		3F1E5F791FD2A12800FC303B /* XBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarItem.h; sourceTree = "<group>"; };
+		3F1E5F7C1FD2A14100FC303B /* XPieItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPieItem.h; sourceTree = "<group>"; };
+		3F1E5F7D1FD2A14100FC303B /* XPieItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPieItem.m; sourceTree = "<group>"; };
 		3FAFF1241FCD609000CBEA39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FAFF12C1FCD60FA00CBEA39 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		3FAFF12D1FCD60FA00CBEA39 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
@@ -124,22 +138,16 @@
 		3FAFF1481FCD60FA00CBEA39 /* XBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarChartView.m; sourceTree = "<group>"; };
 		3FAFF1491FCD60FA00CBEA39 /* XBarContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarContainerView.h; sourceTree = "<group>"; };
 		3FAFF14A1FCD60FA00CBEA39 /* XBarContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarContainerView.m; sourceTree = "<group>"; };
-		3FAFF14B1FCD60FA00CBEA39 /* XBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarItem.h; sourceTree = "<group>"; };
-		3FAFF14C1FCD60FA00CBEA39 /* XBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarItem.m; sourceTree = "<group>"; };
 		3FAFF14D1FCD60FA00CBEA39 /* XCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCycleView.h; sourceTree = "<group>"; };
 		3FAFF14E1FCD60FA00CBEA39 /* XCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCycleView.m; sourceTree = "<group>"; };
 		3FAFF14F1FCD60FA00CBEA39 /* XLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChart.h; sourceTree = "<group>"; };
 		3FAFF1501FCD60FA00CBEA39 /* XLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineChart.m; sourceTree = "<group>"; };
-		3FAFF1511FCD60FA00CBEA39 /* XLineChartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChartItem.h; sourceTree = "<group>"; };
-		3FAFF1521FCD60FA00CBEA39 /* XLineChartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineChartItem.m; sourceTree = "<group>"; };
 		3FAFF1531FCD60FA00CBEA39 /* XLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChartView.h; sourceTree = "<group>"; };
 		3FAFF1541FCD60FA00CBEA39 /* XLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineChartView.m; sourceTree = "<group>"; };
 		3FAFF1551FCD60FA00CBEA39 /* XLineContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineContainerView.h; sourceTree = "<group>"; };
 		3FAFF1561FCD60FA00CBEA39 /* XLineContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineContainerView.m; sourceTree = "<group>"; };
 		3FAFF1571FCD60FA00CBEA39 /* XPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPieChart.h; sourceTree = "<group>"; };
 		3FAFF1581FCD60FA00CBEA39 /* XPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPieChart.m; sourceTree = "<group>"; };
-		3FAFF1591FCD60FA00CBEA39 /* XPieItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPieItem.h; sourceTree = "<group>"; };
-		3FAFF15A1FCD60FA00CBEA39 /* XPieItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPieItem.m; sourceTree = "<group>"; };
 		3FAFF15B1FCD60FA00CBEA39 /* XPositiveNegativeBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPositiveNegativeBarChart.h; sourceTree = "<group>"; };
 		3FAFF15C1FCD60FA00CBEA39 /* XPositiveNegativeBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPositiveNegativeBarChart.m; sourceTree = "<group>"; };
 		3FAFF15D1FCD60FA00CBEA39 /* XPositiveNegativeBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPositiveNegativeBarChartView.h; sourceTree = "<group>"; };
@@ -184,8 +192,25 @@
 		3F0F84751FD18B3F005914EE /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				3F1E5F7C1FD2A14100FC303B /* XPieItem.h */,
+				3F1E5F7D1FD2A14100FC303B /* XPieItem.m */,
+				3F1E5F791FD2A12800FC303B /* XBarItem.h */,
+				3F1E5F781FD2A12800FC303B /* XBarItem.m */,
+				3F1E5F741FD2A0F700FC303B /* XLineChartItem.h */,
+				3F1E5F751FD2A0F700FC303B /* XLineChartItem.m */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		3F1E5F1E1FD2863700FC303B /* ViewRemoveHelper */ = {
+			isa = PBXGroup;
+			children = (
+				3F1E5F1F1FD2865000FC303B /* XRemoveFromSuperArray.h */,
+				3F1E5F201FD2865000FC303B /* XRemoveFromSuperArray.m */,
+				3F1E5F701FD29DEE00FC303B /* XRemoveManager.h */,
+				3F1E5F711FD29DEE00FC303B /* XRemoveManager.m */,
+			);
+			path = ViewRemoveHelper;
 			sourceTree = "<group>";
 		};
 		3FAFF1161FCD609000CBEA39 = {
@@ -267,22 +292,16 @@
 				3FAFF1481FCD60FA00CBEA39 /* XBarChartView.m */,
 				3FAFF1491FCD60FA00CBEA39 /* XBarContainerView.h */,
 				3FAFF14A1FCD60FA00CBEA39 /* XBarContainerView.m */,
-				3FAFF14B1FCD60FA00CBEA39 /* XBarItem.h */,
-				3FAFF14C1FCD60FA00CBEA39 /* XBarItem.m */,
 				3FAFF14D1FCD60FA00CBEA39 /* XCycleView.h */,
 				3FAFF14E1FCD60FA00CBEA39 /* XCycleView.m */,
 				3FAFF14F1FCD60FA00CBEA39 /* XLineChart.h */,
 				3FAFF1501FCD60FA00CBEA39 /* XLineChart.m */,
-				3FAFF1511FCD60FA00CBEA39 /* XLineChartItem.h */,
-				3FAFF1521FCD60FA00CBEA39 /* XLineChartItem.m */,
 				3FAFF1531FCD60FA00CBEA39 /* XLineChartView.h */,
 				3FAFF1541FCD60FA00CBEA39 /* XLineChartView.m */,
 				3FAFF1551FCD60FA00CBEA39 /* XLineContainerView.h */,
 				3FAFF1561FCD60FA00CBEA39 /* XLineContainerView.m */,
 				3FAFF1571FCD60FA00CBEA39 /* XPieChart.h */,
 				3FAFF1581FCD60FA00CBEA39 /* XPieChart.m */,
-				3FAFF1591FCD60FA00CBEA39 /* XPieItem.h */,
-				3FAFF15A1FCD60FA00CBEA39 /* XPieItem.m */,
 				3FAFF15B1FCD60FA00CBEA39 /* XPositiveNegativeBarChart.h */,
 				3FAFF15C1FCD60FA00CBEA39 /* XPositiveNegativeBarChart.m */,
 				3FAFF15D1FCD60FA00CBEA39 /* XPositiveNegativeBarChartView.h */,
@@ -333,6 +352,7 @@
 		3FAFF1741FCD60FA00CBEA39 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				3F1E5F1E1FD2863700FC303B /* ViewRemoveHelper */,
 				3FAFF1751FCD60FA00CBEA39 /* XEnumHeader.h */,
 				3FAFF1761FCD60FA00CBEA39 /* XNotificationBridge.h */,
 				3FAFF1771FCD60FA00CBEA39 /* XNotificationBridge.m */,
@@ -358,8 +378,8 @@
 				3FAFF1A61FCD60FA00CBEA39 /* XPositiveNegativeBarChartView.h in Headers */,
 				3FAFF1B61FCD60FA00CBEA39 /* CAShapeLayer+XJYLayerHelper.h in Headers */,
 				3FAFF1841FCD60FA00CBEA39 /* XAnimator.h in Headers */,
-				3FAFF1941FCD60FA00CBEA39 /* XBarItem.h in Headers */,
 				3FAFF1961FCD60FA00CBEA39 /* XCycleView.h in Headers */,
+				3F1E5F7E1FD2A14100FC303B /* XPieItem.h in Headers */,
 				3FAFF1BB1FCD60FA00CBEA39 /* XNotificationBridge.h in Headers */,
 				3FAFF1C01FCD610100CBEA39 /* XChartDelegate.h in Headers */,
 				3FAFF18C1FCD60FA00CBEA39 /* XAreaLineContainerView.h in Headers */,
@@ -370,20 +390,22 @@
 				3FAFF1AA1FCD60FA00CBEA39 /* XShape.h in Headers */,
 				3FAFF1A81FCD60FA00CBEA39 /* XPositiveNegativeBarContainerView.h in Headers */,
 				3FAFF18A1FCD60FA00CBEA39 /* XAnimationLabel.h in Headers */,
+				3F1E5F761FD2A0F700FC303B /* XLineChartItem.h in Headers */,
 				3FAFF1921FCD60FA00CBEA39 /* XBarContainerView.h in Headers */,
 				3FAFF1881FCD60FA00CBEA39 /* XAbscissaView.h in Headers */,
 				3FAFF1861FCD60FA00CBEA39 /* OrdinateView.h in Headers */,
-				3FAFF1A21FCD60FA00CBEA39 /* XPieItem.h in Headers */,
+				3F1E5F7B1FD2A12800FC303B /* XBarItem.h in Headers */,
 				3FAFF1901FCD60FA00CBEA39 /* XBarChartView.h in Headers */,
 				3FAFF1B21FCD60FA00CBEA39 /* CALayer+XXLayer.h in Headers */,
 				3FAFF17A1FCD60FA00CBEA39 /* XColor.h in Headers */,
+				3F1E5F721FD29DEE00FC303B /* XRemoveManager.h in Headers */,
 				3FAFF1B01FCD60FA00CBEA39 /* XPointDetect.h in Headers */,
 				3FAFF1AE1FCD60FA00CBEA39 /* CAKeyframeAnimation+AHEasing.h in Headers */,
 				3FAFF1981FCD60FA00CBEA39 /* XLineChart.h in Headers */,
 				3FAFF1BF1FCD610100CBEA39 /* XChart.h in Headers */,
 				3FAFF1801FCD60FA00CBEA39 /* XAnimation.h in Headers */,
 				3FAFF1A01FCD60FA00CBEA39 /* XPieChart.h in Headers */,
-				3FAFF19A1FCD60FA00CBEA39 /* XLineChartItem.h in Headers */,
+				3F1E5F211FD2865000FC303B /* XRemoveFromSuperArray.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,21 +508,24 @@
 				3FAFF1A51FCD60FA00CBEA39 /* XPositiveNegativeBarChart.m in Sources */,
 				3FAFF1B31FCD60FA00CBEA39 /* CALayer+XXLayer.m in Sources */,
 				3FAFF1871FCD60FA00CBEA39 /* OrdinateView.m in Sources */,
+				3F1E5F7F1FD2A14100FC303B /* XPieItem.m in Sources */,
 				3FAFF1A91FCD60FA00CBEA39 /* XPositiveNegativeBarContainerView.m in Sources */,
 				3FAFF1831FCD60FA00CBEA39 /* XAnimationPath.m in Sources */,
+				3F1E5F771FD2A0F700FC303B /* XLineChartItem.m in Sources */,
 				3FAFF1791FCD60FA00CBEA39 /* Colours.m in Sources */,
 				3FAFF1891FCD60FA00CBEA39 /* XAbscissaView.m in Sources */,
 				3FAFF1B71FCD60FA00CBEA39 /* CAShapeLayer+XJYLayerHelper.m in Sources */,
 				3FAFF1AF1FCD60FA00CBEA39 /* CAKeyframeAnimation+AHEasing.m in Sources */,
+				3F1E5F731FD29DEE00FC303B /* XRemoveManager.m in Sources */,
 				3FAFF1931FCD60FA00CBEA39 /* XBarContainerView.m in Sources */,
 				3FAFF1971FCD60FA00CBEA39 /* XCycleView.m in Sources */,
 				3FAFF19D1FCD60FA00CBEA39 /* XLineChartView.m in Sources */,
 				3FAFF17F1FCD60FA00CBEA39 /* XRandomNumerHelper.m in Sources */,
 				3FAFF19F1FCD60FA00CBEA39 /* XLineContainerView.m in Sources */,
 				3FAFF1AD1FCD60FA00CBEA39 /* XStackAreaLineContainerView.m in Sources */,
+				3F1E5F7A1FD2A12800FC303B /* XBarItem.m in Sources */,
 				3FAFF1B51FCD60FA00CBEA39 /* CAShapeLayer+frameCategory.m in Sources */,
-				3FAFF1A31FCD60FA00CBEA39 /* XPieItem.m in Sources */,
-				3FAFF19B1FCD60FA00CBEA39 /* XLineChartItem.m in Sources */,
+				3F1E5F221FD2865000FC303B /* XRemoveFromSuperArray.m in Sources */,
 				3FAFF18F1FCD60FA00CBEA39 /* XBarChart.m in Sources */,
 				3FAFF1B91FCD60FA00CBEA39 /* UIGestureRecognizer+XXGes.m in Sources */,
 				3FAFF1A11FCD60FA00CBEA39 /* XPieChart.m in Sources */,
@@ -509,7 +534,6 @@
 				3FAFF1851FCD60FA00CBEA39 /* XAnimator.m in Sources */,
 				3FAFF1991FCD60FA00CBEA39 /* XLineChart.m in Sources */,
 				3FAFF1AB1FCD60FA00CBEA39 /* XShape.m in Sources */,
-				3FAFF1951FCD60FA00CBEA39 /* XBarItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

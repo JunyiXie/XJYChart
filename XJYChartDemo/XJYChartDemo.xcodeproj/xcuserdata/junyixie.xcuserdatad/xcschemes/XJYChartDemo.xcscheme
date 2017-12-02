@@ -29,6 +29,16 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3F1E5F651FD28D4700FC303B"
+               BuildableName = "XJYChartDemoTests.xctest"
+               BlueprintName = "XJYChartDemoTests"
+               ReferencedContainer = "container:XJYChartDemo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

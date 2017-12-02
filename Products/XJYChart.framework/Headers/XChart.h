@@ -20,5 +20,7 @@
 #import "XEnumHeader.h"
 #import "XPositiveNegativeBarChart.h"
 #import "XCycleView.h"
+#import "XRemoveFromSuperArray.h"
+
 
 #endif /* XChart_h */

@@ -41,6 +41,7 @@
 @property(nonatomic, strong)
     NSMutableArray<CAShapeLayer *> *backgroundLayerArray; // background layer
 @property(nonatomic, strong) CALayer *coverLayer;
+@property(nonatomic, strong) NSMutableArray<XAnimationLabel *> *animationLabelArray;
 @end
 
 @implementation XBarContainerView
@@ -58,6 +59,7 @@
     self.backgroundLayerArray = [[NSMutableArray alloc] init];
     self.colorArray = [[NSMutableArray alloc] init];
     self.dataNumberArray = [[NSMutableArray alloc] init];
+    self.animationLabelArray = [NSMutableArray new];
 
     self.dataItemArray = dataItemArray;
     self.top = topNumbser;
@@ -185,13 +187,15 @@
                     text:self.dataNumberArray[idx].stringValue];
 
     [self addSubview:topLabel];
-    CGPoint tempCenter = topLabel.center;
-    topLabel.center = CGPointMake(topLabel.center.x,
-                                  topLabel.center.y + fillRect.size.height);
+    [self.animationLabelArray addObject:topLabel];
 
     [topLabel countFromCurrentTo:topLabel.text.floatValue
                         duration:animationDuration];
-
+    
+    // toplabel center change
+    CGPoint tempCenter = topLabel.center;
+    topLabel.center = CGPointMake(topLabel.center.x,
+                                  topLabel.center.y + fillRect.size.height);
     [UIView animateWithDuration:animationDuration
                      animations:^{
                        topLabel.center = tempCenter;

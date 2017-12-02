@@ -9,16 +9,21 @@
 #ifndef XChart_h
 #define XChart_h
 #import "XPieChart.h"
-#import "XPieItem.h"
-#import "XBarItem.h"
-#import "XChartDelegate.h"
-#import "XColor.h"
-#import "XBarChartView.h"
 #import "XBarChart.h"
 #import "XLineChart.h"
+#import "XCycleView.h"
+
+#import "XPieItem.h"
+#import "XBarItem.h"
+#import "XLineChartItem.h"
+
+#import "XChartDelegate.h"
+
+#import "XColor.h"
 #import "XRandomNumerHelper.h"
 #import "XEnumHeader.h"
 #import "XPositiveNegativeBarChart.h"
-#import "XCycleView.h"
+#import "XRemoveFromSuperArray.h"
+
 
 #endif /* XChart_h */
