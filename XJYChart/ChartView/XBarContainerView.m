@@ -113,9 +113,13 @@
                                    BOOL *_Nonnull stop) {
         [obj removeFromSuperlayer];
       }];
+  [self.animationLabelArray enumerateObjectsUsingBlock:^(XAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [obj removeFromSuperview];
+  }];
   [self.coverLayer removeFromSuperlayer];
 
   // clean array
+  [self.animationLabelArray removeAllObjects];
   [self.layerArray removeAllObjects];
   [self.backgroundLayerArray removeAllObjects];
   [self.colorArray removeAllObjects];
