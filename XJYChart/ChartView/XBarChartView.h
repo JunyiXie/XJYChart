@@ -36,6 +36,7 @@
  */
 @property (nonatomic, strong) NSNumber *bottom;
 
+@property(nonatomic, strong) UIColor *chartBackgroundColor;
 
 
 

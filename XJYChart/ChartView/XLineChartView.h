@@ -38,14 +38,6 @@
  */
 @property (nonatomic, strong) NSNumber *bottom;
 
-/**
- Random ：RandomColor
- Custom :  need to set (at XLineChartItem)
- 
- Default is Random
- */
-@property (nonatomic, assign) XXColorMode colorMode;
-
 
 /**
  Line Mode

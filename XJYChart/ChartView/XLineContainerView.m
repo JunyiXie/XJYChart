@@ -47,6 +47,7 @@ CGFloat touchLineWidth = 20;
       self.chartBackgroundColor = XJYWhite;
     }
     self.backgroundColor = self.chartBackgroundColor;
+    
     self.coverLayer = [CAShapeLayer layer];
     self.shapeLayerArray = [NSMutableArray new];
     self.pointsArrays = [NSMutableArray new];

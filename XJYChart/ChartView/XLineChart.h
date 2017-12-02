@@ -20,14 +20,6 @@
 @property (nonatomic, assign) BOOL isAllowGesture;
 
 
-/**
- Random ：RandomColor
- Custom :  need to set (at XLineChartItem)
- 
- Default is Random
- */
-@property (nonatomic, assign) XXColorMode colorMode;
-
 
 /**
  Line Mode

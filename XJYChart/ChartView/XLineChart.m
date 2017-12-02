@@ -125,10 +125,6 @@
 }
 
 #pragma mark Set
-- (void)setColorMode:(XXColorMode)colorMode {
-  _colorMode = colorMode;
-  self.lineChartView.colorMode = colorMode;
-}
 
 - (void)setLineMode:(XXLineMode)lineMode {
   _lineMode = lineMode;

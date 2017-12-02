@@ -136,17 +136,17 @@
                  bottomNumber:(NSNumber*)bottomNumber {
   if (self = [super initWithFrame:frame]) {
     if (self.chartBackgroundColor == nil) {
-      self.chartBackgroundColor = XJYBlue;
+      self.chartBackgroundColor = XJYWhite;
     }
     self.backgroundColor = self.chartBackgroundColor;
+    
     self.labelArray = [NSMutableArray new];
 
     self.dataItemArray = dataItemArray;
     self.top = topNumber;
     self.bottom = bottomNumber;
     self.lineMode = BrokenLine;
-    self.colorMode = Random;
-    
+
     // 数据处理，集中管理
     self.areaAnimationManager = [self makeAreaAnimationManager];
 
@@ -215,8 +215,9 @@
   // remove pre data and layer
   [self cleanPreDrawAndDataCache];
   // Add SubLayers
-  [self strokePointInContext];
   [self strokeLine];
+  [self strokePointInContext];
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
@@ -253,7 +254,7 @@
 }
 
 - (void)strokePointInContext {
-  UIColor* pointColor = [UIColor whiteColor];
+  UIColor* pointColor = [UIColor turquoiseColor];
   UIColor* wireframeColor = [UIColor whiteColor];
   ;
 
@@ -357,15 +358,6 @@
   return linePointArray;
 }
 
-- (UIColor*)getFillColor {
-  if (self.colorMode == Custom) {
-    self.areaColor = self.dataItemArray[0].color;
-  } else {
-    self.areaColor = XJYWhite;
-  }
-  return self.areaColor;
-}
-
 #pragma mark ShapeLayerDrawer
 
 - (CAShapeLayer*)getLineShapeLayerWithPoints:(NSArray<NSValue*>*)points
@@ -405,7 +397,7 @@
   [line addLineToPoint:points[0].CGPointValue];
   lineLayer.path = line.CGPath;
   lineLayer.strokeColor = [UIColor clearColor].CGColor;
-  lineLayer.fillColor = [self getFillColor].CGColor;
+  lineLayer.fillColor = [UIColor skyBlueColor].CGColor;
   lineLayer.opacity = 0.3;
   lineLayer.lineWidth = 4;
   lineLayer.lineCap = kCALineCapRound;

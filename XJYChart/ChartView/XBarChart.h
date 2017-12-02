@@ -50,5 +50,9 @@
  */
 @property (nonatomic, strong) NSNumber *bottom;
 
+/**
+ ChartBackground color
+ */
+@property(nonatomic, strong) UIColor *chartBackgroundColor;
 
 @end

@@ -26,7 +26,6 @@
  纵坐标最低点
  */
 @property (nonatomic, strong) NSNumber *bottom;
-@property (nonatomic, assign) XXColorMode colorMode;
 @property (nonatomic, assign) XXLineMode lineMode;
 @property(nonatomic, strong) UIColor *chartBackgroundColor;
 

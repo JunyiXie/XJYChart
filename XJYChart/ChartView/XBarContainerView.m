@@ -18,40 +18,44 @@
 
 #pragma mark - Macro
 
-#define GradientFillColor1                                                     \
-  [UIColor colorWithRed:117 / 255.0                                            \
-                  green:184 / 255.0                                            \
-                   blue:245 / 255.0                                            \
-                  alpha:1]                                                     \
+#define GradientFillColor1          \
+  [UIColor colorWithRed:117 / 255.0 \
+                  green:184 / 255.0 \
+                   blue:245 / 255.0 \
+                  alpha:1]          \
       .CGColor
 #define GradientFillColor2                                                     \
   [UIColor colorWithRed:24 / 255.0 green:141 / 255.0 blue:240 / 255.0 alpha:1] \
       .CGColor
-#define BarBackgroundFillColor                                                 \
+#define BarBackgroundFillColor \
   [UIColor colorWithRed:232 / 255.0 green:232 / 255.0 blue:232 / 255.0 alpha:1]
 #define animationDuration 3
 
 @interface XBarContainerView ()
-@property(nonatomic, strong) CABasicAnimation *pathAnimation;
-@property(nonatomic, strong) NSMutableArray<UIColor *> *colorArray;
-@property(nonatomic, strong) NSMutableArray<NSString *> *dataDescribeArray;
-@property(nonatomic, strong) NSMutableArray<NSNumber *> *dataNumberArray;
+@property(nonatomic, strong) CABasicAnimation* pathAnimation;
+@property(nonatomic, strong) NSMutableArray<UIColor*>* colorArray;
+@property(nonatomic, strong) NSMutableArray<NSString*>* dataDescribeArray;
+@property(nonatomic, strong) NSMutableArray<NSNumber*>* dataNumberArray;
 @property(nonatomic, strong)
-    NSMutableArray<CAShapeLayer *> *layerArray; // value layer
+    NSMutableArray<CAShapeLayer*>* layerArray;  // value layer
 @property(nonatomic, strong)
-    NSMutableArray<CAShapeLayer *> *backgroundLayerArray; // background layer
-@property(nonatomic, strong) CALayer *coverLayer;
-@property(nonatomic, strong) NSMutableArray<XAnimationLabel *> *animationLabelArray;
+    NSMutableArray<CAShapeLayer*>* backgroundLayerArray;  // background layer
+@property(nonatomic, strong) CALayer* coverLayer;
+@property(nonatomic, strong)
+    NSMutableArray<XAnimationLabel*>* animationLabelArray;
 @end
 
 @implementation XBarContainerView
 
 - (instancetype)initWithFrame:(CGRect)frame
-                dataItemArray:(NSMutableArray<XBarItem *> *)dataItemArray
-                    topNumber:(NSNumber *)topNumbser
-                 bottomNumber:(NSNumber *)bottomNumber {
+                dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
+                    topNumber:(NSNumber*)topNumbser
+                 bottomNumber:(NSNumber*)bottomNumber {
   if (self = [super initWithFrame:frame]) {
-    self.backgroundColor = [UIColor whiteColor];
+    if (self.chartBackgroundColor == nil) {
+      self.chartBackgroundColor = XJYWhite;
+    }
+    self.backgroundColor = self.chartBackgroundColor;
 
     self.coverLayer = [CALayer layer];
 
@@ -104,18 +108,20 @@
 - (void)cleanPreDrawAndData {
   // remove layer
   [self.layerArray
-      enumerateObjectsUsingBlock:^(CAShapeLayer *_Nonnull obj, NSUInteger idx,
-                                   BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(CAShapeLayer* _Nonnull obj, NSUInteger idx,
+                                   BOOL* _Nonnull stop) {
         [obj removeFromSuperlayer];
       }];
   [self.backgroundLayerArray
-      enumerateObjectsUsingBlock:^(CAShapeLayer *_Nonnull obj, NSUInteger idx,
-                                   BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(CAShapeLayer* _Nonnull obj, NSUInteger idx,
+                                   BOOL* _Nonnull stop) {
         [obj removeFromSuperlayer];
       }];
-  [self.animationLabelArray enumerateObjectsUsingBlock:^(XAnimationLabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-    [obj removeFromSuperview];
-  }];
+  [self.animationLabelArray
+      enumerateObjectsUsingBlock:^(XAnimationLabel* _Nonnull obj,
+                                   NSUInteger idx, BOOL* _Nonnull stop) {
+        [obj removeFromSuperview];
+      }];
   [self.coverLayer removeFromSuperlayer];
 
   // clean array
@@ -127,32 +133,31 @@
 }
 
 - (void)strokeChart {
-
   // data filter
   [self.dataItemArray
-      enumerateObjectsUsingBlock:^(XBarItem *_Nonnull obj, NSUInteger idx,
-                                   BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(XBarItem* _Nonnull obj, NSUInteger idx,
+                                   BOOL* _Nonnull stop) {
         [self.colorArray addObject:obj.color];
         [self.dataNumberArray addObject:obj.dataNumber];
         [self.dataDescribeArray addObject:obj.dataDescribe];
       }];
 
   // background layer
-  NSMutableArray<NSNumber *> *xArray = [[self getxArray] copy];
-  NSMutableArray<NSValue *> *rectArray =
+  NSMutableArray<NSNumber*>* xArray = [[self getxArray] copy];
+  NSMutableArray<NSValue*>* rectArray =
       [self getBackgroundRectArrayWithXArray:xArray];
   self.backgroundLayerArray = [self getBackgroundLayerWithRectArray:rectArray];
   [self.backgroundLayerArray
-      enumerateObjectsUsingBlock:^(CAShapeLayer *_Nonnull obj, NSUInteger idx,
-                                   BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(CAShapeLayer* _Nonnull obj, NSUInteger idx,
+                                   BOOL* _Nonnull stop) {
         [self.layer addSublayer:obj];
       }];
 
   // fill layer
-  NSMutableArray<NSNumber *> *fillHeightArray = [[NSMutableArray alloc] init];
+  NSMutableArray<NSNumber*>* fillHeightArray = [[NSMutableArray alloc] init];
   [self.dataItemArray
-      enumerateObjectsUsingBlock:^(XBarItem *_Nonnull obj, NSUInteger idx,
-                                   BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(XBarItem* _Nonnull obj, NSUInteger idx,
+                                   BOOL* _Nonnull stop) {
         CGFloat height =
             [[XAuxiliaryCalculationHelper shareCalculationHelper]
                 calculateTheProportionOfHeightByTop:self.top.doubleValue
@@ -163,9 +168,9 @@
         [fillHeightArray addObject:@(height)];
       }];
 
-  NSMutableArray<NSValue *> *fillRectArray = [[NSMutableArray alloc] init];
-  [xArray enumerateObjectsUsingBlock:^(NSNumber *_Nonnull obj, NSUInteger idx,
-                                       BOOL *_Nonnull stop) {
+  NSMutableArray<NSValue*>* fillRectArray = [[NSMutableArray alloc] init];
+  [xArray enumerateObjectsUsingBlock:^(NSNumber* _Nonnull obj, NSUInteger idx,
+                                       BOOL* _Nonnull stop) {
     // height - fillHeightArray[idx].doubleValue 计算起始Y
     CGRect fillRect = CGRectMake(
         obj.doubleValue - [self getBarWidthWithItemCount:xArray.count] / 2,
@@ -175,16 +180,16 @@
     [fillRectArray addObject:[NSValue valueWithCGRect:fillRect]];
   }];
 
-  NSMutableArray *fillShapeLayerArray = [[NSMutableArray alloc] init];
-  [fillRectArray enumerateObjectsUsingBlock:^(NSValue *_Nonnull obj,
+  NSMutableArray* fillShapeLayerArray = [[NSMutableArray alloc] init];
+  [fillRectArray enumerateObjectsUsingBlock:^(NSValue* _Nonnull obj,
                                               NSUInteger idx,
-                                              BOOL *_Nonnull stop) {
+                                              BOOL* _Nonnull stop) {
     CGRect fillRect = obj.CGRectValue;
-    CAShapeLayer *fillRectShapeLayer =
+    CAShapeLayer* fillRectShapeLayer =
         [self rectAnimationLayerWithBounds:fillRect
                                  fillColor:self.dataItemArray[idx].color];
     // animation number label
-    XAnimationLabel *topLabel = [self
+    XAnimationLabel* topLabel = [self
         topLabelWithRect:CGRectMake(fillRect.origin.x, fillRect.origin.y - 15,
                                     fillRect.size.width, 15)
                fillColor:[UIColor clearColor]
@@ -195,7 +200,7 @@
 
     [topLabel countFromCurrentTo:topLabel.text.floatValue
                         duration:animationDuration];
-    
+
     // toplabel center change
     CGPoint tempCenter = topLabel.center;
     topLabel.center = CGPointMake(topLabel.center.x,
@@ -219,12 +224,12 @@
   return (self.bounds.size.width / count) / 3 * 2;
 }
 
-- (NSMutableArray *)getxArray {
+- (NSMutableArray*)getxArray {
   // x coordinates
-  NSMutableArray<NSNumber *> *xArray = [[NSMutableArray alloc] init];
+  NSMutableArray<NSNumber*>* xArray = [[NSMutableArray alloc] init];
   [self.dataItemArray
-      enumerateObjectsUsingBlock:^(XBarItem *_Nonnull obj, NSUInteger idx,
-                                   BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(XBarItem* _Nonnull obj, NSUInteger idx,
+                                   BOOL* _Nonnull stop) {
         CGFloat x =
             self.bounds.size.width *
             [[XAuxiliaryCalculationHelper shareCalculationHelper]
@@ -235,11 +240,11 @@
   return xArray;
 }
 
-- (NSMutableArray *)getBackgroundRectArrayWithXArray:
-    (NSMutableArray<NSNumber *> *)xArray {
-  NSMutableArray<NSValue *> *rectArray = [[NSMutableArray alloc] init];
-  [xArray enumerateObjectsUsingBlock:^(NSNumber *number, NSUInteger idx,
-                                       BOOL *_Nonnull stop) {
+- (NSMutableArray*)getBackgroundRectArrayWithXArray:
+    (NSMutableArray<NSNumber*>*)xArray {
+  NSMutableArray<NSValue*>* rectArray = [[NSMutableArray alloc] init];
+  [xArray enumerateObjectsUsingBlock:^(NSNumber* number, NSUInteger idx,
+                                       BOOL* _Nonnull stop) {
     CGRect rect = CGRectMake(
         number.doubleValue - [self getBarWidthWithItemCount:xArray.count] / 2,
         0, [self getBarWidthWithItemCount:xArray.count],
@@ -249,15 +254,15 @@
   return rectArray;
 }
 
-- (NSMutableArray<CAShapeLayer *> *)getBackgroundLayerWithRectArray:
-    (NSMutableArray<NSValue *> *)rectArray {
-  NSMutableArray<CAShapeLayer *> *backgroundLayerArray =
+- (NSMutableArray<CAShapeLayer*>*)getBackgroundLayerWithRectArray:
+    (NSMutableArray<NSValue*>*)rectArray {
+  NSMutableArray<CAShapeLayer*>* backgroundLayerArray =
       [[NSMutableArray alloc] init];
   // background layer
-  [rectArray enumerateObjectsUsingBlock:^(NSValue *_Nonnull obj, NSUInteger idx,
-                                          BOOL *_Nonnull stop) {
+  [rectArray enumerateObjectsUsingBlock:^(NSValue* _Nonnull obj, NSUInteger idx,
+                                          BOOL* _Nonnull stop) {
     CGRect rect = obj.CGRectValue;
-    CAShapeLayer *rectShapeLayer =
+    CAShapeLayer* rectShapeLayer =
         [self rectShapeLayerWithBounds:rect fillColor:BarBackgroundFillColor];
     [backgroundLayerArray addObject:rectShapeLayer];
   }];
@@ -268,16 +273,15 @@
 
 #pragma mark HelpMethods
 
-- (CAShapeLayer *)rectAnimationLayerWithBounds:(CGRect)rect
-                                     fillColor:(UIColor *)fillColor {
-
+- (CAShapeLayer*)rectAnimationLayerWithBounds:(CGRect)rect
+                                    fillColor:(UIColor*)fillColor {
   // real startPoint endPoint
   CGPoint startPoint = CGPointMake(rect.origin.x + (rect.size.width) / 2,
                                    (rect.origin.y + rect.size.height));
   CGPoint endPoint =
       CGPointMake(rect.origin.x + (rect.size.width) / 2, (rect.origin.y));
 
-  CAShapeLayer *chartLine = [CAShapeLayer layer];
+  CAShapeLayer* chartLine = [CAShapeLayer layer];
   chartLine.lineCap = kCALineCapSquare;
   chartLine.lineJoin = kCALineJoinRound;
   chartLine.lineWidth = rect.size.width;
@@ -288,14 +292,14 @@
       CGPointMake(startPoint.x, startPoint.y + rect.size.width / 2);
   CGPoint temEndPoint =
       CGPointMake(endPoint.x, endPoint.y + rect.size.width / 2);
-  UIBezierPath *temPath = [[UIBezierPath alloc] init];
+  UIBezierPath* temPath = [[UIBezierPath alloc] init];
   [temPath moveToPoint:temStartPoint];
   [temPath addLineToPoint:temEndPoint];
 
   chartLine.path = temPath.CGPath;
   chartLine.strokeStart = 0.0;
   chartLine.strokeEnd = 1.0;
-  chartLine.strokeColor = XJYBlue.CGColor;
+  chartLine.strokeColor = fillColor.CGColor;
   [chartLine addAnimation:self.pathAnimation forKey:@"strokeEndAnimation"];
   // help to judge is touch in area
   chartLine.frameValue = [NSValue valueWithCGRect:rect];
@@ -303,10 +307,10 @@
   return chartLine;
 }
 
-- (CAShapeLayer *)rectShapeLayerWithBounds:(CGRect)rect
-                                 fillColor:(UIColor *)fillColor {
-  UIBezierPath *path = [UIBezierPath bezierPathWithRect:rect];
-  CAShapeLayer *rectLayer = [CAShapeLayer layer];
+- (CAShapeLayer*)rectShapeLayerWithBounds:(CGRect)rect
+                                fillColor:(UIColor*)fillColor {
+  UIBezierPath* path = [UIBezierPath bezierPathWithRect:rect];
+  CAShapeLayer* rectLayer = [CAShapeLayer layer];
   rectLayer.path = path.CGPath;
   rectLayer.fillColor = fillColor.CGColor;
   rectLayer.path = path.CGPath;
@@ -314,12 +318,12 @@
   return rectLayer;
 }
 
-- (XAnimationLabel *)topLabelWithRect:(CGRect)rect
-                            fillColor:(UIColor *)color
-                                 text:(NSString *)text {
+- (XAnimationLabel*)topLabelWithRect:(CGRect)rect
+                           fillColor:(UIColor*)color
+                                text:(NSString*)text {
   CGFloat number = text.floatValue;
-  NSString *labelText = [NSString stringWithFormat:@"%.1f", number];
-  XAnimationLabel *topLabel = [[XAnimationLabel alloc] initWithFrame:rect];
+  NSString* labelText = [NSString stringWithFormat:@"%.1f", number];
+  XAnimationLabel* topLabel = [[XAnimationLabel alloc] initWithFrame:rect];
   topLabel.backgroundColor = color;
   [topLabel setTextAlignment:NSTextAlignmentCenter];
   topLabel.text = labelText;
@@ -328,8 +332,8 @@
   return topLabel;
 }
 
-- (CAGradientLayer *)rectCoverGradientLayerWithBounds:(CGRect)rect {
-  CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+- (CAGradientLayer*)rectCoverGradientLayerWithBounds:(CGRect)rect {
+  CAGradientLayer* gradientLayer = [CAGradientLayer layer];
   gradientLayer.frame = rect;
   gradientLayer.colors =
       @[ (__bridge id)GradientFillColor1, (__bridge id)GradientFillColor2 ];
@@ -341,7 +345,7 @@
   return gradientLayer;
 }
 
-- (CABasicAnimation *)pathAnimation {
+- (CABasicAnimation*)pathAnimation {
   _pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
   _pathAnimation.duration = animationDuration;
   _pathAnimation.timingFunction = [CAMediaTimingFunction
@@ -353,21 +357,20 @@
 
 #pragma mark - Touch
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-
+- (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
   CGPoint __block point = [[touches anyObject] locationInView:self];
 
   // touch whole bar
-  [self.backgroundLayerArray enumerateObjectsUsingBlock:^(CALayer *_Nonnull obj,
+  [self.backgroundLayerArray enumerateObjectsUsingBlock:^(CALayer* _Nonnull obj,
                                                           NSUInteger idx,
-                                                          BOOL *_Nonnull stop) {
-    CAShapeLayer *shapeLayer = (CAShapeLayer *)obj;
+                                                          BOOL* _Nonnull stop) {
+    CAShapeLayer* shapeLayer = (CAShapeLayer*)obj;
     CGRect layerFrame = shapeLayer.frameValue.CGRectValue;
 
     if (CGRectContainsPoint(layerFrame, point)) {
       //上一次点击的layer,清空上一次的状态
-      CAShapeLayer *preShapeLayer =
-          (CAShapeLayer *)
+      CAShapeLayer* preShapeLayer =
+          (CAShapeLayer*)
               self.layerArray[self.coverLayer.selectIdxNumber.intValue];
       preShapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
       [self.coverLayer removeFromSuperlayer];
@@ -382,7 +385,7 @@
                                 [XNotificationBridge shareXNotificationBridge].
                                 BarIdxNumberKey : @(idx)
                           }];
-      CAShapeLayer *subShapeLayer = (CAShapeLayer *)self.layerArray[idx];
+      CAShapeLayer* subShapeLayer = (CAShapeLayer*)self.layerArray[idx];
       if (subShapeLayer.selectStatusNumber.boolValue == YES) {
         subShapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
         [self.coverLayer removeFromSuperlayer];

@@ -42,15 +42,13 @@
         }
         
         NSArray *colorArray = @[[UIColor seashellColor], [UIColor seashellColor], [UIColor seashellColor], [UIColor seashellColor], [UIColor seashellColor]];
-        NSArray *colorArray1 = @[@"", @"", @"", @"", @""];
-        
+
         for (int i = 0; i<5; i++) {
             
             XLineChartItem *item = [[XLineChartItem alloc] initWithDataNumberArray:numbersArray[i] color:colorArray[i]];
             [itemArray addObject:item];
         }
         XLineChart *lineChart = [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@1000 bottomNumber:@0  graphMode:StackAreaLineGraph];
-        lineChart.colorMode = Custom;
         lineChart.lineMode = CurveLine;
         [self.contentView addSubview:lineChart];
         self.selectionStyle = UITableViewCellSelectionStyleNone;

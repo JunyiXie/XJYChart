@@ -20,6 +20,7 @@
 #import "XChartDelegate.h"
 
 #import "XColor.h"
+
 #import "XRandomNumerHelper.h"
 #import "XEnumHeader.h"
 #import "XPositiveNegativeBarChart.h"
