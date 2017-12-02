@@ -21,10 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		3F1E5F211FD2865000FC303B /* XRemoveFromSuperArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F1F1FD2865000FC303B /* XRemoveFromSuperArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3F1E5F221FD2865000FC303B /* XRemoveFromSuperArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F201FD2865000FC303B /* XRemoveFromSuperArray.m */; };
-		3F1E5F721FD29DEE00FC303B /* XRemoveManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F701FD29DEE00FC303B /* XRemoveManager.h */; };
-		3F1E5F731FD29DEE00FC303B /* XRemoveManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F711FD29DEE00FC303B /* XRemoveManager.m */; };
 		3F1E5F761FD2A0F700FC303B /* XLineChartItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F741FD2A0F700FC303B /* XLineChartItem.h */; };
 		3F1E5F771FD2A0F700FC303B /* XLineChartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F751FD2A0F700FC303B /* XLineChartItem.m */; };
 		3F1E5F7A1FD2A12800FC303B /* XBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F781FD2A12800FC303B /* XBarItem.m */; };
@@ -99,10 +95,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F1E5F1F1FD2865000FC303B /* XRemoveFromSuperArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRemoveFromSuperArray.h; sourceTree = "<group>"; };
-		3F1E5F201FD2865000FC303B /* XRemoveFromSuperArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRemoveFromSuperArray.m; sourceTree = "<group>"; };
-		3F1E5F701FD29DEE00FC303B /* XRemoveManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRemoveManager.h; sourceTree = "<group>"; };
-		3F1E5F711FD29DEE00FC303B /* XRemoveManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRemoveManager.m; sourceTree = "<group>"; };
 		3F1E5F741FD2A0F700FC303B /* XLineChartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChartItem.h; sourceTree = "<group>"; };
 		3F1E5F751FD2A0F700FC303B /* XLineChartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineChartItem.m; sourceTree = "<group>"; };
 		3F1E5F781FD2A12800FC303B /* XBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarItem.m; sourceTree = "<group>"; };
@@ -200,17 +192,6 @@
 				3F1E5F751FD2A0F700FC303B /* XLineChartItem.m */,
 			);
 			path = DataModel;
-			sourceTree = "<group>";
-		};
-		3F1E5F1E1FD2863700FC303B /* ViewRemoveHelper */ = {
-			isa = PBXGroup;
-			children = (
-				3F1E5F1F1FD2865000FC303B /* XRemoveFromSuperArray.h */,
-				3F1E5F201FD2865000FC303B /* XRemoveFromSuperArray.m */,
-				3F1E5F701FD29DEE00FC303B /* XRemoveManager.h */,
-				3F1E5F711FD29DEE00FC303B /* XRemoveManager.m */,
-			);
-			path = ViewRemoveHelper;
 			sourceTree = "<group>";
 		};
 		3FAFF1161FCD609000CBEA39 = {
@@ -352,7 +333,6 @@
 		3FAFF1741FCD60FA00CBEA39 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				3F1E5F1E1FD2863700FC303B /* ViewRemoveHelper */,
 				3FAFF1751FCD60FA00CBEA39 /* XEnumHeader.h */,
 				3FAFF1761FCD60FA00CBEA39 /* XNotificationBridge.h */,
 				3FAFF1771FCD60FA00CBEA39 /* XNotificationBridge.m */,
@@ -398,14 +378,12 @@
 				3FAFF1901FCD60FA00CBEA39 /* XBarChartView.h in Headers */,
 				3FAFF1B21FCD60FA00CBEA39 /* CALayer+XXLayer.h in Headers */,
 				3FAFF17A1FCD60FA00CBEA39 /* XColor.h in Headers */,
-				3F1E5F721FD29DEE00FC303B /* XRemoveManager.h in Headers */,
 				3FAFF1B01FCD60FA00CBEA39 /* XPointDetect.h in Headers */,
 				3FAFF1AE1FCD60FA00CBEA39 /* CAKeyframeAnimation+AHEasing.h in Headers */,
 				3FAFF1981FCD60FA00CBEA39 /* XLineChart.h in Headers */,
 				3FAFF1BF1FCD610100CBEA39 /* XChart.h in Headers */,
 				3FAFF1801FCD60FA00CBEA39 /* XAnimation.h in Headers */,
 				3FAFF1A01FCD60FA00CBEA39 /* XPieChart.h in Headers */,
-				3F1E5F211FD2865000FC303B /* XRemoveFromSuperArray.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +494,6 @@
 				3FAFF1891FCD60FA00CBEA39 /* XAbscissaView.m in Sources */,
 				3FAFF1B71FCD60FA00CBEA39 /* CAShapeLayer+XJYLayerHelper.m in Sources */,
 				3FAFF1AF1FCD60FA00CBEA39 /* CAKeyframeAnimation+AHEasing.m in Sources */,
-				3F1E5F731FD29DEE00FC303B /* XRemoveManager.m in Sources */,
 				3FAFF1931FCD60FA00CBEA39 /* XBarContainerView.m in Sources */,
 				3FAFF1971FCD60FA00CBEA39 /* XCycleView.m in Sources */,
 				3FAFF19D1FCD60FA00CBEA39 /* XLineChartView.m in Sources */,
@@ -525,7 +502,6 @@
 				3FAFF1AD1FCD60FA00CBEA39 /* XStackAreaLineContainerView.m in Sources */,
 				3F1E5F7A1FD2A12800FC303B /* XBarItem.m in Sources */,
 				3FAFF1B51FCD60FA00CBEA39 /* CAShapeLayer+frameCategory.m in Sources */,
-				3F1E5F221FD2865000FC303B /* XRemoveFromSuperArray.m in Sources */,
 				3FAFF18F1FCD60FA00CBEA39 /* XBarChart.m in Sources */,
 				3FAFF1B91FCD60FA00CBEA39 /* UIGestureRecognizer+XXGes.m in Sources */,
 				3FAFF1A11FCD60FA00CBEA39 /* XPieChart.m in Sources */,

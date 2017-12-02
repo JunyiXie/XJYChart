@@ -36,8 +36,12 @@
 
 - (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber {
     if (self = [super initWithFrame:frame]) {
-        
-        self.backgroundColor = XJYBlue;
+      
+      
+      if (self.chartBackgroundColor == nil) {
+        self.chartBackgroundColor = XJYWhite;
+      }
+        self.backgroundColor = self.chartBackgroundColor;
         self.coverLayer = [CAShapeLayer layer];
         self.shapeLayerArray = [NSMutableArray new];
         self.labelArray = [NSMutableArray new];

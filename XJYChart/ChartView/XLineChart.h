@@ -14,6 +14,8 @@
 @interface XLineChart : UIView
 
 
+@property(nonatomic, strong) UIColor *chartBackgroundColor;
+
 /// tap and pin gesture
 @property (nonatomic, assign) BOOL isAllowGesture;
 

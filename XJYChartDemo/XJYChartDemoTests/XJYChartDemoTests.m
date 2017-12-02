@@ -25,9 +25,6 @@
     [super tearDown];
 }
 
-- (void)testClassDescendsFromClass {
-  XCTAssertTrue(classDescendsFromClass([UIButton class], [UIView class]) && classDescendsFromClass([UIView class], [UIView class]));
-}
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.

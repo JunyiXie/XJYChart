@@ -119,6 +119,7 @@
                 topNumber:self.top
              bottomNumber:self.bottom
                 graphMode:self.lineGraphMode];
+    _lineChartView.chartBackgroundColor = self.chartBackgroundColor;
   }
   return _lineChartView;
 }

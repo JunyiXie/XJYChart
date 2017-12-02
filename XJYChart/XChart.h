@@ -23,7 +23,5 @@
 #import "XRandomNumerHelper.h"
 #import "XEnumHeader.h"
 #import "XPositiveNegativeBarChart.h"
-#import "XRemoveFromSuperArray.h"
-
 
 #endif /* XChart_h */

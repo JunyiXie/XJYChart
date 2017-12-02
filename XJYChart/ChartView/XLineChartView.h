@@ -66,6 +66,7 @@
  Default is MutiLine
  */
 @property (nonatomic, assign) XXLineGraphMode lineGraphMode;
+@property(nonatomic, strong) UIColor *chartBackgroundColor;
 
 
 @end

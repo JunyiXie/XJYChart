@@ -111,6 +111,7 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
         dataItemArray:self.dataItemArray
             topNumber:self.top
          bottomNumber:self.bottom];
+    _lineContainerView.chartBackgroundColor = _chartBackgroundColor;
   }
   return _lineContainerView;
 }
@@ -123,6 +124,8 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
         dataItemArray:self.dataItemArray
             topNumber:self.top
          bottomNumber:self.bottom];
+    _areaLineContainerView.chartBackgroundColor = _chartBackgroundColor;
+
   }
   return _areaLineContainerView;
 }
@@ -135,6 +138,7 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
         dataItemArray:self.dataItemArray
             topNumber:self.top
          bottomNumber:self.bottom];
+    _stackAreaLineContainerView.chartBackgroundColor = _chartBackgroundColor;
   }
   return _stackAreaLineContainerView;
 }

@@ -13,8 +13,7 @@
 #import "XAnimationLabel.h"
 #import "XAnimation.h"
 #import "XAnimator.h"
-#import "XRemoveFromSuperArray.h"
-#import "XRemoveManager.h"
+
 #pragma mark - Macro
 
 #define LineWidth 6.0
@@ -30,7 +29,6 @@
 
  CurrentPoint: Use it to draw.
  EndPoint: Save final view point.
-
  */
 @interface XGraphAnimationNode : NSObject
 
@@ -74,7 +72,7 @@
 
 @interface XAreaAnimationManager : NSObject
 
-/// area nodes
+/// area nodes. Used to draw up the closed graph
 @property(nonatomic, strong) NSMutableArray<XGraphAnimationNode*>* areaNodes;
 /// animation needs nodes
 @property(nonatomic, strong)
@@ -118,19 +116,14 @@
  */
 @interface XAreaLineContainerView ()
 
-@property(nonatomic, strong) XRemoveManager* removeManager;
-
-
-
-@property(nonatomic, strong) CABasicAnimation* pathAnimation;
 @property(nonatomic, strong) UIColor* areaColor;
 
 /**
  All lines points
  */
-@property(nonatomic, strong) NSMutableArray<NSValue*>* drawablePoints;
+//@property(nonatomic, strong) NSMutableArray<NSValue*>* drawablePoints;
 @property(nonatomic, strong) NSMutableArray<XAnimationLabel*>* labelArray;
-@property(nonatomic, strong) NSMutableArray<XGraphAnimationNode*>* areaNodes;
+//@property(nonatomic, strong) NSMutableArray<XGraphAnimationNode*>* areaNodes;
 
 @property(nonatomic, strong) XAreaAnimationManager* areaAnimationManager;
 @end
@@ -142,10 +135,11 @@
                     topNumber:(NSNumber*)topNumber
                  bottomNumber:(NSNumber*)bottomNumber {
   if (self = [super initWithFrame:frame]) {
-    self.backgroundColor = XJYBlue;
-    self.drawablePoints = [NSMutableArray new];
+    if (self.chartBackgroundColor == nil) {
+      self.chartBackgroundColor = XJYBlue;
+    }
+    self.backgroundColor = self.chartBackgroundColor;
     self.labelArray = [NSMutableArray new];
-    self.areaNodes = [NSMutableArray new];
 
     self.dataItemArray = dataItemArray;
     self.top = topNumber;
@@ -153,8 +147,6 @@
     self.lineMode = BrokenLine;
     self.colorMode = Random;
     
-    self.removeManager = [[XRemoveManager alloc] init];
-
     // 数据处理，集中管理
     self.areaAnimationManager = [self makeAreaAnimationManager];
 
@@ -179,10 +171,9 @@
 
 /// 数据 ---> AreaManager
 - (XAreaAnimationManager*)makeAreaAnimationManager {
-  self.drawablePoints = [self getDrawablePoints];
-  self.areaNodes = [self getAreaDrawableAnimationNodes];
+  NSMutableArray<XGraphAnimationNode*>* areaNodes = [self getAreaDrawableAnimationNodes];
   XAreaAnimationManager* manager = [[XAreaAnimationManager alloc]
-      initWithAreaNodes:[self.areaNodes mutableCopy]];
+      initWithAreaNodes:[areaNodes mutableCopy]];
   return manager;
 }
 
@@ -279,17 +270,13 @@
 
         pointLayer.path = path.CGPath;
         pointLayer.fillColor = pointColor.CGColor;
-
+        
         [self.layer addSublayer:pointLayer];
       }];
 }
 
 - (void)cleanPreDrawAndDataCache {
-  
-  // new
-  [self.removeManager removeDisplayContentAndItem];
-  
-  // work well
+//   work well
   self.layer.sublayers = nil;
   [self.labelArray
       enumerateObjectsUsingBlock:^(XAnimationLabel* _Nonnull obj,
@@ -298,8 +285,6 @@
       }];
 
   [self.labelArray removeAllObjects];
-  [self.drawablePoints removeAllObjects];
-  [self.areaNodes removeAllObjects];
 }
 
 - (void)strokeLine {
@@ -327,30 +312,30 @@
 
 #pragma mark data Handling
 - (NSMutableArray<XGraphAnimationNode*>*)getAreaDrawableAnimationNodes {
-  self.drawablePoints = [self getDrawablePoints];
+  NSMutableArray<NSValue*>* drawablePoints = [self getDrawablePoints];
 
   // Make Close Points
-  CGPoint temfirstPoint = self.drawablePoints[0].CGPointValue;
-  CGPoint temlastPoint = self.drawablePoints.lastObject.CGPointValue;
+  CGPoint temfirstPoint = drawablePoints[0].CGPointValue;
+  CGPoint temlastPoint = drawablePoints.lastObject.CGPointValue;
   CGPoint firstPoint = CGPointMake(0, temfirstPoint.y);
   CGPoint lastPoint = CGPointMake(self.frame.size.width, temlastPoint.y);
 
   // AreaDrawablePoints
-  self.areaNodes = [NSMutableArray new];
-  [self.drawablePoints
+  NSMutableArray<XGraphAnimationNode*>* areaNodes= [NSMutableArray new];
+  [drawablePoints
       enumerateObjectsUsingBlock:^(NSValue* _Nonnull pointValue, NSUInteger idx,
                                    BOOL* _Nonnull stop) {
-        [self.areaNodes
+        [areaNodes
             addObject:[[XGraphAnimationNode alloc]
                           initWithAnimationEndPoint:pointValue.CGPointValue]];
       }];
-  [self.areaNodes insertObject:[[XGraphAnimationNode alloc]
+  [areaNodes insertObject:[[XGraphAnimationNode alloc]
                                    initWithAnimationEndPoint:firstPoint]
                        atIndex:0];
-  [self.areaNodes addObject:[[XGraphAnimationNode alloc]
+  [areaNodes addObject:[[XGraphAnimationNode alloc]
                                 initWithAnimationEndPoint:lastPoint]];
 
-  return self.areaNodes;
+  return areaNodes;
 }
 
 - (NSMutableArray<NSValue*>*)getDrawablePoints {
