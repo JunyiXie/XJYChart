@@ -25,4 +25,6 @@
 #import "XEnumHeader.h"
 #import "XPositiveNegativeBarChart.h"
 
+#import "XAreaLineChartConfiguration.h"
+
 #endif /* XChart_h */

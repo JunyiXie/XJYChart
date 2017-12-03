@@ -39,6 +39,7 @@
 - (CGFloat)getAnimationNodeX;
 - (CGFloat)getAnimationNodeEndY;
 - (CGFloat)getAnimationNodeCurrentY;
+
 @end
 
 @implementation XGraphAnimationNode
@@ -118,14 +119,14 @@
 
 @property(nonatomic, strong) UIColor* areaColor;
 
-/**
- All lines points
- */
-//@property(nonatomic, strong) NSMutableArray<NSValue*>* drawablePoints;
+@property(nonatomic, strong) CAGradientLayer* gradientLayer;
+
 @property(nonatomic, strong) NSMutableArray<XAnimationLabel*>* labelArray;
-//@property(nonatomic, strong) NSMutableArray<XGraphAnimationNode*>* areaNodes;
 
 @property(nonatomic, strong) XAreaAnimationManager* areaAnimationManager;
+
+@property(nonatomic, strong) NSMutableArray<CAShapeLayer*>* pointsLayerArray;
+
 @end
 
 @implementation XAreaLineContainerView
@@ -133,16 +134,16 @@
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XLineChartItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumber
-                 bottomNumber:(NSNumber*)bottomNumber {
+                 bottomNumber:(NSNumber*)bottomNumber
+                configuration:(XAreaLineChartConfiguration*)configuration {
   if (self = [super initWithFrame:frame]) {
-    if (self.chartBackgroundColor == nil) {
-      self.chartBackgroundColor = XJYWhite;
-    }
-    self.backgroundColor = self.chartBackgroundColor;
-    
-    self.labelArray = [NSMutableArray new];
+    self.congifuration = configuration;
+    self.backgroundColor = self.congifuration.chartBackgroundColor;
 
+    self.pointsLayerArray = [NSMutableArray new];
+    self.labelArray = [NSMutableArray new];
     self.dataItemArray = dataItemArray;
+
     self.top = topNumber;
     self.bottom = bottomNumber;
     self.lineMode = BrokenLine;
@@ -171,15 +172,17 @@
 
 /// 数据 ---> AreaManager
 - (XAreaAnimationManager*)makeAreaAnimationManager {
-  NSMutableArray<XGraphAnimationNode*>* areaNodes = [self getAreaDrawableAnimationNodes];
-  XAreaAnimationManager* manager = [[XAreaAnimationManager alloc]
-      initWithAreaNodes:[areaNodes mutableCopy]];
+  NSMutableArray<XGraphAnimationNode*>* areaNodes =
+      [self getAreaDrawableAnimationNodes];
+  XAreaAnimationManager* manager =
+      [[XAreaAnimationManager alloc] initWithAreaNodes:[areaNodes mutableCopy]];
   return manager;
 }
 
 - (void)drawRect:(CGRect)rect {
   [super drawRect:rect];
   CGContextRef context = UIGraphicsGetCurrentContext();
+
   [self strokeAuxiliaryLineInContext:context];
   [self startAnimation];
 }
@@ -217,7 +220,6 @@
   // Add SubLayers
   [self strokeLine];
   [self strokePointInContext];
-
 }
 
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
@@ -254,10 +256,6 @@
 }
 
 - (void)strokePointInContext {
-  UIColor* pointColor = [UIColor turquoiseColor];
-  UIColor* wireframeColor = [UIColor whiteColor];
-  ;
-
   [self.areaAnimationManager.animationNodes
       enumerateObjectsUsingBlock:^(XGraphAnimationNode* _Nonnull node,
                                    NSUInteger idx, BOOL* _Nonnull stop) {
@@ -270,15 +268,23 @@
                          cornerRadius:PointDiameter / 2];
 
         pointLayer.path = path.CGPath;
-        pointLayer.fillColor = pointColor.CGColor;
-        
+        pointLayer.fillColor = self.congifuration.pointColor.CGColor;
+
+        [self.pointsLayerArray addObject:pointLayer];
         [self.layer addSublayer:pointLayer];
       }];
 }
 
 - (void)cleanPreDrawAndDataCache {
-//   work well
-  self.layer.sublayers = nil;
+  [self.gradientLayer removeFromSuperlayer];
+
+  [self.pointsLayerArray
+      enumerateObjectsUsingBlock:^(CAShapeLayer* _Nonnull obj, NSUInteger idx,
+                                   BOOL* _Nonnull stop) {
+        [obj removeFromSuperlayer];
+      }];
+  [self.pointsLayerArray removeAllObjects];
+
   [self.labelArray
       enumerateObjectsUsingBlock:^(XAnimationLabel* _Nonnull obj,
                                    NSUInteger idx, BOOL* _Nonnull stop) {
@@ -288,6 +294,7 @@
   [self.labelArray removeAllObjects];
 }
 
+/// line mask cashape layer
 - (void)strokeLine {
   // animation end layer
   NSMutableArray* currentPointArray = [NSMutableArray new];
@@ -307,8 +314,12 @@
                                                leftConerPoint:leftConerPoint
                                               rightConerPoint:rightConerPoint];
 
-  // add layer
-  [self.layer addSublayer:lineLayer];
+  self.gradientLayer = [CAGradientLayer layer];
+  self.gradientLayer.colors = self.congifuration.gradientColors;
+  self.gradientLayer.frame = self.frame;
+  self.gradientLayer.mask = lineLayer;
+
+  [self.layer addSublayer:self.gradientLayer];
 }
 
 #pragma mark data Handling
@@ -322,7 +333,7 @@
   CGPoint lastPoint = CGPointMake(self.frame.size.width, temlastPoint.y);
 
   // AreaDrawablePoints
-  NSMutableArray<XGraphAnimationNode*>* areaNodes= [NSMutableArray new];
+  NSMutableArray<XGraphAnimationNode*>* areaNodes = [NSMutableArray new];
   [drawablePoints
       enumerateObjectsUsingBlock:^(NSValue* _Nonnull pointValue, NSUInteger idx,
                                    BOOL* _Nonnull stop) {
@@ -331,10 +342,10 @@
                           initWithAnimationEndPoint:pointValue.CGPointValue]];
       }];
   [areaNodes insertObject:[[XGraphAnimationNode alloc]
-                                   initWithAnimationEndPoint:firstPoint]
-                       atIndex:0];
+                              initWithAnimationEndPoint:firstPoint]
+                  atIndex:0];
   [areaNodes addObject:[[XGraphAnimationNode alloc]
-                                initWithAnimationEndPoint:lastPoint]];
+                           initWithAnimationEndPoint:lastPoint]];
 
   return areaNodes;
 }
@@ -397,8 +408,8 @@
   [line addLineToPoint:points[0].CGPointValue];
   lineLayer.path = line.CGPath;
   lineLayer.strokeColor = [UIColor clearColor].CGColor;
-  lineLayer.fillColor = [UIColor skyBlueColor].CGColor;
-  lineLayer.opacity = 0.3;
+  lineLayer.fillColor = [UIColor whiteColor].CGColor;
+  lineLayer.opacity = self.congifuration.lineAreaOpacity;
   lineLayer.lineWidth = 4;
   lineLayer.lineCap = kCALineCapRound;
   lineLayer.lineJoin = kCALineJoinRound;
@@ -454,5 +465,14 @@
                   withViewHeight:self.frame.size.height];
   return rightCoordinatePoint;
 }
+
+#pragma mark GET
+- (XAreaLineChartConfiguration*)congifuration {
+  if (_congifuration == nil) {
+    _congifuration = [[XAreaLineChartConfiguration alloc] init];
+  }
+  return _congifuration;
+}
+
 
 @end

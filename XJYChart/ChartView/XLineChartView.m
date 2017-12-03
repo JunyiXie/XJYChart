@@ -37,8 +37,11 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
             dataDescribeArray:(NSMutableArray<NSString*>*)dataDescribeArray
                     topNumber:(NSNumber*)topNumbser
                  bottomNumber:(NSNumber*)bottomNumber
-                    graphMode:(XXLineGraphMode)graphMode {
+                    graphMode:(XXLineGraphMode)graphMode
+                configuration:(XLineChartConfiguration*)configuration {
   if (self = [super initWithFrame:frame]) {
+    self.configuration = configuration;
+
     self.top = topNumbser;
     self.bottom = bottomNumber;
     self.dataItemArray = dataItemArray;
@@ -110,8 +113,8 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
                                  self.contentSize.height - AbscissaHeight)
         dataItemArray:self.dataItemArray
             topNumber:self.top
-         bottomNumber:self.bottom];
-    _lineContainerView.chartBackgroundColor = _chartBackgroundColor;
+         bottomNumber:self.bottom
+        configuration:self.configuration];
   }
   return _lineContainerView;
 }
@@ -123,9 +126,8 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
                                  self.contentSize.height - AbscissaHeight)
         dataItemArray:self.dataItemArray
             topNumber:self.top
-         bottomNumber:self.bottom];
-    _areaLineContainerView.chartBackgroundColor = _chartBackgroundColor;
-
+         bottomNumber:self.bottom
+        configuration:self.configuration];
   }
   return _areaLineContainerView;
 }
@@ -137,8 +139,8 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
                                  self.contentSize.height - AbscissaHeight)
         dataItemArray:self.dataItemArray
             topNumber:self.top
-         bottomNumber:self.bottom];
-    _stackAreaLineContainerView.chartBackgroundColor = _chartBackgroundColor;
+         bottomNumber:self.bottom
+        configuration:self.configuration];
   }
   return _stackAreaLineContainerView;
 }
@@ -151,8 +153,6 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
   // not safe i will fix it !
   [self.contanierView setValue:@(lineMode) forKey:KVOKeyLineGraphMode];
 }
-
-
 
 @end
 

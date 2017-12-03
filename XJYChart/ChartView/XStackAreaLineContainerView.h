@@ -9,9 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "XLineChartItem.h"
 #import "XEnumHeader.h"
+#import "XStackAreaLineChartConfiguration.h"
 
 @interface XStackAreaLineContainerView : UIView
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber;
+- (instancetype)initWithFrame:(CGRect)frame
+                dataItemArray:(NSMutableArray<XLineChartItem*>*)dataItemArray
+                    topNumber:(NSNumber*)topNumber
+                 bottomNumber:(NSNumber*)bottomNumber
+                configuration:(XStackAreaLineChartConfiguration *)configuration;
 /**
  dataItemArray
  */
@@ -27,6 +32,9 @@
 @property (nonatomic, strong) NSNumber *bottom;
 @property (nonatomic, assign) XXColorMode colorMode;
 @property (nonatomic, assign) XXLineMode lineMode;
-@property(nonatomic, strong) UIColor *chartBackgroundColor;
+/**
+ 图表的其他配置
+ */
+@property(nonatomic, strong) XStackAreaLineChartConfiguration *configuration;
 
 @end

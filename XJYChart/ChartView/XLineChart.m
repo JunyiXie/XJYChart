@@ -49,6 +49,29 @@
   return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame
+                dataItemArray:(NSMutableArray<XLineChartItem*>*)dataItemArray
+            dataDiscribeArray:(NSMutableArray<NSString*>*)dataDiscribeArray
+                    topNumber:(NSNumber*)topNumbser
+                 bottomNumber:(NSNumber*)bottomNumber
+                    graphMode:(XXLineGraphMode)graphMode
+           chartConfiguration:(XLineChartConfiguration*)configuration {
+  if (self = [super initWithFrame:frame]) {
+    self.configuration = configuration;
+    self.isAllowGesture = NO;
+    self.top = topNumbser;
+    self.bottom = bottomNumber;
+    self.dataItemArray = dataItemArray;
+    self.dataDescribeArray = dataDiscribeArray;
+    self.lineGraphMode = graphMode;
+    self.layer.masksToBounds = YES;
+    [self addGesForView:self.lineChartView];
+    self.lineChartView.layer.masksToBounds = YES;
+    [self addSubview:self.ordinateView];
+    [self addSubview:self.lineChartView];
+  }
+  return self;
+}
 #pragma mark Ges
 
 - (void)addGesForView:(UIView*)view {
@@ -118,7 +141,9 @@
         dataDescribeArray:self.dataDescribeArray
                 topNumber:self.top
              bottomNumber:self.bottom
-                graphMode:self.lineGraphMode];
+                graphMode:self.lineGraphMode
+            configuration:self.configuration];
+
     _lineChartView.chartBackgroundColor = self.chartBackgroundColor;
   }
   return _lineChartView;

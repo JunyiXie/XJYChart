@@ -23,31 +23,30 @@
 CGFloat touchLineWidth = 20;
 
 @interface XLineContainerView ()
-@property(nonatomic, strong) CABasicAnimation *pathAnimation;
+@property(nonatomic, strong) CABasicAnimation* pathAnimation;
 
-@property(nonatomic, strong) CAShapeLayer *coverLayer;
+@property(nonatomic, strong) CAShapeLayer* coverLayer;
 /**
  All lines points
  */
 @property(nonatomic, strong)
-    NSMutableArray<NSMutableArray<NSValue *> *> *pointsArrays;
-@property(nonatomic, strong) NSMutableArray<CAShapeLayer *> *shapeLayerArray;
-@property(nonatomic, strong) NSMutableArray<XAnimationLabel *> *labelArray;
+    NSMutableArray<NSMutableArray<NSValue*>*>* pointsArrays;
+@property(nonatomic, strong) NSMutableArray<CAShapeLayer*>* shapeLayerArray;
+@property(nonatomic, strong) NSMutableArray<XAnimationLabel*>* labelArray;
 
 @end
 
 @implementation XLineContainerView
 
 - (instancetype)initWithFrame:(CGRect)frame
-                dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray
-                    topNumber:(NSNumber *)topNumber
-                 bottomNumber:(NSNumber *)bottomNumber {
+                dataItemArray:(NSMutableArray<XLineChartItem*>*)dataItemArray
+                    topNumber:(NSNumber*)topNumber
+                 bottomNumber:(NSNumber*)bottomNumber
+                configuration:(XNormalLineChartConfiguration*)configuration {
   if (self = [super initWithFrame:frame]) {
-    if (self.chartBackgroundColor == nil) {
-      self.chartBackgroundColor = XJYWhite;
-    }
-    self.backgroundColor = self.chartBackgroundColor;
-    
+    self.configuration = configuration;
+    self.backgroundColor = self.configuration.chartBackgroundColor;
+
     self.coverLayer = [CAShapeLayer layer];
     self.shapeLayerArray = [NSMutableArray new];
     self.pointsArrays = [NSMutableArray new];
@@ -75,17 +74,16 @@ CGFloat touchLineWidth = 20;
 
 /// Stroke Auxiliary
 - (void)strokeAuxiliaryLineInContext:(CGContextRef)context {
-
   CGContextSaveGState(context);
   CGFloat lengths[2] = {5.0, 5.0};
   CGContextSetLineDash(context, 0, lengths, 2);
   CGContextSetLineWidth(context, 0.3);
   for (int i = 0; i < 11; i++) {
-    CGContextMoveToPoint(context, 5, self.frame.size.height -
-                                         (self.frame.size.height) / 11 * i);
-    CGContextAddLineToPoint(context, self.frame.size.width,
-                            self.frame.size.height -
-                                ((self.frame.size.height) / 11) * i);
+    CGContextMoveToPoint(
+        context, 5, self.frame.size.height - (self.frame.size.height) / 11 * i);
+    CGContextAddLineToPoint(
+        context, self.frame.size.width,
+        self.frame.size.height - ((self.frame.size.height) / 11) * i);
     CGContextStrokePath(context);
   }
   CGContextRestoreGState(context);
@@ -104,7 +102,7 @@ CGFloat touchLineWidth = 20;
   CGContextStrokePath(context);
 
   // arrow
-  UIBezierPath *arrow = [[UIBezierPath alloc] init];
+  UIBezierPath* arrow = [[UIBezierPath alloc] init];
   arrow.lineWidth = 0.7;
   [arrow moveToPoint:CGPointMake(0, 8)];
   [arrow addLineToPoint:CGPointMake(5, 0)];
@@ -117,16 +115,15 @@ CGFloat touchLineWidth = 20;
 }
 
 - (void)cleanPreDrawLayerAndData {
-
   [self.coverLayer removeFromSuperlayer];
   [self.shapeLayerArray
-      enumerateObjectsUsingBlock:^(CAShapeLayer *_Nonnull obj, NSUInteger idx,
-                                   BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(CAShapeLayer* _Nonnull obj, NSUInteger idx,
+                                   BOOL* _Nonnull stop) {
         [obj removeFromSuperlayer];
       }];
   [self.labelArray
-      enumerateObjectsUsingBlock:^(XAnimationLabel *_Nonnull obj,
-                                   NSUInteger idx, BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(XAnimationLabel* _Nonnull obj,
+                                   NSUInteger idx, BOOL* _Nonnull stop) {
         [obj removeFromSuperview];
       }];
 
@@ -137,25 +134,24 @@ CGFloat touchLineWidth = 20;
 
 /// Stroke Point
 - (void)strokePointInContext:(CGContextRef)context {
-
   self.pointsArrays = [self getPointsArrays];
-  [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray *_Nonnull obj,
+  [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray* _Nonnull obj,
                                                   NSUInteger idx,
-                                                  BOOL *_Nonnull stop) {
-    UIColor *pointColor = [[XColor shareXColor] randomColorInColorArray];
-    UIColor *wireframeColor = [[XColor shareXColor] randomColorInColorArray];
+                                                  BOOL* _Nonnull stop) {
+    UIColor* pointColor = [[XColor shareXColor] randomColorInColorArray];
+    UIColor* wireframeColor = [[XColor shareXColor] randomColorInColorArray];
     [obj enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx,
-                                      BOOL *_Nonnull stop) {
+                                      BOOL* _Nonnull stop) {
       //画点
-      NSValue *pointValue = obj;
+      NSValue* pointValue = obj;
       CGPoint point = pointValue.CGPointValue;
-      CGContextSetFillColorWithColor(context, pointColor.CGColor); //填充颜色
+      CGContextSetFillColorWithColor(context, pointColor.CGColor);  //填充颜色
       CGContextSetStrokeColorWithColor(context,
-                                       wireframeColor.CGColor); //线框颜色
-      CGContextFillEllipseInRect(context,
-                                 CGRectMake(point.x - PointDiameter / 2,
-                                            point.y - PointDiameter / 2,
-                                            PointDiameter, PointDiameter));
+                                       wireframeColor.CGColor);  //线框颜色
+      CGContextFillEllipseInRect(
+          context,
+          CGRectMake(point.x - PointDiameter / 2, point.y - PointDiameter / 2,
+                     PointDiameter, PointDiameter));
     }];
   }];
 }
@@ -163,9 +159,9 @@ CGFloat touchLineWidth = 20;
 /// Stroke Line
 - (void)strokeLineChart {
   self.pointsArrays = [self getPointsArrays];
-  [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray *_Nonnull obj,
+  [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray* _Nonnull obj,
                                                   NSUInteger idx,
-                                                  BOOL *_Nonnull stop) {
+                                                  BOOL* _Nonnull stop) {
     if (self.colorMode == Random) {
       [self.shapeLayerArray
           addObject:[self lineShapeLayerWithPoints:obj
@@ -181,39 +177,37 @@ CGFloat touchLineWidth = 20;
   }];
 
   [self.shapeLayerArray
-      enumerateObjectsUsingBlock:^(CAShapeLayer *_Nonnull obj, NSUInteger idx,
-                                   BOOL *_Nonnull stop) {
+      enumerateObjectsUsingBlock:^(CAShapeLayer* _Nonnull obj, NSUInteger idx,
+                                   BOOL* _Nonnull stop) {
         [self.layer addSublayer:obj];
       }];
 }
 
 // compute Points Arrays
-- (NSMutableArray<NSMutableArray<NSValue *> *> *)getPointsArrays {
-
+- (NSMutableArray<NSMutableArray<NSValue*>*>*)getPointsArrays {
   // 避免重复计算
   if (self.pointsArrays.count > 0) {
     return self.pointsArrays;
   } else {
-    NSMutableArray *pointsArrays = [NSMutableArray new];
+    NSMutableArray* pointsArrays = [NSMutableArray new];
     // Get Points
-    [self.dataItemArray
-        enumerateObjectsUsingBlock:^(XLineChartItem *_Nonnull obj,
-                                     NSUInteger idx, BOOL *_Nonnull stop) {
-          NSMutableArray *numberArray = obj.numberArray;
-          NSMutableArray *linePointArray = [NSMutableArray new];
-          [obj.numberArray enumerateObjectsUsingBlock:^(NSNumber *_Nonnull obj,
-                                                        NSUInteger idx,
-                                                        BOOL *_Nonnull stop) {
-            CGPoint point =
-                [self calculateDrawablePointWithNumber:obj
-                                                   idx:idx
-                                                 count:numberArray.count
-                                                bounds:self.bounds];
-            NSValue *pointValue = [NSValue valueWithCGPoint:point];
-            [linePointArray addObject:pointValue];
-          }];
-          [pointsArrays addObject:linePointArray];
-        }];
+    [self.dataItemArray enumerateObjectsUsingBlock:^(
+                            XLineChartItem* _Nonnull obj, NSUInteger idx,
+                            BOOL* _Nonnull stop) {
+      NSMutableArray* numberArray = obj.numberArray;
+      NSMutableArray* linePointArray = [NSMutableArray new];
+      [obj.numberArray enumerateObjectsUsingBlock:^(NSNumber* _Nonnull obj,
+                                                    NSUInteger idx,
+                                                    BOOL* _Nonnull stop) {
+        CGPoint point = [self calculateDrawablePointWithNumber:obj
+                                                           idx:idx
+                                                         count:numberArray.count
+                                                        bounds:self.bounds];
+        NSValue* pointValue = [NSValue valueWithCGPoint:point];
+        [linePointArray addObject:pointValue];
+      }];
+      [pointsArrays addObject:linePointArray];
+    }];
     return pointsArrays;
   }
 }
@@ -227,7 +221,7 @@ CGFloat touchLineWidth = 20;
  @return CGPoint
  */
 // Calculate -> Point
-- (CGPoint)calculateDrawablePointWithNumber:(NSNumber *)number
+- (CGPoint)calculateDrawablePointWithNumber:(NSNumber*)number
                                         idx:(NSUInteger)idx
                                       count:(NSUInteger)count
                                      bounds:(CGRect)bounds {
@@ -248,13 +242,13 @@ CGFloat touchLineWidth = 20;
   return rightCoordinatePoint;
 }
 
-- (CAShapeLayer *)lineShapeLayerWithPoints:
-                      (NSMutableArray<NSValue *> *)pointsValueArray
-                                    colors:(UIColor *)color
-                                  lineMode:(XXLineMode)lineMode {
-  UIBezierPath *line = [[UIBezierPath alloc] init];
+- (CAShapeLayer*)lineShapeLayerWithPoints:
+                     (NSMutableArray<NSValue*>*)pointsValueArray
+                                   colors:(UIColor*)color
+                                 lineMode:(XXLineMode)lineMode {
+  UIBezierPath* line = [[UIBezierPath alloc] init];
 
-  CAShapeLayer *chartLine = [CAShapeLayer layer];
+  CAShapeLayer* chartLine = [CAShapeLayer layer];
   chartLine.lineCap = kCALineCapRound;
   chartLine.lineJoin = kCALineJoinRound;
   chartLine.lineWidth = LineWidth;
@@ -288,19 +282,19 @@ CGFloat touchLineWidth = 20;
     //当前线段的四个点
     CGPoint rectPoint1 =
         CGPointMake(point1.x - LineWidth / 2, point1.y - LineWidth / 2);
-    NSValue *value1 = [NSValue valueWithCGPoint:rectPoint1];
+    NSValue* value1 = [NSValue valueWithCGPoint:rectPoint1];
     CGPoint rectPoint2 =
         CGPointMake(point1.x - LineWidth / 2, point1.y + LineWidth / 2);
-    NSValue *value2 = [NSValue valueWithCGPoint:rectPoint2];
+    NSValue* value2 = [NSValue valueWithCGPoint:rectPoint2];
     CGPoint rectPoint3 =
         CGPointMake(point2.x + LineWidth / 2, point2.y - LineWidth / 2);
-    NSValue *value3 = [NSValue valueWithCGPoint:rectPoint3];
+    NSValue* value3 = [NSValue valueWithCGPoint:rectPoint3];
     CGPoint rectPoint4 =
         CGPointMake(point2.x + LineWidth / 2, point2.y + LineWidth / 2);
-    NSValue *value4 = [NSValue valueWithCGPoint:rectPoint4];
+    NSValue* value4 = [NSValue valueWithCGPoint:rectPoint4];
 
     //当前线段的矩形组成点
-    NSMutableArray<NSValue *> *segementPointsArray = [NSMutableArray new];
+    NSMutableArray<NSValue*>* segementPointsArray = [NSMutableArray new];
     [segementPointsArray addObject:value1];
     [segementPointsArray addObject:value2];
     [segementPointsArray addObject:value3];
@@ -328,9 +322,8 @@ CGFloat touchLineWidth = 20;
   return chartLine;
 }
 
-- (CAShapeLayer *)coverShapeLayerWithPath:(CGPathRef)path
-                                    color:(UIColor *)color {
-  CAShapeLayer *chartLine = [CAShapeLayer layer];
+- (CAShapeLayer*)coverShapeLayerWithPath:(CGPathRef)path color:(UIColor*)color {
+  CAShapeLayer* chartLine = [CAShapeLayer layer];
   chartLine.lineCap = kCALineCapRound;
   chartLine.lineJoin = kCALineJoinRound;
   chartLine.lineWidth = LineWidth * 1.5;
@@ -349,7 +342,7 @@ CGFloat touchLineWidth = 20;
   return chartLine;
 }
 
-- (CABasicAnimation *)pathAnimation {
+- (CABasicAnimation*)pathAnimation {
   _pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
   _pathAnimation.duration = 3.0;
   _pathAnimation.timingFunction = [CAMediaTimingFunction
@@ -361,15 +354,14 @@ CGFloat touchLineWidth = 20;
 
 #pragma mark - Touch
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-
+- (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
   //根据 点击的x坐标 只找在x 坐标区域内的 线段进行判断
   //坐标系转换
   CGPoint __block point = [[touches anyObject] locationInView:self];
 
   //找到小的区域
   int areaIdx = 0;
-  NSArray<NSValue *> *points = self.pointsArrays.lastObject;
+  NSArray<NSValue*>* points = self.pointsArrays.lastObject;
   for (int i = 0; i < points.count - 1; i++) {
     if (point.x >= points[i].CGPointValue.x &&
         point.x <= points[i + 1].CGPointValue.x) {
@@ -381,14 +373,14 @@ CGFloat touchLineWidth = 20;
   for (int i = 0; i < 5; i++) {
     //遍历每一条线时，只判断在 areaIdx 的 线段 是否包含 该点
     [self.shapeLayerArray enumerateObjectsUsingBlock:^(
-                              CAShapeLayer *_Nonnull obj, NSUInteger idx,
-                              BOOL *_Nonnull stop) {
+                              CAShapeLayer* _Nonnull obj, NSUInteger idx,
+                              BOOL* _Nonnull stop) {
 
-      NSMutableArray<NSMutableArray<NSValue *> *> *segementPointsArrays =
+      NSMutableArray<NSMutableArray<NSValue*>*>* segementPointsArrays =
           obj.segementPointsArrays;
 
       //找到这一段上的点s
-      NSMutableArray<NSValue *> *points = segementPointsArrays[areaIdx];
+      NSMutableArray<NSValue*>* points = segementPointsArrays[areaIdx];
 
       /// Mutiline optimize
       /// 找到最扩展最近的点
@@ -403,8 +395,8 @@ CGFloat touchLineWidth = 20;
           // remove pre layer and label
           [self.coverLayer removeFromSuperlayer];
           [self.labelArray enumerateObjectsUsingBlock:^(
-                               XAnimationLabel *_Nonnull obj, NSUInteger idx,
-                               BOOL *_Nonnull stop) {
+                               XAnimationLabel* _Nonnull obj, NSUInteger idx,
+                               BOOL* _Nonnull stop) {
             [obj removeFromSuperview];
           }];
           [self.labelArray removeAllObjects];
@@ -414,8 +406,8 @@ CGFloat touchLineWidth = 20;
         else {
           // remove pre layer and label
           [self.labelArray enumerateObjectsUsingBlock:^(
-                               XAnimationLabel *_Nonnull obj, NSUInteger idx,
-                               BOOL *_Nonnull stop) {
+                               XAnimationLabel* _Nonnull obj, NSUInteger idx,
+                               BOOL* _Nonnull stop) {
             [obj removeFromSuperview];
           }];
           [self.labelArray removeAllObjects];
@@ -429,9 +421,9 @@ CGFloat touchLineWidth = 20;
 
           [self.pointsArrays[shapeLayerIndex]
               enumerateObjectsUsingBlock:^(
-                  NSValue *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+                  NSValue* _Nonnull obj, NSUInteger idx, BOOL* _Nonnull stop) {
                 CGPoint point = obj.CGPointValue;
-                XAnimationLabel *label =
+                XAnimationLabel* label =
                     [XAnimationLabel topLabelWithPoint:point
                                                   text:@"0"
                                              textColor:XJYBlack
@@ -455,7 +447,13 @@ CGFloat touchLineWidth = 20;
       return;
     }
   }
-  
-
 }
+
+- (XNormalLineChartConfiguration *)configuration {
+  if (_configuration == nil) {
+    _configuration = [[XNormalLineChartConfiguration alloc] init];
+  }
+  return _configuration;
+}
+
 @end

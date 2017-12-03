@@ -27,6 +27,16 @@
 		3F1E5F7B1FD2A12800FC303B /* XBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F791FD2A12800FC303B /* XBarItem.h */; };
 		3F1E5F7E1FD2A14100FC303B /* XPieItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F7C1FD2A14100FC303B /* XPieItem.h */; };
 		3F1E5F7F1FD2A14100FC303B /* XPieItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F7D1FD2A14100FC303B /* XPieItem.m */; };
+		3F1E5F901FD3BC9600FC303B /* XBaseChartConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F8E1FD3BC9600FC303B /* XBaseChartConfiguration.h */; };
+		3F1E5F911FD3BC9600FC303B /* XBaseChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F8F1FD3BC9600FC303B /* XBaseChartConfiguration.m */; };
+		3F1E5F941FD3BE7D00FC303B /* XAreaLineChartConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F921FD3BE7D00FC303B /* XAreaLineChartConfiguration.h */; };
+		3F1E5F951FD3BE7D00FC303B /* XAreaLineChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F931FD3BE7D00FC303B /* XAreaLineChartConfiguration.m */; };
+		3F1E5F981FD3CD2E00FC303B /* XLineChartConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F961FD3CD2E00FC303B /* XLineChartConfiguration.h */; };
+		3F1E5F991FD3CD2E00FC303B /* XLineChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F971FD3CD2E00FC303B /* XLineChartConfiguration.m */; };
+		3F1E5F9C1FD3D78400FC303B /* XNormalLineChartConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5F9A1FD3D78400FC303B /* XNormalLineChartConfiguration.h */; };
+		3F1E5F9D1FD3D78400FC303B /* XNormalLineChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F9B1FD3D78400FC303B /* XNormalLineChartConfiguration.m */; };
+		3F1E5FA41FD3D9F400FC303B /* XStackAreaLineChartConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5FA21FD3D9F400FC303B /* XStackAreaLineChartConfiguration.h */; };
+		3F1E5FA51FD3D9F400FC303B /* XStackAreaLineChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5FA31FD3D9F400FC303B /* XStackAreaLineChartConfiguration.m */; };
 		3FAFF1781FCD60FA00CBEA39 /* Colours.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF12C1FCD60FA00CBEA39 /* Colours.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FAFF1791FCD60FA00CBEA39 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF12D1FCD60FA00CBEA39 /* Colours.m */; };
 		3FAFF17A1FCD60FA00CBEA39 /* XColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF12E1FCD60FA00CBEA39 /* XColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,6 +111,16 @@
 		3F1E5F791FD2A12800FC303B /* XBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarItem.h; sourceTree = "<group>"; };
 		3F1E5F7C1FD2A14100FC303B /* XPieItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPieItem.h; sourceTree = "<group>"; };
 		3F1E5F7D1FD2A14100FC303B /* XPieItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPieItem.m; sourceTree = "<group>"; };
+		3F1E5F8E1FD3BC9600FC303B /* XBaseChartConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBaseChartConfiguration.h; sourceTree = "<group>"; };
+		3F1E5F8F1FD3BC9600FC303B /* XBaseChartConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBaseChartConfiguration.m; sourceTree = "<group>"; };
+		3F1E5F921FD3BE7D00FC303B /* XAreaLineChartConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAreaLineChartConfiguration.h; sourceTree = "<group>"; };
+		3F1E5F931FD3BE7D00FC303B /* XAreaLineChartConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAreaLineChartConfiguration.m; sourceTree = "<group>"; };
+		3F1E5F961FD3CD2E00FC303B /* XLineChartConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLineChartConfiguration.h; sourceTree = "<group>"; };
+		3F1E5F971FD3CD2E00FC303B /* XLineChartConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLineChartConfiguration.m; sourceTree = "<group>"; };
+		3F1E5F9A1FD3D78400FC303B /* XNormalLineChartConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XNormalLineChartConfiguration.h; sourceTree = "<group>"; };
+		3F1E5F9B1FD3D78400FC303B /* XNormalLineChartConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XNormalLineChartConfiguration.m; sourceTree = "<group>"; };
+		3F1E5FA21FD3D9F400FC303B /* XStackAreaLineChartConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XStackAreaLineChartConfiguration.h; sourceTree = "<group>"; };
+		3F1E5FA31FD3D9F400FC303B /* XStackAreaLineChartConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XStackAreaLineChartConfiguration.m; sourceTree = "<group>"; };
 		3FAFF1241FCD609000CBEA39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FAFF12C1FCD60FA00CBEA39 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		3FAFF12D1FCD60FA00CBEA39 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
@@ -194,6 +214,23 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
+		3F1E5F8D1FD3BC7800FC303B /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3F1E5F8E1FD3BC9600FC303B /* XBaseChartConfiguration.h */,
+				3F1E5F8F1FD3BC9600FC303B /* XBaseChartConfiguration.m */,
+				3F1E5F921FD3BE7D00FC303B /* XAreaLineChartConfiguration.h */,
+				3F1E5F931FD3BE7D00FC303B /* XAreaLineChartConfiguration.m */,
+				3F1E5F961FD3CD2E00FC303B /* XLineChartConfiguration.h */,
+				3F1E5F971FD3CD2E00FC303B /* XLineChartConfiguration.m */,
+				3F1E5F9A1FD3D78400FC303B /* XNormalLineChartConfiguration.h */,
+				3F1E5F9B1FD3D78400FC303B /* XNormalLineChartConfiguration.m */,
+				3F1E5FA21FD3D9F400FC303B /* XStackAreaLineChartConfiguration.h */,
+				3F1E5FA31FD3D9F400FC303B /* XStackAreaLineChartConfiguration.m */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		3FAFF1161FCD609000CBEA39 = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +244,7 @@
 			children = (
 				3FAFF1BD1FCD610100CBEA39 /* XChart.h */,
 				3FAFF1BE1FCD610100CBEA39 /* XChartDelegate.h */,
+				3F1E5F8D1FD3BC7800FC303B /* Configuration */,
 				3F0F84751FD18B3F005914EE /* DataModel */,
 				3FAFF1651FCD60FA00CBEA39 /* AHEasing */,
 				3FAFF1351FCD60FA00CBEA39 /* Animator */,
@@ -349,9 +387,12 @@
 			files = (
 				3FAFF19C1FCD60FA00CBEA39 /* XLineChartView.h in Headers */,
 				3FAFF1A41FCD60FA00CBEA39 /* XPositiveNegativeBarChart.h in Headers */,
+				3F1E5F901FD3BC9600FC303B /* XBaseChartConfiguration.h in Headers */,
 				3FAFF18E1FCD60FA00CBEA39 /* XBarChart.h in Headers */,
 				3FAFF1781FCD60FA00CBEA39 /* Colours.h in Headers */,
+				3F1E5FA41FD3D9F400FC303B /* XStackAreaLineChartConfiguration.h in Headers */,
 				3FAFF1821FCD60FA00CBEA39 /* XAnimationPath.h in Headers */,
+				3F1E5F9C1FD3D78400FC303B /* XNormalLineChartConfiguration.h in Headers */,
 				3FAFF1AC1FCD60FA00CBEA39 /* XStackAreaLineContainerView.h in Headers */,
 				3FAFF1B41FCD60FA00CBEA39 /* CAShapeLayer+frameCategory.h in Headers */,
 				3FAFF1B81FCD60FA00CBEA39 /* UIGestureRecognizer+XXGes.h in Headers */,
@@ -363,6 +404,7 @@
 				3FAFF1BB1FCD60FA00CBEA39 /* XNotificationBridge.h in Headers */,
 				3FAFF1C01FCD610100CBEA39 /* XChartDelegate.h in Headers */,
 				3FAFF18C1FCD60FA00CBEA39 /* XAreaLineContainerView.h in Headers */,
+				3F1E5F981FD3CD2E00FC303B /* XLineChartConfiguration.h in Headers */,
 				3FAFF19E1FCD60FA00CBEA39 /* XLineContainerView.h in Headers */,
 				3FAFF1BA1FCD60FA00CBEA39 /* XEnumHeader.h in Headers */,
 				3FAFF17C1FCD60FA00CBEA39 /* XAuxiliaryCalculationHelper.h in Headers */,
@@ -370,6 +412,7 @@
 				3FAFF1AA1FCD60FA00CBEA39 /* XShape.h in Headers */,
 				3FAFF1A81FCD60FA00CBEA39 /* XPositiveNegativeBarContainerView.h in Headers */,
 				3FAFF18A1FCD60FA00CBEA39 /* XAnimationLabel.h in Headers */,
+				3F1E5F941FD3BE7D00FC303B /* XAreaLineChartConfiguration.h in Headers */,
 				3F1E5F761FD2A0F700FC303B /* XLineChartItem.h in Headers */,
 				3FAFF1921FCD60FA00CBEA39 /* XBarContainerView.h in Headers */,
 				3FAFF1881FCD60FA00CBEA39 /* XAbscissaView.h in Headers */,
@@ -487,6 +530,7 @@
 				3FAFF1B31FCD60FA00CBEA39 /* CALayer+XXLayer.m in Sources */,
 				3FAFF1871FCD60FA00CBEA39 /* OrdinateView.m in Sources */,
 				3F1E5F7F1FD2A14100FC303B /* XPieItem.m in Sources */,
+				3F1E5F9D1FD3D78400FC303B /* XNormalLineChartConfiguration.m in Sources */,
 				3FAFF1A91FCD60FA00CBEA39 /* XPositiveNegativeBarContainerView.m in Sources */,
 				3FAFF1831FCD60FA00CBEA39 /* XAnimationPath.m in Sources */,
 				3F1E5F771FD2A0F700FC303B /* XLineChartItem.m in Sources */,
@@ -499,10 +543,14 @@
 				3FAFF19D1FCD60FA00CBEA39 /* XLineChartView.m in Sources */,
 				3FAFF17F1FCD60FA00CBEA39 /* XRandomNumerHelper.m in Sources */,
 				3FAFF19F1FCD60FA00CBEA39 /* XLineContainerView.m in Sources */,
+				3F1E5F911FD3BC9600FC303B /* XBaseChartConfiguration.m in Sources */,
 				3FAFF1AD1FCD60FA00CBEA39 /* XStackAreaLineContainerView.m in Sources */,
 				3F1E5F7A1FD2A12800FC303B /* XBarItem.m in Sources */,
 				3FAFF1B51FCD60FA00CBEA39 /* CAShapeLayer+frameCategory.m in Sources */,
+				3F1E5F951FD3BE7D00FC303B /* XAreaLineChartConfiguration.m in Sources */,
 				3FAFF18F1FCD60FA00CBEA39 /* XBarChart.m in Sources */,
+				3F1E5FA51FD3D9F400FC303B /* XStackAreaLineChartConfiguration.m in Sources */,
+				3F1E5F991FD3CD2E00FC303B /* XLineChartConfiguration.m in Sources */,
 				3FAFF1B91FCD60FA00CBEA39 /* UIGestureRecognizer+XXGes.m in Sources */,
 				3FAFF1A11FCD60FA00CBEA39 /* XPieChart.m in Sources */,
 				3FAFF1B11FCD60FA00CBEA39 /* XPointDetect.m in Sources */,

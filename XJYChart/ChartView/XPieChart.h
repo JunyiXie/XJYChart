@@ -12,59 +12,61 @@
 
 //颜色
 
-#define UIColorFromRGBHex(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define UIColorFromRGBHex(rgbValue)                                    \
+  [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 \
+                  green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0    \
+                   blue:((float)(rgbValue & 0xFF)) / 255.0             \
+                  alpha:1.0]
 @interface XPieChart : UIView
 
-
-@property (nonatomic, strong) NSMutableArray<XPieItem *> *dataItemArray;
-@property (nonatomic, weak) id<XChartDelegate> delegate;
+@property(nonatomic, strong) NSMutableArray<XPieItem*>* dataItemArray;
+@property(nonatomic, weak) id<XChartDelegate> delegate;
 
 /**
  enableAnimation
  Default is YES
  */
-@property (nonatomic, assign) BOOL enableAnimation;
+@property(nonatomic, assign) BOOL enableAnimation;
 
 /**
  descriptionTextFont default is 16
  */
-@property (nonatomic) UIFont  *descriptionTextFont;
+@property(nonatomic) UIFont* descriptionTextFont;
 
 /**
  descriptionTextColor default is blackColor
  */
-@property (nonatomic) UIColor *descriptionTextColor;
+@property(nonatomic) UIColor* descriptionTextColor;
 /** Default clear Color. */
-@property (nonatomic) UIColor *descriptionTextShadowColor;
+@property(nonatomic) UIColor* descriptionTextShadowColor;
 /** Default is CGSizeMake(0, 0). */
-@property (nonatomic) CGSize   descriptionTextShadowOffset;
-
+@property(nonatomic) CGSize descriptionTextShadowOffset;
 
 /**
  should High light Sector On Touch default is YES
  */
-@property (nonatomic, assign) BOOL shouldHighlightSectorOnTouch;
+@property(nonatomic, assign) BOOL shouldHighlightSectorOnTouch;
 
 /**
  enable Multiple Selection default is NO
  */
-@property (nonatomic, assign) BOOL enableMultipleSelection;
+@property(nonatomic, assign) BOOL enableMultipleSelection;
 
 /**
  show Absolute Values
  Default is NO
  */
-@property (nonatomic, assign) BOOL showAbsoluteValues;
+@property(nonatomic, assign) BOOL showAbsoluteValues;
 
 /**
  hide Value Labels
  Default is NO
  */
-@property (nonatomic, assign) BOOL hideValueLabels;
+@property(nonatomic, assign) BOOL hideValueLabels;
 
 /**
  only Show Values
  default is NO
  */
-@property (nonatomic, assign) BOOL onlyShowValues;
+@property(nonatomic, assign) BOOL onlyShowValues;
 @end

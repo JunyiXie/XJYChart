@@ -9,7 +9,14 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 @interface XShape : CAShapeLayer
-+ (CAShapeLayer *)getLineShapeLayerWithPoints:(NSArray<NSValue *> *)points leftConerPoint:(CGPoint)leftConerPoint rightConerPoint:(CGPoint)rightConerPoint;
-+ (CAShapeLayer *)cycleShapeLayerWithCenter:(CGPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle bounds:(CGRect)bounds;
-+ (CAShapeLayer *)rectShapeLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor;
++ (CAShapeLayer*)getLineShapeLayerWithPoints:(NSArray<NSValue*>*)points
+                              leftConerPoint:(CGPoint)leftConerPoint
+                             rightConerPoint:(CGPoint)rightConerPoint;
++ (CAShapeLayer*)cycleShapeLayerWithCenter:(CGPoint)center
+                                    radius:(CGFloat)radius
+                                startAngle:(CGFloat)startAngle
+                                  endAngle:(CGFloat)endAngle
+                                    bounds:(CGRect)bounds;
++ (CAShapeLayer*)rectShapeLayerWithBounds:(CGRect)rect
+                                fillColor:(UIColor*)fillColor;
 @end

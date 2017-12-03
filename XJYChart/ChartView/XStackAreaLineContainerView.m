@@ -37,13 +37,12 @@
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XLineChartItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumber
-                 bottomNumber:(NSNumber*)bottomNumber {
+                 bottomNumber:(NSNumber*)bottomNumber
+                configuration:(XStackAreaLineChartConfiguration*)configuration {
   if (self = [super initWithFrame:frame]) {
-    if (self.chartBackgroundColor == nil) {
-      self.chartBackgroundColor = XJYBlue;
-    }
-    self.backgroundColor = self.chartBackgroundColor;
-    
+    self.configuration = configuration;
+    self.backgroundColor = self.configuration.chartBackgroundColor;
+
     self.coverLayer = [CAShapeLayer layer];
     self.shapeLayerArray = [NSMutableArray new];
     self.labelArray = [NSMutableArray new];
@@ -316,6 +315,12 @@
                   withViewHeight:self.frame.size.height];
   return rightCoordinatePoint;
 }
-
+#pragma mark GET
+- (XStackAreaLineChartConfiguration*)configuration {
+  if (_configuration == nil) {
+    _configuration = [[XStackAreaLineChartConfiguration alloc] init];
+  }
+  return _configuration;
+}
 
 @end
