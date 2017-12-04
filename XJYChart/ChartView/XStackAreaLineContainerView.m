@@ -9,7 +9,6 @@
 #import "XStackAreaLineContainerView.h"
 #import "XAuxiliaryCalculationHelper.h"
 #import "XColor.h"
-#import "CAShapeLayer+frameCategory.h"
 #import "XAnimationLabel.h"
 #import "XAnimation.h"
 

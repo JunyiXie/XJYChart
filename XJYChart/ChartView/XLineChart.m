@@ -8,7 +8,7 @@
 
 #import "XLineChart.h"
 #import "OrdinateView.h"
-#import "UIGestureRecognizer+XXGes.h"
+#import "UIGestureRecognizer+XGesHelper.h"
 
 #define OrdinateWidth 30
 #define LineChartViewTopInterval 10

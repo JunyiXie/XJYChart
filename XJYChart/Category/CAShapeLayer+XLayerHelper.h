@@ -15,4 +15,5 @@
 @interface CAShapeLayer (XJYLayerHelper)
 + (CAShapeLayer *)rectShapeLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor;
 + (CAShapeLayer *)lineShapeLayerWithPoints:(NSMutableArray<NSValue *> *)pointsValueArray colors:(UIColor *)color lineMode:(XXLineMode)lineMode lineWidth:(CGFloat)lineWidth;
++ (CAShapeLayer *)pointLayerWithDiameter:(CGFloat)diameter color:(UIColor *)color center:(CGPoint)center;
 @end

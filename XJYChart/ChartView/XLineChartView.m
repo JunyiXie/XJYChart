@@ -11,7 +11,7 @@
 #import "XLineContainerView.h"
 #import "XAreaLineContainerView.h"
 #import "XStackAreaLineContainerView.h"
-#import "UIGestureRecognizer+XXGes.h"
+#import "UIGestureRecognizer+XGesHelper.h"
 #import "XColor.h"
 #define PartWidth 40
 #define AbscissaHeight 30

@@ -6,10 +6,23 @@
 //  Copyright © 2017 谢俊逸. All rights reserved.
 //
 
-#import "CAShapeLayer+XJYLayerHelper.h"
+#import "CAShapeLayer+XLayerHelper.h"
 
 
 @implementation CAShapeLayer (XJYLayerHelper)
+
++ (CAShapeLayer *)pointLayerWithDiameter:(CGFloat)diameter color:(UIColor *)color center:(CGPoint)center {
+  CAShapeLayer* pointLayer = [CAShapeLayer layer];
+  UIBezierPath* path = [UIBezierPath
+                        bezierPathWithRoundedRect:CGRectMake(center.x - diameter / 2,
+                                                             center.y - diameter / 2,
+                                                             diameter, diameter)
+                        cornerRadius:diameter / 2];
+  
+  pointLayer.path = path.CGPath;
+  pointLayer.fillColor = color.CGColor;
+  return pointLayer;
+}
 
 /// ShapeLayer With bounds
 + (CAShapeLayer *)rectShapeLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor {

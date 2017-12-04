@@ -6,7 +6,7 @@
 //  Copyright © 2017 谢俊逸. All rights reserved.
 //
 
-#import "UIGestureRecognizer+XXGes.h"
+#import "UIGestureRecognizer+XGesHelper.h"
 #import <objc/runtime.h>
 
 static char kHasTapBoolNumber;

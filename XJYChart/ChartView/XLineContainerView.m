@@ -10,10 +10,11 @@
 #import "XLineContainerView.h"
 #import "XAuxiliaryCalculationHelper.h"
 #import "XColor.h"
-#import "CAShapeLayer+frameCategory.h"
 #import "XAnimationLabel.h"
 #import "XAnimation.h"
 #import "XPointDetect.h"
+#import "CALayer+XLayerSelectHelper.h"
+#import "CAShapeLayer+XLayerHelper.h"
 #pragma mark - Macro
 
 #define LineWidth 3.0
@@ -33,6 +34,7 @@ CGFloat touchLineWidth = 20;
     NSMutableArray<NSMutableArray<NSValue*>*>* pointsArrays;
 @property(nonatomic, strong) NSMutableArray<CAShapeLayer*>* shapeLayerArray;
 @property(nonatomic, strong) NSMutableArray<XAnimationLabel*>* labelArray;
+@property(nonatomic, strong) NSMutableArray<CAShapeLayer*>* pointLayerArray;
 
 @end
 
@@ -51,6 +53,7 @@ CGFloat touchLineWidth = 20;
     self.shapeLayerArray = [NSMutableArray new];
     self.pointsArrays = [NSMutableArray new];
     self.labelArray = [NSMutableArray new];
+    self.pointLayerArray = [NSMutableArray new];
 
     self.dataItemArray = dataItemArray;
     self.top = topNumber;
@@ -126,10 +129,15 @@ CGFloat touchLineWidth = 20;
                                    NSUInteger idx, BOOL* _Nonnull stop) {
         [obj removeFromSuperview];
       }];
+  
+  [self.pointLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [obj removeFromSuperlayer];
+  }];
 
   [self.pointsArrays removeAllObjects];
   [self.shapeLayerArray removeAllObjects];
   [self.labelArray removeAllObjects];
+  [self.pointLayerArray removeAllObjects];
 }
 
 /// Stroke Point
@@ -139,19 +147,16 @@ CGFloat touchLineWidth = 20;
                                                   NSUInteger idx,
                                                   BOOL* _Nonnull stop) {
     UIColor* pointColor = [[XColor shareXColor] randomColorInColorArray];
-    UIColor* wireframeColor = [[XColor shareXColor] randomColorInColorArray];
     [obj enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx,
                                       BOOL* _Nonnull stop) {
-      //画点
       NSValue* pointValue = obj;
       CGPoint point = pointValue.CGPointValue;
-      CGContextSetFillColorWithColor(context, pointColor.CGColor);  //填充颜色
-      CGContextSetStrokeColorWithColor(context,
-                                       wireframeColor.CGColor);  //线框颜色
-      CGContextFillEllipseInRect(
-          context,
-          CGRectMake(point.x - PointDiameter / 2, point.y - PointDiameter / 2,
-                     PointDiameter, PointDiameter));
+
+      /// Change To CALayer
+      CAShapeLayer* pointLayer = [CAShapeLayer pointLayerWithDiameter:PointDiameter color:pointColor center:point];
+      [self.pointLayerArray addObject:pointLayer];
+      [self.layer addSublayer:pointLayer];
+
     }];
   }];
 }

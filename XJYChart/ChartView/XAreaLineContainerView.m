@@ -9,10 +9,10 @@
 #import "XAreaLineContainerView.h"
 #import "XAuxiliaryCalculationHelper.h"
 #import "XColor.h"
-#import "CAShapeLayer+frameCategory.h"
 #import "XAnimationLabel.h"
 #import "XAnimation.h"
 #import "XAnimator.h"
+#import "CAShapeLayer+XLayerHelper.h"
 
 #pragma mark - Macro
 
@@ -125,7 +125,7 @@
 
 @property(nonatomic, strong) XAreaAnimationManager* areaAnimationManager;
 
-@property(nonatomic, strong) NSMutableArray<CAShapeLayer*>* pointsLayerArray;
+@property(nonatomic, strong) NSMutableArray<CAShapeLayer*>* pointLayerArray;
 
 @end
 
@@ -140,7 +140,7 @@
     self.congifuration = configuration;
     self.backgroundColor = self.congifuration.chartBackgroundColor;
 
-    self.pointsLayerArray = [NSMutableArray new];
+    self.pointLayerArray = [NSMutableArray new];
     self.labelArray = [NSMutableArray new];
     self.dataItemArray = dataItemArray;
 
@@ -259,18 +259,11 @@
   [self.areaAnimationManager.animationNodes
       enumerateObjectsUsingBlock:^(XGraphAnimationNode* _Nonnull node,
                                    NSUInteger idx, BOOL* _Nonnull stop) {
-        CGPoint point = node.graphAnimationCurrentPoint;
-        CAShapeLayer* pointLayer = [CAShapeLayer layer];
-        UIBezierPath* path = [UIBezierPath
-            bezierPathWithRoundedRect:CGRectMake(point.x - PointDiameter / 2,
-                                                 point.y - PointDiameter / 2,
-                                                 PointDiameter, PointDiameter)
-                         cornerRadius:PointDiameter / 2];
+        CGPoint center = node.graphAnimationCurrentPoint;
+        
+        CAShapeLayer* pointLayer = [CAShapeLayer pointLayerWithDiameter:PointDiameter color:self.congifuration.pointColor center:center];
 
-        pointLayer.path = path.CGPath;
-        pointLayer.fillColor = self.congifuration.pointColor.CGColor;
-
-        [self.pointsLayerArray addObject:pointLayer];
+        [self.pointLayerArray addObject:pointLayer];
         [self.layer addSublayer:pointLayer];
       }];
 }
@@ -278,12 +271,12 @@
 - (void)cleanPreDrawAndDataCache {
   [self.gradientLayer removeFromSuperlayer];
 
-  [self.pointsLayerArray
+  [self.pointLayerArray
       enumerateObjectsUsingBlock:^(CAShapeLayer* _Nonnull obj, NSUInteger idx,
                                    BOOL* _Nonnull stop) {
         [obj removeFromSuperlayer];
       }];
-  [self.pointsLayerArray removeAllObjects];
+  [self.pointLayerArray removeAllObjects];
 
   [self.labelArray
       enumerateObjectsUsingBlock:^(XAnimationLabel* _Nonnull obj,

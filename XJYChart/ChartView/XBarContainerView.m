@@ -10,11 +10,10 @@
 #import "XAuxiliaryCalculationHelper.h"
 #import "XAbscissaView.h"
 #import "XColor.h"
-#import "CAShapeLayer+frameCategory.h"
 #import "XAnimationLabel.h"
-#import "CALayer+XXLayer.h"
 #import "XAnimation.h"
 #import "XNotificationBridge.h"
+#import "CALayer+XLayerSelectHelper.h"
 
 #pragma mark - Macro
 
