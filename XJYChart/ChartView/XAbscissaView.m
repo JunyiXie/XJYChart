@@ -60,8 +60,9 @@
                                  labelWidth - 2 * intervalWidth,
                                  self.frame.size.height)];
     label.text = self.dataDescribeArray[i];
+    label.textColor = [UIColor black50PercentColor];
     label.adjustsFontSizeToFitWidth = YES;
-    label.font = [UIFont fontWithName:@"Helvetica Neue" size:10];
+    label.font = [UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:10];
     label.numberOfLines = 0;
     label.textAlignment = NSTextAlignmentCenter;
     [self addSubview:label];

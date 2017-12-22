@@ -7,6 +7,8 @@
 //
 
 #import "OrdinateView.h"
+#import "XColor.h"
+
 
 @interface OrdinateView ()
 
@@ -47,7 +49,8 @@
         CGFloat height = self.frame.size.height / (self.labelArray.count * 2);
 
         obj.frame = CGRectMake(0, idx * height * 2, width, height);
-        obj.font = [UIFont systemFontOfSize:12];
+        obj.font = [UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:10];
+        obj.textColor = [UIColor black50PercentColor];
         obj.text = [NSString
             stringWithFormat:@"%.0f", (3 - idx) * (self.top - self.bottom) / 3 +
                                           self.bottom];

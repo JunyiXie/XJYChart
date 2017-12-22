@@ -9,8 +9,9 @@
 #import "XLineChartConfiguration.h"
 @interface XAreaLineChartConfiguration : XLineChartConfiguration
 
-@property(nonatomic, strong) NSArray* gradientColors;
-@property(nonatomic, strong) UIColor* pointColor;
-@property(nonatomic, assign) CGFloat lineAreaOpacity;
+///  CGColorRef Array
+@property(nonatomic, strong) NSArray *gradientColors;
+@property(nonatomic, assign) BOOL isShowPoint;
+@property(nonatomic, assign) BOOL isShowBorder;
 
 @end

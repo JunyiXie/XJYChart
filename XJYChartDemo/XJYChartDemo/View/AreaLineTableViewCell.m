@@ -28,8 +28,8 @@
     [itemArray addObject:item];
     
     XAreaLineChartConfiguration *configuration = [[XAreaLineChartConfiguration alloc] init];
-    configuration.pointColor = [UIColor blackColor];
-
+    configuration.isShowPoint = YES;
+    
     XLineChart* lineChart =
         [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200)
                             dataItemArray:itemArray
@@ -41,7 +41,7 @@
                                 graphMode:AreaLineGraph
          chartConfiguration:configuration];
     
-    lineChart.lineMode = CurveLine;
+    lineChart.lineMode = Straight;
     
 
     [self.contentView addSubview:lineChart];

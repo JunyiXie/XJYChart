@@ -17,8 +17,8 @@
 #import "CAShapeLayer+XLayerHelper.h"
 #pragma mark - Macro
 
-#define LineWidth 3.0
-#define PointDiameter 7.0
+#define LineWidth 4.0
+#define PointDiameter 10.0
 
 // Control Touch Area
 CGFloat touchLineWidth = 20;
@@ -58,8 +58,7 @@ CGFloat touchLineWidth = 20;
     self.dataItemArray = dataItemArray;
     self.top = topNumber;
     self.bottom = bottomNumber;
-    self.lineMode = BrokenLine;
-    self.colorMode = Random;
+    self.lineMode = Straight;
   }
   return self;
 }
@@ -72,15 +71,17 @@ CGFloat touchLineWidth = 20;
   [self cleanPreDrawLayerAndData];
   [self strokeAuxiliaryLineInContext:contextRef];
   [self strokeLineChart];
-  [self strokePointInContext:contextRef];
+  [self strokePointInContext];
 }
 
 /// Stroke Auxiliary
 - (void)strokeAuxiliaryLineInContext:(CGContextRef)context {
+  
+  CGContextSetStrokeColorWithColor(context, [UIColor black75PercentColor].CGColor);
   CGContextSaveGState(context);
   CGFloat lengths[2] = {5.0, 5.0};
   CGContextSetLineDash(context, 0, lengths, 2);
-  CGContextSetLineWidth(context, 0.3);
+  CGContextSetLineWidth(context, 0.2);
   for (int i = 0; i < 11; i++) {
     CGContextMoveToPoint(
         context, 5, self.frame.size.height - (self.frame.size.height) / 11 * i);
@@ -92,29 +93,32 @@ CGFloat touchLineWidth = 20;
   CGContextRestoreGState(context);
 
   CGContextSaveGState(context);
-  CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
-  // ordinate
-  CGContextMoveToPoint(context, 5, 0);
-  CGContextAddLineToPoint(context, 5, self.frame.size.height);
-  CGContextStrokePath(context);
-
-  // abscissa
-  CGContextMoveToPoint(context, 5, self.frame.size.height);
-  CGContextAddLineToPoint(context, self.frame.size.width,
-                          self.frame.size.height);
-  CGContextStrokePath(context);
-
-  // arrow
-  UIBezierPath* arrow = [[UIBezierPath alloc] init];
-  arrow.lineWidth = 0.7;
-  [arrow moveToPoint:CGPointMake(0, 8)];
-  [arrow addLineToPoint:CGPointMake(5, 0)];
-  [arrow moveToPoint:CGPointMake(5, 0)];
-  [arrow addLineToPoint:CGPointMake(10, 8)];
-  [[UIColor blackColor] setStroke];
-  arrow.lineCapStyle = kCGLineCapRound;
-  [arrow stroke];
-  CGContextRestoreGState(context);
+  CGContextSetStrokeColorWithColor(context, [UIColor black75PercentColor].CGColor);
+  
+  if (self.configuration.isShowCoordinate) {
+    // ordinate
+    CGContextMoveToPoint(context, 5, 0);
+    CGContextAddLineToPoint(context, 5, self.frame.size.height);
+    CGContextStrokePath(context);
+    
+    // abscissa
+    CGContextMoveToPoint(context, 5, self.frame.size.height);
+    CGContextAddLineToPoint(context, self.frame.size.width,
+                            self.frame.size.height);
+    CGContextStrokePath(context);
+    CGContextRestoreGState(context);
+    
+    // arrow
+    UIBezierPath* arrow = [[UIBezierPath alloc] init];
+    arrow.lineWidth = 0.7;
+    [arrow moveToPoint:CGPointMake(0, 8)];
+    [arrow addLineToPoint:CGPointMake(5, 0)];
+    [arrow moveToPoint:CGPointMake(5, 0)];
+    [arrow addLineToPoint:CGPointMake(10, 8)];
+    [[UIColor black75PercentColor] setStroke];
+    arrow.lineCapStyle = kCGLineCapRound;
+    [arrow stroke];
+  }
 }
 
 - (void)cleanPreDrawLayerAndData {
@@ -141,19 +145,21 @@ CGFloat touchLineWidth = 20;
 }
 
 /// Stroke Point
-- (void)strokePointInContext:(CGContextRef)context {
+- (void)strokePointInContext {
   self.pointsArrays = [self getPointsArrays];
   [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray* _Nonnull obj,
                                                   NSUInteger idx,
                                                   BOOL* _Nonnull stop) {
-    UIColor* pointColor = [[XColor shareXColor] randomColorInColorArray];
+    
+    UIColor *color = self.dataItemArray[idx].color;
+
     [obj enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx,
                                       BOOL* _Nonnull stop) {
       NSValue* pointValue = obj;
       CGPoint point = pointValue.CGPointValue;
-
       /// Change To CALayer
-      CAShapeLayer* pointLayer = [CAShapeLayer pointLayerWithDiameter:PointDiameter color:pointColor center:point];
+      CAShapeLayer* pointLayer = [CAShapeLayer pointLayerWithDiameter:PointDiameter color:color center:point];
+      
       [self.pointLayerArray addObject:pointLayer];
       [self.layer addSublayer:pointLayer];
 
@@ -167,18 +173,11 @@ CGFloat touchLineWidth = 20;
   [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray* _Nonnull obj,
                                                   NSUInteger idx,
                                                   BOOL* _Nonnull stop) {
-    if (self.colorMode == Random) {
-      [self.shapeLayerArray
-          addObject:[self lineShapeLayerWithPoints:obj
-                                            colors:[[XColor shareXColor]
-                                                       randomColorInColorArray]
-                                          lineMode:self.lineMode]];
-    } else {
-      [self.shapeLayerArray
+
+    [self.shapeLayerArray
           addObject:[self lineShapeLayerWithPoints:obj
                                             colors:self.dataItemArray[idx].color
                                           lineMode:self.lineMode]];
-    }
   }];
 
   [self.shapeLayerArray
@@ -250,7 +249,7 @@ CGFloat touchLineWidth = 20;
 - (CAShapeLayer*)lineShapeLayerWithPoints:
                      (NSMutableArray<NSValue*>*)pointsValueArray
                                    colors:(UIColor*)color
-                                 lineMode:(XXLineMode)lineMode {
+                                 lineMode:(XLineMode)lineMode {
   UIBezierPath* line = [[UIBezierPath alloc] init];
 
   CAShapeLayer* chartLine = [CAShapeLayer layer];
@@ -264,7 +263,7 @@ CGFloat touchLineWidth = 20;
     CGPoint point2 = pointsValueArray[i + 1].CGPointValue;
     [line moveToPoint:point1];
 
-    if (lineMode == BrokenLine) {
+    if (lineMode == Straight) {
       [line addLineToPoint:point2];
     } else if (lineMode == CurveLine) {
       CGPoint midPoint = [[XAuxiliaryCalculationHelper shareCalculationHelper]
@@ -320,9 +319,20 @@ CGFloat touchLineWidth = 20;
   chartLine.opacity = 0.6;
   chartLine.strokeColor = color.CGColor;
   chartLine.fillColor = [UIColor clearColor].CGColor;
+  
+  if (self.configuration.isShowShadow) {
+    // shadow
+    chartLine.shadowColor = [UIColor blackColor].CGColor;
+    chartLine.shadowOpacity = 0.45f;
+    chartLine.shadowOffset = CGSizeMake(0.0f, 6.0f);
+    chartLine.shadowRadius = 5.0f;
+    chartLine.masksToBounds = NO;
+  } else {
+    [chartLine addAnimation:self.pathAnimation forKey:@"strokeEndAnimation"];
+  }
+  
   // selectedStatus
   chartLine.selectStatusNumber = [NSNumber numberWithBool:NO];
-  [chartLine addAnimation:self.pathAnimation forKey:@"strokeEndAnimation"];
 
   return chartLine;
 }
@@ -338,11 +348,6 @@ CGFloat touchLineWidth = 20;
   chartLine.strokeColor = color.CGColor;
   chartLine.fillColor = [UIColor clearColor].CGColor;
   chartLine.opacity = 0.8;
-
-  // Remove ANimation
-  //    CASpringAnimation *springAnimation = [XAnimation
-  //    getLineChartSpringAnimationWithLayer:chartLine];
-  //    [chartLine addAnimation:springAnimation forKey:@"position.y"];
 
   return chartLine;
 }

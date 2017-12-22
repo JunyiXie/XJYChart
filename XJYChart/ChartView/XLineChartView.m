@@ -16,7 +16,6 @@
 #define PartWidth 40
 #define AbscissaHeight 30
 
-NSString* KVOKeyColorMode = @"colorMode";
 NSString* KVOKeyLineGraphMode = @"lineMode";
 
 @interface XLineChartView ()
@@ -37,7 +36,7 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
             dataDescribeArray:(NSMutableArray<NSString*>*)dataDescribeArray
                     topNumber:(NSNumber*)topNumbser
                  bottomNumber:(NSNumber*)bottomNumber
-                    graphMode:(XXLineGraphMode)graphMode
+                    graphMode:(XLineGraphMode)graphMode
                 configuration:(XLineChartConfiguration*)configuration {
   if (self = [super initWithFrame:frame]) {
     self.configuration = configuration;
@@ -68,10 +67,10 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
 
 // Acorrding Line Graph Mode Choose Which LineContanier View
 - (UIView*)getLineChartContainerViewWithGraphMode:
-    (XXLineGraphMode)lineGraphMode {
+    (XLineGraphMode)lineGraphMode {
   if (lineGraphMode == AreaLineGraph) {
     return self.areaLineContainerView;
-  } else if (lineGraphMode == BrokenLine) {
+  } else if (lineGraphMode == Straight) {
     return self.lineContainerView;
   } else if (lineGraphMode == StackAreaLineGraph) {
     return self.stackAreaLineContainerView;
@@ -147,7 +146,7 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
 
 #pragma mark - Set
 
-- (void)setLineMode:(XXLineMode)lineMode {
+- (void)setLineMode:(XLineMode)lineMode {
   _lineMode = lineMode;
   // two kind of containerview use kvo instand of inhert
   // not safe i will fix it !

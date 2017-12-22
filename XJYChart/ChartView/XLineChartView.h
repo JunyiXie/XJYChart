@@ -27,7 +27,7 @@
             dataDescribeArray:(NSMutableArray<NSString*>*)dataDescribeArray
                     topNumber:(NSNumber*)topNumbser
                  bottomNumber:(NSNumber*)bottomNumber
-                    graphMode:(XXLineGraphMode)graphMode
+                    graphMode:(XLineGraphMode)graphMode
                 configuration:(XLineChartConfiguration*)configuration;
 
 /**
@@ -48,13 +48,13 @@
 
 /**
  Line Mode
- - BrokeLine
+ - Straight
  - CurveLine
 
- Default is BrokeLine
+ Default is Straight
 
  */
-@property(nonatomic, assign) XXLineMode lineMode;
+@property(nonatomic, assign) XLineMode lineMode;
 
 @property(nonatomic, strong) XNormalLineChartConfiguration* configuration;
 
@@ -65,7 +65,7 @@
 
  Default is MutiLine
  */
-@property(nonatomic, assign) XXLineGraphMode lineGraphMode;
+@property(nonatomic, assign) XLineGraphMode lineGraphMode;
 @property(nonatomic, strong) UIColor* chartBackgroundColor;
 
 @end

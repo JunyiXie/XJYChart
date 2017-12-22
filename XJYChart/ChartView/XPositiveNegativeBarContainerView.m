@@ -429,8 +429,7 @@ typedef enum : NSUInteger {
   [topLabel setTextAlignment:NSTextAlignmentCenter];
   topLabel.text = labelText;
   [topLabel setFont:[UIFont systemFontOfSize:10]];
-  //    topLabel.adjustsFontSizeToFitWidth = YES;
-  [topLabel setTextColor:XJYRed];
+  [topLabel setTextColor:[UIColor black50PercentColor]];
   return topLabel;
 }
 

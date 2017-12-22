@@ -32,7 +32,7 @@
             dataDiscribeArray:(NSMutableArray<NSString*>*)dataDiscribeArray
                     topNumber:(NSNumber*)topNumbser
                  bottomNumber:(NSNumber*)bottomNumber
-                    graphMode:(XXLineGraphMode)graphMode {
+                    graphMode:(XLineGraphMode)graphMode {
   if (self = [super initWithFrame:frame]) {
     self.isAllowGesture = NO;
     self.top = topNumbser;
@@ -54,7 +54,7 @@
             dataDiscribeArray:(NSMutableArray<NSString*>*)dataDiscribeArray
                     topNumber:(NSNumber*)topNumbser
                  bottomNumber:(NSNumber*)bottomNumber
-                    graphMode:(XXLineGraphMode)graphMode
+                    graphMode:(XLineGraphMode)graphMode
            chartConfiguration:(XLineChartConfiguration*)configuration {
   if (self = [super initWithFrame:frame]) {
     self.configuration = configuration;
@@ -151,7 +151,7 @@
 
 #pragma mark Set
 
-- (void)setLineMode:(XXLineMode)lineMode {
+- (void)setLineMode:(XLineMode)lineMode {
   _lineMode = lineMode;
   self.lineChartView.lineMode = lineMode;
 }

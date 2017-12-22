@@ -7,7 +7,18 @@
 //
 
 #import "XBaseChartConfiguration.h"
+#import "XEnumHeader.h"
 
 @interface XLineChartConfiguration : XBaseChartConfiguration
+
+/**
+ Line Mode
+ - Straight
+ - CurveLine
+ 
+ Default is Straight
+ 
+ */
+@property(nonatomic, assign) XLineMode lineMode;
 
 @end

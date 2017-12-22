@@ -26,9 +26,9 @@
         NSMutableArray *itemArray = [[NSMutableArray alloc] init];
         
         NSMutableArray *numbersArray = [NSMutableArray new];
-        
-        for (int j = 0; j<5; j++) {
-            
+      
+        //点的数据
+        for (int j = 0; j<2; j++) {
             NSMutableArray *numberArray = [NSMutableArray new];
             
             for (int i = 0; i<5; i++) {
@@ -42,7 +42,7 @@
         
         NSArray *colorArray = @[[UIColor tealColor], [UIColor brickRedColor], [UIColor babyBlueColor], [UIColor bananaColor], [UIColor orchidColor]];
 
-        for (int i = 0; i<5; i++) {
+        for (int i = 0; i<2; i++) {
             XLineChartItem *item = [[XLineChartItem alloc] initWithDataNumberArray:numbersArray[i] color:colorArray[i]];
             [itemArray addObject:item];
         }

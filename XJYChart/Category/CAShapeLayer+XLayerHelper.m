@@ -24,6 +24,21 @@
   return pointLayer;
 }
 
++ (CAShapeLayer *)annularPointLayerWithDiameter:(CGFloat)diameter color:(UIColor *)color center:(CGPoint)center {
+  CAShapeLayer* pointLayer = [CAShapeLayer layer];
+  UIBezierPath* path = [UIBezierPath
+                        bezierPathWithRoundedRect:CGRectMake(center.x - diameter / 2,
+                                                             center.y - diameter / 2,
+                                                             diameter, diameter)
+                        cornerRadius:diameter / 2];
+  
+  pointLayer.path = path.CGPath;
+  pointLayer.fillColor = color.CGColor;
+  pointLayer.strokeColor = [UIColor whiteColor].CGColor;
+  pointLayer.lineWidth = 3;
+  return pointLayer;
+}
+
 /// ShapeLayer With bounds
 + (CAShapeLayer *)rectShapeLayerWithBounds:(CGRect)rect fillColor:(UIColor *)fillColor {
     UIBezierPath *path = [UIBezierPath bezierPathWithRect:rect];
@@ -35,7 +50,7 @@
 }
 
 
-+ (CAShapeLayer *)lineShapeLayerWithPoints:(NSMutableArray<NSValue *> *)pointsValueArray colors:(UIColor *)color lineMode:(XXLineMode)lineMode lineWidth:(CGFloat)lineWidth {
++ (CAShapeLayer *)lineShapeLayerWithPoints:(NSMutableArray<NSValue *> *)pointsValueArray color:(UIColor *)color lineMode:(XLineMode)lineMode lineWidth:(CGFloat)lineWidth {
     UIBezierPath *line = [[UIBezierPath alloc] init];
     
     CAShapeLayer *chartLine = [CAShapeLayer layer];
@@ -50,7 +65,7 @@
         CGPoint point2 = pointsValueArray[i + 1].CGPointValue;
         [line moveToPoint:point1];
         
-        if (lineMode == BrokenLine) {
+        if (lineMode == Straight) {
             [line addLineToPoint:point2];
         } else if (lineMode == CurveLine) {
             CGPoint midPoint = [[XAuxiliaryCalculationHelper shareCalculationHelper] midPointBetweenPoint1:point1 andPoint2:point2];

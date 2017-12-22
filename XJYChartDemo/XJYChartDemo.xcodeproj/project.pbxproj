@@ -755,6 +755,8 @@
 				);
 				INFOPLIST_FILE = XJYChartDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_GENERATE_MAP_FILE = YES;
+				LD_MAP_FILE_PATH = "/Users/junyixie/Library/Mobile Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/XJYChartDemo/XJYChartDemo/linkmap.txt";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -787,6 +789,8 @@
 				);
 				INFOPLIST_FILE = XJYChartDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_GENERATE_MAP_FILE = YES;
+				LD_MAP_FILE_PATH = "/Users/junyixie/Library/Mobile Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/XJYChartDemo/XJYChartDemo/linkmapRelease.txt";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",

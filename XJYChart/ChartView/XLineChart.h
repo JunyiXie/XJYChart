@@ -23,13 +23,13 @@
 
 /**
  Line Mode
- - BrokeLine
+ - Straight
  - CurveLine
 
- Default is BrokeLine
+ Default is Straight
 
  */
-@property(nonatomic, assign) XXLineMode lineMode;
+@property(nonatomic, assign) XLineMode lineMode;
 
 /**
  Line Graph Mode
@@ -38,7 +38,7 @@
 
  Default is MutiLine
  */
-@property(nonatomic, assign) XXLineGraphMode lineGraphMode;
+@property(nonatomic, assign) XLineGraphMode lineGraphMode;
 
 /**
  XXLineChart初始化方法
@@ -48,12 +48,12 @@
             dataDiscribeArray:(NSMutableArray<NSString*>*)dataDiscribeArray
                     topNumber:(NSNumber*)topNumbser
                  bottomNumber:(NSNumber*)bottomNumber
-                    graphMode:(XXLineGraphMode)graphMode;
+                    graphMode:(XLineGraphMode)graphMode;
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XLineChartItem*>*)dataItemArray
             dataDiscribeArray:(NSMutableArray<NSString*>*)dataDiscribeArray
                     topNumber:(NSNumber*)topNumbser
                  bottomNumber:(NSNumber*)bottomNumber
-                    graphMode:(XXLineGraphMode)graphMode
+                    graphMode:(XLineGraphMode)graphMode
            chartConfiguration:(XLineChartConfiguration*)configuration;
 @end

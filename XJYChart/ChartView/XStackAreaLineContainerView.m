@@ -51,8 +51,7 @@
     self.dataItemArray = dataItemArray;
     self.top = topNumber;
     self.bottom = bottomNumber;
-    self.lineMode = BrokenLine;
-    self.colorMode = Random;
+    self.lineMode = Straight;
   }
   return self;
 }
@@ -228,20 +227,12 @@
 
 - (NSMutableArray<UIColor*>*)getColors {
   NSMutableArray* colorArray = [NSMutableArray new];
-  if (self.colorMode == Random) {
-    [self.dataItemArray
-        enumerateObjectsUsingBlock:^(XLineChartItem* _Nonnull obj,
-                                     NSUInteger idx, BOOL* _Nonnull stop) {
-          [colorArray addObject:[[XColor shareXColor] randomColorInColorArray]];
 
-        }];
-  } else {
-    [self.dataItemArray
-        enumerateObjectsUsingBlock:^(XLineChartItem* _Nonnull obj,
-                                     NSUInteger idx, BOOL* _Nonnull stop) {
-          [colorArray addObject:obj.color];
-        }];
-  }
+  [self.dataItemArray
+      enumerateObjectsUsingBlock:^(XLineChartItem* _Nonnull obj,
+                                   NSUInteger idx, BOOL* _Nonnull stop) {
+        [colorArray addObject:obj.color];
+      }];
   return colorArray;
 }
 

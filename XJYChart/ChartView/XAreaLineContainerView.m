@@ -121,6 +121,8 @@
 
 @property(nonatomic, strong) CAGradientLayer* gradientLayer;
 
+@property(nonatomic, strong) CAShapeLayer* borderLayer;
+
 @property(nonatomic, strong) NSMutableArray<XAnimationLabel*>* labelArray;
 
 @property(nonatomic, strong) XAreaAnimationManager* areaAnimationManager;
@@ -146,7 +148,7 @@
 
     self.top = topNumber;
     self.bottom = bottomNumber;
-    self.lineMode = BrokenLine;
+    self.lineMode = Straight;
 
     // 数据处理，集中管理
     self.areaAnimationManager = [self makeAreaAnimationManager];
@@ -219,7 +221,7 @@
   [self cleanPreDrawAndDataCache];
   // Add SubLayers
   [self strokeLine];
-  [self strokePointInContext];
+  [self strokePoint];
 }
 
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
@@ -255,21 +257,28 @@
   }
 }
 
-- (void)strokePointInContext {
-  [self.areaAnimationManager.animationNodes
-      enumerateObjectsUsingBlock:^(XGraphAnimationNode* _Nonnull node,
-                                   NSUInteger idx, BOOL* _Nonnull stop) {
-        CGPoint center = node.graphAnimationCurrentPoint;
-        
-        CAShapeLayer* pointLayer = [CAShapeLayer pointLayerWithDiameter:PointDiameter color:self.congifuration.pointColor center:center];
-
-        [self.pointLayerArray addObject:pointLayer];
-        [self.layer addSublayer:pointLayer];
-      }];
+- (void)strokePoint {
+  
+  // Just one data item in dataItemArray
+  UIColor *color = [UIColor colorWithCGColor:(__bridge CGColorRef _Nonnull)(self.congifuration.gradientColors[0])];
+  
+  if (self.congifuration.isShowPoint) {
+    [self.areaAnimationManager.animationNodes
+     enumerateObjectsUsingBlock:^(XGraphAnimationNode* _Nonnull node,
+                                  NSUInteger idx, BOOL* _Nonnull stop) {
+       CGPoint center = node.graphAnimationCurrentPoint;
+       
+       CAShapeLayer* pointLayer = [CAShapeLayer annularPointLayerWithDiameter:PointDiameter color:color center:center];
+       
+       [self.pointLayerArray addObject:pointLayer];
+       [self.layer addSublayer:pointLayer];
+     }];
+  }
 }
 
 - (void)cleanPreDrawAndDataCache {
   [self.gradientLayer removeFromSuperlayer];
+  [self.borderLayer removeFromSuperlayer];
 
   [self.pointLayerArray
       enumerateObjectsUsingBlock:^(CAShapeLayer* _Nonnull obj, NSUInteger idx,
@@ -298,6 +307,7 @@
             addObject:[NSValue
                           valueWithCGPoint:obj.graphAnimationCurrentPoint]];
       }];
+  
   CGPoint leftConerPoint = CGPointMake(
       self.frame.origin.x, self.frame.origin.y + self.frame.size.height);
   CGPoint rightConerPoint =
@@ -306,12 +316,20 @@
   CAShapeLayer* lineLayer = [self getLineShapeLayerWithPoints:currentPointArray
                                                leftConerPoint:leftConerPoint
                                               rightConerPoint:rightConerPoint];
+  
 
+
+  if (self.congifuration.isShowBorder) {
+      self.borderLayer = [CAShapeLayer lineShapeLayerWithPoints:currentPointArray color:[UIColor colorWithCGColor:(__bridge CGColorRef _Nonnull)(self.congifuration.gradientColors[0])] lineMode:self.lineMode lineWidth:4];
+    [self.layer addSublayer:self.borderLayer];
+  }
+  
   self.gradientLayer = [CAGradientLayer layer];
   self.gradientLayer.colors = self.congifuration.gradientColors;
   self.gradientLayer.frame = self.frame;
   self.gradientLayer.mask = lineLayer;
 
+  
   [self.layer addSublayer:self.gradientLayer];
 }
 
@@ -402,8 +420,9 @@
   lineLayer.path = line.CGPath;
   lineLayer.strokeColor = [UIColor clearColor].CGColor;
   lineLayer.fillColor = [UIColor whiteColor].CGColor;
-  lineLayer.opacity = self.congifuration.lineAreaOpacity;
-  lineLayer.lineWidth = 4;
+  lineLayer.opacity = 1;
+
+  lineLayer.lineWidth = 1;
   lineLayer.lineCap = kCALineCapRound;
   lineLayer.lineJoin = kCALineJoinRound;
   return lineLayer;
