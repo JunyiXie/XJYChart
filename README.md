@@ -17,9 +17,9 @@
  
 ## Overview
 
-<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG" align="left" height="436" width="240" ></a>
-<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image2.PNG" align="left" height="436" width="240" ></a>
-<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG" align="left" height="436" width="240" ></a>
+<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG" align="left" height="472" width="260" ></a>
+<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image2.PNG" align="left" height="472" width="260" ></a>
+<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG" align="left" height="472" width="260" ></a>
 
 
 
