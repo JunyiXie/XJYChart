@@ -7,7 +7,7 @@
 //
 
 #import "XJYTableViewCell.h"
-static NSString *kPieChartCell = @"PieChartCell";
+static NSString* kPieChartCell = @"PieChartCell";
 @interface PieChartCell : XJYTableViewCell
 
 @end

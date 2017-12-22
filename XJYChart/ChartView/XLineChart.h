@@ -21,15 +21,6 @@
 
 @property(nonatomic, strong) XLineChartConfiguration* configuration;
 
-/**
- Line Mode
- - Straight
- - CurveLine
-
- Default is Straight
-
- */
-@property(nonatomic, assign) XLineMode lineMode;
 
 /**
  Line Graph Mode

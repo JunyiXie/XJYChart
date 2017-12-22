@@ -11,7 +11,7 @@
 @implementation XAuxiliaryCalculationHelper
 
 + (instancetype)shareCalculationHelper {
-  static XAuxiliaryCalculationHelper *helper = nil;
+  static XAuxiliaryCalculationHelper* helper = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     helper = [[XAuxiliaryCalculationHelper alloc] init];
@@ -49,23 +49,23 @@
 }
 
 // Compute Stroke Start Array
-- (NSMutableArray *)computeStrokeStartArrayWithDataArray:
-    (NSMutableArray *)dataArray {
-  NSMutableArray *startArray = [[NSMutableArray alloc] init];
+- (NSMutableArray*)computeStrokeStartArrayWithDataArray:
+    (NSMutableArray*)dataArray {
+  NSMutableArray* startArray = [[NSMutableArray alloc] init];
 
   //计算总count
   __block CGFloat count = 0;
   [dataArray enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx,
-                                          BOOL *_Nonnull stop) {
-    NSNumber *number = obj;
+                                          BOOL* _Nonnull stop) {
+    NSNumber* number = obj;
     count = count + number.doubleValue;
   }];
   //计算start比例
   __block CGFloat priorCount = 0;
   [dataArray enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx,
-                                          BOOL *_Nonnull stop) {
-    NSNumber *number = obj;
-    NSNumber *start = @(priorCount / count);
+                                          BOOL* _Nonnull stop) {
+    NSNumber* number = obj;
+    NSNumber* start = @(priorCount / count);
     priorCount = priorCount + number.doubleValue;
     //添加到数组中
     [startArray addObject:start];
@@ -74,24 +74,24 @@
 }
 
 // Compute Stroke End Array
-- (NSMutableArray *)computeStrokeEndArrayWithDataArray:
-    (NSMutableArray *)dataArray {
-  NSMutableArray *endArray = [[NSMutableArray alloc] init];
+- (NSMutableArray*)computeStrokeEndArrayWithDataArray:
+    (NSMutableArray*)dataArray {
+  NSMutableArray* endArray = [[NSMutableArray alloc] init];
 
   //计算总count
   __block CGFloat count = 0;
   [dataArray enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx,
-                                          BOOL *_Nonnull stop) {
-    NSNumber *number = obj;
+                                          BOOL* _Nonnull stop) {
+    NSNumber* number = obj;
     count = count + number.doubleValue;
   }];
   //计算end比例
   __block CGFloat nowCount = 0;
   [dataArray enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx,
-                                          BOOL *_Nonnull stop) {
-    NSNumber *number = obj;
+                                          BOOL* _Nonnull stop) {
+    NSNumber* number = obj;
     nowCount = nowCount + number.doubleValue;
-    NSNumber *start = @(nowCount / count);
+    NSNumber* start = @(nowCount / count);
     //添加到数组中
     [endArray addObject:start];
   }];
@@ -130,8 +130,8 @@
 }
 
 /// 计算点是否在多边形内
-- (BOOL)containPoint:(NSValue *)pointValue
-              Points:(NSMutableArray<NSValue *> *)pointsArray {
+- (BOOL)containPoint:(NSValue*)pointValue
+              Points:(NSMutableArray<NSValue*>*)pointsArray {
   float vertx[4] = {0, 0, 0, 0};
   float verty[4] = {0, 0, 0, 0};
   CGPoint targetPoint = pointValue.CGPointValue;
@@ -141,22 +141,24 @@
     vertx[i] = point1.x;
     verty[i] = point1.y;
   }
-//  return ;
-    
-    UIBezierPath *bPath = [UIBezierPath bezierPath];
-    [bPath moveToPoint:pointsArray[0].CGPointValue];
-    for (int i = 1; i < pointsArray.count; i = i + 1) {
-        CGPoint point = pointsArray[i].CGPointValue;
-        [bPath addLineToPoint:point];
-    }
-    [bPath closePath];
+  //  return ;
 
-//    return ;
-    
-    return CGPathContainsPoint(bPath.CGPath, nil, pointValue.CGPointValue, true) || pnpoly(4, vertx, verty, targetPoint.x, targetPoint.y);
+  UIBezierPath* bPath = [UIBezierPath bezierPath];
+  [bPath moveToPoint:pointsArray[0].CGPointValue];
+  for (int i = 1; i < pointsArray.count; i = i + 1) {
+    CGPoint point = pointsArray[i].CGPointValue;
+    [bPath addLineToPoint:point];
+  }
+  [bPath closePath];
+
+  //    return ;
+
+  return CGPathContainsPoint(bPath.CGPath, nil, pointValue.CGPointValue,
+                             true) ||
+         pnpoly(4, vertx, verty, targetPoint.x, targetPoint.y);
 }
 // 判断算法
-int pnpoly(int nvert, float *vertx, float *verty, float testx, float testy) {
+int pnpoly(int nvert, float* vertx, float* verty, float testx, float testy) {
   int i, j, c = 0;
   for (i = 0, j = nvert - 1; i < nvert; j = i++) {
     if (((verty[i] > testy) != (verty[j] > testy)) &&

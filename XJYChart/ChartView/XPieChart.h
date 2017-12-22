@@ -29,7 +29,7 @@
 @property(nonatomic, assign) BOOL enableAnimation;
 
 /**
- descriptionTextFont default is 16
+ descriptionTextFont default is 10
  */
 @property(nonatomic) UIFont* descriptionTextFont;
 

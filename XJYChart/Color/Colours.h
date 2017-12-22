@@ -20,33 +20,30 @@
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 // From
 // https://github.com/bennyguitar/Colours
 #include "TargetConditionals.h"
 #include <Foundation/Foundation.h>
 
-
 #pragma mark - Static String Keys
-static NSString * kColoursRGBA_R = @"RGBA-r";
-static NSString * kColoursRGBA_G = @"RGBA-g";
-static NSString * kColoursRGBA_B = @"RGBA-b";
-static NSString * kColoursRGBA_A = @"RGBA-a";
-static NSString * kColoursHSBA_H = @"HSBA-h";
-static NSString * kColoursHSBA_S = @"HSBA-s";
-static NSString * kColoursHSBA_B = @"HSBA-b";
-static NSString * kColoursHSBA_A = @"HSBA-a";
-static NSString * kColoursCIE_L = @"LABa-L";
-static NSString * kColoursCIE_A = @"LABa-A";
-static NSString * kColoursCIE_B = @"LABa-B";
-static NSString * kColoursCIE_alpha = @"LABa-a";
-static NSString * kColoursCIE_C = @"LABa-C";
-static NSString * kColoursCIE_H = @"LABa-H";
-static NSString * kColoursCMYK_C = @"CMYK-c";
-static NSString * kColoursCMYK_M = @"CMYK-m";
-static NSString * kColoursCMYK_Y = @"CMYK-y";
-static NSString * kColoursCMYK_K = @"CMYK-k";
-
+static NSString* kColoursRGBA_R = @"RGBA-r";
+static NSString* kColoursRGBA_G = @"RGBA-g";
+static NSString* kColoursRGBA_B = @"RGBA-b";
+static NSString* kColoursRGBA_A = @"RGBA-a";
+static NSString* kColoursHSBA_H = @"HSBA-h";
+static NSString* kColoursHSBA_S = @"HSBA-s";
+static NSString* kColoursHSBA_B = @"HSBA-b";
+static NSString* kColoursHSBA_A = @"HSBA-a";
+static NSString* kColoursCIE_L = @"LABa-L";
+static NSString* kColoursCIE_A = @"LABa-A";
+static NSString* kColoursCIE_B = @"LABa-B";
+static NSString* kColoursCIE_alpha = @"LABa-a";
+static NSString* kColoursCIE_C = @"LABa-C";
+static NSString* kColoursCIE_H = @"LABa-H";
+static NSString* kColoursCMYK_C = @"CMYK-c";
+static NSString* kColoursCMYK_M = @"CMYK-m";
+static NSString* kColoursCMYK_Y = @"CMYK-y";
+static NSString* kColoursCMYK_K = @"CMYK-k";
 
 #pragma mark - Create correct iOS/OSX interface
 
@@ -60,41 +57,39 @@ static NSString * kColoursCMYK_K = @"CMYK-k";
 
 #endif
 
-
 #pragma mark - Enums
 // Color Scheme Generation Enum
 typedef NS_ENUM(NSInteger, ColorScheme) {
-    ColorSchemeAnalagous,
-    ColorSchemeMonochromatic,
-    ColorSchemeTriad,
-    ColorSchemeComplementary
+  ColorSchemeAnalagous,
+  ColorSchemeMonochromatic,
+  ColorSchemeTriad,
+  ColorSchemeComplementary
 };
 
 // ColorFormulation Type
 typedef NS_ENUM(NSInteger, ColorFormulation) {
-    ColorFormulationRGBA,
-    ColorFormulationHSBA,
-    ColorFormulationLAB,
-    ColorFormulationCMYK
+  ColorFormulationRGBA,
+  ColorFormulationHSBA,
+  ColorFormulationLAB,
+  ColorFormulationCMYK
 };
 
 // ColorDistance
 typedef NS_ENUM(NSInteger, ColorDistance) {
-    ColorDistanceCIE76,
-    ColorDistanceCIE94,
-    ColorDistanceCIE2000,
+  ColorDistanceCIE76,
+  ColorDistanceCIE94,
+  ColorDistanceCIE2000,
 };
 
 typedef NS_ENUM(NSInteger, ColorComparison) {
-    ColorComparisonDarkness,
-    ColorComparisonLightness,
-    ColorComparisonDesaturated,
-    ColorComparisonSaturated,
-    ColorComparisonRed,
-    ColorComparisonGreen,
-    ColorComparisonBlue
+  ColorComparisonDarkness,
+  ColorComparisonLightness,
+  ColorComparisonDesaturated,
+  ColorComparisonSaturated,
+  ColorComparisonRed,
+  ColorComparisonGreen,
+  ColorComparisonBlue
 };
-
 
 #pragma mark - Color from Hex/RGBA/HSBA/CIE_LAB/CMYK
 /**
@@ -102,14 +97,14 @@ typedef NS_ENUM(NSInteger, ColorComparison) {
  @param hexString   Hex string that looks like @"#FF0000" or @"FF0000"
  @return    Color
  */
-+ (instancetype)colorFromHexString:(NSString *)hexString;
++ (instancetype)colorFromHexString:(NSString*)hexString;
 
 /**
  Creates a Color from an array of 4 NSNumbers (r,g,b,a)
  @param rgbaArray   4 NSNumbers for rgba between 0 - 1
  @return    Color
  */
-+ (instancetype)colorFromRGBAArray:(NSArray *)rgbaArray;
++ (instancetype)colorFromRGBAArray:(NSArray*)rgbaArray;
 
 /**
  Creates a Color from a dictionary of 4 NSNumbers
@@ -117,14 +112,14 @@ typedef NS_ENUM(NSInteger, ColorComparison) {
  @param rgbaDictionary   4 NSNumbers for rgba between 0 - 1
  @return    Color
  */
-+ (instancetype)colorFromRGBADictionary:(NSDictionary *)rgbaDict;
++ (instancetype)colorFromRGBADictionary:(NSDictionary*)rgbaDict;
 
 /**
  Creates a Color from an array of 4 NSNumbers (h,s,b,a)
  @param hsbaArray   4 NSNumbers for rgba between 0 - 1
  @return    Color
  */
-+ (instancetype)colorFromHSBAArray:(NSArray *)hsbaArray;
++ (instancetype)colorFromHSBAArray:(NSArray*)hsbaArray;
 
 /**
  Creates a Color from a dictionary of 4 NSNumbers
@@ -132,14 +127,14 @@ typedef NS_ENUM(NSInteger, ColorComparison) {
  @param hsbaDictionary   4 NSNumbers for rgba between 0 - 1
  @return    Color
  */
-+ (instancetype)colorFromHSBADictionary:(NSDictionary *)hsbaDict;
++ (instancetype)colorFromHSBADictionary:(NSDictionary*)hsbaDict;
 
 /**
  Creates a Color from an array of 4 NSNumbers (L,a,b,alpha)
  @param colors   4 NSNumbers for CIE_LAB between 0 - 1
  @return Color
  */
-+ (instancetype)colorFromCIE_LabArray:(NSArray *)colors;
++ (instancetype)colorFromCIE_LabArray:(NSArray*)colors;
 
 /**
  Creates a Color from a dictionary of 4 NSNumbers
@@ -147,14 +142,14 @@ typedef NS_ENUM(NSInteger, ColorComparison) {
  @param colors   4 NSNumbers for CIE_LAB between 0 - 1
  @return Color
  */
-+ (instancetype)colorFromCIE_LabDictionary:(NSDictionary *)colors;
++ (instancetype)colorFromCIE_LabDictionary:(NSDictionary*)colors;
 
 /**
  Creates a Color from an array of 4 NSNumbers (L,a,b,alpha)
  @param colors   4 NSNumbers for CIE_LAB between 0 - 1
  @return Color
  */
-+ (instancetype)colorFromCIE_LCHArray:(NSArray *)colors;
++ (instancetype)colorFromCIE_LCHArray:(NSArray*)colors;
 
 /**
  Creates a Color from a dictionary of 4 NSNumbers
@@ -162,14 +157,14 @@ typedef NS_ENUM(NSInteger, ColorComparison) {
  @param colors   4 NSNumbers for CIE_LAB between 0 - 1
  @return Color
  */
-+ (instancetype)colorFromCIE_LCHDictionary:(NSDictionary *)colors;
++ (instancetype)colorFromCIE_LCHDictionary:(NSDictionary*)colors;
 
 /**
  Creates a Color from an array of 4 NSNumbers (C,M,Y,K)
  @param colors   4 NSNumbers for CMYK between 0 - 1
  @return Color
  */
-+ (instancetype)colorFromCMYKArray:(NSArray *)cmyk;
++ (instancetype)colorFromCMYKArray:(NSArray*)cmyk;
 
 /**
  Creates a Color from a dictionary of 4 NSNumbers
@@ -177,83 +172,90 @@ typedef NS_ENUM(NSInteger, ColorComparison) {
  @param colors   4 NSNumbers for CMYK between 0 - 1
  @return Color
  */
-+ (instancetype)colorFromCMYKDictionary:(NSDictionary *)cmyk;
-
-
++ (instancetype)colorFromCMYKDictionary:(NSDictionary*)cmyk;
 
 #pragma mark - Hex/RGBA/HSBA/CIE_LAB/CMYK from Color
 /**
  Creates a Hex representation from a Color
  @return    NSString
  */
-- (NSString *)hexString;
+- (NSString*)hexString;
 
 /**
- Creates an array of 4 NSNumbers representing the float values of r, g, b, a in that order.
+ Creates an array of 4 NSNumbers representing the float values of r, g, b, a in
+ that order.
  @return    NSArray
  */
-- (NSArray *)rgbaArray;
+- (NSArray*)rgbaArray;
 
 /**
- Creates an array of 4 NSNumbers representing the float values of h, s, b, a in that order.
+ Creates an array of 4 NSNumbers representing the float values of h, s, b, a in
+ that order.
  @return    NSArray
  */
-- (NSArray *)hsbaArray;
+- (NSArray*)hsbaArray;
 
 /**
- Creates a dictionary of 4 NSNumbers representing float values with keys: kColoursRGBA_R, kColoursRGBA_G, kColoursRGBA_B, kColoursRGBA_A
+ Creates a dictionary of 4 NSNumbers representing float values with keys:
+ kColoursRGBA_R, kColoursRGBA_G, kColoursRGBA_B, kColoursRGBA_A
  @return    NSDictionary
  */
-- (NSDictionary *)rgbaDictionary;
+- (NSDictionary*)rgbaDictionary;
 
 /**
- Creates a dictionary of 4 NSNumbers representing float values with keys: kColoursHSBA_H, kColoursHSBA_S, kColoursHSBA_B, kColoursHSBA_A
+ Creates a dictionary of 4 NSNumbers representing float values with keys:
+ kColoursHSBA_H, kColoursHSBA_S, kColoursHSBA_B, kColoursHSBA_A
  @return    NSDictionary
  */
-- (NSDictionary *)hsbaDictionary;
+- (NSDictionary*)hsbaDictionary;
 
 /**
- *  Creates an array of 4 NSNumbers representing the float values of L*, a, b, alpha in that order.
+ *  Creates an array of 4 NSNumbers representing the float values of L*, a, b,
+ * alpha in that order.
  *
  *  @return NSArray
  */
-- (NSArray *)CIE_LabArray;
+- (NSArray*)CIE_LabArray;
 
 /**
- *  Creates a dictionary of 4 NSNumbers representing the float values with keys: kColoursCIE_L, kColoursCIE_A, kColoursCIE_B, kColoursCIE_alpha
+ *  Creates a dictionary of 4 NSNumbers representing the float values with keys:
+ * kColoursCIE_L, kColoursCIE_A, kColoursCIE_B, kColoursCIE_alpha
  *
  *  @return NSDictionary
  */
-- (NSDictionary *)CIE_LabDictionary;
+- (NSDictionary*)CIE_LabDictionary;
 
 /**
- *  Creates an array of 4 NSNumbers representing the float values of L*, a, b, alpha in that order.
+ *  Creates an array of 4 NSNumbers representing the float values of L*, a, b,
+ * alpha in that order.
  *
  *  @return NSArray
  */
 - (NSArray*)CIE_LCHArray;
 
 /**
- *  Creates a dictionary of 4 NSNumbers representing the float values with keys: kColoursCIE_L, kColoursCIE_A, kColoursCIE_B, kColoursCIE_alpha
+ *  Creates a dictionary of 4 NSNumbers representing the float values with keys:
+ * kColoursCIE_L, kColoursCIE_A, kColoursCIE_B, kColoursCIE_alpha
  *
  *  @return NSDictionary
  */
-- (NSDictionary *)CIE_LCHDictionary;
+- (NSDictionary*)CIE_LCHDictionary;
 
 /**
- *  Creates an array of 4 NSNumbers representing the float values of C, M, Y, K in that order.
+ *  Creates an array of 4 NSNumbers representing the float values of C, M, Y, K
+ * in that order.
  *
  *  @return NSArray
  */
-- (NSArray *)cmykArray;
+- (NSArray*)cmykArray;
 
 /**
- *  Creates a dictionary of 4 NSNumbers representing the float values with keys: kColoursCMYK_C, kColoursCMYK_M, kColoursCMYK_Y, kColoursCMYK_K
+ *  Creates a dictionary of 4 NSNumbers representing the float values with keys:
+ * kColoursCMYK_C, kColoursCMYK_M, kColoursCMYK_Y, kColoursCMYK_K
  *
  *  @return NSDictionary
  */
-- (NSDictionary *)cmykDictionary;
-
+- (NSDictionary*)cmykDictionary;
 
 #pragma mark - Color Components
 /**
@@ -261,7 +263,7 @@ typedef NS_ENUM(NSInteger, ColorComparison) {
  *
  *  @return NSDictionary
  */
-- (NSDictionary *)colorComponents;
+- (NSDictionary*)colorComponents;
 
 /**
  *  Returns the red value from an RGBA formulation of the UIColor.
@@ -361,10 +363,10 @@ typedef NS_ENUM(NSInteger, ColorComparison) {
  */
 - (CGFloat)keyBlack;
 
-
 #pragma mark - Darken/Lighten
 /**
- *  Darkens a color by changing the brightness by a percentage you pass in. If you want a 25% darker color, you pass in 0.25;
+ *  Darkens a color by changing the brightness by a percentage you pass in. If
+ * you want a 25% darker color, you pass in 0.25;
  *
  *  @param percentage CGFloat
  *
@@ -373,7 +375,8 @@ typedef NS_ENUM(NSInteger, ColorComparison) {
 - (instancetype)darken:(CGFloat)percentage;
 
 /**
- *  Lightens a color by changing the brightness by a percentage you pass in. If you want a 25% lighter color, you pass in 0.25;
+ *  Lightens a color by changing the brightness by a percentage you pass in. If
+ * you want a 25% lighter color, you pass in 0.25;
  *
  *  @param percentage CGFloat
  *
@@ -381,36 +384,36 @@ typedef NS_ENUM(NSInteger, ColorComparison) {
  */
 - (instancetype)lighten:(CGFloat)percentage;
 
-
 #pragma mark - 4 Color Scheme from Color
 /**
  Creates an NSArray of 4 Colors that complement the Color.
- @param type ColorSchemeAnalagous, ColorSchemeMonochromatic, ColorSchemeTriad, ColorSchemeComplementary
+ @param type ColorSchemeAnalagous, ColorSchemeMonochromatic, ColorSchemeTriad,
+ ColorSchemeComplementary
  @return    NSArray
  */
-- (NSArray *)colorSchemeOfType:(ColorScheme)type;
-
+- (NSArray*)colorSchemeOfType:(ColorScheme)type;
 
 #pragma mark - Contrasting Color from Color
 /**
- Creates either [Color whiteColor] or [Color blackColor] depending on if the color this method is run on is dark or light.
+ Creates either [Color whiteColor] or [Color blackColor] depending on if the
+ color this method is run on is dark or light.
  @return    Color
  */
 - (instancetype)blackOrWhiteContrastingColor;
 
-
 #pragma mark - Complementary Color
 /**
- Creates a complementary color - a color directly opposite it on the color wheel.
+ Creates a complementary color - a color directly opposite it on the color
+ wheel.
  @return    Color
  */
 - (instancetype)complementaryColor;
 
-
 #pragma mark - Distance between Colors
 /**
  *  Returns a float of the distance between 2 colors. Defaults to the
- *  CIE94 specification found here: http://en.wikipedia.org/wiki/Color_difference
+ *  CIE94 specification found here:
+ * http://en.wikipedia.org/wiki/Color_difference
  *
  *  @param color Color to check self with.
  *
@@ -429,11 +432,12 @@ typedef NS_ENUM(NSInteger, ColorComparison) {
  */
 - (CGFloat)distanceFromColor:(id)color type:(ColorDistance)distanceType;
 
-
 #pragma mark - Compare Colors
-+ (NSArray *)sortColors:(NSArray *)colors withComparison:(ColorComparison)comparison;
-+ (NSComparisonResult)compareColor:(id)colorA andColor:(id)colorB withComparison:(ColorComparison)comparison;
-
++ (NSArray*)sortColors:(NSArray*)colors
+        withComparison:(ColorComparison)comparison;
++ (NSComparisonResult)compareColor:(id)colorA
+                          andColor:(id)colorB
+                    withComparison:(ColorComparison)comparison;
 
 #pragma mark - Colors
 // System Colors

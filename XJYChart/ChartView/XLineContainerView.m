@@ -58,7 +58,6 @@ CGFloat touchLineWidth = 20;
     self.dataItemArray = dataItemArray;
     self.top = topNumber;
     self.bottom = bottomNumber;
-    self.lineMode = Straight;
   }
   return self;
 }
@@ -177,7 +176,7 @@ CGFloat touchLineWidth = 20;
     [self.shapeLayerArray
           addObject:[self lineShapeLayerWithPoints:obj
                                             colors:self.dataItemArray[idx].color
-                                          lineMode:self.lineMode]];
+                                          lineMode:self.configuration.lineMode]];
   }];
 
   [self.shapeLayerArray

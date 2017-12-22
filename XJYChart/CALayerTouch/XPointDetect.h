@@ -18,9 +18,10 @@
  @param area 4 CGPoint values array
  @return BOOL
  */
-+ (BOOL)detectPoint:(CGPoint)point InExpandArea:(NSArray<NSValue *> *)area;
++ (BOOL)detectPoint:(CGPoint)point InExpandArea:(NSArray<NSValue*>*)area;
 
-+ (BOOL)point:(CGPoint)point inArea:(NSArray<NSValue *> *)area;
++ (BOOL)point:(CGPoint)point inArea:(NSArray<NSValue*>*)area;
 
-+ (NSArray<NSValue *> *)expandRectArea:(NSArray<NSValue *> *)area expandLength:(CGFloat)length;
++ (NSArray<NSValue*>*)expandRectArea:(NSArray<NSValue*>*)area
+                        expandLength:(CGFloat)length;
 @end

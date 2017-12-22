@@ -10,10 +10,9 @@
 
 @interface XPieItem : NSObject
 
-@property (nonatomic, strong) UIColor *color;
-@property (nonatomic, strong) NSNumber *dataNumber;
-@property (nonatomic, strong) NSString *dataDescribe;
-
+@property(nonatomic, strong) UIColor* color;
+@property(nonatomic, strong) NSNumber* dataNumber;
+@property(nonatomic, strong) NSString* dataDescribe;
 
 /**
  设置数据item
@@ -23,6 +22,8 @@
  @param dataDescribe (NSString *)dataDescribe
  @return instancetype
  */
-- (instancetype)initWithDataNumber:(NSNumber *)dataNumber color:(UIColor *)color dataDescribe:(NSString *)dataDescribe;
+- (instancetype)initWithDataNumber:(NSNumber*)dataNumber
+                             color:(UIColor*)color
+                      dataDescribe:(NSString*)dataDescribe;
 
 @end

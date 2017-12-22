@@ -46,15 +46,6 @@
  */
 @property(nonatomic, strong) NSNumber* bottom;
 
-/**
- Line Mode
- - Straight
- - CurveLine
-
- Default is Straight
-
- */
-@property(nonatomic, assign) XLineMode lineMode;
 
 @property(nonatomic, strong) XNormalLineChartConfiguration* configuration;
 

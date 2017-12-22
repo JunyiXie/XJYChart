@@ -146,12 +146,6 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
 
 #pragma mark - Set
 
-- (void)setLineMode:(XLineMode)lineMode {
-  _lineMode = lineMode;
-  // two kind of containerview use kvo instand of inhert
-  // not safe i will fix it !
-  [self.contanierView setValue:@(lineMode) forKey:KVOKeyLineGraphMode];
-}
 
 @end
 

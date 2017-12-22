@@ -10,12 +10,12 @@
 
 @interface CALayer (XXLayer)
 
-@property (nonatomic, strong) NSNumber *selectIdxNumber;
-@property (nonatomic, strong) NSValue *frameValue;
-@property (nonatomic, strong) NSValue *backgroundFrameValue;
-@property (nonatomic, strong) NSNumber *selectStatusNumber;
+@property(nonatomic, strong) NSNumber* selectIdxNumber;
+@property(nonatomic, strong) NSValue* frameValue;
+@property(nonatomic, strong) NSValue* backgroundFrameValue;
+@property(nonatomic, strong) NSNumber* selectStatusNumber;
 
-
-@property (nonatomic, strong) NSMutableArray<NSMutableArray<NSValue *> *> *segementPointsArrays;
+@property(nonatomic, strong)
+    NSMutableArray<NSMutableArray<NSValue*>*>* segementPointsArrays;
 
 @end

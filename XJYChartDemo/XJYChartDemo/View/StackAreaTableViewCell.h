@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-static NSString *kStackAreaTableViewCell = @"StackAreaTableViewCell";
+static NSString* kStackAreaTableViewCell = @"StackAreaTableViewCell";
 
 @interface StackAreaTableViewCell : UITableViewCell
 

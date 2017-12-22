@@ -10,13 +10,15 @@
 
 @implementation XPieItem
 
-- (instancetype)initWithDataNumber:(NSNumber *)dataNumber color:(UIColor *)color dataDescribe:(NSString *)dataDescribe {
-    if (self = [super init]) {
-        self.dataNumber = dataNumber;
-        self.color = color;
-        self.dataDescribe = dataDescribe;
-    }
-    return self;
+- (instancetype)initWithDataNumber:(NSNumber*)dataNumber
+                             color:(UIColor*)color
+                      dataDescribe:(NSString*)dataDescribe {
+  if (self = [super init]) {
+    self.dataNumber = dataNumber;
+    self.color = color;
+    self.dataDescribe = dataDescribe;
+  }
+  return self;
 }
 
 @end

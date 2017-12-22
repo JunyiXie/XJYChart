@@ -23,7 +23,6 @@
 		3F686B711FCAA3FF00FF9B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B6F1FCAA3FF00FF9B14 /* LaunchScreen.storyboard */; };
 		3F686BE31FCAA47900FF9B14 /* AreaLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B781FCAA47900FF9B14 /* AreaLineTableViewCell.m */; };
 		3F686BE41FCAA47900FF9B14 /* BarChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B7A1FCAA47900FF9B14 /* BarChartCell.m */; };
-		3F686BE51FCAA47900FF9B14 /* BtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B7C1FCAA47900FF9B14 /* BtnView.m */; };
 		3F686BE61FCAA47900FF9B14 /* CycleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B7E1FCAA47900FF9B14 /* CycleTableViewCell.m */; };
 		3F686BE71FCAA47900FF9B14 /* CycleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B7F1FCAA47900FF9B14 /* CycleTableViewCell.xib */; };
 		3F686BE81FCAA47900FF9B14 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B811FCAA47900FF9B14 /* HomeViewController.m */; };
@@ -33,7 +32,6 @@
 		3F686BEC1FCAA47900FF9B14 /* SingleLineChartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B891FCAA47900FF9B14 /* SingleLineChartTableViewCell.m */; };
 		3F686BED1FCAA47900FF9B14 /* StackAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B8B1FCAA47900FF9B14 /* StackAreaTableViewCell.m */; };
 		3F686BEE1FCAA47900FF9B14 /* XJYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B8D1FCAA47900FF9B14 /* XJYTableViewCell.m */; };
-		3F686BEF1FCAA47900FF9B14 /* XJYTapCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B8F1FCAA47900FF9B14 /* XJYTapCycleView.m */; };
 		3F686BF01FCAA47900FF9B14 /* XJYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B911FCAA47900FF9B14 /* XJYViewController.m */; };
 		723435C1E3D0B9B0BEC43A7F /* Pods_XJYChartDemo_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAE09ADE582BE0972E635F3 /* Pods_XJYChartDemo_Swift.framework */; };
 /* End PBXBuildFile section */
@@ -97,8 +95,6 @@
 		3F686B781FCAA47900FF9B14 /* AreaLineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaLineTableViewCell.m; sourceTree = "<group>"; };
 		3F686B791FCAA47900FF9B14 /* BarChartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartCell.h; sourceTree = "<group>"; };
 		3F686B7A1FCAA47900FF9B14 /* BarChartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartCell.m; sourceTree = "<group>"; };
-		3F686B7B1FCAA47900FF9B14 /* BtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtnView.h; sourceTree = "<group>"; };
-		3F686B7C1FCAA47900FF9B14 /* BtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BtnView.m; sourceTree = "<group>"; };
 		3F686B7D1FCAA47900FF9B14 /* CycleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleTableViewCell.h; sourceTree = "<group>"; };
 		3F686B7E1FCAA47900FF9B14 /* CycleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleTableViewCell.m; sourceTree = "<group>"; };
 		3F686B7F1FCAA47900FF9B14 /* CycleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CycleTableViewCell.xib; sourceTree = "<group>"; };
@@ -116,8 +112,6 @@
 		3F686B8B1FCAA47900FF9B14 /* StackAreaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackAreaTableViewCell.m; sourceTree = "<group>"; };
 		3F686B8C1FCAA47900FF9B14 /* XJYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYTableViewCell.h; sourceTree = "<group>"; };
 		3F686B8D1FCAA47900FF9B14 /* XJYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYTableViewCell.m; sourceTree = "<group>"; };
-		3F686B8E1FCAA47900FF9B14 /* XJYTapCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYTapCycleView.h; sourceTree = "<group>"; };
-		3F686B8F1FCAA47900FF9B14 /* XJYTapCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYTapCycleView.m; sourceTree = "<group>"; };
 		3F686B901FCAA47900FF9B14 /* XJYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYViewController.h; sourceTree = "<group>"; };
 		3F686B911FCAA47900FF9B14 /* XJYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYViewController.m; sourceTree = "<group>"; };
 		3FAFF1E71FCD7B2B00CBEA39 /* XJYChart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XJYChart.framework; path = ../Products/XJYChart.framework; sourceTree = "<group>"; };
@@ -224,8 +218,6 @@
 				3F686B781FCAA47900FF9B14 /* AreaLineTableViewCell.m */,
 				3F686B791FCAA47900FF9B14 /* BarChartCell.h */,
 				3F686B7A1FCAA47900FF9B14 /* BarChartCell.m */,
-				3F686B7B1FCAA47900FF9B14 /* BtnView.h */,
-				3F686B7C1FCAA47900FF9B14 /* BtnView.m */,
 				3F686B7D1FCAA47900FF9B14 /* CycleTableViewCell.h */,
 				3F686B7E1FCAA47900FF9B14 /* CycleTableViewCell.m */,
 				3F686B7F1FCAA47900FF9B14 /* CycleTableViewCell.xib */,
@@ -243,8 +235,6 @@
 				3F686B8B1FCAA47900FF9B14 /* StackAreaTableViewCell.m */,
 				3F686B8C1FCAA47900FF9B14 /* XJYTableViewCell.h */,
 				3F686B8D1FCAA47900FF9B14 /* XJYTableViewCell.m */,
-				3F686B8E1FCAA47900FF9B14 /* XJYTapCycleView.h */,
-				3F686B8F1FCAA47900FF9B14 /* XJYTapCycleView.m */,
 				3F686B901FCAA47900FF9B14 /* XJYViewController.h */,
 				3F686B911FCAA47900FF9B14 /* XJYViewController.m */,
 			);
@@ -530,11 +520,9 @@
 				3F686BE91FCAA47900FF9B14 /* LineChartCell.m in Sources */,
 				3F686BEC1FCAA47900FF9B14 /* SingleLineChartTableViewCell.m in Sources */,
 				3F686BE31FCAA47900FF9B14 /* AreaLineTableViewCell.m in Sources */,
-				3F686BE51FCAA47900FF9B14 /* BtnView.m in Sources */,
 				3F686BE41FCAA47900FF9B14 /* BarChartCell.m in Sources */,
 				3F686BF01FCAA47900FF9B14 /* XJYViewController.m in Sources */,
 				3F686B361FCAA3CA00FF9B14 /* AppDelegate.m in Sources */,
-				3F686BEF1FCAA47900FF9B14 /* XJYTapCycleView.m in Sources */,
 				3F686BEE1FCAA47900FF9B14 /* XJYTableViewCell.m in Sources */,
 				3F686BED1FCAA47900FF9B14 /* StackAreaTableViewCell.m in Sources */,
 				3F686BE61FCAA47900FF9B14 /* CycleTableViewCell.m in Sources */,

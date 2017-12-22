@@ -15,9 +15,9 @@
  Line Mode
  - Straight
  - CurveLine
- 
+
  Default is Straight
- 
+
  */
 @property(nonatomic, assign) XLineMode lineMode;
 

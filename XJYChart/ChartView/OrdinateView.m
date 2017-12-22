@@ -9,7 +9,6 @@
 #import "OrdinateView.h"
 #import "XColor.h"
 
-
 @interface OrdinateView ()
 
 @property(nonatomic, strong) NSMutableArray<UILabel*>* labelArray;

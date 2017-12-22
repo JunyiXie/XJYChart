@@ -51,7 +51,6 @@
     self.dataItemArray = dataItemArray;
     self.top = topNumber;
     self.bottom = bottomNumber;
-    self.lineMode = Straight;
   }
   return self;
 }
@@ -69,15 +68,29 @@
 
 - (void)strokeLine {
   NSMutableArray* valuesArrays = [self getValuesArrays];
+  
+
+
+  
   self.stackValuesArray = [self valuesArraysTostackValuesArray:valuesArrays];
   self.stackAreaPointsArray = [NSMutableArray new];
-  [self.stackValuesArray enumerateObjectsUsingBlock:^(
-                             NSMutableArray<NSNumber*>* _Nonnull stackValues,
-                             NSUInteger idx, BOOL* _Nonnull stop) {
+  
+  /**
+  =>
+  
+  [1,1,1,1,1]
+  [3,5,6,2,3]
+  **/
+   // 转换
+  for (int i = 0; i < self.dataItemArray.count; i++) {
+    NSMutableArray* values = [NSMutableArray new];
+    for (int j = 0; j < self.stackValuesArray.count; j++) {
+      [values addObject:self.stackValuesArray[j][i]];
+    }
     NSMutableArray<NSValue*>* linePointArray =
-        [self getDrawablePointsWithStackValues:stackValues];
+    [self getDrawablePointsWithStackValues:values];
     [self.stackAreaPointsArray addObject:linePointArray];
-  }];
+  }
 
   NSMutableArray<UIColor*>* colors = [self getColors];
 
@@ -201,6 +214,22 @@
   return stackValuesArray;
 }
 
+
+/**
+ eg:
+ 
+ [1,1,1,1,1]
+ [2,4,5,1,2]
+ 
+ =>
+ 
+ [1,3]
+ [1,5]
+ [1,6]
+ [1,2]
+ [1,3]
+ 
+ */
 - (NSMutableArray<NSMutableArray<NSNumber*>*>*)getValueCalucuteArrays:
     (NSMutableArray<NSMutableArray<NSNumber*>*>*)valuesArrays {
   NSMutableArray* conversionValuesArrays = [NSMutableArray new];
@@ -229,8 +258,8 @@
   NSMutableArray* colorArray = [NSMutableArray new];
 
   [self.dataItemArray
-      enumerateObjectsUsingBlock:^(XLineChartItem* _Nonnull obj,
-                                   NSUInteger idx, BOOL* _Nonnull stop) {
+      enumerateObjectsUsingBlock:^(XLineChartItem* _Nonnull obj, NSUInteger idx,
+                                   BOOL* _Nonnull stop) {
         [colorArray addObject:obj.color];
       }];
   return colorArray;
@@ -251,7 +280,7 @@
     if (i == 0) {
       [line moveToPoint:point1];
     }
-    if (self.lineMode == CurveLine) {
+    if (self.configuration.lineMode == CurveLine) {
       CGPoint midPoint = [[XAuxiliaryCalculationHelper shareCalculationHelper]
           midPointBetweenPoint1:point1
                       andPoint2:point2];

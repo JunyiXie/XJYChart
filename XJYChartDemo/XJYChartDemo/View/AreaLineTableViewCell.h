@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-static NSString *kAreaLineTableViewCell = @"AreaLineTableViewCell";
+static NSString* kAreaLineTableViewCell = @"AreaLineTableViewCell";
 
 @interface AreaLineTableViewCell : UITableViewCell
 

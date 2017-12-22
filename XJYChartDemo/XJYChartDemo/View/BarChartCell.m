@@ -29,8 +29,8 @@
               reuseIdentifier:(NSString*)reuseIdentifier {
   if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
     NSMutableArray* itemArray = [[NSMutableArray alloc] init];
-    
-    UIColor *waveColor = [UIColor waveColor];
+
+    UIColor* waveColor = [UIColor waveColor];
 
     XBarItem* item1 = [[XBarItem alloc] initWithDataNumber:@(50.93)
                                                      color:waveColor

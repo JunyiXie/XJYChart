@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-static NSString *kBarChartCell = @"BarChartCell";
+static NSString* kBarChartCell = @"BarChartCell";
 
 @interface BarChartCell : UITableViewCell
 

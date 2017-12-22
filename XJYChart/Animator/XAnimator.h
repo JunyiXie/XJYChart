@@ -17,37 +17,36 @@ typedef AH_FLOAT_TYPE AHFloat;
 typedef AHFloat (*AHEasingFunction)(AHFloat);
 
 typedef NS_ENUM(NSUInteger, XTimingFunctionsType) {
-    XLinearInterpolation,
-    XQuadraticEaseIn,
-    XQuadraticEaseOut,
-    XQuadraticEaseInOut,
-    XCubicEaseIn,
-    XCubicEaseOut,
-    XCubicEaseInOut,
-    XQuarticEaseIn,
-    XQuarticEaseOut,
-    XQuarticEaseInOut,
-    XQuinticEaseIn,
-    XSineEaseIn,
-    XSineEaseOut,
-    XSineEaseInOut,
-    XCircularEaseIn,
-    XCircularEaseOut,
-    XCircularEaseInOut,
-    XExponentialEaseIn,
-    XExponentialEaseOut,
-    XExponentialEaseInOut,
-    XElasticEaseIn,
-    XElasticEaseOut,
-    XElasticEaseInOut,
-    XBackEaseIn,
-    XBackEaseOut,
-    XBackEaseInOut,
-    XBounceEaseIn,
-    XBounceEaseOut,
-    XBounceEaseInOut,
+  XLinearInterpolation,
+  XQuadraticEaseIn,
+  XQuadraticEaseOut,
+  XQuadraticEaseInOut,
+  XCubicEaseIn,
+  XCubicEaseOut,
+  XCubicEaseInOut,
+  XQuarticEaseIn,
+  XQuarticEaseOut,
+  XQuarticEaseInOut,
+  XQuinticEaseIn,
+  XSineEaseIn,
+  XSineEaseOut,
+  XSineEaseInOut,
+  XCircularEaseIn,
+  XCircularEaseOut,
+  XCircularEaseInOut,
+  XExponentialEaseIn,
+  XExponentialEaseOut,
+  XExponentialEaseInOut,
+  XElasticEaseIn,
+  XElasticEaseOut,
+  XElasticEaseInOut,
+  XBackEaseIn,
+  XBackEaseOut,
+  XBackEaseInOut,
+  XBounceEaseIn,
+  XBounceEaseOut,
+  XBounceEaseInOut,
 };
-
 
 @protocol XAnimationDelegate
 
@@ -55,11 +54,11 @@ typedef NS_ENUM(NSUInteger, XTimingFunctionsType) {
 
 @end
 
-typedef void(^AnimatorPercentageBlock)(CGFloat percentage);
-typedef void(^AnimatorCurrentValueBlock)(CGFloat result);
+typedef void (^AnimatorPercentageBlock)(CGFloat percentage);
+typedef void (^AnimatorCurrentValueBlock)(CGFloat result);
 @interface XAnimator : NSObject
 
-@property (nonatomic, weak) id animationDeleagte;
+@property(nonatomic, weak) id animationDeleagte;
 
 - (void)AnimatorDuration:(CGFloat)duration
           timingFuncType:(XTimingFunctionsType)timingFuncType

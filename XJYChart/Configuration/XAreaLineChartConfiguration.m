@@ -21,6 +21,4 @@
   return _gradientColors;
 }
 
-
-
 @end

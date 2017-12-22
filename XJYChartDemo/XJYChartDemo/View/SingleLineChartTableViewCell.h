@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-static NSString *kSingleLineChartCell = @"SingleLineChartCell";
+static NSString* kSingleLineChartCell = @"SingleLineChartCell";
 
 @interface SingleLineChartTableViewCell : UITableViewCell
 

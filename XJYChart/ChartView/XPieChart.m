@@ -45,7 +45,7 @@
     self.descriptionTextShadowOffset = CGSizeMake(0, 0);
 
     self.descriptionTextColor = [UIColor blackColor];
-    self.descriptionTextFont = [UIFont systemFontOfSize:14];
+    self.descriptionTextFont = [UIFont systemFontOfSize:10];
     self.dataItemArray = [[NSMutableArray alloc] init];
     self.colorArray = [[NSMutableArray alloc] init];
     self.dataNumberArray = [[NSMutableArray alloc] init];

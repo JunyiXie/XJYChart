@@ -148,7 +148,6 @@
 
     self.top = topNumber;
     self.bottom = bottomNumber;
-    self.lineMode = Straight;
 
     // 数据处理，集中管理
     self.areaAnimationManager = [self makeAreaAnimationManager];
@@ -258,21 +257,25 @@
 }
 
 - (void)strokePoint {
-  
   // Just one data item in dataItemArray
-  UIColor *color = [UIColor colorWithCGColor:(__bridge CGColorRef _Nonnull)(self.congifuration.gradientColors[0])];
-  
+  UIColor* color =
+      [UIColor colorWithCGColor:(__bridge CGColorRef _Nonnull)(
+                                    self.congifuration.gradientColors[0])];
+
   if (self.congifuration.isShowPoint) {
     [self.areaAnimationManager.animationNodes
-     enumerateObjectsUsingBlock:^(XGraphAnimationNode* _Nonnull node,
-                                  NSUInteger idx, BOOL* _Nonnull stop) {
-       CGPoint center = node.graphAnimationCurrentPoint;
-       
-       CAShapeLayer* pointLayer = [CAShapeLayer annularPointLayerWithDiameter:PointDiameter color:color center:center];
-       
-       [self.pointLayerArray addObject:pointLayer];
-       [self.layer addSublayer:pointLayer];
-     }];
+        enumerateObjectsUsingBlock:^(XGraphAnimationNode* _Nonnull node,
+                                     NSUInteger idx, BOOL* _Nonnull stop) {
+          CGPoint center = node.graphAnimationCurrentPoint;
+
+          CAShapeLayer* pointLayer =
+              [CAShapeLayer annularPointLayerWithDiameter:PointDiameter
+                                                    color:color
+                                                   center:center];
+
+          [self.pointLayerArray addObject:pointLayer];
+          [self.layer addSublayer:pointLayer];
+        }];
   }
 }
 
@@ -307,7 +310,7 @@
             addObject:[NSValue
                           valueWithCGPoint:obj.graphAnimationCurrentPoint]];
       }];
-  
+
   CGPoint leftConerPoint = CGPointMake(
       self.frame.origin.x, self.frame.origin.y + self.frame.size.height);
   CGPoint rightConerPoint =
@@ -316,20 +319,24 @@
   CAShapeLayer* lineLayer = [self getLineShapeLayerWithPoints:currentPointArray
                                                leftConerPoint:leftConerPoint
                                               rightConerPoint:rightConerPoint];
-  
-
 
   if (self.congifuration.isShowBorder) {
-      self.borderLayer = [CAShapeLayer lineShapeLayerWithPoints:currentPointArray color:[UIColor colorWithCGColor:(__bridge CGColorRef _Nonnull)(self.congifuration.gradientColors[0])] lineMode:self.lineMode lineWidth:4];
+    self.borderLayer = [CAShapeLayer
+        lineShapeLayerWithPoints:currentPointArray
+                           color:[UIColor colorWithCGColor:
+                                              (__bridge CGColorRef _Nonnull)(
+                                                  self.congifuration
+                                                      .gradientColors[0])]
+                        lineMode:self.congifuration.lineMode
+                       lineWidth:4];
     [self.layer addSublayer:self.borderLayer];
   }
-  
+
   self.gradientLayer = [CAGradientLayer layer];
   self.gradientLayer.colors = self.congifuration.gradientColors;
   self.gradientLayer.frame = self.frame;
   self.gradientLayer.mask = lineLayer;
 
-  
   [self.layer addSublayer:self.gradientLayer];
 }
 
@@ -395,7 +402,7 @@
     if (i == 0) {
       [line moveToPoint:point1];
     }
-    if (self.lineMode == CurveLine) {
+    if (self.congifuration.lineMode == CurveLine) {
       CGPoint midPoint = [[XAuxiliaryCalculationHelper shareCalculationHelper]
           midPointBetweenPoint1:point1
                       andPoint2:point2];

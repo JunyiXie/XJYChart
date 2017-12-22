@@ -10,6 +10,6 @@
 
 @interface UIGestureRecognizer (XXGes)
 
-@property (nonatomic, strong) NSNumber *hasTapedBoolNumber;
+@property(nonatomic, strong) NSNumber* hasTapedBoolNumber;
 
 @end

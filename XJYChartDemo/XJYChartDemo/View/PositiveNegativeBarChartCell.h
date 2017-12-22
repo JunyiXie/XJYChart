@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-static NSString *kPositiveNegativeBarChartCell = @"PositiveNegativeBarChartCell";
+static NSString* kPositiveNegativeBarChartCell =
+    @"PositiveNegativeBarChartCell";
 
 @interface PositiveNegativeBarChartCell : UITableViewCell
 

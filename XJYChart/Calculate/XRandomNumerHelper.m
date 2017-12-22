@@ -11,17 +11,17 @@
 @implementation XRandomNumerHelper
 
 + (instancetype)shareRandomNumberHelper {
-    static XRandomNumerHelper *helper = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        helper = [[XRandomNumerHelper alloc] init];
-    });
-    return helper;
+  static XRandomNumerHelper* helper = nil;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    helper = [[XRandomNumerHelper alloc] init];
+  });
+  return helper;
 }
 
 - (int)randomNumberSmallThan:(int)max {
-    int idx = arc4random() % max;
-    return idx;
+  int idx = arc4random() % max;
+  return idx;
 }
 
 @end

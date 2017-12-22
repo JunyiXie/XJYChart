@@ -15,32 +15,30 @@
 static char kSelectIdxNumber;
 
 - (void)setSelectIdxNumber:(id)selectIdxNumber {
-    objc_setAssociatedObject(self, &kSelectIdxNumber, selectIdxNumber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  objc_setAssociatedObject(self, &kSelectIdxNumber, selectIdxNumber,
+                           OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (id)selectIdxNumber {
-    return objc_getAssociatedObject(self, &kSelectIdxNumber);
+  return objc_getAssociatedObject(self, &kSelectIdxNumber);
 }
 
-
-
-
-//http://stackoverflow.com/questions/28447744/frame-origin-and-bounds-size-of-cashapelayer-are-set-to-0
+// http://stackoverflow.com/questions/28447744/frame-origin-and-bounds-size-of-cashapelayer-are-set-to-0
 // frame
 static char kFrameKey;
 
-//selected status
+// selected status
 static char kSelectedStatusKey;
 
-//backgroundFrame
+// backgroundFrame
 static char kBackgroundFrameKey;
 
-//segementPointsArrays
+// segementPointsArrays
 static char kSegementPointsArraysKey;
 
-
 - (void)setFrameValue:(id)frameValue {
-  objc_setAssociatedObject(self, &kFrameKey, frameValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  objc_setAssociatedObject(self, &kFrameKey, frameValue,
+                           OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (id)frameValue {
@@ -48,7 +46,8 @@ static char kSegementPointsArraysKey;
 }
 
 - (void)setSelectStatusNumber:(id)selectStatusNumber {
-  objc_setAssociatedObject(self, &kSelectedStatusKey, selectStatusNumber, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  objc_setAssociatedObject(self, &kSelectedStatusKey, selectStatusNumber,
+                           OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (id)selectStatusNumber {
@@ -56,7 +55,8 @@ static char kSegementPointsArraysKey;
 }
 
 - (void)setBackgroundFrameValue:(id)backgroundFrameValue {
-  objc_setAssociatedObject(self, &kBackgroundFrameKey, backgroundFrameValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  objc_setAssociatedObject(self, &kBackgroundFrameKey, backgroundFrameValue,
+                           OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (id)backgroundFrameValue {
@@ -64,7 +64,9 @@ static char kSegementPointsArraysKey;
 }
 
 - (void)setSegementPointsArrays:(id)segementPointsArrays {
-  objc_setAssociatedObject(self, &kSegementPointsArraysKey, segementPointsArrays, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  objc_setAssociatedObject(self, &kSegementPointsArraysKey,
+                           segementPointsArrays,
+                           OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (id)segementPointsArrays {

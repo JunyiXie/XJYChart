@@ -15,11 +15,12 @@
  @param color the line color
  @return XLineChartItem instance
  */
-- (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color {
-    if (self = [super init]) {
-        self.numberArray = numberArray;
-        self.color = color;
-    }
-    return self;
+- (instancetype)initWithDataNumberArray:(NSMutableArray*)numberArray
+                                  color:(UIColor*)color {
+  if (self = [super init]) {
+    self.numberArray = numberArray;
+    self.color = color;
+  }
+  return self;
 }
 @end

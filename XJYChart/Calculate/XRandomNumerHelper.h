@@ -17,7 +17,6 @@
  */
 + (instancetype)shareRandomNumberHelper;
 
-
 /**
  a number small than max
 

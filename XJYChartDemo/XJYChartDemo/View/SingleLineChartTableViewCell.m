@@ -28,15 +28,8 @@
     // XJYChart init Design for muti line
     // So @[oneitem] draw one line
 
-    NSMutableArray* numberArray = [NSMutableArray new];
-    for (int i = 0; i < 5; i++) {
-      int num = [[XRandomNumerHelper shareRandomNumberHelper]
-                    randomNumberSmallThan:14] *
-                [[XRandomNumerHelper shareRandomNumberHelper]
-                    randomNumberSmallThan:14];
-      NSNumber* number = [NSNumber numberWithInt:num];
-      [numberArray addObject:number];
-    }
+    
+    NSMutableArray* numberArray = @[@120,@80,@160,@120,@150];
     XLineChartItem* item =
         [[XLineChartItem alloc] initWithDataNumberArray:numberArray
                                                   color:[UIColor salmonColor]];
@@ -49,12 +42,11 @@
                         dataDiscribeArray:[NSMutableArray arrayWithArray:@[
                           @"January", @"February", @"March", @"April", @"May"
                         ]]
-                                topNumber:@200
+                                topNumber:@240
                              bottomNumber:@0
                                 graphMode:MutiLineGraph
                        chartConfiguration:configuration];
 
-    lineChart.lineMode = Straight;
     [self.contentView addSubview:lineChart];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
   }

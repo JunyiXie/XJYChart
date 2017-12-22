@@ -8,22 +8,19 @@
 > XJYChart - A High-performance, Elegant, Easy-to-integrate Charting Framework.
 > The Best iOS Objc Charts.
 
-**相比于其他OC图表框架**
-
-**XJYChart 做到了**
-
-- 图表滚动
-- 折线图区域填充
-- 触摸支持
-- 显示动画
-- 区域高亮
+- [x] **chart more beautiful**
+- [x] **support chart scroll**
+- [x] **support chart area fill**
+- [x] **support chart animation**
+- [x] **support chart touch**
+- [x] **support chart highlight**
  
 ## Overview
 
 <a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image3.PNG" align="left" height="535" width="300" ></a>
 <a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG" align="left" height="535" width="300" ></a>
 <a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG" align="left" height="535" width="300" ></a>
-<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image6.PNG" align="left" height="535" width="300" ></a>
+
 
 
 ## Charts
@@ -65,143 +62,60 @@ $ pod install
 **Qucikly Use**
 
 Eg:
-[AreaLineExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/AreaLineTableViewCell.m)
-[BarChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/BarChartCell.m)
-[CycleChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/CycleTableViewCell.m)
-[LineChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/LineChartCell.m)
-[PieChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/PieChartCell.m)
-[PositiveNegativeBarChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/PositiveNegativeBarChartCell.m)
-[StackAreaLineChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/StackAreaTableViewCell.m)
+- [AreaLineExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/AreaLineTableViewCell.m)
+
+- [BarChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/BarChartCell.m)
+
+- [CycleChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/CycleTableViewCell.m)
+
+- [LineChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/LineChartCell.m)
+
+- [PieChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/PieChartCell.m)
+
+- [PositiveNegativeBarChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/PositiveNegativeBarChartCell.m)
+
+- [StackAreaLineChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/StackAreaTableViewCell.m)
 
 
-### XPositiveNegativeBarChart
-
+**Initialization**
 ```objectivec
-/**
-
-@param frame frame
-@param dataItemArray items
-@param topNumbser top
-@param bottomNumber buttom
-@return instancetype
-*/
-
-XPositiveNegativeBarChart *barChart = [[XPositiveNegativeBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@100 bottomNumber:@(-170)];
+- (instancetype)initWithFrame:(CGRect)frame 
+                dataItemArray:(NSMutableArray<XLineChartItem*>*)dataItemArray 
+            dataDiscribeArray:(NSMutableArray<NSString*>*)dataDiscribeArray
+                    topNumber:(NSNumber*)topNumbser
+                 bottomNumber:(NSNumber*)bottomNumber
+                    graphMode:(XLineGraphMode)graphMode
+           chartConfiguration:(XLineChartConfiguration*)configuration;
 ```
 
-### XLineChartItem
+- frame: The frame rectangle for the view
+- dataItemArray: data for lines
+- topNumber: ordinate coordinate top number
+- bottomNumber: ordinate bottom top number
+- graphMode: which kind of line chart you want to use.eg: MutiLineGraph,AreaLineGraph,StackAreaLineGraph
+- chartConfiguration: detail configuration for chart. like lineMode, shadow
 
-
+**Chart Data**
 ```objectivec
-/**
-@param numberArray data number in a line
-@param color the line color
-@return XLineChartItem instance
-*/
-
-- (instancetype)initWithDataNumberArray:(NSMutableArray *)numberArray color:(UIColor *)color;
+- (instancetype)initWithDataNumberArray:(NSMutableArray*)numberArray
+                                  color:(UIColor*)color;
 ```
+- numberArray: values in line
+- color: line fill color
 
-### XLineChart
-
-- colorMode
-
-```diff
-+ lineMode
-+ CurveLine
-+ BrokenLine
-```
-
+**Chart Configuration**
 ```objectivec
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XLineChartItem *> *)dataItemArray dataDiscribeArray:(NSMutableArray<NSString *> *)dataDiscribeArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
+XNormalLineChartConfiguration* configuration =
+   [[XNormalLineChartConfiguration alloc] init];
+configuration.lineMode = CurveLine;
+configuration.isShowShadow = YES;
 ```
 
-
-
-LineGraphMode:
-MutiLineGraph
-AreaLineGraph
-
-```objectivec
-XLineChart *lineChart = [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray dataDiscribeArray:[NSMutableArray arrayWithArray:@[@"January", @"February", @"March", @"April", @"May"]] topNumber:@200 bottomNumber:@0  graphMode:MutiLineGraph];
-```
-
-### Cycle Chart
-
-```objectivec
-//XCycleView
-- (instancetype)initWithFrame:(CGRect)frame;
-```
-
-### BarChart
-
-```objectivec
-XBarChart *barChart = [[XBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200) dataItemArray:itemArray topNumber:@150 bottomNumber:@(0)];
-```
-
-- BarChartdelegate
-
-```objectivec
-- (void)touchBarAtIdx:(NSUInteger)idx;
-```
-
-### PieChart
-
-```objectivec
-self.pieChartView = [[XPieChart alloc] init];
-NSMutableArray *pieItems = [[NSMutableArray alloc] init];
-NSArray *colorArray = @[RGB(145, 235, 253), RGB(198, 255, 150), RGB(254, 248, 150), RGB(253, 210, 147)];
-NSArray *dataArray = @[@"iPhone6",@"iPhone6 Plus",@"iPhone6s",@"其他"];
-XPieItem *item1 = [[XPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:20.9] color:colorArray[0] dataDescribe:dataArray[0]];
-[pieItems addObject:item1];
-XPieItem *item2 = [[XPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:14.82] color:colorArray[1] dataDescribe:dataArray[1]];
-[pieItems addObject:item2];  
-self.pieChartView.dataItemArray = pieItems;
-```
-
-### ChartColor 
-
-Provide many colors In XColor.h
-...
-
-## Update 
-
-### Update 1.1.0
-
-Added slippery graph And Chart Animations
-Example 
-
-```diff
-+ .CurveLine
-+ .AreaGraph
-+ .StackAreaGraph
-```
-
-### Update 1.0.0
-
-```diff
-+ Add XCycleView   
-```
-
-- touch
-- gradient
-
-Use XIB or Code
-
-```objectivec
-//XCycleView
-- (instancetype)initWithFrame:(CGRect)frame;
-```
-
-### Update 0.0.2
-
-```diff
-- Clear abandoned API
-+ Add The positive and negative Bar Chart**
-```
 
 ## License
 
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/License_icon-mit-88x31-2.svg/128px-License_icon-mit-88x31-2.svg.png)
 
 XJYChart is available under the MIT license. See the LICENSE file for more info.
+
+

@@ -31,7 +31,6 @@
  纵坐标最低点
  */
 @property(nonatomic, strong) NSNumber* bottom;
-@property(nonatomic, assign) XLineMode lineMode;
 /**
  图表的其他配置
  */

@@ -10,17 +10,15 @@
 #define XEnumHeader_h
 
 typedef NS_ENUM(NSUInteger, XLineMode) {
-    Straight,
-    CurveLine,
-  
+  Straight,
+  CurveLine,
+
 };
 
 typedef NS_ENUM(NSUInteger, XLineGraphMode) {
-    MutiLineGraph,
-    AreaLineGraph,
-    StackAreaLineGraph,
+  MutiLineGraph,
+  AreaLineGraph,
+  StackAreaLineGraph,
 };
-
-
 
 #endif /* XEnumHeader_h */

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-static NSString *kLineChartCell = @"LineChartCell";
+static NSString* kLineChartCell = @"LineChartCell";
 
 @interface LineChartCell : UITableViewCell
 

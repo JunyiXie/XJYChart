@@ -11,23 +11,23 @@
 @implementation XNotificationBridge
 
 + (instancetype)shareXNotificationBridge {
-    static XNotificationBridge *share = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        share = [[XNotificationBridge alloc] init];
-    });
-    return share;
+  static XNotificationBridge* share = nil;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    share = [[XNotificationBridge alloc] init];
+  });
+  return share;
 }
 
-- (instancetype) init {
-    if (self = [super init]) {
-        self.TouchBarNotification = @"TouchBarNotification";
-        self.BarIdxNumberKey = @"TouchBarNotificationKey";
-        
-        self.TouchPNBarNotification = @"TouchPNBarNotification";
-        self.PNBarIdxNumberKey = @"TouchPNBarNotificationKey";
-    }
-    return self;
+- (instancetype)init {
+  if (self = [super init]) {
+    self.TouchBarNotification = @"TouchBarNotification";
+    self.BarIdxNumberKey = @"TouchBarNotificationKey";
+
+    self.TouchPNBarNotification = @"TouchPNBarNotification";
+    self.PNBarIdxNumberKey = @"TouchPNBarNotificationKey";
+  }
+  return self;
 }
 
 @end

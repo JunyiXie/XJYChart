@@ -149,12 +149,7 @@
   return _lineChartView;
 }
 
-#pragma mark Set
 
-- (void)setLineMode:(XLineMode)lineMode {
-  _lineMode = lineMode;
-  self.lineChartView.lineMode = lineMode;
-}
 
 
 
