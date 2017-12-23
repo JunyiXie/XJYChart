@@ -11,6 +11,8 @@
 		3F0F84AB1FD1998D005914EE /* XJYChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0F84AA1FD1998D005914EE /* XJYChart.framework */; };
 		3F0F84AC1FD1998D005914EE /* XJYChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0F84AA1FD1998D005914EE /* XJYChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F1E5F691FD28D4700FC303B /* XJYChartDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F681FD28D4700FC303B /* XJYChartDemoTests.m */; };
+		3F3B3EB31FEE4C1300DD6DB4 /* Colours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3B3EB01FEE4BF300DD6DB4 /* Colours.framework */; };
+		3F3B3EB41FEE4C1300DD6DB4 /* Colours.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3B3EB01FEE4BF300DD6DB4 /* Colours.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F686B361FCAA3CA00FF9B14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B351FCAA3CA00FF9B14 /* AppDelegate.m */; };
 		3F686B3C1FCAA3CA00FF9B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B3A1FCAA3CA00FF9B14 /* Main.storyboard */; };
 		3F686B3E1FCAA3CA00FF9B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B3D1FCAA3CA00FF9B14 /* Assets.xcassets */; };
@@ -53,6 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3F3B3EB41FEE4C1300DD6DB4 /* Colours.framework in Embed Frameworks */,
 				3F0F84AC1FD1998D005914EE /* XJYChart.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -76,6 +79,7 @@
 		3F1E5F661FD28D4700FC303B /* XJYChartDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XJYChartDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1E5F681FD28D4700FC303B /* XJYChartDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XJYChartDemoTests.m; sourceTree = "<group>"; };
 		3F1E5F6A1FD28D4700FC303B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F3B3EB01FEE4BF300DD6DB4 /* Colours.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Colours.framework; path = ../Products/Colours.framework; sourceTree = "<group>"; };
 		3F686B311FCAA3CA00FF9B14 /* XJYChartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XJYChartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F686B341FCAA3CA00FF9B14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F686B351FCAA3CA00FF9B14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 			files = (
 				03FEB0055E5BBAFBEACB6F6A /* Pods_XJYChartDemo.framework in Frameworks */,
 				3F0F84AB1FD1998D005914EE /* XJYChart.framework in Frameworks */,
+				3F3B3EB31FEE4C1300DD6DB4 /* Colours.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +167,7 @@
 		3F686B281FCAA3CA00FF9B14 = {
 			isa = PBXGroup;
 			children = (
+				3F3B3EB01FEE4BF300DD6DB4 /* Colours.framework */,
 				3FAFF1E71FCD7B2B00CBEA39 /* XJYChart.framework */,
 				3F0F84AA1FD1998D005914EE /* XJYChart.framework */,
 				3F686B331FCAA3CA00FF9B14 /* XJYChartDemo */,
@@ -734,7 +740,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
+					"$(PROJECT_DIR)/../Products",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -768,7 +774,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
+					"$(PROJECT_DIR)/../Products",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
