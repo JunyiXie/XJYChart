@@ -22,7 +22,7 @@
 @property(nonatomic, strong) CABasicAnimation* pathAnimation;
 @property(nonatomic, strong) CAShapeLayer* coverLayer;
 
-@property(nonatomic, strong) NSMutableArray<CAShapeLayer*>* shapeLayerArray;
+@property(nonatomic, strong) NSMutableArray<CAGradientLayer*>* shapeLayerArray;
 @property(nonatomic, strong) NSMutableArray<XAnimationLabel*>* labelArray;
 @property(nonatomic, strong)
     NSMutableArray<NSMutableArray<NSValue*>*>* stackAreaPointsArray;
@@ -68,13 +68,9 @@
 
 - (void)strokeLine {
   NSMutableArray* valuesArrays = [self getValuesArrays];
-  
 
-
-  
   self.stackValuesArray = [self valuesArraysTostackValuesArray:valuesArrays];
   self.stackAreaPointsArray = [NSMutableArray new];
-  
   /**
   =>
   
@@ -100,13 +96,10 @@
     CGPoint rightConerPoint =
         CGPointMake(self.frame.origin.x + self.frame.size.width,
                     self.frame.origin.y + self.frame.size.height);
-    CAShapeLayer* lineLayer =
-        [self getLineShapeLayerWithPoints:self.stackAreaPointsArray[i]
-                           leftConerPoint:leftConerPoint
-                          rightConerPoint:rightConerPoint
-                                    color:colors[i]];
-    [self.shapeLayerArray addObject:lineLayer];
-    [self.layer addSublayer:lineLayer];
+    CAGradientLayer* gradientAreaLineLayer = [self getGradientLineShapeLayerWithPoints:self.stackAreaPointsArray[i] leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint color:colors[i]];
+
+    [self.shapeLayerArray addObject:gradientAreaLineLayer];
+    [self.layer addSublayer:gradientAreaLineLayer];
   }
 }
 
@@ -153,7 +146,7 @@
 
 - (void)cleanPreDrawLayerAndData {
   [self.shapeLayerArray
-      enumerateObjectsUsingBlock:^(CAShapeLayer* _Nonnull obj, NSUInteger idx,
+      enumerateObjectsUsingBlock:^(CAGradientLayer* _Nonnull obj, NSUInteger idx,
                                    BOOL* _Nonnull stop) {
         [obj removeFromSuperlayer];
       }];
@@ -266,6 +259,24 @@
 }
 
 #pragma mark - Layer
+
+- (CAGradientLayer*)getGradientLineShapeLayerWithPoints:(NSArray<NSValue*>*)points
+                              leftConerPoint:(CGPoint)leftConerPoint
+                             rightConerPoint:(CGPoint)rightConerPoint
+                                       color:(UIColor*)color {
+  
+  CAShapeLayer* shapeLayer = [self getLineShapeLayerWithPoints:points leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint color:color];
+  CAGradientLayer* gradientLayer = [CAGradientLayer layer];
+  gradientLayer.colors = @[
+                           (__bridge id)color.CGColor,
+                           (__bridge id)[UIColor whiteColor].CGColor
+                           ];
+  gradientLayer.frame = self.frame;
+  gradientLayer.mask = shapeLayer;
+  return gradientLayer;
+}
+
+
 - (CAShapeLayer*)getLineShapeLayerWithPoints:(NSArray<NSValue*>*)points
                               leftConerPoint:(CGPoint)leftConerPoint
                              rightConerPoint:(CGPoint)rightConerPoint
@@ -305,7 +316,7 @@
   lineLayer.path = line.CGPath;
   lineLayer.strokeColor = [UIColor clearColor].CGColor;
   lineLayer.fillColor = color.CGColor;
-  lineLayer.opacity = 0.3;
+  lineLayer.opacity = 1.0;
   lineLayer.lineWidth = 4;
   lineLayer.lineCap = kCALineCapRound;
   lineLayer.lineJoin = kCALineJoinRound;

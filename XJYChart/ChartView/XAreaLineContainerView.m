@@ -316,26 +316,8 @@
   CGPoint rightConerPoint =
       CGPointMake(self.frame.origin.x + self.frame.size.width,
                   self.frame.origin.y + self.frame.size.height);
-  CAShapeLayer* lineLayer = [self getLineShapeLayerWithPoints:currentPointArray
-                                               leftConerPoint:leftConerPoint
-                                              rightConerPoint:rightConerPoint];
-
-  if (self.congifuration.isShowBorder) {
-    self.borderLayer = [CAShapeLayer
-        lineShapeLayerWithPoints:currentPointArray
-                           color:[UIColor colorWithCGColor:
-                                              (__bridge CGColorRef _Nonnull)(
-                                                  self.congifuration
-                                                      .gradientColors[0])]
-                        lineMode:self.congifuration.lineMode
-                       lineWidth:4];
-    [self.layer addSublayer:self.borderLayer];
-  }
-
-  self.gradientLayer = [CAGradientLayer layer];
-  self.gradientLayer.colors = self.congifuration.gradientColors;
-  self.gradientLayer.frame = self.frame;
-  self.gradientLayer.mask = lineLayer;
+  
+  self.gradientLayer = [self getGradientLineShapeLayerWithPoints:currentPointArray leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint gradientColors:self.congifuration.gradientColors];
 
   [self.layer addSublayer:self.gradientLayer];
 }
@@ -388,6 +370,20 @@
 }
 
 #pragma mark ShapeLayerDrawer
+
+- (CAGradientLayer*)getGradientLineShapeLayerWithPoints:(NSArray<NSValue*>*)points
+                                         leftConerPoint:(CGPoint)leftConerPoint
+                                        rightConerPoint:(CGPoint)rightConerPoint
+                                                  gradientColors:(NSArray *)colors {
+  
+  CAShapeLayer* shapeLayer = [self getLineShapeLayerWithPoints:points leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint];
+  CAGradientLayer* gradientLayer = [CAGradientLayer layer];
+  gradientLayer.colors = colors;
+  gradientLayer.frame = self.frame;
+  gradientLayer.mask = shapeLayer;
+  return gradientLayer;
+}
+
 
 - (CAShapeLayer*)getLineShapeLayerWithPoints:(NSArray<NSValue*>*)points
                               leftConerPoint:(CGPoint)leftConerPoint

@@ -12,6 +12,5 @@
 ///  CGColorRef Array
 @property(nonatomic, strong) NSArray* gradientColors;
 @property(nonatomic, assign) BOOL isShowPoint;
-@property(nonatomic, assign) BOOL isShowBorder;
 
 @end
