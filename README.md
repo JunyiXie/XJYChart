@@ -1,5 +1,11 @@
 
-![fun](https://github.com/JunyiXie/XJYChart/raw/master/photos/icon.png) 
+## XJYChart
+
+<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG" align="left" height="472" width="260" ></a>
+<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG" align="left" height="472" width="260" ></a>
+<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG" align="left" height="472" width="260" ></a>
+
+
 ![release](https://img.shields.io/badge/XJYChart-v1.0.0-blue.svg)
 [![Version](https://img.shields.io/cocoapods/v/XJYChart.svg?style=flat)](http://cocoapods.org/pods/XJYChart)
 [![Platform](https://img.shields.io/cocoapods/p/XJYChart.svg?style=flat)](http://cocoapods.org/pods/XJYChart)
@@ -15,29 +21,6 @@
 - [x] **support chart touch**
 - [x] **support chart highlight**
  
-## Overview
-
-<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image1.PNG" align="left" height="472" width="260" ></a>
-<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image4.PNG" align="left" height="472" width="260" ></a>
-<a href="url"><img src="https://github.com/JunyiXie/XJYChart/raw/master/photos/image5.PNG" align="left" height="472" width="260" ></a>
-
-
-
-## Charts
-
-- [x] **LineChart**
-- [x] **BarChart**
-- [x] **PositiveNegativeBarChart**
-- [x] **PieChart**
-- [x] **CycleChart**
-
-## Features
-
-
-- [x] **Animation**
-- [x] **Touch**
-- [x] **Scroll**
-- [x] **Beautiful**
 
 
 ## Installation
@@ -62,20 +45,19 @@ $ pod install
 **Qucikly Use**
 
 Eg:
-- [AreaLineExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/AreaLineTableViewCell.m)
+- [AreaLineExample](https://github.com/JunyiXie/XJYChart/blob/master/XJYChartDemo/XJYChartDemo/View/AreaLineTableViewCell.m)
 
-- [BarChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/BarChartCell.m)
+- [BarChartExample](https://github.com/JunyiXie/XJYChart/blob/master/XJYChartDemo/XJYChartDemo/View/BarChartCell.m)
 
-- [CycleChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/CycleTableViewCell.m)
+- [CycleChartExample](https://github.com/JunyiXie/XJYChart/blob/master/XJYChartDemo/XJYChartDemo/View/CycleTableViewCell.m)
 
-- [LineChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/LineChartCell.m)
+- [LineChartExample](https://github.com/JunyiXie/XJYChart/blob/master/XJYChartDemo/XJYChartDemo/View/LineChartCell.m)
 
-- [PieChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/PieChartCell.m)
+- [PieChartExample](https://github.com/JunyiXie/XJYChart/blob/master/XJYChartDemo/XJYChartDemo/View/PieChartCell.m)
 
-- [PositiveNegativeBarChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/PositiveNegativeBarChartCell.m)
+- [PositiveNegativeBarChartExample](https://github.com/JunyiXie/XJYChart/blob/master/XJYChartDemo/XJYChartDemo/View/PositiveNegativeBarChartCell.m)
 
-- [StackAreaLineChartExample](https://github.com/JunyiXie/XJYChart/blob/master/Example/RecordLife/Classes/View/StackAreaTableViewCell.m)
-
+- [StackAreaLineChartExample](https://github.com/JunyiXie/XJYChart/blob/master/XJYChartDemo/XJYChartDemo/View/StackAreaTableViewCell.m)
 
 **Initialization**
 ```objectivec

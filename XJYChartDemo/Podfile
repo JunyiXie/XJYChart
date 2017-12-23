@@ -6,6 +6,7 @@ target 'XJYChartDemo' do
 
 pod ‘Masonry’
 
+
 end
 
 target 'XJYChartDemo-Swift' do

@@ -37,8 +37,6 @@
 		3F1E5F9D1FD3D78400FC303B /* XNormalLineChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F9B1FD3D78400FC303B /* XNormalLineChartConfiguration.m */; };
 		3F1E5FA41FD3D9F400FC303B /* XStackAreaLineChartConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F1E5FA21FD3D9F400FC303B /* XStackAreaLineChartConfiguration.h */; };
 		3F1E5FA51FD3D9F400FC303B /* XStackAreaLineChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5FA31FD3D9F400FC303B /* XStackAreaLineChartConfiguration.m */; };
-		3FAFF1781FCD60FA00CBEA39 /* Colours.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF12C1FCD60FA00CBEA39 /* Colours.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3FAFF1791FCD60FA00CBEA39 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF12D1FCD60FA00CBEA39 /* Colours.m */; };
 		3FAFF17A1FCD60FA00CBEA39 /* XColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF12E1FCD60FA00CBEA39 /* XColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FAFF17B1FCD60FA00CBEA39 /* XColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF12F1FCD60FA00CBEA39 /* XColor.m */; };
 		3FAFF17C1FCD60FA00CBEA39 /* XAuxiliaryCalculationHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1311FCD60FA00CBEA39 /* XAuxiliaryCalculationHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -118,8 +116,6 @@
 		3F1E5FA21FD3D9F400FC303B /* XStackAreaLineChartConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XStackAreaLineChartConfiguration.h; sourceTree = "<group>"; };
 		3F1E5FA31FD3D9F400FC303B /* XStackAreaLineChartConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XStackAreaLineChartConfiguration.m; sourceTree = "<group>"; };
 		3FAFF1241FCD609000CBEA39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3FAFF12C1FCD60FA00CBEA39 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
-		3FAFF12D1FCD60FA00CBEA39 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		3FAFF12E1FCD60FA00CBEA39 /* XColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XColor.h; sourceTree = "<group>"; };
 		3FAFF12F1FCD60FA00CBEA39 /* XColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XColor.m; sourceTree = "<group>"; };
 		3FAFF1311FCD60FA00CBEA39 /* XAuxiliaryCalculationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAuxiliaryCalculationHelper.h; sourceTree = "<group>"; };
@@ -254,8 +250,6 @@
 		3FAFF12B1FCD60FA00CBEA39 /* Color */ = {
 			isa = PBXGroup;
 			children = (
-				3FAFF12C1FCD60FA00CBEA39 /* Colours.h */,
-				3FAFF12D1FCD60FA00CBEA39 /* Colours.m */,
 				3FAFF12E1FCD60FA00CBEA39 /* XColor.h */,
 				3FAFF12F1FCD60FA00CBEA39 /* XColor.m */,
 			);
@@ -377,7 +371,6 @@
 				3FAFF1A41FCD60FA00CBEA39 /* XPositiveNegativeBarChart.h in Headers */,
 				3F1E5F901FD3BC9600FC303B /* XBaseChartConfiguration.h in Headers */,
 				3FAFF18E1FCD60FA00CBEA39 /* XBarChart.h in Headers */,
-				3FAFF1781FCD60FA00CBEA39 /* Colours.h in Headers */,
 				3F1E5FA41FD3D9F400FC303B /* XStackAreaLineChartConfiguration.h in Headers */,
 				3FAFF1821FCD60FA00CBEA39 /* XAnimationPath.h in Headers */,
 				3F1E5F9C1FD3D78400FC303B /* XNormalLineChartConfiguration.h in Headers */,
@@ -520,7 +513,6 @@
 				3FAFF1A91FCD60FA00CBEA39 /* XPositiveNegativeBarContainerView.m in Sources */,
 				3FAFF1831FCD60FA00CBEA39 /* XAnimationPath.m in Sources */,
 				3F1E5F771FD2A0F700FC303B /* XLineChartItem.m in Sources */,
-				3FAFF1791FCD60FA00CBEA39 /* Colours.m in Sources */,
 				3FAFF1891FCD60FA00CBEA39 /* XAbscissaView.m in Sources */,
 				3FAFF1B71FCD60FA00CBEA39 /* CAShapeLayer+XLayerHelper.m in Sources */,
 				3FAFF1AF1FCD60FA00CBEA39 /* CAKeyframeAnimation+AHEasing.m in Sources */,
