@@ -8,22 +8,17 @@
 
 #ifndef XEnumHeader_h
 #define XEnumHeader_h
-typedef NS_ENUM(NSUInteger, XXColorMode) {
-    Random,
-    Custom,
+
+typedef NS_ENUM(NSUInteger, XLineMode) {
+  Straight,
+  CurveLine,
+
 };
 
-typedef NS_ENUM(NSUInteger, XXLineMode) {
-    BrokenLine,
-    CurveLine,
+typedef NS_ENUM(NSUInteger, XLineGraphMode) {
+  MutiLineGraph,
+  AreaLineGraph,
+  StackAreaLineGraph,
 };
-
-typedef NS_ENUM(NSUInteger, XXLineGraphMode) {
-    MutiLineGraph,
-    AreaLineGraph,
-    StackAreaLineGraph,
-};
-
-
 
 #endif /* XEnumHeader_h */

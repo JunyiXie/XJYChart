@@ -10,12 +10,11 @@
 
 @interface XAnimationLabel : UILabel
 
-
 /**
  Start number animation
 
  The Begin Number is XAnimationLabel.text number value
- 
+
  @param to End point
  @param duration Animation duration
  */
@@ -31,21 +30,24 @@
  @param fillColor backgroundColor
  @return label
  */
-+ (XAnimationLabel *)topLabelWithPoint:(CGPoint)point text:(NSString *)text textColor:(UIColor *) textColor fillColor:(UIColor *)fillColor;
-
-
++ (XAnimationLabel*)topLabelWithPoint:(CGPoint)point
+                                 text:(NSString*)text
+                            textColor:(UIColor*)textColor
+                            fillColor:(UIColor*)fillColor;
 
 /**
  Initialize the XAnimationLabel
  Quick Use for Chart number
- 
+
  @param frame Label Frame
  @param text number string. eg: @"12". As the start number.
  @param textColor Text Color
  @param fillColor backgroundColor
  @return label
  */
-+ (XAnimationLabel *)topLabelWithFrame:(CGRect)frame text:(NSString *)text textColor:(UIColor *) textColor fillColor:(UIColor *)fillColor;
-
++ (XAnimationLabel*)topLabelWithFrame:(CGRect)frame
+                                 text:(NSString*)text
+                            textColor:(UIColor*)textColor
+                            fillColor:(UIColor*)fillColor;
 
 @end

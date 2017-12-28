@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol XCycleViewDelegate <NSObject>
+@protocol XCycleViewDelegate<NSObject>
 
 /**
  ratio
@@ -20,7 +20,7 @@
 
 @interface XCycleView : UIControl
 /// progress 0.0 ~ 1.0
-@property (nonatomic, assign) CGFloat progress;
+@property(nonatomic, assign) CGFloat progress;
 
-@property (nonatomic, weak) id<XCycleViewDelegate> cycleViewDeleagte;
+@property(nonatomic, weak) id<XCycleViewDelegate> cycleViewDeleagte;
 @end

@@ -9,46 +9,49 @@
 #import <UIKit/UIKit.h>
 #import "XBarItem.h"
 
-
-@protocol XBarChartDelegate <NSObject>
+@protocol XBarChartDelegate<NSObject>
 /// touch bar idx
 - (void)touchBarAtIdx:(NSUInteger)idx;
 
 @end
 
-
 @interface XBarChart : UIView
 
-//delegate
-@property (nonatomic, strong) id<XBarChartDelegate> barChartDeleagte;
+// delegate
+@property(nonatomic, strong) id<XBarChartDelegate> barChartDeleagte;
 
 /**
  初始化方法
- 
+
  @param frame frame
  @param dataItemArray items
  @param topNumbser top
  @param bottomNumber buttom
  @return instancetype
  */
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray<XBarItem *> *)dataItemArray topNumber:(NSNumber *)topNumbser bottomNumber:(NSNumber *)bottomNumber;
-
+- (instancetype)initWithFrame:(CGRect)frame
+                dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
+                    topNumber:(NSNumber*)topNumbser
+                 bottomNumber:(NSNumber*)bottomNumber;
 
 /**
  dataItemArray
  */
-@property (nonatomic, strong) NSMutableArray<XBarItem *> *dataItemArray;
-
+@property(nonatomic, strong) NSMutableArray<XBarItem*>* dataItemArray;
 
 /**
  纵坐标最高点
  */
-@property (nonatomic, strong) NSNumber *top;
+@property(nonatomic, strong) NSNumber* top;
 
 /**
  纵坐标最低点
  */
-@property (nonatomic, strong) NSNumber *bottom;
+@property(nonatomic, strong) NSNumber* bottom;
 
+/**
+ ChartBackground color
+ */
+@property(nonatomic, strong) UIColor* chartBackgroundColor;
 
 @end

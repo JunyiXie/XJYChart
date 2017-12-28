@@ -31,6 +31,10 @@
 		3F686BED1FCAA47900FF9B14 /* StackAreaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B8B1FCAA47900FF9B14 /* StackAreaTableViewCell.m */; };
 		3F686BEE1FCAA47900FF9B14 /* XJYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B8D1FCAA47900FF9B14 /* XJYTableViewCell.m */; };
 		3F686BF01FCAA47900FF9B14 /* XJYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B911FCAA47900FF9B14 /* XJYViewController.m */; };
+		3FC1C2BA1FF3DD920083DC6D /* XJYChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC1C2B81FF3DD920083DC6D /* XJYChart.framework */; };
+		3FC1C2BB1FF3DD920083DC6D /* XJYChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC1C2B81FF3DD920083DC6D /* XJYChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3FC1C2BC1FF3DD920083DC6D /* Colours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC1C2B91FF3DD920083DC6D /* Colours.framework */; };
+		3FC1C2BD1FF3DD920083DC6D /* Colours.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC1C2B91FF3DD920083DC6D /* Colours.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		723435C1E3D0B9B0BEC43A7F /* Pods_XJYChartDemo_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAE09ADE582BE0972E635F3 /* Pods_XJYChartDemo_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +55,18 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3FC1C2BE1FF3DD920083DC6D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3FC1C2BD1FF3DD920083DC6D /* Colours.framework in Embed Frameworks */,
+				3FC1C2BB1FF3DD920083DC6D /* XJYChart.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +116,8 @@
 		3F686B8D1FCAA47900FF9B14 /* XJYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYTableViewCell.m; sourceTree = "<group>"; };
 		3F686B901FCAA47900FF9B14 /* XJYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYViewController.h; sourceTree = "<group>"; };
 		3F686B911FCAA47900FF9B14 /* XJYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYViewController.m; sourceTree = "<group>"; };
+		3FC1C2B81FF3DD920083DC6D /* XJYChart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XJYChart.framework; path = ../Products/XJYChart.framework; sourceTree = "<group>"; };
+		3FC1C2B91FF3DD920083DC6D /* Colours.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Colours.framework; path = ../Products/Colours.framework; sourceTree = "<group>"; };
 		6599B632011C55F9ADD36253 /* Pods_XJYChartDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJYChartDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAE09ADE582BE0972E635F3 /* Pods_XJYChartDemo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJYChartDemo_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC6A774479A329B1152375B /* Pods-XJYChartDemo-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +138,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				03FEB0055E5BBAFBEACB6F6A /* Pods_XJYChartDemo.framework in Frameworks */,
+				3FC1C2BA1FF3DD920083DC6D /* XJYChart.framework in Frameworks */,
+				3FC1C2BC1FF3DD920083DC6D /* Colours.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +166,8 @@
 		3F686B281FCAA3CA00FF9B14 = {
 			isa = PBXGroup;
 			children = (
+				3FC1C2B91FF3DD920083DC6D /* Colours.framework */,
+				3FC1C2B81FF3DD920083DC6D /* XJYChart.framework */,
 				3F686B331FCAA3CA00FF9B14 /* XJYChartDemo */,
 				3F686B651FCAA3FF00FF9B14 /* XJYChartDemo-Swift */,
 				3F1E5F671FD28D4700FC303B /* XJYChartDemoTests */,
@@ -274,6 +296,7 @@
 				3F686B2F1FCAA3CA00FF9B14 /* Resources */,
 				71C302943CE4BFC36C0260CC /* [CP] Embed Pods Frameworks */,
 				958AD04EEDA0088D9478084F /* [CP] Copy Pods Resources */,
+				3FC1C2BE1FF3DD920083DC6D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -422,15 +445,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Colours/Colours.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/XJYChart/XJYChart.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Colours.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XJYChart.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -652,7 +671,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../XJYChart/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -702,7 +721,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../XJYChart/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -720,6 +739,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/../Products",
+					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
+					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -727,7 +748,7 @@
 					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
 				);
 				INFOPLIST_FILE = XJYChartDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_MAP_FILE_PATH = "/Users/junyixie/Library/Mobile Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/XJYChartDemo/XJYChartDemo/linkmap.txt";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -754,6 +775,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/../Products",
+					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
+					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -761,7 +784,7 @@
 					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
 				);
 				INFOPLIST_FILE = XJYChartDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_MAP_FILE_PATH = "/Users/junyixie/Library/Mobile Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/XJYChartDemo/XJYChartDemo/linkmapRelease.txt";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

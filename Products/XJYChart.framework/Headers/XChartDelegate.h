@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol XChartDelegate <NSObject>
+@protocol XChartDelegate<NSObject>
 @optional
 /**
  * Callback method that gets invoked when the user taps on the chart line.
@@ -16,7 +16,8 @@
 - (void)userClickedOnLinePoint:(CGPoint)point lineIndex:(NSInteger)lineIndex;
 
 /**
- * Callback method that gets invoked when the user taps on a chart line key point.
+ * Callback method that gets invoked when the user taps on a chart line key
+ * point.
  */
 - (void)userClickedOnLineKeyPoint:(CGPoint)point
                         lineIndex:(NSInteger)lineIndex
@@ -26,7 +27,6 @@
  * Callback method that gets invoked when the user taps on a chart bar.
  */
 - (void)userClickedOnBarAtIndex:(NSInteger)barIndex;
-
 
 - (void)userClickedOnPieIndexItem:(NSInteger)pieIndex;
 - (void)didUnselectPieItem;

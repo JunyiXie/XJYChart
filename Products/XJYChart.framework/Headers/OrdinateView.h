@@ -10,7 +10,6 @@
 
 @interface OrdinateView : UIView
 
-
 /**
  init
 
@@ -19,6 +18,8 @@
  @param bottomNumber bottom number in ordinate View
  @return ordinate View instance
  */
-- (instancetype)initWithFrame:(CGRect)frame topNumber:(NSNumber *)topNumber bottomNumber:(NSNumber *)bottomNumber;
+- (instancetype)initWithFrame:(CGRect)frame
+                    topNumber:(NSNumber*)topNumber
+                 bottomNumber:(NSNumber*)bottomNumber;
 
 @end

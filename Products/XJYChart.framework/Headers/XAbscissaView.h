@@ -17,6 +17,7 @@
  @param dataItemArray datas
  @return XAbscissaView instance
  */
-- (instancetype)initWithFrame:(CGRect)frame dataItemArray:(NSMutableArray *)dataItemArray;
+- (instancetype)initWithFrame:(CGRect)frame
+                dataItemArray:(NSMutableArray*)dataItemArray;
 
 @end
