@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5564C81E85440596BEB45D9BDB7F139C"
+               BlueprintIdentifier = "20E083113DD91E1CA2393C469DE1FFA7"
                BuildableName = "Pods_XJYChartDemo.framework"
                BlueprintName = "Pods-XJYChartDemo"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5564C81E85440596BEB45D9BDB7F139C"
+            BlueprintIdentifier = "20E083113DD91E1CA2393C469DE1FFA7"
             BuildableName = "Pods_XJYChartDemo.framework"
             BlueprintName = "Pods-XJYChartDemo"
             ReferencedContainer = "container:Pods.xcodeproj">

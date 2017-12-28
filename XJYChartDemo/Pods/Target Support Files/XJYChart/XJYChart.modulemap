@@ -1,0 +1,6 @@
+framework module XJYChart {
+  umbrella header "XJYChart-umbrella.h"
+
+  export *
+  module * { export * }
+}
