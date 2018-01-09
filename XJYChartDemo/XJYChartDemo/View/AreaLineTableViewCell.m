@@ -8,7 +8,7 @@
 
 #import "AreaLineTableViewCell.h"
 
-#import <XJYChart/XChart.h>
+#import <XJYChart/XJYChart.h>
 @implementation AreaLineTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style

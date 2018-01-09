@@ -21,4 +21,10 @@
  */
 @property(nonatomic, assign) XLineMode lineMode;
 
+/// defalut is [UIColor black75PercentColor]
+@property(nonatomic, strong) UIColor* auxiliaryDashLineColor;
+
+/// defalut is YES
+@property(nonatomic, assign) BOOL isShowAuxiliaryDashLine;
+
 @end

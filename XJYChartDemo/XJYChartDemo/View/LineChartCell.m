@@ -7,7 +7,7 @@
 //
 
 #import "LineChartCell.h"
-#import <XJYChart/XChart.h>
+#import <XJYChart/XJYChart.h>
 @implementation LineChartCell
 
 - (void)awakeFromNib {
@@ -58,7 +58,6 @@
     XNormalLineChartConfiguration* configuration =
         [[XNormalLineChartConfiguration alloc] init];
     configuration.lineMode = CurveLine;
-    configuration.isShowShadow = YES;
 
     XLineChart* lineChart =
         [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200)

@@ -7,7 +7,7 @@
 //
 
 #import "PositiveNegativeBarChartCell.h"
-#import <XJYChart/XChart.h>
+#import <XJYChart/XJYChart.h>
 @interface PositiveNegativeBarChartCell ()<XPNBarChartDelegate>
 
 @end

@@ -11,11 +11,10 @@
 
 @implementation XBaseChartConfiguration
 
-- (UIColor*)chartBackgroundColor {
-  if (_chartBackgroundColor == nil) {
-    _chartBackgroundColor = XJYWhite;
+- (instancetype)init {
+  if (self = [super init]) {
+    self.chartBackgroundColor = XJYWhite;
   }
-  return _chartBackgroundColor;
+  return self;
 }
-
 @end

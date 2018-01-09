@@ -8,7 +8,7 @@
 
 #import "SingleLineChartTableViewCell.h"
 
-#import <XJYChart/XChart.h>
+#import <XJYChart/XJYChart.h>
 
 @implementation SingleLineChartTableViewCell
 
@@ -35,7 +35,8 @@
                                                   color:[UIColor salmonColor]];
     XNormalLineChartConfiguration* configuration =
         [[XNormalLineChartConfiguration alloc] init];
-    configuration.isShowShadow = YES;
+    
+    configuration.isShowShadow = NO;
     XLineChart* lineChart =
         [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200)
                             dataItemArray:[NSMutableArray arrayWithObject:item]

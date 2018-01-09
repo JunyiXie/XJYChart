@@ -7,7 +7,7 @@
 //
 
 #import "BarChartCell.h"
-#import <XJYChart/XChart.h>
+#import <XJYChart/XJYChart.h>
 @interface BarChartCell ()<XBarChartDelegate>
 
 @end

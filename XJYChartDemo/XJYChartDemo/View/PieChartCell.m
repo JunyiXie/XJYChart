@@ -7,7 +7,7 @@
 //
 
 #import "PieChartCell.h"
-#import <XJYChart/XChart.h>
+#import <XJYChart/XJYChart.h>
 @interface PieChartCell ()
 
 @property(nonatomic, strong) XPieChart* pieChartView;

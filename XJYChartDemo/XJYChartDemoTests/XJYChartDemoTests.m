@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import <XJYChart/XChart.h>
+#import <XJYChart/XJYChart.h>
 
 @interface XJYChartDemoTests : XCTestCase
 

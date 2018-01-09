@@ -11,14 +11,17 @@
 
 @implementation XAreaLineChartConfiguration
 
-- (NSArray*)gradientColors {
-  if (_gradientColors == nil) {
-    _gradientColors = @[
-      (__bridge id)[UIColor steelBlueColor].CGColor,
-      (__bridge id)[UIColor whiteColor].CGColor
-    ];
+- (instancetype)init {
+  if (self = [super init]) {
+    self.isShowPoint = YES;
+    self.areaLineAlpha = 0.5;
+    self.gradientColors = @[
+                            (__bridge id)[UIColor steelBlueColor].CGColor,
+                            (__bridge id)[UIColor whiteColor].CGColor
+                            ];
+    self.auxiliaryDashLineColor = [UIColor black50PercentColor];
   }
-  return _gradientColors;
+  return self;
 }
 
 @end

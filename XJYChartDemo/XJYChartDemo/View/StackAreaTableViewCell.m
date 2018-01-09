@@ -7,7 +7,7 @@
 //
 
 #import "StackAreaTableViewCell.h"
-#import <XJYChart/XChart.h>
+#import <XJYChart/XJYChart.h>
 @implementation StackAreaTableViewCell
 
 - (void)awakeFromNib {
@@ -44,10 +44,9 @@
                                                     color:colorArray[i]];
       [itemArray addObject:item];
     }
-    XNormalLineChartConfiguration* configuration =
-        [[XNormalLineChartConfiguration alloc] init];
+    XStackAreaLineChartConfiguration* configuration =
+        [[XStackAreaLineChartConfiguration alloc] init];
     configuration.lineMode = CurveLine;
-
     XLineChart* lineChart =
         [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200)
                             dataItemArray:itemArray

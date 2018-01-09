@@ -75,24 +75,25 @@ CGFloat touchLineWidth = 20;
 
 /// Stroke Auxiliary
 - (void)strokeAuxiliaryLineInContext:(CGContextRef)context {
-  
-  CGContextSetStrokeColorWithColor(context, [UIColor black75PercentColor].CGColor);
-  CGContextSaveGState(context);
-  CGFloat lengths[2] = {5.0, 5.0};
-  CGContextSetLineDash(context, 0, lengths, 2);
-  CGContextSetLineWidth(context, 0.2);
-  for (int i = 0; i < 11; i++) {
-    CGContextMoveToPoint(
-        context, 5, self.frame.size.height - (self.frame.size.height) / 11 * i);
-    CGContextAddLineToPoint(
-        context, self.frame.size.width,
-        self.frame.size.height - ((self.frame.size.height) / 11) * i);
-    CGContextStrokePath(context);
+  if (self.configuration.isShowAuxiliaryDashLine) {
+    CGContextSetStrokeColorWithColor(context, self.configuration.auxiliaryDashLineColor.CGColor);
+    CGContextSaveGState(context);
+    CGFloat lengths[2] = {5.0, 5.0};
+    CGContextSetLineDash(context, 0, lengths, 2);
+    CGContextSetLineWidth(context, 0.2);
+    for (int i = 0; i < 11; i++) {
+      CGContextMoveToPoint(
+                           context, 5, self.frame.size.height - (self.frame.size.height) / 11 * i);
+      CGContextAddLineToPoint(
+                              context, self.frame.size.width,
+                              self.frame.size.height - ((self.frame.size.height) / 11) * i);
+      CGContextStrokePath(context);
+    }
+    CGContextRestoreGState(context);
+    CGContextSaveGState(context);
+    CGContextSetStrokeColorWithColor(context, self.configuration.auxiliaryDashLineColor.CGColor);
   }
-  CGContextRestoreGState(context);
 
-  CGContextSaveGState(context);
-  CGContextSetStrokeColorWithColor(context, [UIColor black75PercentColor].CGColor);
   
   if (self.configuration.isShowCoordinate) {
     // ordinate

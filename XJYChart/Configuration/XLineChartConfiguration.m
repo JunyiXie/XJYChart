@@ -7,7 +7,17 @@
 //
 
 #import "XLineChartConfiguration.h"
+#import "XColor.h"
 
 @implementation XLineChartConfiguration
+
+- (instancetype)init {
+  if (self = [super init]) {
+    self.lineMode = Straight;
+    self.isShowAuxiliaryDashLine = YES;
+    self.auxiliaryDashLineColor = [UIColor black75PercentColor];
+  }
+  return self;
+}
 
 @end

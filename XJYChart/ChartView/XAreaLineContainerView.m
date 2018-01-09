@@ -139,8 +139,8 @@
                  bottomNumber:(NSNumber*)bottomNumber
                 configuration:(XAreaLineChartConfiguration*)configuration {
   if (self = [super initWithFrame:frame]) {
-    self.congifuration = configuration;
-    self.backgroundColor = self.congifuration.chartBackgroundColor;
+    self.configuration = configuration;
+    self.backgroundColor = self.configuration.chartBackgroundColor;
 
     self.pointLayerArray = [NSMutableArray new];
     self.labelArray = [NSMutableArray new];
@@ -229,30 +229,24 @@
 
 /// Stroke Auxiliary
 - (void)strokeAuxiliaryLineInContext:(CGContextRef)context {
-  CGContextSetStrokeColorWithColor(
-      context, [UIColor colorWithWhite:1 alpha:0.5].CGColor);
-  CGFloat lengths[2] = {5, 5};
-  CGContextSetLineDash(context, 0, lengths, 2);
-
-  NSInteger count = self.areaAnimationManager.animationNodes.count;
-  for (int i = 0; i < count; i++) {
-    CGContextMoveToPoint(
-        context,
-        [self.areaAnimationManager.animationNodes[i] getAnimationNodeX], 0);
-    CGContextAddLineToPoint(
-        context,
-        [self.areaAnimationManager.animationNodes[i] getAnimationNodeX],
-        self.frame.size.height);
-    CGContextStrokePath(context);
-
-    CGContextMoveToPoint(
-        context,
-        [self.areaAnimationManager.animationNodes[i] getAnimationNodeX], 0);
-    CGContextAddLineToPoint(
-        context,
-        [self.areaAnimationManager.animationNodes[i] getAnimationNodeX],
-        self.frame.size.height);
-    CGContextStrokePath(context);
+  if (self.configuration.isShowAuxiliaryDashLine) {
+    CGContextSetStrokeColorWithColor(context, self.configuration.auxiliaryDashLineColor.CGColor);
+    CGContextSaveGState(context);
+    CGFloat lengths[2] = {5.0, 5.0};
+    CGContextSetLineDash(context, 0, lengths, 2);
+    CGContextSetLineWidth(context, 0.2);
+    for (int i = 0; i < 11; i++) {
+      CGContextMoveToPoint(
+                           context, 5, self.frame.size.height - (self.frame.size.height) / 11 * i);
+      CGContextAddLineToPoint(
+                              context, self.frame.size.width,
+                              self.frame.size.height - ((self.frame.size.height) / 11) * i);
+      CGContextStrokePath(context);
+    }
+    CGContextRestoreGState(context);
+    
+    CGContextSaveGState(context);
+    CGContextSetStrokeColorWithColor(context, self.configuration.auxiliaryDashLineColor.CGColor);
   }
 }
 
@@ -260,9 +254,9 @@
   // Just one data item in dataItemArray
   UIColor* color =
       [UIColor colorWithCGColor:(__bridge CGColorRef _Nonnull)(
-                                    self.congifuration.gradientColors[0])];
+                                    self.configuration.gradientColors[0])];
 
-  if (self.congifuration.isShowPoint) {
+  if (self.configuration.isShowPoint) {
     [self.areaAnimationManager.animationNodes
         enumerateObjectsUsingBlock:^(XGraphAnimationNode* _Nonnull node,
                                      NSUInteger idx, BOOL* _Nonnull stop) {
@@ -317,7 +311,8 @@
       CGPointMake(self.frame.origin.x + self.frame.size.width,
                   self.frame.origin.y + self.frame.size.height);
   
-  self.gradientLayer = [self getGradientLineShapeLayerWithPoints:currentPointArray leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint gradientColors:self.congifuration.gradientColors];
+  self.gradientLayer = [self getGradientLineShapeLayerWithPoints:currentPointArray leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint gradientColors:self.configuration.gradientColors];
+  self.gradientLayer.opacity = self.configuration.areaLineAlpha;
 
   [self.layer addSublayer:self.gradientLayer];
 }
@@ -398,7 +393,7 @@
     if (i == 0) {
       [line moveToPoint:point1];
     }
-    if (self.congifuration.lineMode == CurveLine) {
+    if (self.configuration.lineMode == CurveLine) {
       CGPoint midPoint = [[XAuxiliaryCalculationHelper shareCalculationHelper]
           midPointBetweenPoint1:point1
                       andPoint2:point2];
@@ -482,11 +477,11 @@
 }
 
 #pragma mark GET
-- (XAreaLineChartConfiguration*)congifuration {
-  if (_congifuration == nil) {
-    _congifuration = [[XAreaLineChartConfiguration alloc] init];
+- (XAreaLineChartConfiguration*)configuration {
+  if (_configuration == nil) {
+    _configuration = [[XAreaLineChartConfiguration alloc] init];
   }
-  return _congifuration;
+  return _configuration;
 }
 
 

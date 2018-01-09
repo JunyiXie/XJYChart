@@ -97,24 +97,32 @@
         CGPointMake(self.frame.origin.x + self.frame.size.width,
                     self.frame.origin.y + self.frame.size.height);
     CAGradientLayer* gradientAreaLineLayer = [self getGradientLineShapeLayerWithPoints:self.stackAreaPointsArray[i] leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint color:colors[i]];
-
+    gradientAreaLineLayer.opacity = self.configuration.areaLineAlpha;
+    
     [self.shapeLayerArray addObject:gradientAreaLineLayer];
     [self.layer addSublayer:gradientAreaLineLayer];
   }
 }
 
 - (void)strokeAuxiliaryLineInContext:(CGContextRef)context {
-  CGContextSetStrokeColorWithColor(
-      context, [UIColor colorWithWhite:1 alpha:0.5].CGColor);
-  CGFloat lengths[2] = {5, 5};
-  CGContextSetLineDash(context, 0, lengths, 2);
-  NSInteger count = self.dataItemArray[0].numberArray.count;
-  CGFloat perWidth = self.frame.size.width / count;
-  for (int i = 0; i < count; i++) {
-    CGContextMoveToPoint(context, perWidth * (i + 1) - perWidth / 2, 0);
-    CGContextAddLineToPoint(context, perWidth * (i + 1) - perWidth / 2,
-                            self.frame.size.height);
-    CGContextStrokePath(context);
+  if (self.configuration.isShowAuxiliaryDashLine) {
+    CGContextSetStrokeColorWithColor(context, self.configuration.auxiliaryDashLineColor.CGColor);
+    CGContextSaveGState(context);
+    CGFloat lengths[2] = {5.0, 5.0};
+    CGContextSetLineDash(context, 0, lengths, 2);
+    CGContextSetLineWidth(context, 0.2);
+    for (int i = 0; i < 11; i++) {
+      CGContextMoveToPoint(
+                           context, 5, self.frame.size.height - (self.frame.size.height) / 11 * i);
+      CGContextAddLineToPoint(
+                              context, self.frame.size.width,
+                              self.frame.size.height - ((self.frame.size.height) / 11) * i);
+      CGContextStrokePath(context);
+    }
+    CGContextRestoreGState(context);
+    
+    CGContextSaveGState(context);
+    CGContextSetStrokeColorWithColor(context, self.configuration.auxiliaryDashLineColor.CGColor);
   }
 }
 

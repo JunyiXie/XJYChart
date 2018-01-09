@@ -7,7 +7,7 @@
 //
 
 #import "XAbscissaView.h"
-#import "XChart.h"
+#import "XJYChart.h"
 
 @interface XAbscissaView ()
 

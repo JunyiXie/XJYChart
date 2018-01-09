@@ -10,4 +10,12 @@
 
 @implementation XNormalLineChartConfiguration
 
+- (instancetype)init {
+  if (self = [super init]) {
+    self.isShowShadow = YES;
+    self.isShowCoordinate = NO;
+  }
+  return self;
+}
+
 @end

@@ -10,6 +10,7 @@
 
 @interface XBaseChartConfiguration : NSObject
 
+/// defalut is white
 @property(nonatomic, strong) UIColor* chartBackgroundColor;
 
 @end

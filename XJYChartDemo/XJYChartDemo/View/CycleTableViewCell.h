@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <XJYChart/XChart.h>
+#import <XJYChart/XJYChart.h>
 
 static NSString* kCycleTableViewCell = @"CycleTableViewCell";
 

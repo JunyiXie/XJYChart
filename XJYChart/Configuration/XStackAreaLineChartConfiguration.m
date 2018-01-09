@@ -9,5 +9,11 @@
 #import "XStackAreaLineChartConfiguration.h"
 
 @implementation XStackAreaLineChartConfiguration
+- (instancetype)init {
+  if (self = [super init]) {
+    self.areaLineAlpha = 1.0;
+  }
+  return self;
+}
 
 @end
