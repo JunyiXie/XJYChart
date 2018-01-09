@@ -146,25 +146,29 @@ CGFloat touchLineWidth = 20;
 
 /// Stroke Point
 - (void)strokePointInContext {
-  self.pointsArrays = [self getPointsArrays];
-  [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray* _Nonnull obj,
-                                                  NSUInteger idx,
-                                                  BOOL* _Nonnull stop) {
-    
-    UIColor *color = self.dataItemArray[idx].color;
-
-    [obj enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx,
-                                      BOOL* _Nonnull stop) {
-      NSValue* pointValue = obj;
-      CGPoint point = pointValue.CGPointValue;
-      /// Change To CALayer
-      CAShapeLayer* pointLayer = [CAShapeLayer pointLayerWithDiameter:PointDiameter color:color center:point];
+  
+  if (self.configuration.isShowPoint) {
+    self.pointsArrays = [self getPointsArrays];
+    [self.pointsArrays enumerateObjectsUsingBlock:^(NSMutableArray* _Nonnull obj,
+                                                    NSUInteger idx,
+                                                    BOOL* _Nonnull stop) {
       
-      [self.pointLayerArray addObject:pointLayer];
-      [self.layer addSublayer:pointLayer];
-
+      UIColor *color = self.dataItemArray[idx].color;
+      
+      [obj enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx,
+                                        BOOL* _Nonnull stop) {
+        NSValue* pointValue = obj;
+        CGPoint point = pointValue.CGPointValue;
+        /// Change To CALayer
+        CAShapeLayer* pointLayer = [CAShapeLayer pointLayerWithDiameter:PointDiameter color:color center:point];
+        
+        [self.pointLayerArray addObject:pointLayer];
+        [self.layer addSublayer:pointLayer];
+        
+      }];
     }];
-  }];
+  }
+
 }
 
 /// Stroke Line
@@ -319,6 +323,7 @@ CGFloat touchLineWidth = 20;
   chartLine.opacity = 0.6;
   chartLine.strokeColor = color.CGColor;
   chartLine.fillColor = [UIColor clearColor].CGColor;
+  
   
   if (self.configuration.isShowShadow) {
     // shadow

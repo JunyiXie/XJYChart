@@ -14,6 +14,7 @@
   if (self = [super init]) {
     self.isShowShadow = YES;
     self.isShowCoordinate = NO;
+    self.isShowPoint = YES;
   }
   return self;
 }

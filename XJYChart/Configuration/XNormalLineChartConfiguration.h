@@ -16,4 +16,6 @@
 /// if isShowShadow == YES
 ///  line path animation will Disable
 @property(nonatomic, assign) BOOL isShowShadow;
+
+@property(nonatomic, assign) BOOL isShowPoint;
 @end

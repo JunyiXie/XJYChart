@@ -35,7 +35,7 @@
                                                   color:[UIColor salmonColor]];
     XNormalLineChartConfiguration* configuration =
         [[XNormalLineChartConfiguration alloc] init];
-    
+//    configuration.isShowPoint = NO;
     configuration.isShowShadow = NO;
     XLineChart* lineChart =
         [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200)
