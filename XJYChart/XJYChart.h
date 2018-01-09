@@ -15,7 +15,7 @@
 #import "XPieItem.h"
 #import "XBarItem.h"
 #import "XLineChartItem.h"
-#import "XChartDelegate.h"
+#import "XJYChartDelegate.h"
 #import "XColor.h"
 #import "XRandomNumerHelper.h"
 #import "XEnumHeader.h"

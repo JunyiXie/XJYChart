@@ -25,6 +25,7 @@
 @property(nonatomic, strong) NSMutableArray<UIColor*>* colorArray;
 @property(nonatomic, strong) NSMutableArray<NSString*>* dataDescribeArray;
 @property(nonatomic, strong) NSMutableArray<NSNumber*>* dataNumberArray;
+@property(nonatomic, strong) NSMutableArray<UILabel*>* labelArray;
 @property(nonatomic, strong) NSMutableArray<NSNumber*>* strokeStartArray;
 @property(nonatomic, strong) NSMutableArray<NSNumber*>* strokeEndArray;
 
@@ -52,7 +53,8 @@
     self.dataDescribeArray = [[NSMutableArray alloc] init];
     self.strokeEndArray = [[NSMutableArray alloc] init];
     self.strokeStartArray = [[NSMutableArray alloc] init];
-
+    self.labelArray = [[NSMutableArray alloc] init];
+    
     self.contentView = [[UIView alloc] init];
 
     self.contentView.backgroundColor = [UIColor whiteColor];
@@ -66,6 +68,18 @@
   if (self = [super init]) {
   }
   return self;
+}
+- (void)cleanPreDraw {
+  [self.dataNumberArray removeAllObjects];
+  [self.colorArray removeAllObjects];
+  [self.dataDescribeArray removeAllObjects];
+  [self.pieLayer removeFromSuperlayer];
+  [self.heightLightSector removeFromSuperlayer];
+  [self.labelArray enumerateObjectsUsingBlock:^(UILabel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [obj removeFromSuperview];
+  }];
+  [self.labelArray removeAllObjects];
+  
 }
 
 - (void)strokePie {
@@ -133,7 +147,9 @@
   [self.dataItemArray
       enumerateObjectsUsingBlock:^(XPieItem* _Nonnull obj, NSUInteger idx,
                                    BOOL* _Nonnull stop) {
-        [self.contentView addSubview:[self descriptionLabelForItemAtIndex:idx]];
+        UILabel *label = [self descriptionLabelForItemAtIndex:idx];
+        [self.labelArray addObject:label];
+        [self.contentView addSubview:label];
       }];
 }
 
@@ -170,6 +186,7 @@
 // size and position of any subviews.
 - (void)layoutSubviews {
   [super layoutSubviews];
+  [self cleanPreDraw];
   [self strokePie];
 }
 
@@ -392,5 +409,10 @@
   return descriptionLabel;
 }
 
+#pragma mark Refresh
+- (void)refreshChart {
+  [self cleanPreDraw];
+  [self strokePie];
+}
 
 @end

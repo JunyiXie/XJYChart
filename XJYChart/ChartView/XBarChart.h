@@ -8,17 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "XBarItem.h"
+#import "XJYChartDelegate.h"
 
-@protocol XBarChartDelegate<NSObject>
-/// touch bar idx
-- (void)touchBarAtIdx:(NSUInteger)idx;
-
-@end
 
 @interface XBarChart : UIView
 
 // delegate
-@property(nonatomic, strong) id<XBarChartDelegate> barChartDeleagte;
+@property(nonatomic, strong) id<XJYChartDelegate> barChartDeleagte;
 
 /**
  初始化方法

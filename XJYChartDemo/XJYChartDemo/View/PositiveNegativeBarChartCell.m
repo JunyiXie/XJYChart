@@ -8,7 +8,7 @@
 
 #import "PositiveNegativeBarChartCell.h"
 #import <XJYChart/XJYChart.h>
-@interface PositiveNegativeBarChartCell ()<XPNBarChartDelegate>
+@interface PositiveNegativeBarChartCell ()<XJYChartDelegate>
 
 @end
 @implementation PositiveNegativeBarChartCell
@@ -145,7 +145,7 @@
   return self;
 }
 
-- (void)touchBarAtIdx:(NSUInteger)idx {
+- (void)userClickedOnBarAtIndex:(NSInteger)idx {
   NSLog(@"XBarChartDelegate touch Bat At idx %lu", idx);
 }
 @end

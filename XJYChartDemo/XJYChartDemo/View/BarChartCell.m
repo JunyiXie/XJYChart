@@ -8,7 +8,7 @@
 
 #import "BarChartCell.h"
 #import <XJYChart/XJYChart.h>
-@interface BarChartCell ()<XBarChartDelegate>
+@interface BarChartCell ()<XJYChartDelegate>
 
 @end
 
@@ -151,7 +151,7 @@
 
 #pragma mark XBarChartDelegate
 
-- (void)touchBarAtIdx:(NSUInteger)idx {
+- (void)userClickedOnBarAtIndex:(NSUInteger)idx {
   NSLog(@"XBarChartDelegate touch Bat At idx %lu", idx);
 }
 @end

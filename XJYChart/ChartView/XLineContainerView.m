@@ -399,6 +399,7 @@ CGFloat touchLineWidth = 20;
           inArea:[XPointDetect expandRectArea:points expandLength:20 * i]];
 
       if (isContain == YES) {
+
         NSUInteger shapeLayerIndex = idx;
         // 点击的是高亮的Line
         if (self.coverLayer.selectStatusNumber.boolValue == YES) {

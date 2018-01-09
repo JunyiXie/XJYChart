@@ -81,8 +81,8 @@
   NSDictionary* info = noti.userInfo;
   NSNumber* idxNumber =
       info[[[XNotificationBridge shareXNotificationBridge] PNBarIdxNumberKey]];
-  if ([self.barChartDeleagte respondsToSelector:@selector(touchBarAtIdx:)]) {
-    [self.barChartDeleagte touchBarAtIdx:idxNumber.integerValue];
+  if ([self.barChartDeleagte respondsToSelector:@selector(userClickedOnBarAtIndex:)]) {
+    [self.barChartDeleagte userClickedOnBarAtIndex:idxNumber.integerValue];
   }
 }
 

@@ -95,7 +95,7 @@
 		3FAFF1BB1FCD60FA00CBEA39 /* XNotificationBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1761FCD60FA00CBEA39 /* XNotificationBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FAFF1BC1FCD60FA00CBEA39 /* XNotificationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF1771FCD60FA00CBEA39 /* XNotificationBridge.m */; };
 		3FAFF1BF1FCD610100CBEA39 /* XJYChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1BD1FCD610100CBEA39 /* XJYChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3FAFF1C01FCD610100CBEA39 /* XChartDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1BE1FCD610100CBEA39 /* XChartDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FAFF1C01FCD610100CBEA39 /* XJYChartDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1BE1FCD610100CBEA39 /* XJYChartDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FB507632004901600F5B3AB /* Colours.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FB507612004901600F5B3AB /* Colours.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FB507682004905200F5B3AB /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB507672004905200F5B3AB /* Colours.m */; };
 		9FB507692004906400F5B3AB /* Colours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB5075F2004901600F5B3AB /* Colours.framework */; };
@@ -187,7 +187,7 @@
 		3FAFF1761FCD60FA00CBEA39 /* XNotificationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNotificationBridge.h; sourceTree = "<group>"; };
 		3FAFF1771FCD60FA00CBEA39 /* XNotificationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNotificationBridge.m; sourceTree = "<group>"; };
 		3FAFF1BD1FCD610100CBEA39 /* XJYChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChart.h; sourceTree = "<group>"; };
-		3FAFF1BE1FCD610100CBEA39 /* XChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XChartDelegate.h; sourceTree = "<group>"; };
+		3FAFF1BE1FCD610100CBEA39 /* XJYChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChartDelegate.h; sourceTree = "<group>"; };
 		3FDCF4041FD14D0D00774114 /* XJYChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XJYChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB5075F2004901600F5B3AB /* Colours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Colours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB507612004901600F5B3AB /* Colours.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
@@ -266,7 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				3FAFF1BD1FCD610100CBEA39 /* XJYChart.h */,
-				3FAFF1BE1FCD610100CBEA39 /* XChartDelegate.h */,
+				3FAFF1BE1FCD610100CBEA39 /* XJYChartDelegate.h */,
 				3F1E5F8D1FD3BC7800FC303B /* Configuration */,
 				3F0F84751FD18B3F005914EE /* DataModel */,
 				3FAFF1651FCD60FA00CBEA39 /* AHEasing */,
@@ -423,7 +423,7 @@
 				3FAFF1841FCD60FA00CBEA39 /* XAnimator.h in Headers */,
 				3FAFF1961FCD60FA00CBEA39 /* XCycleView.h in Headers */,
 				3FAFF1BB1FCD60FA00CBEA39 /* XNotificationBridge.h in Headers */,
-				3FAFF1C01FCD610100CBEA39 /* XChartDelegate.h in Headers */,
+				3FAFF1C01FCD610100CBEA39 /* XJYChartDelegate.h in Headers */,
 				3FAFF18C1FCD60FA00CBEA39 /* XAreaLineContainerView.h in Headers */,
 				3FAFF19E1FCD60FA00CBEA39 /* XLineContainerView.h in Headers */,
 				3FAFF1BA1FCD60FA00CBEA39 /* XEnumHeader.h in Headers */,
