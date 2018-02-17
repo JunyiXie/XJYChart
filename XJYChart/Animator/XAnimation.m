@@ -19,32 +19,6 @@
   return ivar;
 }
 
-+ (CASpringAnimation*)getLineChartSpringAnimationWithLayer:(CALayer*)layer {
-  CASpringAnimation* springAnimation =
-      [CASpringAnimation animationWithKeyPath:@"position.y"];
-  springAnimation.damping = 5;
-  springAnimation.stiffness = 100;
-  springAnimation.mass = 1;
-  springAnimation.initialVelocity = 0;
-  springAnimation.fromValue = @(layer.position.y - 5);
-  springAnimation.toValue = @(layer.position.y + 0);
-  springAnimation.duration = springAnimation.settlingDuration;
-  return springAnimation;
-}
-
-+ (CASpringAnimation*)getBarChartSpringAnimationWithLayer:(CALayer*)layer {
-  CASpringAnimation* springAnimation =
-      [CASpringAnimation animationWithKeyPath:@"position.y"];
-  springAnimation.damping = 5;
-  springAnimation.stiffness = 100;
-  springAnimation.mass = 1;
-  springAnimation.initialVelocity = 0;
-  springAnimation.fromValue = @(layer.position.y - 15);
-  springAnimation.toValue = @(layer.position.y + 0);
-  springAnimation.duration = springAnimation.settlingDuration;
-  return springAnimation;
-}
-
 + (CABasicAnimation*)morphAnimationFromPath:(UIBezierPath*)fromPath
                                      toPath:(UIBezierPath*)toPath
                                    duration:(CGFloat)duration {

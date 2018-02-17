@@ -19,7 +19,7 @@
   return helper;
 }
 
-- (int)randomNumberSmallThan:(int)max {
+- (int)randomNumberSmallThan:(NSInteger)max {
   int idx = arc4random() % max;
   return idx;
 }

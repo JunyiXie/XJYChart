@@ -14,7 +14,6 @@
 #import "XBarContainerView.h"
 #import "XPositiveNegativeBarContainerView.h"
 
-#define AbscissaHeight 30
 
 #define PartWidth 50.0
 #define BarBackgroundFillColor \

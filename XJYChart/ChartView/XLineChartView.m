@@ -14,7 +14,6 @@
 #import "UIGestureRecognizer+XGesHelper.h"
 #import "XColor.h"
 #define PartWidth 40
-#define AbscissaHeight 30
 
 NSString* KVOKeyLineGraphMode = @"lineMode";
 
@@ -39,7 +38,7 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
                     graphMode:(XLineGraphMode)graphMode
                 configuration:(XLineChartConfiguration*)configuration {
   if (self = [super initWithFrame:frame]) {
-    self.configuration = configuration;
+    self.configuration = (XNormalLineChartConfiguration *)configuration;
 
     self.top = topNumbser;
     self.bottom = bottomNumber;
@@ -126,7 +125,7 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
         dataItemArray:self.dataItemArray
             topNumber:self.top
          bottomNumber:self.bottom
-        configuration:self.configuration];
+        configuration:(XAreaLineChartConfiguration*)self.configuration];
   }
   return _areaLineContainerView;
 }
@@ -139,7 +138,7 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
         dataItemArray:self.dataItemArray
             topNumber:self.top
          bottomNumber:self.bottom
-        configuration:self.configuration];
+        configuration:(XStackAreaLineChartConfiguration*)self.configuration];
   }
   return _stackAreaLineContainerView;
 }

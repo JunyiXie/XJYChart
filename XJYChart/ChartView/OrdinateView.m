@@ -8,6 +8,7 @@
 
 #import "OrdinateView.h"
 #import "XColor.h"
+#import "XAbscissaView.h"
 
 @interface OrdinateView ()
 
@@ -45,13 +46,16 @@
       enumerateObjectsUsingBlock:^(UILabel* _Nonnull obj, NSUInteger idx,
                                    BOOL* _Nonnull stop) {
         CGFloat width = self.frame.size.width;
-        CGFloat height = self.frame.size.height / (self.labelArray.count * 2);
+        
+        //
+        CGFloat newH = ((self.frame.size.height - AbscissaHeight)/(self.labelArray.count - 1)) * (self.labelArray.count - idx - 1);
+          
+        obj.frame = CGRectMake(0, newH, width, 15);
 
-        obj.frame = CGRectMake(0, idx * height * 2, width, height);
         obj.font = [UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:10];
         obj.textColor = [UIColor black50PercentColor];
         obj.text = [NSString
-            stringWithFormat:@"%.0f", (3 - idx) * (self.top - self.bottom) / 3 +
+            stringWithFormat:@"%.0f", (idx) * (self.top - self.bottom) / 3 +
                                           self.bottom];
         obj.textAlignment = NSTextAlignmentCenter;
         obj.backgroundColor = [UIColor whiteColor];
