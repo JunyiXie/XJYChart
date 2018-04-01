@@ -125,6 +125,7 @@
 
 @property(nonatomic, strong) NSMutableArray<XAnimationLabel*>* labelArray;
 
+
 @property(nonatomic, strong) XAreaAnimationManager* areaAnimationManager;
 
 @property(nonatomic, strong) NSMutableArray<CAShapeLayer*>* pointLayerArray;

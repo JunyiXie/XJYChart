@@ -16,6 +16,8 @@
     self.lineMode = Straight;
     self.isShowAuxiliaryDashLine = YES;
     self.auxiliaryDashLineColor = [UIColor black75PercentColor];
+    self.numberLabelColor = [UIColor black75PercentColor];
+    self.isEnableNumberLabel = NO;
   }
   return self;
 }

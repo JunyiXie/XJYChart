@@ -64,6 +64,7 @@ CGFloat touchLineWidth = 20;
 
 #pragma mark - Draw
 
+// Draw Template
 - (void)drawRect:(CGRect)rect {
   [super drawRect:rect];
   CGContextRef contextRef = UIGraphicsGetCurrentContext();
@@ -71,6 +72,7 @@ CGFloat touchLineWidth = 20;
   [self strokeAuxiliaryLineInContext:contextRef];
   [self strokeLineChart];
   [self strokePointInContext];
+  [self strokeNumberLabels];
 }
 
 /// Stroke Auxiliary
@@ -190,6 +192,34 @@ CGFloat touchLineWidth = 20;
         [self.layer addSublayer:obj];
       }];
 }
+
+
+// 绘制number label
+- (void)strokeNumberLabels {
+  if (!self.configuration.isEnableNumberLabel) {
+    return;
+  }
+  for (int i = 0; i < self.pointsArrays.count; i++) {
+      [self.pointsArrays[i]
+       enumerateObjectsUsingBlock:^(
+                                    NSValue* _Nonnull obj, NSUInteger idx, BOOL* _Nonnull stop) {
+           CGPoint point = obj.CGPointValue;
+           XAnimationLabel* label =
+           [XAnimationLabel topLabelWithPoint:point
+                                         text:@"0"
+                                    textColor:XJYBlack
+                                    fillColor:[UIColor clearColor]];
+           CGFloat textNum = self.dataItemArray[i]
+           .numberArray[idx]
+           .doubleValue;
+           [self.labelArray addObject:label];
+           [self addSubview:label];
+           [label countFromCurrentTo:textNum duration:0.5];
+       }];
+  }
+}
+
+
 
 // compute Points Arrays
 - (NSMutableArray<NSMutableArray<NSValue*>*>*)getPointsArrays {
@@ -370,6 +400,10 @@ CGFloat touchLineWidth = 20;
 #pragma mark - Touch
 
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
+  
+  if (self.configuration.isEnableNumberLabel) {
+    return;
+  }
   //根据 点击的x坐标 只找在x 坐标区域内的 线段进行判断
   //坐标系转换
   CGPoint __block point = [[touches anyObject] locationInView:self];
@@ -420,6 +454,7 @@ CGFloat touchLineWidth = 20;
         }
         // 点击的是非高亮的Line
         else {
+            /// 逻辑存在缺陷，coverlayer 的 label没有干掉
           // remove pre layer and label
           [self.labelArray enumerateObjectsUsingBlock:^(
                                XAnimationLabel* _Nonnull obj, NSUInteger idx,
@@ -471,5 +506,7 @@ CGFloat touchLineWidth = 20;
   }
   return _configuration;
 }
+
+
 
 @end
