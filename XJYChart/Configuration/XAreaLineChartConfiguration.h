@@ -18,5 +18,5 @@
 
 /// defalut is 0.5
 @property(nonatomic, assign) CGFloat areaLineAlpha;
-
+@property(nonatomic, assign) BOOL isEnableNumberLabel;
 @end

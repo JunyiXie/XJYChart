@@ -35,6 +35,7 @@
 @property(nonatomic, assign) CGPoint graphAnimationEndPoint;
 @property(nonatomic, assign) CGPoint graphAnimationCurrentPoint;
 
+
 - (instancetype)initWithAnimationEndPoint:(CGPoint)endPoint;
 - (CGFloat)getAnimationNodeX;
 - (CGFloat)getAnimationNodeEndY;
@@ -184,7 +185,6 @@
 - (void)drawRect:(CGRect)rect {
   [super drawRect:rect];
   CGContextRef context = UIGraphicsGetCurrentContext();
-
   [self strokeAuxiliaryLineInContext:context];
   [self startAnimation];
 }
@@ -222,6 +222,8 @@
   // Add SubLayers
   [self strokeLine];
   [self strokePoint];
+  [self strokeNumberLabel];
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
@@ -272,6 +274,28 @@
           [self.layer addSublayer:pointLayer];
         }];
   }
+}
+
+- (void)strokeNumberLabel {
+  if (!self.configuration.isEnableNumberLabel) {
+    return ;
+  }
+  
+  [self.areaAnimationManager.animationNodes enumerateObjectsUsingBlock:^(XGraphAnimationNode * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+      CGPoint point = obj.graphAnimationCurrentPoint;
+      CGFloat textNum = self.dataItemArray[0]
+      .numberArray[idx]
+      .doubleValue;
+       XAnimationLabel* label =
+       [XAnimationLabel topLabelWithPoint:point
+                                     text:[NSString stringWithFormat:@"%f", textNum]
+                                textColor:XJYBlack
+                                fillColor:[UIColor clearColor]];
+
+       [self.labelArray addObject:label];
+       [self addSubview:label];
+       [label countFromCurrentTo:textNum duration:0];
+  }];
 }
 
 - (void)cleanPreDrawAndDataCache {

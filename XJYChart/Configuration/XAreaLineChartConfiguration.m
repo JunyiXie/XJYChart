@@ -20,6 +20,7 @@
                             (__bridge id)[UIColor whiteColor].CGColor
                             ];
     self.auxiliaryDashLineColor = [UIColor black50PercentColor];
+    self.isEnableNumberLabel = NO;
   }
   return self;
 }
