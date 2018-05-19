@@ -12,5 +12,6 @@
 
 /// defalut is white
 @property(nonatomic, strong) UIColor* chartBackgroundColor;
-
+@property(nonatomic, assign) NSUInteger denominator;
 @end
+

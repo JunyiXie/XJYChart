@@ -125,7 +125,8 @@
     _ordinateView = [[OrdinateView alloc]
         initWithFrame:CGRectMake(0, 0, OrdinateWidth, self.frame.size.height)
             topNumber:self.top
-         bottomNumber:self.bottom];
+         bottomNumber:self.bottom
+                     configuration:self.configuration];
   }
   return _ordinateView;
 }

@@ -30,6 +30,7 @@
         [[XAreaLineChartConfiguration alloc] init];
     configuration.isShowPoint = YES;
     configuration.lineMode = CurveLine;
+    configuration.denominator = 6;
 //    configuration.isEnableNumberLabel = YES;
     XLineChart* lineChart =
         [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200)

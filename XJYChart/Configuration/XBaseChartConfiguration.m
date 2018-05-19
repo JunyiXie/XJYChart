@@ -14,6 +14,7 @@
 - (instancetype)init {
   if (self = [super init]) {
     self.chartBackgroundColor = XJYWhite;
+    self.denominator = 4;
   }
   return self;
 }

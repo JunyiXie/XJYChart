@@ -9,12 +9,13 @@
 #import "OrdinateView.h"
 #import "XColor.h"
 #import "XAbscissaView.h"
-
+#import "XBaseChartConfiguration.h"
 @interface OrdinateView ()
 
 @property(nonatomic, strong) NSMutableArray<UILabel*>* labelArray;
 @property(nonatomic, assign) CGFloat top;
 @property(nonatomic, assign) CGFloat bottom;
+@property(nonatomic, strong) XBaseChartConfiguration *configuration;
 
 @end
 
@@ -23,15 +24,33 @@
 - (instancetype)initWithFrame:(CGRect)frame
                     topNumber:(NSNumber*)topNumber
                  bottomNumber:(NSNumber*)bottomNumber {
-  self = [self initWithFrame:frame];
-  self.top = topNumber.floatValue;
-  self.bottom = bottomNumber.floatValue;
-  self.labelArray = [NSMutableArray new];
-  for (int i = 0; i < 4; i++) {
-    UILabel* label = [[UILabel alloc] init];
-    [self.labelArray addObject:label];
+  if (self = [self initWithFrame:frame]) {
+    self.top = topNumber.floatValue;
+    self.bottom = bottomNumber.floatValue;
+    self.labelArray = [NSMutableArray new];
+    for (int i = 0; i < 4; i++) {
+      UILabel* label = [[UILabel alloc] init];
+      [self.labelArray addObject:label];
+    }
+    [self setupUI];
   }
-  [self setupUI];
+  return self;
+}
+- (instancetype)initWithFrame:(CGRect)frame
+                    topNumber:(NSNumber*)topNumber
+                 bottomNumber:(NSNumber*)bottomNumber
+                configuration:(XBaseChartConfiguration *)configuration {
+  if (self = [self initWithFrame:frame]) {
+    self.top = topNumber.floatValue;
+    self.bottom = bottomNumber.floatValue;
+    self.labelArray = [NSMutableArray new];
+    self.configuration = configuration;
+    for (int i = 0; i < self.configuration.denominator + 1; i++) {
+      UILabel* label = [[UILabel alloc] init];
+      [self.labelArray addObject:label];
+    }
+    [self setupUI];
+  }
   return self;
 }
 
@@ -55,7 +74,7 @@
         obj.font = [UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:10];
         obj.textColor = [UIColor black50PercentColor];
         obj.text = [NSString
-            stringWithFormat:@"%.0f", (idx) * (self.top - self.bottom) / 3 +
+            stringWithFormat:@"%.0f", (idx) * (self.top - self.bottom) / (self.labelArray.count - 1) +
                                           self.bottom];
         obj.textAlignment = NSTextAlignmentCenter;
         obj.backgroundColor = [UIColor whiteColor];
