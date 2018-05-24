@@ -10,7 +10,7 @@
 #import "XBarItem.h"
 #import "XJYChartDelegate.h"
 
-
+@class XBarChartConfiguration;
 @interface XBarChart : UIView
 
 // delegate
@@ -23,12 +23,15 @@
  @param dataItemArray items
  @param topNumbser top
  @param bottomNumber buttom
+ @param configuration configuration , or nil to use default
  @return instancetype
  */
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumbser
-                 bottomNumber:(NSNumber*)bottomNumber;
+                 bottomNumber:(NSNumber*)bottomNumber
+           chartConfiguration:(XBarChartConfiguration*)configuration;
+
 
 /**
  dataItemArray
@@ -50,4 +53,5 @@
  */
 @property(nonatomic, strong) UIColor* chartBackgroundColor;
 
+@property(nonatomic, strong) XBarChartConfiguration *configuration;
 @end

@@ -74,74 +74,33 @@
                                                dataDescribe:@"Win7"];
     [itemArray addObject:item10];
     //
-    XBarItem* item11 = [[XBarItem alloc] initWithDataNumber:@(0.93)
+    XBarItem* item11 = [[XBarItem alloc] initWithDataNumber:@(10.93)
                                                       color:waveColor
                                                dataDescribe:@"MAC Os"];
     [itemArray addObject:item11];
-    XBarItem* item12 = [[XBarItem alloc] initWithDataNumber:@(7.04)
+    XBarItem* item12 = [[XBarItem alloc] initWithDataNumber:@(17.04)
                                                       color:waveColor
                                                dataDescribe:@"Win10"];
     [itemArray addObject:item12];
-    XBarItem* item13 = [[XBarItem alloc] initWithDataNumber:@(4.99)
+    XBarItem* item13 = [[XBarItem alloc] initWithDataNumber:@(14.99)
                                                       color:waveColor
                                                dataDescribe:@"Win8"];
-    [itemArray addObject:item13];
-    XBarItem* item14 = [[XBarItem alloc] initWithDataNumber:@(28.48)
-                                                      color:waveColor
-                                               dataDescribe:@"WinXP"];
-    [itemArray addObject:item14];
-    XBarItem* item15 = [[XBarItem alloc] initWithDataNumber:@(52.91)
-                                                      color:waveColor
-                                               dataDescribe:@"Win7"];
-    [itemArray addObject:item15];
+    [itemArray addObject:item9];
+    [itemArray addObject:item6];
+    [itemArray addObject:item12];
+    [itemArray addObject:item6];
+    [itemArray addObject:item12];
 
-    XBarItem* item16 = [[XBarItem alloc] initWithDataNumber:@(0.93)
-                                                      color:waveColor
-                                               dataDescribe:@"MAC Os"];
-    [itemArray addObject:item16];
-    XBarItem* item17 = [[XBarItem alloc] initWithDataNumber:@(7.04)
-                                                      color:waveColor
-                                               dataDescribe:@"Win10"];
-    [itemArray addObject:item17];
-    XBarItem* item18 = [[XBarItem alloc] initWithDataNumber:@(4.99)
-                                                      color:waveColor
-                                               dataDescribe:@"Win8"];
-    [itemArray addObject:item18];
-    XBarItem* item19 = [[XBarItem alloc] initWithDataNumber:@(28.48)
-                                                      color:waveColor
-                                               dataDescribe:@"WinXP"];
-    [itemArray addObject:item19];
-    XBarItem* item20 = [[XBarItem alloc] initWithDataNumber:@(52.91)
-                                                      color:waveColor
-                                               dataDescribe:@"Win7"];
-    [itemArray addObject:item20];
 
-    XBarItem* item21 = [[XBarItem alloc] initWithDataNumber:@(0.93)
-                                                      color:waveColor
-                                               dataDescribe:@"MAC Os"];
-    [itemArray addObject:item21];
-    XBarItem* item22 = [[XBarItem alloc] initWithDataNumber:@(7.04)
-                                                      color:waveColor
-                                               dataDescribe:@"Win10"];
-    [itemArray addObject:item22];
-    XBarItem* item23 = [[XBarItem alloc] initWithDataNumber:@(4.99)
-                                                      color:waveColor
-                                               dataDescribe:@"Win8"];
-    [itemArray addObject:item23];
-    XBarItem* item24 = [[XBarItem alloc] initWithDataNumber:@(28.48)
-                                                      color:waveColor
-                                               dataDescribe:@"WinXP"];
-    [itemArray addObject:item24];
-    XBarItem* item25 = [[XBarItem alloc] initWithDataNumber:@(52.91)
-                                                      color:waveColor
-                                               dataDescribe:@"Win7"];
-    [itemArray addObject:item25];
 
+    XBarChartConfiguration *configuration = [XBarChartConfiguration new];
+    configuration.isScrollable = NO;
     XBarChart* barChart =
         [[XBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200)
                            dataItemArray:itemArray
                                topNumber:@150
-                            bottomNumber:@(0)];
+                            bottomNumber:@(0)
+                      chartConfiguration:configuration];
     barChart.barChartDeleagte = self;
     [self.contentView addSubview:barChart];
     self.selectionStyle = UITableViewCellSelectionStyleNone;

@@ -501,13 +501,6 @@
   return rightCoordinatePoint;
 }
 
-#pragma mark GET
-- (XAreaLineChartConfiguration*)configuration {
-  if (_configuration == nil) {
-    _configuration = [[XAreaLineChartConfiguration alloc] init];
-  }
-  return _configuration;
-}
 
 
 @end

@@ -96,6 +96,10 @@
 		3FAFF1BC1FCD60FA00CBEA39 /* XNotificationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAFF1771FCD60FA00CBEA39 /* XNotificationBridge.m */; };
 		3FAFF1BF1FCD610100CBEA39 /* XJYChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1BD1FCD610100CBEA39 /* XJYChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FAFF1C01FCD610100CBEA39 /* XJYChartDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFF1BE1FCD610100CBEA39 /* XJYChartDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F682A9B20B6A9F60098ECCA /* XBarChartConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F682A9920B6A9F60098ECCA /* XBarChartConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F682A9C20B6A9F60098ECCA /* XBarChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F682A9A20B6A9F60098ECCA /* XBarChartConfiguration.m */; };
+		9F682AAF20B6CBFE0098ECCA /* XAlignLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F682AAD20B6CBFE0098ECCA /* XAlignLabel.h */; };
+		9F682AB020B6CBFE0098ECCA /* XAlignLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F682AAE20B6CBFE0098ECCA /* XAlignLabel.m */; };
 		9FB507632004901600F5B3AB /* Colours.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FB507612004901600F5B3AB /* Colours.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9FB507682004905200F5B3AB /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB507672004905200F5B3AB /* Colours.m */; };
 		9FB507692004906400F5B3AB /* Colours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB5075F2004901600F5B3AB /* Colours.framework */; };
@@ -189,6 +193,10 @@
 		3FAFF1BD1FCD610100CBEA39 /* XJYChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChart.h; sourceTree = "<group>"; };
 		3FAFF1BE1FCD610100CBEA39 /* XJYChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChartDelegate.h; sourceTree = "<group>"; };
 		3FDCF4041FD14D0D00774114 /* XJYChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XJYChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F682A9920B6A9F60098ECCA /* XBarChartConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBarChartConfiguration.h; sourceTree = "<group>"; };
+		9F682A9A20B6A9F60098ECCA /* XBarChartConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBarChartConfiguration.m; sourceTree = "<group>"; };
+		9F682AAD20B6CBFE0098ECCA /* XAlignLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAlignLabel.h; sourceTree = "<group>"; };
+		9F682AAE20B6CBFE0098ECCA /* XAlignLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAlignLabel.m; sourceTree = "<group>"; };
 		9FB5075F2004901600F5B3AB /* Colours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Colours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB507612004901600F5B3AB /* Colours.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		9FB507622004901600F5B3AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -232,14 +240,8 @@
 			children = (
 				3F1E5F8E1FD3BC9600FC303B /* XBaseChartConfiguration.h */,
 				3F1E5F8F1FD3BC9600FC303B /* XBaseChartConfiguration.m */,
-				3F1E5F921FD3BE7D00FC303B /* XAreaLineChartConfiguration.h */,
-				3F1E5F931FD3BE7D00FC303B /* XAreaLineChartConfiguration.m */,
-				3F1E5F961FD3CD2E00FC303B /* XLineChartConfiguration.h */,
-				3F1E5F971FD3CD2E00FC303B /* XLineChartConfiguration.m */,
-				3F1E5F9A1FD3D78400FC303B /* XNormalLineChartConfiguration.h */,
-				3F1E5F9B1FD3D78400FC303B /* XNormalLineChartConfiguration.m */,
-				3F1E5FA21FD3D9F400FC303B /* XStackAreaLineChartConfiguration.h */,
-				3F1E5FA31FD3D9F400FC303B /* XStackAreaLineChartConfiguration.m */,
+				9F682A9820B6A9630098ECCA /* BarChartConfiguration */,
+				9F682A9720B6A94B0098ECCA /* LineChartConfiguration */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -350,6 +352,8 @@
 				3FAFF1601FCD60FA00CBEA39 /* XPositiveNegativeBarContainerView.m */,
 				3FAFF1631FCD60FA00CBEA39 /* XStackAreaLineContainerView.h */,
 				3FAFF1641FCD60FA00CBEA39 /* XStackAreaLineContainerView.m */,
+				9F682AAD20B6CBFE0098ECCA /* XAlignLabel.h */,
+				9F682AAE20B6CBFE0098ECCA /* XAlignLabel.m */,
 			);
 			path = ChartView;
 			sourceTree = "<group>";
@@ -395,6 +399,30 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		9F682A9720B6A94B0098ECCA /* LineChartConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				3F1E5F921FD3BE7D00FC303B /* XAreaLineChartConfiguration.h */,
+				3F1E5F931FD3BE7D00FC303B /* XAreaLineChartConfiguration.m */,
+				3F1E5F961FD3CD2E00FC303B /* XLineChartConfiguration.h */,
+				3F1E5F971FD3CD2E00FC303B /* XLineChartConfiguration.m */,
+				3F1E5F9A1FD3D78400FC303B /* XNormalLineChartConfiguration.h */,
+				3F1E5F9B1FD3D78400FC303B /* XNormalLineChartConfiguration.m */,
+				3F1E5FA21FD3D9F400FC303B /* XStackAreaLineChartConfiguration.h */,
+				3F1E5FA31FD3D9F400FC303B /* XStackAreaLineChartConfiguration.m */,
+			);
+			path = LineChartConfiguration;
+			sourceTree = "<group>";
+		};
+		9F682A9820B6A9630098ECCA /* BarChartConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				9F682A9920B6A9F60098ECCA /* XBarChartConfiguration.h */,
+				9F682A9A20B6A9F60098ECCA /* XBarChartConfiguration.m */,
+			);
+			path = BarChartConfiguration;
+			sourceTree = "<group>";
+		};
 		9FB507602004901600F5B3AB /* Colours */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +446,7 @@
 				3FAFF1821FCD60FA00CBEA39 /* XAnimationPath.h in Headers */,
 				3FAFF1AC1FCD60FA00CBEA39 /* XStackAreaLineContainerView.h in Headers */,
 				3FAFF1B81FCD60FA00CBEA39 /* UIGestureRecognizer+XGesHelper.h in Headers */,
+				9F682AAF20B6CBFE0098ECCA /* XAlignLabel.h in Headers */,
 				3FAFF1A61FCD60FA00CBEA39 /* XPositiveNegativeBarChartView.h in Headers */,
 				3FAFF1B61FCD60FA00CBEA39 /* CAShapeLayer+XLayerHelper.h in Headers */,
 				3FAFF1841FCD60FA00CBEA39 /* XAnimator.h in Headers */,
@@ -450,6 +479,7 @@
 				3FAFF1981FCD60FA00CBEA39 /* XLineChart.h in Headers */,
 				3FAFF1BF1FCD610100CBEA39 /* XJYChart.h in Headers */,
 				3FAFF1801FCD60FA00CBEA39 /* XAnimation.h in Headers */,
+				9F682A9B20B6A9F60098ECCA /* XBarChartConfiguration.h in Headers */,
 				3FAFF1A01FCD60FA00CBEA39 /* XPieChart.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +612,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F682AB020B6CBFE0098ECCA /* XAlignLabel.m in Sources */,
 				3FAFF18D1FCD60FA00CBEA39 /* XAreaLineContainerView.m in Sources */,
 				3FAFF18B1FCD60FA00CBEA39 /* XAnimationLabel.m in Sources */,
 				3FAFF1A71FCD60FA00CBEA39 /* XPositiveNegativeBarChartView.m in Sources */,
@@ -612,6 +643,7 @@
 				3FAFF18F1FCD60FA00CBEA39 /* XBarChart.m in Sources */,
 				3F1E5FA51FD3D9F400FC303B /* XStackAreaLineChartConfiguration.m in Sources */,
 				3F1E5F991FD3CD2E00FC303B /* XLineChartConfiguration.m in Sources */,
+				9F682A9C20B6A9F60098ECCA /* XBarChartConfiguration.m in Sources */,
 				3FAFF1B91FCD60FA00CBEA39 /* UIGestureRecognizer+XGesHelper.m in Sources */,
 				3FAFF1A11FCD60FA00CBEA39 /* XPieChart.m in Sources */,
 				3FAFF1B11FCD60FA00CBEA39 /* XPointDetect.m in Sources */,

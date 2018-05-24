@@ -15,6 +15,7 @@
   if (self = [super init]) {
     self.isShowPoint = YES;
     self.areaLineAlpha = 0.5;
+    self.lineMode = CurveLine;
     self.gradientColors = @[
                             (__bridge id)[UIColor steelBlueColor].CGColor,
                             (__bridge id)[UIColor whiteColor].CGColor

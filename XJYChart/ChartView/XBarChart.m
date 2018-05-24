@@ -10,7 +10,7 @@
 #import "XBarChartView.h"
 #import "OrdinateView.h"
 #import "XNotificationBridge.h"
-
+#import "XBarChartConfiguration.h"
 #define OrdinateWidth 30
 #define BarChartViewTopInterval 10
 
@@ -22,29 +22,30 @@
 @end
 
 @implementation XBarChart
-
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumbser
-                 bottomNumber:(NSNumber*)bottomNumber {
+                 bottomNumber:(NSNumber*)bottomNumber
+           chartConfiguration:(XBarChartConfiguration*)configuration {
   if (self = [super initWithFrame:frame]) {
     self.dataItemArray = dataItemArray;
     self.top = topNumbser;
     self.bottom = bottomNumber;
-
+    self.configuration = configuration;
     [self addSubview:self.ordinateView];
     [self addSubview:self.barChartView];
-
+    
     // Notification
     [[NSNotificationCenter defaultCenter]
-        addObserver:self
-           selector:@selector(touchNotification:)
-               name:[XNotificationBridge shareXNotificationBridge]
-                        .TouchBarNotification
-             object:nil];
+     addObserver:self
+     selector:@selector(touchNotification:)
+     name:[XNotificationBridge shareXNotificationBridge]
+     .TouchBarNotification
+     object:nil];
   }
   return self;
 }
+
 
 - (instancetype)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
@@ -63,7 +64,9 @@
                           self.frame.size.height - BarChartViewTopInterval)
         dataItemArray:self.dataItemArray
             topNumber:self.top
-         bottomNumber:self.bottom];
+         bottomNumber:self.bottom
+           chartConfiguration:self.configuration
+                     ];
     _barChartView.chartBackgroundColor = _chartBackgroundColor;
   }
   return _barChartView;
@@ -88,6 +91,14 @@
   if ([self.barChartDeleagte respondsToSelector:@selector(userClickedOnBarAtIndex:)]) {
     [self.barChartDeleagte userClickedOnBarAtIndex:idxNumber.integerValue];
   }
+}
+
+#pragma mark Lazy
+- (XBarChartConfiguration *)configuration {
+  if (!_configuration) {
+    _configuration = [XBarChartConfiguration new];
+  }
+  return _configuration;
 }
 
 @end

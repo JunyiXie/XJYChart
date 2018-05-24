@@ -8,6 +8,8 @@
 
 #import "XAnimationLabel.h"
 
+
+
 @interface XAnimationLabel ()
 
 @property(nonatomic, assign) CGFloat animationDuration;
@@ -33,15 +35,7 @@
                             textColor:(UIColor*)textColor
                             fillColor:(UIColor*)fillColor {
   CGRect rect = CGRectMake(point.x - 30, point.y - 35, 60, 35);
-  CGFloat number = text.floatValue;
-  NSString* labelText = [NSString stringWithFormat:@"%.1f", number];
-  XAnimationLabel* topLabel = [[XAnimationLabel alloc] initWithFrame:rect];
-  topLabel.backgroundColor = fillColor;
-  [topLabel setTextAlignment:NSTextAlignmentCenter];
-  topLabel.text = labelText;
-  [topLabel setFont:[UIFont systemFontOfSize:16]];
-  [topLabel setTextColor:textColor];
-  return topLabel;
+  return [self topLabelWithFrame:rect text:text textColor:textColor fillColor:fillColor];
 }
 
 + (XAnimationLabel*)topLabelWithFrame:(CGRect)frame
@@ -54,7 +48,14 @@
   topLabel.backgroundColor = fillColor;
   [topLabel setTextAlignment:NSTextAlignmentCenter];
   topLabel.text = labelText;
-  [topLabel setFont:[UIFont systemFontOfSize:12]];
+  float largestFontSize = 12;
+  while ([topLabel.text sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:largestFontSize]}].width > topLabel.frame.size.width)
+  {
+    largestFontSize--;
+  }
+//  topLabel.verticalAlignment = XVerticalAlignmentBottom;
+  topLabel.font = [UIFont systemFontOfSize:largestFontSize];
+//  topLabel.adjustsFontSizeToFitWidth = YES;
   [topLabel setTextColor:textColor];
   return topLabel;
 }

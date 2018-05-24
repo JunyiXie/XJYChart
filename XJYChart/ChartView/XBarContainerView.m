@@ -14,6 +14,7 @@
 #import "XAnimation.h"
 #import "XNotificationBridge.h"
 #import "CALayer+XLayerSelectHelper.h"
+#import "XBarChartConfiguration.h"
 
 #pragma mark - Macro
 
@@ -320,15 +321,10 @@
 - (XAnimationLabel*)topLabelWithRect:(CGRect)rect
                            fillColor:(UIColor*)color
                                 text:(NSString*)text {
-  CGFloat number = text.floatValue;
-  NSString* labelText = [NSString stringWithFormat:@"%.1f", number];
-  XAnimationLabel* topLabel = [[XAnimationLabel alloc] initWithFrame:rect];
-  topLabel.backgroundColor = color;
-  [topLabel setTextAlignment:NSTextAlignmentCenter];
-  topLabel.text = labelText;
-  [topLabel setFont:[UIFont systemFontOfSize:10]];
-  [topLabel setTextColor:[UIColor black50PercentColor]];
-  return topLabel;
+  XAnimationLabel *label = [XAnimationLabel topLabelWithFrame:rect text:text textColor:[UIColor black50PercentColor] fillColor:color];
+  label.verticalAlignment = XVerticalAlignmentBottom;
+//  label.font = [UIFont systemFontOfSize:8];
+  return label;
 }
 
 - (CAGradientLayer*)rectCoverGradientLayerWithBounds:(CGRect)rect {

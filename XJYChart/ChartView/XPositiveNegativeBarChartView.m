@@ -14,7 +14,7 @@
 #import "XBarContainerView.h"
 #import "XPositiveNegativeBarContainerView.h"
 
-#define PartWidth 50.0
+#define PartWidth 40.0
 #define BarBackgroundFillColor \
   [UIColor colorWithRed:232 / 255.0 green:232 / 255.0 blue:232 / 255.0 alpha:1]
 
@@ -62,7 +62,7 @@
 //计算是否需要滚动
 - (CGSize)computeSrollViewCententSizeFromItemArray:
     (NSMutableArray<XBarItem*>*)itemArray {
-  if (itemArray.count <= 8) {
+  if (itemArray.count <= 10) {
     self.needScroll = NO;
     return CGSizeMake(self.frame.size.width, self.frame.size.height);
   } else {

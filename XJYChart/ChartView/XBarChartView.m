@@ -13,7 +13,7 @@
 #import "XAuxiliaryCalculationHelper.h"
 #import "XBarContainerView.h"
 #import "XPositiveNegativeBarContainerView.h"
-
+#import "XBarChartConfiguration.h"
 
 #define PartWidth 50.0
 #define BarBackgroundFillColor \
@@ -30,11 +30,11 @@
 @end
 
 @implementation XBarChartView
-
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumbser
-                 bottomNumber:(NSNumber*)bottomNumber {
+                 bottomNumber:(NSNumber*)bottomNumber
+           chartConfiguration:(XBarChartConfiguration *)configuration {
   if (self = [self initWithFrame:frame]) {
     self.dataItemArray = [[NSMutableArray alloc] init];
     self.colorArray = [[NSMutableArray alloc] init];
@@ -42,16 +42,17 @@
     self.dataItemArray = dataItemArray;
     self.top = topNumbser;
     self.bottom = bottomNumber;
-
+    self.configuration = configuration;
     self.backgroundColor = [UIColor whiteColor];
     self.contentSize =
-        [self computeSrollViewCententSizeFromItemArray:self.dataItemArray];
+    [self computeSrollViewCententSizeFromItemArray:self.dataItemArray];
     [self addSubview:self.barContainerView];
-
+    
     [self addSubview:self.XAbscissaView];
   }
   return self;
 }
+
 
 - (instancetype)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
@@ -62,7 +63,7 @@
 //计算是否需要滚动
 - (CGSize)computeSrollViewCententSizeFromItemArray:
     (NSMutableArray<XBarItem*>*)itemArray {
-  if (itemArray.count <= 8) {
+  if (itemArray.count <= 8 || !self.configuration.isScrollable) {
     self.needScroll = NO;
     return CGSizeMake(self.frame.size.width, self.frame.size.height);
   } else {

@@ -14,7 +14,8 @@
 - (instancetype)init {
   if (self = [super init]) {
     self.chartBackgroundColor = XJYWhite;
-    self.denominator = 4;
+    self.ordinateDenominator = 4;
+    self.isScrollable = YES;
   }
   return self;
 }

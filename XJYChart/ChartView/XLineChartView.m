@@ -13,6 +13,7 @@
 #import "XStackAreaLineContainerView.h"
 #import "UIGestureRecognizer+XGesHelper.h"
 #import "XColor.h"
+#import "XLineChartConfiguration.h"
 #define PartWidth 40
 
 NSString* KVOKeyLineGraphMode = @"lineMode";
@@ -82,9 +83,10 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
 - (CGSize)computeSrollViewCententSizeFromItemArray:
     (NSMutableArray<XLineChartItem*>*)itemArray {
   XLineChartItem* item = itemArray[0];
-  if (item.numberArray.count <= 8) {
+  if (item.numberArray.count <= 8 || !self.configuration.isScrollable) {
     return CGSizeMake(self.frame.size.width, self.frame.size.height);
   } else {
+
     CGFloat width = PartWidth * item.numberArray.count;
     CGFloat height = self.frame.size.height;
     return CGSizeMake(width, height);

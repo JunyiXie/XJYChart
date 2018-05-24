@@ -30,7 +30,7 @@
         [[XAreaLineChartConfiguration alloc] init];
     configuration.isShowPoint = YES;
     configuration.lineMode = CurveLine;
-    configuration.denominator = 6;
+    configuration.ordinateDenominator = 6;
 //    configuration.isEnableNumberLabel = YES;
     XLineChart* lineChart =
         [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200)
@@ -41,7 +41,7 @@
                                 topNumber:@240
                              bottomNumber:@0
                                 graphMode:AreaLineGraph
-                       chartConfiguration:configuration];
+                       chartConfiguration:nil];
 
     [self.contentView addSubview:lineChart];
     self.selectionStyle = UITableViewCellSelectionStyleNone;

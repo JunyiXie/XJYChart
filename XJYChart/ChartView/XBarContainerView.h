@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XBarItem.h"
-
+@class XBarChartConfiguration;
 @interface XBarContainerView : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame

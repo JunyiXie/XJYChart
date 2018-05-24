@@ -10,6 +10,11 @@
 #import "OrdinateView.h"
 #import "UIGestureRecognizer+XGesHelper.h"
 
+// 这个类最好只关心LineChart这一抽象
+// 这样不好，暴露了细节。
+#import "XAreaLineChartConfiguration.h"
+#import "XStackAreaLineChartConfiguration.h"
+
 #define OrdinateWidth 30
 #define LineChartViewTopInterval 10
 
@@ -150,7 +155,26 @@
   return _lineChartView;
 }
 
-
+- (XLineChartConfiguration *)configuration {
+  if (!_configuration) {
+    
+    switch (self.lineGraphMode) {
+      case MutiLineGraph:
+        _configuration = [XNormalLineChartConfiguration new];
+        break;
+      case AreaLineGraph:
+        _configuration = [XAreaLineChartConfiguration new];
+        break;
+        
+      case StackAreaLineGraph:
+        _configuration = [XStackAreaLineChartConfiguration new];
+        break;
+      default:
+        break;
+    }
+  }
+  return _configuration;
+}
 
 
 

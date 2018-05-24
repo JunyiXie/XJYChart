@@ -45,7 +45,7 @@
     self.bottom = bottomNumber.floatValue;
     self.labelArray = [NSMutableArray new];
     self.configuration = configuration;
-    for (int i = 0; i < self.configuration.denominator + 1; i++) {
+    for (int i = 0; i < self.configuration.ordinateDenominator + 1; i++) {
       UILabel* label = [[UILabel alloc] init];
       [self.labelArray addObject:label];
     }
@@ -71,7 +71,14 @@
           
         obj.frame = CGRectMake(0, newH, width, 15);
 
-        obj.font = [UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:10];
+        float largestFontSize = 12;
+//        while ([obj.text sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:largestFontSize]}].width > obj.frame.size.width)
+//        {
+//          largestFontSize--;
+//        }
+//        largestFontSize--;
+
+        obj.font = [UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:largestFontSize];
         obj.textColor = [UIColor black50PercentColor];
         obj.text = [NSString
             stringWithFormat:@"%.0f", (idx) * (self.top - self.bottom) / (self.labelArray.count - 1) +

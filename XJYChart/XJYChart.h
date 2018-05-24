@@ -23,4 +23,5 @@
 #import "XNormalLineChartConfiguration.h"
 #import "XAreaLineChartConfiguration.h"
 #import "XStackAreaLineChartConfiguration.h"
+#import "XBarChartConfiguration.h"
 #endif /* XJYChart_h */
