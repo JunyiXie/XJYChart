@@ -50,8 +50,11 @@
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumbser
-                 bottomNumber:(NSNumber*)bottomNumber {
+                 bottomNumber:(NSNumber*)bottomNumber
+          chartConfiguration:(XBarChartConfiguration*)configuration
+{
   if (self = [super initWithFrame:frame]) {
+    self.configuration = configuration;
     if (self.chartBackgroundColor == nil) {
       self.chartBackgroundColor = XJYWhite;
     }
@@ -221,6 +224,9 @@
 }
 
 - (CGFloat)getBarWidthWithItemCount:(NSUInteger)count {
+  if (self.configuration.x_width) {
+    return self.configuration.x_width;
+  }
   return (self.bounds.size.width / count) / 3 * 2;
 }
 

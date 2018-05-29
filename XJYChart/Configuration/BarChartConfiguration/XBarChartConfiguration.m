@@ -9,5 +9,10 @@
 #import "XBarChartConfiguration.h"
 
 @implementation XBarChartConfiguration
-
+-(instancetype)init {
+  if (self = [super init]) {
+    self.x_width = 0;
+  }
+  return self;
+}
 @end

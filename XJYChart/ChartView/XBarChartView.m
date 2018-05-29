@@ -15,7 +15,7 @@
 #import "XPositiveNegativeBarContainerView.h"
 #import "XBarChartConfiguration.h"
 
-#define PartWidth 50.0
+#define PartWidth 30.0
 #define BarBackgroundFillColor \
   [UIColor colorWithRed:232 / 255.0 green:232 / 255.0 blue:232 / 255.0 alpha:1]
 @interface XBarChartView ()
@@ -63,7 +63,12 @@
 //计算是否需要滚动
 - (CGSize)computeSrollViewCententSizeFromItemArray:
     (NSMutableArray<XBarItem*>*)itemArray {
-  if (itemArray.count <= 8 || !self.configuration.isScrollable) {
+  if (self.configuration.x_width) {
+    CGFloat calWidth = self.configuration.x_width*itemArray.count * 1.35;
+    CGFloat width = calWidth >  self.frame.size.width ? calWidth : self.frame.size.width;
+    return CGSizeMake(width, self.frame.size.height);
+  }
+  if (itemArray.count <= 10 || !self.configuration.isScrollable) {
     self.needScroll = NO;
     return CGSizeMake(self.frame.size.width, self.frame.size.height);
   } else {
@@ -97,7 +102,9 @@
                                  self.contentSize.height - AbscissaHeight)
         dataItemArray:self.dataItemArray
             topNumber:self.top
-         bottomNumber:self.bottom];
+         bottomNumber:self.bottom
+      chartConfiguration:self.configuration
+                         ];
     _barContainerView.chartBackgroundColor = _chartBackgroundColor;
   }
   return _barContainerView;

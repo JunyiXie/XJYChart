@@ -14,7 +14,7 @@
 #import "XBarContainerView.h"
 #import "XPositiveNegativeBarContainerView.h"
 
-#define PartWidth 40.0
+#define PartWidth 30.0
 #define BarBackgroundFillColor \
   [UIColor colorWithRed:232 / 255.0 green:232 / 255.0 blue:232 / 255.0 alpha:1]
 

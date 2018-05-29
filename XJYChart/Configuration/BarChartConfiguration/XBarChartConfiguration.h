@@ -10,4 +10,7 @@
 
 @interface XBarChartConfiguration : XBaseChartConfiguration
 
+/// defalut is auto calculate x width
+@property(nonatomic, assign) CGFloat x_width;
+
 @end

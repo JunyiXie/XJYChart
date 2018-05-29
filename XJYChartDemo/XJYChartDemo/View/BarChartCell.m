@@ -95,6 +95,7 @@
 
     XBarChartConfiguration *configuration = [XBarChartConfiguration new];
     configuration.isScrollable = NO;
+    configuration.x_width = 20;
     XBarChart* barChart =
         [[XBarChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200)
                            dataItemArray:itemArray
