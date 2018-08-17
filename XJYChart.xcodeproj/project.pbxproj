@@ -116,6 +116,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34354A785ACA03CAF49C711C /* Pods_XJYChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJYChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F1E5F741FD2A0F700FC303B /* XLineChartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChartItem.h; sourceTree = "<group>"; };
 		3F1E5F751FD2A0F700FC303B /* XLineChartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineChartItem.m; sourceTree = "<group>"; };
 		3F1E5F781FD2A12800FC303B /* XBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarItem.m; sourceTree = "<group>"; };
@@ -193,6 +194,8 @@
 		3FAFF1BD1FCD610100CBEA39 /* XJYChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChart.h; sourceTree = "<group>"; };
 		3FAFF1BE1FCD610100CBEA39 /* XJYChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChartDelegate.h; sourceTree = "<group>"; };
 		3FDCF4041FD14D0D00774114 /* XJYChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XJYChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		447539B2254E3E5CE876EC8E /* Pods-XJYChart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChart/Pods-XJYChart.debug.xcconfig"; sourceTree = "<group>"; };
+		9C08BEDBA776B0B08E257441 /* Pods-XJYChart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChart.release.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChart/Pods-XJYChart.release.xcconfig"; sourceTree = "<group>"; };
 		9F682A9920B6A9F60098ECCA /* XBarChartConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBarChartConfiguration.h; sourceTree = "<group>"; };
 		9F682A9A20B6A9F60098ECCA /* XBarChartConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBarChartConfiguration.m; sourceTree = "<group>"; };
 		9F682AAD20B6CBFE0098ECCA /* XAlignLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAlignLabel.h; sourceTree = "<group>"; };
@@ -249,6 +252,7 @@
 		3F3B3EAB1FEE46EC00DD6DB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34354A785ACA03CAF49C711C /* Pods_XJYChart.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -261,6 +265,7 @@
 				9FB507602004901600F5B3AB /* Colours */,
 				3F3B3EAB1FEE46EC00DD6DB4 /* Frameworks */,
 				9FB5075F2004901600F5B3AB /* Colours.framework */,
+				9ADC9430E7EB6848F21C73D6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -397,6 +402,15 @@
 				3FAFF1771FCD60FA00CBEA39 /* XNotificationBridge.m */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		9ADC9430E7EB6848F21C73D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				447539B2254E3E5CE876EC8E /* Pods-XJYChart.debug.xcconfig */,
+				9C08BEDBA776B0B08E257441 /* Pods-XJYChart.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		9F682A9720B6A94B0098ECCA /* LineChartConfiguration */ = {

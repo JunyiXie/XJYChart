@@ -63,7 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3225CB1976A95A9AC77F3AAB /* Pods-XJYChartDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo.release.xcconfig"; sourceTree = "<group>"; };
+		3225CB1976A95A9AC77F3AAB /* Pods-XJYChartDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo.release.xcconfig"; sourceTree = "<group>"; };
 		3F686B311FCAA3CA00FF9B14 /* XJYChartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XJYChartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F686B341FCAA3CA00FF9B14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F686B351FCAA3CA00FF9B14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -104,11 +104,11 @@
 		3F686B911FCAA47900FF9B14 /* XJYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYViewController.m; sourceTree = "<group>"; };
 		6599B632011C55F9ADD36253 /* Pods_XJYChartDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJYChartDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAE09ADE582BE0972E635F3 /* Pods_XJYChartDemo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJYChartDemo_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BC6A774479A329B1152375B /* Pods-XJYChartDemo-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		8BC6A774479A329B1152375B /* Pods-XJYChartDemo-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.release.xcconfig"; path = "../Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		9FB5076C200490FE00F5B3AB /* XJYChart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XJYChart.framework; path = ../Products/XJYChart.framework; sourceTree = "<group>"; };
 		9FB507702004912300F5B3AB /* Colours.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Colours.framework; path = ../Products/Colours.framework; sourceTree = "<group>"; };
-		C3182931858B8E2B544A34A7 /* Pods-XJYChartDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		DB3DCD0662C701896C552FBB /* Pods-XJYChartDemo-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		C3182931858B8E2B544A34A7 /* Pods-XJYChartDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DB3DCD0662C701896C552FBB /* Pods-XJYChartDemo-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,7 +363,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-frameworks.sh",
+				"${SRCROOT}/../Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -372,7 +372,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7C5533EE0025FFE77FACF10F /* [CP] Check Pods Manifest.lock */ = {

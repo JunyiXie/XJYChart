@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../XJYChart.xcodeproj">
+      location = "group:XJYChart.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:XJYChartDemo.xcodeproj">
+      location = "group:XJYChartDemo/XJYChartDemo.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
