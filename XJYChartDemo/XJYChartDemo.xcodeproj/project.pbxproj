@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		03FEB0055E5BBAFBEACB6F6A /* Pods_XJYChartDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6599B632011C55F9ADD36253 /* Pods_XJYChartDemo.framework */; };
-		3F1E5F691FD28D4700FC303B /* XJYChartDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F681FD28D4700FC303B /* XJYChartDemoTests.m */; };
 		3F686B361FCAA3CA00FF9B14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B351FCAA3CA00FF9B14 /* AppDelegate.m */; };
 		3F686B3C1FCAA3CA00FF9B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B3A1FCAA3CA00FF9B14 /* Main.storyboard */; };
 		3F686B3E1FCAA3CA00FF9B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B3D1FCAA3CA00FF9B14 /* Assets.xcassets */; };
@@ -38,16 +37,6 @@
 		9FB507722004912300F5B3AB /* Colours.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB507702004912300F5B3AB /* Colours.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		3F1E5F6B1FD28D4700FC303B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3F686B291FCAA3CA00FF9B14 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3F686B301FCAA3CA00FF9B14;
-			remoteInfo = XJYChartDemo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		3F99EB111FCBE12E00369050 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -75,9 +64,6 @@
 
 /* Begin PBXFileReference section */
 		3225CB1976A95A9AC77F3AAB /* Pods-XJYChartDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo.release.xcconfig"; sourceTree = "<group>"; };
-		3F1E5F661FD28D4700FC303B /* XJYChartDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XJYChartDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F1E5F681FD28D4700FC303B /* XJYChartDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XJYChartDemoTests.m; sourceTree = "<group>"; };
-		3F1E5F6A1FD28D4700FC303B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F686B311FCAA3CA00FF9B14 /* XJYChartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XJYChartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F686B341FCAA3CA00FF9B14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F686B351FCAA3CA00FF9B14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -126,13 +112,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3F1E5F631FD28D4700FC303B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3F686B2E1FCAA3CA00FF9B14 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -154,15 +133,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F1E5F671FD28D4700FC303B /* XJYChartDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				3F1E5F681FD28D4700FC303B /* XJYChartDemoTests.m */,
-				3F1E5F6A1FD28D4700FC303B /* Info.plist */,
-			);
-			path = XJYChartDemoTests;
-			sourceTree = "<group>";
-		};
 		3F686B281FCAA3CA00FF9B14 = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +140,6 @@
 				9FB5076C200490FE00F5B3AB /* XJYChart.framework */,
 				3F686B331FCAA3CA00FF9B14 /* XJYChartDemo */,
 				3F686B651FCAA3FF00FF9B14 /* XJYChartDemo-Swift */,
-				3F1E5F671FD28D4700FC303B /* XJYChartDemoTests */,
 				3F686B321FCAA3CA00FF9B14 /* Products */,
 				5C711644C246B20C47D0BF8E /* Pods */,
 				CDFB04428541721A6CAB1972 /* Frameworks */,
@@ -182,7 +151,6 @@
 			children = (
 				3F686B311FCAA3CA00FF9B14 /* XJYChartDemo.app */,
 				3F686B641FCAA3FF00FF9B14 /* XJYChartDemo-Swift.app */,
-				3F1E5F661FD28D4700FC303B /* XJYChartDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,24 +236,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F1E5F651FD28D4700FC303B /* XJYChartDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3F1E5F6F1FD28D4700FC303B /* Build configuration list for PBXNativeTarget "XJYChartDemoTests" */;
-			buildPhases = (
-				3F1E5F621FD28D4700FC303B /* Sources */,
-				3F1E5F631FD28D4700FC303B /* Frameworks */,
-				3F1E5F641FD28D4700FC303B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3F1E5F6C1FD28D4700FC303B /* PBXTargetDependency */,
-			);
-			name = XJYChartDemoTests;
-			productName = XJYChartDemoTests;
-			productReference = 3F1E5F661FD28D4700FC303B /* XJYChartDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		3F686B301FCAA3CA00FF9B14 /* XJYChartDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F686B471FCAA3CA00FF9B14 /* Build configuration list for PBXNativeTarget "XJYChartDemo" */;
@@ -335,11 +285,6 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = JunyiXie;
 				TargetAttributes = {
-					3F1E5F651FD28D4700FC303B = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 3F686B301FCAA3CA00FF9B14;
-					};
 					3F686B301FCAA3CA00FF9B14 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -365,19 +310,11 @@
 			targets = (
 				3F686B301FCAA3CA00FF9B14 /* XJYChartDemo */,
 				3F686B631FCAA3FF00FF9B14 /* XJYChartDemo-Swift */,
-				3F1E5F651FD28D4700FC303B /* XJYChartDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3F1E5F641FD28D4700FC303B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3F686B2F1FCAA3CA00FF9B14 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -459,14 +396,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3F1E5F621FD28D4700FC303B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3F1E5F691FD28D4700FC303B /* XJYChartDemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3F686B2D1FCAA3CA00FF9B14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -497,14 +426,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3F1E5F6C1FD28D4700FC303B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3F686B301FCAA3CA00FF9B14 /* XJYChartDemo */;
-			targetProxy = 3F1E5F6B1FD28D4700FC303B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3F686B3A1FCAA3CA00FF9B14 /* Main.storyboard */ = {
@@ -542,38 +463,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3F1E5F6D1FD28D4700FC303B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = XJYChartDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.junyixie.XJYChartDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XJYChartDemo.app/XJYChartDemo";
-			};
-			name = Debug;
-		};
-		3F1E5F6E1FD28D4700FC303B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = XJYChartDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.junyixie.XJYChartDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XJYChartDemo.app/XJYChartDemo";
-			};
-			name = Release;
-		};
 		3F686B451FCAA3CA00FF9B14 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -799,15 +688,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F1E5F6F1FD28D4700FC303B /* Build configuration list for PBXNativeTarget "XJYChartDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3F1E5F6D1FD28D4700FC303B /* Debug */,
-				3F1E5F6E1FD28D4700FC303B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		3F686B2C1FCAA3CA00FF9B14 /* Build configuration list for PBXProject "XJYChartDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
