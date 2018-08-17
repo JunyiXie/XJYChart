@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XPieItem.h"
-#import "XChartDelegate.h"
+#import "XJYChartDelegate.h"
 
 //颜色
 
@@ -19,8 +19,10 @@
                   alpha:1.0]
 @interface XPieChart : UIView
 
+- (void)refreshChart;
+
 @property(nonatomic, strong) NSMutableArray<XPieItem*>* dataItemArray;
-@property(nonatomic, weak) id<XChartDelegate> delegate;
+@property(nonatomic, weak) id<XJYChartDelegate> delegate;
 
 /**
  enableAnimation

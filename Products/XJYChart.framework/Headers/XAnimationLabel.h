@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface XAnimationLabel : UILabel
+#import "XAlignLabel.h"
+@interface XAnimationLabel : XAlignLabel
 
 /**
  Start number animation

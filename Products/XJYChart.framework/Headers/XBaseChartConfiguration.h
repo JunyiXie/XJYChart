@@ -10,6 +10,9 @@
 
 @interface XBaseChartConfiguration : NSObject
 
+/// defalut is white
 @property(nonatomic, strong) UIColor* chartBackgroundColor;
-
+@property(nonatomic, assign) NSUInteger ordinateDenominator;
+@property(nonatomic, assign) BOOL isScrollable;
 @end
+

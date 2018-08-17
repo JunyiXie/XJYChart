@@ -21,4 +21,16 @@
  */
 @property(nonatomic, assign) XLineMode lineMode;
 
+/// defalut is [UIColor black75PercentColor]
+@property(nonatomic, strong) UIColor* auxiliaryDashLineColor;
+
+/// defalut is YES
+@property(nonatomic, assign) BOOL isShowAuxiliaryDashLine;
+
+/// if enable number
+/// ,touch height failure
+@property(nonatomic, assign) BOOL isEnableNumberLabel;
+
+@property(nonatomic, strong) UIColor *numberLabelColor;
+
 @end

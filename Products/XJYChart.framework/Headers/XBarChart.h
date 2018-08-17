@@ -8,17 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "XBarItem.h"
+#import "XJYChartDelegate.h"
 
-@protocol XBarChartDelegate<NSObject>
-/// touch bar idx
-- (void)touchBarAtIdx:(NSUInteger)idx;
-
-@end
-
+@class XBarChartConfiguration;
 @interface XBarChart : UIView
 
 // delegate
-@property(nonatomic, strong) id<XBarChartDelegate> barChartDeleagte;
+@property(nonatomic, strong) id<XJYChartDelegate> barChartDeleagte;
 
 /**
  初始化方法
@@ -27,12 +23,15 @@
  @param dataItemArray items
  @param topNumbser top
  @param bottomNumber buttom
+ @param configuration configuration , or nil to use default
  @return instancetype
  */
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumbser
-                 bottomNumber:(NSNumber*)bottomNumber;
+                 bottomNumber:(NSNumber*)bottomNumber
+           chartConfiguration:(XBarChartConfiguration*)configuration;
+
 
 /**
  dataItemArray
@@ -54,4 +53,5 @@
  */
 @property(nonatomic, strong) UIColor* chartBackgroundColor;
 
+@property(nonatomic, strong) XBarChartConfiguration *configuration;
 @end

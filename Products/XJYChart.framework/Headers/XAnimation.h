@@ -13,8 +13,6 @@
 + (instancetype)shareInstance;
 - (void)addLSSpringFrameAnimation:(CALayer*)layer;
 - (void)addLSSpringScaleAnimation:(UIView*)view;
-+ (CASpringAnimation*)getLineChartSpringAnimationWithLayer:(CALayer*)layer;
-+ (CASpringAnimation*)getBarChartSpringAnimationWithLayer:(CALayer*)layer;
 + (CABasicAnimation*)morphAnimationFromPath:(UIBezierPath*)fromPath
                                      toPath:(UIBezierPath*)toPath
                                    duration:(CGFloat)duration;

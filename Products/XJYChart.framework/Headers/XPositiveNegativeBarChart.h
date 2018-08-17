@@ -8,12 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "XBarItem.h"
+#import "XJYChartDelegate.h"
 
-@protocol XPNBarChartDelegate<NSObject>
-/// touch bar idx
-- (void)touchBarAtIdx:(NSUInteger)idx;
-
-@end
 
 @interface XPositiveNegativeBarChart : UIView
 /**
@@ -29,7 +25,7 @@
                 dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumbser
                  bottomNumber:(NSNumber*)bottomNumber;
-@property(nonatomic, strong) id<XPNBarChartDelegate> barChartDeleagte;
+@property(nonatomic, strong) id<XJYChartDelegate> barChartDeleagte;
 
 /**
  dataItemArray
