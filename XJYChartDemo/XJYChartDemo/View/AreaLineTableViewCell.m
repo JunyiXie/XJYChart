@@ -16,9 +16,7 @@
   if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
     NSMutableArray* itemArray = [[NSMutableArray alloc] init];
 
-    NSMutableArray* numberArray = [NSMutableArray new];
-
-    numberArray =
+    NSMutableArray* numberArray =
         [NSMutableArray arrayWithArray:@[ @75, @63, @183, @109, @88 ]];
 
     XLineChartItem* item =

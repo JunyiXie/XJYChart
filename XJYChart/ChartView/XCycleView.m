@@ -171,7 +171,6 @@
                                   endAngle:(CGFloat)endAngle {
   CAShapeLayer* cycleLayer = [CAShapeLayer layer];
   // draw cycle
-  cycleLayer = [CAShapeLayer layer];
   cycleLayer.frame = self.bounds;
   cycleLayer.fillColor = [[UIColor clearColor] CGColor];
   // The color used to stroke the shape’s path. Animatable.

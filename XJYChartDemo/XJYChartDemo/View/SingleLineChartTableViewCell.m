@@ -29,7 +29,7 @@
     // So @[oneitem] draw one line
 
     
-    NSMutableArray* numberArray = @[@120,@80,@160,@120,@150];
+    NSMutableArray* numberArray = [@[@120,@80,@160,@120,@150] mutableCopy];
     XLineChartItem* item =
         [[XLineChartItem alloc] initWithDataNumberArray:numberArray
                                                   color:[UIColor salmonColor]];

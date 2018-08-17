@@ -85,13 +85,7 @@
     XBarItem* item13 = [[XBarItem alloc] initWithDataNumber:@(14.99)
                                                       color:waveColor
                                                dataDescribe:@"Win8"];
-    [itemArray addObject:item9];
-    [itemArray addObject:item6];
-    [itemArray addObject:item12];
-    [itemArray addObject:item6];
-    [itemArray addObject:item12];
-
-
+    [itemArray addObject:item13];
 
     XBarChartConfiguration *configuration = [XBarChartConfiguration new];
     configuration.isScrollable = NO;
@@ -111,7 +105,7 @@
 
 #pragma mark XBarChartDelegate
 
-- (void)userClickedOnBarAtIndex:(NSUInteger)idx {
+- (void)userClickedOnBarAtIndex:(NSInteger)idx {
   NSLog(@"XBarChartDelegate touch Bat At idx %lu", idx);
 }
 @end

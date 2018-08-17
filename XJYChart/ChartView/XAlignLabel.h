@@ -15,9 +15,6 @@ typedef enum {
   
 } XVerticalAlignment;
 
-@interface XAlignLabel : UILabel {
-@private
-  XVerticalAlignment _verticalAlignment;
-}
+@interface XAlignLabel : UILabel
 @property (nonatomic) XVerticalAlignment verticalAlignment;
 @end
