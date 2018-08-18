@@ -34,7 +34,7 @@
 
     XBarItem* item1 = [[XBarItem alloc] initWithDataNumber:@(50.93)
                                                      color:waveColor
-                                              dataDescribe:@"MAC Os"];
+                                              dataDescribe:@"macOS"];
     [itemArray addObject:item1];
     XBarItem* item2 = [[XBarItem alloc] initWithDataNumber:@(90.04)
                                                      color:waveColor
@@ -55,7 +55,7 @@
 
     XBarItem* item6 = [[XBarItem alloc] initWithDataNumber:@(74.93)
                                                      color:waveColor
-                                              dataDescribe:@"MAC Os"];
+                                              dataDescribe:@"macOS"];
     [itemArray addObject:item6];
     XBarItem* item7 = [[XBarItem alloc] initWithDataNumber:@(50.04)
                                                      color:waveColor
@@ -76,7 +76,7 @@
     //
     XBarItem* item11 = [[XBarItem alloc] initWithDataNumber:@(10.93)
                                                       color:waveColor
-                                               dataDescribe:@"MAC Os"];
+                                               dataDescribe:@"macOS"];
     [itemArray addObject:item11];
     XBarItem* item12 = [[XBarItem alloc] initWithDataNumber:@(17.04)
                                                       color:waveColor

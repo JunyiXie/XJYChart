@@ -25,7 +25,7 @@ class BarChartCell: UITableViewCell, XJYChartDelegate {
 
         var itemArray: [AnyHashable] = []
         let waveColor = UIColor.wave()
-        let item1 = XBarItem(dataNumber: 50.93, color: waveColor, dataDescribe: "MAC Os")
+        let item1 = XBarItem(dataNumber: 50.93, color: waveColor, dataDescribe: "macOS")
         itemArray.append(item1!)
         let item2 = XBarItem(dataNumber: 90.04, color: waveColor, dataDescribe: "Win10")
         itemArray.append(item2!)
@@ -35,7 +35,7 @@ class BarChartCell: UITableViewCell, XJYChartDelegate {
         itemArray.append(item4!)
         let item5 = XBarItem(dataNumber: 92.91, color: waveColor, dataDescribe: "Win7")
         itemArray.append(item5!)
-        let item6 = XBarItem(dataNumber: 74.93, color: waveColor, dataDescribe: "MAC Os")
+        let item6 = XBarItem(dataNumber: 74.93, color: waveColor, dataDescribe: "macOS")
         itemArray.append(item6!)
         let item7 = XBarItem(dataNumber: 50.04, color: waveColor, dataDescribe: "Win10")
         itemArray.append(item7!)
@@ -46,7 +46,7 @@ class BarChartCell: UITableViewCell, XJYChartDelegate {
         let item10 = XBarItem(dataNumber: 52.91, color: waveColor, dataDescribe: "Win7")
         itemArray.append(item10!)
         //
-        let item11 = XBarItem(dataNumber: 10.93, color: waveColor, dataDescribe: "MAC Os")
+        let item11 = XBarItem(dataNumber: 10.93, color: waveColor, dataDescribe: "macOS")
         itemArray.append(item11!)
         let item12 = XBarItem(dataNumber: 17.04, color: waveColor, dataDescribe: "Win10")
         itemArray.append(item12!)
