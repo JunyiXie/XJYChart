@@ -15,7 +15,6 @@
 		11FC01FD489120C46343BCA1B0CBD1D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2C02191C153C1554B35DEE8B2D09D4 /* UIKit.framework */; };
 		2854C9B1086758BD2B6681206B6759B4 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C6D5C71A7A4B3156186EC98A377E8543 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A39FDF91892C6ED8F1029412D824E10 /* Pods-XJYChartDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 550DB7087977C1D20DBB40B83CF77522 /* Pods-XJYChartDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3E43BDECFB78021532B6273DC167C4AD /* Pods-XJYChartDemo-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56033E2A5FAE89F2D26F3763662DF34C /* Pods-XJYChartDemo-Swift-dummy.m */; };
 		457ACF9150DCF9AF445B129CC9678FB6 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB8A9BDAB144F118F7F74E1F2B74097 /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C5B367942708E41EF8AF8B49ADCC665 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
 		4D4F2050654580FE1F1D5F4F82CEDDB8 /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 77F2CF8861113B6F7AAE7EA65C6A7C1B /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,8 +28,6 @@
 		88DE7BAB1F4999A5F4B617F44E5FD1D3 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = A02D339E60E114FCC992372E93245BA1 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A6EEF68E7625AB66A3A8DED1594F88F /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3980E01C213ECEDEABAC38C1CFD3946D /* ViewController+MASAdditions.m */; };
 		8CD45B754192DE834B642975E85257AB /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 79BEFB59B86F59C579FF7594DCF78FEB /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9776B8F321FC9E2A64458CDC9C915B9C /* Pods-XJYChartDemo-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EFD38CEA5C0F88A1C5B67E13A7D59D8 /* Pods-XJYChartDemo-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9AE31869F269474397C402F1C0B294EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
 		9BA1B1B29012B21692A5BE0D4C09A3DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
 		A08A8AB356264E248D01F1BC0EF08166 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 818E990F262EC48F8DAAFD014D7E9234 /* Masonry-dummy.m */; };
 		A7370CE9231F9A4927142D79021879EC /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 0925CC604B01F156279E8952DDE3EDDB /* MASViewAttribute.m */; };
@@ -38,13 +35,23 @@
 		C0A16E00B4BC2D88A7833D5DAED62942 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A649F9297535214EF97548C9EA9FA33 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C8DF22EAFFC2F81B0426E2165AC93E44 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = ECBBB506D4D551AB1A637EE3145A459E /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CC8F9B4A1AC4E276EA8AA4C6F2BF3CD4 /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 303B58A2959C8EEE96799AD558DDA1D3 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7C47E870582547C9E3C7EC148B50DEC /* Pods-XJYChartDemo-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EFD38CEA5C0F88A1C5B67E13A7D59D8 /* Pods-XJYChartDemo-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8B1525CB3DFCBD8E5032680530413D9 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F8187F5CAD09C6C6B2B54C65B4A807C9 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E72EDE323AC9F92EC8A00A93AC186093 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C550CDA10D592ABB6A0383A3509F05 /* NSArray+MASAdditions.m */; };
+		EA60CAF0E8D47E1681E6F57454BA8D20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908E902E026C5C22904CF9014A5604AD /* Foundation.framework */; };
 		F4B3E44D5D2F6508BC1BB35A9FBDEC70 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC0A25DD6F58D072A4ACFC92D9237BF /* View+MASAdditions.m */; };
+		FD1F8929FE8BBC9224FB6913C4A58C56 /* Pods-XJYChartDemo-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56033E2A5FAE89F2D26F3763662DF34C /* Pods-XJYChartDemo-Swift-dummy.m */; };
 		FEB5E80FE081A100B16176440C2AFECE /* Pods-XJYChartDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4227C41445484D6CCEF9D14150CCD191 /* Pods-XJYChartDemo-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A435F1C331FA7BDDC6032561A5CCF16C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D52144DE9D7255DE912490FF5A806573;
+			remoteInfo = Masonry;
+		};
 		BB1C7CE8AA94B6BFC3E2D2AF1DEE3FF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
@@ -115,19 +122,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		11B47CDB0D3C6D19DBF6B564E9FFC01C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA60CAF0E8D47E1681E6F57454BA8D20 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		58DFBD690AF44D9F3E7276E12382679A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9BA1B1B29012B21692A5BE0D4C09A3DD /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EDB3680200B4F01F8B351C4FEF306D39 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9AE31869F269474397C402F1C0B294EE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,11 +292,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6B13581BA89D92E4EE6DF6E4EFF51F01 /* Headers */ = {
+		D3445B99132249714C842CCD91BC454B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9776B8F321FC9E2A64458CDC9C915B9C /* Pods-XJYChartDemo-Swift-umbrella.h in Headers */,
+				D7C47E870582547C9E3C7EC148B50DEC /* Pods-XJYChartDemo-Swift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +334,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1A01C2A389C2266A825689FD8622A4FE /* Pods-XJYChartDemo-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 389397D4A6F5907C8445DEAAF8F32D4D /* Build configuration list for PBXNativeTarget "Pods-XJYChartDemo-Swift" */;
+			buildPhases = (
+				72816D7B7B080A9F25B5FB3501EE9CF9 /* Sources */,
+				11B47CDB0D3C6D19DBF6B564E9FFC01C /* Frameworks */,
+				D3445B99132249714C842CCD91BC454B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62A7D677147C061202225EE371748E69 /* PBXTargetDependency */,
+			);
+			name = "Pods-XJYChartDemo-Swift";
+			productName = "Pods-XJYChartDemo-Swift";
+			productReference = 43643387BEE961AB10025A5CB70DB391 /* Pods_XJYChartDemo_Swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		5564C81E85440596BEB45D9BDB7F139C /* Pods-XJYChartDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0512A46D9FD3FDF48C031EED2ACBAE6 /* Build configuration list for PBXNativeTarget "Pods-XJYChartDemo" */;
@@ -343,23 +368,6 @@
 			name = "Pods-XJYChartDemo";
 			productName = "Pods-XJYChartDemo";
 			productReference = ECE8D334712FF4FFE386E19B74E03B56 /* Pods_XJYChartDemo.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		C78DCC6FCF72601C2165248DB40F4924 /* Pods-XJYChartDemo-Swift */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7117894F0357A36AEE65C19CCDE290F8 /* Build configuration list for PBXNativeTarget "Pods-XJYChartDemo-Swift" */;
-			buildPhases = (
-				608D3C2A09A7874917D27848970E6504 /* Sources */,
-				EDB3680200B4F01F8B351C4FEF306D39 /* Frameworks */,
-				6B13581BA89D92E4EE6DF6E4EFF51F01 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-XJYChartDemo-Swift";
-			productName = "Pods-XJYChartDemo-Swift";
-			productReference = 43643387BEE961AB10025A5CB70DB391 /* Pods_XJYChartDemo_Swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D52144DE9D7255DE912490FF5A806573 /* Masonry */ = {
@@ -402,7 +410,7 @@
 			targets = (
 				D52144DE9D7255DE912490FF5A806573 /* Masonry */,
 				5564C81E85440596BEB45D9BDB7F139C /* Pods-XJYChartDemo */,
-				C78DCC6FCF72601C2165248DB40F4924 /* Pods-XJYChartDemo-Swift */,
+				1A01C2A389C2266A825689FD8622A4FE /* Pods-XJYChartDemo-Swift */,
 			);
 		};
 /* End PBXProject section */
@@ -426,11 +434,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		608D3C2A09A7874917D27848970E6504 /* Sources */ = {
+		72816D7B7B080A9F25B5FB3501EE9CF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E43BDECFB78021532B6273DC167C4AD /* Pods-XJYChartDemo-Swift-dummy.m in Sources */,
+				FD1F8929FE8BBC9224FB6913C4A58C56 /* Pods-XJYChartDemo-Swift-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +453,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		62A7D677147C061202225EE371748E69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = D52144DE9D7255DE912490FF5A806573 /* Masonry */;
+			targetProxy = A435F1C331FA7BDDC6032561A5CCF16C /* PBXContainerItemProxy */;
+		};
 		BEE8BAF6044598B84BE31AD2DC07E121 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Masonry;
@@ -454,6 +468,40 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0CE12780BB990E5AEAA45C69BF6CADD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B40E27804286D4FB876FD5FA7B9FE8B0 /* Pods-XJYChartDemo-Swift.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-XJYChartDemo-Swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		1EE19F5DD95931924296F637BF18BD8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -584,7 +632,7 @@
 			};
 			name = Release;
 		};
-		3845069A573E47CF21533487C497A730 /* Debug */ = {
+		595E6B78A85D68A4473EB50F237A6601 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3839A1AD8E883475BF8F8C6274F8A953 /* Masonry.xcconfig */;
 			buildSettings = {
@@ -608,13 +656,15 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		4E388BD2F63F786B25651553F27EDE86 /* Debug */ = {
+		D629511181EA95957433843FA32223FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CA9E02244FCBF4691572BBCF52AA3442 /* Pods-XJYChartDemo-Swift.debug.xcconfig */;
 			buildSettings = {
@@ -647,11 +697,10 @@
 			};
 			name = Debug;
 		};
-		7516968EC835FF0BE1938D65F8FB298A /* Release */ = {
+		ECDC61474BB22E9D0B3DC91BB7A77059 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B40E27804286D4FB876FD5FA7B9FE8B0 /* Pods-XJYChartDemo-Swift.release.xcconfig */;
+			baseConfigurationReference = 3839A1AD8E883475BF8F8C6274F8A953 /* Masonry.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -661,25 +710,23 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-XJYChartDemo-Swift/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		F4568DEE257655D290C2B9CEAB37C934 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -739,45 +786,14 @@
 			};
 			name = Release;
 		};
-		FE3EC76958EB417BB5A9577967FD1019 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3839A1AD8E883475BF8F8C6274F8A953 /* Masonry.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Masonry/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
-				PRODUCT_MODULE_NAME = Masonry;
-				PRODUCT_NAME = Masonry;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		02D024184BD368B565F3B6257DF3C605 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3845069A573E47CF21533487C497A730 /* Debug */,
-				FE3EC76958EB417BB5A9577967FD1019 /* Release */,
+				ECDC61474BB22E9D0B3DC91BB7A77059 /* Debug */,
+				595E6B78A85D68A4473EB50F237A6601 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -791,11 +807,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7117894F0357A36AEE65C19CCDE290F8 /* Build configuration list for PBXNativeTarget "Pods-XJYChartDemo-Swift" */ = {
+		389397D4A6F5907C8445DEAAF8F32D4D /* Build configuration list for PBXNativeTarget "Pods-XJYChartDemo-Swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4E388BD2F63F786B25651553F27EDE86 /* Debug */,
-				7516968EC835FF0BE1938D65F8FB298A /* Release */,
+				D629511181EA95957433843FA32223FC /* Debug */,
+				0CE12780BB990E5AEAA45C69BF6CADD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

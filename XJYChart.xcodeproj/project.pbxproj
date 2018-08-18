@@ -201,8 +201,8 @@
 		9FB507672004905200F5B3AB /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		E18F7D5D212694140098C72A /* Colours.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Colours.framework; path = "../Debug-iphonesimulator/Colours.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18F7D5E2126943A0098C72A /* XJYChart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XJYChart.framework; path = "../Debug-iphonesimulator/XJYChart.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1BB6D76212697C300083AB6 /* Colours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Colours.framework; path = "/Users/kellyroach/Fork/JunyiXie/XJYChart/build/Debug-iphoneos/Colours.framework"; sourceTree = "<absolute>"; };
-		E1BB6D77212697C300083AB6 /* XJYChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XJYChart.framework; path = "/Users/kellyroach/Fork/JunyiXie/XJYChart/build/Debug-iphoneos/XJYChart.framework"; sourceTree = "<absolute>"; };
+		E1BF93EF2127C92F00334886 /* Colours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Colours.framework; path = "/Users/kellyroach/Fork/JunyiXie/XJYChart/build/Debug-iphoneos/Colours.framework"; sourceTree = "<absolute>"; };
+		E1BF93F02127C92F00334886 /* XJYChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XJYChart.framework; path = "/Users/kellyroach/Fork/JunyiXie/XJYChart/build/Release-iphoneos/XJYChart.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -513,7 +513,7 @@
 			);
 			name = XJYChart;
 			productName = XJYChart;
-			productReference = E1BB6D77212697C300083AB6 /* XJYChart.framework */;
+			productReference = E1BF93F02127C92F00334886 /* XJYChart.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9FB5075E2004901600F5B3AB /* Colours */ = {
@@ -531,7 +531,7 @@
 			);
 			name = Colours;
 			productName = Colours;
-			productReference = E1BB6D76212697C300083AB6 /* Colours.framework */;
+			productReference = E1BF93EF2127C92F00334886 /* Colours.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */

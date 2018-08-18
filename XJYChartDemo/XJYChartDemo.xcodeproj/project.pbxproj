@@ -14,7 +14,6 @@
 		3F686B411FCAA3CA00FF9B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B3F1FCAA3CA00FF9B14 /* LaunchScreen.storyboard */; };
 		3F686B441FCAA3CA00FF9B14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B431FCAA3CA00FF9B14 /* main.m */; };
 		3F686B671FCAA3FF00FF9B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B661FCAA3FF00FF9B14 /* AppDelegate.swift */; };
-		3F686B691FCAA3FF00FF9B14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B681FCAA3FF00FF9B14 /* ViewController.swift */; };
 		3F686B6C1FCAA3FF00FF9B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B6A1FCAA3FF00FF9B14 /* Main.storyboard */; };
 		3F686B6E1FCAA3FF00FF9B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B6D1FCAA3FF00FF9B14 /* Assets.xcassets */; };
 		3F686B711FCAA3FF00FF9B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B6F1FCAA3FF00FF9B14 /* LaunchScreen.storyboard */; };
@@ -31,10 +30,25 @@
 		3F686BEE1FCAA47900FF9B14 /* XJYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B8D1FCAA47900FF9B14 /* XJYTableViewCell.m */; };
 		3F686BF01FCAA47900FF9B14 /* XJYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B911FCAA47900FF9B14 /* XJYViewController.m */; };
 		723435C1E3D0B9B0BEC43A7F /* Pods_XJYChartDemo_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAE09ADE582BE0972E635F3 /* Pods_XJYChartDemo_Swift.framework */; };
+		E1059C5C2127993400F70981 /* CycleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1059C5B2127993400F70981 /* CycleTableViewCell.xib */; };
+		E16E65B02127B398001F06B6 /* Colours.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18F7D702126969E0098C72A /* Colours.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E16E65B12127B398001F06B6 /* XJYChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18F7D73212696A90098C72A /* XJYChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1770E042126A7CA003F95CB /* XJYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DF82126A7CA003F95CB /* XJYViewController.swift */; };
+		E1770E052126A7CA003F95CB /* AreaLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DF92126A7CA003F95CB /* AreaLineTableViewCell.swift */; };
+		E1770E062126A7CA003F95CB /* SingleLineChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DFA2126A7CA003F95CB /* SingleLineChartTableViewCell.swift */; };
+		E1770E072126A7CA003F95CB /* LineChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DFB2126A7CA003F95CB /* LineChartCell.swift */; };
+		E1770E082126A7CA003F95CB /* CycleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DFC2126A7CA003F95CB /* CycleTableViewCell.swift */; };
+		E1770E092126A7CA003F95CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DFD2126A7CA003F95CB /* HomeViewController.swift */; };
+		E1770E0A2126A7CA003F95CB /* PositiveNegativeBarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DFE2126A7CA003F95CB /* PositiveNegativeBarChartCell.swift */; };
+		E1770E0B2126A7CA003F95CB /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DFF2126A7CA003F95CB /* PieChartCell.swift */; };
+		E1770E0C2126A7CA003F95CB /* StackAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770E002126A7CA003F95CB /* StackAreaTableViewCell.swift */; };
+		E1770E0D2126A7CA003F95CB /* XJYTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770E012126A7CA003F95CB /* XJYTableViewCell.swift */; };
+		E1770E0E2126A7CA003F95CB /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770E022126A7CA003F95CB /* BarChartCell.swift */; };
 		E18F7D722126969E0098C72A /* Colours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18F7D702126969E0098C72A /* Colours.framework */; };
 		E18F7D75212696A90098C72A /* XJYChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18F7D73212696A90098C72A /* XJYChart.framework */; };
 		E18F7D78212696CD0098C72A /* XJYChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18F7D73212696A90098C72A /* XJYChart.framework */; };
 		E1BB6D79212697DA00083AB6 /* Colours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18F7D702126969E0098C72A /* Colours.framework */; };
+		E1CFBE282127436800C67CE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFBE272127436800C67CE9 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +58,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E16E65B02127B398001F06B6 /* Colours.framework in Embed Frameworks */,
+				E16E65B12127B398001F06B6 /* XJYChart.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,7 +78,6 @@
 		3F686B431FCAA3CA00FF9B14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F686B641FCAA3FF00FF9B14 /* XJYChartDemo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XJYChartDemo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F686B661FCAA3FF00FF9B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F686B681FCAA3FF00FF9B14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F686B6B1FCAA3FF00FF9B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F686B6D1FCAA3FF00FF9B14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F686B701FCAA3FF00FF9B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,8 +110,21 @@
 		8BC6A774479A329B1152375B /* Pods-XJYChartDemo-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.release.xcconfig"; path = "../Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		C3182931858B8E2B544A34A7 /* Pods-XJYChartDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		DB3DCD0662C701896C552FBB /* Pods-XJYChartDemo-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		E1059C5B2127993400F70981 /* CycleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CycleTableViewCell.xib; sourceTree = "<group>"; };
+		E1770DF82126A7CA003F95CB /* XJYViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJYViewController.swift; sourceTree = "<group>"; };
+		E1770DF92126A7CA003F95CB /* AreaLineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaLineTableViewCell.swift; sourceTree = "<group>"; };
+		E1770DFA2126A7CA003F95CB /* SingleLineChartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLineChartTableViewCell.swift; sourceTree = "<group>"; };
+		E1770DFB2126A7CA003F95CB /* LineChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartCell.swift; sourceTree = "<group>"; };
+		E1770DFC2126A7CA003F95CB /* CycleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleTableViewCell.swift; sourceTree = "<group>"; };
+		E1770DFD2126A7CA003F95CB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E1770DFE2126A7CA003F95CB /* PositiveNegativeBarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositiveNegativeBarChartCell.swift; sourceTree = "<group>"; };
+		E1770DFF2126A7CA003F95CB /* PieChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
+		E1770E002126A7CA003F95CB /* StackAreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackAreaTableViewCell.swift; sourceTree = "<group>"; };
+		E1770E012126A7CA003F95CB /* XJYTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJYTableViewCell.swift; sourceTree = "<group>"; };
+		E1770E022126A7CA003F95CB /* BarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
 		E18F7D702126969E0098C72A /* Colours.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Colours.framework; path = "../Debug-iphonesimulator/Colours.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18F7D73212696A90098C72A /* XJYChart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XJYChart.framework; path = "../Debug-iphonesimulator/XJYChart.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1CFBE272127436800C67CE9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +194,7 @@
 				3F686B721FCAA3FF00FF9B14 /* Info.plist */,
 				3F686B6F1FCAA3FF00FF9B14 /* LaunchScreen.storyboard */,
 				3F686B6A1FCAA3FF00FF9B14 /* Main.storyboard */,
-				3F686B681FCAA3FF00FF9B14 /* ViewController.swift */,
+				E1770DF72126A7CA003F95CB /* View */,
 			);
 			path = "XJYChartDemo-Swift";
 			sourceTree = "<group>";
@@ -223,6 +251,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E1770DF72126A7CA003F95CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1770DF92126A7CA003F95CB /* AreaLineTableViewCell.swift */,
+				E1770E022126A7CA003F95CB /* BarChartCell.swift */,
+				E1CFBE272127436800C67CE9 /* Constants.swift */,
+				E1770DFC2126A7CA003F95CB /* CycleTableViewCell.swift */,
+				E1059C5B2127993400F70981 /* CycleTableViewCell.xib */,
+				E1770DFD2126A7CA003F95CB /* HomeViewController.swift */,
+				E1770DFB2126A7CA003F95CB /* LineChartCell.swift */,
+				E1770DFF2126A7CA003F95CB /* PieChartCell.swift */,
+				E1770DFE2126A7CA003F95CB /* PositiveNegativeBarChartCell.swift */,
+				E1770DFA2126A7CA003F95CB /* SingleLineChartTableViewCell.swift */,
+				E1770E002126A7CA003F95CB /* StackAreaTableViewCell.swift */,
+				E1770E012126A7CA003F95CB /* XJYTableViewCell.swift */,
+				E1770DF82126A7CA003F95CB /* XJYViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,6 +302,7 @@
 				3F686B611FCAA3FF00FF9B14 /* Frameworks */,
 				3F686B621FCAA3FF00FF9B14 /* Resources */,
 				3F99EB111FCBE12E00369050 /* Embed Frameworks */,
+				C8409209B51B7694A491693E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -322,6 +371,7 @@
 				3F686B711FCAA3FF00FF9B14 /* LaunchScreen.storyboard in Resources */,
 				3F686B6E1FCAA3FF00FF9B14 /* Assets.xcassets in Resources */,
 				3F686B6C1FCAA3FF00FF9B14 /* Main.storyboard in Resources */,
+				E1059C5C2127993400F70981 /* CycleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +432,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C8409209B51B7694A491693E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -409,8 +477,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F686B691FCAA3FF00FF9B14 /* ViewController.swift in Sources */,
+				E1770E0C2126A7CA003F95CB /* StackAreaTableViewCell.swift in Sources */,
+				E1770E042126A7CA003F95CB /* XJYViewController.swift in Sources */,
+				E1770E082126A7CA003F95CB /* CycleTableViewCell.swift in Sources */,
+				E1770E062126A7CA003F95CB /* SingleLineChartTableViewCell.swift in Sources */,
+				E1770E092126A7CA003F95CB /* HomeViewController.swift in Sources */,
+				E1CFBE282127436800C67CE9 /* Constants.swift in Sources */,
+				E1770E072126A7CA003F95CB /* LineChartCell.swift in Sources */,
+				E1770E0B2126A7CA003F95CB /* PieChartCell.swift in Sources */,
+				E1770E0E2126A7CA003F95CB /* BarChartCell.swift in Sources */,
+				E1770E0D2126A7CA003F95CB /* XJYTableViewCell.swift in Sources */,
+				E1770E052126A7CA003F95CB /* AreaLineTableViewCell.swift in Sources */,
 				3F686B671FCAA3FF00FF9B14 /* AppDelegate.swift in Sources */,
+				E1770E0A2126A7CA003F95CB /* PositiveNegativeBarChartCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,8 +664,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-framework",
-					"\"Masonry\"",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.junyixie.XJYChartDemo;
@@ -617,8 +694,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-framework",
-					"\"Masonry\"",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.junyixie.XJYChartDemo;
@@ -637,6 +712,10 @@
 				INFOPLIST_FILE = "XJYChartDemo-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.junyixie.XJYChartDemo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -656,6 +735,10 @@
 				INFOPLIST_FILE = "XJYChartDemo-Swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.junyixie.XJYChartDemo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

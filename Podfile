@@ -14,4 +14,5 @@ end
 target 'XJYChartDemo-Swift' do
   project 'XJYChartDemo/XJYChartDemo.xcodeproj'
   use_frameworks!
+  pod 'Masonry'
 end
