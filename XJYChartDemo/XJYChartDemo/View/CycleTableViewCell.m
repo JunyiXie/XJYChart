@@ -23,7 +23,7 @@
 
 - (void)awakeFromNib {
   [super awakeFromNib];
-  self.cycleView.cycleViewDeleagte = self;
+  self.cycleView.cycleViewDelegate = self;
   self.selectionStyle = UITableViewCellSelectionStyleNone;
   // 接口
   self.min = 500;

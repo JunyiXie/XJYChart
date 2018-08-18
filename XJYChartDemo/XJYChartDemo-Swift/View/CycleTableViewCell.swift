@@ -21,7 +21,7 @@ public class CycleTableViewCell: UITableViewCell, XCycleViewDelegate {
 
     override public func awakeFromNib() {
         super.awakeFromNib()
-        cycleView.cycleViewDeleagte = self
+        cycleView.cycleViewDelegate = self
         selectionStyle = UITableViewCellSelectionStyle.none
         // 接口
         self.min = 500

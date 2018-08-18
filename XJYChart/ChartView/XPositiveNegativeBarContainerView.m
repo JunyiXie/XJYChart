@@ -490,7 +490,7 @@ typedef enum : NSUInteger {
 
       [subShapeLayer addSublayer:self.coverLayer];
 
-      // Notification + Deleagte To CallBack
+      // Notification + Delegate To CallBack
       [[NSNotificationCenter defaultCenter]
           postNotificationName:[XNotificationBridge shareXNotificationBridge]
                                    .TouchPNBarNotification

@@ -56,7 +56,7 @@ class BarChartCell: UITableViewCell, XJYChartDelegate {
         configuration.isScrollable = false
         configuration.x_width = 20
         let barChart = XBarChart(frame: CGRect(x: 0, y: 0, width: 375, height: 200), dataItemArray: NSMutableArray(array: itemArray), topNumber: 150, bottomNumber: 0, chartConfiguration: configuration)
-        barChart!.barChartDeleagte = self
+        barChart!.barChartDelegate = self
         contentView.addSubview(barChart!)
         selectionStyle = UITableViewCellSelectionStyle.none
         

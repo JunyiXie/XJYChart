@@ -138,7 +138,7 @@
         dataItemArray:itemArray
             topNumber:@100
          bottomNumber:@(-170)];
-    barChart.barChartDeleagte = self;
+    barChart.barChartDelegate = self;
     [self.contentView addSubview:barChart];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
   }

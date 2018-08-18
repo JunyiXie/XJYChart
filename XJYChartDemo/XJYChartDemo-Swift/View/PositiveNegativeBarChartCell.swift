@@ -76,7 +76,7 @@ class PositiveNegativeBarChartCell: UITableViewCell, XJYChartDelegate {
         let item25 = XBarItem(dataNumber: 52.91, color: Constants.XJYDarkBlue, dataDescribe: "test")
         itemArray.append(item25!)
         let barChart = XPositiveNegativeBarChart(frame: CGRect(x: 0, y: 0, width: 375, height: 200), dataItemArray: NSMutableArray(array: itemArray), topNumber: 100, bottomNumber: -170)
-        barChart!.barChartDeleagte = self
+        barChart!.barChartDelegate = self
         contentView.addSubview(barChart!)
         selectionStyle = UITableViewCellSelectionStyle.none
         

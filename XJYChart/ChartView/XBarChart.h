@@ -14,7 +14,7 @@
 @interface XBarChart : UIView
 
 // delegate
-@property(nonatomic, strong) id<XJYChartDelegate> barChartDeleagte;
+@property(nonatomic, strong) id<XJYChartDelegate> barChartDelegate;
 
 /**
  初始化方法

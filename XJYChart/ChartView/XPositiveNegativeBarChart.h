@@ -25,7 +25,7 @@
                 dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumbser
                  bottomNumber:(NSNumber*)bottomNumber;
-@property(nonatomic, strong) id<XJYChartDelegate> barChartDeleagte;
+@property(nonatomic, strong) id<XJYChartDelegate> barChartDelegate;
 
 /**
  dataItemArray

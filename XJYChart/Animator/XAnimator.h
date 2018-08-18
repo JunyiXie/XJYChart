@@ -58,7 +58,7 @@ typedef void (^AnimatorPercentageBlock)(CGFloat percentage);
 typedef void (^AnimatorCurrentValueBlock)(CGFloat result);
 @interface XAnimator : NSObject
 
-@property(nonatomic, weak) id animationDeleagte;
+@property(nonatomic, weak) id animationDelegate;
 
 - (void)AnimatorDuration:(CGFloat)duration
           timingFuncType:(XTimingFunctionsType)timingFuncType

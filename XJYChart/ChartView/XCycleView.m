@@ -217,7 +217,7 @@
     self.progress = (self.angle + 270) / 360.0;
   }
   // delegate
-  [self.cycleViewDeleagte ratioChange:self.progress];
+  [self.cycleViewDelegate ratioChange:self.progress];
   [self setNeedsDisplay];
 }
 

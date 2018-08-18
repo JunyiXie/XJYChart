@@ -96,7 +96,7 @@
                                topNumber:@150
                             bottomNumber:@(0)
                       chartConfiguration:configuration];
-    barChart.barChartDeleagte = self;
+    barChart.barChartDelegate = self;
     [self.contentView addSubview:barChart];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
   }
