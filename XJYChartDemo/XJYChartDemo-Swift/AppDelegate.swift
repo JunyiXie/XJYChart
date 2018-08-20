@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Colours
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

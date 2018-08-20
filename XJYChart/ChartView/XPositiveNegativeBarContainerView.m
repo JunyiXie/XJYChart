@@ -374,7 +374,7 @@ typedef enum : NSUInteger {
   }
 
   //临时调试 以后添加动画
-  canAnimation = NO;
+  //canAnimation = NO;
   // 做动画 line+strokeStartEnd
   // 不做 shapelayer
   if (canAnimation) {
@@ -490,7 +490,7 @@ typedef enum : NSUInteger {
 
       [subShapeLayer addSublayer:self.coverLayer];
 
-      // Notification + Deleagte To CallBack
+      // Notification + Delegate To CallBack
       [[NSNotificationCenter defaultCenter]
           postNotificationName:[XNotificationBridge shareXNotificationBridge]
                                    .TouchPNBarNotification

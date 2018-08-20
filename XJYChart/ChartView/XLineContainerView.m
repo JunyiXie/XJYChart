@@ -5,7 +5,7 @@
 //  Created by 谢俊逸 on 17/03/2017.
 //  Copyright © 2017 谢俊逸. All rights reserved.
 //
-// MAC OS  和 iOS 的坐标系问题
+// macOS  和 iOS 的坐标系问题
 
 #import "XLineContainerView.h"
 #import "XAuxiliaryCalculationHelper.h"

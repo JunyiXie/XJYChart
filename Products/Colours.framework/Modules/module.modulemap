@@ -1,5 +1,5 @@
 framework module Colours {
-  umbrella header "Colours-umbrella.h"
+  umbrella header "Colours.h"
 
   export *
   module * { export * }

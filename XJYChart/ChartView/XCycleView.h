@@ -22,5 +22,5 @@
 /// progress 0.0 ~ 1.0
 @property(nonatomic, assign) CGFloat progress;
 
-@property(nonatomic, weak) id<XCycleViewDelegate> cycleViewDeleagte;
+@property(nonatomic, weak) id<XCycleViewDelegate> cycleViewDelegate;
 @end

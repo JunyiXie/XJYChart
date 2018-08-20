@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "XBarItem.h"
-
+@class XBarChartConfiguration;
 @interface XBarContainerView : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumbser
-                 bottomNumber:(NSNumber*)bottomNumber;
+                 bottomNumber:(NSNumber*)bottomNumber
+          chartConfiguration:(XBarChartConfiguration*)configuration;
 /**
  dataItemArray
  */
@@ -29,5 +30,6 @@
  */
 @property(nonatomic, strong) NSNumber* bottom;
 @property(nonatomic, strong) UIColor* chartBackgroundColor;
+@property(nonatomic, strong) XBarChartConfiguration* configuration;
 
 @end

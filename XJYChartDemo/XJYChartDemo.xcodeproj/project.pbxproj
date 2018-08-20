@@ -8,14 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		03FEB0055E5BBAFBEACB6F6A /* Pods_XJYChartDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6599B632011C55F9ADD36253 /* Pods_XJYChartDemo.framework */; };
-		3F1E5F691FD28D4700FC303B /* XJYChartDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1E5F681FD28D4700FC303B /* XJYChartDemoTests.m */; };
 		3F686B361FCAA3CA00FF9B14 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B351FCAA3CA00FF9B14 /* AppDelegate.m */; };
 		3F686B3C1FCAA3CA00FF9B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B3A1FCAA3CA00FF9B14 /* Main.storyboard */; };
 		3F686B3E1FCAA3CA00FF9B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B3D1FCAA3CA00FF9B14 /* Assets.xcassets */; };
 		3F686B411FCAA3CA00FF9B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B3F1FCAA3CA00FF9B14 /* LaunchScreen.storyboard */; };
 		3F686B441FCAA3CA00FF9B14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B431FCAA3CA00FF9B14 /* main.m */; };
 		3F686B671FCAA3FF00FF9B14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B661FCAA3FF00FF9B14 /* AppDelegate.swift */; };
-		3F686B691FCAA3FF00FF9B14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B681FCAA3FF00FF9B14 /* ViewController.swift */; };
 		3F686B6C1FCAA3FF00FF9B14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B6A1FCAA3FF00FF9B14 /* Main.storyboard */; };
 		3F686B6E1FCAA3FF00FF9B14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B6D1FCAA3FF00FF9B14 /* Assets.xcassets */; };
 		3F686B711FCAA3FF00FF9B14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F686B6F1FCAA3FF00FF9B14 /* LaunchScreen.storyboard */; };
@@ -32,21 +30,26 @@
 		3F686BEE1FCAA47900FF9B14 /* XJYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B8D1FCAA47900FF9B14 /* XJYTableViewCell.m */; };
 		3F686BF01FCAA47900FF9B14 /* XJYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F686B911FCAA47900FF9B14 /* XJYViewController.m */; };
 		723435C1E3D0B9B0BEC43A7F /* Pods_XJYChartDemo_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EAE09ADE582BE0972E635F3 /* Pods_XJYChartDemo_Swift.framework */; };
-		9FB5076D200490FE00F5B3AB /* XJYChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB5076C200490FE00F5B3AB /* XJYChart.framework */; };
-		9FB5076E200490FE00F5B3AB /* XJYChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB5076C200490FE00F5B3AB /* XJYChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9FB507712004912300F5B3AB /* Colours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB507702004912300F5B3AB /* Colours.framework */; };
-		9FB507722004912300F5B3AB /* Colours.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB507702004912300F5B3AB /* Colours.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1059C5C2127993400F70981 /* CycleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1059C5B2127993400F70981 /* CycleTableViewCell.xib */; };
+		E16E65B02127B398001F06B6 /* Colours.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18F7D702126969E0098C72A /* Colours.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E16E65B12127B398001F06B6 /* XJYChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18F7D73212696A90098C72A /* XJYChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1770E042126A7CA003F95CB /* XJYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DF82126A7CA003F95CB /* XJYViewController.swift */; };
+		E1770E052126A7CA003F95CB /* AreaLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DF92126A7CA003F95CB /* AreaLineTableViewCell.swift */; };
+		E1770E062126A7CA003F95CB /* SingleLineChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DFA2126A7CA003F95CB /* SingleLineChartTableViewCell.swift */; };
+		E1770E072126A7CA003F95CB /* LineChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DFB2126A7CA003F95CB /* LineChartCell.swift */; };
+		E1770E082126A7CA003F95CB /* CycleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DFC2126A7CA003F95CB /* CycleTableViewCell.swift */; };
+		E1770E092126A7CA003F95CB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DFD2126A7CA003F95CB /* HomeViewController.swift */; };
+		E1770E0A2126A7CA003F95CB /* PositiveNegativeBarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DFE2126A7CA003F95CB /* PositiveNegativeBarChartCell.swift */; };
+		E1770E0B2126A7CA003F95CB /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770DFF2126A7CA003F95CB /* PieChartCell.swift */; };
+		E1770E0C2126A7CA003F95CB /* StackAreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770E002126A7CA003F95CB /* StackAreaTableViewCell.swift */; };
+		E1770E0D2126A7CA003F95CB /* XJYTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770E012126A7CA003F95CB /* XJYTableViewCell.swift */; };
+		E1770E0E2126A7CA003F95CB /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1770E022126A7CA003F95CB /* BarChartCell.swift */; };
+		E18F7D722126969E0098C72A /* Colours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18F7D702126969E0098C72A /* Colours.framework */; };
+		E18F7D75212696A90098C72A /* XJYChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18F7D73212696A90098C72A /* XJYChart.framework */; };
+		E18F7D78212696CD0098C72A /* XJYChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18F7D73212696A90098C72A /* XJYChart.framework */; };
+		E1BB6D79212697DA00083AB6 /* Colours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18F7D702126969E0098C72A /* Colours.framework */; };
+		E1CFBE282127436800C67CE9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CFBE272127436800C67CE9 /* Constants.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3F1E5F6B1FD28D4700FC303B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3F686B291FCAA3CA00FF9B14 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3F686B301FCAA3CA00FF9B14;
-			remoteInfo = XJYChartDemo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		3F99EB111FCBE12E00369050 /* Embed Frameworks */ = {
@@ -55,18 +58,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FB5076F200490FE00F5B3AB /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				9FB507722004912300F5B3AB /* Colours.framework in Embed Frameworks */,
-				9FB5076E200490FE00F5B3AB /* XJYChart.framework in Embed Frameworks */,
+				E16E65B02127B398001F06B6 /* Colours.framework in Embed Frameworks */,
+				E16E65B12127B398001F06B6 /* XJYChart.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,10 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3225CB1976A95A9AC77F3AAB /* Pods-XJYChartDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo.release.xcconfig"; sourceTree = "<group>"; };
-		3F1E5F661FD28D4700FC303B /* XJYChartDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XJYChartDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F1E5F681FD28D4700FC303B /* XJYChartDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XJYChartDemoTests.m; sourceTree = "<group>"; };
-		3F1E5F6A1FD28D4700FC303B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3225CB1976A95A9AC77F3AAB /* Pods-XJYChartDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo.release.xcconfig"; path = "../Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo.release.xcconfig"; sourceTree = "<group>"; };
 		3F686B311FCAA3CA00FF9B14 /* XJYChartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XJYChartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F686B341FCAA3CA00FF9B14 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F686B351FCAA3CA00FF9B14 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -88,7 +78,6 @@
 		3F686B431FCAA3CA00FF9B14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F686B641FCAA3FF00FF9B14 /* XJYChartDemo-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "XJYChartDemo-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F686B661FCAA3FF00FF9B14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3F686B681FCAA3FF00FF9B14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F686B6B1FCAA3FF00FF9B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F686B6D1FCAA3FF00FF9B14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F686B701FCAA3FF00FF9B14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,28 +107,34 @@
 		3F686B911FCAA47900FF9B14 /* XJYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYViewController.m; sourceTree = "<group>"; };
 		6599B632011C55F9ADD36253 /* Pods_XJYChartDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJYChartDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAE09ADE582BE0972E635F3 /* Pods_XJYChartDemo_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XJYChartDemo_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BC6A774479A329B1152375B /* Pods-XJYChartDemo-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.release.xcconfig"; sourceTree = "<group>"; };
-		9FB5076C200490FE00F5B3AB /* XJYChart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XJYChart.framework; path = ../Products/XJYChart.framework; sourceTree = "<group>"; };
-		9FB507702004912300F5B3AB /* Colours.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Colours.framework; path = ../Products/Colours.framework; sourceTree = "<group>"; };
-		C3182931858B8E2B544A34A7 /* Pods-XJYChartDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		DB3DCD0662C701896C552FBB /* Pods-XJYChartDemo-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		8BC6A774479A329B1152375B /* Pods-XJYChartDemo-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.release.xcconfig"; path = "../Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		C3182931858B8E2B544A34A7 /* Pods-XJYChartDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		DB3DCD0662C701896C552FBB /* Pods-XJYChartDemo-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XJYChartDemo-Swift.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		E1059C5B2127993400F70981 /* CycleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CycleTableViewCell.xib; sourceTree = "<group>"; };
+		E1770DF82126A7CA003F95CB /* XJYViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJYViewController.swift; sourceTree = "<group>"; };
+		E1770DF92126A7CA003F95CB /* AreaLineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaLineTableViewCell.swift; sourceTree = "<group>"; };
+		E1770DFA2126A7CA003F95CB /* SingleLineChartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLineChartTableViewCell.swift; sourceTree = "<group>"; };
+		E1770DFB2126A7CA003F95CB /* LineChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartCell.swift; sourceTree = "<group>"; };
+		E1770DFC2126A7CA003F95CB /* CycleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleTableViewCell.swift; sourceTree = "<group>"; };
+		E1770DFD2126A7CA003F95CB /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E1770DFE2126A7CA003F95CB /* PositiveNegativeBarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositiveNegativeBarChartCell.swift; sourceTree = "<group>"; };
+		E1770DFF2126A7CA003F95CB /* PieChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
+		E1770E002126A7CA003F95CB /* StackAreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackAreaTableViewCell.swift; sourceTree = "<group>"; };
+		E1770E012126A7CA003F95CB /* XJYTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XJYTableViewCell.swift; sourceTree = "<group>"; };
+		E1770E022126A7CA003F95CB /* BarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
+		E18F7D702126969E0098C72A /* Colours.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Colours.framework; path = "../Debug-iphonesimulator/Colours.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E18F7D73212696A90098C72A /* XJYChart.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XJYChart.framework; path = "../Debug-iphonesimulator/XJYChart.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1CFBE272127436800C67CE9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3F1E5F631FD28D4700FC303B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3F686B2E1FCAA3CA00FF9B14 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1BB6D79212697DA00083AB6 /* Colours.framework in Frameworks */,
+				E18F7D78212696CD0098C72A /* XJYChart.framework in Frameworks */,
 				03FEB0055E5BBAFBEACB6F6A /* Pods_XJYChartDemo.framework in Frameworks */,
-				9FB5076D200490FE00F5B3AB /* XJYChart.framework in Frameworks */,
-				9FB507712004912300F5B3AB /* Colours.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E18F7D722126969E0098C72A /* Colours.framework in Frameworks */,
+				E18F7D75212696A90098C72A /* XJYChart.framework in Frameworks */,
 				723435C1E3D0B9B0BEC43A7F /* Pods_XJYChartDemo_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,23 +151,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F1E5F671FD28D4700FC303B /* XJYChartDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				3F1E5F681FD28D4700FC303B /* XJYChartDemoTests.m */,
-				3F1E5F6A1FD28D4700FC303B /* Info.plist */,
-			);
-			path = XJYChartDemoTests;
-			sourceTree = "<group>";
-		};
 		3F686B281FCAA3CA00FF9B14 = {
 			isa = PBXGroup;
 			children = (
-				9FB507702004912300F5B3AB /* Colours.framework */,
-				9FB5076C200490FE00F5B3AB /* XJYChart.framework */,
 				3F686B331FCAA3CA00FF9B14 /* XJYChartDemo */,
 				3F686B651FCAA3FF00FF9B14 /* XJYChartDemo-Swift */,
-				3F1E5F671FD28D4700FC303B /* XJYChartDemoTests */,
 				3F686B321FCAA3CA00FF9B14 /* Products */,
 				5C711644C246B20C47D0BF8E /* Pods */,
 				CDFB04428541721A6CAB1972 /* Frameworks */,
@@ -182,7 +167,6 @@
 			children = (
 				3F686B311FCAA3CA00FF9B14 /* XJYChartDemo.app */,
 				3F686B641FCAA3FF00FF9B14 /* XJYChartDemo-Swift.app */,
-				3F1E5F661FD28D4700FC303B /* XJYChartDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,14 +174,14 @@
 		3F686B331FCAA3CA00FF9B14 /* XJYChartDemo */ = {
 			isa = PBXGroup;
 			children = (
-				3F686B761FCAA47900FF9B14 /* View */,
 				3F686B341FCAA3CA00FF9B14 /* AppDelegate.h */,
 				3F686B351FCAA3CA00FF9B14 /* AppDelegate.m */,
-				3F686B3A1FCAA3CA00FF9B14 /* Main.storyboard */,
 				3F686B3D1FCAA3CA00FF9B14 /* Assets.xcassets */,
-				3F686B3F1FCAA3CA00FF9B14 /* LaunchScreen.storyboard */,
 				3F686B421FCAA3CA00FF9B14 /* Info.plist */,
+				3F686B3F1FCAA3CA00FF9B14 /* LaunchScreen.storyboard */,
 				3F686B431FCAA3CA00FF9B14 /* main.m */,
+				3F686B3A1FCAA3CA00FF9B14 /* Main.storyboard */,
+				3F686B761FCAA47900FF9B14 /* View */,
 			);
 			path = XJYChartDemo;
 			sourceTree = "<group>";
@@ -206,11 +190,11 @@
 			isa = PBXGroup;
 			children = (
 				3F686B661FCAA3FF00FF9B14 /* AppDelegate.swift */,
-				3F686B681FCAA3FF00FF9B14 /* ViewController.swift */,
-				3F686B6A1FCAA3FF00FF9B14 /* Main.storyboard */,
 				3F686B6D1FCAA3FF00FF9B14 /* Assets.xcassets */,
-				3F686B6F1FCAA3FF00FF9B14 /* LaunchScreen.storyboard */,
 				3F686B721FCAA3FF00FF9B14 /* Info.plist */,
+				3F686B6F1FCAA3FF00FF9B14 /* LaunchScreen.storyboard */,
+				3F686B6A1FCAA3FF00FF9B14 /* Main.storyboard */,
+				E1770DF72126A7CA003F95CB /* View */,
 			);
 			path = "XJYChartDemo-Swift";
 			sourceTree = "<group>";
@@ -259,33 +243,37 @@
 		CDFB04428541721A6CAB1972 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E18F7D702126969E0098C72A /* Colours.framework */,
+				E18F7D73212696A90098C72A /* XJYChart.framework */,
 				7EAE09ADE582BE0972E635F3 /* Pods_XJYChartDemo_Swift.framework */,
 				6599B632011C55F9ADD36253 /* Pods_XJYChartDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E1770DF72126A7CA003F95CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E1770DF92126A7CA003F95CB /* AreaLineTableViewCell.swift */,
+				E1770E022126A7CA003F95CB /* BarChartCell.swift */,
+				E1CFBE272127436800C67CE9 /* Constants.swift */,
+				E1770DFC2126A7CA003F95CB /* CycleTableViewCell.swift */,
+				E1059C5B2127993400F70981 /* CycleTableViewCell.xib */,
+				E1770DFD2126A7CA003F95CB /* HomeViewController.swift */,
+				E1770DFB2126A7CA003F95CB /* LineChartCell.swift */,
+				E1770DFF2126A7CA003F95CB /* PieChartCell.swift */,
+				E1770DFE2126A7CA003F95CB /* PositiveNegativeBarChartCell.swift */,
+				E1770DFA2126A7CA003F95CB /* SingleLineChartTableViewCell.swift */,
+				E1770E002126A7CA003F95CB /* StackAreaTableViewCell.swift */,
+				E1770E012126A7CA003F95CB /* XJYTableViewCell.swift */,
+				E1770DF82126A7CA003F95CB /* XJYViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F1E5F651FD28D4700FC303B /* XJYChartDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3F1E5F6F1FD28D4700FC303B /* Build configuration list for PBXNativeTarget "XJYChartDemoTests" */;
-			buildPhases = (
-				3F1E5F621FD28D4700FC303B /* Sources */,
-				3F1E5F631FD28D4700FC303B /* Frameworks */,
-				3F1E5F641FD28D4700FC303B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3F1E5F6C1FD28D4700FC303B /* PBXTargetDependency */,
-			);
-			name = XJYChartDemoTests;
-			productName = XJYChartDemoTests;
-			productReference = 3F1E5F661FD28D4700FC303B /* XJYChartDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		3F686B301FCAA3CA00FF9B14 /* XJYChartDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F686B471FCAA3CA00FF9B14 /* Build configuration list for PBXNativeTarget "XJYChartDemo" */;
@@ -295,8 +283,6 @@
 				3F686B2E1FCAA3CA00FF9B14 /* Frameworks */,
 				3F686B2F1FCAA3CA00FF9B14 /* Resources */,
 				71C302943CE4BFC36C0260CC /* [CP] Embed Pods Frameworks */,
-				958AD04EEDA0088D9478084F /* [CP] Copy Pods Resources */,
-				9FB5076F200490FE00F5B3AB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,9 +301,8 @@
 				3F686B601FCAA3FF00FF9B14 /* Sources */,
 				3F686B611FCAA3FF00FF9B14 /* Frameworks */,
 				3F686B621FCAA3FF00FF9B14 /* Resources */,
-				7C698CA410E060FD43097A26 /* [CP] Embed Pods Frameworks */,
-				57D0BB0728C402960385A522 /* [CP] Copy Pods Resources */,
 				3F99EB111FCBE12E00369050 /* Embed Frameworks */,
+				C8409209B51B7694A491693E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,14 +320,9 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = JunyiXie;
 				TargetAttributes = {
-					3F1E5F651FD28D4700FC303B = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 3F686B301FCAA3CA00FF9B14;
-					};
 					3F686B301FCAA3CA00FF9B14 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
@@ -368,19 +348,11 @@
 			targets = (
 				3F686B301FCAA3CA00FF9B14 /* XJYChartDemo */,
 				3F686B631FCAA3FF00FF9B14 /* XJYChartDemo-Swift */,
-				3F1E5F651FD28D4700FC303B /* XJYChartDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3F1E5F641FD28D4700FC303B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3F686B2F1FCAA3CA00FF9B14 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -399,6 +371,7 @@
 				3F686B711FCAA3FF00FF9B14 /* LaunchScreen.storyboard in Resources */,
 				3F686B6E1FCAA3FF00FF9B14 /* Assets.xcassets in Resources */,
 				3F686B6C1FCAA3FF00FF9B14 /* Main.storyboard in Resources */,
+				E1059C5C2127993400F70981 /* CycleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,28 +396,13 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		57D0BB0728C402960385A522 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		71C302943CE4BFC36C0260CC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-frameworks.sh",
+				"${SRCROOT}/../Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -453,7 +411,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7C5533EE0025FFE77FACF10F /* [CP] Check Pods Manifest.lock */ = {
@@ -474,47 +432,27 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7C698CA410E060FD43097A26 /* [CP] Embed Pods Frameworks */ = {
+		C8409209B51B7694A491693E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		958AD04EEDA0088D9478084F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XJYChartDemo/Pods-XJYChartDemo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-XJYChartDemo-Swift/Pods-XJYChartDemo-Swift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3F1E5F621FD28D4700FC303B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3F1E5F691FD28D4700FC303B /* XJYChartDemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3F686B2D1FCAA3CA00FF9B14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -539,20 +477,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F686B691FCAA3FF00FF9B14 /* ViewController.swift in Sources */,
+				E1770E0C2126A7CA003F95CB /* StackAreaTableViewCell.swift in Sources */,
+				E1770E042126A7CA003F95CB /* XJYViewController.swift in Sources */,
+				E1770E082126A7CA003F95CB /* CycleTableViewCell.swift in Sources */,
+				E1770E062126A7CA003F95CB /* SingleLineChartTableViewCell.swift in Sources */,
+				E1770E092126A7CA003F95CB /* HomeViewController.swift in Sources */,
+				E1CFBE282127436800C67CE9 /* Constants.swift in Sources */,
+				E1770E072126A7CA003F95CB /* LineChartCell.swift in Sources */,
+				E1770E0B2126A7CA003F95CB /* PieChartCell.swift in Sources */,
+				E1770E0E2126A7CA003F95CB /* BarChartCell.swift in Sources */,
+				E1770E0D2126A7CA003F95CB /* XJYTableViewCell.swift in Sources */,
+				E1770E052126A7CA003F95CB /* AreaLineTableViewCell.swift in Sources */,
 				3F686B671FCAA3FF00FF9B14 /* AppDelegate.swift in Sources */,
+				E1770E0A2126A7CA003F95CB /* PositiveNegativeBarChartCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3F1E5F6C1FD28D4700FC303B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3F686B301FCAA3CA00FF9B14 /* XJYChartDemo */;
-			targetProxy = 3F1E5F6B1FD28D4700FC303B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3F686B3A1FCAA3CA00FF9B14 /* Main.storyboard */ = {
@@ -590,38 +531,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3F1E5F6D1FD28D4700FC303B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X2V7CJP5W7;
-				INFOPLIST_FILE = XJYChartDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.junyixie.XJYChartDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XJYChartDemo.app/XJYChartDemo";
-			};
-			name = Debug;
-		};
-		3F1E5F6E1FD28D4700FC303B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X2V7CJP5W7;
-				INFOPLIST_FILE = XJYChartDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.junyixie.XJYChartDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XJYChartDemo.app/XJYChartDemo";
-			};
-			name = Release;
-		};
 		3F686B451FCAA3CA00FF9B14 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -636,6 +545,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -643,6 +553,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -692,6 +603,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -699,6 +611,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -724,6 +637,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -734,15 +648,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X2V7CJP5W7;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/../Products",
-					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
-					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
-					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
-					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -752,12 +661,9 @@
 				INFOPLIST_FILE = XJYChartDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_GENERATE_MAP_FILE = YES;
-				LD_MAP_FILE_PATH = "/Users/junyixie/Library/Mobile Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/XJYChartDemo/XJYChartDemo/linkmap.txt";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-framework",
-					"\"Masonry\"",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.junyixie.XJYChartDemo;
@@ -772,15 +678,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X2V7CJP5W7;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/../Products",
-					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
-					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
-					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
-					"$(USER_LIBRARY_DIR)/Mobile\\ Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/Products",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -790,12 +691,9 @@
 				INFOPLIST_FILE = XJYChartDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_GENERATE_MAP_FILE = YES;
-				LD_MAP_FILE_PATH = "/Users/junyixie/Library/Mobile Documents/com~apple~CloudDocs/我的iOS项目/XJYChart/XJYChartDemo/XJYChartDemo/linkmapRelease.txt";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-framework",
-					"\"Masonry\"",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.junyixie.XJYChartDemo;
@@ -810,13 +708,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X2V7CJP5W7;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/XChart/Products",
-				);
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "XJYChartDemo-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.junyixie.XJYChartDemo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -832,13 +731,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X2V7CJP5W7;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/XChart/Products",
-				);
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "XJYChartDemo-Swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.junyixie.XJYChartDemo-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -850,15 +750,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F1E5F6F1FD28D4700FC303B /* Build configuration list for PBXNativeTarget "XJYChartDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3F1E5F6D1FD28D4700FC303B /* Debug */,
-				3F1E5F6E1FD28D4700FC303B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		3F686B2C1FCAA3CA00FF9B14 /* Build configuration list for PBXProject "XJYChartDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

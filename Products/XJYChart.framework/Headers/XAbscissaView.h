@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define AbscissaHeight 40
+
 @interface XAbscissaView : UIView
 
 /**

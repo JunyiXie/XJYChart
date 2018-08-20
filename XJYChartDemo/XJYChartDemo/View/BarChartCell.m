@@ -34,7 +34,7 @@
 
     XBarItem* item1 = [[XBarItem alloc] initWithDataNumber:@(50.93)
                                                      color:waveColor
-                                              dataDescribe:@"MAC Os"];
+                                              dataDescribe:@"macOS"];
     [itemArray addObject:item1];
     XBarItem* item2 = [[XBarItem alloc] initWithDataNumber:@(90.04)
                                                      color:waveColor
@@ -55,7 +55,7 @@
 
     XBarItem* item6 = [[XBarItem alloc] initWithDataNumber:@(74.93)
                                                      color:waveColor
-                                              dataDescribe:@"MAC Os"];
+                                              dataDescribe:@"macOS"];
     [itemArray addObject:item6];
     XBarItem* item7 = [[XBarItem alloc] initWithDataNumber:@(50.04)
                                                      color:waveColor
@@ -76,7 +76,7 @@
     //
     XBarItem* item11 = [[XBarItem alloc] initWithDataNumber:@(10.93)
                                                       color:waveColor
-                                               dataDescribe:@"MAC Os"];
+                                               dataDescribe:@"macOS"];
     [itemArray addObject:item11];
     XBarItem* item12 = [[XBarItem alloc] initWithDataNumber:@(17.04)
                                                       color:waveColor
@@ -85,13 +85,7 @@
     XBarItem* item13 = [[XBarItem alloc] initWithDataNumber:@(14.99)
                                                       color:waveColor
                                                dataDescribe:@"Win8"];
-    [itemArray addObject:item9];
-    [itemArray addObject:item6];
-    [itemArray addObject:item12];
-    [itemArray addObject:item6];
-    [itemArray addObject:item12];
-
-
+    [itemArray addObject:item13];
 
     XBarChartConfiguration *configuration = [XBarChartConfiguration new];
     configuration.isScrollable = NO;
@@ -102,7 +96,7 @@
                                topNumber:@150
                             bottomNumber:@(0)
                       chartConfiguration:configuration];
-    barChart.barChartDeleagte = self;
+    barChart.barChartDelegate = self;
     [self.contentView addSubview:barChart];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
   }
@@ -111,7 +105,7 @@
 
 #pragma mark XBarChartDelegate
 
-- (void)userClickedOnBarAtIndex:(NSUInteger)idx {
+- (void)userClickedOnBarAtIndex:(NSInteger)idx {
   NSLog(@"XBarChartDelegate touch Bat At idx %lu", idx);
 }
 @end

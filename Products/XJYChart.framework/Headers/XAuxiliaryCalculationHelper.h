@@ -118,11 +118,6 @@ getOriginYIncreaseInFilpCoordinateSystemWithBoundsH:(CGFloat)boudnsHeight
                                          percentage:(CGFloat)percentage
                                          startRatio:(CGFloat)startRatio;
 
-/// 翻转坐标系中 高度的ratio 还是用 原坐标系表示
-- (CGFloat)getOriginYInFilpCoordinateSystemWithRatio:(CGFloat)ratio
-                                             boundsH:(CGFloat)boundsH
-                                             originY:(CGFloat)originY;
-
 /**
  根据原始的Y,Y在翻转坐标系中对应的值*比例,得到iOS原始坐标系中的Y值.originY --->
  filpY * ration ---> originY

@@ -35,8 +35,7 @@
       RGB(253, 210, 147)
     ];
 
-    NSArray* dataArray = @[ @"iPhone6", @"iPhone6 Plus", @"iPhone6s", @"其"
-                                                                      @"他" ];
+    NSArray* dataArray = @[ @"iPhone6", @"iPhone6 Plus", @"iPhone6s", @"其\r他" ];
     XPieItem* item1 =
         [[XPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:20.9]
                                        color:colorArray[0]
@@ -93,8 +92,7 @@
                           RGB(253, 210, 147)
                           ];
   
-  NSArray* dataArray = @[ @"iPhone6", @"iPhone6 Plus", @"iPhone6s", @"其"
-                          @"他" ];
+  NSArray* dataArray = @[ @"iPhone6", @"iPhone6 Plus", @"iPhone6s", @"其\r他" ];
   XPieItem* item1 =
   [[XPieItem alloc] initWithDataNumber:[NSNumber numberWithDouble:10.9]
                                  color:colorArray[0]

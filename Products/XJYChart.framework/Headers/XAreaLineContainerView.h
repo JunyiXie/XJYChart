@@ -34,6 +34,6 @@
 /**
  图表的其他配置
  */
-@property(nonatomic, strong) XAreaLineChartConfiguration* congifuration;
+@property(nonatomic, strong) XAreaLineChartConfiguration* configuration;
 
 @end

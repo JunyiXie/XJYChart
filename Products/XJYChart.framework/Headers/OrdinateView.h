@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class XBaseChartConfiguration;
 @interface OrdinateView : UIView
 
 /**
@@ -22,4 +22,17 @@
                     topNumber:(NSNumber*)topNumber
                  bottomNumber:(NSNumber*)bottomNumber;
 
+/**
+ init
+ 
+ @param frame frame
+ @param topNumber top number in ordinate View
+ @param bottomNumber bottom number in ordinate View
+ @configuration configuration
+ @return ordinate View instance
+ */
+- (instancetype)initWithFrame:(CGRect)frame
+                    topNumber:(NSNumber*)topNumber
+                 bottomNumber:(NSNumber*)bottomNumber
+                configuration:(XBaseChartConfiguration *)configuration;
 @end

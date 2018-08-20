@@ -47,7 +47,7 @@
 @property(nonatomic, strong) NSNumber* bottom;
 
 
-@property(nonatomic, strong) XNormalLineChartConfiguration* configuration;
+@property(nonatomic, strong) XLineChartConfiguration* configuration;
 
 /**
  Line Graph Mode

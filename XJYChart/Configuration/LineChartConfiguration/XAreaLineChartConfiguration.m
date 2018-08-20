@@ -11,6 +11,8 @@
 
 @implementation XAreaLineChartConfiguration
 
+@dynamic isEnableNumberLabel;
+
 - (instancetype)init {
   if (self = [super init]) {
     self.isShowPoint = YES;

@@ -27,11 +27,11 @@
 
 //    NSMutableArray* numbersArray = [NSMutableArray new];
     
-    NSMutableArray* numbersArray= @[
+    NSMutableArray* numbersArray= [@[
                                     @[@45,@73,@155,@72,@53],
                                     @[@88,@97,@245,@166,@99],
                                     @[@81,@112,@133,@111,@90],
-                                    ];
+                                    ] mutableCopy];
 
     NSArray* colorArray = @[
       [UIColor blueberryColor], [UIColor pastelGreenColor], [UIColor dangerColor],

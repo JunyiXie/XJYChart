@@ -10,4 +10,7 @@
 
 @interface XStackAreaLineChartConfiguration : XLineChartConfiguration
 
+/// defalut is 1.0
+@property(nonatomic, assign) CGFloat areaLineAlpha;
+
 @end

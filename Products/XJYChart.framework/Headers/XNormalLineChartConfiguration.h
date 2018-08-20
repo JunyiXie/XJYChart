@@ -10,8 +10,12 @@
 
 @interface XNormalLineChartConfiguration : XLineChartConfiguration
 
+/// defalut is NO
 @property(nonatomic, assign) BOOL isShowCoordinate;
+
 /// if isShowShadow == YES
-/// Disable line path animation
+///  line path animation will Disable
 @property(nonatomic, assign) BOOL isShowShadow;
+
+@property(nonatomic, assign) BOOL isShowPoint;
 @end

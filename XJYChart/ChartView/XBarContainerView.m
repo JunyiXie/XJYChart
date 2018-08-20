@@ -376,7 +376,7 @@
       preShapeLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
       [self.coverLayer removeFromSuperlayer];
 
-      // Notification + Deleagte To CallBack
+      // Notification + Delegate To CallBack
       [[NSNotificationCenter defaultCenter]
           postNotificationName:[XNotificationBridge shareXNotificationBridge]
                                    .TouchBarNotification
