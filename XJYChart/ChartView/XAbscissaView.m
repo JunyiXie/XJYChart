@@ -14,27 +14,24 @@
 @property(nonatomic, strong) NSMutableArray<UILabel*>* labelArray;
 @property(nonatomic, strong) NSMutableArray<NSString*>* dataDescribeArray;
 @property(nonatomic, strong) NSMutableArray* dataItemArray;
+@property(nonatomic, strong) XBaseChartConfiguration *configuration;
 
 @end
 
 @implementation XAbscissaView
 
 - (instancetype)initWithFrame:(CGRect)frame
-                dataItemArray:(NSMutableArray*)dataItemArray {
+                dataItemArray:(NSMutableArray*)dataItemArray
+                configuration:(XBaseChartConfiguration*)configuration
+{
   if (self = [self initWithFrame:frame]) {
     self.backgroundColor = [UIColor whiteColor];
     self.dataDescribeArray = [NSMutableArray new];
     self.labelArray = [NSMutableArray new];
     self.dataItemArray = dataItemArray;
-
+    self.configuration = configuration;
     [self dealData];
     [self setupUI];
-  }
-  return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
-  if (self = [super initWithFrame:frame]) {
   }
   return self;
 }
@@ -52,6 +49,9 @@
 }
 
 - (void)setupUI {
+  if (!self.configuration.isShowXAbscissa) {
+    return;
+  }
   CGFloat labelWidth = self.frame.size.width / self.dataDescribeArray.count;
   CGFloat intervalWidth = labelWidth / 6;
   for (int i = 0; i < self.dataDescribeArray.count; i++) {

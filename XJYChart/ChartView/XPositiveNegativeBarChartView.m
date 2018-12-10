@@ -34,7 +34,10 @@
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumbser
-                 bottomNumber:(NSNumber*)bottomNumber {
+                 bottomNumber:(NSNumber*)bottomNumber
+           chartConfiguration:(XBarChartConfiguration*)configuration;
+
+{
   if (self = [self initWithFrame:frame]) {
     self.dataItemArray = [[NSMutableArray alloc] init];
     self.colorArray = [[NSMutableArray alloc] init];
@@ -83,7 +86,9 @@
     _XAbscissaView = [[XAbscissaView alloc]
         initWithFrame:CGRectMake(0, self.frame.size.height - AbscissaHeight,
                                  self.contentSize.width, AbscissaHeight)
-        dataItemArray:self.dataItemArray];
+        dataItemArray:self.dataItemArray
+        configuration:self.configuration
+                      ];
     _XAbscissaView.backgroundColor = [UIColor whiteColor];
   }
   return _XAbscissaView;

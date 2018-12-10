@@ -99,7 +99,8 @@ NSString* KVOKeyLineGraphMode = @"lineMode";
     _XAbscissaView = [[XAbscissaView alloc]
         initWithFrame:CGRectMake(0, self.contentSize.height - AbscissaHeight,
                                  self.contentSize.width, AbscissaHeight)
-        dataItemArray:self.dataDescribeArray];
+        dataItemArray:self.dataDescribeArray
+        configuration:self.configuration];
   }
   return _XAbscissaView;
 }

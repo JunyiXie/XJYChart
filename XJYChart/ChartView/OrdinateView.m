@@ -61,6 +61,9 @@
 }
 
 - (void)setupUI {
+  if (!self.configuration.isShowOrdinate) {
+    return ;
+  }
   [self.labelArray
       enumerateObjectsUsingBlock:^(UILabel* _Nonnull obj, NSUInteger idx,
                                    BOOL* _Nonnull stop) {

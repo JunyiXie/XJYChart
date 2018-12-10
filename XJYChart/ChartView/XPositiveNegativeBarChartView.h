@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XBarItem.h"
-
+@class XBarChartConfiguration;
 @interface XPositiveNegativeBarChartView : UIScrollView
 /**
  初始化方法
@@ -22,7 +22,9 @@
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumbser
-                 bottomNumber:(NSNumber*)bottomNumber;
+                 bottomNumber:(NSNumber*)bottomNumber
+           chartConfiguration:(XBarChartConfiguration*)configuration;
+;
 
 /**
  dataItemArray
@@ -37,5 +39,6 @@
  纵坐标最低点
  */
 @property(nonatomic, strong) NSNumber* bottom;
+@property(nonatomic, strong) XBarChartConfiguration* configuration;
 
 @end

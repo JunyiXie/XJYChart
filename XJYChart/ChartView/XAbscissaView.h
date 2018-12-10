@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class XBaseChartConfiguration;
 #define AbscissaHeight 40
 
 @interface XAbscissaView : UIView
@@ -20,6 +20,7 @@
  @return XAbscissaView instance
  */
 - (instancetype)initWithFrame:(CGRect)frame
-                dataItemArray:(NSMutableArray*)dataItemArray;
+                dataItemArray:(NSMutableArray*)dataItemArray
+                configuration:(XBaseChartConfiguration*)configuration;
 
 @end

@@ -10,7 +10,7 @@
 #import "XBarItem.h"
 #import "XJYChartDelegate.h"
 
-
+@class XBarChartConfiguration;
 @interface XPositiveNegativeBarChart : UIView
 /**
  初始化方法
@@ -24,7 +24,9 @@
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XBarItem*>*)dataItemArray
                     topNumber:(NSNumber*)topNumbser
-                 bottomNumber:(NSNumber*)bottomNumber;
+                 bottomNumber:(NSNumber*)bottomNumber
+           chartConfiguration:(XBarChartConfiguration*)configuration;
+;
 @property(nonatomic, strong) id<XJYChartDelegate> barChartDelegate;
 
 /**

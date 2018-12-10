@@ -17,6 +17,8 @@
     self.ordinateDenominator = 4;
     self.isScrollable = YES;
     self.isEnableNumberAnimation = YES;
+    self.isShowOrdinate = YES;
+    self.isShowXAbscissa = YES;
   }
   return self;
 }

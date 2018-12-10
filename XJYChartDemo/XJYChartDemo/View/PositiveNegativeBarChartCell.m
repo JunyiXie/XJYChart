@@ -8,6 +8,7 @@
 
 #import "PositiveNegativeBarChartCell.h"
 #import <XJYChart/XJYChart.h>
+#import <XJYChart/XBarChartConfiguration.h>
 @interface PositiveNegativeBarChartCell ()<XJYChartDelegate>
 
 @end
@@ -133,11 +134,16 @@
                                                dataDescribe:@"test"];
     [itemArray addObject:item25];
 
+    XBarChartConfiguration *configuration = [XBarChartConfiguration new];
+
+    
     XPositiveNegativeBarChart* barChart = [[XPositiveNegativeBarChart alloc]
         initWithFrame:CGRectMake(0, 0, 375, 200)
         dataItemArray:itemArray
             topNumber:@100
-         bottomNumber:@(-170)];
+         bottomNumber:@(-170)
+   chartConfiguration:configuration
+                                           ];
     barChart.barChartDelegate = self;
     [self.contentView addSubview:barChart];
     self.selectionStyle = UITableViewCellSelectionStyleNone;

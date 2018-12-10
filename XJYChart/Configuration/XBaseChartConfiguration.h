@@ -15,5 +15,8 @@
 @property(nonatomic, assign) NSUInteger ordinateDenominator;
 @property(nonatomic, assign) BOOL isScrollable;
 @property(nonatomic, assign) BOOL isEnableNumberAnimation;
+@property(nonatomic, assign) BOOL isShowOrdinate;
+@property(nonatomic, assign) BOOL isShowXAbscissa;
+
 @end
 
