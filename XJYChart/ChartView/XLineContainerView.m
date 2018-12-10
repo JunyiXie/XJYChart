@@ -19,6 +19,7 @@
 
 #define LineWidth 4.0
 #define PointDiameter 10.0
+#define ExpandMaxCount 5
 
 // Control Touch Area
 CGFloat touchLineWidth = 20;
@@ -399,7 +400,67 @@ CGFloat touchLineWidth = 20;
 
 #pragma mark - Touch
 
+- (void)removeNumberLabels {
+  [self.labelArray enumerateObjectsUsingBlock:^(
+                                                XAnimationLabel* _Nonnull obj, NSUInteger idx,
+                                                BOOL* _Nonnull stop) {
+    [obj removeFromSuperview];
+  }];
+  [self.labelArray removeAllObjects];
+}
+
+- (void)drawNumberLabels:(NSUInteger)idx {
+  NSUInteger shapeLayerIndex = idx;
+  [self.pointsArrays[shapeLayerIndex]
+   enumerateObjectsUsingBlock:^(
+                                NSValue* _Nonnull obj, NSUInteger idx, BOOL* _Nonnull stop) {
+     CGPoint point = obj.CGPointValue;
+     XAnimationLabel* label =
+     [XAnimationLabel topLabelWithPoint:point
+                                   text:@"0"
+                              textColor:XJYBlack
+                              fillColor:[UIColor clearColor]];
+     CGFloat textNum = self.dataItemArray[shapeLayerIndex]
+     .numberArray[idx]
+     .doubleValue;
+     [self.labelArray addObject:label];
+     [self addSubview:label];
+     [label countFromCurrentTo:textNum duration:0.5];
+   }];
+}
+
+- (void)removePreHiglightDraw {
+  [self removeNumberLabels];
+  [self.coverLayer removeFromSuperlayer];
+}
+
+- (void)findXIdx:(int *)areaIdx point:(const CGPoint *)point {
+  NSArray<NSValue*>* points = self.pointsArrays.lastObject;
+  for (int i = 0; i < points.count - 1; i++) {
+    if (point->x >= points[i].CGPointValue.x &&
+        point->x <= points[i + 1].CGPointValue.x) {
+      *areaIdx = i;
+    }
+  }
+}
+
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
+  
+  if (self.configuration.isEnableTouchShowNumberLabel) {
+    static bool flag = true;
+    if (flag) {
+      //遍历每一条线时，只判断在 areaIdx 的 线段 是否包含 该点
+      [self.shapeLayerArray enumerateObjectsUsingBlock:^(
+                                                         CAShapeLayer* _Nonnull obj, NSUInteger idx,
+                                                         BOOL* _Nonnull stop) {
+        [self drawNumberLabels:idx];
+      }];
+    } else {
+      [self removeNumberLabels];
+    }
+    flag = !flag;
+    return ;
+  }
   
   if (self.configuration.isEnableNumberLabel) {
     return;
@@ -409,17 +470,11 @@ CGFloat touchLineWidth = 20;
   CGPoint __block point = [[touches anyObject] locationInView:self];
 
   //找到小的区域
-  int areaIdx = 0;
-  NSArray<NSValue*>* points = self.pointsArrays.lastObject;
-  for (int i = 0; i < points.count - 1; i++) {
-    if (point.x >= points[i].CGPointValue.x &&
-        point.x <= points[i + 1].CGPointValue.x) {
-      areaIdx = i;
-    }
-  }
+  int xIdx = 0;
+  [self findXIdx:&xIdx point:&point];
 
   __block BOOL isContain = false;
-  for (int i = 0; i < 5; i++) {
+  for (int expandIdx = 0; expandIdx < ExpandMaxCount; expandIdx++) {
     //遍历每一条线时，只判断在 areaIdx 的 线段 是否包含 该点
     [self.shapeLayerArray enumerateObjectsUsingBlock:^(
                               CAShapeLayer* _Nonnull obj, NSUInteger idx,
@@ -429,63 +484,33 @@ CGFloat touchLineWidth = 20;
           obj.segementPointsArrays;
 
       //找到这一段上的点s
-      NSMutableArray<NSValue*>* points = segementPointsArrays[areaIdx];
+      NSMutableArray<NSValue*>* points = segementPointsArrays[xIdx];
 
       /// Mutiline optimize
       /// 找到最扩展最近的点
       isContain = [XPointDetect
            point:point
-          inArea:[XPointDetect expandRectArea:points expandLength:20 * i]];
+          inArea:[XPointDetect expandRectArea:points expandLength:20 * expandIdx]];
 
       if (isContain == YES) {
-
         NSUInteger shapeLayerIndex = idx;
         // 点击的是高亮的Line
         if (self.coverLayer.selectStatusNumber.boolValue == YES) {
           // remove pre layer and label
-          [self.coverLayer removeFromSuperlayer];
-          [self.labelArray enumerateObjectsUsingBlock:^(
-                               XAnimationLabel* _Nonnull obj, NSUInteger idx,
-                               BOOL* _Nonnull stop) {
-            [obj removeFromSuperview];
-          }];
-          [self.labelArray removeAllObjects];
+          [self removePreHiglightDraw];
           self.coverLayer.selectStatusNumber = [NSNumber numberWithBool:NO];
         }
         // 点击的是非高亮的Line
         else {
             /// 逻辑存在缺陷，coverlayer 的 label没有干掉
           // remove pre layer and label
-          [self.labelArray enumerateObjectsUsingBlock:^(
-                               XAnimationLabel* _Nonnull obj, NSUInteger idx,
-                               BOOL* _Nonnull stop) {
-            [obj removeFromSuperview];
-          }];
-          [self.labelArray removeAllObjects];
-          [self.coverLayer removeFromSuperlayer];
-
+          [self removePreHiglightDraw];
           self.coverLayer = [self
               coverShapeLayerWithPath:self.shapeLayerArray[shapeLayerIndex].path
                                 color:[UIColor tomatoColor]];
           self.coverLayer.selectStatusNumber = [NSNumber numberWithBool:YES];
           [self.layer addSublayer:self.coverLayer];
-
-          [self.pointsArrays[shapeLayerIndex]
-              enumerateObjectsUsingBlock:^(
-                  NSValue* _Nonnull obj, NSUInteger idx, BOOL* _Nonnull stop) {
-                CGPoint point = obj.CGPointValue;
-                XAnimationLabel* label =
-                    [XAnimationLabel topLabelWithPoint:point
-                                                  text:@"0"
-                                             textColor:XJYBlack
-                                             fillColor:[UIColor clearColor]];
-                CGFloat textNum = self.dataItemArray[shapeLayerIndex]
-                                      .numberArray[idx]
-                                      .doubleValue;
-                [self.labelArray addObject:label];
-                [self addSubview:label];
-                [label countFromCurrentTo:textNum duration:0.5];
-              }];
+          [self drawNumberLabels:shapeLayerIndex];
         }
         *stop = YES;
       }

@@ -32,5 +32,5 @@
 @property(nonatomic, assign) BOOL isEnableNumberLabel;
 
 @property(nonatomic, strong) UIColor *numberLabelColor;
-
+@property(nonatomic, assign) BOOL isEnableTouchShowNumberLabel;
 @end

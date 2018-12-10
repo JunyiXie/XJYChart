@@ -225,8 +225,45 @@
   [self strokeNumberLabel];
 
 }
+- (void)removeNumberLabels {
+  [self.labelArray enumerateObjectsUsingBlock:^(
+                                                XAnimationLabel* _Nonnull obj, NSUInteger idx,
+                                                BOOL* _Nonnull stop) {
+    [obj removeFromSuperview];
+  }];
+  [self.labelArray removeAllObjects];
+}
 
+- (void)drawNumberLabels:(NSUInteger)idx {
+  NSUInteger shapeLayerIndex = idx;
+  [self.areaAnimationManager.animationNodes
+   enumerateObjectsUsingBlock:^(
+                                XGraphAnimationNode* _Nonnull obj, NSUInteger idx, BOOL* _Nonnull stop) {
+     CGPoint point = obj.graphAnimationEndPoint;
+     XAnimationLabel* label =
+     [XAnimationLabel topLabelWithPoint:point
+                                   text:@"0"
+                              textColor:XJYBlack
+                              fillColor:[UIColor clearColor]];
+     CGFloat textNum = self.dataItemArray[shapeLayerIndex]
+     .numberArray[idx]
+     .doubleValue;
+     [self.labelArray addObject:label];
+     [self addSubview:label];
+     [label countFromCurrentTo:textNum duration:0.5];
+   }];
+}
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
+  if (self.configuration.isEnableTouchShowNumberLabel) {
+    static bool flag = true;
+    if (flag) {
+        [self drawNumberLabels:0];
+    } else {
+      [self removeNumberLabels];
+    }
+    flag = !flag;
+    return ;
+  }
   [self startAnimation];
 }
 
