@@ -36,6 +36,7 @@
     XNormalLineChartConfiguration* configuration =
         [[XNormalLineChartConfiguration alloc] init];
     configuration.isShowShadow = NO;
+    configuration.isEnableNumberAnimation = NO;
 //    configuration.isEnableNumberLabel = YES;
     XLineChart* lineChart =
         [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200)

@@ -13,6 +13,7 @@
 #import "XAnimation.h"
 #import "XAnimator.h"
 #import "CAShapeLayer+XLayerHelper.h"
+#import "XJYNumberLabelDecoration.h"
 
 #pragma mark - Macro
 
@@ -124,8 +125,7 @@
 
 @property(nonatomic, strong) CAShapeLayer* borderLayer;
 
-@property(nonatomic, strong) NSMutableArray<XAnimationLabel*>* labelArray;
-
+@property(nonatomic, strong) XJYNumberLabelDecoration* numberLabelDecoration;
 
 @property(nonatomic, strong) XAreaAnimationManager* areaAnimationManager;
 
@@ -145,7 +145,8 @@
     self.backgroundColor = self.configuration.chartBackgroundColor;
 
     self.pointLayerArray = [NSMutableArray new];
-    self.labelArray = [NSMutableArray new];
+    self.numberLabelDecoration = [[XJYNumberLabelDecoration alloc] initWithViewer:self];
+
     self.dataItemArray = dataItemArray;
 
     self.top = topNumber;
@@ -225,41 +226,19 @@
   [self strokeNumberLabel];
 
 }
-- (void)removeNumberLabels {
-  [self.labelArray enumerateObjectsUsingBlock:^(
-                                                XAnimationLabel* _Nonnull obj, NSUInteger idx,
-                                                BOOL* _Nonnull stop) {
-    [obj removeFromSuperview];
-  }];
-  [self.labelArray removeAllObjects];
-}
 
-- (void)drawNumberLabels:(NSUInteger)idx {
-  NSUInteger shapeLayerIndex = idx;
-  [self.areaAnimationManager.animationNodes
-   enumerateObjectsUsingBlock:^(
-                                XGraphAnimationNode* _Nonnull obj, NSUInteger idx, BOOL* _Nonnull stop) {
-     CGPoint point = obj.graphAnimationEndPoint;
-     XAnimationLabel* label =
-     [XAnimationLabel topLabelWithPoint:point
-                                   text:@"0"
-                              textColor:XJYBlack
-                              fillColor:[UIColor clearColor]];
-     CGFloat textNum = self.dataItemArray[shapeLayerIndex]
-     .numberArray[idx]
-     .doubleValue;
-     [self.labelArray addObject:label];
-     [self addSubview:label];
-     [label countFromCurrentTo:textNum duration:0.5];
-   }];
-}
 - (void)touchesBegan:(NSSet<UITouch*>*)touches withEvent:(UIEvent*)event {
   if (self.configuration.isEnableTouchShowNumberLabel) {
     static bool flag = true;
     if (flag) {
-        [self drawNumberLabels:0];
+      NSMutableArray<NSValue *> *points = [NSMutableArray new];
+      [self.areaAnimationManager.animationNodes enumerateObjectsUsingBlock:^(XGraphAnimationNode * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [points addObject:[NSValue valueWithCGPoint:obj.graphAnimationEndPoint]];
+
+      }];
+      [self.numberLabelDecoration drawWithPoints:points TextNumbers:self.dataItemArray[0].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation];
     } else {
-      [self removeNumberLabels];
+      [self.numberLabelDecoration removeNumberLabels];
     }
     flag = !flag;
     return ;
@@ -317,22 +296,12 @@
   if (!self.configuration.isEnableNumberLabel) {
     return ;
   }
-  
+  NSMutableArray<NSValue *> *points = [NSMutableArray new];
   [self.areaAnimationManager.animationNodes enumerateObjectsUsingBlock:^(XGraphAnimationNode * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-      CGPoint point = obj.graphAnimationCurrentPoint;
-      CGFloat textNum = self.dataItemArray[0]
-      .numberArray[idx]
-      .doubleValue;
-       XAnimationLabel* label =
-       [XAnimationLabel topLabelWithPoint:point
-                                     text:[NSString stringWithFormat:@"%f", textNum]
-                                textColor:XJYBlack
-                                fillColor:[UIColor clearColor]];
-
-       [self.labelArray addObject:label];
-       [self addSubview:label];
-       [label countFromCurrentTo:textNum duration:0];
+    [points addObject:[NSValue valueWithCGPoint:obj.graphAnimationEndPoint]];
+    
   }];
+  [self.numberLabelDecoration drawWithPoints:points TextNumbers:self.dataItemArray[0].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation];
 }
 
 - (void)cleanPreDrawAndDataCache {
@@ -346,13 +315,7 @@
       }];
   [self.pointLayerArray removeAllObjects];
 
-  [self.labelArray
-      enumerateObjectsUsingBlock:^(XAnimationLabel* _Nonnull obj,
-                                   NSUInteger idx, BOOL* _Nonnull stop) {
-        [obj removeFromSuperview];
-      }];
-
-  [self.labelArray removeAllObjects];
+  [self.numberLabelDecoration removeNumberLabels];
 }
 
 /// line mask cashape layer

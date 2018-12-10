@@ -10,7 +10,6 @@
 #import "XLineChartItem.h"
 #import "XEnumHeader.h"
 #import "XAreaLineChartConfiguration.h"
-
 @interface XAreaLineContainerView : UIView
 - (instancetype)initWithFrame:(CGRect)frame
                 dataItemArray:(NSMutableArray<XLineChartItem*>*)dataItemArray

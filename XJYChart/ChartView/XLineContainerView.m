@@ -15,6 +15,7 @@
 #import "XPointDetect.h"
 #import "CALayer+XLayerSelectHelper.h"
 #import "CAShapeLayer+XLayerHelper.h"
+#import "XJYNumberLabelDecoration.h"
 #pragma mark - Macro
 
 #define LineWidth 4.0
@@ -34,9 +35,8 @@ CGFloat touchLineWidth = 20;
 @property(nonatomic, strong)
     NSMutableArray<NSMutableArray<NSValue*>*>* pointsArrays;
 @property(nonatomic, strong) NSMutableArray<CAShapeLayer*>* shapeLayerArray;
-@property(nonatomic, strong) NSMutableArray<XAnimationLabel*>* labelArray;
 @property(nonatomic, strong) NSMutableArray<CAShapeLayer*>* pointLayerArray;
-
+@property(nonatomic, strong) XJYNumberLabelDecoration* numberLabelDecoration;
 @end
 
 @implementation XLineContainerView
@@ -53,7 +53,7 @@ CGFloat touchLineWidth = 20;
     self.coverLayer = [CAShapeLayer layer];
     self.shapeLayerArray = [NSMutableArray new];
     self.pointsArrays = [NSMutableArray new];
-    self.labelArray = [NSMutableArray new];
+    self.numberLabelDecoration = [[XJYNumberLabelDecoration alloc] initWithViewer:self];
     self.pointLayerArray = [NSMutableArray new];
 
     self.dataItemArray = dataItemArray;
@@ -131,11 +131,8 @@ CGFloat touchLineWidth = 20;
                                    BOOL* _Nonnull stop) {
         [obj removeFromSuperlayer];
       }];
-  [self.labelArray
-      enumerateObjectsUsingBlock:^(XAnimationLabel* _Nonnull obj,
-                                   NSUInteger idx, BOOL* _Nonnull stop) {
-        [obj removeFromSuperview];
-      }];
+
+  [self.numberLabelDecoration removeNumberLabels];
   
   [self.pointLayerArray enumerateObjectsUsingBlock:^(CAShapeLayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
     [obj removeFromSuperlayer];
@@ -143,7 +140,6 @@ CGFloat touchLineWidth = 20;
 
   [self.pointsArrays removeAllObjects];
   [self.shapeLayerArray removeAllObjects];
-  [self.labelArray removeAllObjects];
   [self.pointLayerArray removeAllObjects];
 }
 
@@ -200,23 +196,9 @@ CGFloat touchLineWidth = 20;
   if (!self.configuration.isEnableNumberLabel) {
     return;
   }
+  
   for (int i = 0; i < self.pointsArrays.count; i++) {
-      [self.pointsArrays[i]
-       enumerateObjectsUsingBlock:^(
-                                    NSValue* _Nonnull obj, NSUInteger idx, BOOL* _Nonnull stop) {
-           CGPoint point = obj.CGPointValue;
-           XAnimationLabel* label =
-           [XAnimationLabel topLabelWithPoint:point
-                                         text:@"0"
-                                    textColor:XJYBlack
-                                    fillColor:[UIColor clearColor]];
-           CGFloat textNum = self.dataItemArray[i]
-           .numberArray[idx]
-           .doubleValue;
-           [self.labelArray addObject:label];
-           [self addSubview:label];
-           [label countFromCurrentTo:textNum duration:0.5];
-       }];
+    [self.numberLabelDecoration drawWithPoints:self.pointsArrays[i] TextNumbers:self.dataItemArray[i].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation];
   }
 }
 
@@ -399,38 +381,8 @@ CGFloat touchLineWidth = 20;
 }
 
 #pragma mark - Touch
-
-- (void)removeNumberLabels {
-  [self.labelArray enumerateObjectsUsingBlock:^(
-                                                XAnimationLabel* _Nonnull obj, NSUInteger idx,
-                                                BOOL* _Nonnull stop) {
-    [obj removeFromSuperview];
-  }];
-  [self.labelArray removeAllObjects];
-}
-
-- (void)drawNumberLabels:(NSUInteger)idx {
-  NSUInteger shapeLayerIndex = idx;
-  [self.pointsArrays[shapeLayerIndex]
-   enumerateObjectsUsingBlock:^(
-                                NSValue* _Nonnull obj, NSUInteger idx, BOOL* _Nonnull stop) {
-     CGPoint point = obj.CGPointValue;
-     XAnimationLabel* label =
-     [XAnimationLabel topLabelWithPoint:point
-                                   text:@"0"
-                              textColor:XJYBlack
-                              fillColor:[UIColor clearColor]];
-     CGFloat textNum = self.dataItemArray[shapeLayerIndex]
-     .numberArray[idx]
-     .doubleValue;
-     [self.labelArray addObject:label];
-     [self addSubview:label];
-     [label countFromCurrentTo:textNum duration:0.5];
-   }];
-}
-
 - (void)removePreHiglightDraw {
-  [self removeNumberLabels];
+  [self.numberLabelDecoration removeNumberLabels];
   [self.coverLayer removeFromSuperlayer];
 }
 
@@ -453,10 +405,10 @@ CGFloat touchLineWidth = 20;
       [self.shapeLayerArray enumerateObjectsUsingBlock:^(
                                                          CAShapeLayer* _Nonnull obj, NSUInteger idx,
                                                          BOOL* _Nonnull stop) {
-        [self drawNumberLabels:idx];
+        [self.numberLabelDecoration drawWithPoints:self.pointsArrays[idx] TextNumbers:self.dataItemArray[idx].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation];
       }];
     } else {
-      [self removeNumberLabels];
+      [self.numberLabelDecoration removeNumberLabels];
     }
     flag = !flag;
     return ;
@@ -510,7 +462,7 @@ CGFloat touchLineWidth = 20;
                                 color:[UIColor tomatoColor]];
           self.coverLayer.selectStatusNumber = [NSNumber numberWithBool:YES];
           [self.layer addSublayer:self.coverLayer];
-          [self drawNumberLabels:shapeLayerIndex];
+          [self.numberLabelDecoration drawWithPoints:self.pointsArrays[idx] TextNumbers:self.dataItemArray[idx].numberArray isEnableAnimation:self.configuration.isEnableNumberAnimation];
         }
         *stop = YES;
       }

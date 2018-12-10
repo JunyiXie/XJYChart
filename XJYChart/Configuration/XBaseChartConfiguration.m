@@ -16,6 +16,7 @@
     self.chartBackgroundColor = XJYWhite;
     self.ordinateDenominator = 4;
     self.isScrollable = YES;
+    self.isEnableNumberAnimation = YES;
   }
   return self;
 }

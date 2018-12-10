@@ -14,5 +14,6 @@
 @property(nonatomic, strong) UIColor* chartBackgroundColor;
 @property(nonatomic, assign) NSUInteger ordinateDenominator;
 @property(nonatomic, assign) BOOL isScrollable;
+@property(nonatomic, assign) BOOL isEnableNumberAnimation;
 @end
 
