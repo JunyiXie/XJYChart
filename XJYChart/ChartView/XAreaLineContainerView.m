@@ -330,16 +330,25 @@
                           valueWithCGPoint:obj.graphAnimationCurrentPoint]];
       }];
 
-  CGPoint leftConerPoint = CGPointMake(
+  CGPoint leftCornerPoint = CGPointMake(
       self.frame.origin.x, self.frame.origin.y + self.frame.size.height);
-  CGPoint rightConerPoint =
+  CGPoint rightCornerPoint =
       CGPointMake(self.frame.origin.x + self.frame.size.width,
                   self.frame.origin.y + self.frame.size.height);
   
-  self.gradientLayer = [self getGradientLineShapeLayerWithPoints:currentPointArray leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint gradientColors:self.configuration.gradientColors];
+  NSArray *gradientColors = self.configuration.gradientColors;
+  self.gradientLayer = [self getGradientLineShapeLayerWithPoints: currentPointArray
+                                                  leftConerPoint: leftCornerPoint
+                                                 rightConerPoint: rightCornerPoint
+                                                  gradientColors: gradientColors];
+    
   self.gradientLayer.opacity = self.configuration.areaLineAlpha;
 
   [self.layer addSublayer:self.gradientLayer];
+    
+    self.borderLayer = [self getLineShapeLayerWithPoints: currentPointArray leftConerPoint: leftCornerPoint rightConerPoint: rightCornerPoint];
+    
+    [self.layer addSublayer: self.borderLayer];
 }
 
 #pragma mark data Handling
@@ -396,7 +405,7 @@
                                         rightConerPoint:(CGPoint)rightConerPoint
                                                   gradientColors:(NSArray *)colors {
   
-  CAShapeLayer* shapeLayer = [self getLineShapeLayerWithPoints:points leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint];
+  CAShapeLayer* shapeLayer = [self getLineAreaShapeLayerWithPoints:points leftConerPoint:leftConerPoint rightConerPoint:rightConerPoint];
   CAGradientLayer* gradientLayer = [CAGradientLayer layer];
   gradientLayer.colors = colors;
   gradientLayer.frame = self.frame;
@@ -405,7 +414,8 @@
 }
 
 
-- (CAShapeLayer*)getLineShapeLayerWithPoints:(NSArray<NSValue*>*)points
+///绘制折线/曲线统计图的渐变色区域，是1个闭合区域，用于渐变色效果
+- (CAShapeLayer*)getLineAreaShapeLayerWithPoints:(NSArray<NSValue*>*)points
                               leftConerPoint:(CGPoint)leftConerPoint
                              rightConerPoint:(CGPoint)rightConerPoint {
   CAShapeLayer* lineLayer = [CAShapeLayer layer];
@@ -450,6 +460,66 @@
   lineLayer.lineJoin = kCALineJoinRound;
   return lineLayer;
 }
+
+///绘制图表的 折线/曲线
+- (CAShapeLayer*)getLineShapeLayerWithPoints:(NSArray<NSValue*>*)points
+ leftConerPoint:(CGPoint)leftConerPoint
+                             rightConerPoint:(CGPoint)rightConerPoint {
+    CAShapeLayer *lineLayer = [CAShapeLayer layer];
+    lineLayer.frame = self.bounds;
+    UIBezierPath *path = [[UIBezierPath alloc] init];
+    
+    [path moveToPoint: leftConerPoint];
+    
+    //data line
+    for (int i = 0; i < points.count - 1; i++) {
+      CGPoint point1 = points[i].CGPointValue;
+      CGPoint point2 = points[i + 1].CGPointValue;
+      if (i == 0) {
+        [path moveToPoint:point1];
+      }
+      if (self.configuration.lineMode == CurveLine) {
+        CGPoint midPoint = [[XAuxiliaryCalculationHelper shareCalculationHelper]
+            midPointBetweenPoint1:point1
+                        andPoint2:point2];
+        [path addQuadCurveToPoint:midPoint
+                     controlPoint:[[XAuxiliaryCalculationHelper
+                                      shareCalculationHelper]
+                                      controlPointBetweenPoint1:midPoint
+                                                      andPoint2:point1]];
+        [path addQuadCurveToPoint:point2
+                     controlPoint:[[XAuxiliaryCalculationHelper
+                                      shareCalculationHelper]
+                                      controlPointBetweenPoint1:midPoint
+                                                      andPoint2:point2]];
+      } else {
+        [path addLineToPoint:point2];
+      }
+    }
+    
+    [path moveToPoint: rightConerPoint];
+    
+    lineLayer.path = path.CGPath;
+    UIColor *lineColor = _configuration.lineColor;
+    if (lineColor) {
+        lineLayer.strokeColor = [lineColor CGColor];
+    }else{
+        lineLayer.strokeColor = [[UIColor clearColor] CGColor];
+    }
+    lineLayer.opacity = 1;
+    //lineLayer.backgroundColor = [[UIColor clearColor] CGColor];
+    lineLayer.fillColor = [[UIColor clearColor] CGColor];
+
+    CGFloat lineWidth = _configuration.lineWidth;
+    //默认线宽1
+    lineLayer.lineWidth = lineWidth>0?lineWidth:1;
+    lineLayer.lineCap = kCALineCapRound;
+    lineLayer.lineJoin = kCALineJoinRound;
+    
+    
+    return lineLayer;
+}
+
 
 #pragma mark Observerhelper
 

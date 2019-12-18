@@ -29,6 +29,12 @@
     configuration.isShowPoint = YES;
     configuration.lineMode = CurveLine;
     configuration.ordinateDenominator = 6;
+      configuration.gradientColors =  @[
+          (__bridge id)[UIColor colorFromHexString: @"0x42C3FF"].CGColor,
+          (__bridge id)[UIColor whiteColor].CGColor
+      ];
+      configuration.lineWidth = 1.5;
+      configuration.lineColor = [UIColor colorFromHexString: @"0x0097F5"];
 //    configuration.isEnableNumberLabel = YES;
     XLineChart* lineChart =
         [[XLineChart alloc] initWithFrame:CGRectMake(0, 0, 375, 200)
@@ -36,10 +42,10 @@
                         dataDiscribeArray:[NSMutableArray arrayWithArray:@[
                           @"January", @"February", @"March", @"April", @"May"
                         ]]
-                                topNumber:@240
-                             bottomNumber:@0
-                                graphMode:AreaLineGraph
-                       chartConfiguration:nil];
+                                topNumber: @240
+                             bottomNumber: @0
+                                graphMode: AreaLineGraph
+                       chartConfiguration: configuration];
 
     [self.contentView addSubview:lineChart];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
